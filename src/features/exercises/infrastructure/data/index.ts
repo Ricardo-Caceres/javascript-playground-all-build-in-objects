@@ -46,6 +46,47 @@ import { valuesExercises } from './array/values'
 import { withExercises } from './array/with'
 import { toLocaleStringExercises } from './array/toLocaleString'
 
+// String exercises
+import { stringConstructorExercises } from './string/constructor'
+import { fromCharCodeExercises } from './string/fromCharCode'
+import { fromCodePointExercises } from './string/fromCodePoint'
+import { rawExercises } from './string/raw'
+import { stringAtExercises } from './string/at'
+import { charAtExercises } from './string/charAt'
+import { charCodeAtExercises } from './string/charCodeAt'
+import { codePointAtExercises } from './string/codePointAt'
+import { stringConcatExercises } from './string/concat'
+import { endsWithExercises } from './string/endsWith'
+import { stringIncludesExercises } from './string/includes'
+import { stringIndexOfExercises } from './string/indexOf'
+import { isWellFormedExercises } from './string/isWellFormed'
+import { stringLastIndexOfExercises } from './string/lastIndexOf'
+import { localeCompareExercises } from './string/localeCompare'
+import { matchExercises } from './string/match'
+import { matchAllExercises } from './string/matchAll'
+import { normalizeExercises } from './string/normalize'
+import { padEndExercises } from './string/padEnd'
+import { padStartExercises } from './string/padStart'
+import { repeatExercises } from './string/repeat'
+import { replaceExercises } from './string/replace'
+import { replaceAllExercises } from './string/replaceAll'
+import { searchExercises } from './string/search'
+import { stringSliceExercises } from './string/slice'
+import { splitExercises } from './string/split'
+import { startsWithExercises } from './string/startsWith'
+import { substringExercises } from './string/substring'
+import { toLocaleLowerCaseExercises } from './string/toLocaleLowerCase'
+import { toLocaleUpperCaseExercises } from './string/toLocaleUpperCase'
+import { toLowerCaseExercises } from './string/toLowerCase'
+import { stringToStringExercises } from './string/toString'
+import { toUpperCaseExercises } from './string/toUpperCase'
+import { toWellFormedExercises } from './string/toWellFormed'
+import { trimExercises } from './string/trim'
+import { trimEndExercises } from './string/trimEnd'
+import { trimStartExercises } from './string/trimStart'
+import { valueOfExercises } from './string/valueOf'
+import { stringLengthExercises } from './string/length'
+
 export const allExercises: Exercise[] = [
   arrayFromString,
   ...constructorExercises,
@@ -93,4 +134,44 @@ export const allExercises: Exercise[] = [
   ...valuesExercises,
   ...withExercises,
   ...toLocaleStringExercises,
+  // String exercises
+  ...stringConstructorExercises,
+  ...fromCharCodeExercises,
+  ...fromCodePointExercises,
+  ...rawExercises,
+  ...stringAtExercises,
+  ...charAtExercises,
+  ...charCodeAtExercises,
+  ...codePointAtExercises,
+  ...stringConcatExercises,
+  ...endsWithExercises,
+  ...stringIncludesExercises,
+  ...stringIndexOfExercises,
+  ...isWellFormedExercises,
+  ...stringLastIndexOfExercises,
+  ...localeCompareExercises,
+  ...matchExercises,
+  ...matchAllExercises,
+  ...normalizeExercises,
+  ...padEndExercises,
+  ...padStartExercises,
+  ...repeatExercises,
+  ...replaceExercises,
+  ...replaceAllExercises,
+  ...searchExercises,
+  ...stringSliceExercises,
+  ...splitExercises,
+  ...startsWithExercises,
+  ...substringExercises,
+  ...toLocaleLowerCaseExercises,
+  ...toLocaleUpperCaseExercises,
+  ...toLowerCaseExercises,
+  ...stringToStringExercises,
+  ...toUpperCaseExercises,
+  ...toWellFormedExercises,
+  ...trimExercises,
+  ...trimEndExercises,
+  ...trimStartExercises,
+  ...valueOfExercises,
+  ...stringLengthExercises,
 ]
