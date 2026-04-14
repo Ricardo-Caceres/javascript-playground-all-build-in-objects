@@ -1,0 +1,232 @@
+import type { Exercise } from '@/shared/types/exercises'
+
+export const preventExtensionsExercises: Exercise[] = [
+  {
+    slug: 'object-preventExtensions-1',
+    title: 'Object.preventExtensions() — basics',
+    description: `## Object.preventExtensions()
+
+\`Object.preventExtensions(obj)\` prevents new properties from being added to an object. Existing properties can still be modified or deleted.
+
+**Challenge:** Implement \`lockShape(obj)\` that prevents new properties from being added to the object.`,
+    category: 'static-method',
+    difficulty: 'beginner',
+    builtIn: 'Object',
+    method: 'Object.preventExtensions',
+    initialCode: `function lockShape(obj) {
+  // Prevent new properties from being added and return the object
+}`,
+    solution: `function lockShape(obj) {
+  return Object.preventExtensions(obj);
+}`,
+    tests: [
+      {
+        description: 'Returns the same object',
+        assertion: "(() => { const obj = { a: 1 }; const result = Object.preventExtensions(obj); return result === obj; })()"
+      },
+      {
+        description: 'Adding a new property silently fails in sloppy mode',
+        assertion: "(() => { const obj = { a: 1 }; Object.preventExtensions(obj); obj.b = 2; return obj.b === undefined; })()"
+      },
+      {
+        description: 'Object becomes non-extensible',
+        assertion: "(() => { const obj = { a: 1 }; Object.preventExtensions(obj); return !Object.isExtensible(obj); })()"
+      },
+      {
+        description: 'Existing properties can still be modified',
+        assertion: "(() => { const obj = { a: 1 }; Object.preventExtensions(obj); obj.a = 99; return obj.a === 99; })()"
+      },
+      {
+        description: 'Existing properties can still be deleted',
+        assertion: "(() => { const obj = { a: 1, b: 2 }; Object.preventExtensions(obj); delete obj.a; return !('a' in obj); })()"
+      },
+    ],
+    hints: ['preventExtensions only blocks adding new properties, not modifying or deleting existing ones'],
+    tags: ['Object', 'preventExtensions', 'static-method', 'extensible'],
+  },
+  {
+    slug: 'object-preventExtensions-2',
+    title: 'Object.preventExtensions() — verify with isExtensible',
+    description: `## Object.preventExtensions() — checking with isExtensible
+
+After calling \`Object.preventExtensions()\`, you can verify the result with \`Object.isExtensible()\`.
+
+**Challenge:** Implement \`makeAndCheckNonExtensible(obj)\` that locks the object and returns whether it is now non-extensible.`,
+    category: 'static-method',
+    difficulty: 'beginner',
+    builtIn: 'Object',
+    method: 'Object.preventExtensions',
+    initialCode: `function makeAndCheckNonExtensible(obj) {
+  // Prevent extensions and return whether the object is non-extensible
+}`,
+    solution: `function makeAndCheckNonExtensible(obj) {
+  Object.preventExtensions(obj);
+  return !Object.isExtensible(obj);
+}`,
+    tests: [
+      {
+        description: 'isExtensible returns false after preventExtensions',
+        assertion: "(() => { const obj = {}; Object.preventExtensions(obj); return Object.isExtensible(obj) === false; })()"
+      },
+      {
+        description: 'isExtensible returns true before preventExtensions',
+        assertion: "expect(Object.isExtensible({})).toBe(true)"
+      },
+      {
+        description: 'preventExtensions does not seal the object',
+        assertion: "(() => { const obj = { a: 1 }; Object.preventExtensions(obj); return Object.isSealed(obj) === false; })()"
+      },
+      {
+        description: 'preventExtensions does not freeze the object',
+        assertion: "(() => { const obj = { a: 1 }; Object.preventExtensions(obj); return Object.isFrozen(obj) === false; })()"
+      },
+      {
+        description: 'After preventExtensions, writing existing prop still works',
+        assertion: "(() => { const obj = { x: 5 }; Object.preventExtensions(obj); obj.x = 10; return obj.x === 10; })()"
+      },
+    ],
+    hints: ['preventExtensions is the weakest of the three object locking methods'],
+    tags: ['Object', 'preventExtensions', 'isExtensible', 'static-method'],
+  },
+  {
+    slug: 'object-preventExtensions-3',
+    title: 'Object.preventExtensions() — existing props modifiable',
+    description: `## Object.preventExtensions() — mutability preserved
+
+\`Object.preventExtensions()\` only blocks new property additions. Existing properties remain fully mutable.
+
+**Challenge:** Show that existing properties are still modifiable after calling \`Object.preventExtensions()\`.`,
+    category: 'static-method',
+    difficulty: 'intermediate',
+    builtIn: 'Object',
+    method: 'Object.preventExtensions',
+    initialCode: `function modifyAfterPrevent(obj, key, newValue) {
+  // Prevent extensions then try to modify an existing property
+  // Return the new value of obj[key]
+}`,
+    solution: `function modifyAfterPrevent(obj, key, newValue) {
+  Object.preventExtensions(obj);
+  obj[key] = newValue;
+  return obj[key];
+}`,
+    tests: [
+      {
+        description: 'Existing string property can be updated',
+        assertion: "(() => { const obj = { name: 'Alice' }; Object.preventExtensions(obj); obj.name = 'Bob'; return obj.name === 'Bob'; })()"
+      },
+      {
+        description: 'Existing number property can be updated',
+        assertion: "(() => { const obj = { count: 0 }; Object.preventExtensions(obj); obj.count++; return obj.count === 1; })()"
+      },
+      {
+        description: 'Existing property can be deleted',
+        assertion: "(() => { const obj = { a: 1 }; Object.preventExtensions(obj); delete obj.a; return !('a' in obj); })()"
+      },
+      {
+        description: 'New property cannot be added',
+        assertion: "(() => { const obj = { a: 1 }; Object.preventExtensions(obj); obj.newProp = 'x'; return !('newProp' in obj); })()"
+      },
+      {
+        description: 'preventExtensions returns same object reference',
+        assertion: "(() => { const obj = {}; return Object.preventExtensions(obj) === obj; })()"
+      },
+    ],
+    hints: ['Use isExtensible to confirm the object is non-extensible'],
+    tags: ['Object', 'preventExtensions', 'static-method'],
+  },
+  {
+    slug: 'object-preventExtensions-4',
+    title: 'Object.preventExtensions() — prototype not affected',
+    description: `## Object.preventExtensions() — only affects own properties
+
+\`Object.preventExtensions()\` only prevents additions to the target object itself. The prototype can still be modified.
+
+**Challenge:** Understand that preventExtensions does not restrict prototype modifications.`,
+    category: 'static-method',
+    difficulty: 'intermediate',
+    builtIn: 'Object',
+    method: 'Object.preventExtensions',
+    initialCode: `function protoStillMutable(obj) {
+  // Prevent extensions on obj, then add to its prototype
+  // Return whether the prototype property is accessible on obj
+}`,
+    solution: `function protoStillMutable(obj) {
+  const proto = Object.getPrototypeOf(obj);
+  Object.preventExtensions(obj);
+  if (proto && Object.isExtensible(proto)) {
+    proto.fromProto = true;
+  }
+  return obj.fromProto === true;
+}`,
+    tests: [
+      {
+        description: 'preventExtensions only affects the object itself',
+        assertion: "(() => { const proto = {}; const obj = Object.create(proto); Object.preventExtensions(obj); proto.x = 42; return obj.x === 42; })()"
+      },
+      {
+        description: 'Object itself cannot have new own properties',
+        assertion: "(() => { const obj = {}; Object.preventExtensions(obj); obj.own = 1; return !('own' in Object.getOwnPropertyDescriptors(obj)); })()"
+      },
+      {
+        description: 'Prototype remains extensible',
+        assertion: "(() => { const obj = Object.create({}); Object.preventExtensions(obj); return Object.isExtensible(Object.getPrototypeOf(obj)); })()"
+      },
+      {
+        description: 'Object is non-extensible',
+        assertion: "(() => { const obj = {}; Object.preventExtensions(obj); return !Object.isExtensible(obj); })()"
+      },
+      {
+        description: 'preventExtensions is one-way — cannot be undone',
+        assertion: "(() => { const obj = {}; Object.preventExtensions(obj); return !Object.isExtensible(obj); })()"
+      },
+    ],
+    hints: ['preventExtensions is applied only to the direct object, not its prototype chain'],
+    tags: ['Object', 'preventExtensions', 'prototype', 'static-method'],
+  },
+  {
+    slug: 'object-preventExtensions-5',
+    title: 'Object.preventExtensions() — in strict mode throws',
+    description: `## Object.preventExtensions() — strict mode behavior
+
+In strict mode, attempting to add a property to a non-extensible object throws a \`TypeError\`. In sloppy mode, it silently fails.
+
+**Challenge:** Verify that adding a property to a non-extensible object silently fails in sloppy mode (does not add the property).`,
+    category: 'static-method',
+    difficulty: 'intermediate',
+    builtIn: 'Object',
+    method: 'Object.preventExtensions',
+    initialCode: `function sloppyModePrevent(obj, key, value) {
+  // Prevent extensions in sloppy mode and attempt to add a property
+  // Return whether the key was added
+}`,
+    solution: `function sloppyModePrevent(obj, key, value) {
+  Object.preventExtensions(obj);
+  obj[key] = value; // silently fails
+  return key in obj;
+}`,
+    tests: [
+      {
+        description: 'Property not added in sloppy mode after preventExtensions',
+        assertion: "(() => { const obj = {}; Object.preventExtensions(obj); obj.x = 1; return !('x' in obj); })()"
+      },
+      {
+        description: 'Adding to extensible object works',
+        assertion: "(() => { const obj = {}; obj.x = 1; return obj.x === 1; })()"
+      },
+      {
+        description: 'Strict mode throws TypeError for new property',
+        assertion: "(() => { try { 'use strict'; const obj = {}; Object.preventExtensions(obj); obj.x = 1; return false; } catch(e) { return e instanceof TypeError; } })()"
+      },
+      {
+        description: 'isExtensible is false',
+        assertion: "(() => { const obj = { a: 1 }; Object.preventExtensions(obj); return !Object.isExtensible(obj); })()"
+      },
+      {
+        description: 'Existing prop survives in sloppy mode',
+        assertion: "(() => { const obj = { a: 1 }; Object.preventExtensions(obj); obj.b = 2; return obj.a === 1 && obj.b === undefined; })()"
+      },
+    ],
+    hints: ['Use try/catch to test strict mode behavior'],
+    tags: ['Object', 'preventExtensions', 'static-method', 'strict-mode'],
+  },
+]
