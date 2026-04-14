@@ -296,6 +296,50 @@ import { promiseRejectExercises } from './promise/reject'
 import { promiseAllExercises } from './promise/all'
 import { promiseRaceExercises } from './promise/race'
 import { promiseAllSettledExercises } from './promise/allSettled'
+// Function exercises
+import { funcConstructorExercises } from './function/constructor'
+import { funcCallExercises } from './function/call'
+import { funcApplyExercises } from './function/apply'
+import { funcBindExercises } from './function/bind'
+import { funcLengthExercises } from './function/funcLength'
+// Proxy exercises
+import { proxyConstructorExercises } from './proxy/constructor'
+import { proxyGetExercises } from './proxy/getHandler'
+import { proxySetExercises } from './proxy/setHandler'
+import { proxyHasExercises } from './proxy/hasHandler'
+import { proxyDeleteExercises } from './proxy/deleteHandler'
+// Reflect exercises
+import { reflectGetExercises } from './reflect/reflectGet'
+import { reflectSetExercises } from './reflect/reflectSet'
+import { reflectHasExercises } from './reflect/reflectHas'
+import { reflectDeletePropertyExercises } from './reflect/reflectDeleteProperty'
+import { reflectOwnKeysExercises } from './reflect/reflectOwnKeys'
+import { reflectApplyExercises } from './reflect/reflectApply'
+import { reflectConstructExercises } from './reflect/reflectConstruct'
+
+// Generator exercises
+import { generatorConstructorExercises } from './generator/constructor'
+import { generatorNextExercises } from './generator/next'
+import { generatorYieldExercises } from './generator/yieldExpression'
+import { generatorReturnExercises } from './generator/return'
+import { generatorThrowExercises } from './generator/generatorThrow'
+// Iterator exercises
+import { iteratorProtocolExercises } from './iterator/protocol'
+import { iteratorForOfExercises } from './iterator/forOf'
+import { iteratorSpreadExercises } from './iterator/spread'
+import { iteratorDestructuringExercises } from './iterator/destructuring'
+// ArrayBuffer exercises
+import { arrayBufferConstructorExercises } from './arraybuffer/constructor'
+import { arrayBufferByteLengthExercises } from './arraybuffer/byteLength'
+import { arrayBufferSliceExercises } from './arraybuffer/slice'
+import { arrayBufferIsViewExercises } from './arraybuffer/arrayBufferIsView'
+import { typedArraysExercises } from './arraybuffer/typedArrays'
+// DataView exercises
+import { dataViewConstructorExercises } from './dataview/constructor'
+import { dataViewGetInt32Exercises } from './dataview/getInt32'
+import { dataViewGetUint8Exercises } from './dataview/getUint8'
+import { dataViewGetFloat64Exercises } from './dataview/getFloat64'
+import { dataViewByteOffsetExercises } from './dataview/byteOffset'
 
 export const allExercises: Exercise[] = [
   arrayFromString,
@@ -592,4 +636,102 @@ export const allExercises: Exercise[] = [
   ...promiseAllExercises,
   ...promiseRaceExercises,
   ...promiseAllSettledExercises,
+  // Function exercises
+  ...funcConstructorExercises,
+  ...funcCallExercises,
+  ...funcApplyExercises,
+  ...funcBindExercises,
+  ...funcLengthExercises,
+  // Proxy exercises
+  ...proxyConstructorExercises,
+  ...proxyGetExercises,
+  ...proxySetExercises,
+  ...proxyHasExercises,
+  ...proxyDeleteExercises,
+  // Reflect exercises
+  ...reflectGetExercises,
+  ...reflectSetExercises,
+  ...reflectHasExercises,
+  ...reflectDeletePropertyExercises,
+  ...reflectOwnKeysExercises,
+  ...reflectApplyExercises,
+  ...reflectConstructExercises,
+  ...funcLengthExercises,
+  // Proxy exercises
+  ...proxyConstructorExercises,
+  ...proxyGetExercises,
+  ...proxySetExercises,
+  ...proxyHasExercises,
+  ...proxyDeleteExercises,
+  // Reflect exercises
+  ...reflectGetExercises,
+  ...reflectSetExercises,
+  ...reflectHasExercises,
+  ...reflectDeletePropertyExercises,
+  ...reflectOwnKeysExercises,
+  ...reflectApplyExercises,
+  ...reflectConstructExercises,
+  // Function exercises
+  ...funcConstructorExercises,
+  ...funcCallExercises,
+  ...funcApplyExercises,
+  ...funcBindExercises,
+  ...funcLengthExercises,
+  // Proxy exercises
+  ...proxyConstructorExercises,
+  ...proxyGetExercises,
+  ...proxySetExercises,
+  ...proxyHasExercises,
+  ...proxyDeleteExercises,
+  // Reflect exercises
+  ...reflectGetExercises,
+  ...reflectSetExercises,
+  ...reflectHasExercises,
+  ...reflectDeletePropertyExercises,
+  ...reflectOwnKeysExercises,
+  ...reflectApplyExercises,
+  ...reflectConstructExercises,
+  // Function exercises
+  ...funcConstructorExercises,
+  ...funcCallExercises,
+  ...funcApplyExercises,
+  ...funcBindExercises,
+  ...funcLengthExercises,
+  // Proxy exercises
+  ...proxyConstructorExercises,
+  ...proxyGetExercises,
+  ...proxySetExercises,
+  ...proxyHasExercises,
+  ...proxyDeleteExercises,
+  // Reflect exercises
+  ...reflectGetExercises,
+  ...reflectSetExercises,
+  ...reflectHasExercises,
+  ...reflectDeletePropertyExercises,
+  ...reflectOwnKeysExercises,
+  ...reflectApplyExercises,
+  ...reflectConstructExercises,
+   // Generator exercises
+   ...generatorConstructorExercises,
+   ...generatorNextExercises,
+   ...generatorYieldExercises,
+   ...generatorReturnExercises,
+   ...generatorThrowExercises,
+   // Iterator exercises
+   ...iteratorProtocolExercises,
+   ...iteratorForOfExercises,
+   ...iteratorSpreadExercises,
+   ...iteratorDestructuringExercises,
+   // ArrayBuffer exercises
+   ...arrayBufferConstructorExercises,
+   ...arrayBufferByteLengthExercises,
+   ...arrayBufferSliceExercises,
+   ...arrayBufferIsViewExercises,
+   ...typedArraysExercises,
+   // DataView exercises
+   ...dataViewConstructorExercises,
+   ...dataViewGetInt32Exercises,
+   ...dataViewGetUint8Exercises,
+   ...dataViewGetFloat64Exercises,
+   ...dataViewByteOffsetExercises,
 ]
