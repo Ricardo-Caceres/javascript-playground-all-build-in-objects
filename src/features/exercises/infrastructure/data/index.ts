@@ -119,6 +119,73 @@ import { objectToLocaleStringExercises } from './object/toLocaleString'
 import { objectToStringExercises } from './object/toString'
 import { objectValueOfExercises } from './object/valueOf'
 
+// Number exercises
+import { numberConstructorExercises } from './number/constructor'
+import { numberEpsilonExercises } from './number/epsilon'
+import { maxSafeIntegerExercises } from './number/maxSafeInteger'
+import { maxValueExercises } from './number/maxValue'
+import { minSafeIntegerExercises } from './number/minSafeInteger'
+import { minValueExercises } from './number/minValue'
+import { numberNaNExercises } from './number/numberNaN'
+import { negativeInfinityExercises } from './number/negativeInfinity'
+import { positiveInfinityExercises } from './number/positiveInfinity'
+import { numberIsFiniteExercises } from './number/isFinite'
+import { isIntegerExercises } from './number/isInteger'
+import { numberIsNaNExercises } from './number/isNaN'
+import { isSafeIntegerExercises } from './number/isSafeInteger'
+import { numberParseFloatExercises } from './number/parseFloat'
+import { numberParseIntExercises } from './number/parseInt'
+import { toExponentialExercises } from './number/toExponential'
+import { toFixedExercises } from './number/toFixed'
+import { numberToLocaleStringExercises } from './number/numberToLocaleString'
+import { toPrecisionExercises } from './number/toPrecision'
+import { numberToStringExercises } from './number/numberToString'
+import { numberValueOfExercises } from './number/numberValueOf'
+// Math exercises
+import { mathEExercises } from './math/e'
+import { mathLn2Exercises } from './math/ln2'
+import { mathLn10Exercises } from './math/ln10'
+import { mathLog2EExercises } from './math/log2e'
+import { mathLog10EExercises } from './math/log10e'
+import { mathPiExercises } from './math/pi'
+import { mathSqrt1_2Exercises } from './math/sqrt1_2'
+import { mathSqrt2Exercises } from './math/sqrt2'
+import { mathAbsExercises } from './math/abs'
+import { mathAcosExercises } from './math/acos'
+import { mathAcoshExercises } from './math/acosh'
+import { mathAsinExercises } from './math/asin'
+import { mathAsinhExercises } from './math/asinh'
+import { mathAtanExercises } from './math/atan'
+import { mathAtanhExercises } from './math/atanh'
+import { mathAtan2Exercises } from './math/atan2'
+import { mathCbrtExercises } from './math/cbrt'
+import { mathCeilExercises } from './math/ceil'
+import { mathClz32Exercises } from './math/clz32'
+import { mathCosExercises } from './math/cos'
+import { mathCoshExercises } from './math/cosh'
+import { mathExpExercises } from './math/exp'
+import { mathExpm1Exercises } from './math/expm1'
+import { mathFloorExercises } from './math/floor'
+import { mathFroundExercises } from './math/fround'
+import { mathHypotExercises } from './math/hypot'
+import { mathImulExercises } from './math/imul'
+import { mathLogExercises } from './math/log'
+import { mathLog1pExercises } from './math/log1p'
+import { mathLog2Exercises } from './math/log2'
+import { mathLog10Exercises } from './math/log10'
+import { mathMaxExercises } from './math/max'
+import { mathMinExercises } from './math/min'
+import { mathPowExercises } from './math/pow'
+import { mathRandomExercises } from './math/random'
+import { mathRoundExercises } from './math/round'
+import { mathSignExercises } from './math/sign'
+import { mathSinExercises } from './math/sin'
+import { mathSinhExercises } from './math/sinh'
+import { mathSqrtExercises } from './math/sqrt'
+import { mathTanExercises } from './math/tan'
+import { mathTanhExercises } from './math/tanh'
+import { mathTruncExercises } from './math/trunc'
+
 export const allExercises: Exercise[] = [
   arrayFromString,
   ...constructorExercises,
@@ -237,4 +304,70 @@ export const allExercises: Exercise[] = [
   ...objectToLocaleStringExercises,
   ...objectToStringExercises,
   ...objectValueOfExercises,
+  // Number exercises
+  ...numberConstructorExercises,
+  ...numberEpsilonExercises,
+  ...maxSafeIntegerExercises,
+  ...maxValueExercises,
+  ...minSafeIntegerExercises,
+  ...minValueExercises,
+  ...numberNaNExercises,
+  ...negativeInfinityExercises,
+  ...positiveInfinityExercises,
+  ...numberIsFiniteExercises,
+  ...isIntegerExercises,
+  ...numberIsNaNExercises,
+  ...isSafeIntegerExercises,
+  ...numberParseFloatExercises,
+  ...numberParseIntExercises,
+  ...toExponentialExercises,
+  ...toFixedExercises,
+  ...numberToLocaleStringExercises,
+  ...toPrecisionExercises,
+  ...numberToStringExercises,
+  ...numberValueOfExercises,
+  // Math exercises
+  ...mathEExercises,
+  ...mathLn2Exercises,
+  ...mathLn10Exercises,
+  ...mathLog2EExercises,
+  ...mathLog10EExercises,
+  ...mathPiExercises,
+  ...mathSqrt1_2Exercises,
+  ...mathSqrt2Exercises,
+  ...mathAbsExercises,
+  ...mathAcosExercises,
+  ...mathAcoshExercises,
+  ...mathAsinExercises,
+  ...mathAsinhExercises,
+  ...mathAtanExercises,
+  ...mathAtanhExercises,
+  ...mathAtan2Exercises,
+  ...mathCbrtExercises,
+  ...mathCeilExercises,
+  ...mathClz32Exercises,
+  ...mathCosExercises,
+  ...mathCoshExercises,
+  ...mathExpExercises,
+  ...mathExpm1Exercises,
+  ...mathFloorExercises,
+  ...mathFroundExercises,
+  ...mathHypotExercises,
+  ...mathImulExercises,
+  ...mathLogExercises,
+  ...mathLog1pExercises,
+  ...mathLog2Exercises,
+  ...mathLog10Exercises,
+  ...mathMaxExercises,
+  ...mathMinExercises,
+  ...mathPowExercises,
+  ...mathRandomExercises,
+  ...mathRoundExercises,
+  ...mathSignExercises,
+  ...mathSinExercises,
+  ...mathSinhExercises,
+  ...mathSqrtExercises,
+  ...mathTanExercises,
+  ...mathTanhExercises,
+  ...mathTruncExercises,
 ]
