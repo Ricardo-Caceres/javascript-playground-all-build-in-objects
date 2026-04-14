@@ -250,6 +250,52 @@ import { setSymmetricDifferenceExercises } from './set/symmetricDifference'
 import { setIsSubsetOfExercises } from './set/isSubsetOf'
 import { setIsSupersetOfExercises } from './set/isSupersetOf'
 import { setIsDisjointFromExercises } from './set/isDisjointFrom'
+// Symbol exercises
+import { symbolConstructorExercises } from './symbol/constructor'
+import { symbolForExercises } from './symbol/symbolFor'
+import { symbolKeyForExercises } from './symbol/symbolKeyFor'
+import { symbolDescriptionExercises } from './symbol/description'
+import { symbolToStringExercises } from './symbol/symbolToString'
+import { symbolIteratorExercises } from './symbol/symbolIterator'
+import { symbolToPrimitiveExercises } from './symbol/symbolToPrimitive'
+import { symbolHasInstanceExercises } from './symbol/symbolHasInstance'
+// JSON exercises
+import { jsonParseExercises } from './json/parse'
+import { jsonStringifyExercises } from './json/stringify'
+// Boolean exercises
+import { booleanConstructorExercises } from './boolean/constructor'
+import { booleanToStringExercises } from './boolean/booleanToString'
+import { booleanValueOfExercises } from './boolean/booleanValueOf'
+// Error exercises
+import { errorConstructorExercises } from './error/constructor'
+import { errorMessageExercises } from './error/message'
+import { errorNameExercises } from './error/name'
+import { errorToStringExercises } from './error/errorToString'
+import { errorTypesExercises } from './error/errorTypes'
+// BigInt exercises
+import { bigintConstructorExercises } from './bigint/constructor'
+import { bigintAsIntNExercises } from './bigint/asIntN'
+import { bigintAsUintNExercises } from './bigint/asUintN'
+import { bigintToStringExercises } from './bigint/bigintToString'
+import { bigintValueOfExercises } from './bigint/bigintValueOf'
+// WeakMap exercises
+import { weakMapConstructorExercises } from './weakmap/constructor'
+import { weakMapSetExercises } from './weakmap/set'
+import { weakMapGetExercises } from './weakmap/get'
+import { weakMapHasExercises } from './weakmap/has'
+import { weakMapDeleteExercises } from './weakmap/delete'
+// WeakSet exercises
+import { weakSetConstructorExercises } from './weakset/constructor'
+import { weakSetAddExercises } from './weakset/add'
+import { weakSetHasExercises } from './weakset/has'
+import { weakSetDeleteExercises } from './weakset/delete'
+// Promise exercises
+import { promiseConstructorExercises } from './promise/constructor'
+import { promiseResolveExercises } from './promise/resolve'
+import { promiseRejectExercises } from './promise/reject'
+import { promiseAllExercises } from './promise/all'
+import { promiseRaceExercises } from './promise/race'
+import { promiseAllSettledExercises } from './promise/allSettled'
 
 export const allExercises: Exercise[] = [
   arrayFromString,
@@ -500,4 +546,50 @@ export const allExercises: Exercise[] = [
   ...setIsSubsetOfExercises,
   ...setIsSupersetOfExercises,
   ...setIsDisjointFromExercises,
+  // Symbol exercises
+  ...symbolConstructorExercises,
+  ...symbolForExercises,
+  ...symbolKeyForExercises,
+  ...symbolDescriptionExercises,
+  ...symbolToStringExercises,
+  ...symbolIteratorExercises,
+  ...symbolToPrimitiveExercises,
+  ...symbolHasInstanceExercises,
+  // JSON exercises
+  ...jsonParseExercises,
+  ...jsonStringifyExercises,
+  // Boolean exercises
+  ...booleanConstructorExercises,
+  ...booleanToStringExercises,
+  ...booleanValueOfExercises,
+  // Error exercises
+  ...errorConstructorExercises,
+  ...errorMessageExercises,
+  ...errorNameExercises,
+  ...errorToStringExercises,
+  ...errorTypesExercises,
+  // BigInt exercises
+  ...bigintConstructorExercises,
+  ...bigintAsIntNExercises,
+  ...bigintAsUintNExercises,
+  ...bigintToStringExercises,
+  ...bigintValueOfExercises,
+  // WeakMap exercises
+  ...weakMapConstructorExercises,
+  ...weakMapSetExercises,
+  ...weakMapGetExercises,
+  ...weakMapHasExercises,
+  ...weakMapDeleteExercises,
+  // WeakSet exercises
+  ...weakSetConstructorExercises,
+  ...weakSetAddExercises,
+  ...weakSetHasExercises,
+  ...weakSetDeleteExercises,
+  // Promise exercises
+  ...promiseConstructorExercises,
+  ...promiseResolveExercises,
+  ...promiseRejectExercises,
+  ...promiseAllExercises,
+  ...promiseRaceExercises,
+  ...promiseAllSettledExercises,
 ]
