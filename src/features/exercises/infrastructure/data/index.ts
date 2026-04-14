@@ -185,6 +185,71 @@ import { mathSqrtExercises } from './math/sqrt'
 import { mathTanExercises } from './math/tan'
 import { mathTanhExercises } from './math/tanh'
 import { mathTruncExercises } from './math/trunc'
+// Date exercises
+import { dateConstructorExercises } from './date/constructor'
+import { dateNowExercises } from './date/now'
+import { dateParsExercises } from './date/parse'
+import { dateUTCExercises } from './date/utc'
+import { dateGetFullYearExercises } from './date/getFullYear'
+import { dateGetMonthExercises } from './date/getMonth'
+import { dateGetDateExercises } from './date/getDate'
+import { dateGetDayExercises } from './date/getDay'
+import { dateGetHoursExercises } from './date/getHours'
+import { dateGetMinutesExercises } from './date/getMinutes'
+import { dateGetSecondsExercises } from './date/getSeconds'
+import { dateGetMillisecondsExercises } from './date/getMilliseconds'
+import { dateGetTimeExercises } from './date/getTime'
+import { dateGetUTCFullYearExercises } from './date/getUTCFullYear'
+import { dateGetUTCMonthExercises } from './date/getUTCMonth'
+import { dateGetUTCDateExercises } from './date/getUTCDate'
+import { dateSetFullYearExercises } from './date/setFullYear'
+import { dateSetMonthExercises } from './date/setMonth'
+import { dateSetDateExercises } from './date/setDate'
+import { dateToISOStringExercises } from './date/toISOString'
+import { dateToDateStringExercises } from './date/toDateString'
+import { dateToUTCStringExercises } from './date/toUTCString'
+import { dateToJSONExercises } from './date/toJSON'
+import { dateValueOfExercises } from './date/dateValueOf'
+// RegExp exercises
+import { regexpConstructorExercises } from './regexp/constructor'
+import { regexpSourceExercises } from './regexp/source'
+import { regexpFlagsExercises } from './regexp/flags'
+import { regexpGlobalExercises } from './regexp/global'
+import { regexpIgnoreCaseExercises } from './regexp/ignoreCase'
+import { regexpMultilineExercises } from './regexp/multiline'
+import { regexpTestExercises } from './regexp/test'
+import { regexpExecExercises } from './regexp/exec'
+import { regexpToStringExercises } from './regexp/regexpToString'
+// Map exercises
+import { mapConstructorExercises } from './map/constructor'
+import { mapSizeExercises } from './map/size'
+import { mapSetExercises } from './map/set'
+import { mapGetExercises } from './map/get'
+import { mapHasExercises } from './map/has'
+import { mapDeleteExercises } from './map/delete'
+import { mapClearExercises } from './map/clear'
+import { mapKeysExercises } from './map/keys'
+import { mapValuesExercises } from './map/values'
+import { mapEntriesExercises } from './map/entries'
+import { mapForEachExercises } from './map/forEach'
+// Set exercises
+import { setConstructorExercises } from './set/constructor'
+import { setSizeExercises } from './set/size'
+import { setAddExercises } from './set/add'
+import { setHasExercises } from './set/has'
+import { setDeleteExercises } from './set/delete'
+import { setClearExercises } from './set/clear'
+import { setValuesExercises } from './set/values'
+import { setKeysExercises } from './set/keys'
+import { setEntriesExercises } from './set/entries'
+import { setForEachExercises } from './set/forEach'
+import { setUnionExercises } from './set/union'
+import { setIntersectionExercises } from './set/intersection'
+import { setDifferenceExercises } from './set/difference'
+import { setSymmetricDifferenceExercises } from './set/symmetricDifference'
+import { setIsSubsetOfExercises } from './set/isSubsetOf'
+import { setIsSupersetOfExercises } from './set/isSupersetOf'
+import { setIsDisjointFromExercises } from './set/isDisjointFrom'
 
 export const allExercises: Exercise[] = [
   arrayFromString,
@@ -370,4 +435,69 @@ export const allExercises: Exercise[] = [
   ...mathTanExercises,
   ...mathTanhExercises,
   ...mathTruncExercises,
+  // Date exercises
+  ...dateConstructorExercises,
+  ...dateNowExercises,
+  ...dateParsExercises,
+  ...dateUTCExercises,
+  ...dateGetFullYearExercises,
+  ...dateGetMonthExercises,
+  ...dateGetDateExercises,
+  ...dateGetDayExercises,
+  ...dateGetHoursExercises,
+  ...dateGetMinutesExercises,
+  ...dateGetSecondsExercises,
+  ...dateGetMillisecondsExercises,
+  ...dateGetTimeExercises,
+  ...dateGetUTCFullYearExercises,
+  ...dateGetUTCMonthExercises,
+  ...dateGetUTCDateExercises,
+  ...dateSetFullYearExercises,
+  ...dateSetMonthExercises,
+  ...dateSetDateExercises,
+  ...dateToISOStringExercises,
+  ...dateToDateStringExercises,
+  ...dateToUTCStringExercises,
+  ...dateToJSONExercises,
+  ...dateValueOfExercises,
+  // RegExp exercises
+  ...regexpConstructorExercises,
+  ...regexpSourceExercises,
+  ...regexpFlagsExercises,
+  ...regexpGlobalExercises,
+  ...regexpIgnoreCaseExercises,
+  ...regexpMultilineExercises,
+  ...regexpTestExercises,
+  ...regexpExecExercises,
+  ...regexpToStringExercises,
+  // Map exercises
+  ...mapConstructorExercises,
+  ...mapSizeExercises,
+  ...mapSetExercises,
+  ...mapGetExercises,
+  ...mapHasExercises,
+  ...mapDeleteExercises,
+  ...mapClearExercises,
+  ...mapKeysExercises,
+  ...mapValuesExercises,
+  ...mapEntriesExercises,
+  ...mapForEachExercises,
+  // Set exercises
+  ...setConstructorExercises,
+  ...setSizeExercises,
+  ...setAddExercises,
+  ...setHasExercises,
+  ...setDeleteExercises,
+  ...setClearExercises,
+  ...setValuesExercises,
+  ...setKeysExercises,
+  ...setEntriesExercises,
+  ...setForEachExercises,
+  ...setUnionExercises,
+  ...setIntersectionExercises,
+  ...setDifferenceExercises,
+  ...setSymmetricDifferenceExercises,
+  ...setIsSubsetOfExercises,
+  ...setIsSupersetOfExercises,
+  ...setIsDisjointFromExercises,
 ]
