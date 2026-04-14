@@ -87,6 +87,38 @@ import { trimStartExercises } from './string/trimStart'
 import { valueOfExercises } from './string/valueOf'
 import { stringLengthExercises } from './string/length'
 
+// Object exercises
+import { objectConstructorExercises } from './object/constructor'
+import { assignExercises } from './object/assign'
+import { createExercises } from './object/create'
+import { definePropertiesExercises } from './object/defineProperties'
+import { definePropertyExercises } from './object/defineProperty'
+import { objectEntriesExercises } from './object/entries'
+import { freezeExercises } from './object/freeze'
+import { fromEntriesExercises } from './object/fromEntries'
+import { getOwnPropertyDescriptorExercises } from './object/getOwnPropertyDescriptor'
+import { getOwnPropertyDescriptorsExercises } from './object/getOwnPropertyDescriptors'
+import { getOwnPropertyNamesExercises } from './object/getOwnPropertyNames'
+import { getOwnPropertySymbolsExercises } from './object/getOwnPropertySymbols'
+import { getPrototypeOfExercises } from './object/getPrototypeOf'
+import { groupByExercises } from './object/groupBy'
+import { hasOwnExercises } from './object/hasOwn'
+import { objectIsExercises } from './object/is'
+import { isExtensibleExercises } from './object/isExtensible'
+import { isFrozenExercises } from './object/isFrozen'
+import { isSealedExercises } from './object/isSealed'
+import { objectKeysExercises } from './object/keys'
+import { preventExtensionsExercises } from './object/preventExtensions'
+import { sealExercises } from './object/seal'
+import { setPrototypeOfExercises } from './object/setPrototypeOf'
+import { objectValuesExercises } from './object/values'
+import { hasOwnPropertyExercises } from './object/hasOwnProperty'
+import { isPrototypeOfExercises } from './object/isPrototypeOf'
+import { propertyIsEnumerableExercises } from './object/propertyIsEnumerable'
+import { objectToLocaleStringExercises } from './object/toLocaleString'
+import { objectToStringExercises } from './object/toString'
+import { objectValueOfExercises } from './object/valueOf'
+
 export const allExercises: Exercise[] = [
   arrayFromString,
   ...constructorExercises,
@@ -174,4 +206,35 @@ export const allExercises: Exercise[] = [
   ...trimStartExercises,
   ...valueOfExercises,
   ...stringLengthExercises,
+  // Object exercises
+  ...objectConstructorExercises,
+  ...assignExercises,
+  ...createExercises,
+  ...definePropertiesExercises,
+  ...definePropertyExercises,
+  ...objectEntriesExercises,
+  ...freezeExercises,
+  ...fromEntriesExercises,
+  ...getOwnPropertyDescriptorExercises,
+  ...getOwnPropertyDescriptorsExercises,
+  ...getOwnPropertyNamesExercises,
+  ...getOwnPropertySymbolsExercises,
+  ...getPrototypeOfExercises,
+  ...groupByExercises,
+  ...hasOwnExercises,
+  ...objectIsExercises,
+  ...isExtensibleExercises,
+  ...isFrozenExercises,
+  ...isSealedExercises,
+  ...objectKeysExercises,
+  ...preventExtensionsExercises,
+  ...sealExercises,
+  ...setPrototypeOfExercises,
+  ...objectValuesExercises,
+  ...hasOwnPropertyExercises,
+  ...isPrototypeOfExercises,
+  ...propertyIsEnumerableExercises,
+  ...objectToLocaleStringExercises,
+  ...objectToStringExercises,
+  ...objectValueOfExercises,
 ]
