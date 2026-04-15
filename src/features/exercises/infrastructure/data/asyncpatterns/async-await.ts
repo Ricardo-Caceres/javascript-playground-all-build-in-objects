@@ -52,7 +52,7 @@ export const asyncAwaitExercises: Exercise[] = [
       { description: 'Promise.resolve().then callback is async (microtask)', assertion: 'let x=0; Promise.resolve().then(()=>{x=1}); expect(x).toBe(0)' },
       { description: 'callback does not run before microtasks flush', assertion: 'let called=false; Promise.resolve().then(()=>{called=true}); expect(called).toBe(false)' },
       { description: 'synchronous code runs first', assertion: 'let order=[]; order.push(1); Promise.resolve().then(()=>order.push(2)); order.push(3); expect(order[0]).toBe(1)' },
-      { description: 'third microtask after sync', assertion: 'let order=[]; order.push(1); Promise.resolve().then(()=>order.push(2)); order.push(3); expect(order[2]).toBe(2) || expect(order).toContain(2)' },
+      { description: 'order contains only sync pushes before microtasks', assertion: 'let order=[]; order.push(1); Promise.resolve().then(()=>order.push(2)); order.push(3); expect(order).toEqual([1,3])' },
       { description: 'multiple .then callbacks queue', assertion: 'let count=0; Promise.resolve().then(()=>{count++}).then(()=>{count++}); expect(count).toBe(0)' },
     ],
     hints: ['.then callbacks are microtasks, not synchronous.', 'They queue after the current execution context.', 'This is key to understanding the Promise execution model.'],

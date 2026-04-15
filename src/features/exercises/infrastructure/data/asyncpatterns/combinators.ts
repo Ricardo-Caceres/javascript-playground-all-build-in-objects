@@ -85,9 +85,9 @@ export const asyncCombinatorsExercises: Exercise[] = [
     difficulty: 'advanced',
     builtIn: 'AsyncPatterns',
     initialCode: `let result\nPromise.all([]).then(r => { result = r })\n// result is still undefined (async)`,
-    solution: `let result; Promise.all([]).then(r => { result = r }); Array.isArray(result) || result === undefined`,
+    solution: `let result; Promise.all([]).then(r => { result = r }); result === undefined`,
     tests: [
-      { description: 'Promise.all([]) resolves to array synchronously', assertion: 'let result; Promise.all([]).then(r=>{result=r}); expect(Array.isArray(result) || result===undefined).toBeTruthy()' },
+      { description: 'result is undefined before microtask runs', assertion: 'let result; Promise.all([]).then(r=>{result=r}); expect(result).toBeUndefined()' },
       { description: '.then is queued as microtask', assertion: 'let triggered=false; Promise.all([]).then(()=>{triggered=true}); expect(triggered).toBe(false)' },
       { description: 'Promise.all([]) instanceof Promise', assertion: 'expect(Promise.all([]) instanceof Promise).toBeTruthy()' },
       { description: 'array length is 0 after settling', assertion: 'let len=null; Promise.all([]).then(arr=>{len=arr.length}); expect(len===null || typeof len==="number").toBeTruthy()' },
