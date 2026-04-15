@@ -375,6 +375,15 @@ import { blobPropertiesExercises } from './blob/properties'
 import { blobSliceExercises } from './blob/slice'
 // File exercises
 import { fileConstructorExercises } from './file/constructor'
+// FormData exercises
+import { formDataConstructorExercises } from './formdata/constructor'
+import { formDataMethodsExercises } from './formdata/methods'
+import { formDataIterationExercises } from './formdata/iteration'
+// AbortController exercises
+import { abortControllerConstructorExercises } from './abortcontroller/constructor'
+import { abortControllerMethodsExercises } from './abortcontroller/methods'
+// AbortSignal exercises
+import { abortSignalStaticExercises } from './abortsignal/static'
 // Reflect exercises
 import { reflectGetExercises } from './reflect/reflectGet'
 import { reflectSetExercises } from './reflect/reflectSet'
@@ -868,4 +877,13 @@ export const allExercises: Exercise[] = [
   ...blobSliceExercises,
   // File exercises
   ...fileConstructorExercises,
+  // FormData exercises
+  ...formDataConstructorExercises,
+  ...formDataMethodsExercises,
+  ...formDataIterationExercises,
+  // AbortController exercises
+  ...abortControllerConstructorExercises,
+  ...abortControllerMethodsExercises,
+  // AbortSignal exercises
+  ...abortSignalStaticExercises,
 ]
