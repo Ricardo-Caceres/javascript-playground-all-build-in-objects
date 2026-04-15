@@ -96,7 +96,7 @@ const double = (x) => x * 2
 const composed = compose(double, add1)`,
     tests: [
       { description: 'compose applies functions right-to-left', assertion: 'function compose(...fns) { return (x) => fns.reduceRight((v, f) => f(v), x) } const add1 = (x) => x + 1; const double = (x) => x * 2; const c = compose(double, add1); expect(c(5)).toBe(12)' },
-      { description: 'compose order is opposite of manual nesting', assertion: 'function compose(...fns) { return (x) => fns.reduceRight((v, f) => f(v), x) } const add1 = (x) => x + 1; const double = (x) => x * 2; const c = compose(double, add1); expect(c(5)).toBe(12)' },
+      { description: 'compose order is opposite of manual nesting', assertion: 'function compose(...fns) { return (x) => fns.reduceRight((v, f) => f(v), x) } const add1 = (x) => x + 1; const double = (x) => x * 2; const c = compose(add1, double); expect(c(5)).toBe(11)' },
       { description: 'compose with three functions', assertion: 'function compose(...fns) { return (x) => fns.reduceRight((v, f) => f(v), x) } const add1 = (x) => x + 1; const double = (x) => x * 2; const square = (x) => x * x; const c = compose(square, double, add1); expect(c(2)).toBe(36)' },
       { description: 'compose with single function', assertion: 'function compose(...fns) { return (x) => fns.reduceRight((v, f) => f(v), x) } const double = (x) => x * 2; const c = compose(double); expect(c(5)).toBe(10)' },
       { description: 'compose is reusable', assertion: 'function compose(...fns) { return (x) => fns.reduceRight((v, f) => f(v), x) } const add1 = (x) => x + 1; const double = (x) => x * 2; const c = compose(double, add1); expect(c(3)).toBe(8); expect(c(5)).toBe(12)' },
