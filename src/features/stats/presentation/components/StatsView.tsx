@@ -14,9 +14,9 @@ for (const ex of allExercises) {
 const OBJECTS = Object.keys(EXERCISES_BY_OBJECT).sort()
 
 const DIFF_ORDER = ['beginner', 'intermediate', 'advanced'] as const
-const EXERCISES_BY_DIFF: Record<string, string[]> = { beginner: [], intermediate: [], advanced: [] }
+const EXERCISES_BY_DIFF: Record<(typeof DIFF_ORDER)[number], string[]> = { beginner: [], intermediate: [], advanced: [] }
 for (const ex of allExercises) {
-  EXERCISES_BY_DIFF[ex.difficulty]?.push(ex.slug)
+  EXERCISES_BY_DIFF[ex.difficulty].push(ex.slug)
 }
 
 export function StatsView() {
@@ -78,8 +78,13 @@ export function StatsView() {
               <p className="text-xs text-zinc-600">in progress</p>
             </div>
           </div>
-          <div className="mt-4 h-2 w-full rounded-full bg-zinc-800">
+          <div className="mt-4 h-2 w-full rounded-full bg-zinc-800" aria-hidden="true">
             <div
+              role="progressbar"
+              aria-label="Overall completion"
+              aria-valuenow={globalPct}
+              aria-valuemin={0}
+              aria-valuemax={100}
               className="h-2 rounded-full bg-emerald-600 transition-all"
               style={{ width: `${globalPct}%` }}
             />
@@ -108,8 +113,13 @@ export function StatsView() {
                   </span>
                   <span className="font-mono text-xs text-zinc-600">{pct}%</span>
                 </div>
-                <div className="mt-2 h-1.5 w-full rounded-full bg-zinc-800">
+                <div className="mt-2 h-1.5 w-full rounded-full bg-zinc-800" aria-hidden="true">
                   <div
+                    role="progressbar"
+                    aria-label={diff}
+                    aria-valuenow={pct}
+                    aria-valuemin={0}
+                    aria-valuemax={100}
                     className={`h-1.5 rounded-full transition-all ${
                       diff === 'beginner'
                         ? 'bg-emerald-600'
@@ -141,9 +151,14 @@ export function StatsView() {
                 className="flex items-center gap-4 rounded-lg border border-zinc-800 bg-zinc-900 px-4 py-3 transition-colors hover:border-zinc-600"
               >
                 <code className="w-36 shrink-0 text-sm font-semibold text-zinc-200">{obj}</code>
-                <div className="flex-1">
+                <div className="flex-1" aria-hidden="true">
                   <div className="h-1.5 w-full rounded-full bg-zinc-800">
                     <div
+                      role="progressbar"
+                      aria-label={obj}
+                      aria-valuenow={pct}
+                      aria-valuemin={0}
+                      aria-valuemax={100}
                       className="h-1.5 rounded-full bg-emerald-600 transition-all"
                       style={{ width: `${pct}%` }}
                     />
