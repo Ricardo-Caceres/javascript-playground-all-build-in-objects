@@ -151,8 +151,8 @@ export function StatsView() {
                 className="flex items-center gap-4 rounded-lg border border-zinc-800 bg-zinc-900 px-4 py-3 transition-colors hover:border-zinc-600"
               >
                 <code className="w-36 shrink-0 text-sm font-semibold text-zinc-200">{obj}</code>
-                <div className="flex-1" aria-hidden="true">
-                  <div className="h-1.5 w-full rounded-full bg-zinc-800">
+                <div className="flex-1">
+                  <div className="h-1.5 w-full rounded-full bg-zinc-800" aria-hidden="true">
                     <div
                       role="progressbar"
                       aria-label={obj}
