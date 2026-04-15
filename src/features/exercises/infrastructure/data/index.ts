@@ -335,6 +335,16 @@ import { atomicsLoadExercises } from './atomics/atomicsLoad'
 import { atomicsStoreExercises } from './atomics/atomicsStore'
 import { atomicsSubExercises } from './atomics/atomicsSub'
 import { atomicsCompareExchangeExercises } from './atomics/atomicsCompareExchange'
+// TypedArray exercises
+import { typedArrayConstructorExercises } from './typedarray/constructor'
+import { typedArrayFromExercises } from './typedarray/from'
+import { typedArrayOfExercises } from './typedarray/of'
+import { typedArrayInstanceMethodsExercises } from './typedarray/instanceMethods'
+import { typedArrayInstancePropertiesExercises } from './typedarray/instanceProperties'
+// globalThis exercises
+import { globalThisExercises } from './globalthis/constructor'
+// structuredClone exercises
+import { structuredCloneExercises } from './structuredclone/constructor'
 // Reflect exercises
 import { reflectGetExercises } from './reflect/reflectGet'
 import { reflectSetExercises } from './reflect/reflectSet'
@@ -788,4 +798,14 @@ export const allExercises: Exercise[] = [
   ...atomicsStoreExercises,
   ...atomicsSubExercises,
   ...atomicsCompareExchangeExercises,
+  // TypedArray exercises
+  ...typedArrayConstructorExercises,
+  ...typedArrayFromExercises,
+  ...typedArrayOfExercises,
+  ...typedArrayInstanceMethodsExercises,
+  ...typedArrayInstancePropertiesExercises,
+  // globalThis exercises
+  ...globalThisExercises,
+  // structuredClone exercises
+  ...structuredCloneExercises,
 ]
