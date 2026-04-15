@@ -199,7 +199,7 @@ isBalanced('([)]') // false
   for (const char of s) {
     if ('([{'.includes(char)) {
       stack.push(char)
-    } else if (')]}' .includes(char)) {
+    } else if (')]}'.includes(char)) {
       if (stack.pop() !== pairs[char]) return false
     }
   }
