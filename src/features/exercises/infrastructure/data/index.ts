@@ -363,6 +363,18 @@ import { urlSearchParamsGetSetExercises } from './urlsearchparams/get-set'
 import { urlSearchParamsAppendDeleteExercises } from './urlsearchparams/append-delete'
 import { urlSearchParamsIterationExercises } from './urlsearchparams/iteration'
 import { urlSearchParamsPropExercises } from './urlsearchparams/properties'
+// TextEncoder exercises
+import { textEncoderConstructorExercises } from './textencoder/constructor'
+import { textEncoderMethodsExercises } from './textencoder/methods'
+// TextDecoder exercises
+import { textDecoderConstructorExercises } from './textdecoder/constructor'
+import { textDecoderMethodsExercises } from './textdecoder/methods'
+// Blob exercises
+import { blobConstructorExercises } from './blob/constructor'
+import { blobPropertiesExercises } from './blob/properties'
+import { blobSliceExercises } from './blob/slice'
+// File exercises
+import { fileConstructorExercises } from './file/constructor'
 // Reflect exercises
 import { reflectGetExercises } from './reflect/reflectGet'
 import { reflectSetExercises } from './reflect/reflectSet'
@@ -844,4 +856,16 @@ export const allExercises: Exercise[] = [
   ...urlSearchParamsAppendDeleteExercises,
   ...urlSearchParamsIterationExercises,
   ...urlSearchParamsPropExercises,
+  // TextEncoder exercises
+  ...textEncoderConstructorExercises,
+  ...textEncoderMethodsExercises,
+  // TextDecoder exercises
+  ...textDecoderConstructorExercises,
+  ...textDecoderMethodsExercises,
+  // Blob exercises
+  ...blobConstructorExercises,
+  ...blobPropertiesExercises,
+  ...blobSliceExercises,
+  // File exercises
+  ...fileConstructorExercises,
 ]
