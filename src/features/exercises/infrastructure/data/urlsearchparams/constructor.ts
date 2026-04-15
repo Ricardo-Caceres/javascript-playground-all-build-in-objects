@@ -93,7 +93,7 @@ export const urlSearchParamsConstructorExercises: Exercise[] = [
       { description: 'instance of URLSearchParams', assertion: "expect(new URLSearchParams(new URL('https://a.com?k=v').searchParams) instanceof URLSearchParams).toBeTruthy()" },
       { description: 'copy is independent', assertion: "const url2=new URL('https://a.com?a=1'); const p4=new URLSearchParams(url2.searchParams); p4.set('a','2'); expect(url2.searchParams.get('a')).toBe('1')" },
     ],
-    hints: ['url.searchParams returns a live URLSearchParams object tied to the URL'],
+    hints: ['Passing url.searchParams to the URLSearchParams constructor creates a snapshot — mutations to the copy do not affect the original URL.'],
     tags: ['URLSearchParams', 'constructor', 'copy'],
   },
 ]
