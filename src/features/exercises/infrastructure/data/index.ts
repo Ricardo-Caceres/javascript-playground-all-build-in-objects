@@ -410,6 +410,11 @@ import { prototypeChainExercises } from './prototypes/prototype-chain'
 import { prototypeObjectCreateExercises } from './prototypes/object-create'
 import { prototypeClassBasicsExercises } from './prototypes/class-basics'
 import { prototypeInheritanceExercises } from './prototypes/inheritance'
+// AsyncPatterns exercises
+import { asyncPromiseBasicsExercises } from './asyncpatterns/promise-basics'
+import { asyncCombinatorsExercises } from './asyncpatterns/combinators'
+import { asyncAwaitExercises } from './asyncpatterns/async-await'
+import { asyncErrorHandlingExercises } from './asyncpatterns/error-handling'
 // Reflect exercises
 import { reflectGetExercises } from './reflect/reflectGet'
 import { reflectSetExercises } from './reflect/reflectSet'
@@ -938,4 +943,9 @@ export const allExercises: Exercise[] = [
   ...prototypeObjectCreateExercises,
   ...prototypeClassBasicsExercises,
   ...prototypeInheritanceExercises,
+  // AsyncPatterns exercises
+  ...asyncPromiseBasicsExercises,
+  ...asyncCombinatorsExercises,
+  ...asyncAwaitExercises,
+  ...asyncErrorHandlingExercises,
 ]
