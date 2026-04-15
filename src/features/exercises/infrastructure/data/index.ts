@@ -405,6 +405,11 @@ import { closuresCounterExercises } from './closures/counter'
 import { closuresPrivateStateExercises } from './closures/private-state'
 import { closuresFactoryExercises } from './closures/factory'
 import { closuresScopeExercises } from './closures/scope'
+// Prototypes exercises
+import { prototypeChainExercises } from './prototypes/prototype-chain'
+import { prototypeObjectCreateExercises } from './prototypes/object-create'
+import { prototypeClassBasicsExercises } from './prototypes/class-basics'
+import { prototypeInheritanceExercises } from './prototypes/inheritance'
 // Reflect exercises
 import { reflectGetExercises } from './reflect/reflectGet'
 import { reflectSetExercises } from './reflect/reflectSet'
@@ -928,4 +933,9 @@ export const allExercises: Exercise[] = [
   ...closuresPrivateStateExercises,
   ...closuresFactoryExercises,
   ...closuresScopeExercises,
+  // Prototypes exercises
+  ...prototypeChainExercises,
+  ...prototypeObjectCreateExercises,
+  ...prototypeClassBasicsExercises,
+  ...prototypeInheritanceExercises,
 ]
