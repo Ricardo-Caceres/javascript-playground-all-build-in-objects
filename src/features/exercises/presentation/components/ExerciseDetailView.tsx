@@ -62,7 +62,7 @@ export function ExerciseDetailView({ exercise }: ExerciseDetailViewProps) {
 
         {/* Editor + Tests */}
         <div className="flex min-w-0 flex-1 flex-col">
-          <ExerciseRunner exercise={exercise} />
+          <ExerciseRunner exercise={exercise} objectName={objectName} />
         </div>
       </div>
     </div>
