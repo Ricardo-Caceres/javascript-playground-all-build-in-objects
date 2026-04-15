@@ -1,78 +1,155 @@
 'use client'
 
 import Link from 'next/link'
+import { useState } from 'react'
 import { useSelector } from 'react-redux'
 import type { RootState } from '@/shared/lib/store'
-import { ExerciseCard } from './ExerciseCard'
-import type { Exercise, ExerciseCategory } from '@/shared/types/exercises'
+import { getAllExercisesByObject } from '@/features/exercises/infrastructure/repositories/exerciseRepository'
+import type { Difficulty } from '@/shared/types/exercises'
 
-const CATEGORY_LABELS: Record<ExerciseCategory, string> = {
-  constructor: 'Constructor',
-  'static-property': 'Static Properties',
-  'static-method': 'Static Methods',
-  'instance-method': 'Instance Methods',
-  'instance-property': 'Instance Properties',
-  inheritance: 'Inheritance',
+type StatusFilter = 'all' | 'not-started' | 'attempted' | 'completed'
+
+const DIFF_LABELS: Record<Difficulty, string> = {
+  beginner: 'Beginner',
+  intermediate: 'Intermediate',
+  advanced: 'Advanced',
 }
 
-interface ExerciseListViewProps {
+const STATUS_LABELS: Record<StatusFilter, string> = {
+  all: 'All',
+  'not-started': 'Not Started',
+  attempted: 'Attempted',
+  completed: 'Completed',
+}
+
+interface Props {
   objectName: string
-  exercises: Exercise[]
 }
 
-export function ExerciseListView({ objectName, exercises }: ExerciseListViewProps) {
+export default function ExerciseListView({ objectName }: Props) {
+  const [diffFilter, setDiffFilter] = useState<Difficulty | 'all'>('all')
+  const [statusFilter, setStatusFilter] = useState<StatusFilter>('all')
   const progressMap = useSelector((state: RootState) => state.progress.exercises)
-  const completedCount = exercises.filter(
-    (e) => progressMap[e.slug]?.status === 'completed',
-  ).length
 
-  const grouped = exercises.reduce<Partial<Record<ExerciseCategory, Exercise[]>>>(
-    (acc, ex) => {
-      if (!acc[ex.category]) acc[ex.category] = []
-      acc[ex.category]!.push(ex)
-      return acc
-    },
-    {},
-  )
+  const exercises = getAllExercisesByObject(objectName)
+  const completed = exercises.filter((e) => progressMap[e.slug]?.status === 'completed').length
+  const total = exercises.length
+  const pct = total > 0 ? Math.round((completed / total) * 100) : 0
+
+  const filtered = exercises.filter((ex) => {
+    const matchDiff = diffFilter === 'all' || ex.difficulty === diffFilter
+    const matchStatus =
+      statusFilter === 'all' || (progressMap[ex.slug]?.status ?? 'not-started') === statusFilter
+    return matchDiff && matchStatus
+  })
 
   return (
-    <main className="min-h-screen bg-zinc-950 px-6 py-12 text-zinc-100">
-      <div className="mx-auto max-w-5xl">
-        <Link
-          href="/"
-          className="mb-6 inline-block text-xs font-semibold uppercase tracking-widest text-zinc-500 hover:text-zinc-300"
-        >
-          ← Home
-        </Link>
-        <div className="mb-8 flex items-end justify-between">
-          <h1 className="text-3xl font-bold">
-            <code className="text-emerald-400">{objectName}</code>
-          </h1>
-          <p className="text-sm text-zinc-400">
-            {completedCount}/{exercises.length} completed
-          </p>
-        </div>
-        <div className="space-y-10">
-          {(Object.entries(grouped) as [ExerciseCategory, Exercise[]][]).map(
-            ([cat, items]) => (
-              <section key={cat}>
-                <h2 className="mb-4 text-lg font-semibold text-zinc-300">
-                  {CATEGORY_LABELS[cat]}
-                </h2>
-                <div className="grid gap-3 sm:grid-cols-2 lg:grid-cols-3">
-                  {items.map((ex) => (
-                    <ExerciseCard
-                      key={ex.slug}
-                      exercise={ex}
-                      objectName={objectName.toLowerCase()}
-                    />
-                  ))}
-                </div>
-              </section>
-            ),
+    <div className="min-h-screen bg-zinc-950 px-6 py-8 text-zinc-100">
+      <div className="mx-auto max-w-4xl space-y-8">
+        {/* Header */}
+        <section className="space-y-3">
+          <Link
+            href="/"
+            className="font-mono text-xs text-zinc-600 hover:text-zinc-400 transition-colors"
+          >
+            ← Home
+          </Link>
+          <h1 className="text-3xl font-bold text-zinc-100">{objectName}</h1>
+          {/* Progress bar */}
+          <div className="space-y-1">
+            <div className="h-2 w-full rounded-full bg-zinc-800">
+              <div
+                className="h-2 rounded-full bg-emerald-600 transition-all"
+                style={{ width: `${pct}%` }}
+              />
+            </div>
+            <p className="text-xs text-zinc-500">
+              {completed} / {total} completed ({pct}%)
+            </p>
+          </div>
+        </section>
+
+        {/* Filters */}
+        <section className="space-y-2">
+          <div className="flex flex-wrap gap-2">
+            {(['all', 'beginner', 'intermediate', 'advanced'] as const).map((d) => (
+              <button
+                key={d}
+                onClick={() => setDiffFilter(d)}
+                className={`rounded-full px-3 py-1 text-xs font-medium transition-colors ${
+                  diffFilter === d
+                    ? 'bg-emerald-700 text-white'
+                    : 'border border-zinc-700 text-zinc-400 hover:border-zinc-500 hover:text-zinc-200'
+                }`}
+              >
+                {d === 'all' ? 'All Difficulties' : DIFF_LABELS[d]}
+              </button>
+            ))}
+          </div>
+          <div className="flex flex-wrap gap-2">
+            {(['all', 'not-started', 'attempted', 'completed'] as const).map((s) => (
+              <button
+                key={s}
+                onClick={() => setStatusFilter(s)}
+                className={`rounded-full px-3 py-1 text-xs font-medium transition-colors ${
+                  statusFilter === s
+                    ? 'bg-zinc-600 text-white'
+                    : 'border border-zinc-700 text-zinc-400 hover:border-zinc-500 hover:text-zinc-200'
+                }`}
+              >
+                {STATUS_LABELS[s]}
+              </button>
+            ))}
+          </div>
+        </section>
+
+        {/* Exercise list */}
+        <section>
+          <h2 className="mb-3 text-xs font-semibold uppercase tracking-widest text-zinc-600">
+            Exercises ({filtered.length})
+          </h2>
+          <ul className="space-y-2">
+            {filtered.map((ex) => {
+              const status = progressMap[ex.slug]?.status ?? 'not-started'
+              return (
+                <li key={ex.slug}>
+                  <Link
+                    href={`/exercises/${objectName.toLowerCase()}/${ex.slug}`}
+                    className={`flex items-center justify-between rounded-lg border px-4 py-3 transition-colors ${
+                      status === 'completed'
+                        ? 'border-emerald-800/50 bg-emerald-950/20 hover:border-emerald-700'
+                        : status === 'attempted'
+                          ? 'border-yellow-800/40 bg-yellow-950/10 hover:border-yellow-700/50'
+                          : 'border-zinc-800 bg-zinc-900 hover:border-zinc-600'
+                    }`}
+                  >
+                    <div className="flex items-center gap-3">
+                      <span className="text-sm">
+                        {status === 'completed' ? '✓' : status === 'attempted' ? '▶' : '○'}
+                      </span>
+                      <span className="text-sm text-zinc-200">{ex.title}</span>
+                    </div>
+                    <span
+                      className={`text-xs ${
+                        ex.difficulty === 'beginner'
+                          ? 'text-emerald-500'
+                          : ex.difficulty === 'intermediate'
+                            ? 'text-yellow-500'
+                            : 'text-red-500'
+                      }`}
+                    >
+                      {DIFF_LABELS[ex.difficulty]}
+                    </span>
+                  </Link>
+                </li>
+              )
+            })}
+          </ul>
+          {filtered.length === 0 && (
+            <p className="text-sm text-zinc-600">No exercises match these filters.</p>
           )}
-        </div>
+        </section>
       </div>
-    </main>
+    </div>
   )
 }
