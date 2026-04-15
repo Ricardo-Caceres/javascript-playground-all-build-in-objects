@@ -1,4 +1,9 @@
 import type { Exercise } from '@/shared/types/exercises'
+import { algoSortingExercises } from './algorithms/sorting'
+import { algoSearchingExercises } from './algorithms/searching'
+import { algoRecursionExercises } from './algorithms/recursion'
+import { algoStringsExercises } from './algorithms/strings'
+import { algoDataStructuresExercises } from './algorithms/data-structures'
 import { arrayFromString } from './array/demo'
 import { constructorExercises } from './array/constructor'
 import { staticSpeciesExercises } from './array/static-species'
@@ -972,4 +977,10 @@ export const allExercises: Exercise[] = [
   ...dpFactoryExercises,
   ...dpDecoratorExercises,
   ...dpStrategyExercises,
+  // Algorithms exercises
+  ...algoSortingExercises,
+  ...algoSearchingExercises,
+  ...algoRecursionExercises,
+  ...algoStringsExercises,
+  ...algoDataStructuresExercises,
 ]
