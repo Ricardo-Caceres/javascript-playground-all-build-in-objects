@@ -394,6 +394,12 @@ import { eventMethodsExercises } from './event/methods'
 // performance exercises
 import { performanceMethodsExercises } from './performance/methods'
 import { performancePropertiesExercises } from './performance/properties'
+// console exercises
+import { consoleMethodsExercises } from './console/methods'
+import { consoleAssertExercises } from './console/assert'
+// crypto exercises
+import { cryptoRandomExercises } from './crypto/random'
+import { cryptoUuidExercises } from './crypto/uuid'
 // Reflect exercises
 import { reflectGetExercises } from './reflect/reflectGet'
 import { reflectSetExercises } from './reflect/reflectSet'
@@ -906,4 +912,10 @@ export const allExercises: Exercise[] = [
   // performance exercises
   ...performanceMethodsExercises,
   ...performancePropertiesExercises,
+  // console exercises
+  ...consoleMethodsExercises,
+  ...consoleAssertExercises,
+  // crypto exercises
+  ...cryptoRandomExercises,
+  ...cryptoUuidExercises,
 ]
