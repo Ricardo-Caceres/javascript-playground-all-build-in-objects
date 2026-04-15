@@ -1,0 +1,111 @@
+import type { Exercise } from '@/shared/types/exercises'
+
+export const referenceErrorExercises: Exercise[] = [
+  {
+    slug: 'referenceerror-constructor-1',
+    title: 'ReferenceError — instanceof check',
+    description: `## ReferenceError Constructor\n\n\`new ReferenceError('not defined')\` creates a ReferenceError instance.\n\n**Challenge:** Verify that a new ReferenceError is an instance of ReferenceError.`,
+    category: 'constructor',
+    difficulty: 'beginner',
+    builtIn: 'ReferenceError',
+    initialCode: `const err = new ReferenceError('not defined')\n`,
+    solution: `new ReferenceError('not defined') instanceof ReferenceError`,
+    tests: [
+      { description: 'instanceof ReferenceError is truthy', assertion: "expect(new ReferenceError('not defined') instanceof ReferenceError).toBeTruthy()" },
+      { description: 'instanceof ReferenceError is true', assertion: "expect(new ReferenceError('x') instanceof ReferenceError).toBe(true)" },
+      { description: 'is an object', assertion: "expect(typeof new ReferenceError('x')).toBe('object')" },
+      { description: 'is not null', assertion: "expect(new ReferenceError('x')).not.toBeNull()" },
+      { description: 'is truthy', assertion: "expect(new ReferenceError('x')).toBeTruthy()" },
+    ],
+    hints: ['Use new ReferenceError(message) to create a ReferenceError instance.'],
+    tags: ['referenceerror', 'constructor', 'instanceof'],
+  },
+  {
+    slug: 'referenceerror-constructor-2',
+    title: 'ReferenceError — also an Error',
+    description: `## ReferenceError extends Error\n\nReferenceError extends the built-in Error class.\n\n**Challenge:** Verify that a ReferenceError is also an instance of Error.`,
+    category: 'constructor',
+    difficulty: 'beginner',
+    builtIn: 'ReferenceError',
+    initialCode: `const err = new ReferenceError()\n`,
+    solution: `new ReferenceError() instanceof Error`,
+    tests: [
+      { description: 'instanceof Error is true', assertion: "expect(new ReferenceError() instanceof Error).toBe(true)" },
+      { description: 'instanceof ReferenceError is true', assertion: "expect(new ReferenceError() instanceof ReferenceError).toBe(true)" },
+      { description: 'instanceof Object is true', assertion: "expect(new ReferenceError() instanceof Object).toBe(true)" },
+      { description: 'is truthy', assertion: "expect(new ReferenceError()).toBeTruthy()" },
+      { description: 'is an object', assertion: "expect(typeof new ReferenceError()).toBe('object')" },
+    ],
+    hints: ['ReferenceError inherits from Error in the prototype chain.'],
+    tags: ['referenceerror', 'constructor', 'instanceof', 'error'],
+  },
+  {
+    slug: 'referenceerror-constructor-3',
+    title: 'ReferenceError — .message property',
+    description: `## ReferenceError Message\n\nThe message passed to \`new ReferenceError(message)\` is stored in \`.message\`.\n\n**Challenge:** Verify the \`.message\` property.`,
+    category: 'constructor',
+    difficulty: 'beginner',
+    builtIn: 'ReferenceError',
+    initialCode: `const err = new ReferenceError('x is not defined')\n`,
+    solution: `new ReferenceError('x is not defined').message`,
+    tests: [
+      { description: "message is 'x is not defined'", assertion: "expect(new ReferenceError('x is not defined').message).toBe('x is not defined')" },
+      { description: 'message matches input', assertion: "expect(new ReferenceError('hello').message).toBe('hello')" },
+      { description: 'message is a string', assertion: "expect(typeof new ReferenceError('x').message).toBe('string')" },
+      { description: 'message is accessible', assertion: "expect(new ReferenceError('test').message).toBeTruthy()" },
+      { description: 'empty message is empty string', assertion: "expect(new ReferenceError('').message).toBe('')" },
+    ],
+    hints: ['The message is stored in the .message property.'],
+    tags: ['referenceerror', 'constructor', 'message'],
+  },
+  {
+    slug: 'referenceerror-constructor-4',
+    title: 'ReferenceError — .name property',
+    description: `## ReferenceError Name\n\nEvery ReferenceError has a \`.name\` property equal to \`'ReferenceError'\`.\n\n**Challenge:** Verify the \`.name\` property.`,
+    category: 'constructor',
+    difficulty: 'beginner',
+    builtIn: 'ReferenceError',
+    initialCode: `const err = new ReferenceError()\n`,
+    solution: `new ReferenceError().name`,
+    tests: [
+      { description: "name is 'ReferenceError'", assertion: "expect(new ReferenceError().name).toBe('ReferenceError')" },
+      { description: 'name is a string', assertion: "expect(typeof new ReferenceError().name).toBe('string')" },
+      { description: 'name is truthy', assertion: "expect(new ReferenceError().name).toBeTruthy()" },
+      { description: 'name does not equal Error', assertion: "expect(new ReferenceError().name).not.toBe('Error')" },
+      { description: 'name is consistent', assertion: "expect(new ReferenceError('x').name).toBe('ReferenceError')" },
+    ],
+    hints: ['Error subtypes have a .name property matching their constructor name.'],
+    tags: ['referenceerror', 'constructor', 'name'],
+  },
+  {
+    slug: 'referenceerror-constructor-5',
+    title: 'ReferenceError — throw and catch',
+    description: `## Catching ReferenceError\n\nYou can manually throw and catch a ReferenceError.\n\n**Challenge:** Throw a ReferenceError and return its \`.name\` from the catch block.`,
+    category: 'constructor',
+    difficulty: 'intermediate',
+    builtIn: 'ReferenceError',
+    initialCode: `function throwRef() {
+  try {
+    // Throw a ReferenceError manually
+  } catch (e) {
+    return (e as ReferenceError).name;
+  }
+}`,
+    solution: `function throwRef() {
+  try {
+    throw new ReferenceError('test');
+  } catch (e) {
+    return (e as ReferenceError).name;
+  }
+}`,
+    tests: [
+      { description: "returns 'ReferenceError'", assertion: "function throwRef() { try { throw new ReferenceError('test'); } catch(e: any) { return e.name; } } expect(throwRef()).toBe('ReferenceError')" },
+      { description: 'caught error is a ReferenceError', assertion: "function throwRef2() { try { throw new ReferenceError('test'); } catch(e) { return e instanceof ReferenceError; } } expect(throwRef2()).toBe(true)" },
+      { description: 'caught error is also an Error', assertion: "function throwRef3() { try { throw new ReferenceError('test'); } catch(e) { return e instanceof Error; } } expect(throwRef3()).toBe(true)" },
+      { description: 'caught error has a message', assertion: "function throwRef4() { try { throw new ReferenceError('test'); } catch(e: any) { return e.message; } } expect(throwRef4()).toBe('test')" },
+      { description: 'throws a ReferenceError', assertion: "expect(() => { throw new ReferenceError('test'); }).toThrow(ReferenceError)" },
+    ],
+    hints: ['Use throw new ReferenceError(message) to manually throw a ReferenceError.'],
+    tags: ['referenceerror', 'constructor', 'throw', 'catch'],
+  },
+]
