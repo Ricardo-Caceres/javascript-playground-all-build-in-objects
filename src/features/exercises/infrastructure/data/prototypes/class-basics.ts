@@ -142,7 +142,7 @@ const name = person.name`,
 Classes support getter and setter syntax using the \`get\` and \`set\` keywords. Getters allow you to compute values, and setters allow you to validate or transform data when properties are assigned.
 
 **Challenge:** Create a class with getter and setter to manage a computed property with validation.`,
-    category: 'instance-method',
+    category: 'constructor',
     difficulty: 'intermediate',
     builtIn: 'Prototypes',
     initialCode: `class Temperature {
@@ -207,7 +207,7 @@ const c = temp.celsius`,
 Static methods belong to the class itself, not to instances. They're useful for utility functions or factory methods that relate to the class but don't need instance data.
 
 **Challenge:** Create a class with static methods for creating instances or performing calculations.`,
-    category: 'static-method',
+    category: 'constructor',
     difficulty: 'advanced',
     builtIn: 'Prototypes',
     initialCode: `class Calculator {
