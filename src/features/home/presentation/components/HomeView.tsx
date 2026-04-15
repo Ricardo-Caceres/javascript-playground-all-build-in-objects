@@ -1,70 +1,173 @@
+'use client'
+
 import Link from 'next/link'
+import { useState } from 'react'
+import { useSelector } from 'react-redux'
+import type { RootState } from '@/shared/lib/store'
+import { allExercises } from '@/features/exercises/infrastructure/data'
 import { getAvailableObjects } from '@/features/exercises/infrastructure/repositories/exerciseRepository'
 
+const OBJECT_GROUPS: Record<string, string[]> = {
+  Fundamentals: ['Array', 'String', 'Object', 'Number', 'Boolean', 'BigInt', 'Symbol', 'Math'],
+  Collections: ['Map', 'Set', 'WeakMap', 'WeakSet'],
+  Errors: ['Error', 'TypeError', 'RangeError', 'SyntaxError', 'ReferenceError', 'AggregateError'],
+  'Async & Gen': ['Promise', 'Generator', 'Iterator', 'AsyncFunction'],
+  Buffers: ['ArrayBuffer', 'SharedArrayBuffer', 'DataView', 'TypedArray', 'Atomics'],
+  'Intl & Global': ['Intl', 'GlobalFunctions', 'globalThis', 'structuredClone'],
+  Reflection: ['Proxy', 'Reflect', 'Function'],
+  Other: ['WeakRef', 'FinalizationRegistry', 'Date', 'RegExp', 'JSON'],
+}
+
+// Pre-compute total exercises per built-in object (static, never changes)
+const EXERCISE_COUNTS: Record<string, number> = {}
+const EXERCISE_SLUGS: Record<string, string[]> = {}
+for (const ex of allExercises) {
+  EXERCISE_COUNTS[ex.builtIn] = (EXERCISE_COUNTS[ex.builtIn] ?? 0) + 1
+  if (!EXERCISE_SLUGS[ex.builtIn]) EXERCISE_SLUGS[ex.builtIn] = []
+  EXERCISE_SLUGS[ex.builtIn].push(ex.slug)
+}
+
 export default function HomeView() {
+  const [search, setSearch] = useState('')
+  const [activeGroup, setActiveGroup] = useState('All')
+  const progressMap = useSelector((state: RootState) => state.progress.exercises)
+
   const objects = getAvailableObjects()
 
+  const filtered = objects.filter((obj) => {
+    const matchesSearch = obj.toLowerCase().includes(search.toLowerCase())
+    const matchesGroup =
+      activeGroup === 'All' || (OBJECT_GROUPS[activeGroup]?.includes(obj) ?? false)
+    return matchesSearch && matchesGroup
+  })
+
   return (
-    <main className="min-h-screen bg-[linear-gradient(180deg,#f8f5ef_0%,#ece7de_100%)] px-6 py-16 text-zinc-950">
-      <div className="mx-auto max-w-6xl space-y-12">
+    <main className="min-h-screen bg-zinc-950 px-6 py-12 text-zinc-100">
+      <div className="mx-auto max-w-6xl space-y-10">
         {/* Hero */}
-        <section className="rounded-[2rem] bg-white/90 p-8 shadow-[0_24px_80px_rgba(32,24,16,0.08)] backdrop-blur">
-          <p className="text-sm font-semibold uppercase tracking-[0.3em] text-amber-700">
+        <section className="space-y-3">
+          <p className="font-mono text-xs font-semibold uppercase tracking-widest text-emerald-500">
             JavaScript Practice
           </p>
-          <h1 className="mt-4 max-w-2xl text-4xl font-semibold leading-tight sm:text-5xl">
-            Master the Standard Built-in Objects
+          <h1 className="text-4xl font-bold leading-tight text-zinc-100 sm:text-5xl">
+            Master the Standard
+            <br />
+            Built-in Objects
           </h1>
-          <p className="mt-4 max-w-2xl text-base leading-8 text-zinc-600">
-            Interactive TypeScript exercises for every constructor, static method, instance method,
-            and property — inspired by Codewars and Codility.
+          <p className="max-w-2xl text-base leading-8 text-zinc-400">
+            {allExercises.length}+ interactive TypeScript exercises for every constructor, static
+            method, instance method, and property — inspired by Codewars and Codility.
           </p>
-          <div className="mt-6 flex flex-wrap gap-3 text-sm text-zinc-600">
-            <span className="rounded-full bg-stone-100 px-4 py-2">Monaco Editor</span>
-            <span className="rounded-full bg-stone-100 px-4 py-2">In-browser tests</span>
-            <span className="rounded-full bg-stone-100 px-4 py-2">TypeScript</span>
-            <span className="rounded-full bg-stone-100 px-4 py-2">Progress tracking</span>
+          <div className="flex flex-wrap gap-2 pt-1">
+            {['Monaco Editor', 'In-browser tests', 'TypeScript', 'Progress tracking'].map(
+              (tag) => (
+                <span
+                  key={tag}
+                  className="rounded-full border border-zinc-800 px-3 py-1 text-xs text-zinc-600"
+                >
+                  {tag}
+                </span>
+              ),
+            )}
           </div>
         </section>
 
-        {/* Built-in objects grid */}
-        <section>
-          <h2 className="mb-5 text-xl font-semibold text-zinc-800">Built-in Objects</h2>
-          <div className="grid gap-4 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4">
-            {objects.map((obj) => (
-              <Link
-                key={obj}
-                href={`/exercises/${obj.toLowerCase()}`}
-                className="flex items-center justify-between rounded-2xl border border-stone-200 bg-white px-6 py-5 shadow-sm transition-transform hover:-translate-y-0.5 hover:shadow-md"
+        {/* Search + filter */}
+        <section className="space-y-3">
+          <input
+            type="search"
+            placeholder="Search objects…"
+            value={search}
+            onChange={(e) => setSearch(e.target.value)}
+            className="w-full max-w-sm rounded-lg border border-zinc-700 bg-zinc-900 px-4 py-2 text-sm text-zinc-200 placeholder-zinc-600 outline-none focus:border-emerald-600 focus:ring-1 focus:ring-emerald-600"
+          />
+          <div className="flex flex-wrap gap-2">
+            {['All', ...Object.keys(OBJECT_GROUPS)].map((group) => (
+              <button
+                key={group}
+                onClick={() => setActiveGroup(group)}
+                className={`rounded-full px-3 py-1 text-xs font-medium transition-colors ${
+                  activeGroup === group
+                    ? 'bg-emerald-700 text-white'
+                    : 'border border-zinc-700 text-zinc-400 hover:border-zinc-500 hover:text-zinc-200'
+                }`}
               >
-                <code className="text-lg font-semibold text-zinc-800">{obj}</code>
-                <span className="text-zinc-400">→</span>
-              </Link>
+                {group}
+              </button>
             ))}
           </div>
         </section>
 
-        {/* Legacy demos */}
+        {/* Objects grid */}
         <section>
-          <h2 className="mb-5 text-xl font-semibold text-zinc-800">Redux Architecture Examples</h2>
-          <div className="grid gap-4 sm:grid-cols-2">
+          <h2 className="mb-4 text-xs font-semibold uppercase tracking-widest text-zinc-600">
+            Built-in Objects ({filtered.length})
+          </h2>
+          {filtered.length === 0 ? (
+            <p className="text-sm text-zinc-600">No objects match &ldquo;{search}&rdquo;</p>
+          ) : (
+            <div className="grid gap-3 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4">
+              {filtered.map((obj) => {
+                const total = EXERCISE_COUNTS[obj] ?? 0
+                const slugs = EXERCISE_SLUGS[obj] ?? []
+                const completed = slugs.filter(
+                  (s) => progressMap[s]?.status === 'completed',
+                ).length
+                const pct = total > 0 ? Math.round((completed / total) * 100) : 0
+                const isDone = completed === total && total > 0
+                return (
+                  <Link
+                    key={obj}
+                    href={`/exercises/${obj.toLowerCase()}`}
+                    className={`rounded-xl border p-5 transition-colors ${
+                      isDone
+                        ? 'border-emerald-800/60 bg-emerald-950/30 hover:border-emerald-700'
+                        : 'border-zinc-800 bg-zinc-900 hover:border-zinc-600'
+                    }`}
+                  >
+                    <div className="flex items-center justify-between">
+                      <code className="text-base font-semibold text-zinc-200">{obj}</code>
+                      {isDone && <span className="text-emerald-400 text-sm">✓</span>}
+                    </div>
+                    <div className="mt-3 h-1 w-full rounded-full bg-zinc-800">
+                      <div
+                        className="h-1 rounded-full bg-emerald-600 transition-all"
+                        style={{ width: `${pct}%` }}
+                      />
+                    </div>
+                    <p className="mt-1.5 text-xs text-zinc-600">
+                      {completed}/{total}
+                    </p>
+                  </Link>
+                )
+              })}
+            </div>
+          )}
+        </section>
+
+        {/* Redux demos – de-emphasized */}
+        <section>
+          <h2 className="mb-4 text-xs font-semibold uppercase tracking-widest text-zinc-700">
+            Redux Architecture Examples
+          </h2>
+          <div className="grid gap-3 sm:grid-cols-2">
             <Link
-              className="rounded-[2rem] border border-stone-200 bg-stone-950 p-8 text-white transition-transform hover:-translate-y-1"
               href="/redux-legacy"
+              className="rounded-xl border border-zinc-800 bg-zinc-900 p-5 transition-colors hover:border-zinc-700"
             >
-              <p className="text-sm uppercase tracking-[0.24em] text-stone-300">Página 01</p>
-              <h3 className="mt-3 text-2xl font-semibold">Redux legacy</h3>
-              <p className="mt-3 text-sm leading-7 text-stone-300">
+              <p className="text-xs uppercase tracking-widest text-zinc-600">Página 01</p>
+              <h3 className="mt-2 font-semibold text-zinc-300">Redux legacy</h3>
+              <p className="mt-1 text-xs text-zinc-600">
                 Action types, action creators, reducer manual y legacy_createStore.
               </p>
             </Link>
             <Link
-              className="rounded-[2rem] border border-emerald-200 bg-emerald-100 p-8 text-emerald-950 transition-transform hover:-translate-y-1"
               href="/redux-toolkit"
+              className="rounded-xl border border-zinc-800 bg-zinc-900 p-5 transition-colors hover:border-zinc-700"
             >
-              <p className="text-sm uppercase tracking-[0.24em] text-emerald-700">Página 02</p>
-              <h3 className="mt-3 text-2xl font-semibold">Redux Toolkit</h3>
-              <p className="mt-3 text-sm leading-7 text-emerald-800">
+              <p className="text-xs uppercase tracking-widest text-zinc-600">Página 02</p>
+              <h3 className="mt-2 font-semibold text-zinc-300">Redux Toolkit</h3>
+              <p className="mt-1 text-xs text-zinc-600">
                 configureStore, slice, selectors memoizados y thunk.
               </p>
             </Link>
