@@ -51,7 +51,7 @@ export function ExerciseDetailView({ exercise }: ExerciseDetailViewProps) {
               </summary>
               <ul className="mt-3 space-y-2">
                 {exercise.hints.map((hint, i) => (
-                  <li key={i} className="text-sm text-zinc-400">
+                  <li key={`${i}-${hint.slice(0, 20)}`} className="text-sm text-zinc-400">
                     • {hint}
                   </li>
                 ))}

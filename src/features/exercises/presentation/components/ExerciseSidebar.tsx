@@ -15,8 +15,14 @@ export default function ExerciseSidebar({ objectName, currentSlug }: Props) {
   const progressMap = useSelector((state: RootState) => state.progress.exercises)
   const exercises = getAllExercisesByObject(objectName)
   const activeRef = useRef<HTMLAnchorElement>(null)
+  const isMounted = useRef(false)
 
   useEffect(() => {
+    if (!isMounted.current) {
+      isMounted.current = true
+      activeRef.current?.scrollIntoView({ block: 'nearest', behavior: 'instant' })
+      return
+    }
     activeRef.current?.scrollIntoView({ block: 'nearest', behavior: 'smooth' })
   }, [currentSlug])
 
@@ -53,6 +59,7 @@ export default function ExerciseSidebar({ objectName, currentSlug }: Props) {
               key={ex.slug}
               href={`/exercises/${objectName.toLowerCase()}/${ex.slug}`}
               ref={isActive ? activeRef : null}
+              aria-current={isActive ? 'page' : undefined}
               className={`flex items-center gap-2 px-4 py-2 text-sm transition-colors ${
                 isActive
                   ? 'bg-zinc-800 text-zinc-100'

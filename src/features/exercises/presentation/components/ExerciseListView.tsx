@@ -32,6 +32,7 @@ export default function ExerciseListView({ objectName }: Props) {
   const progressMap = useSelector((state: RootState) => state.progress.exercises)
 
   const exercises = getAllExercisesByObject(objectName)
+  const displayName = exercises[0]?.builtIn ?? objectName
   const completed = exercises.filter((e) => progressMap[e.slug]?.status === 'completed').length
   const total = exercises.length
   const pct = total > 0 ? Math.round((completed / total) * 100) : 0
@@ -54,7 +55,7 @@ export default function ExerciseListView({ objectName }: Props) {
           >
             ← Home
           </Link>
-          <h1 className="text-3xl font-bold text-zinc-100">{objectName}</h1>
+          <h1 className="text-3xl font-bold text-zinc-100">{displayName}</h1>
           {/* Progress bar */}
           <div className="space-y-1">
             <div className="h-2 w-full rounded-full bg-zinc-800">
@@ -75,7 +76,9 @@ export default function ExerciseListView({ objectName }: Props) {
             {(['all', 'beginner', 'intermediate', 'advanced'] as const).map((d) => (
               <button
                 key={d}
+                type="button"
                 onClick={() => setDiffFilter(d)}
+                aria-pressed={diffFilter === d}
                 className={`rounded-full px-3 py-1 text-xs font-medium transition-colors ${
                   diffFilter === d
                     ? 'bg-emerald-700 text-white'
@@ -90,7 +93,9 @@ export default function ExerciseListView({ objectName }: Props) {
             {(['all', 'not-started', 'attempted', 'completed'] as const).map((s) => (
               <button
                 key={s}
+                type="button"
                 onClick={() => setStatusFilter(s)}
+                aria-pressed={statusFilter === s}
                 className={`rounded-full px-3 py-1 text-xs font-medium transition-colors ${
                   statusFilter === s
                     ? 'bg-zinc-600 text-white'
