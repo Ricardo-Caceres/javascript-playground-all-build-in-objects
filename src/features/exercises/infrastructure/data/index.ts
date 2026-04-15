@@ -308,6 +308,33 @@ import { proxyGetExercises } from './proxy/getHandler'
 import { proxySetExercises } from './proxy/setHandler'
 import { proxyHasExercises } from './proxy/hasHandler'
 import { proxyDeleteExercises } from './proxy/deleteHandler'
+// Global Functions exercises
+import { globalParseIntExercises } from './globalfunctions/parseInt'
+import { globalParseFloatExercises } from './globalfunctions/parseFloat'
+import { globalIsNaNExercises } from './globalfunctions/isNaN'
+import { globalIsFiniteExercises } from './globalfunctions/isFinite'
+import { globalEncodeURIExercises } from './globalfunctions/encodeURI'
+import { globalDecodeURIExercises } from './globalfunctions/decodeURI'
+import { globalEncodeURIComponentExercises } from './globalfunctions/encodeURIComponent'
+import { globalDecodeURIComponentExercises } from './globalfunctions/decodeURIComponent'
+// WeakRef exercises
+import { weakRefConstructorExercises } from './weakref/constructor'
+import { weakRefDerefExercises } from './weakref/deref'
+// FinalizationRegistry exercises
+import { finalizationRegistryConstructorExercises } from './finalizationregistry/constructor'
+import { finalizationRegistryRegisterExercises } from './finalizationregistry/register'
+// Intl exercises
+import { intlDateTimeFormatExercises } from './intl/dateTimeFormat'
+import { intlNumberFormatExercises } from './intl/numberFormat'
+import { intlCollatorExercises } from './intl/collator'
+import { intlPluralRulesExercises } from './intl/pluralRules'
+import { intlRelativeTimeFormatExercises } from './intl/relativeTimeFormat'
+// Atomics exercises
+import { atomicsAddExercises } from './atomics/atomicsAdd'
+import { atomicsLoadExercises } from './atomics/atomicsLoad'
+import { atomicsStoreExercises } from './atomics/atomicsStore'
+import { atomicsSubExercises } from './atomics/atomicsSub'
+import { atomicsCompareExchangeExercises } from './atomics/atomicsCompareExchange'
 // Reflect exercises
 import { reflectGetExercises } from './reflect/reflectGet'
 import { reflectSetExercises } from './reflect/reflectSet'
@@ -734,4 +761,31 @@ export const allExercises: Exercise[] = [
    ...dataViewGetUint8Exercises,
    ...dataViewGetFloat64Exercises,
    ...dataViewByteOffsetExercises,
+  // Global Functions exercises
+  ...globalParseIntExercises,
+  ...globalParseFloatExercises,
+  ...globalIsNaNExercises,
+  ...globalIsFiniteExercises,
+  ...globalEncodeURIExercises,
+  ...globalDecodeURIExercises,
+  ...globalEncodeURIComponentExercises,
+  ...globalDecodeURIComponentExercises,
+  // WeakRef exercises
+  ...weakRefConstructorExercises,
+  ...weakRefDerefExercises,
+  // FinalizationRegistry exercises
+  ...finalizationRegistryConstructorExercises,
+  ...finalizationRegistryRegisterExercises,
+  // Intl exercises
+  ...intlDateTimeFormatExercises,
+  ...intlNumberFormatExercises,
+  ...intlCollatorExercises,
+  ...intlPluralRulesExercises,
+  ...intlRelativeTimeFormatExercises,
+  // Atomics exercises
+  ...atomicsAddExercises,
+  ...atomicsLoadExercises,
+  ...atomicsStoreExercises,
+  ...atomicsSubExercises,
+  ...atomicsCompareExchangeExercises,
 ]
