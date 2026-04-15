@@ -405,6 +405,12 @@ import { closuresCounterExercises } from './closures/counter'
 import { closuresPrivateStateExercises } from './closures/private-state'
 import { closuresFactoryExercises } from './closures/factory'
 import { closuresScopeExercises } from './closures/scope'
+// Functional Programming exercises
+import { fpPureFunctionsExercises } from './functionalprogramming/pure-functions'
+import { fpCurryingExercises } from './functionalprogramming/currying'
+import { fpCompositionExercises } from './functionalprogramming/composition'
+import { fpHigherOrderExercises } from './functionalprogramming/higher-order'
+import { fpMemoizationExercises } from './functionalprogramming/memoization'
 // Prototypes exercises
 import { prototypeChainExercises } from './prototypes/prototype-chain'
 import { prototypeObjectCreateExercises } from './prototypes/object-create'
@@ -938,6 +944,12 @@ export const allExercises: Exercise[] = [
   ...closuresPrivateStateExercises,
   ...closuresFactoryExercises,
   ...closuresScopeExercises,
+  // Functional Programming exercises
+  ...fpPureFunctionsExercises,
+  ...fpCurryingExercises,
+  ...fpCompositionExercises,
+  ...fpHigherOrderExercises,
+  ...fpMemoizationExercises,
   // Prototypes exercises
   ...prototypeChainExercises,
   ...prototypeObjectCreateExercises,
