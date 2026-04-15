@@ -421,6 +421,12 @@ import { asyncPromiseBasicsExercises } from './asyncpatterns/promise-basics'
 import { asyncCombinatorsExercises } from './asyncpatterns/combinators'
 import { asyncAwaitExercises } from './asyncpatterns/async-await'
 import { asyncErrorHandlingExercises } from './asyncpatterns/error-handling'
+// Design Patterns exercises
+import { dpSingletonExercises } from './designpatterns/singleton'
+import { dpObserverExercises } from './designpatterns/observer'
+import { dpFactoryExercises } from './designpatterns/factory'
+import { dpDecoratorExercises } from './designpatterns/decorator'
+import { dpStrategyExercises } from './designpatterns/strategy'
 // Reflect exercises
 import { reflectGetExercises } from './reflect/reflectGet'
 import { reflectSetExercises } from './reflect/reflectSet'
@@ -960,4 +966,10 @@ export const allExercises: Exercise[] = [
   ...asyncCombinatorsExercises,
   ...asyncAwaitExercises,
   ...asyncErrorHandlingExercises,
+  // Design Patterns exercises
+  ...dpSingletonExercises,
+  ...dpObserverExercises,
+  ...dpFactoryExercises,
+  ...dpDecoratorExercises,
+  ...dpStrategyExercises,
 ]
