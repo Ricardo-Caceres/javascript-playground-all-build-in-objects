@@ -33,6 +33,7 @@ export function ExerciseRunner({ exercise, objectName }: Props) {
   const engineRef = useRef<WorkerEngine | null>(null)
   // Stable ref so the keydown listener never captures a stale `run`
   const runRef = useRef<() => void>(() => {})
+  const isRunningRef = useRef(false)
 
   const { prevSlug, nextSlug, currentIndex, total } = useExerciseNavigation(
     objectName,
@@ -47,7 +48,8 @@ export function ExerciseRunner({ exercise, objectName }: Props) {
   }, [])
 
   const run = useCallback(async () => {
-    if (!engineRef.current) return
+    if (!engineRef.current || isRunningRef.current) return
+    isRunningRef.current = true
     setIsRunning(true)
     try {
       const result = await engineRef.current.run(code, exercise.tests)
@@ -61,16 +63,17 @@ export function ExerciseRunner({ exercise, objectName }: Props) {
         ])
       } else {
         setResults(result.results)
+        const allPassed = result.results.length > 0 && result.results.every((r) => r.passed)
+        dispatch(
+          updateProgress({
+            slug: exercise.slug,
+            status: allPassed ? 'completed' : 'attempted',
+            lastCode: code,
+          }),
+        )
       }
-      const allPassed = result.results.length > 0 && result.results.every((r) => r.passed)
-      dispatch(
-        updateProgress({
-          slug: exercise.slug,
-          status: allPassed ? 'completed' : 'attempted',
-          lastCode: code,
-        }),
-      )
     } finally {
+      isRunningRef.current = false
       setIsRunning(false)
     }
   }, [code, exercise, dispatch])
@@ -172,7 +175,7 @@ export function ExerciseRunner({ exercise, objectName }: Props) {
             disabled={isRunning}
             className="rounded bg-emerald-700 px-4 py-1 text-xs font-semibold text-white transition-colors hover:bg-emerald-600 disabled:opacity-50"
           >
-            {isRunning ? 'Running…' : 'Run ⌘↵'}
+            {isRunning ? 'Running…' : 'Run ⌘/Ctrl↵'}
           </button>
         </div>
       </div>
