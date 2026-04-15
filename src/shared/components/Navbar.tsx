@@ -23,17 +23,19 @@ export function Navbar() {
         >
           JS Built-ins
         </Link>
-        <div className="flex items-center gap-4">
-          <span className="hidden text-xs text-zinc-500 sm:block">
-            {completed} / {TOTAL} completed ({pct}%)
-          </span>
-          <Link
-            href="/stats"
-            className="rounded border border-zinc-700 px-3 py-1 text-xs text-zinc-400 transition-colors hover:border-zinc-500 hover:text-zinc-200"
-          >
-            Stats →
-          </Link>
-        </div>
+        <nav aria-label="Site navigation">
+          <div className="flex items-center gap-4">
+            <span className="hidden text-xs text-zinc-500 sm:block">
+              {completed} / {TOTAL} completed ({pct}%)
+            </span>
+            <Link
+              href="/stats"
+              className="rounded border border-zinc-700 px-3 py-1 text-xs text-zinc-400 transition-colors hover:border-zinc-500 hover:text-zinc-200"
+            >
+              Stats →
+            </Link>
+          </div>
+        </nav>
       </div>
     </header>
   )

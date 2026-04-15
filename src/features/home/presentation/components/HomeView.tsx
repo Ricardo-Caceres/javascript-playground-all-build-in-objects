@@ -27,14 +27,14 @@ for (const ex of allExercises) {
   EXERCISE_SLUGS[ex.builtIn].push(ex.slug)
 }
 
+const OBJECTS = getAvailableObjects()
+
 export default function HomeView() {
   const [search, setSearch] = useState('')
   const [activeGroup, setActiveGroup] = useState('All')
   const progressMap = useSelector((state: RootState) => state.progress.exercises)
 
-  const objects = getAvailableObjects()
-
-  const filtered = objects.filter((obj) => {
+  const filtered = OBJECTS.filter((obj) => {
     const matchesSearch = obj.toLowerCase().includes(search.toLowerCase())
     const matchesGroup =
       activeGroup === 'All' || (OBJECT_GROUPS[activeGroup]?.includes(obj) ?? false)
@@ -42,7 +42,7 @@ export default function HomeView() {
   })
 
   return (
-    <main className="min-h-screen bg-zinc-950 px-6 py-12 text-zinc-100">
+    <main className="flex-1 bg-zinc-950 px-6 py-12 text-zinc-100">
       <div className="mx-auto max-w-6xl space-y-10">
         {/* Hero */}
         <section className="space-y-3">
@@ -80,6 +80,7 @@ export default function HomeView() {
             value={search}
             onChange={(e) => setSearch(e.target.value)}
             className="w-full max-w-sm rounded-lg border border-zinc-700 bg-zinc-900 px-4 py-2 text-sm text-zinc-200 placeholder-zinc-600 outline-none focus:border-emerald-600 focus:ring-1 focus:ring-emerald-600"
+            aria-label="Search built-in objects"
           />
           <div className="flex flex-wrap gap-2">
             {['All', ...Object.keys(OBJECT_GROUPS)].map((group) => (
