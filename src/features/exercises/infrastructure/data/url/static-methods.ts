@@ -2,7 +2,7 @@ import type { Exercise } from '@/shared/types/exercises'
 
 export const urlStaticMethodsExercises: Exercise[] = [
   {
-    slug: 'url-canparse-valid',
+    slug: 'url-static-method-1',
     title: 'URL.canParse() — valid absolute URL returns true',
     description: `## URL.canParse()\n\n\`URL.canParse(href)\` returns \`true\` if the string is a valid URL, \`false\` otherwise.\n\n**Challenge:** Verify that \`URL.canParse('https://example.com')\` returns \`true\`.`,
     category: 'static-method',
@@ -21,7 +21,7 @@ export const urlStaticMethodsExercises: Exercise[] = [
     tags: ['URL', 'static-method', 'canParse'],
   },
   {
-    slug: 'url-canparse-invalid',
+    slug: 'url-static-method-2',
     title: 'URL.canParse() — invalid URL returns false',
     description: `## URL.canParse() — invalid\n\n\`URL.canParse()\` returns \`false\` for strings that are not valid absolute URLs (without a base).\n\n**Challenge:** Verify that \`URL.canParse('not-a-url')\` returns \`false\`.`,
     category: 'static-method',
@@ -40,7 +40,7 @@ export const urlStaticMethodsExercises: Exercise[] = [
     tags: ['URL', 'static-method', 'canParse', 'validation'],
   },
   {
-    slug: 'url-canparse-relative-with-base',
+    slug: 'url-static-method-3',
     title: 'URL.canParse() — relative URL with base',
     description: `## URL.canParse() — relative + base\n\n\`URL.canParse(relative, base)\` returns \`true\` when the relative path can be resolved against the base.\n\n**Challenge:** Verify \`URL.canParse('/path', 'https://example.com')\` returns \`true\`.`,
     category: 'static-method',
@@ -59,7 +59,7 @@ export const urlStaticMethodsExercises: Exercise[] = [
     tags: ['URL', 'static-method', 'canParse', 'relative'],
   },
   {
-    slug: 'url-canparse-empty-string',
+    slug: 'url-static-method-4',
     title: 'URL.canParse() — empty string returns false',
     description: `## URL.canParse() — empty string\n\nAn empty string without a base is not a valid absolute URL.\n\n**Challenge:** Verify \`URL.canParse('')\` returns \`false\`.`,
     category: 'static-method',
@@ -78,7 +78,7 @@ export const urlStaticMethodsExercises: Exercise[] = [
     tags: ['URL', 'static-method', 'canParse'],
   },
   {
-    slug: 'url-canparse-is-function',
+    slug: 'url-static-method-5',
     title: 'URL.canParse() — is a static function',
     description: `## URL.canParse() — static method\n\n\`URL.canParse\` is a static method on the \`URL\` class.\n\n**Challenge:** Verify that \`URL.canParse\` is a function and behaves correctly.`,
     category: 'static-method',

@@ -2,7 +2,7 @@ import type { Exercise } from '@/shared/types/exercises'
 
 export const urlInstanceMethodsExercises: Exercise[] = [
   {
-    slug: 'url-tostring-equals-href',
+    slug: 'url-instance-method-1',
     title: 'URL#toString() — equals href',
     description: `## URL#toString()\n\n\`url.toString()\` returns the serialized URL, identical to \`url.href\`.\n\n**Challenge:** Verify that \`toString()\` output equals \`href\`.`,
     category: 'instance-method',
@@ -21,7 +21,7 @@ export const urlInstanceMethodsExercises: Exercise[] = [
     tags: ['URL', 'instance-method', 'toString'],
   },
   {
-    slug: 'url-tostring-reflects-mutation',
+    slug: 'url-instance-method-2',
     title: 'URL#toString() — reflects property changes',
     description: `## URL#toString() — after mutation\n\nChanging a URL property (e.g. \`pathname\`) updates the serialized URL returned by \`toString()\`.\n\n**Challenge:** Change \`pathname\` and verify \`toString()\` reflects the change.`,
     category: 'instance-method',
@@ -40,7 +40,7 @@ export const urlInstanceMethodsExercises: Exercise[] = [
     tags: ['URL', 'instance-method', 'toString', 'mutation'],
   },
   {
-    slug: 'url-tojson-returns-string',
+    slug: 'url-instance-method-3',
     title: 'URL#toJSON() — returns a string',
     description: `## URL#toJSON()\n\n\`url.toJSON()\` returns the serialized URL as a string (same as \`href\`).\n\n**Challenge:** Verify the return type of \`toJSON()\`.`,
     category: 'instance-method',
@@ -59,7 +59,7 @@ export const urlInstanceMethodsExercises: Exercise[] = [
     tags: ['URL', 'instance-method', 'toJSON'],
   },
   {
-    slug: 'url-tojson-equals-href',
+    slug: 'url-instance-method-4',
     title: 'URL#toJSON() — equals href',
     description: `## URL#toJSON() — equals href\n\n\`url.toJSON()\` returns the same string as \`url.href\`.\n\n**Challenge:** Confirm \`toJSON()\` is equal to \`href\`.`,
     category: 'instance-method',
@@ -78,7 +78,7 @@ export const urlInstanceMethodsExercises: Exercise[] = [
     tags: ['URL', 'instance-method', 'toJSON', 'href'],
   },
   {
-    slug: 'url-tostring-tojson-both',
+    slug: 'url-instance-method-5',
     title: 'URL#toString() and toJSON() — comparison',
     description: `## toString() vs toJSON()\n\nBoth \`toString()\` and \`toJSON()\` serialize the URL. They return the same value.\n\n**Challenge:** Verify they produce identical results across different URLs.`,
     category: 'instance-method',

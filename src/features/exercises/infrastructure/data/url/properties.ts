@@ -2,7 +2,7 @@ import type { Exercise } from '@/shared/types/exercises'
 
 export const urlPropertiesExercises: Exercise[] = [
   {
-    slug: 'url-property-href-protocol',
+    slug: 'url-instance-property-1',
     title: 'URL Properties — href and protocol',
     description: `## URL Instance Properties — href & protocol\n\n\`href\` returns the full serialized URL. \`protocol\` returns the scheme followed by \`:\`.\n\n**Challenge:** Parse \`'https://example.com/path'\` and inspect \`href\` and \`protocol\`.`,
     category: 'instance-property',
@@ -21,7 +21,7 @@ export const urlPropertiesExercises: Exercise[] = [
     tags: ['URL', 'instance-property', 'href', 'protocol'],
   },
   {
-    slug: 'url-property-hostname-port-host',
+    slug: 'url-instance-property-2',
     title: 'URL Properties — hostname, port, host',
     description: `## URL Instance Properties — hostname, port, host\n\n\`hostname\` is the domain without port. \`port\` is the port string (empty if default). \`host\` is hostname + port.\n\n**Challenge:** Parse \`'http://host.com:8080/p'\` and check these properties.`,
     category: 'instance-property',
@@ -40,7 +40,7 @@ export const urlPropertiesExercises: Exercise[] = [
     tags: ['URL', 'instance-property', 'hostname', 'port', 'host'],
   },
   {
-    slug: 'url-property-pathname-search',
+    slug: 'url-instance-property-3',
     title: 'URL Properties — pathname and search',
     description: `## URL Instance Properties — pathname & search\n\n\`pathname\` is the path portion. \`search\` is the query string including \`?\`.\n\n**Challenge:** Parse \`'https://a.com/path/to/page?q=hello&lang=en'\` and inspect \`pathname\` and \`search\`.`,
     category: 'instance-property',
@@ -59,7 +59,7 @@ export const urlPropertiesExercises: Exercise[] = [
     tags: ['URL', 'instance-property', 'pathname', 'search'],
   },
   {
-    slug: 'url-property-hash-origin',
+    slug: 'url-instance-property-4',
     title: 'URL Properties — hash and origin',
     description: `## URL Instance Properties — hash & origin\n\n\`hash\` is the fragment including \`#\`. \`origin\` is protocol + hostname + port.\n\n**Challenge:** Check \`hash\` and \`origin\` on various URLs.`,
     category: 'instance-property',
@@ -78,7 +78,7 @@ export const urlPropertiesExercises: Exercise[] = [
     tags: ['URL', 'instance-property', 'hash', 'origin'],
   },
   {
-    slug: 'url-property-username-password',
+    slug: 'url-instance-property-5',
     title: 'URL Properties — username and password',
     description: `## URL Instance Properties — username & password\n\n\`username\` and \`password\` contain the credentials in the URL if present.\n\n**Challenge:** Parse \`'https://user:pass@host.com'\` and check \`username\` and \`password\`.`,
     category: 'instance-property',

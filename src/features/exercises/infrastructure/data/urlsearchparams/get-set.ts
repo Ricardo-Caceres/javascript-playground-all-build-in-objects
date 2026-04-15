@@ -2,7 +2,7 @@ import type { Exercise } from '@/shared/types/exercises'
 
 export const urlSearchParamsGetSetExercises: Exercise[] = [
   {
-    slug: 'urlsearchparams-get-value',
+    slug: 'urlsearchparams-get-set-1',
     title: 'URLSearchParams#get() — returns value for key',
     description: `## URLSearchParams#get()\n\n\`params.get(name)\` returns the first value associated with the given key, or \`null\` if not present.\n\n**Challenge:** Use \`get()\` to retrieve a value from params.`,
     category: 'instance-method',
@@ -21,7 +21,7 @@ export const urlSearchParamsGetSetExercises: Exercise[] = [
     tags: ['URLSearchParams', 'instance-method', 'get'],
   },
   {
-    slug: 'urlsearchparams-get-null',
+    slug: 'urlsearchparams-get-set-2',
     title: 'URLSearchParams#get() — returns null for missing key',
     description: `## URLSearchParams#get() — missing key\n\n\`params.get(name)\` returns \`null\` when the key does not exist.\n\n**Challenge:** Verify that getting a non-existent key returns \`null\`.`,
     category: 'instance-method',
@@ -40,7 +40,7 @@ export const urlSearchParamsGetSetExercises: Exercise[] = [
     tags: ['URLSearchParams', 'instance-method', 'get', 'null'],
   },
   {
-    slug: 'urlsearchparams-getall',
+    slug: 'urlsearchparams-get-set-3',
     title: 'URLSearchParams#getAll() — all values for key',
     description: `## URLSearchParams#getAll()\n\n\`params.getAll(name)\` returns all values for the given key as an array.\n\n**Challenge:** Use \`getAll()\` to retrieve repeated keys.`,
     category: 'instance-method',
@@ -59,7 +59,7 @@ export const urlSearchParamsGetSetExercises: Exercise[] = [
     tags: ['URLSearchParams', 'instance-method', 'getAll'],
   },
   {
-    slug: 'urlsearchparams-has',
+    slug: 'urlsearchparams-get-set-4',
     title: 'URLSearchParams#has() — check key existence',
     description: `## URLSearchParams#has()\n\n\`params.has(name)\` returns \`true\` if the key exists, \`false\` otherwise.\n\n**Challenge:** Use \`has()\` to check for key presence.`,
     category: 'instance-method',
@@ -78,7 +78,7 @@ export const urlSearchParamsGetSetExercises: Exercise[] = [
     tags: ['URLSearchParams', 'instance-method', 'has'],
   },
   {
-    slug: 'urlsearchparams-set',
+    slug: 'urlsearchparams-get-set-5',
     title: 'URLSearchParams#set() — replace existing value',
     description: `## URLSearchParams#set()\n\n\`params.set(name, value)\` sets the value for a key, replacing all existing values for that key.\n\n**Challenge:** Use \`set()\` to update a value.`,
     category: 'instance-method',

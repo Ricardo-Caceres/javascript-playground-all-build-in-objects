@@ -2,7 +2,7 @@ import type { Exercise } from '@/shared/types/exercises'
 
 export const urlSearchParamsPropExercises: Exercise[] = [
   {
-    slug: 'urlsearchparams-size-empty',
+    slug: 'urlsearchparams-properties-1',
     title: 'URLSearchParams#size — empty params is 0',
     description: `## URLSearchParams#size\n\nThe \`size\` property returns the total number of key-value entries.\n\n**Challenge:** Verify that an empty \`URLSearchParams\` has size \`0\`.`,
     category: 'instance-property',
@@ -21,7 +21,7 @@ export const urlSearchParamsPropExercises: Exercise[] = [
     tags: ['URLSearchParams', 'instance-property', 'size'],
   },
   {
-    slug: 'urlsearchparams-size-after-append',
+    slug: 'urlsearchparams-properties-2',
     title: 'URLSearchParams#size — increases after append',
     description: `## URLSearchParams#size — append\n\nEach \`append()\` call adds one entry and increases \`size\` by 1.\n\n**Challenge:** Verify \`size\` after appending entries.`,
     category: 'instance-property',
@@ -40,7 +40,7 @@ export const urlSearchParamsPropExercises: Exercise[] = [
     tags: ['URLSearchParams', 'instance-property', 'size', 'append'],
   },
   {
-    slug: 'urlsearchparams-size-after-set',
+    slug: 'urlsearchparams-properties-3',
     title: 'URLSearchParams#size — set does not add duplicate',
     description: `## URLSearchParams#size — set\n\n\`set()\` replaces all values for a key with one entry, so it does not increase size for existing keys.\n\n**Challenge:** Verify \`size\` after \`set()\` on an existing key.`,
     category: 'instance-property',
@@ -59,7 +59,7 @@ export const urlSearchParamsPropExercises: Exercise[] = [
     tags: ['URLSearchParams', 'instance-property', 'size', 'set'],
   },
   {
-    slug: 'urlsearchparams-size-after-delete',
+    slug: 'urlsearchparams-properties-4',
     title: 'URLSearchParams#size — decreases after delete',
     description: `## URLSearchParams#size — delete\n\n\`delete()\` removes all entries for a key, decreasing \`size\` accordingly.\n\n**Challenge:** Verify \`size\` after \`delete()\`.`,
     category: 'instance-property',
@@ -78,7 +78,7 @@ export const urlSearchParamsPropExercises: Exercise[] = [
     tags: ['URLSearchParams', 'instance-property', 'size', 'delete'],
   },
   {
-    slug: 'urlsearchparams-size-string-init',
+    slug: 'urlsearchparams-properties-5',
     title: 'URLSearchParams#size — from string init',
     description: `## URLSearchParams#size — string init\n\n\`size\` reflects the number of key-value pairs parsed from the constructor string.\n\n**Challenge:** Verify \`size\` after initializing from a query string.`,
     category: 'instance-property',

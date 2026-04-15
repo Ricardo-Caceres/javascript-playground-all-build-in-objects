@@ -2,7 +2,7 @@ import type { Exercise } from '@/shared/types/exercises'
 
 export const urlSearchParamsIterationExercises: Exercise[] = [
   {
-    slug: 'urlsearchparams-keys',
+    slug: 'urlsearchparams-iteration-1',
     title: 'URLSearchParams#keys() — iterate over keys',
     description: `## URLSearchParams#keys()\n\n\`params.keys()\` returns an iterator of all key names. Use \`Array.from()\` to convert to an array.\n\n**Challenge:** Get all keys as an array.`,
     category: 'instance-method',
@@ -21,7 +21,7 @@ export const urlSearchParamsIterationExercises: Exercise[] = [
     tags: ['URLSearchParams', 'instance-method', 'keys', 'iteration'],
   },
   {
-    slug: 'urlsearchparams-values',
+    slug: 'urlsearchparams-iteration-2',
     title: 'URLSearchParams#values() — iterate over values',
     description: `## URLSearchParams#values()\n\n\`params.values()\` returns an iterator of all values.\n\n**Challenge:** Get all values as an array.`,
     category: 'instance-method',
@@ -40,7 +40,7 @@ export const urlSearchParamsIterationExercises: Exercise[] = [
     tags: ['URLSearchParams', 'instance-method', 'values', 'iteration'],
   },
   {
-    slug: 'urlsearchparams-entries',
+    slug: 'urlsearchparams-iteration-3',
     title: 'URLSearchParams#entries() — iterate over key-value pairs',
     description: `## URLSearchParams#entries()\n\n\`params.entries()\` returns an iterator of \`[key, value]\` pairs.\n\n**Challenge:** Get all entries as an array of pairs.`,
     category: 'instance-method',
@@ -59,7 +59,7 @@ export const urlSearchParamsIterationExercises: Exercise[] = [
     tags: ['URLSearchParams', 'instance-method', 'entries', 'iteration'],
   },
   {
-    slug: 'urlsearchparams-foreach',
+    slug: 'urlsearchparams-iteration-4',
     title: 'URLSearchParams#forEach() — iterate with callback',
     description: `## URLSearchParams#forEach()\n\n\`params.forEach(callback)\` calls the callback for each entry with \`(value, key, params)\`.\n\n**Challenge:** Use \`forEach()\` to collect all keys.`,
     category: 'instance-method',
@@ -78,7 +78,7 @@ export const urlSearchParamsIterationExercises: Exercise[] = [
     tags: ['URLSearchParams', 'instance-method', 'forEach', 'iteration'],
   },
   {
-    slug: 'urlsearchparams-sort',
+    slug: 'urlsearchparams-iteration-5',
     title: 'URLSearchParams#sort() — sort by key name',
     description: `## URLSearchParams#sort()\n\n\`params.sort()\` sorts all key-value pairs in-place by their key names (Unicode order).\n\n**Challenge:** Sort params and verify the key order.`,
     category: 'instance-method',

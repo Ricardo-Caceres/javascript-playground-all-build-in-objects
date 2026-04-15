@@ -2,7 +2,7 @@ import type { Exercise } from '@/shared/types/exercises'
 
 export const urlSearchParamsConstructorExercises: Exercise[] = [
   {
-    slug: 'urlsearchparams-constructor-string',
+    slug: 'urlsearchparams-constructor-1',
     title: 'URLSearchParams Constructor — string init',
     description: `## URLSearchParams Constructor — string\n\n\`new URLSearchParams('key=val&k2=v2')\` parses a query string into key-value pairs.\n\n**Challenge:** Parse \`'a=1&b=2'\` and retrieve each value.`,
     category: 'constructor',
@@ -21,7 +21,7 @@ export const urlSearchParamsConstructorExercises: Exercise[] = [
     tags: ['URLSearchParams', 'constructor', 'string'],
   },
   {
-    slug: 'urlsearchparams-constructor-object',
+    slug: 'urlsearchparams-constructor-2',
     title: 'URLSearchParams Constructor — object init',
     description: `## URLSearchParams Constructor — object\n\n\`new URLSearchParams({ key: 'val' })\` accepts a plain object of string key-value pairs.\n\n**Challenge:** Build params from an object and retrieve a value.`,
     category: 'constructor',
@@ -40,7 +40,7 @@ export const urlSearchParamsConstructorExercises: Exercise[] = [
     tags: ['URLSearchParams', 'constructor', 'object'],
   },
   {
-    slug: 'urlsearchparams-constructor-array',
+    slug: 'urlsearchparams-constructor-3',
     title: 'URLSearchParams Constructor — array of pairs',
     description: `## URLSearchParams Constructor — array of pairs\n\n\`new URLSearchParams([['k','v']])\` accepts an array of \`[key, value]\` pairs.\n\n**Challenge:** Build params from an array and verify values.`,
     category: 'constructor',
@@ -59,7 +59,7 @@ export const urlSearchParamsConstructorExercises: Exercise[] = [
     tags: ['URLSearchParams', 'constructor', 'array'],
   },
   {
-    slug: 'urlsearchparams-constructor-empty',
+    slug: 'urlsearchparams-constructor-4',
     title: 'URLSearchParams Constructor — empty',
     description: `## URLSearchParams Constructor — empty\n\n\`new URLSearchParams()\` with no arguments creates an empty params object.\n\n**Challenge:** Verify an empty URLSearchParams has size 0 and no entries.`,
     category: 'constructor',
@@ -78,7 +78,7 @@ export const urlSearchParamsConstructorExercises: Exercise[] = [
     tags: ['URLSearchParams', 'constructor', 'empty'],
   },
   {
-    slug: 'urlsearchparams-constructor-from-url',
+    slug: 'urlsearchparams-constructor-5',
     title: 'URLSearchParams Constructor — from URL.searchParams',
     description: `## URLSearchParams Constructor — from existing params\n\n\`new URLSearchParams(url.searchParams)\` copies params from a URL's \`searchParams\` property.\n\n**Challenge:** Copy a URL's search params and verify the values.`,
     category: 'constructor',

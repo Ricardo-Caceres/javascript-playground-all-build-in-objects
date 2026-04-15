@@ -2,7 +2,7 @@ import type { Exercise } from '@/shared/types/exercises'
 
 export const urlSearchParamsAppendDeleteExercises: Exercise[] = [
   {
-    slug: 'urlsearchparams-append-keeps-existing',
+    slug: 'urlsearchparams-append-delete-1',
     title: 'URLSearchParams#append() — adds without removing existing',
     description: `## URLSearchParams#append()\n\n\`params.append(name, value)\` adds a new key-value pair without removing existing entries for that key.\n\n**Challenge:** Verify \`append()\` preserves existing entries.`,
     category: 'instance-method',
@@ -21,7 +21,7 @@ export const urlSearchParamsAppendDeleteExercises: Exercise[] = [
     tags: ['URLSearchParams', 'instance-method', 'append'],
   },
   {
-    slug: 'urlsearchparams-append-size-increases',
+    slug: 'urlsearchparams-append-delete-2',
     title: 'URLSearchParams#append() — size increases',
     description: `## URLSearchParams#append() — size\n\nEach call to \`append()\` increases the \`size\` by 1.\n\n**Challenge:** Verify that repeated \`append()\` calls increase the size.`,
     category: 'instance-method',
@@ -40,7 +40,7 @@ export const urlSearchParamsAppendDeleteExercises: Exercise[] = [
     tags: ['URLSearchParams', 'instance-method', 'append', 'size'],
   },
   {
-    slug: 'urlsearchparams-delete',
+    slug: 'urlsearchparams-append-delete-3',
     title: 'URLSearchParams#delete() — removes entry',
     description: `## URLSearchParams#delete()\n\n\`params.delete(name)\` removes all entries with the given key.\n\n**Challenge:** Use \`delete()\` and verify the key is gone.`,
     category: 'instance-method',
@@ -59,7 +59,7 @@ export const urlSearchParamsAppendDeleteExercises: Exercise[] = [
     tags: ['URLSearchParams', 'instance-method', 'delete'],
   },
   {
-    slug: 'urlsearchparams-delete-nonexistent',
+    slug: 'urlsearchparams-append-delete-4',
     title: 'URLSearchParams#delete() — non-existent key is no-op',
     description: `## URLSearchParams#delete() — no-op\n\nDeleting a key that does not exist does nothing and throws no error.\n\n**Challenge:** Verify that deleting a missing key is safe.`,
     category: 'instance-method',
@@ -78,7 +78,7 @@ export const urlSearchParamsAppendDeleteExercises: Exercise[] = [
     tags: ['URLSearchParams', 'instance-method', 'delete', 'no-op'],
   },
   {
-    slug: 'urlsearchparams-tostring',
+    slug: 'urlsearchparams-append-delete-5',
     title: 'URLSearchParams#toString() — serializes params',
     description: `## URLSearchParams#toString()\n\n\`params.toString()\` returns the params serialized as a query string (without the leading \`?\`).\n\n**Challenge:** Verify the serialized output.`,
     category: 'instance-method',
