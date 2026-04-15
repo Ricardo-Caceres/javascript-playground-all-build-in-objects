@@ -1,6 +1,5 @@
 import { ExerciseRunner } from './ExerciseRunner'
-import { ExerciseSidebar } from './ExerciseSidebar'
-import { getAllExercisesByObject } from '../../infrastructure/repositories/exerciseRepository'
+import ExerciseSidebar from './ExerciseSidebar'
 import type { Exercise } from '@/shared/types/exercises'
 
 interface ExerciseDetailViewProps {
@@ -8,15 +7,13 @@ interface ExerciseDetailViewProps {
 }
 
 export function ExerciseDetailView({ exercise }: ExerciseDetailViewProps) {
-  const objectName = exercise.builtIn.toLowerCase()
-  const allObjectExercises = getAllExercisesByObject(objectName)
+  const objectName = exercise.builtIn
 
   return (
-    <div className="flex h-screen overflow-hidden bg-zinc-950 text-zinc-100">
+    <div className="flex h-[calc(100vh-3rem)] overflow-hidden bg-zinc-950 text-zinc-100">
       <ExerciseSidebar
-        exercises={allObjectExercises}
-        activeSlug={exercise.slug}
         objectName={objectName}
+        currentSlug={exercise.slug}
       />
 
       <div className="flex min-w-0 flex-1">
@@ -54,7 +51,7 @@ export function ExerciseDetailView({ exercise }: ExerciseDetailViewProps) {
               </summary>
               <ul className="mt-3 space-y-2">
                 {exercise.hints.map((hint, i) => (
-                  <li key={i} className="text-sm text-zinc-400">
+                  <li key={`${i}-${hint.slice(0, 20)}`} className="text-sm text-zinc-400">
                     • {hint}
                   </li>
                 ))}
@@ -65,7 +62,7 @@ export function ExerciseDetailView({ exercise }: ExerciseDetailViewProps) {
 
         {/* Editor + Tests */}
         <div className="flex min-w-0 flex-1 flex-col">
-          <ExerciseRunner exercise={exercise} />
+          <ExerciseRunner exercise={exercise} objectName={objectName} />
         </div>
       </div>
     </div>
