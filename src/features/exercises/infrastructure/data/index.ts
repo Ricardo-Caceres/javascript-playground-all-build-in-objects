@@ -400,6 +400,11 @@ import { consoleAssertExercises } from './console/assert'
 // crypto exercises
 import { cryptoRandomExercises } from './crypto/random'
 import { cryptoUuidExercises } from './crypto/uuid'
+// closures exercises
+import { closuresCounterExercises } from './closures/counter'
+import { closuresPrivateStateExercises } from './closures/private-state'
+import { closuresFactoryExercises } from './closures/factory'
+import { closuresScopeExercises } from './closures/scope'
 // Reflect exercises
 import { reflectGetExercises } from './reflect/reflectGet'
 import { reflectSetExercises } from './reflect/reflectSet'
@@ -918,4 +923,9 @@ export const allExercises: Exercise[] = [
   // crypto exercises
   ...cryptoRandomExercises,
   ...cryptoUuidExercises,
+  // Closures exercises
+  ...closuresCounterExercises,
+  ...closuresPrivateStateExercises,
+  ...closuresFactoryExercises,
+  ...closuresScopeExercises,
 ]
