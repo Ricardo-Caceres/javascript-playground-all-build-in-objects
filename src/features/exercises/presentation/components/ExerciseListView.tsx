@@ -125,7 +125,13 @@ export default function ExerciseListView({ objectName }: Props) {
                   >
                     <div className="flex items-center gap-3">
                       <span className="text-sm">
-                        {status === 'completed' ? '✓' : status === 'attempted' ? '▶' : '○'}
+                        {status === 'completed' ? (
+                          <span className="text-emerald-500">✓</span>
+                        ) : status === 'attempted' ? (
+                          <span className="text-yellow-500">▶</span>
+                        ) : (
+                          <span className="text-zinc-700">○</span>
+                        )}
                       </span>
                       <span className="text-sm text-zinc-200">{ex.title}</span>
                     </div>
