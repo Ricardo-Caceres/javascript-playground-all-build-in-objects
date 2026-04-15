@@ -352,6 +352,17 @@ import { syntaxErrorExercises } from './syntaxerror/constructor'
 import { referenceErrorExercises } from './referenceerror/constructor'
 import { aggregateErrorExercises } from './aggregateerror/constructor'
 import { sharedArrayBufferExercises } from './sharedarraybuffer/constructor'
+// URL exercises
+import { urlConstructorExercises } from './url/constructor'
+import { urlPropertiesExercises } from './url/properties'
+import { urlInstanceMethodsExercises } from './url/instance-methods'
+import { urlStaticMethodsExercises } from './url/static-methods'
+// URLSearchParams exercises
+import { urlSearchParamsConstructorExercises } from './urlsearchparams/constructor'
+import { urlSearchParamsGetSetExercises } from './urlsearchparams/get-set'
+import { urlSearchParamsAppendDeleteExercises } from './urlsearchparams/append-delete'
+import { urlSearchParamsIterationExercises } from './urlsearchparams/iteration'
+import { urlSearchParamsPropExercises } from './urlsearchparams/properties'
 // Reflect exercises
 import { reflectGetExercises } from './reflect/reflectGet'
 import { reflectSetExercises } from './reflect/reflectSet'
@@ -822,4 +833,15 @@ export const allExercises: Exercise[] = [
   ...referenceErrorExercises,
   ...aggregateErrorExercises,
   ...sharedArrayBufferExercises,
+  // URL exercises
+  ...urlConstructorExercises,
+  ...urlPropertiesExercises,
+  ...urlInstanceMethodsExercises,
+  ...urlStaticMethodsExercises,
+  // URLSearchParams exercises
+  ...urlSearchParamsConstructorExercises,
+  ...urlSearchParamsGetSetExercises,
+  ...urlSearchParamsAppendDeleteExercises,
+  ...urlSearchParamsIterationExercises,
+  ...urlSearchParamsPropExercises,
 ]
