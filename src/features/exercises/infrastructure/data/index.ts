@@ -345,6 +345,13 @@ import { typedArrayInstancePropertiesExercises } from './typedarray/instanceProp
 import { globalThisExercises } from './globalthis/constructor'
 // structuredClone exercises
 import { structuredCloneExercises } from './structuredclone/constructor'
+// Error subtype exercises
+import { typeErrorExercises } from './typeerror/constructor'
+import { rangeErrorExercises } from './rangeerror/constructor'
+import { syntaxErrorExercises } from './syntaxerror/constructor'
+import { referenceErrorExercises } from './referenceerror/constructor'
+import { aggregateErrorExercises } from './aggregateerror/constructor'
+import { sharedArrayBufferExercises } from './sharedarraybuffer/constructor'
 // Reflect exercises
 import { reflectGetExercises } from './reflect/reflectGet'
 import { reflectSetExercises } from './reflect/reflectSet'
@@ -808,4 +815,11 @@ export const allExercises: Exercise[] = [
   ...globalThisExercises,
   // structuredClone exercises
   ...structuredCloneExercises,
+  // Error subtype exercises
+  ...typeErrorExercises,
+  ...rangeErrorExercises,
+  ...syntaxErrorExercises,
+  ...referenceErrorExercises,
+  ...aggregateErrorExercises,
+  ...sharedArrayBufferExercises,
 ]
