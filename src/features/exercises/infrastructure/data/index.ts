@@ -384,6 +384,16 @@ import { abortControllerConstructorExercises } from './abortcontroller/construct
 import { abortControllerMethodsExercises } from './abortcontroller/methods'
 // AbortSignal exercises
 import { abortSignalStaticExercises } from './abortsignal/static'
+// EventTarget exercises
+import { eventTargetConstructorExercises } from './eventtarget/constructor'
+import { eventTargetMethodsExercises } from './eventtarget/methods'
+// Event exercises
+import { eventConstructorExercises } from './event/constructor'
+import { eventPropertiesExercises } from './event/properties'
+import { eventMethodsExercises } from './event/methods'
+// performance exercises
+import { performanceMethodsExercises } from './performance/methods'
+import { performancePropertiesExercises } from './performance/properties'
 // Reflect exercises
 import { reflectGetExercises } from './reflect/reflectGet'
 import { reflectSetExercises } from './reflect/reflectSet'
@@ -886,4 +896,14 @@ export const allExercises: Exercise[] = [
   ...abortControllerMethodsExercises,
   // AbortSignal exercises
   ...abortSignalStaticExercises,
+  // EventTarget exercises
+  ...eventTargetConstructorExercises,
+  ...eventTargetMethodsExercises,
+  // Event exercises
+  ...eventConstructorExercises,
+  ...eventPropertiesExercises,
+  ...eventMethodsExercises,
+  // performance exercises
+  ...performanceMethodsExercises,
+  ...performancePropertiesExercises,
 ]
