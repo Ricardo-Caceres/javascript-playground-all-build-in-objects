@@ -6,6 +6,8 @@ import { useSelector } from 'react-redux'
 import type { RootState } from '@/shared/lib/store'
 import { allExercises } from '@/features/exercises/infrastructure/data'
 import { getAvailableObjects } from '@/features/exercises/infrastructure/repositories/exerciseRepository'
+import { LevelWidget } from '@/features/gamification/presentation/components/LevelWidget'
+import { DailyChallengeCard } from '@/features/gamification/presentation/components/DailyChallengeCard'
 
 const OBJECT_GROUPS: Record<string, string[]> = {
   Fundamentals: ['Array', 'String', 'Object', 'Number', 'Boolean', 'BigInt', 'Symbol', 'Math'],
@@ -71,6 +73,12 @@ export default function HomeView() {
             )}
           </div>
         </section>
+
+        {/* Gamification widgets */}
+        <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+          <LevelWidget />
+          <DailyChallengeCard />
+        </div>
 
         {/* Search + filter */}
         <section className="space-y-3">

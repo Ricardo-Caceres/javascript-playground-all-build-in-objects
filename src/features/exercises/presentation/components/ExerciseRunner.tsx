@@ -1,6 +1,6 @@
 'use client'
 
-import { useRef, useEffect, useCallback, useState } from 'react'
+import { useRef, useEffect, useCallback, useState, useMemo } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 import dynamic from 'next/dynamic'
 import Link from 'next/link'
@@ -10,6 +10,9 @@ import { WorkerEngine } from '@/shared/lib/worker/workerEngine'
 import { updateProgress } from '@/features/progress/presentation/store/progressSlice'
 import { TestPanel } from './TestPanel'
 import { useExerciseNavigation } from '../hooks/useExerciseNavigation'
+import { TimedModeToggle } from './TimedModeToggle'
+import { CountdownTimer }  from './CountdownTimer'
+import { XP_TABLE }        from '@/features/gamification/domain/entities'
 
 const MonacoEditor = dynamic(() => import('@monaco-editor/react'), { ssr: false })
 
@@ -40,6 +43,51 @@ export function ExerciseRunner({ exercise, objectName }: Props) {
     exercise.slug,
   )
 
+  const BASE_MINS: Record<string, number> = { beginner: 10, intermediate: 15, advanced: 20 }
+  const totalSeconds = useMemo(() => {
+    const base  = BASE_MINS[exercise.difficulty] ?? 15
+    const extra = Math.min(5, Math.floor((exercise.initialCode ?? '').length / 100))
+    return (base + extra) * 60
+  }, [exercise])
+
+  const [timedMode,    setTimedMode]    = useState(false)
+  const [timerActive,  setTimerActive]  = useState(false)
+  const [timeLeft,     setTimeLeft]     = useState(totalSeconds)
+  const [timerExpired, setTimerExpired] = useState(false)
+  const intervalRef = useRef<ReturnType<typeof setInterval> | null>(null)
+
+  // Start / reset timer when timed mode is toggled
+  useEffect(() => {
+    if (timedMode && !timerActive) {
+      setTimeLeft(totalSeconds)
+      setTimerExpired(false)
+      setTimerActive(true)
+    }
+    if (!timedMode) {
+      if (intervalRef.current) clearInterval(intervalRef.current)
+      setTimerActive(false)
+      setTimeLeft(totalSeconds)
+      setTimerExpired(false)
+    }
+  }, [timedMode, totalSeconds])
+
+  // Countdown tick
+  useEffect(() => {
+    if (!timerActive) return
+    intervalRef.current = setInterval(() => {
+      setTimeLeft((prev) => {
+        if (prev <= 1) {
+          clearInterval(intervalRef.current!)
+          setTimerExpired(true)
+          setTimerActive(false)
+          return 0
+        }
+        return prev - 1
+      })
+    }, 1000)
+    return () => clearInterval(intervalRef.current!)
+  }, [timerActive])
+
   useEffect(() => {
     engineRef.current = new WorkerEngine()
     return () => {
@@ -64,19 +112,28 @@ export function ExerciseRunner({ exercise, objectName }: Props) {
       } else {
         setResults(result.results)
         const allPassed = result.results.length > 0 && result.results.every((r) => r.passed)
+        const baseXp = XP_TABLE[exercise.difficulty] ?? 10
+        const timedBonus = allPassed && timedMode && timeLeft > 0
+          ? Math.round(baseXp * 0.5 * (timeLeft / totalSeconds))
+          : 0
         dispatch(
           updateProgress({
             slug: exercise.slug,
             status: allPassed ? 'completed' : 'attempted',
             lastCode: code,
+            timedBonus,
           }),
         )
+        if (allPassed && timedMode) {
+          if (intervalRef.current) clearInterval(intervalRef.current)
+          setTimerActive(false)
+        }
       }
     } finally {
       isRunningRef.current = false
       setIsRunning(false)
     }
-  }, [code, exercise, dispatch])
+  }, [code, exercise, dispatch, timedMode, timeLeft, totalSeconds])
 
   // Update ref whenever `run` changes
   useEffect(() => {
@@ -108,6 +165,21 @@ export function ExerciseRunner({ exercise, objectName }: Props) {
         <span className="shrink-0 font-mono text-xs text-zinc-600">
           {currentIndex}/{total}
         </span>
+      </div>
+
+      {/* Timed mode controls */}
+      <div className="flex items-center gap-3 border-b border-zinc-800 px-4 py-1.5">
+        <TimedModeToggle
+          enabled={timedMode}
+          onToggle={() => setTimedMode((v) => !v)}
+          disabled={timerExpired}
+        />
+        {timedMode && (
+          <CountdownTimer timeLeft={timeLeft} total={totalSeconds} />
+        )}
+        {timerExpired && (
+          <span className="text-red-400 text-xs">Time&apos;s up! Solve freely (no bonus).</span>
+        )}
       </div>
 
       {/* Monaco editor */}

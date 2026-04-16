@@ -1,6 +1,11 @@
-// RTK listener middleware (side-effect handlers)
-// import { createListenerMiddleware } from '@reduxjs/toolkit'
-// import type { RootState, AppDispatch } from '@/shared/lib/store'
+// RTK listener middleware -- side-effect handlers (XP, badges, streaks, etc.)
 //
-// export const listenerMiddleware = createListenerMiddleware()
-// export const startListening = listenerMiddleware.startListening.withTypes<RootState, AppDispatch>()
+// IMPORTANT: do NOT import from '@/shared/lib/store' here. That would create
+// a circular dependency (store/index -> listeners -> store/index).
+// Listeners import RootState from rootReducer.ts (safe) instead.
+import { createListenerMiddleware } from '@reduxjs/toolkit'
+
+export const listenerMiddleware = createListenerMiddleware()
+
+// Untyped startListening -- listeners cast getState() as RootState themselves.
+export const { startListening } = listenerMiddleware
