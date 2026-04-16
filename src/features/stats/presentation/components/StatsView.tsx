@@ -4,6 +4,7 @@ import Link from 'next/link'
 import { useSelector } from 'react-redux'
 import type { RootState } from '@/shared/lib/store'
 import { allExercises } from '@/features/exercises/infrastructure/data'
+import { BadgesGallery } from '@/features/gamification/presentation/components/BadgesGallery'
 
 // Pre-compute static maps
 const EXERCISES_BY_OBJECT: Record<string, string[]> = {}
@@ -176,6 +177,8 @@ export function StatsView() {
             ))}
           </div>
         </section>
+
+        <BadgesGallery />
       </div>
     </main>
   )
