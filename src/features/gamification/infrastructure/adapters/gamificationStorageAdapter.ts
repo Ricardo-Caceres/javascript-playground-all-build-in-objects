@@ -2,7 +2,12 @@ import type { GamificationState } from '@/features/gamification/domain/entities'
 
 const STORAGE_KEY = 'js-practice-gamification'
 
-export const gamificationStorageAdapter = {
+export interface GamificationStorageAdapter {
+  load(): GamificationState | null
+  save(state: GamificationState): void
+}
+
+export const gamificationStorageAdapter: GamificationStorageAdapter = {
   load(): GamificationState | null {
     if (typeof window === 'undefined') return null
     try {
@@ -18,7 +23,7 @@ export const gamificationStorageAdapter = {
     try {
       localStorage.setItem(STORAGE_KEY, JSON.stringify(state))
     } catch {
-      // Storage quota exceeded -- silently ignore
+      // Storage quota exceeded or unavailable — silently ignore
     }
   },
 }
