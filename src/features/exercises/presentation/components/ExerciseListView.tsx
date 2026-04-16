@@ -37,25 +37,19 @@ export default function ExerciseListView({ objectName }: Props) {
   const rawDiff = searchParams.get('difficulty')
   const rawStatus = searchParams.get('status')
 
-  const diffFilter: Difficulty | 'all' = VALID_DIFFS.includes(rawDiff as Difficulty)
+  const diffFilter: Difficulty | 'all' = (VALID_DIFFS as string[]).includes(rawDiff ?? '')
     ? (rawDiff as Difficulty)
     : 'all'
   const statusFilter: StatusFilter = (VALID_STATUSES as readonly string[]).includes(rawStatus ?? '')
     ? (rawStatus as StatusFilter)
     : 'all'
 
-  function setDiffFilter(d: Difficulty | 'all') {
+  function setFilter(key: 'difficulty' | 'status', value: string | null) {
     const params = new URLSearchParams(searchParams.toString())
-    if (d === 'all') params.delete('difficulty')
-    else params.set('difficulty', d)
-    router.replace(`?${params.toString()}`)
-  }
-
-  function setStatusFilter(s: StatusFilter) {
-    const params = new URLSearchParams(searchParams.toString())
-    if (s === 'all') params.delete('status')
-    else params.set('status', s)
-    router.replace(`?${params.toString()}`)
+    if (!value) params.delete(key)
+    else params.set(key, value)
+    const qs = params.toString()
+    router.replace(qs ? `?${qs}` : window.location.pathname, { scroll: false })
   }
 
   const exercises = getAllExercisesByObject(objectName)
@@ -103,7 +97,7 @@ export default function ExerciseListView({ objectName }: Props) {
               <button
                 key={d}
                 type="button"
-                onClick={() => setDiffFilter(d)}
+                onClick={() => setFilter('difficulty', d === 'all' ? null : d)}
                 aria-pressed={diffFilter === d}
                 className={`rounded-full px-3 py-1 text-xs font-medium transition-colors ${
                   diffFilter === d
@@ -120,7 +114,7 @@ export default function ExerciseListView({ objectName }: Props) {
               <button
                 key={s}
                 type="button"
-                onClick={() => setStatusFilter(s)}
+                onClick={() => setFilter('status', s === 'all' ? null : s)}
                 aria-pressed={statusFilter === s}
                 className={`rounded-full px-3 py-1 text-xs font-medium transition-colors ${
                   statusFilter === s
