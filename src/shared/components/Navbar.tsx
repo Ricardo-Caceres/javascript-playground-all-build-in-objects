@@ -40,7 +40,7 @@ export function Navbar() {
               className="flex items-center gap-1.5 rounded border border-zinc-700 px-3 py-1 text-xs text-zinc-400 transition-colors hover:border-zinc-500 hover:text-zinc-200"
             >
               <span className="text-base leading-none">⌕</span>
-              <span className="hidden sm:inline">Buscar</span>
+              <span className="hidden sm:inline">Search</span>
               <kbd className="hidden sm:inline rounded border border-zinc-700 px-1 py-0.5 font-mono text-[10px] text-zinc-600">
                 ⌘K
               </kbd>

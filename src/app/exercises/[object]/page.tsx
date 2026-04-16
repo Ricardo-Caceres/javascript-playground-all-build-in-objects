@@ -9,6 +9,7 @@ interface Props {
 
 export default async function ExerciseListPage({ params }: Props) {
   const { object } = await params
+  // Fetch here only to gate notFound(); ExerciseListView re-fetches client-side to access useSelector
   const exercises = getAllExercisesByObject(object)
   if (exercises.length === 0) notFound()
   return (

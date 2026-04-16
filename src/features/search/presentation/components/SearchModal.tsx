@@ -40,7 +40,7 @@ export function SearchModal({ open, onClose }: Props) {
   function handleKeyDown(e: React.KeyboardEvent) {
     if (e.key === 'ArrowDown') {
       e.preventDefault()
-      setActiveIndex((i) => Math.min(i + 1, results.length - 1))
+      setActiveIndex((i) => (results.length === 0 ? 0 : Math.min(i + 1, results.length - 1)))
     } else if (e.key === 'ArrowUp') {
       e.preventDefault()
       setActiveIndex((i) => Math.max(i - 1, 0))
@@ -74,7 +74,7 @@ export function SearchModal({ open, onClose }: Props) {
               setQuery(e.target.value)
               setActiveIndex(0)
             }}
-            placeholder="Buscar ejercicios..."
+            placeholder="Search exercises..."
             className="flex-1 bg-transparent text-sm text-zinc-100 placeholder-zinc-600 outline-none"
           />
           <kbd className="rounded border border-zinc-700 px-1.5 py-0.5 font-mono text-xs text-zinc-600">
@@ -86,7 +86,7 @@ export function SearchModal({ open, onClose }: Props) {
         <ul className="max-h-80 overflow-y-auto py-2">
           {results.length === 0 && query.trim() ? (
             <li className="px-4 py-3 text-sm text-zinc-500">
-              No se encontraron ejercicios para «{query.trim()}»
+              No exercises found for "{query.trim()}"
             </li>
           ) : (
             results.map((ex, i) => (

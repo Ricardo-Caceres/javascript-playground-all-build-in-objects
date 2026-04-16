@@ -1,7 +1,7 @@
 'use client'
 
 import Link from 'next/link'
-import { useRouter, useSearchParams } from 'next/navigation'
+import { useRouter, useSearchParams, usePathname } from 'next/navigation'
 import { useSelector } from 'react-redux'
 import type { RootState } from '@/shared/lib/store'
 import { getAllExercisesByObject } from '@/features/exercises/infrastructure/repositories/exerciseRepository'
@@ -32,6 +32,7 @@ interface Props {
 export default function ExerciseListView({ objectName }: Props) {
   const searchParams = useSearchParams()
   const router = useRouter()
+  const pathname = usePathname()
   const progressMap = useSelector((state: RootState) => state.progress.exercises)
 
   const rawDiff = searchParams.get('difficulty')
@@ -49,7 +50,7 @@ export default function ExerciseListView({ objectName }: Props) {
     if (!value) params.delete(key)
     else params.set(key, value)
     const qs = params.toString()
-    router.replace(qs ? `?${qs}` : window.location.pathname, { scroll: false })
+    router.replace(qs ? `?${qs}` : pathname, { scroll: false })
   }
 
   const exercises = getAllExercisesByObject(objectName)
