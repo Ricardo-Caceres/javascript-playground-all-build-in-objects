@@ -15,6 +15,7 @@ export const progressSlice = createSlice({
         slug: string
         status: ExerciseProgress['status']
         lastCode: string
+        timedBonus?: number
       }>,
     ) => {
       const { slug, status, lastCode } = action.payload
