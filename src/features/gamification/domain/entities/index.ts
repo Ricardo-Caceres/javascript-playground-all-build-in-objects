@@ -13,7 +13,7 @@ export interface BadgeDef {
   id: string
   name: string
   description: string
-  emoji: string        // short keyword, e.g. 'fire'; map via EMOJI_MAP in components
+  emoji: string        // Unicode emoji character, e.g. '🔥'
   category: 'milestone' | 'streak' | 'speed' | 'daily' | 'mastery'
 }
 
@@ -30,7 +30,7 @@ export interface GamificationState {
 
 // ─── Constants ───────────────────────────────────────────────────────────────
 
-export const LEVELS: Level[] = [
+export const LEVELS: readonly Level[] = [
   { id: 'apprentice', name: 'Apprentice', minXp: 0,     maxXp: 499   },
   { id: 'developer',  name: 'Developer',  minXp: 500,   maxXp: 1999  },
   { id: 'senior',     name: 'Senior',     minXp: 2000,  maxXp: 4999  },
@@ -38,13 +38,13 @@ export const LEVELS: Level[] = [
   { id: 'master',     name: 'Master',     minXp: 10000, maxXp: null  },
 ]
 
-export const XP_TABLE: Record<Difficulty, number> = {
+export const XP_TABLE: Readonly<Record<Difficulty, number>> = {
   beginner:     10,
   intermediate: 25,
   advanced:     50,
 }
 
-export const STATIC_BADGES: BadgeDef[] = [
+export const STATIC_BADGES: readonly BadgeDef[] = [
   // Milestone (5)
   { id: 'milestone-1',   name: 'First Step',    description: 'Complete your first exercise',  emoji: '🌱', category: 'milestone' },
   { id: 'milestone-10',  name: 'Problem Solver', description: 'Complete 10 exercises',        emoji: '💡', category: 'milestone' },
@@ -80,9 +80,13 @@ export function getTodayStr(): string {
 }
 
 /** Deterministic daily challenge: same exercise for the same userSeed + UTC date. */
-export function getDailyExercise(userSeed: string, exercises: Exercise[]): Exercise {
-  const dateStr = getTodayStr()
-  const index = simpleHash(dateStr + userSeed) % exercises.length
+export function getDailyExercise(
+  userSeed: string,
+  exercises: Exercise[],
+  date: string = getTodayStr(),
+): Exercise {
+  if (exercises.length === 0) throw new Error('getDailyExercise: exercises array must not be empty')
+  const index = simpleHash(date + userSeed) % exercises.length
   return exercises[index]
 }
 
@@ -97,9 +101,9 @@ export function getLevelForXp(xp: number): Level {
 /** Mastery badge definition for a built-in object name (e.g. 'Array'). */
 export function getMasteryBadgeDef(builtIn: string): BadgeDef {
   return {
-    id: 'mastery-' + builtIn.toLowerCase(),
-    name: builtIn + ' Master',
-    description: 'Complete all ' + builtIn + ' exercises',
+    id: `mastery-${builtIn}`,
+    name: `${builtIn} Master`,
+    description: `Complete all ${builtIn} exercises`,
     emoji: '🏅',
     category: 'mastery',
   }
@@ -108,8 +112,7 @@ export function getMasteryBadgeDef(builtIn: string): BadgeDef {
 /** Look up any badge definition by ID (works for both static and mastery badges). */
 export function getBadgeDef(id: string): BadgeDef | undefined {
   if (id.startsWith('mastery-')) {
-    const slug = id.slice('mastery-'.length)
-    const builtIn = slug.charAt(0).toUpperCase() + slug.slice(1)
+    const builtIn = id.slice('mastery-'.length)
     return getMasteryBadgeDef(builtIn)
   }
   return STATIC_BADGES.find((b) => b.id === id)
