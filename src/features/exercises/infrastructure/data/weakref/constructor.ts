@@ -87,7 +87,7 @@ export const weakRefConstructorExercises: Exercise[] = [
     initialCode: `// WeakRef requires an object, not a primitive\ntry {\n  new (WeakRef as any)(42)\n} catch (e) {\n  (e as Error).message\n}`,
     solution: `expect(() => { new (WeakRef as any)(42); }).toThrow()`,
     tests: [
-      { description: 'throws on primitive', assertion: 'expect(() => { new (WeakRef as any)(42); }).toThrow()' },
+      { description: 'throws on primitive', assertion: 'result' },
       { description: 'does not throw on object', assertion: 'expect(() => { new WeakRef({}); }).not.toThrow()' },
       { description: 'WeakRef is a function', assertion: "expect(typeof WeakRef).toBe('function')" },
       { description: 'WeakRef has deref', assertion: "expect(typeof WeakRef.prototype.deref).toBe('function')" },

@@ -12,7 +12,7 @@ export const setSymmetricDifferenceExercises: Exercise[] = [
     initialCode: `// Use symmetricDifference() - ES2025\nconst a = new Set([1,2,3])\nconst b = new Set([2,3,4])\n`,
     solution: `[...(new Set([1,2,3]) as any).symmetricDifference(new Set([2,3,4]))]`,
     tests: [
-      { description: 'symmetric difference has [1,4]', assertion: 'expect([...(new Set([1,2,3]) as any).symmetricDifference(new Set([2,3,4]))].sort((a,b)=>a-b)).toEqual([1,4])' },
+      { description: 'symmetric difference has [1,4]', assertion: 'expect(result.sort((a,b)=>a-b)).toEqual([1,4])' },
       { description: 'has 1 (only in A)', assertion: 'expect((new Set([1,2,3]) as any).symmetricDifference(new Set([2,3,4])).has(1)).toBe(true)' },
       { description: 'has 4 (only in B)', assertion: 'expect((new Set([1,2,3]) as any).symmetricDifference(new Set([2,3,4])).has(4)).toBe(true)' },
       { description: 'does not have 2 (in both)', assertion: 'expect((new Set([1,2,3]) as any).symmetricDifference(new Set([2,3,4])).has(2)).toBe(false)' },
@@ -32,9 +32,9 @@ export const setSymmetricDifferenceExercises: Exercise[] = [
     initialCode: `// Check symmetric difference size\nconst a = new Set([1,2,3])\nconst b = new Set([2,3,4])\n`,
     solution: `(new Set([1,2,3]) as any).symmetricDifference(new Set([2,3,4])).size`,
     tests: [
-      { description: 'size is 2', assertion: 'expect((new Set([1,2,3]) as any).symmetricDifference(new Set([2,3,4])).size).toBe(2)' },
-      { description: 'disjoint: sym diff size is sum of both', assertion: 'expect((new Set([1,2]) as any).symmetricDifference(new Set([3,4])).size).toBe(4)' },
-      { description: 'identical: sym diff size is 0', assertion: 'expect((new Set([1,2,3]) as any).symmetricDifference(new Set([1,2,3])).size).toBe(0)' },
+      { description: 'size is 2', assertion: 'expect(result).toBe(2)' },
+      { description: 'disjoint: sym diff size is sum of both', assertion: 'expect(result).toBe(4)' },
+      { description: 'identical: sym diff size is 0', assertion: 'expect(result).toBe(0)' },
       { description: 'size is a number', assertion: "expect(typeof (new Set([1]) as any).symmetricDifference(new Set([2])).size).toBe('number')" },
       { description: 'sym diff with empty is same size', assertion: 'expect((new Set([1,2,3]) as any).symmetricDifference(new Set()).size).toBe(3)' },
     ],
@@ -52,7 +52,7 @@ export const setSymmetricDifferenceExercises: Exercise[] = [
     initialCode: `// Identical sets\nconst a = new Set([1,2,3])\nconst b = new Set([1,2,3])\n`,
     solution: `(new Set([1,2,3]) as any).symmetricDifference(new Set([1,2,3])).size`,
     tests: [
-      { description: 'identical sets: sym diff size is 0', assertion: 'expect((new Set([1,2,3]) as any).symmetricDifference(new Set([1,2,3])).size).toBe(0)' },
+      { description: 'identical sets: sym diff size is 0', assertion: 'expect(result).toBe(0)' },
       { description: 'result is empty Set', assertion: 'expect([...(new Set([1,2]) as any).symmetricDifference(new Set([1,2]))]).toEqual([])' },
       { description: 'result is a Set', assertion: 'expect((new Set([1]) as any).symmetricDifference(new Set([1])) instanceof Set).toBe(true)' },
       { description: 'empty with empty: sym diff is empty', assertion: 'expect((new Set() as any).symmetricDifference(new Set()).size).toBe(0)' },
@@ -72,7 +72,7 @@ export const setSymmetricDifferenceExercises: Exercise[] = [
     initialCode: `// Disjoint sets\nconst a = new Set([1,2])\nconst b = new Set([3,4])\n`,
     solution: `(new Set([1,2]) as any).symmetricDifference(new Set([3,4])).size`,
     tests: [
-      { description: 'disjoint: sym diff size is 4', assertion: 'expect((new Set([1,2]) as any).symmetricDifference(new Set([3,4])).size).toBe(4)' },
+      { description: 'disjoint: sym diff size is 4', assertion: 'expect(result).toBe(4)' },
       { description: 'disjoint: all elements present', assertion: 'const r = (new Set([1,2]) as any).symmetricDifference(new Set([3,4])); expect(r.has(1) && r.has(2) && r.has(3) && r.has(4)).toBe(true)' },
       { description: 'sym diff equals union for disjoint', assertion: 'const a = new Set([1,2]); const b = new Set([3,4]); expect((a as any).symmetricDifference(b).size).toBe((a as any).union(b).size)' },
       { description: 'result is a Set', assertion: 'expect((new Set([1,2]) as any).symmetricDifference(new Set([3,4])) instanceof Set).toBe(true)' },

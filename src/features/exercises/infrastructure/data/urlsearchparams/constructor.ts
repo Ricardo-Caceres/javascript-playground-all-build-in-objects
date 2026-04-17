@@ -11,7 +11,7 @@ export const urlSearchParamsConstructorExercises: Exercise[] = [
     initialCode: `const params = new URLSearchParams('a=1&b=2')\n// get('a') and get('b')\n`,
     solution: `new URLSearchParams('a=1&b=2').get('a')`,
     tests: [
-      { description: "get('a') is '1'", assertion: "expect(new URLSearchParams('a=1&b=2').get('a')).toBe('1')" },
+      { description: "get('a') is '1'", assertion: "expect(result).toBe('1')" },
       { description: "get('b') is '2'", assertion: "expect(new URLSearchParams('a=1&b=2').get('b')).toBe('2')" },
       { description: 'instance of URLSearchParams', assertion: "expect(new URLSearchParams('a=1') instanceof URLSearchParams).toBeTruthy()" },
       { description: 'size is 2', assertion: "expect(new URLSearchParams('a=1&b=2').size).toBe(2)" },
@@ -68,7 +68,7 @@ export const urlSearchParamsConstructorExercises: Exercise[] = [
     initialCode: `const params = new URLSearchParams()\n// check size and has()\n`,
     solution: `new URLSearchParams().size`,
     tests: [
-      { description: 'empty size is 0', assertion: "expect(new URLSearchParams().size).toBe(0)" },
+      { description: 'empty size is 0', assertion: "expect(result).toBe(0)" },
       { description: 'has() returns false', assertion: "expect(new URLSearchParams().has('a')).toBe(false)" },
       { description: 'get() returns null', assertion: "expect(new URLSearchParams().get('a')).toBeNull()" },
       { description: 'instance of URLSearchParams', assertion: "expect(new URLSearchParams() instanceof URLSearchParams).toBeTruthy()" },

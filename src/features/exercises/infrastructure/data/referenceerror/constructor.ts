@@ -11,7 +11,7 @@ export const referenceErrorExercises: Exercise[] = [
     initialCode: `const err = new ReferenceError('not defined')\n`,
     solution: `new ReferenceError('not defined') instanceof ReferenceError`,
     tests: [
-      { description: 'instanceof ReferenceError is truthy', assertion: "expect(new ReferenceError('not defined') instanceof ReferenceError).toBeTruthy()" },
+      { description: 'instanceof ReferenceError is truthy', assertion: "expect(result).toBeTruthy()" },
       { description: 'instanceof ReferenceError is true', assertion: "expect(new ReferenceError('x') instanceof ReferenceError).toBe(true)" },
       { description: 'is an object', assertion: "expect(typeof new ReferenceError('x')).toBe('object')" },
       { description: 'is not null', assertion: "expect(new ReferenceError('x')).not.toBeNull()" },
@@ -30,7 +30,7 @@ export const referenceErrorExercises: Exercise[] = [
     initialCode: `const err = new ReferenceError()\n`,
     solution: `new ReferenceError() instanceof Error`,
     tests: [
-      { description: 'instanceof Error is true', assertion: "expect(new ReferenceError() instanceof Error).toBe(true)" },
+      { description: 'instanceof Error is true', assertion: "expect(result).toBe(true)" },
       { description: 'instanceof ReferenceError is true', assertion: "expect(new ReferenceError() instanceof ReferenceError).toBe(true)" },
       { description: 'instanceof Object is true', assertion: "expect(new ReferenceError() instanceof Object).toBe(true)" },
       { description: 'is truthy', assertion: "expect(new ReferenceError()).toBeTruthy()" },
@@ -49,7 +49,7 @@ export const referenceErrorExercises: Exercise[] = [
     initialCode: `const err = new ReferenceError('x is not defined')\n`,
     solution: `new ReferenceError('x is not defined').message`,
     tests: [
-      { description: "message is 'x is not defined'", assertion: "expect(new ReferenceError('x is not defined').message).toBe('x is not defined')" },
+      { description: "message is 'x is not defined'", assertion: "expect(result).toBe('x is not defined')" },
       { description: 'message matches input', assertion: "expect(new ReferenceError('hello').message).toBe('hello')" },
       { description: 'message is a string', assertion: "expect(typeof new ReferenceError('x').message).toBe('string')" },
       { description: 'message is accessible', assertion: "expect(new ReferenceError('test').message).toBeTruthy()" },
@@ -68,10 +68,10 @@ export const referenceErrorExercises: Exercise[] = [
     initialCode: `const err = new ReferenceError()\n`,
     solution: `new ReferenceError().name`,
     tests: [
-      { description: "name is 'ReferenceError'", assertion: "expect(new ReferenceError().name).toBe('ReferenceError')" },
-      { description: 'name is a string', assertion: "expect(typeof new ReferenceError().name).toBe('string')" },
-      { description: 'name is truthy', assertion: "expect(new ReferenceError().name).toBeTruthy()" },
-      { description: 'name does not equal Error', assertion: "expect(new ReferenceError().name).not.toBe('Error')" },
+      { description: "name is 'ReferenceError'", assertion: "expect(result).toBe('ReferenceError')" },
+      { description: 'name is a string', assertion: "expect(typeof result).toBe('string')" },
+      { description: 'name is truthy', assertion: "expect(result).toBeTruthy()" },
+      { description: 'name does not equal Error', assertion: "expect(result).not.toBe('Error')" },
       { description: 'name is consistent', assertion: "expect(new ReferenceError('x').name).toBe('ReferenceError')" },
     ],
     hints: ['Error subtypes have a .name property matching their constructor name.'],

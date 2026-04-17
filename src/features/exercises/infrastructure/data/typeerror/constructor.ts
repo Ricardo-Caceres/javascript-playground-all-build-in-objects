@@ -11,7 +11,7 @@ export const typeErrorExercises: Exercise[] = [
     initialCode: `const err = new TypeError('bad type')\n`,
     solution: `new TypeError('bad type') instanceof TypeError`,
     tests: [
-      { description: 'instanceof TypeError is truthy', assertion: "expect(new TypeError('bad type') instanceof TypeError).toBeTruthy()" },
+      { description: 'instanceof TypeError is truthy', assertion: "expect(result).toBeTruthy()" },
       { description: 'instanceof TypeError is true', assertion: "expect(new TypeError('x') instanceof TypeError).toBe(true)" },
       { description: 'is an object', assertion: "expect(typeof new TypeError('x')).toBe('object')" },
       { description: 'is not null', assertion: "expect(new TypeError('x')).not.toBeNull()" },
@@ -30,7 +30,7 @@ export const typeErrorExercises: Exercise[] = [
     initialCode: `const err = new TypeError()\n`,
     solution: `new TypeError() instanceof Error`,
     tests: [
-      { description: 'instanceof Error is true', assertion: "expect(new TypeError() instanceof Error).toBe(true)" },
+      { description: 'instanceof Error is true', assertion: "expect(result).toBe(true)" },
       { description: 'instanceof TypeError is true', assertion: "expect(new TypeError() instanceof TypeError).toBe(true)" },
       { description: 'instanceof Object is true', assertion: "expect(new TypeError() instanceof Object).toBe(true)" },
       { description: 'is truthy', assertion: "expect(new TypeError()).toBeTruthy()" },
@@ -49,7 +49,7 @@ export const typeErrorExercises: Exercise[] = [
     initialCode: `const err = new TypeError('bad type')\n`,
     solution: `new TypeError('bad type').message`,
     tests: [
-      { description: "message is 'bad type'", assertion: "expect(new TypeError('bad type').message).toBe('bad type')" },
+      { description: "message is 'bad type'", assertion: "expect(result).toBe('bad type')" },
       { description: 'message matches input', assertion: "expect(new TypeError('hello').message).toBe('hello')" },
       { description: 'message is a string', assertion: "expect(typeof new TypeError('x').message).toBe('string')" },
       { description: 'message is accessible', assertion: "expect(new TypeError('test').message).toBeTruthy()" },
@@ -68,10 +68,10 @@ export const typeErrorExercises: Exercise[] = [
     initialCode: `const err = new TypeError()\n`,
     solution: `new TypeError().name`,
     tests: [
-      { description: "name is 'TypeError'", assertion: "expect(new TypeError().name).toBe('TypeError')" },
-      { description: 'name is a string', assertion: "expect(typeof new TypeError().name).toBe('string')" },
-      { description: 'name is truthy', assertion: "expect(new TypeError().name).toBeTruthy()" },
-      { description: 'name does not equal Error', assertion: "expect(new TypeError().name).not.toBe('Error')" },
+      { description: "name is 'TypeError'", assertion: "expect(result).toBe('TypeError')" },
+      { description: 'name is a string', assertion: "expect(typeof result).toBe('string')" },
+      { description: 'name is truthy', assertion: "expect(result).toBeTruthy()" },
+      { description: 'name does not equal Error', assertion: "expect(result).not.toBe('Error')" },
       { description: 'name is consistent', assertion: "expect(new TypeError('x').name).toBe('TypeError')" },
     ],
     hints: ['Error subtypes have a .name property matching their constructor name.'],

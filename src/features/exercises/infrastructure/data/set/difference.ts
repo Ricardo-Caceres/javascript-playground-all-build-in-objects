@@ -12,7 +12,7 @@ export const setDifferenceExercises: Exercise[] = [
     initialCode: `// Use difference() - ES2025\nconst a = new Set([1,2,3,4])\nconst b = new Set([3,4,5])\n`,
     solution: `[...(new Set([1,2,3,4]) as any).difference(new Set([3,4,5]))]`,
     tests: [
-      { description: 'difference has elements from A not in B', assertion: 'expect([...(new Set([1,2,3,4]) as any).difference(new Set([3,4,5]))].sort((a,b)=>a-b)).toEqual([1,2])' },
+      { description: 'difference has elements from A not in B', assertion: 'expect(result.sort((a,b)=>a-b)).toEqual([1,2])' },
       { description: 'has 1', assertion: 'expect((new Set([1,2,3,4]) as any).difference(new Set([3,4,5])).has(1)).toBe(true)' },
       { description: 'has 2', assertion: 'expect((new Set([1,2,3,4]) as any).difference(new Set([3,4,5])).has(2)).toBe(true)' },
       { description: 'does not have 3', assertion: 'expect((new Set([1,2,3,4]) as any).difference(new Set([3,4,5])).has(3)).toBe(false)' },
@@ -32,9 +32,9 @@ export const setDifferenceExercises: Exercise[] = [
     initialCode: `// Check difference size\nconst a = new Set([1,2,3,4])\nconst b = new Set([3,4])\n`,
     solution: `(new Set([1,2,3,4]) as any).difference(new Set([3,4])).size`,
     tests: [
-      { description: 'difference size is 2', assertion: 'expect((new Set([1,2,3,4]) as any).difference(new Set([3,4])).size).toBe(2)' },
-      { description: 'difference with empty is same size', assertion: 'expect((new Set([1,2,3]) as any).difference(new Set()).size).toBe(3)' },
-      { description: 'B superset of A: difference is empty', assertion: 'expect((new Set([1,2]) as any).difference(new Set([1,2,3,4])).size).toBe(0)' },
+      { description: 'difference size is 2', assertion: 'expect(result).toBe(2)' },
+      { description: 'difference with empty is same size', assertion: 'expect(result).toBe(3)' },
+      { description: 'B superset of A: difference is empty', assertion: 'expect(result).toBe(0)' },
       { description: 'size is a number', assertion: "expect(typeof (new Set([1,2]) as any).difference(new Set([2,3])).size).toBe('number')" },
       { description: 'complete overlap: size is 0', assertion: 'expect((new Set([1,2,3]) as any).difference(new Set([1,2,3])).size).toBe(0)' },
     ],
@@ -52,7 +52,7 @@ export const setDifferenceExercises: Exercise[] = [
     initialCode: `// A is subset of B\nconst a = new Set([1,2])\nconst b = new Set([1,2,3,4])\n`,
     solution: `(new Set([1,2]) as any).difference(new Set([1,2,3,4])).size`,
     tests: [
-      { description: 'A subset of B: difference size is 0', assertion: 'expect((new Set([1,2]) as any).difference(new Set([1,2,3,4])).size).toBe(0)' },
+      { description: 'A subset of B: difference size is 0', assertion: 'expect(result).toBe(0)' },
       { description: 'identical sets: difference is empty', assertion: 'expect((new Set([1,2,3]) as any).difference(new Set([1,2,3])).size).toBe(0)' },
       { description: 'empty result is empty Set', assertion: 'expect([...(new Set([1,2]) as any).difference(new Set([1,2,3]))]).toEqual([])' },
       { description: 'result is a Set', assertion: 'expect((new Set([1]) as any).difference(new Set([1,2])) instanceof Set).toBe(true)' },
@@ -72,7 +72,7 @@ export const setDifferenceExercises: Exercise[] = [
     initialCode: `// B is empty\nconst a = new Set([1,2,3])\nconst b = new Set()\n`,
     solution: `(new Set([1,2,3]) as any).difference(new Set()).size`,
     tests: [
-      { description: 'difference with empty B has same size as A', assertion: 'expect((new Set([1,2,3]) as any).difference(new Set()).size).toBe(3)' },
+      { description: 'difference with empty B has same size as A', assertion: 'expect(result).toBe(3)' },
       { description: 'all A elements in result', assertion: 'const r = (new Set([1,2,3]) as any).difference(new Set()); expect(r.has(1) && r.has(2) && r.has(3)).toBe(true)' },
       { description: 'result is a new Set', assertion: 'const a = new Set([1,2,3]); const r = (a as any).difference(new Set()); expect(r).not.toBe(a)' },
       { description: 'B empty → result equals A', assertion: 'expect([...(new Set([4,5,6]) as any).difference(new Set())].sort((a,b)=>a-b)).toEqual([4,5,6])' },

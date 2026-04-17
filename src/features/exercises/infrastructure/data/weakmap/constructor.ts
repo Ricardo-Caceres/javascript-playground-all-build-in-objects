@@ -11,7 +11,7 @@ export const weakMapConstructorExercises: Exercise[] = [
     initialCode: `new WeakMap() instanceof WeakMap\n`,
     solution: `new WeakMap() instanceof WeakMap`,
     tests: [
-      { description: 'instanceof WeakMap is true', assertion: 'expect(new WeakMap() instanceof WeakMap).toBe(true)' },
+      { description: 'instanceof WeakMap is true', assertion: 'expect(result).toBe(true)' },
       { description: 'instanceof Object is true', assertion: 'expect(new WeakMap() instanceof Object).toBe(true)' },
       { description: 'is truthy', assertion: 'expect(new WeakMap()).toBeTruthy()' },
       { description: 'is not null', assertion: 'expect(new WeakMap()).not.toBeNull()' },
@@ -30,10 +30,10 @@ export const weakMapConstructorExercises: Exercise[] = [
     initialCode: `typeof new WeakMap()\n`,
     solution: `typeof new WeakMap()`,
     tests: [
-      { description: "typeof is 'object'", assertion: "expect(typeof new WeakMap()).toBe('object')" },
-      { description: "not 'function'", assertion: "expect(typeof new WeakMap() === 'function').toBe(false)" },
-      { description: "not 'string'", assertion: "expect(typeof new WeakMap() === 'string').toBe(false)" },
-      { description: 'instanceof WeakMap', assertion: 'expect(new WeakMap() instanceof WeakMap).toBe(true)' },
+      { description: "typeof is 'object'", assertion: "expect(result).toBe('object')" },
+      { description: "not 'function'", assertion: "expect(result === 'function').toBe(false)" },
+      { description: "not 'string'", assertion: "expect(result === 'string').toBe(false)" },
+      { description: 'instanceof WeakMap', assertion: 'expect(result).toBe(true)' },
       { description: 'is not null', assertion: 'expect(new WeakMap()).not.toBeNull()' },
     ],
     hints: ['All WeakMap instances are objects.'],
@@ -50,7 +50,7 @@ export const weakMapConstructorExercises: Exercise[] = [
     solution: `const wm = new WeakMap(); const key = {}; wm.set(key, 42); wm.get(key) === 42`,
     tests: [
       { description: 'get returns set value', assertion: 'const wm1 = new WeakMap(); const k1 = {}; wm1.set(k1, 42); expect(wm1.get(k1)).toBe(42)' },
-      { description: 'key must be object', assertion: 'expect(new WeakMap() instanceof WeakMap).toBe(true)' },
+      { description: 'key must be object', assertion: 'expect(result).toBe(true)' },
       { description: 'has returns true after set', assertion: 'const wm2 = new WeakMap(); const k2 = {}; wm2.set(k2, 1); expect(wm2.has(k2)).toBe(true)' },
       { description: 'get returns undefined for unknown key', assertion: 'const wm3 = new WeakMap(); const k3 = {}; expect(wm3.get(k3)).toBeUndefined()' },
       { description: 'set accepts any value', assertion: 'const wm4 = new WeakMap(); const k4 = {}; wm4.set(k4, "hello"); expect(wm4.get(k4)).toBe("hello")' },

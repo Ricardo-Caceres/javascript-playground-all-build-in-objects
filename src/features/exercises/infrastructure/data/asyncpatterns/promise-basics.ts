@@ -11,7 +11,7 @@ export const asyncPromiseBasicsExercises: Exercise[] = [
     initialCode: `Promise.resolve(42) instanceof Promise\n`,
     solution: `Promise.resolve(42) instanceof Promise`,
     tests: [
-      { description: 'Promise.resolve returns a Promise', assertion: 'expect(Promise.resolve(42) instanceof Promise).toBeTruthy()' },
+      { description: 'Promise.resolve returns a Promise', assertion: 'expect(result).toBeTruthy()' },
       { description: 'typeof Promise.resolve() is object', assertion: "expect(typeof Promise.resolve(42)).toBe('object')" },
       { description: 'Promise.resolve(null) instanceof Promise', assertion: 'expect(Promise.resolve(null) instanceof Promise).toBeTruthy()' },
       { description: 'Promise.resolve() instanceof Object', assertion: 'expect(Promise.resolve(42) instanceof Object).toBeTruthy()' },

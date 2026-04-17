@@ -22,6 +22,9 @@ function executeCode(code: string, tests: TestCase[]): RunResult {
   try {
     const transpileResult = Babel.transform(code, {
       presets: ["typescript"],
+      // transform-block-scoping converts const/let to var so user-declared
+      // variables are accessible outside the eval() call below
+      plugins: ["transform-block-scoping"],
       filename: "exercise.ts",
     })
     const transpiled = transpileResult.code ?? ""
@@ -32,8 +35,16 @@ function executeCode(code: string, tests: TestCase[]): RunResult {
       .map((t) => `it(${JSON.stringify(t.description)}, () => { ${t.assertion} })`)
       .join("\n")
 
+    // Capture the last expression of user code as `result` using eval().
+    // In non-strict mode, var/function declarations inside eval() are hoisted
+    // into the outer new Function scope, so function exercises still work.
     // eslint-disable-next-line no-new-func
-    const runner = new Function("describe", "it", "expect", `${transpiled}\n${testBlock}`)
+    const runner = new Function(
+      "describe",
+      "it",
+      "expect",
+      `var result = eval(${JSON.stringify(transpiled)});\n${testBlock}`,
+    )
     runner(describe, it, expect)
 
     return { results: getResults() }

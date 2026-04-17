@@ -32,7 +32,7 @@ export const setClearExercises: Exercise[] = [
     initialCode: `// Check the return value of clear()\nconst s = new Set([1,2,3])\n`,
     solution: `new Set([1,2,3]).clear()`,
     tests: [
-      { description: 'clear() returns undefined', assertion: 'expect(new Set([1,2,3]).clear()).toBeUndefined()' },
+      { description: 'clear() returns undefined', assertion: 'expect(result).toBeUndefined()' },
       { description: 'return value is falsy', assertion: 'const s = new Set([1]); expect(s.clear()).toBeFalsy()' },
       { description: 'return is not null', assertion: 'const s = new Set([1]); expect(s.clear() !== null).toBe(true)' },
       { description: 'return is exactly undefined', assertion: 'const s = new Set([1]); expect(s.clear() === undefined).toBe(true)' },

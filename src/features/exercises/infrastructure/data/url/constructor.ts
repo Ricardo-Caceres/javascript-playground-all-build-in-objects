@@ -11,7 +11,7 @@ export const urlConstructorExercises: Exercise[] = [
     initialCode: `// Use new URL('https://example.com').hostname\n`,
     solution: `new URL('https://example.com').hostname`,
     tests: [
-      { description: "hostname is 'example.com'", assertion: "expect(new URL('https://example.com').hostname).toBe('example.com')" },
+      { description: "hostname is 'example.com'", assertion: "expect(result).toBe('example.com')" },
       { description: 'is URL instance', assertion: "expect(new URL('https://example.com') instanceof URL).toBeTruthy()" },
       { description: 'protocol is https:', assertion: "expect(new URL('https://example.com').protocol).toBe('https:')" },
       { description: 'pathname is /', assertion: "expect(new URL('https://example.com').pathname).toBe('/')" },
@@ -30,7 +30,7 @@ export const urlConstructorExercises: Exercise[] = [
     initialCode: `// Use new URL('/path', 'https://example.com').pathname\n`,
     solution: `new URL('/path', 'https://example.com').pathname`,
     tests: [
-      { description: "pathname is '/path'", assertion: "expect(new URL('/path', 'https://example.com').pathname).toBe('/path')" },
+      { description: "pathname is '/path'", assertion: "expect(result).toBe('/path')" },
       { description: "href contains example.com", assertion: "expect(new URL('/path', 'https://example.com').href).toContain('example.com')" },
       { description: "href ends with /path", assertion: "expect(new URL('/path', 'https://example.com').href).toContain('/path')" },
       { description: 'hostname is example.com', assertion: "expect(new URL('/path', 'https://example.com').hostname).toBe('example.com')" },

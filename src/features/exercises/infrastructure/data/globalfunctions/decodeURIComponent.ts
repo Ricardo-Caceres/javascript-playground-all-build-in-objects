@@ -12,7 +12,7 @@ export const globalDecodeURIComponentExercises: Exercise[] = [
     initialCode: `decodeURIComponent('hello%20world')`,
     solution: `decodeURIComponent('hello%20world') === 'hello world'`,
     tests: [
-      { description: "decodeURIComponent('hello%20world') === 'hello world'", assertion: "expect(decodeURIComponent('hello%20world')).toBe('hello world')" },
+      { description: "result", assertion: "expect(decodeURIComponent('hello%20world')).toBe('hello world')" },
       { description: 'result is a string', assertion: "expect(typeof decodeURIComponent('hello%20world')).toBe('string')" },
       { description: 'contains space', assertion: "expect(decodeURIComponent('hello%20world').includes(' ')).toBe(true)" },
       { description: 'no %20 in result', assertion: "expect(decodeURIComponent('hello%20world').includes('%20')).toBe(false)" },
@@ -92,7 +92,7 @@ export const globalDecodeURIComponentExercises: Exercise[] = [
     initialCode: `decodeURIComponent('%41%42%43')`,
     solution: `decodeURIComponent('%41%42%43') === 'ABC'`,
     tests: [
-      { description: "decodeURIComponent('%41%42%43') === 'ABC'", assertion: "expect(decodeURIComponent('%41%42%43')).toBe('ABC')" },
+      { description: "result", assertion: "expect(decodeURIComponent('%41%42%43')).toBe('ABC')" },
       { description: 'result is a string', assertion: "expect(typeof decodeURIComponent('%41%42%43')).toBe('string')" },
       { description: 'is truthy', assertion: "expect(decodeURIComponent('%41%42%43')).toBeTruthy()" },
       { description: 'has length 3', assertion: "expect(decodeURIComponent('%41%42%43')).toHaveLength(3)" },

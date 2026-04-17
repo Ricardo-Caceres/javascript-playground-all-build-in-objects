@@ -11,7 +11,7 @@ export const aggregateErrorExercises: Exercise[] = [
     initialCode: `const err = new AggregateError([new Error('a'), new Error('b')], 'multiple errors')\n`,
     solution: `new AggregateError([new Error('a'), new Error('b')], 'multiple errors') instanceof AggregateError`,
     tests: [
-      { description: 'instanceof AggregateError is truthy', assertion: "expect(new AggregateError([new Error('a'), new Error('b')], 'multiple errors') instanceof AggregateError).toBeTruthy()" },
+      { description: 'instanceof AggregateError is truthy', assertion: "expect(result).toBeTruthy()" },
       { description: 'instanceof AggregateError is true', assertion: "expect(new AggregateError([], 'x') instanceof AggregateError).toBe(true)" },
       { description: 'is an object', assertion: "expect(typeof new AggregateError([], 'x')).toBe('object')" },
       { description: 'is not null', assertion: "expect(new AggregateError([], 'x')).not.toBeNull()" },
@@ -30,7 +30,7 @@ export const aggregateErrorExercises: Exercise[] = [
     initialCode: `const err = new AggregateError([])\n`,
     solution: `new AggregateError([]) instanceof Error`,
     tests: [
-      { description: 'instanceof Error is true', assertion: "expect(new AggregateError([]) instanceof Error).toBe(true)" },
+      { description: 'instanceof Error is true', assertion: "expect(result).toBe(true)" },
       { description: 'instanceof AggregateError is true', assertion: "expect(new AggregateError([]) instanceof AggregateError).toBe(true)" },
       { description: 'instanceof Object is true', assertion: "expect(new AggregateError([]) instanceof Object).toBe(true)" },
       { description: 'is truthy', assertion: "expect(new AggregateError([])).toBeTruthy()" },
@@ -49,7 +49,7 @@ export const aggregateErrorExercises: Exercise[] = [
     initialCode: `const err = new AggregateError([], 'msg')\n`,
     solution: `new AggregateError([], 'msg').message`,
     tests: [
-      { description: "message is 'msg'", assertion: "expect(new AggregateError([], 'msg').message).toBe('msg')" },
+      { description: "message is 'msg'", assertion: "expect(result).toBe('msg')" },
       { description: 'message matches input', assertion: "expect(new AggregateError([], 'hello').message).toBe('hello')" },
       { description: 'message is a string', assertion: "expect(typeof new AggregateError([], 'x').message).toBe('string')" },
       { description: 'message is accessible', assertion: "expect(new AggregateError([], 'test').message).toBeTruthy()" },
@@ -68,10 +68,10 @@ export const aggregateErrorExercises: Exercise[] = [
     initialCode: `const err = new AggregateError([])\n`,
     solution: `new AggregateError([]).name`,
     tests: [
-      { description: "name is 'AggregateError'", assertion: "expect(new AggregateError([]).name).toBe('AggregateError')" },
-      { description: 'name is a string', assertion: "expect(typeof new AggregateError([]).name).toBe('string')" },
-      { description: 'name is truthy', assertion: "expect(new AggregateError([]).name).toBeTruthy()" },
-      { description: 'name does not equal Error', assertion: "expect(new AggregateError([]).name).not.toBe('Error')" },
+      { description: "name is 'AggregateError'", assertion: "expect(result).toBe('AggregateError')" },
+      { description: 'name is a string', assertion: "expect(typeof result).toBe('string')" },
+      { description: 'name is truthy', assertion: "expect(result).toBeTruthy()" },
+      { description: 'name does not equal Error', assertion: "expect(result).not.toBe('Error')" },
       { description: 'name is consistent', assertion: "expect(new AggregateError([], 'x').name).toBe('AggregateError')" },
     ],
     hints: ['Error subtypes have a .name property matching their constructor name.'],
@@ -87,7 +87,7 @@ export const aggregateErrorExercises: Exercise[] = [
     initialCode: `const err = new AggregateError([new Error('e1'), new Error('e2')], '')\n`,
     solution: `new AggregateError([new Error('e1'), new Error('e2')], '').errors.length`,
     tests: [
-      { description: 'errors.length is 2', assertion: "expect(new AggregateError([new Error('e1'), new Error('e2')], '').errors.length).toBe(2)" },
+      { description: 'errors.length is 2', assertion: "expect(result).toBe(2)" },
       { description: 'errors is an array', assertion: "expect(Array.isArray(new AggregateError([new Error('e1')], '').errors)).toBe(true)" },
       { description: 'errors length matches input', assertion: "expect(new AggregateError([new Error('a'), new Error('b'), new Error('c')], '').errors.length).toBe(3)" },
       { description: 'empty errors array has length 0', assertion: "expect(new AggregateError([], '').errors.length).toBe(0)" },

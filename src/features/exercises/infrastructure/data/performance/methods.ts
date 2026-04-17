@@ -11,7 +11,7 @@ export const performanceMethodsExercises: Exercise[] = [
     initialCode: `// Check the return type of performance.now()\ntypeof performance.now()`,
     solution: `typeof performance.now()`,
     tests: [
-      { description: 'performance.now() returns a number', assertion: "expect(typeof performance.now()).toBe('number')" },
+      { description: 'performance.now() returns a number', assertion: "expect(result).toBe('number')" },
       { description: 'performance.now() is greater than 0', assertion: "expect(performance.now()).toBeGreaterThan(0)" },
       { description: 'mark returns a PerformanceMark', assertion: "performance.clearMarks('test-mark-3'); expect(performance.mark('test-mark-3') instanceof PerformanceMark).toBeTruthy()" },
       { description: 'getEntriesByName after mark returns one entry', assertion: "performance.clearMarks('m4'); performance.mark('m4'); expect(performance.getEntriesByName('m4').length).toBe(1)" },
@@ -31,7 +31,7 @@ export const performanceMethodsExercises: Exercise[] = [
     solution: `performance.now() > 0`,
     tests: [
       { description: 'performance.now() is greater than 0', assertion: "expect(performance.now()).toBeGreaterThan(0)" },
-      { description: 'performance.now() returns a number', assertion: "expect(typeof performance.now()).toBe('number')" },
+      { description: 'performance.now() returns a number', assertion: "expect(result).toBe('number')" },
       { description: 'mark returns a PerformanceMark', assertion: "performance.clearMarks('test-mark-3'); expect(performance.mark('test-mark-3') instanceof PerformanceMark).toBeTruthy()" },
       { description: 'getEntriesByName after mark returns one entry', assertion: "performance.clearMarks('m4'); performance.mark('m4'); expect(performance.getEntriesByName('m4').length).toBe(1)" },
       { description: 'clearMarks removes entries', assertion: "performance.mark('cm5'); performance.clearMarks('cm5'); expect(performance.getEntriesByName('cm5').length).toBe(0)" },
@@ -51,7 +51,7 @@ export const performanceMethodsExercises: Exercise[] = [
 performance.mark('test-mark-3') instanceof PerformanceMark`,
     tests: [
       { description: 'mark returns a PerformanceMark', assertion: "performance.clearMarks('test-mark-3'); expect(performance.mark('test-mark-3') instanceof PerformanceMark).toBeTruthy()" },
-      { description: 'performance.now() returns a number', assertion: "expect(typeof performance.now()).toBe('number')" },
+      { description: 'performance.now() returns a number', assertion: "expect(result).toBe('number')" },
       { description: 'performance.now() is greater than 0', assertion: "expect(performance.now()).toBeGreaterThan(0)" },
       { description: 'getEntriesByName after mark returns one entry', assertion: "performance.clearMarks('m4'); performance.mark('m4'); expect(performance.getEntriesByName('m4').length).toBe(1)" },
       { description: 'clearMarks removes entries', assertion: "performance.mark('cm5'); performance.clearMarks('cm5'); expect(performance.getEntriesByName('cm5').length).toBe(0)" },
@@ -75,7 +75,7 @@ performance.mark('m4')
 performance.getEntriesByName('m4').length`,
     tests: [
       { description: 'getEntriesByName after mark returns one entry', assertion: "performance.clearMarks('m4'); performance.mark('m4'); expect(performance.getEntriesByName('m4').length).toBe(1)" },
-      { description: 'performance.now() returns a number', assertion: "expect(typeof performance.now()).toBe('number')" },
+      { description: 'performance.now() returns a number', assertion: "expect(result).toBe('number')" },
       { description: 'performance.now() is greater than 0', assertion: "expect(performance.now()).toBeGreaterThan(0)" },
       { description: 'mark returns a PerformanceMark', assertion: "performance.clearMarks('test-mark-3'); expect(performance.mark('test-mark-3') instanceof PerformanceMark).toBeTruthy()" },
       { description: 'clearMarks removes entries', assertion: "performance.mark('cm5'); performance.clearMarks('cm5'); expect(performance.getEntriesByName('cm5').length).toBe(0)" },
@@ -99,7 +99,7 @@ performance.clearMarks('cm5')
 performance.getEntriesByName('cm5').length`,
     tests: [
       { description: 'clearMarks removes entries', assertion: "performance.mark('cm5'); performance.clearMarks('cm5'); expect(performance.getEntriesByName('cm5').length).toBe(0)" },
-      { description: 'performance.now() returns a number', assertion: "expect(typeof performance.now()).toBe('number')" },
+      { description: 'performance.now() returns a number', assertion: "expect(result).toBe('number')" },
       { description: 'performance.now() is greater than 0', assertion: "expect(performance.now()).toBeGreaterThan(0)" },
       { description: 'mark returns a PerformanceMark', assertion: "performance.clearMarks('test-mark-3'); expect(performance.mark('test-mark-3') instanceof PerformanceMark).toBeTruthy()" },
       { description: 'getEntriesByName after mark returns one entry', assertion: "performance.clearMarks('m4'); performance.mark('m4'); expect(performance.getEntriesByName('m4').length).toBe(1)" },

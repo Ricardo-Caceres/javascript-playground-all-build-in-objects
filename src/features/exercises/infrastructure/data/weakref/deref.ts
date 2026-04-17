@@ -92,7 +92,7 @@ export const weakRefDerefExercises: Exercise[] = [
     initialCode: `typeof WeakRef.prototype.deref`,
     solution: `typeof WeakRef.prototype.deref === 'function'`,
     tests: [
-      { description: "typeof WeakRef.prototype.deref === 'function'", assertion: "expect(typeof WeakRef.prototype.deref).toBe('function')" },
+      { description: "result", assertion: "expect(typeof WeakRef.prototype.deref).toBe('function')" },
       { description: 'WeakRef has deref on prototype', assertion: 'expect(WeakRef.prototype.hasOwnProperty("deref")).toBe(true)' },
       { description: 'deref is callable', assertion: 'const o = {}; expect(() => new WeakRef(o).deref()).not.toThrow()' },
       { description: "typeof WeakRef === 'function'", assertion: "expect(typeof WeakRef).toBe('function')" },

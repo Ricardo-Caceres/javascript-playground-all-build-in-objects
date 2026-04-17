@@ -50,11 +50,11 @@ export const generatorThrowExercises: Exercise[] = [
     initialCode: `typeof (function* g() {})().throw`,
     solution: `typeof (function* g() {})().throw`,
     tests: [
-      { description: 'typeof throw is function', assertion: 'typeof (function* g() {})().throw === "function"' },
-      { description: 'typeof throw is not object', assertion: 'typeof (function* g() {})().throw !== "object"' },
-      { description: 'typeof throw is not undefined', assertion: 'typeof (function* g() {})().throw !== "undefined"' },
-      { description: 'typeof throw is not null', assertion: 'typeof (function* g() {})().throw !== "null"' },
-      { description: 'typeof throw is not number', assertion: 'typeof (function* g() {})().throw !== "number"' }
+      { description: 'typeof throw is function', assertion: 'result === "function"' },
+      { description: 'typeof throw is not object', assertion: 'result !== "object"' },
+      { description: 'typeof throw is not undefined', assertion: 'result !== "undefined"' },
+      { description: 'typeof throw is not null', assertion: 'result !== "null"' },
+      { description: 'typeof throw is not number', assertion: 'result !== "number"' }
     ],
     tags: [],
   },

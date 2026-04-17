@@ -11,7 +11,7 @@ export const urlSearchParamsGetSetExercises: Exercise[] = [
     initialCode: `const params = new URLSearchParams('color=red&size=large')\n// get('color')\n`,
     solution: `new URLSearchParams('color=red&size=large').get('color')`,
     tests: [
-      { description: "get('color') is 'red'", assertion: "expect(new URLSearchParams('color=red&size=large').get('color')).toBe('red')" },
+      { description: "get('color') is 'red'", assertion: "expect(result).toBe('red')" },
       { description: "get('size') is 'large'", assertion: "expect(new URLSearchParams('color=red&size=large').get('size')).toBe('large')" },
       { description: 'returns first value for duplicate keys', assertion: "expect(new URLSearchParams('a=1&a=2').get('a')).toBe('1')" },
       { description: 'returns string type', assertion: "expect(typeof new URLSearchParams('a=1').get('a')).toBe('string')" },
@@ -30,7 +30,7 @@ export const urlSearchParamsGetSetExercises: Exercise[] = [
     initialCode: `const params = new URLSearchParams('a=1')\n// get('z') should be null\n`,
     solution: `new URLSearchParams('a=1').get('z')`,
     tests: [
-      { description: 'missing key returns null', assertion: "expect(new URLSearchParams('a=1').get('z')).toBeNull()" },
+      { description: 'missing key returns null', assertion: "expect(result).toBeNull()" },
       { description: 'empty params returns null', assertion: "expect(new URLSearchParams().get('anything')).toBeNull()" },
       { description: 'case-sensitive key', assertion: "expect(new URLSearchParams('Foo=bar').get('foo')).toBeNull()" },
       { description: 'exact match needed', assertion: "expect(new URLSearchParams('abc=1').get('ab')).toBeNull()" },
@@ -89,7 +89,7 @@ export const urlSearchParamsGetSetExercises: Exercise[] = [
     tests: [
       { description: 'getAll returns [] not null for missing key', assertion: "expect(new URLSearchParams('a=1').getAll('z')).toEqual([])" },
       { description: 'getAll returns array (not null) for missing key', assertion: "expect(new URLSearchParams().getAll('missing')).not.toBeNull()" },
-      { description: 'get returns null for missing key', assertion: "expect(new URLSearchParams('a=1').get('z')).toBeNull()" },
+      { description: 'get returns null for missing key', assertion: "expect(result).toBeNull()" },
       { description: 'getAll always returns an Array', assertion: "expect(Array.isArray(new URLSearchParams().getAll('x'))).toBe(true)" },
       { description: 'getAll empty array is falsy-safe', assertion: "const result=new URLSearchParams().getAll('x'); expect(result.length).toBe(0)" },
     ],

@@ -92,7 +92,7 @@ export const mapGetExercises: Exercise[] = [
     initialCode: `// Get from multi-entry map\nconst m = new Map([['a',1],['b',2],['c',3]])\n`,
     solution: `new Map([['a',1],['b',2],['c',3]]).get('b')`,
     tests: [
-      { description: "get('b') returns 2", assertion: "expect(new Map([['a',1],['b',2],['c',3]]).get('b')).toBe(2)" },
+      { description: "get('b') returns 2", assertion: "expect(result).toBe(2)" },
       { description: "get('a') returns 1", assertion: "expect(new Map([['a',1],['b',2],['c',3]]).get('a')).toBe(1)" },
       { description: "get('c') returns 3", assertion: "expect(new Map([['a',1],['b',2],['c',3]]).get('c')).toBe(3)" },
       { description: "get missing returns undefined", assertion: "expect(new Map([['a',1],['b',2]]).get('z')).toBeUndefined()" },

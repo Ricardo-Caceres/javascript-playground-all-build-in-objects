@@ -12,7 +12,7 @@ export const globalEncodeURIExercises: Exercise[] = [
     initialCode: `encodeURI('hello world')`,
     solution: `encodeURI('hello world') === 'hello%20world'`,
     tests: [
-      { description: "encodeURI('hello world') === 'hello%20world'", assertion: "expect(encodeURI('hello world')).toBe('hello%20world')" },
+      { description: "result", assertion: "expect(encodeURI('hello world')).toBe('hello%20world')" },
       { description: 'result is a string', assertion: "expect(typeof encodeURI('hello world')).toBe('string')" },
       { description: 'contains %20', assertion: "expect(encodeURI('hello world')).toContain('%20')" },
       { description: 'no space in result', assertion: "expect(encodeURI('hello world').includes(' ')).toBe(false)" },
@@ -92,7 +92,7 @@ export const globalEncodeURIExercises: Exercise[] = [
     initialCode: `encodeURI('café') !== 'café'`,
     solution: `encodeURI('café') !== 'café'`,
     tests: [
-      { description: "non-ASCII is encoded", assertion: "expect(encodeURI('café') !== 'café').toBe(true)" },
+      { description: "non-ASCII is encoded", assertion: "expect(result).toBe(true)" },
       { description: 'result is a string', assertion: "expect(typeof encodeURI('café')).toBe('string')" },
       { description: 'result is truthy', assertion: "expect(encodeURI('café')).toBeTruthy()" },
       { description: 'result contains %', assertion: "expect(encodeURI('café')).toContain('%')" },

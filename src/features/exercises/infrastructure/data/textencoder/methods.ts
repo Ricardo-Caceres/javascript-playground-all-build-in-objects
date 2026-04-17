@@ -11,7 +11,7 @@ export const textEncoderMethodsExercises: Exercise[] = [
     initialCode: `// Get the first byte of 'H'\nconst enc = new TextEncoder()\nenc.encode('H')[0]\n`,
     solution: `new TextEncoder().encode('H')[0]`,
     tests: [
-      { description: "encode('H')[0] is 72", assertion: "expect(new TextEncoder().encode('H')[0]).toBe(72)" },
+      { description: "encode('H')[0] is 72", assertion: "expect(result).toBe(72)" },
       { description: "encode('H') has length 1", assertion: "expect(new TextEncoder().encode('H').length).toBe(1)" },
       { description: "encode('H') is Uint8Array", assertion: "expect(new TextEncoder().encode('H') instanceof Uint8Array).toBe(true)" },
       { description: "encode('A')[0] is 65", assertion: "expect(new TextEncoder().encode('A')[0]).toBe(65)" },
@@ -30,7 +30,7 @@ export const textEncoderMethodsExercises: Exercise[] = [
     initialCode: `// Encode 'hello' and check length\nconst enc = new TextEncoder()\nenc.encode('hello').length\n`,
     solution: `new TextEncoder().encode('hello').length`,
     tests: [
-      { description: "encode('hello') length is 5", assertion: "expect(new TextEncoder().encode('hello').length).toBe(5)" },
+      { description: "encode('hello') length is 5", assertion: "expect(result).toBe(5)" },
       { description: "encode('hello') is Uint8Array", assertion: "expect(new TextEncoder().encode('hello') instanceof Uint8Array).toBe(true)" },
       { description: "encode('world') length is 5", assertion: "expect(new TextEncoder().encode('world').length).toBe(5)" },
       { description: "encode('hi') length is 2", assertion: "expect(new TextEncoder().encode('hi').length).toBe(2)" },
@@ -49,7 +49,7 @@ export const textEncoderMethodsExercises: Exercise[] = [
     initialCode: `// Get the second byte of 'AB'\nconst enc = new TextEncoder()\nenc.encode('AB')[1]\n`,
     solution: `new TextEncoder().encode('AB')[1]`,
     tests: [
-      { description: "encode('AB')[1] is 66", assertion: "expect(new TextEncoder().encode('AB')[1]).toBe(66)" },
+      { description: "encode('AB')[1] is 66", assertion: "expect(result).toBe(66)" },
       { description: "encode('AB')[0] is 65", assertion: "expect(new TextEncoder().encode('AB')[0]).toBe(65)" },
       { description: "encode('AB') length is 2", assertion: "expect(new TextEncoder().encode('AB').length).toBe(2)" },
       { description: "encode('BC')[0] is 66", assertion: "expect(new TextEncoder().encode('BC')[0]).toBe(66)" },
@@ -68,7 +68,7 @@ export const textEncoderMethodsExercises: Exercise[] = [
     initialCode: `// Use encodeInto and check written count\nconst enc = new TextEncoder()\nenc.encodeInto('hi', new Uint8Array(10))\n`,
     solution: `new TextEncoder().encodeInto('hi', new Uint8Array(10)).written`,
     tests: [
-      { description: "encodeInto('hi', ...).written is 2", assertion: "expect(new TextEncoder().encodeInto('hi', new Uint8Array(10)).written).toBe(2)" },
+      { description: "encodeInto('hi', ...).written is 2", assertion: "expect(result).toBe(2)" },
       { description: "encodeInto('hello', ...).written is 5", assertion: "expect(new TextEncoder().encodeInto('hello', new Uint8Array(10)).written).toBe(5)" },
       { description: "encodeInto('', ...).written is 0", assertion: "expect(new TextEncoder().encodeInto('', new Uint8Array(10)).written).toBe(0)" },
       { description: "result has written property", assertion: "expect(new TextEncoder().encodeInto('x', new Uint8Array(10))).toHaveProperty('written')" },
@@ -87,7 +87,7 @@ export const textEncoderMethodsExercises: Exercise[] = [
     initialCode: `// Use encodeInto and check read count\nconst enc = new TextEncoder()\nenc.encodeInto('hi', new Uint8Array(10))\n`,
     solution: `new TextEncoder().encodeInto('hi', new Uint8Array(10)).read`,
     tests: [
-      { description: "encodeInto('hi', ...).read is 2", assertion: "expect(new TextEncoder().encodeInto('hi', new Uint8Array(10)).read).toBe(2)" },
+      { description: "encodeInto('hi', ...).read is 2", assertion: "expect(result).toBe(2)" },
       { description: "encodeInto('hello', ...).read is 5", assertion: "expect(new TextEncoder().encodeInto('hello', new Uint8Array(10)).read).toBe(5)" },
       { description: "encodeInto('', ...).read is 0", assertion: "expect(new TextEncoder().encodeInto('', new Uint8Array(10)).read).toBe(0)" },
       { description: "read equals written for ASCII", assertion: "const r = new TextEncoder().encodeInto('abc', new Uint8Array(10)); expect(r.read).toBe(r.written)" },

@@ -69,11 +69,11 @@ export const generatorReturnExercises: Exercise[] = [
     initialCode: `typeof (function* g() {})().return`,
     solution: `typeof (function* g() {})().return`,
     tests: [
-      { description: 'typeof return is function', assertion: 'typeof (function* g() {})().return === "function"' },
-      { description: 'typeof return is not object', assertion: 'typeof (function* g() {})().return !== "object"' },
-      { description: 'typeof return is not undefined', assertion: 'typeof (function* g() {})().return !== "undefined"' },
-      { description: 'typeof return is not null', assertion: 'typeof (function* g() {})().return !== "null"' },
-      { description: 'typeof return is not number', assertion: 'typeof (function* g() {})().return !== "number"' }
+      { description: 'typeof return is function', assertion: 'result === "function"' },
+      { description: 'typeof return is not object', assertion: 'result !== "object"' },
+      { description: 'typeof return is not undefined', assertion: 'result !== "undefined"' },
+      { description: 'typeof return is not null', assertion: 'result !== "null"' },
+      { description: 'typeof return is not number', assertion: 'result !== "number"' }
     ],
     tags: [],
   },

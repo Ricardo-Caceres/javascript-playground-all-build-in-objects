@@ -11,7 +11,7 @@ export const syntaxErrorExercises: Exercise[] = [
     initialCode: `const err = new SyntaxError('bad syntax')\n`,
     solution: `new SyntaxError('bad syntax') instanceof SyntaxError`,
     tests: [
-      { description: 'instanceof SyntaxError is truthy', assertion: "expect(new SyntaxError('bad syntax') instanceof SyntaxError).toBeTruthy()" },
+      { description: 'instanceof SyntaxError is truthy', assertion: "expect(result).toBeTruthy()" },
       { description: 'instanceof SyntaxError is true', assertion: "expect(new SyntaxError('x') instanceof SyntaxError).toBe(true)" },
       { description: 'is an object', assertion: "expect(typeof new SyntaxError('x')).toBe('object')" },
       { description: 'is not null', assertion: "expect(new SyntaxError('x')).not.toBeNull()" },
@@ -30,7 +30,7 @@ export const syntaxErrorExercises: Exercise[] = [
     initialCode: `const err = new SyntaxError()\n`,
     solution: `new SyntaxError() instanceof Error`,
     tests: [
-      { description: 'instanceof Error is true', assertion: "expect(new SyntaxError() instanceof Error).toBe(true)" },
+      { description: 'instanceof Error is true', assertion: "expect(result).toBe(true)" },
       { description: 'instanceof SyntaxError is true', assertion: "expect(new SyntaxError() instanceof SyntaxError).toBe(true)" },
       { description: 'instanceof Object is true', assertion: "expect(new SyntaxError() instanceof Object).toBe(true)" },
       { description: 'is truthy', assertion: "expect(new SyntaxError()).toBeTruthy()" },
@@ -49,7 +49,7 @@ export const syntaxErrorExercises: Exercise[] = [
     initialCode: `const err = new SyntaxError('unexpected token')\n`,
     solution: `new SyntaxError('unexpected token').message`,
     tests: [
-      { description: "message is 'unexpected token'", assertion: "expect(new SyntaxError('unexpected token').message).toBe('unexpected token')" },
+      { description: "message is 'unexpected token'", assertion: "expect(result).toBe('unexpected token')" },
       { description: 'message matches input', assertion: "expect(new SyntaxError('hello').message).toBe('hello')" },
       { description: 'message is a string', assertion: "expect(typeof new SyntaxError('x').message).toBe('string')" },
       { description: 'message is accessible', assertion: "expect(new SyntaxError('test').message).toBeTruthy()" },
@@ -68,10 +68,10 @@ export const syntaxErrorExercises: Exercise[] = [
     initialCode: `const err = new SyntaxError()\n`,
     solution: `new SyntaxError().name`,
     tests: [
-      { description: "name is 'SyntaxError'", assertion: "expect(new SyntaxError().name).toBe('SyntaxError')" },
-      { description: 'name is a string', assertion: "expect(typeof new SyntaxError().name).toBe('string')" },
-      { description: 'name is truthy', assertion: "expect(new SyntaxError().name).toBeTruthy()" },
-      { description: 'name does not equal Error', assertion: "expect(new SyntaxError().name).not.toBe('Error')" },
+      { description: "name is 'SyntaxError'", assertion: "expect(result).toBe('SyntaxError')" },
+      { description: 'name is a string', assertion: "expect(typeof result).toBe('string')" },
+      { description: 'name is truthy', assertion: "expect(result).toBeTruthy()" },
+      { description: 'name does not equal Error', assertion: "expect(result).not.toBe('Error')" },
       { description: 'name is consistent', assertion: "expect(new SyntaxError('x').name).toBe('SyntaxError')" },
     ],
     hints: ['Error subtypes have a .name property matching their constructor name.'],
