@@ -12,7 +12,7 @@ export const setEntriesExercises: Exercise[] = [
     initialCode: `// Check Set entries structure\nconst s = new Set([1,2,3])\n`,
     solution: `[...new Set([1,2,3]).entries()]`,
     tests: [
-      { description: "entries are [[1,1],[2,2],[3,3]]", assertion: "expect([...new Set([1,2,3]).entries()]).toEqual([[1,1],[2,2],[3,3]])" },
+      { description: "entries are [[1,1],[2,2],[3,3]]", assertion: "expect(result).toEqual([[1,1],[2,2],[3,3]])" },
       { description: 'each entry has length 2', assertion: 'expect([...new Set([1]).entries()][0].length).toBe(2)' },
       { description: 'result is an array', assertion: 'expect(Array.isArray([...new Set([1]).entries()])).toBe(true)' },
       { description: 'length equals size', assertion: 'const s = new Set([1,2,3]); expect([...s.entries()].length).toBe(s.size)' },
@@ -52,7 +52,7 @@ export const setEntriesExercises: Exercise[] = [
     initialCode: `// Spread entries\nconst s = new Set(['a','b'])\n`,
     solution: `[...new Set(['a','b']).entries()]`,
     tests: [
-      { description: "entries are [['a','a'],['b','b']]", assertion: "expect([...new Set(['a','b']).entries()]).toEqual([['a','a'],['b','b']])" },
+      { description: "entries are [['a','a'],['b','b']]", assertion: "expect(result).toEqual([['a','a'],['b','b']])" },
       { description: 'first entry key equals first value', assertion: "expect([...new Set(['x','y']).entries()][0][0]).toBe('x')" },
       { description: 'entries count equals set size', assertion: "expect([...new Set(['a','b','c']).entries()].length).toBe(3)" },
       { description: 'result is array of arrays', assertion: "expect(Array.isArray([...new Set(['a']).entries()][0])).toBe(true)" },
@@ -72,10 +72,10 @@ export const setEntriesExercises: Exercise[] = [
     initialCode: `// Spread entries of empty Set\n`,
     solution: `[...new Set().entries()]`,
     tests: [
-      { description: 'empty set entries is empty array', assertion: 'expect([...new Set().entries()]).toEqual([])' },
-      { description: 'length is 0', assertion: 'expect([...new Set().entries()].length).toBe(0)' },
+      { description: 'empty set entries is empty array', assertion: 'expect(result).toEqual([])' },
+      { description: 'length is 0', assertion: 'expect(result.length).toBe(0)' },
       { description: 'iterator is immediately done', assertion: 'expect(new Set().entries().next().done).toBe(true)' },
-      { description: 'result is array', assertion: 'expect(Array.isArray([...new Set().entries()])).toBe(true)' },
+      { description: 'result is array', assertion: 'expect(Array.isArray(result)).toBe(true)' },
       { description: 'for-of body not entered', assertion: 'let c = 0; for(const e of new Set().entries()) c++; expect(c).toBe(0)' },
     ],
     hints: ['An empty Set has no entries to iterate'],
@@ -92,7 +92,7 @@ export const setEntriesExercises: Exercise[] = [
     initialCode: `// Check entries insertion order\nconst s = new Set([3,1,2])\n`,
     solution: `[...new Set([3,1,2]).entries()]`,
     tests: [
-      { description: 'entries in insertion order', assertion: 'expect([...new Set([3,1,2]).entries()]).toEqual([[3,3],[1,1],[2,2]])' },
+      { description: 'entries in insertion order', assertion: 'expect(result).toEqual([[3,3],[1,1],[2,2]])' },
       { description: 'first entry from first inserted', assertion: 'expect([...new Set([9,1,2]).entries()][0][0]).toBe(9)' },
       { description: 'dedup preserves order', assertion: 'expect([...new Set([3,1,3,2]).entries()][0][0]).toBe(3)' },
       { description: 'entries length is unique count', assertion: 'expect([...new Set([1,1,2]).entries()].length).toBe(2)' },

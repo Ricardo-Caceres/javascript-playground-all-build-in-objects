@@ -11,7 +11,7 @@ export const weakSetConstructorExercises: Exercise[] = [
     initialCode: `new WeakSet() instanceof WeakSet\n`,
     solution: `new WeakSet() instanceof WeakSet`,
     tests: [
-      { description: 'instanceof WeakSet is true', assertion: 'expect(new WeakSet() instanceof WeakSet).toBe(true)' },
+      { description: 'instanceof WeakSet is true', assertion: 'expect(result).toBe(true)' },
       { description: 'instanceof Object is true', assertion: 'expect(new WeakSet() instanceof Object).toBe(true)' },
       { description: 'is truthy', assertion: 'expect(new WeakSet()).toBeTruthy()' },
       { description: 'is not null', assertion: 'expect(new WeakSet()).not.toBeNull()' },
@@ -30,10 +30,10 @@ export const weakSetConstructorExercises: Exercise[] = [
     initialCode: `typeof new WeakSet()\n`,
     solution: `typeof new WeakSet()`,
     tests: [
-      { description: "typeof is 'object'", assertion: "expect(typeof new WeakSet()).toBe('object')" },
-      { description: "not 'function'", assertion: "expect(typeof new WeakSet() === 'function').toBe(false)" },
-      { description: "not 'string'", assertion: "expect(typeof new WeakSet() === 'string').toBe(false)" },
-      { description: 'instanceof WeakSet', assertion: 'expect(new WeakSet() instanceof WeakSet).toBe(true)' },
+      { description: "typeof is 'object'", assertion: "expect(result).toBe('object')" },
+      { description: "not 'function'", assertion: "expect(result === 'function').toBe(false)" },
+      { description: "not 'string'", assertion: "expect(result === 'string').toBe(false)" },
+      { description: 'instanceof WeakSet', assertion: 'expect(result).toBe(true)' },
       { description: 'is not null', assertion: 'expect(new WeakSet()).not.toBeNull()' },
     ],
     hints: ['All WeakSet instances are objects.'],

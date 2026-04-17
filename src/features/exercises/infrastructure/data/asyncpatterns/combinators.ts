@@ -11,7 +11,7 @@ export const asyncCombinatorsExercises: Exercise[] = [
     initialCode: `Promise.all([Promise.resolve(1)]) instanceof Promise\n`,
     solution: `Promise.all([Promise.resolve(1)]) instanceof Promise`,
     tests: [
-      { description: 'Promise.all returns Promise', assertion: 'expect(Promise.all([Promise.resolve(1)]) instanceof Promise).toBeTruthy()' },
+      { description: 'Promise.all returns Promise', assertion: 'expect(result).toBeTruthy()' },
       { description: 'Promise.all([]) returns Promise', assertion: 'expect(Promise.all([]) instanceof Promise).toBeTruthy()' },
       { description: 'Promise.all with multiple promises', assertion: 'expect(Promise.all([Promise.resolve(1), Promise.resolve(2)]) instanceof Promise).toBeTruthy()' },
       { description: 'typeof is object', assertion: "expect(typeof Promise.all([Promise.resolve(1)])).toBe('object')" },
@@ -30,7 +30,7 @@ export const asyncCombinatorsExercises: Exercise[] = [
     initialCode: `Promise.allSettled([Promise.resolve(1)]) instanceof Promise\n`,
     solution: `Promise.allSettled([Promise.resolve(1)]) instanceof Promise`,
     tests: [
-      { description: 'Promise.allSettled returns Promise', assertion: 'expect(Promise.allSettled([Promise.resolve(1)]) instanceof Promise).toBeTruthy()' },
+      { description: 'Promise.allSettled returns Promise', assertion: 'expect(result).toBeTruthy()' },
       { description: 'Promise.allSettled([]) returns Promise', assertion: 'expect(Promise.allSettled([]) instanceof Promise).toBeTruthy()' },
       { description: 'with mixed results', assertion: 'expect(Promise.allSettled([Promise.resolve(1), Promise.reject("e").catch(()=>{})]) instanceof Promise).toBeTruthy()' },
       { description: 'typeof is object', assertion: "expect(typeof Promise.allSettled([Promise.resolve(1)])).toBe('object')" },
@@ -49,7 +49,7 @@ export const asyncCombinatorsExercises: Exercise[] = [
     initialCode: `Promise.race([Promise.resolve(1)]) instanceof Promise\n`,
     solution: `Promise.race([Promise.resolve(1)]) instanceof Promise`,
     tests: [
-      { description: 'Promise.race returns Promise', assertion: 'expect(Promise.race([Promise.resolve(1)]) instanceof Promise).toBeTruthy()' },
+      { description: 'Promise.race returns Promise', assertion: 'expect(result).toBeTruthy()' },
       { description: 'Promise.race with multiple', assertion: 'expect(Promise.race([Promise.resolve(1), Promise.resolve(2)]) instanceof Promise).toBeTruthy()' },
       { description: 'with async functions', assertion: 'const p1=Promise.resolve(1); const p2=Promise.resolve(2); expect(Promise.race([p1, p2]) instanceof Promise).toBeTruthy()' },
       { description: 'typeof is object', assertion: "expect(typeof Promise.race([Promise.resolve(1)])).toBe('object')" },
@@ -68,9 +68,9 @@ export const asyncCombinatorsExercises: Exercise[] = [
     initialCode: `Promise.any([Promise.resolve(1)]) instanceof Promise\n`,
     solution: `Promise.any([Promise.resolve(1)]) instanceof Promise`,
     tests: [
-      { description: 'Promise.any returns Promise', assertion: 'expect(Promise.any([Promise.resolve(1)]) instanceof Promise).toBeTruthy()' },
+      { description: 'Promise.any returns Promise', assertion: 'expect(result).toBeTruthy()' },
       { description: 'Promise.any with multiple', assertion: 'expect(Promise.any([Promise.resolve(1), Promise.resolve(2)]) instanceof Promise).toBeTruthy()' },
-      { description: 'with mixed results', assertion: 'expect(Promise.any([Promise.resolve(1)]) instanceof Promise).toBeTruthy()' },
+      { description: 'with mixed results', assertion: 'expect(result).toBeTruthy()' },
       { description: 'typeof is object', assertion: "expect(typeof Promise.any([Promise.resolve(1)])).toBe('object')" },
       { description: 'instanceof Object', assertion: 'expect(Promise.any([Promise.resolve(1)]) instanceof Object).toBeTruthy()' },
     ],

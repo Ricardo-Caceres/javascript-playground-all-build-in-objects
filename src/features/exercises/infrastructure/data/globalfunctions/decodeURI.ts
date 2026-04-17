@@ -12,7 +12,7 @@ export const globalDecodeURIExercises: Exercise[] = [
     initialCode: `decodeURI('hello%20world')`,
     solution: `decodeURI('hello%20world') === 'hello world'`,
     tests: [
-      { description: "decodeURI('hello%20world') === 'hello world'", assertion: "expect(decodeURI('hello%20world')).toBe('hello world')" },
+      { description: "result", assertion: "expect(decodeURI('hello%20world')).toBe('hello world')" },
       { description: 'result is a string', assertion: "expect(typeof decodeURI('hello%20world')).toBe('string')" },
       { description: 'contains space', assertion: "expect(decodeURI('hello%20world').includes(' ')).toBe(true)" },
       { description: 'no %20 in result', assertion: "expect(decodeURI('hello%20world').includes('%20')).toBe(false)" },
@@ -56,7 +56,7 @@ export const globalDecodeURIExercises: Exercise[] = [
       { description: 'result is a string', assertion: "expect(typeof decodeURI(encodeURI('hello world'))).toBe('string')" },
       { description: 'contains space', assertion: "expect(decodeURI(encodeURI('hello world')).includes(' ')).toBe(true)" },
       { description: 'is truthy', assertion: "expect(decodeURI(encodeURI('hello world'))).toBeTruthy()" },
-      { description: 'equals original', assertion: "expect(decodeURI(encodeURI('hello world')) === 'hello world').toBe(true)" },
+      { description: 'equals original', assertion: "expect(result).toBe(true)" },
     ],
     hints: ['decodeURI and encodeURI are inverse operations.'],
     tags: ['globalfunctions', 'decodeURI', 'encodeURI', 'round-trip'],
@@ -92,7 +92,7 @@ export const globalDecodeURIExercises: Exercise[] = [
     initialCode: `decodeURI('%41%42%43')`,
     solution: `decodeURI('%41%42%43') === 'ABC'`,
     tests: [
-      { description: "decodeURI('%41%42%43') === 'ABC'", assertion: "expect(decodeURI('%41%42%43')).toBe('ABC')" },
+      { description: "result", assertion: "expect(decodeURI('%41%42%43')).toBe('ABC')" },
       { description: 'result is a string', assertion: "expect(typeof decodeURI('%41%42%43')).toBe('string')" },
       { description: 'is truthy', assertion: "expect(decodeURI('%41%42%43')).toBeTruthy()" },
       { description: 'has length 3', assertion: "expect(decodeURI('%41%42%43')).toHaveLength(3)" },

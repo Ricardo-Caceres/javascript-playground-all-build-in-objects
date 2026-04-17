@@ -56,7 +56,7 @@ export const finalizationRegistryRegisterExercises: Exercise[] = [
       { description: 'unregister is on prototype', assertion: "expect(typeof FinalizationRegistry.prototype.unregister).toBe('function')" },
       { description: 'is truthy', assertion: 'const reg = new FinalizationRegistry(() => {}); expect(reg.unregister).toBeTruthy()' },
       { description: 'not null', assertion: 'const reg = new FinalizationRegistry(() => {}); expect(reg.unregister).not.toBeNull()' },
-      { description: 'instanceof FinalizationRegistry', assertion: 'expect(new FinalizationRegistry(() => {}) instanceof FinalizationRegistry).toBe(true)' },
+      { description: 'instanceof FinalizationRegistry', assertion: 'expect(result).toBe(true)' },
     ],
     hints: ['unregister allows you to cancel a previously registered cleanup callback.'],
     tags: ['finalizationregistry', 'register', 'unregister'],
@@ -72,7 +72,7 @@ export const finalizationRegistryRegisterExercises: Exercise[] = [
     initialCode: `new FinalizationRegistry(() => {}) instanceof FinalizationRegistry`,
     solution: `new FinalizationRegistry(() => {}) instanceof FinalizationRegistry`,
     tests: [
-      { description: 'instanceof FinalizationRegistry is true', assertion: 'expect(new FinalizationRegistry(() => {}) instanceof FinalizationRegistry).toBe(true)' },
+      { description: 'instanceof FinalizationRegistry is true', assertion: 'expect(result).toBe(true)' },
       { description: 'instanceof Object is true', assertion: 'expect(new FinalizationRegistry(() => {}) instanceof Object).toBe(true)' },
       { description: 'is truthy', assertion: 'expect(new FinalizationRegistry(() => {})).toBeTruthy()' },
       { description: 'not null', assertion: 'expect(new FinalizationRegistry(() => {})).not.toBeNull()' },

@@ -12,7 +12,7 @@ export const promiseResolveExercises: Exercise[] = [
     initialCode: `Promise.resolve(1) instanceof Promise\n`,
     solution: `Promise.resolve(1) instanceof Promise`,
     tests: [
-      { description: 'instanceof Promise is true', assertion: 'expect(Promise.resolve(1) instanceof Promise).toBe(true)' },
+      { description: 'instanceof Promise is true', assertion: 'expect(result).toBe(true)' },
       { description: 'instanceof Object is true', assertion: 'expect(Promise.resolve(1) instanceof Object).toBe(true)' },
       { description: 'is truthy', assertion: 'expect(Promise.resolve(1)).toBeTruthy()' },
       { description: 'is not null', assertion: 'expect(Promise.resolve(1)).not.toBeNull()' },
@@ -32,10 +32,10 @@ export const promiseResolveExercises: Exercise[] = [
     initialCode: `typeof Promise.resolve(1)\n`,
     solution: `typeof Promise.resolve(1)`,
     tests: [
-      { description: "typeof is 'object'", assertion: "expect(typeof Promise.resolve(1)).toBe('object')" },
-      { description: "not 'function'", assertion: "expect(typeof Promise.resolve(1) === 'function').toBe(false)" },
-      { description: "not 'string'", assertion: "expect(typeof Promise.resolve(1) === 'string').toBe(false)" },
-      { description: 'instanceof Promise', assertion: 'expect(Promise.resolve(1) instanceof Promise).toBe(true)' },
+      { description: "typeof is 'object'", assertion: "expect(result).toBe('object')" },
+      { description: "not 'function'", assertion: "expect(result === 'function').toBe(false)" },
+      { description: "not 'string'", assertion: "expect(result === 'string').toBe(false)" },
+      { description: 'instanceof Promise', assertion: 'expect(result).toBe(true)' },
       { description: 'result is truthy', assertion: 'expect(Promise.resolve(1)).toBeTruthy()' },
     ],
     hints: ['Promise instances have typeof === "object".'],
@@ -52,7 +52,7 @@ export const promiseResolveExercises: Exercise[] = [
     initialCode: `Promise.resolve(Promise.resolve(1)) instanceof Promise\n`,
     solution: `Promise.resolve(Promise.resolve(1)) instanceof Promise`,
     tests: [
-      { description: 'nested resolve instanceof Promise', assertion: 'expect(Promise.resolve(Promise.resolve(1)) instanceof Promise).toBe(true)' },
+      { description: 'nested resolve instanceof Promise', assertion: 'expect(result).toBe(true)' },
       { description: 'typeof is object', assertion: "expect(typeof Promise.resolve(Promise.resolve(1))).toBe('object')" },
       { description: 'is truthy', assertion: 'expect(Promise.resolve(Promise.resolve(1))).toBeTruthy()' },
       { description: 'is not null', assertion: 'expect(Promise.resolve(Promise.resolve(1))).not.toBeNull()' },
@@ -72,7 +72,7 @@ export const promiseResolveExercises: Exercise[] = [
     initialCode: `Promise.resolve(null) instanceof Promise\n`,
     solution: `Promise.resolve(null) instanceof Promise`,
     tests: [
-      { description: 'instanceof Promise is true', assertion: 'expect(Promise.resolve(null) instanceof Promise).toBe(true)' },
+      { description: 'instanceof Promise is true', assertion: 'expect(result).toBe(true)' },
       { description: 'typeof is object', assertion: "expect(typeof Promise.resolve(null)).toBe('object')" },
       { description: 'is truthy', assertion: 'expect(Promise.resolve(null)).toBeTruthy()' },
       { description: 'is not null itself', assertion: 'expect(Promise.resolve(null)).not.toBeNull()' },
@@ -92,7 +92,7 @@ export const promiseResolveExercises: Exercise[] = [
     initialCode: `Promise.resolve(undefined) instanceof Promise\n`,
     solution: `Promise.resolve(undefined) instanceof Promise`,
     tests: [
-      { description: 'instanceof Promise is true', assertion: 'expect(Promise.resolve(undefined) instanceof Promise).toBe(true)' },
+      { description: 'instanceof Promise is true', assertion: 'expect(result).toBe(true)' },
       { description: 'typeof is object', assertion: "expect(typeof Promise.resolve(undefined)).toBe('object')" },
       { description: 'is truthy', assertion: 'expect(Promise.resolve(undefined)).toBeTruthy()' },
       { description: 'is not undefined itself', assertion: 'expect(Promise.resolve(undefined)).not.toBeUndefined()' },

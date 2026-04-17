@@ -12,7 +12,7 @@ export const setUnionExercises: Exercise[] = [
     initialCode: `// Use union() - ES2025\nconst a = new Set([1,2])\nconst b = new Set([2,3])\n`,
     solution: `(new Set([1,2]) as any).union(new Set([2,3])).size`,
     tests: [
-      { description: 'union size is 3', assertion: 'expect((new Set([1,2]) as any).union(new Set([2,3])).size).toBe(3)' },
+      { description: 'union size is 3', assertion: 'expect(result).toBe(3)' },
       { description: 'union contains 1', assertion: 'expect((new Set([1,2]) as any).union(new Set([2,3])).has(1)).toBe(true)' },
       { description: 'union contains 2', assertion: 'expect((new Set([1,2]) as any).union(new Set([2,3])).has(2)).toBe(true)' },
       { description: 'union contains 3', assertion: 'expect((new Set([1,2]) as any).union(new Set([2,3])).has(3)).toBe(true)' },
@@ -33,8 +33,8 @@ export const setUnionExercises: Exercise[] = [
     solution: `[...(new Set([1,2,3]) as any).union(new Set([3,4,5]))]`,
     tests: [
       { description: 'union has 5 elements', assertion: 'expect((new Set([1,2,3]) as any).union(new Set([3,4,5])).size).toBe(5)' },
-      { description: 'union has all unique elements', assertion: 'expect([...(new Set([1,2,3]) as any).union(new Set([3,4,5]))].sort((a,b)=>a-b)).toEqual([1,2,3,4,5])' },
-      { description: 'shared element not duplicated', assertion: 'expect((new Set([1,2]) as any).union(new Set([2,3])).size).toBe(3)' },
+      { description: 'union has all unique elements', assertion: 'expect(result.sort((a,b)=>a-b)).toEqual([1,2,3,4,5])' },
+      { description: 'shared element not duplicated', assertion: 'expect(result).toBe(3)' },
       { description: 'union result is a Set', assertion: 'expect((new Set([1]) as any).union(new Set([2])) instanceof Set).toBe(true)' },
       { description: 'union has 1', assertion: 'expect((new Set([1,2,3]) as any).union(new Set([3,4,5])).has(1)).toBe(true)' },
     ],
@@ -52,7 +52,7 @@ export const setUnionExercises: Exercise[] = [
     initialCode: `// Non-overlapping union\nconst a = new Set([1,2])\nconst b = new Set([3,4])\n`,
     solution: `(new Set([1,2]) as any).union(new Set([3,4])).size`,
     tests: [
-      { description: 'size is 4 for disjoint sets', assertion: 'expect((new Set([1,2]) as any).union(new Set([3,4])).size).toBe(4)' },
+      { description: 'size is 4 for disjoint sets', assertion: 'expect(result).toBe(4)' },
       { description: 'has all elements', assertion: 'expect((new Set([1,2]) as any).union(new Set([3,4])).has(3)).toBe(true)' },
       { description: 'has element from first set', assertion: 'expect((new Set([1,2]) as any).union(new Set([3,4])).has(1)).toBe(true)' },
       { description: 'has element from second set', assertion: 'expect((new Set([1,2]) as any).union(new Set([3,4])).has(4)).toBe(true)' },
@@ -72,7 +72,7 @@ export const setUnionExercises: Exercise[] = [
     initialCode: `// Union with empty Set\nconst a = new Set([1,2,3])\nconst b = new Set()\n`,
     solution: `(new Set([1,2,3]) as any).union(new Set()).size`,
     tests: [
-      { description: 'union with empty is same size', assertion: 'expect((new Set([1,2,3]) as any).union(new Set()).size).toBe(3)' },
+      { description: 'union with empty is same size', assertion: 'expect(result).toBe(3)' },
       { description: 'empty union empty is empty', assertion: 'expect((new Set() as any).union(new Set()).size).toBe(0)' },
       { description: 'union of empty with non-empty', assertion: 'expect((new Set() as any).union(new Set([1,2])).size).toBe(2)' },
       { description: 'original elements preserved', assertion: 'expect((new Set([1,2,3]) as any).union(new Set()).has(2)).toBe(true)' },
@@ -96,7 +96,7 @@ export const setUnionExercises: Exercise[] = [
       { description: 'original b unchanged after union', assertion: 'const a = new Set([1,2]); const b = new Set([3,4]); (a as any).union(b); expect(b.size).toBe(2)' },
       { description: 'a does not contain elements from b', assertion: 'const a = new Set([1,2]); (a as any).union(new Set([3,4])); expect(a.has(3)).toBe(false)' },
       { description: 'result is a new Set', assertion: 'const a = new Set([1,2]); const result = (a as any).union(new Set([3])); expect(result).not.toBe(a)' },
-      { description: 'result size is correct', assertion: 'expect((new Set([1,2]) as any).union(new Set([3,4])).size).toBe(4)' },
+      { description: 'result size is correct', assertion: 'expect(result).toBe(4)' },
     ],
     hints: ['union() returns a new Set; neither original is modified'],
     tags: ['Set', 'union', 'immutable'],

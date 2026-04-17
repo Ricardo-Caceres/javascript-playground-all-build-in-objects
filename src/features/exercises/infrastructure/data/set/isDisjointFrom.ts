@@ -12,7 +12,7 @@ export const setIsDisjointFromExercises: Exercise[] = [
     initialCode: `// Use isDisjointFrom() - ES2025\nconst a = new Set([1,2,3])\nconst b = new Set([4,5,6])\n`,
     solution: `(new Set([1,2,3]) as any).isDisjointFrom(new Set([4,5,6]))`,
     tests: [
-      { description: 'disjoint returns true', assertion: 'expect((new Set([1,2,3]) as any).isDisjointFrom(new Set([4,5,6]))).toBe(true)' },
+      { description: 'disjoint returns true', assertion: 'expect(result).toBe(true)' },
       { description: 'result is boolean', assertion: "expect(typeof (new Set([1,2]) as any).isDisjointFrom(new Set([3,4]))).toBe('boolean')" },
       { description: 'result is truthy', assertion: 'expect((new Set([1,2]) as any).isDisjointFrom(new Set([3,4]))).toBeTruthy()' },
       { description: 'isDisjointFrom is a function', assertion: "expect(typeof (new Set() as any).isDisjointFrom).toBe('function')" },
@@ -32,9 +32,9 @@ export const setIsDisjointFromExercises: Exercise[] = [
     initialCode: `// Non-disjoint check\nconst a = new Set([1,2,3])\nconst b = new Set([3,4,5])\n`,
     solution: `(new Set([1,2,3]) as any).isDisjointFrom(new Set([3,4,5]))`,
     tests: [
-      { description: 'non-disjoint returns false', assertion: 'expect((new Set([1,2,3]) as any).isDisjointFrom(new Set([3,4,5]))).toBe(false)' },
-      { description: 'result is boolean', assertion: "expect(typeof (new Set([1,2,3]) as any).isDisjointFrom(new Set([3,4,5]))).toBe('boolean')" },
-      { description: 'result is falsy', assertion: 'expect((new Set([1,2,3]) as any).isDisjointFrom(new Set([3,4,5]))).toBeFalsy()' },
+      { description: 'non-disjoint returns false', assertion: 'expect(result).toBe(false)' },
+      { description: 'result is boolean', assertion: "expect(typeof result).toBe('boolean')" },
+      { description: 'result is falsy', assertion: 'expect(result).toBeFalsy()' },
       { description: 'single common element → false', assertion: 'expect((new Set([1]) as any).isDisjointFrom(new Set([1,2]))).toBe(false)' },
       { description: 'overlapping sets → false', assertion: 'expect((new Set([1,2,3,4]) as any).isDisjointFrom(new Set([4,5,6]))).toBe(false)' },
     ],
@@ -52,7 +52,7 @@ export const setIsDisjointFromExercises: Exercise[] = [
     initialCode: `// Empty set is disjoint from everything\n`,
     solution: `(new Set() as any).isDisjointFrom(new Set([1,2,3]))`,
     tests: [
-      { description: 'empty set is disjoint from any set', assertion: 'expect((new Set() as any).isDisjointFrom(new Set([1,2,3]))).toBe(true)' },
+      { description: 'empty set is disjoint from any set', assertion: 'expect(result).toBe(true)' },
       { description: 'empty set is disjoint from empty set', assertion: 'expect((new Set() as any).isDisjointFrom(new Set())).toBe(true)' },
       { description: 'any set is disjoint from empty set', assertion: 'expect((new Set([1,2,3]) as any).isDisjointFrom(new Set())).toBe(true)' },
       { description: 'result is boolean', assertion: "expect(typeof (new Set() as any).isDisjointFrom(new Set([1]))).toBe('boolean')" },
@@ -72,7 +72,7 @@ export const setIsDisjointFromExercises: Exercise[] = [
     initialCode: `// Overlapping sets\nconst a = new Set([1,2,3,4])\nconst b = new Set([3,4,5,6])\n`,
     solution: `(new Set([1,2,3,4]) as any).isDisjointFrom(new Set([3,4,5,6]))`,
     tests: [
-      { description: 'overlapping sets: false', assertion: 'expect((new Set([1,2,3,4]) as any).isDisjointFrom(new Set([3,4,5,6]))).toBe(false)' },
+      { description: 'overlapping sets: false', assertion: 'expect(result).toBe(false)' },
       { description: 'result is falsy', assertion: 'expect((new Set([1,2,3]) as any).isDisjointFrom(new Set([2,4,6]))).toBeFalsy()' },
       { description: 'subset overlap: false', assertion: 'expect((new Set([1,2,3]) as any).isDisjointFrom(new Set([1,2]))).toBe(false)' },
       { description: 'superset overlap: false', assertion: 'expect((new Set([1,2]) as any).isDisjointFrom(new Set([1,2,3]))).toBe(false)' },
@@ -92,7 +92,7 @@ export const setIsDisjointFromExercises: Exercise[] = [
     initialCode: `// Identical sets\nconst a = new Set([1,2,3])\nconst b = new Set([1,2,3])\n`,
     solution: `(new Set([1,2,3]) as any).isDisjointFrom(new Set([1,2,3]))`,
     tests: [
-      { description: 'identical sets are not disjoint', assertion: 'expect((new Set([1,2,3]) as any).isDisjointFrom(new Set([1,2,3]))).toBe(false)' },
+      { description: 'identical sets are not disjoint', assertion: 'expect(result).toBe(false)' },
       { description: 'result is false', assertion: 'expect((new Set([1,2]) as any).isDisjointFrom(new Set([1,2]))).toBe(false)' },
       { description: 'A is not disjoint from A', assertion: 'const a = new Set([1,2,3]); expect((a as any).isDisjointFrom(a)).toBe(false)' },
       { description: 'result is falsy', assertion: 'expect((new Set([1,2]) as any).isDisjointFrom(new Set([1,2]))).toBeFalsy()' },

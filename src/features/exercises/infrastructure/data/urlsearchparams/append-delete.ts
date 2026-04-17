@@ -87,7 +87,7 @@ export const urlSearchParamsAppendDeleteExercises: Exercise[] = [
     initialCode: `const params = new URLSearchParams('a=1&b=2')\n// params.toString()\n`,
     solution: `new URLSearchParams('a=1&b=2').toString()`,
     tests: [
-      { description: 'toString produces query string', assertion: "expect(new URLSearchParams('a=1&b=2').toString()).toBe('a=1&b=2')" },
+      { description: 'toString produces query string', assertion: "expect(result).toBe('a=1&b=2')" },
       { description: 'toString of empty params is empty string', assertion: "expect(new URLSearchParams().toString()).toBe('')" },
       { description: 'toString returns a string', assertion: "expect(typeof new URLSearchParams('a=1').toString()).toBe('string')" },
       { description: 'toString after append includes new entry', assertion: "const p=new URLSearchParams('a=1'); p.append('b','2'); expect(p.toString()).toContain('b=2')" },

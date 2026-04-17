@@ -11,7 +11,7 @@ export const sharedArrayBufferExercises: Exercise[] = [
     initialCode: `const buf = new SharedArrayBuffer(16)\n`,
     solution: `new SharedArrayBuffer(16) instanceof SharedArrayBuffer`,
     tests: [
-      { description: 'instanceof SharedArrayBuffer is truthy', assertion: "expect(new SharedArrayBuffer(16) instanceof SharedArrayBuffer).toBeTruthy()" },
+      { description: 'instanceof SharedArrayBuffer is truthy', assertion: "expect(result).toBeTruthy()" },
       { description: 'instanceof SharedArrayBuffer is true', assertion: "expect(new SharedArrayBuffer(8) instanceof SharedArrayBuffer).toBe(true)" },
       { description: 'is an object', assertion: "expect(typeof new SharedArrayBuffer(16)).toBe('object')" },
       { description: 'is not null', assertion: "expect(new SharedArrayBuffer(16)).not.toBeNull()" },
@@ -30,9 +30,9 @@ export const sharedArrayBufferExercises: Exercise[] = [
     initialCode: `const buf = new SharedArrayBuffer(16)\n`,
     solution: `new SharedArrayBuffer(16).byteLength`,
     tests: [
-      { description: 'byteLength is 16', assertion: "expect(new SharedArrayBuffer(16).byteLength).toBe(16)" },
+      { description: 'byteLength is 16', assertion: "expect(result).toBe(16)" },
       { description: 'byteLength matches constructor argument', assertion: "expect(new SharedArrayBuffer(32).byteLength).toBe(32)" },
-      { description: 'byteLength is a number', assertion: "expect(typeof new SharedArrayBuffer(16).byteLength).toBe('number')" },
+      { description: 'byteLength is a number', assertion: "expect(typeof result).toBe('number')" },
       { description: 'byteLength of 0-byte buffer is 0', assertion: "expect(new SharedArrayBuffer(0).byteLength).toBe(0)" },
       { description: 'byteLength is truthy for non-zero buffer', assertion: "expect(new SharedArrayBuffer(8).byteLength).toBeTruthy()" },
     ],
@@ -49,7 +49,7 @@ export const sharedArrayBufferExercises: Exercise[] = [
     initialCode: `const buf = new SharedArrayBuffer(16)\nconst view = new Int32Array(buf)\n`,
     solution: `new Int32Array(new SharedArrayBuffer(16)).length`,
     tests: [
-      { description: 'Int32Array length is 4 for 16-byte buffer', assertion: "expect(new Int32Array(new SharedArrayBuffer(16)).length).toBe(4)" },
+      { description: 'Int32Array length is 4 for 16-byte buffer', assertion: "expect(result).toBe(4)" },
       { description: 'Int32Array length is 2 for 8-byte buffer', assertion: "expect(new Int32Array(new SharedArrayBuffer(8)).length).toBe(2)" },
       { description: 'result is an Int32Array', assertion: "expect(new Int32Array(new SharedArrayBuffer(16)) instanceof Int32Array).toBe(true)" },
       { description: 'buffer is accessible via .buffer', assertion: "expect(new Int32Array(new SharedArrayBuffer(16)).buffer instanceof SharedArrayBuffer).toBe(true)" },
@@ -68,7 +68,7 @@ export const sharedArrayBufferExercises: Exercise[] = [
     initialCode: `const buf = new SharedArrayBuffer(8)\nconst sliced = buf.slice(0, 4)\n`,
     solution: `new SharedArrayBuffer(8).slice(0, 4).byteLength`,
     tests: [
-      { description: 'sliced byteLength is 4', assertion: "expect(new SharedArrayBuffer(8).slice(0, 4).byteLength).toBe(4)" },
+      { description: 'sliced byteLength is 4', assertion: "expect(result).toBe(4)" },
       { description: 'result is a SharedArrayBuffer', assertion: "expect(new SharedArrayBuffer(8).slice(0, 4) instanceof SharedArrayBuffer).toBe(true)" },
       { description: 'slicing full buffer returns same byteLength', assertion: "expect(new SharedArrayBuffer(8).slice(0, 8).byteLength).toBe(8)" },
       { description: 'slicing half returns correct byteLength', assertion: "expect(new SharedArrayBuffer(16).slice(0, 8).byteLength).toBe(8)" },
@@ -87,7 +87,7 @@ export const sharedArrayBufferExercises: Exercise[] = [
     initialCode: `const buf = new SharedArrayBuffer(4)\nconst view = new Int32Array(buf)\n`,
     solution: `ArrayBuffer.isView(new Int32Array(new SharedArrayBuffer(4)))`,
     tests: [
-      { description: 'ArrayBuffer.isView returns true for Int32Array on SharedArrayBuffer', assertion: "expect(ArrayBuffer.isView(new Int32Array(new SharedArrayBuffer(4)))).toBe(true)" },
+      { description: 'ArrayBuffer.isView returns true for Int32Array on SharedArrayBuffer', assertion: "expect(result).toBe(true)" },
       { description: 'ArrayBuffer.isView returns false for plain SharedArrayBuffer', assertion: "expect(ArrayBuffer.isView(new SharedArrayBuffer(4))).toBe(false)" },
       { description: 'ArrayBuffer.isView returns true for Uint8Array on SharedArrayBuffer', assertion: "expect(ArrayBuffer.isView(new Uint8Array(new SharedArrayBuffer(4)))).toBe(true)" },
       { description: 'ArrayBuffer.isView returns false for plain number', assertion: "expect(ArrayBuffer.isView(42)).toBe(false)" },

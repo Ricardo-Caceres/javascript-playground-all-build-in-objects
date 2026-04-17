@@ -11,10 +11,10 @@ export const urlSearchParamsPropExercises: Exercise[] = [
     initialCode: `const params = new URLSearchParams()\n// params.size\n`,
     solution: `new URLSearchParams().size`,
     tests: [
-      { description: 'size of empty params is 0', assertion: "expect(new URLSearchParams().size).toBe(0)" },
-      { description: 'size is a number', assertion: "expect(typeof new URLSearchParams().size).toBe('number')" },
-      { description: 'size is 0 not undefined', assertion: "expect(new URLSearchParams().size).not.toBeUndefined()" },
-      { description: 'size is falsy when 0', assertion: "expect(new URLSearchParams().size).toBeFalsy()" },
+      { description: 'size of empty params is 0', assertion: "expect(result).toBe(0)" },
+      { description: 'size is a number', assertion: "expect(typeof result).toBe('number')" },
+      { description: 'size is 0 not undefined', assertion: "expect(result).not.toBeUndefined()" },
+      { description: 'size is falsy when 0', assertion: "expect(result).toBeFalsy()" },
       { description: 'empty string init also has size 0', assertion: "expect(new URLSearchParams('').size).toBe(0)" },
     ],
     hints: ['size reflects the number of entries, not unique keys'],
@@ -88,7 +88,7 @@ export const urlSearchParamsPropExercises: Exercise[] = [
     solution: `new URLSearchParams('a=1&b=2&c=3').size`,
     tests: [
       { description: 'size from 2-param string is 2', assertion: "expect(new URLSearchParams('a=1&b=2').size).toBe(2)" },
-      { description: 'size from 3-param string is 3', assertion: "expect(new URLSearchParams('a=1&b=2&c=3').size).toBe(3)" },
+      { description: 'size from 3-param string is 3', assertion: "expect(result).toBe(3)" },
       { description: 'duplicate keys counted separately', assertion: "expect(new URLSearchParams('a=1&a=2').size).toBe(2)" },
       { description: 'size from single param is 1', assertion: "expect(new URLSearchParams('x=hello').size).toBe(1)" },
       { description: 'size is a number', assertion: "expect(typeof new URLSearchParams('a=1').size).toBe('number')" },

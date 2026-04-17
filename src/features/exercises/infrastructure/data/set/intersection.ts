@@ -12,7 +12,7 @@ export const setIntersectionExercises: Exercise[] = [
     initialCode: `// Use intersection() - ES2025\nconst a = new Set([1,2,3])\nconst b = new Set([2,3,4])\n`,
     solution: `[...(new Set([1,2,3]) as any).intersection(new Set([2,3,4]))]`,
     tests: [
-      { description: 'intersection has common elements [2,3]', assertion: 'expect([...(new Set([1,2,3]) as any).intersection(new Set([2,3,4]))].sort((a,b)=>a-b)).toEqual([2,3])' },
+      { description: 'intersection has common elements [2,3]', assertion: 'expect(result.sort((a,b)=>a-b)).toEqual([2,3])' },
       { description: 'has 2', assertion: 'expect((new Set([1,2,3]) as any).intersection(new Set([2,3,4])).has(2)).toBe(true)' },
       { description: 'has 3', assertion: 'expect((new Set([1,2,3]) as any).intersection(new Set([2,3,4])).has(3)).toBe(true)' },
       { description: 'does not have 1', assertion: 'expect((new Set([1,2,3]) as any).intersection(new Set([2,3,4])).has(1)).toBe(false)' },
@@ -32,8 +32,8 @@ export const setIntersectionExercises: Exercise[] = [
     initialCode: `// Check intersection size\nconst a = new Set([1,2,3,4])\nconst b = new Set([3,4,5,6])\n`,
     solution: `(new Set([1,2,3,4]) as any).intersection(new Set([3,4,5,6])).size`,
     tests: [
-      { description: 'intersection size is 2', assertion: 'expect((new Set([1,2,3,4]) as any).intersection(new Set([3,4,5,6])).size).toBe(2)' },
-      { description: 'single common element has size 1', assertion: 'expect((new Set([1,2,3]) as any).intersection(new Set([3,4,5])).size).toBe(1)' },
+      { description: 'intersection size is 2', assertion: 'expect(result).toBe(2)' },
+      { description: 'single common element has size 1', assertion: 'expect(result).toBe(1)' },
       { description: 'identical sets: intersection size equals set size', assertion: 'expect((new Set([1,2,3]) as any).intersection(new Set([1,2,3])).size).toBe(3)' },
       { description: 'size is a number', assertion: "expect(typeof (new Set([1,2]) as any).intersection(new Set([2,3])).size).toBe('number')" },
       { description: 'intersection of subsets', assertion: 'expect((new Set([1,2]) as any).intersection(new Set([1,2,3])).size).toBe(2)' },
@@ -52,7 +52,7 @@ export const setIntersectionExercises: Exercise[] = [
     initialCode: `// Disjoint sets intersection\nconst a = new Set([1,2,3])\nconst b = new Set([4,5,6])\n`,
     solution: `(new Set([1,2,3]) as any).intersection(new Set([4,5,6])).size`,
     tests: [
-      { description: 'disjoint intersection size is 0', assertion: 'expect((new Set([1,2,3]) as any).intersection(new Set([4,5,6])).size).toBe(0)' },
+      { description: 'disjoint intersection size is 0', assertion: 'expect(result).toBe(0)' },
       { description: 'empty intersection is empty Set', assertion: 'expect([...(new Set([1,2]) as any).intersection(new Set([3,4]))]).toEqual([])' },
       { description: 'result is a Set', assertion: 'expect((new Set([1,2]) as any).intersection(new Set([3,4])) instanceof Set).toBe(true)' },
       { description: 'intersection with empty Set is empty', assertion: 'expect((new Set([1,2,3]) as any).intersection(new Set()).size).toBe(0)' },
@@ -92,7 +92,7 @@ export const setIntersectionExercises: Exercise[] = [
     initialCode: `// Single common element\nconst a = new Set([1,2,3])\nconst b = new Set([3,4,5])\n`,
     solution: `(new Set([1,2,3]) as any).intersection(new Set([3,4,5])).size`,
     tests: [
-      { description: 'size is 1', assertion: 'expect((new Set([1,2,3]) as any).intersection(new Set([3,4,5])).size).toBe(1)' },
+      { description: 'size is 1', assertion: 'expect(result).toBe(1)' },
       { description: 'has the common element 3', assertion: 'expect((new Set([1,2,3]) as any).intersection(new Set([3,4,5])).has(3)).toBe(true)' },
       { description: 'does not have 1', assertion: 'expect((new Set([1,2,3]) as any).intersection(new Set([3,4,5])).has(1)).toBe(false)' },
       { description: 'does not have 4', assertion: 'expect((new Set([1,2,3]) as any).intersection(new Set([3,4,5])).has(4)).toBe(false)' },

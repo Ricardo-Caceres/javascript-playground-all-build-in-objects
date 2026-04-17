@@ -12,7 +12,7 @@ export const setIsSupersetOfExercises: Exercise[] = [
     initialCode: `// Use isSupersetOf() - ES2025\nconst a = new Set([1,2,3,4])\nconst b = new Set([2,3])\n`,
     solution: `(new Set([1,2,3,4]) as any).isSupersetOf(new Set([2,3]))`,
     tests: [
-      { description: 'superset returns true', assertion: 'expect((new Set([1,2,3,4]) as any).isSupersetOf(new Set([2,3]))).toBe(true)' },
+      { description: 'superset returns true', assertion: 'expect(result).toBe(true)' },
       { description: 'result is boolean', assertion: "expect(typeof (new Set([1,2,3]) as any).isSupersetOf(new Set([1,2]))).toBe('boolean')" },
       { description: 'result is truthy', assertion: 'expect((new Set([1,2,3]) as any).isSupersetOf(new Set([1,2]))).toBeTruthy()' },
       { description: 'isSupersetOf is a function', assertion: "expect(typeof (new Set() as any).isSupersetOf).toBe('function')" },
@@ -32,9 +32,9 @@ export const setIsSupersetOfExercises: Exercise[] = [
     initialCode: `// Non-superset check\nconst a = new Set([1,2])\nconst b = new Set([2,3])\n`,
     solution: `(new Set([1,2]) as any).isSupersetOf(new Set([2,3]))`,
     tests: [
-      { description: 'non-superset returns false', assertion: 'expect((new Set([1,2]) as any).isSupersetOf(new Set([2,3]))).toBe(false)' },
+      { description: 'non-superset returns false', assertion: 'expect(result).toBe(false)' },
       { description: 'result is boolean', assertion: "expect(typeof (new Set([1,2]) as any).isSupersetOf(new Set([3,4]))).toBe('boolean')" },
-      { description: 'result is falsy', assertion: 'expect((new Set([1,2]) as any).isSupersetOf(new Set([2,3]))).toBeFalsy()' },
+      { description: 'result is falsy', assertion: 'expect(result).toBeFalsy()' },
       { description: 'smaller set is not superset of larger', assertion: 'expect((new Set([1,2]) as any).isSupersetOf(new Set([1,2,3]))).toBe(false)' },
       { description: 'missing element → false', assertion: 'expect((new Set([1,2,3]) as any).isSupersetOf(new Set([1,4]))).toBe(false)' },
     ],
@@ -52,7 +52,7 @@ export const setIsSupersetOfExercises: Exercise[] = [
     initialCode: `// Any set is superset of empty\n`,
     solution: `(new Set([1,2,3]) as any).isSupersetOf(new Set())`,
     tests: [
-      { description: 'any set is superset of empty', assertion: 'expect((new Set([1,2,3]) as any).isSupersetOf(new Set())).toBe(true)' },
+      { description: 'any set is superset of empty', assertion: 'expect(result).toBe(true)' },
       { description: 'empty set is superset of empty', assertion: 'expect((new Set() as any).isSupersetOf(new Set())).toBe(true)' },
       { description: 'single-element is superset of empty', assertion: 'expect((new Set([42]) as any).isSupersetOf(new Set())).toBe(true)' },
       { description: 'result is boolean', assertion: "expect(typeof (new Set([1]) as any).isSupersetOf(new Set())).toBe('boolean')" },
@@ -72,7 +72,7 @@ export const setIsSupersetOfExercises: Exercise[] = [
     initialCode: `// Equal sets\nconst a = new Set([1,2,3])\nconst b = new Set([1,2,3])\n`,
     solution: `(new Set([1,2,3]) as any).isSupersetOf(new Set([1,2,3]))`,
     tests: [
-      { description: 'equal sets are supersets of each other', assertion: 'expect((new Set([1,2,3]) as any).isSupersetOf(new Set([1,2,3]))).toBe(true)' },
+      { description: 'equal sets are supersets of each other', assertion: 'expect(result).toBe(true)' },
       { description: 'single element: equal', assertion: 'expect((new Set([5]) as any).isSupersetOf(new Set([5]))).toBe(true)' },
       { description: 'A is superset of A', assertion: 'const a = new Set([1,2,3]); expect((a as any).isSupersetOf(a)).toBe(true)' },
       { description: 'result is true', assertion: 'expect((new Set([1,2]) as any).isSupersetOf(new Set([1,2]))).toBe(true)' },
@@ -92,7 +92,7 @@ export const setIsSupersetOfExercises: Exercise[] = [
     initialCode: `// Single element superset check\n`,
     solution: `(new Set([1,2,3]) as any).isSupersetOf(new Set([2]))`,
     tests: [
-      { description: 'contains element: superset is true', assertion: 'expect((new Set([1,2,3]) as any).isSupersetOf(new Set([2]))).toBe(true)' },
+      { description: 'contains element: superset is true', assertion: 'expect(result).toBe(true)' },
       { description: 'missing element: superset is false', assertion: 'expect((new Set([1,2,3]) as any).isSupersetOf(new Set([5]))).toBe(false)' },
       { description: 'single to single: contained', assertion: 'expect((new Set([1]) as any).isSupersetOf(new Set([1]))).toBe(true)' },
       { description: 'single to single: not contained', assertion: 'expect((new Set([1]) as any).isSupersetOf(new Set([2]))).toBe(false)' },

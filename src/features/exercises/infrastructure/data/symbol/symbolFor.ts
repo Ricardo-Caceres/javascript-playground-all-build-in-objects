@@ -12,7 +12,7 @@ export const symbolForExercises: Exercise[] = [
     initialCode: `// Global Symbol registry\nconst s1 = Symbol.for('foo')\nconst s2 = Symbol.for('foo')\n`,
     solution: `Symbol.for('foo') === Symbol.for('foo')`,
     tests: [
-      { description: "Symbol.for('foo') === Symbol.for('foo')", assertion: "expect(Symbol.for('foo') === Symbol.for('foo')).toBe(true)" },
+      { description: "result", assertion: "expect(result).toBe(true)" },
       { description: 'same key always returns same Symbol', assertion: "const k = 'myKey'; expect(Symbol.for(k) === Symbol.for(k)).toBe(true)" },
       { description: 'both are symbols', assertion: "expect(typeof Symbol.for('bar')).toBe('symbol')" },
       { description: 'Symbol.for result is truthy', assertion: "expect(Symbol.for('x')).toBeTruthy()" },
@@ -32,7 +32,7 @@ export const symbolForExercises: Exercise[] = [
     initialCode: `// Global vs local Symbol\nconst global = Symbol.for('foo')\nconst local = Symbol('foo')\n`,
     solution: `Symbol.for('foo') !== Symbol('foo')`,
     tests: [
-      { description: "Symbol.for('foo') !== Symbol('foo')", assertion: "expect(Symbol.for('foo') !== Symbol('foo')).toBe(true)" },
+      { description: "result", assertion: "expect(result).toBe(true)" },
       { description: 'global and local are not equal', assertion: "expect(Symbol.for('x') === Symbol('x')).toBe(false)" },
       { description: 'both are symbol type', assertion: "expect(typeof Symbol.for('y')).toBe('symbol')" },
       { description: 'local symbol not in registry', assertion: "expect(Symbol.keyFor(Symbol('local'))).toBeUndefined()" },
@@ -52,8 +52,8 @@ export const symbolForExercises: Exercise[] = [
     initialCode: `const s = Symbol.for('x')\n`,
     solution: `typeof Symbol.for('x')`,
     tests: [
-      { description: "typeof Symbol.for('x') is 'symbol'", assertion: "expect(typeof Symbol.for('x')).toBe('symbol')" },
-      { description: 'result is not a string', assertion: "expect(typeof Symbol.for('x') === 'string').toBe(false)" },
+      { description: "result is 'symbol'", assertion: "expect(result).toBe('symbol')" },
+      { description: 'result is not a string', assertion: "expect(result === 'string').toBe(false)" },
       { description: 'result is truthy', assertion: "expect(Symbol.for('x')).toBeTruthy()" },
       { description: 'Symbol.for is a function', assertion: "expect(typeof Symbol.for).toBe('function')" },
       { description: 'works with empty string key', assertion: "expect(typeof Symbol.for('')).toBe('symbol')" },
@@ -72,7 +72,7 @@ export const symbolForExercises: Exercise[] = [
     initialCode: `const s = Symbol.for('app')\n`,
     solution: `Symbol.keyFor(Symbol.for('app'))`,
     tests: [
-      { description: "keyFor returns 'app'", assertion: "expect(Symbol.keyFor(Symbol.for('app'))).toBe('app')" },
+      { description: "keyFor returns 'app'", assertion: "expect(result).toBe('app')" },
       { description: 'round-trip key retrieval', assertion: "const s = Symbol.for('test'); expect(Symbol.keyFor(s)).toBe('test')" },
       { description: 'keyFor is a function', assertion: "expect(typeof Symbol.keyFor).toBe('function')" },
       { description: 'local symbol has no key', assertion: "expect(Symbol.keyFor(Symbol('x'))).toBeUndefined()" },
@@ -92,7 +92,7 @@ export const symbolForExercises: Exercise[] = [
     initialCode: `const s = Symbol.for('x')\n`,
     solution: `Symbol.for('x').description`,
     tests: [
-      { description: "description is 'x'", assertion: "expect(Symbol.for('x').description).toBe('x')" },
+      { description: "description is 'x'", assertion: "expect(result).toBe('x')" },
       { description: 'description matches key', assertion: "expect(Symbol.for('hello').description).toBe('hello')" },
       { description: 'description is a string', assertion: "expect(typeof Symbol.for('y').description).toBe('string')" },
       { description: 'global and local have same description', assertion: "expect(Symbol.for('q').description).toBe(Symbol('q').description)" },

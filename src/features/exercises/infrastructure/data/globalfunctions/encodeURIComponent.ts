@@ -12,7 +12,7 @@ export const globalEncodeURIComponentExercises: Exercise[] = [
     initialCode: `encodeURIComponent('hello world')`,
     solution: `encodeURIComponent('hello world') === 'hello%20world'`,
     tests: [
-      { description: "encodeURIComponent('hello world') === 'hello%20world'", assertion: "expect(encodeURIComponent('hello world')).toBe('hello%20world')" },
+      { description: "result", assertion: "expect(encodeURIComponent('hello world')).toBe('hello%20world')" },
       { description: 'result is a string', assertion: "expect(typeof encodeURIComponent('hello world')).toBe('string')" },
       { description: 'contains %20', assertion: "expect(encodeURIComponent('hello world')).toContain('%20')" },
       { description: 'no space in result', assertion: "expect(encodeURIComponent('hello world').includes(' ')).toBe(false)" },
@@ -96,7 +96,7 @@ export const globalEncodeURIComponentExercises: Exercise[] = [
       { description: 'result is a string', assertion: "expect(typeof decodeURIComponent(encodeURIComponent('hello=world'))).toBe('string')" },
       { description: 'contains =', assertion: "expect(decodeURIComponent(encodeURIComponent('hello=world'))).toContain('=')" },
       { description: 'is truthy', assertion: "expect(decodeURIComponent(encodeURIComponent('hello=world'))).toBeTruthy()" },
-      { description: 'equals original', assertion: "expect(decodeURIComponent(encodeURIComponent('hello=world')) === 'hello=world').toBe(true)" },
+      { description: 'equals original', assertion: "expect(result).toBe(true)" },
     ],
     hints: ['decodeURIComponent and encodeURIComponent are inverse operations.'],
     tags: ['globalfunctions', 'encodeURIComponent', 'decodeURIComponent', 'round-trip'],

@@ -11,7 +11,7 @@ export const rangeErrorExercises: Exercise[] = [
     initialCode: `const err = new RangeError('out of range')\n`,
     solution: `new RangeError('out of range') instanceof RangeError`,
     tests: [
-      { description: 'instanceof RangeError is truthy', assertion: "expect(new RangeError('out of range') instanceof RangeError).toBeTruthy()" },
+      { description: 'instanceof RangeError is truthy', assertion: "expect(result).toBeTruthy()" },
       { description: 'instanceof RangeError is true', assertion: "expect(new RangeError('x') instanceof RangeError).toBe(true)" },
       { description: 'is an object', assertion: "expect(typeof new RangeError('x')).toBe('object')" },
       { description: 'is not null', assertion: "expect(new RangeError('x')).not.toBeNull()" },
@@ -30,7 +30,7 @@ export const rangeErrorExercises: Exercise[] = [
     initialCode: `const err = new RangeError()\n`,
     solution: `new RangeError() instanceof Error`,
     tests: [
-      { description: 'instanceof Error is true', assertion: "expect(new RangeError() instanceof Error).toBe(true)" },
+      { description: 'instanceof Error is true', assertion: "expect(result).toBe(true)" },
       { description: 'instanceof RangeError is true', assertion: "expect(new RangeError() instanceof RangeError).toBe(true)" },
       { description: 'instanceof Object is true', assertion: "expect(new RangeError() instanceof Object).toBe(true)" },
       { description: 'is truthy', assertion: "expect(new RangeError()).toBeTruthy()" },
@@ -49,7 +49,7 @@ export const rangeErrorExercises: Exercise[] = [
     initialCode: `const err = new RangeError('bad range')\n`,
     solution: `new RangeError('bad range').message`,
     tests: [
-      { description: "message is 'bad range'", assertion: "expect(new RangeError('bad range').message).toBe('bad range')" },
+      { description: "message is 'bad range'", assertion: "expect(result).toBe('bad range')" },
       { description: 'message matches input', assertion: "expect(new RangeError('hello').message).toBe('hello')" },
       { description: 'message is a string', assertion: "expect(typeof new RangeError('x').message).toBe('string')" },
       { description: 'message is accessible', assertion: "expect(new RangeError('test').message).toBeTruthy()" },
@@ -68,10 +68,10 @@ export const rangeErrorExercises: Exercise[] = [
     initialCode: `const err = new RangeError()\n`,
     solution: `new RangeError().name`,
     tests: [
-      { description: "name is 'RangeError'", assertion: "expect(new RangeError().name).toBe('RangeError')" },
-      { description: 'name is a string', assertion: "expect(typeof new RangeError().name).toBe('string')" },
-      { description: 'name is truthy', assertion: "expect(new RangeError().name).toBeTruthy()" },
-      { description: 'name does not equal Error', assertion: "expect(new RangeError().name).not.toBe('Error')" },
+      { description: "name is 'RangeError'", assertion: "expect(result).toBe('RangeError')" },
+      { description: 'name is a string', assertion: "expect(typeof result).toBe('string')" },
+      { description: 'name is truthy', assertion: "expect(result).toBeTruthy()" },
+      { description: 'name does not equal Error', assertion: "expect(result).not.toBe('Error')" },
       { description: 'name is consistent', assertion: "expect(new RangeError('x').name).toBe('RangeError')" },
     ],
     hints: ['Error subtypes have a .name property matching their constructor name.'],

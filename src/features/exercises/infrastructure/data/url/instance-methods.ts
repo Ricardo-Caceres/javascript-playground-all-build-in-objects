@@ -49,7 +49,7 @@ export const urlInstanceMethodsExercises: Exercise[] = [
     initialCode: `const u = new URL('https://a.com')\n// check typeof u.toJSON()\n`,
     solution: `typeof new URL('https://a.com').toJSON()`,
     tests: [
-      { description: 'toJSON returns string', assertion: "expect(typeof new URL('https://a.com').toJSON()).toBe('string')" },
+      { description: 'toJSON returns string', assertion: "expect(result).toBe('string')" },
       { description: 'toJSON is a function', assertion: "expect(typeof new URL('https://a.com').toJSON).toBe('function')" },
       { description: 'toJSON result is truthy', assertion: "expect(new URL('https://a.com').toJSON()).toBeTruthy()" },
       { description: 'toJSON contains hostname', assertion: "expect(new URL('https://example.com').toJSON()).toContain('example.com')" },

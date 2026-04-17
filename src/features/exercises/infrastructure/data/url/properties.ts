@@ -11,7 +11,7 @@ export const urlPropertiesExercises: Exercise[] = [
     initialCode: `const u = new URL('https://example.com/path')\n// inspect u.href and u.protocol\n`,
     solution: `new URL('https://example.com/path').protocol`,
     tests: [
-      { description: 'protocol is https:', assertion: "expect(new URL('https://example.com/path').protocol).toBe('https:')" },
+      { description: 'protocol is https:', assertion: "expect(result).toBe('https:')" },
       { description: 'http protocol is http:', assertion: "expect(new URL('http://example.com').protocol).toBe('http:')" },
       { description: 'href contains the full URL', assertion: "expect(new URL('https://example.com/path').href).toContain('https://example.com/path')" },
       { description: 'href is a string', assertion: "expect(typeof new URL('https://example.com').href).toBe('string')" },
@@ -31,7 +31,7 @@ export const urlPropertiesExercises: Exercise[] = [
     solution: `new URL('http://host.com:8080/p').port`,
     tests: [
       { description: "hostname is 'host.com'", assertion: "expect(new URL('http://host.com:8080/p').hostname).toBe('host.com')" },
-      { description: "port is '8080'", assertion: "expect(new URL('http://host.com:8080/p').port).toBe('8080')" },
+      { description: "port is '8080'", assertion: "expect(result).toBe('8080')" },
       { description: "host includes port", assertion: "expect(new URL('http://host.com:8080/p').host).toBe('host.com:8080')" },
       { description: 'default port is empty string', assertion: "expect(new URL('https://example.com').port).toBe('')" },
       { description: 'host without port equals hostname', assertion: "expect(new URL('https://example.com').host).toBe('example.com')" },
