@@ -1,3 +1,7 @@
+'use client'
+
+import { useTranslations } from 'next-intl'
+
 interface TimedModeToggleProps {
   enabled: boolean
   onToggle: () => void
@@ -5,12 +9,14 @@ interface TimedModeToggleProps {
 }
 
 export function TimedModeToggle({ enabled, onToggle, disabled }: TimedModeToggleProps) {
+  const t = useTranslations('exercise')
+
   return (
     <button
       type="button"
       onClick={onToggle}
       disabled={disabled}
-      title={enabled ? 'Disable timed mode' : 'Enable timed mode (bonus XP)'}
+      title={enabled ? t('disableTimed') : t('enableTimed')}
       className={
         'flex items-center gap-1.5 rounded-lg border px-3 py-1 text-xs font-medium transition-colors ' +
         (enabled
@@ -19,7 +25,7 @@ export function TimedModeToggle({ enabled, onToggle, disabled }: TimedModeToggle
         (disabled ? ' cursor-not-allowed opacity-50' : '')
       }
     >
-      ⏱️ {enabled ? 'Timed ON' : 'Timed OFF'}
+      ⏱️ {enabled ? t('timedOn') : t('timedOff')}
     </button>
   )
 }

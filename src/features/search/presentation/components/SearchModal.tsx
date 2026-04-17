@@ -2,7 +2,8 @@
 
 import { useEffect, useRef, useState } from 'react'
 import { createPortal } from 'react-dom'
-import { useRouter } from 'next/navigation'
+import { useRouter } from '@/i18n/navigation'
+import { useTranslations } from 'next-intl'
 import { useExerciseSearch } from '../hooks/useExerciseSearch'
 import type { Exercise } from '@/shared/types/exercises'
 
@@ -17,6 +18,7 @@ export function SearchModal({ open, onClose }: Props) {
   const [mounted, setMounted] = useState(false)
   const inputRef = useRef<HTMLInputElement>(null)
   const router = useRouter()
+  const t = useTranslations('search')
   const results = useExerciseSearch(query)
 
   useEffect(() => {
@@ -74,7 +76,7 @@ export function SearchModal({ open, onClose }: Props) {
               setQuery(e.target.value)
               setActiveIndex(0)
             }}
-            placeholder="Search exercises..."
+            placeholder={t('placeholder')}
             className="flex-1 bg-transparent text-sm text-zinc-100 placeholder-zinc-600 outline-none"
           />
           <kbd className="rounded border border-zinc-700 px-1.5 py-0.5 font-mono text-xs text-zinc-600">

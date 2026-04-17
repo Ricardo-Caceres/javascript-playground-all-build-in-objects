@@ -1,6 +1,6 @@
 'use client'
 
-import Link from 'next/link'
+import { Link } from '@/i18n/navigation'
 import { useRef, useEffect } from 'react'
 import { useSelector } from 'react-redux'
 import type { RootState } from '@/shared/lib/store'

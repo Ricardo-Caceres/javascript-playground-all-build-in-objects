@@ -1,11 +1,14 @@
 'use client'
 
-import Link from 'next/link'
 import { useEffect, useState } from 'react'
+import { useTranslations } from 'next-intl'
+import { Link } from '@/i18n/navigation'
 import { GamificationBar } from '@/features/gamification/presentation/components/GamificationBar'
 import { SearchModal } from '@/features/search/presentation/components/SearchModal'
+import { LanguageSwitcher } from './LanguageSwitcher'
 
 export function Navbar() {
+  const t = useTranslations('nav')
   const [searchOpen, setSearchOpen] = useState(false)
 
   useEffect(() => {
@@ -26,10 +29,11 @@ export function Navbar() {
           href="/"
           className="font-mono text-sm font-semibold text-emerald-400 hover:text-emerald-300 transition-colors"
         >
-          JS Built-ins
+          {t('brand')}
         </Link>
         <nav aria-label="Site navigation">
           <div className="flex items-center gap-4">
+            <LanguageSwitcher />
             <div className="hidden sm:block">
               <GamificationBar />
             </div>
@@ -40,7 +44,7 @@ export function Navbar() {
               className="flex items-center gap-1.5 rounded border border-zinc-700 px-3 py-1 text-xs text-zinc-400 transition-colors hover:border-zinc-500 hover:text-zinc-200"
             >
               <span className="text-base leading-none">⌕</span>
-              <span className="hidden sm:inline">Search</span>
+              <span className="hidden sm:inline">{t('search')}</span>
               <kbd className="hidden sm:inline rounded border border-zinc-700 px-1 py-0.5 font-mono text-[10px] text-zinc-600">
                 ⌘K
               </kbd>
@@ -49,7 +53,7 @@ export function Navbar() {
               href="/stats"
               className="rounded border border-zinc-700 px-3 py-1 text-xs text-zinc-400 transition-colors hover:border-zinc-500 hover:text-zinc-200"
             >
-              Stats →
+              {t('stats')}
             </Link>
           </div>
         </nav>

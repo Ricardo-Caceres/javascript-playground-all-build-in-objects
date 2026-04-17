@@ -1,7 +1,5 @@
-import HomeView from "@/features/home/presentation/components/HomeView";
+import { redirect } from 'next/navigation'
 
-export default function Home() {
-  return <HomeView />;
+export default function RootPage() {
+  redirect('/en')
 }
-
-
