@@ -1,0 +1,26 @@
+{
+  "nav": {
+    "brand": "JS Built-ins",
+    "search": "Search",
+    "stats": "Stats →"
+  },
+  "exercise": {
+    "prev": "← Prev",
+    "next": "Next →",
+    "reset": "Reset",
+    "run": "Run ⌘/Ctrl↵",
+    "running": "Running…",
+    "timesUp": "Time's up! Solve freely (no bonus).",
+    "timedOn": "Timed ON",
+    "timedOff": "Timed OFF",
+    "enableTimed": "Enable timed mode (bonus XP)",
+    "disableTimed": "Disable timed mode"
+  },
+  "search": {
+    "placeholder": "Search exercises...",
+    "objectsPlaceholder": "Search objects…"
+  },
+  "home": {
+    "title": "JavaScript Practice"
+  }
+}

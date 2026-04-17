@@ -1,0 +1,26 @@
+{
+  "nav": {
+    "brand": "JS Built-ins",
+    "search": "Buscar",
+    "stats": "Estadísticas →"
+  },
+  "exercise": {
+    "prev": "← Anterior",
+    "next": "Siguiente →",
+    "reset": "Reiniciar",
+    "run": "Ejecutar ⌘/Ctrl↵",
+    "running": "Ejecutando…",
+    "timesUp": "¡Tiempo agotado! Resuelve libremente (sin bonus).",
+    "timedOn": "Cronometrado ON",
+    "timedOff": "Cronometrado OFF",
+    "enableTimed": "Activar modo cronometrado (XP extra)",
+    "disableTimed": "Desactivar modo cronometrado"
+  },
+  "search": {
+    "placeholder": "Buscar ejercicios...",
+    "objectsPlaceholder": "Buscar objetos…"
+  },
+  "home": {
+    "title": "Práctica JavaScript"
+  }
+}
