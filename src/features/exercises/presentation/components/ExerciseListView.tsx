@@ -1,13 +1,16 @@
 'use client'
 
 import Link from 'next/link'
-import { useState } from 'react'
+import { useRouter, useSearchParams, usePathname } from 'next/navigation'
 import { useSelector } from 'react-redux'
 import type { RootState } from '@/shared/lib/store'
 import { getAllExercisesByObject } from '@/features/exercises/infrastructure/repositories/exerciseRepository'
 import type { Difficulty } from '@/shared/types/exercises'
 
 type StatusFilter = 'all' | 'not-started' | 'attempted' | 'completed'
+
+const VALID_DIFFS: Difficulty[] = ['beginner', 'intermediate', 'advanced']
+const VALID_STATUSES = ['not-started', 'attempted', 'completed'] as const
 
 const DIFF_LABELS: Record<Difficulty, string> = {
   beginner: 'Beginner',
@@ -27,9 +30,28 @@ interface Props {
 }
 
 export default function ExerciseListView({ objectName }: Props) {
-  const [diffFilter, setDiffFilter] = useState<Difficulty | 'all'>('all')
-  const [statusFilter, setStatusFilter] = useState<StatusFilter>('all')
+  const searchParams = useSearchParams()
+  const router = useRouter()
+  const pathname = usePathname()
   const progressMap = useSelector((state: RootState) => state.progress.exercises)
+
+  const rawDiff = searchParams.get('difficulty')
+  const rawStatus = searchParams.get('status')
+
+  const diffFilter: Difficulty | 'all' = (VALID_DIFFS as string[]).includes(rawDiff ?? '')
+    ? (rawDiff as Difficulty)
+    : 'all'
+  const statusFilter: StatusFilter = (VALID_STATUSES as readonly string[]).includes(rawStatus ?? '')
+    ? (rawStatus as StatusFilter)
+    : 'all'
+
+  function setFilter(key: 'difficulty' | 'status', value: string | null) {
+    const params = new URLSearchParams(searchParams.toString())
+    if (!value) params.delete(key)
+    else params.set(key, value)
+    const qs = params.toString()
+    router.replace(qs ? `?${qs}` : pathname, { scroll: false })
+  }
 
   const exercises = getAllExercisesByObject(objectName)
   const displayName = exercises[0]?.builtIn ?? objectName
@@ -56,7 +78,6 @@ export default function ExerciseListView({ objectName }: Props) {
             ← Home
           </Link>
           <h1 className="text-3xl font-bold text-zinc-100">{displayName}</h1>
-          {/* Progress bar */}
           <div className="space-y-1">
             <div className="h-2 w-full rounded-full bg-zinc-800">
               <div
@@ -77,7 +98,7 @@ export default function ExerciseListView({ objectName }: Props) {
               <button
                 key={d}
                 type="button"
-                onClick={() => setDiffFilter(d)}
+                onClick={() => setFilter('difficulty', d === 'all' ? null : d)}
                 aria-pressed={diffFilter === d}
                 className={`rounded-full px-3 py-1 text-xs font-medium transition-colors ${
                   diffFilter === d
@@ -94,7 +115,7 @@ export default function ExerciseListView({ objectName }: Props) {
               <button
                 key={s}
                 type="button"
-                onClick={() => setStatusFilter(s)}
+                onClick={() => setFilter('status', s === 'all' ? null : s)}
                 aria-pressed={statusFilter === s}
                 className={`rounded-full px-3 py-1 text-xs font-medium transition-colors ${
                   statusFilter === s
