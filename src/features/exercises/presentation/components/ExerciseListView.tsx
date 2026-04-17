@@ -1,7 +1,7 @@
 'use client'
 
-import Link from 'next/link'
-import { useRouter, useSearchParams, usePathname } from 'next/navigation'
+import { Link, useRouter, usePathname } from '@/i18n/navigation'
+import { useSearchParams } from 'next/navigation'
 import { useSelector } from 'react-redux'
 import type { RootState } from '@/shared/lib/store'
 import { getAllExercisesByObject } from '@/features/exercises/infrastructure/repositories/exerciseRepository'

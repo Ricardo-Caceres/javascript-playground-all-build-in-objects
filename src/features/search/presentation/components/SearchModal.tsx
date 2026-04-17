@@ -2,7 +2,7 @@
 
 import { useEffect, useRef, useState } from 'react'
 import { createPortal } from 'react-dom'
-import { useRouter } from 'next/navigation'
+import { useRouter } from '@/i18n/navigation'
 import { useExerciseSearch } from '../hooks/useExerciseSearch'
 import type { Exercise } from '@/shared/types/exercises'
 

@@ -3,7 +3,7 @@
 import { useRef, useEffect, useCallback, useState, useMemo } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 import dynamic from 'next/dynamic'
-import Link from 'next/link'
+import { Link } from '@/i18n/navigation'
 import type { AppDispatch, RootState } from '@/shared/lib/store'
 import type { Exercise, TestResult } from '@/shared/types/exercises'
 import { WorkerEngine } from '@/shared/lib/worker/workerEngine'
