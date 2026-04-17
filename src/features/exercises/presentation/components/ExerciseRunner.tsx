@@ -2,6 +2,7 @@
 
 import { useRef, useEffect, useCallback, useState, useMemo } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
+import { useTranslations } from 'next-intl'
 import dynamic from 'next/dynamic'
 import { Link } from '@/i18n/navigation'
 import type { AppDispatch, RootState } from '@/shared/lib/store'
@@ -22,6 +23,7 @@ interface Props {
 }
 
 export function ExerciseRunner({ exercise, objectName }: Props) {
+  const t = useTranslations('exercise')
   const dispatch = useDispatch<AppDispatch>()
   const savedProgress = useSelector(
     (state: RootState) => state.progress.exercises[exercise.slug],
@@ -178,7 +180,7 @@ export function ExerciseRunner({ exercise, objectName }: Props) {
           <CountdownTimer timeLeft={timeLeft} total={totalSeconds} />
         )}
         {timerExpired && (
-          <span className="text-red-400 text-xs">Time&apos;s up! Solve freely (no bonus).</span>
+          <span className="text-red-400 text-xs">{t('timesUp')}</span>
         )}
       </div>
 
@@ -211,11 +213,11 @@ export function ExerciseRunner({ exercise, objectName }: Props) {
               href={`/exercises/${objectName.toLowerCase()}/${prevSlug}`}
               className="rounded border border-zinc-700 px-2 py-1 text-xs text-zinc-400 transition-colors hover:border-zinc-500 hover:text-zinc-200"
             >
-              ← Prev
+              {t('prev')}
             </Link>
           ) : (
             <span className="cursor-not-allowed rounded border border-zinc-800 px-2 py-1 text-xs text-zinc-700">
-              ← Prev
+              {t('prev')}
             </span>
           )}
           {nextSlug ? (
@@ -223,11 +225,11 @@ export function ExerciseRunner({ exercise, objectName }: Props) {
               href={`/exercises/${objectName.toLowerCase()}/${nextSlug}`}
               className="rounded border border-zinc-700 px-2 py-1 text-xs text-zinc-400 transition-colors hover:border-zinc-500 hover:text-zinc-200"
             >
-              Next →
+              {t('next')}
             </Link>
           ) : (
             <span className="cursor-not-allowed rounded border border-zinc-800 px-2 py-1 text-xs text-zinc-700">
-              Next →
+              {t('next')}
             </span>
           )}
         </div>
@@ -239,7 +241,7 @@ export function ExerciseRunner({ exercise, objectName }: Props) {
             onClick={reset}
             className="rounded border border-zinc-700 px-3 py-1 text-xs text-zinc-400 transition-colors hover:border-zinc-500 hover:text-zinc-200"
           >
-            Reset
+            {t('reset')}
           </button>
           <button
             type="button"
@@ -247,7 +249,7 @@ export function ExerciseRunner({ exercise, objectName }: Props) {
             disabled={isRunning}
             className="rounded bg-emerald-700 px-4 py-1 text-xs font-semibold text-white transition-colors hover:bg-emerald-600 disabled:opacity-50"
           >
-            {isRunning ? 'Running…' : 'Run ⌘/Ctrl↵'}
+            {isRunning ? t('running') : t('run')}
           </button>
         </div>
       </div>
