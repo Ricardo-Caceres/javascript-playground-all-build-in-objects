@@ -12,6 +12,7 @@ A Codewars/Codility-style JavaScript practice platform with **1,986 exercises** 
 - Difficulty levels: beginner, intermediate, advanced
 - Categories: constructor, static methods, instance methods, properties, inheritance
 - Filter and browse by Built-in Object or topic
+- 🌐 Internationalization (i18n): English and Spanish, URL-based locale routing (`/en`, `/es`)
 
 ---
 
@@ -23,6 +24,7 @@ A Codewars/Codility-style JavaScript practice platform with **1,986 exercises** 
 | UI | React 19 + Tailwind CSS v4 |
 | State | Redux Toolkit |
 | Language | TypeScript |
+| i18n | next-intl v4 |
 | Package manager | pnpm |
 
 ---
@@ -77,7 +79,11 @@ pnpm lint     # lint
 
 ```
 src/
-├── app/                          # Next.js App Router pages
+├── app/
+│   └── [locale]/                 # Locale-aware routing (en / es)
+│       ├── layout.tsx            # Root layout with NextIntlClientProvider
+│       ├── page.tsx
+│       └── exercises/
 ├── features/
 │   └── exercises/
 │       ├── infrastructure/
@@ -88,10 +94,22 @@ src/
 │       │   │   └── index.ts      # Central registry
 │       │   └── repositories/
 │       └── ...
+├── i18n/
+│   ├── routing.ts                # Locale config (en, es)
+│   ├── navigation.ts             # Locale-aware Link, useRouter, etc.
+│   ├── request.ts                # Server-side message loader
+│   └── exerciseTranslations.ts   # Merges exercise with locale content
 ├── shared/
 │   └── types/
 │       └── exercises.ts          # Exercise interface definition
 └── store/                        # Redux Toolkit store
+messages/
+├── en.json                       # UI strings in English
+├── es.json                       # UI strings in Spanish
+└── exercises/
+    └── es.json                   # Spanish translations for all 1,986 exercises
+scripts/
+└── translate-exercises.mjs       # AI translation script (Anthropic Claude)
 ```
 
 ### Exercise Interface
@@ -111,6 +129,29 @@ interface Exercise {
   tags: string[];
 }
 ```
+
+---
+
+## Internationalization (i18n)
+
+The app supports **English** (`/en`) and **Spanish** (`/es`) via URL-based locale routing powered by [next-intl](https://next-intl.dev/).
+
+- The language switcher (🌐) in the navbar switches locale without a full reload.
+- All 1,986 exercise titles, descriptions, hints, and test descriptions are translated.
+- Default locale is English; `/` redirects to `/en`.
+
+### Adding a new language
+
+1. Add the locale to `src/i18n/routing.ts`:
+   ```ts
+   locales: ['en', 'es', 'fr']  // add 'fr' for French
+   ```
+2. Create `messages/fr.json` (copy `messages/en.json` and translate UI strings).
+3. Run the translation script:
+   ```bash
+   ANTHROPIC_API_KEY=sk-ant-... node scripts/translate-exercises.mjs --locale fr --batch 20
+   ```
+4. The script is idempotent — re-run safely to fill in missing translations.
 
 ---
 
