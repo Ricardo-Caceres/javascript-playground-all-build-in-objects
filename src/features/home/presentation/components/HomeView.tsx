@@ -3,6 +3,7 @@
 import { Link } from '@/i18n/navigation'
 import { useState } from 'react'
 import { useSelector } from 'react-redux'
+import { useTranslations } from 'next-intl'
 import type { RootState } from '@/shared/lib/store'
 import { allExercises } from '@/features/exercises/infrastructure/data'
 import { getAvailableObjects } from '@/features/exercises/infrastructure/repositories/exerciseRepository'
@@ -35,6 +36,8 @@ export default function HomeView() {
   const [search, setSearch] = useState('')
   const [activeGroup, setActiveGroup] = useState('All')
   const progressMap = useSelector((state: RootState) => state.progress.exercises)
+  const tHome = useTranslations('home')
+  const tSearch = useTranslations('search')
 
   const filtered = OBJECTS.filter((obj) => {
     const matchesSearch = obj.toLowerCase().includes(search.toLowerCase())
@@ -49,7 +52,7 @@ export default function HomeView() {
         {/* Hero */}
         <section className="space-y-3">
           <p className="font-mono text-xs font-semibold uppercase tracking-widest text-emerald-500">
-            JavaScript Practice
+            {tHome('title')}
           </p>
           <h1 className="text-4xl font-bold leading-tight text-zinc-100 sm:text-5xl">
             Master the Standard
@@ -84,7 +87,7 @@ export default function HomeView() {
         <section className="space-y-3">
           <input
             type="search"
-            placeholder="Search objects…"
+            placeholder={tSearch('objectsPlaceholder')}
             value={search}
             onChange={(e) => setSearch(e.target.value)}
             className="w-full max-w-sm rounded-lg border border-zinc-700 bg-zinc-900 px-4 py-2 text-sm text-zinc-200 placeholder-zinc-600 outline-none focus:border-emerald-600 focus:ring-1 focus:ring-emerald-600"
