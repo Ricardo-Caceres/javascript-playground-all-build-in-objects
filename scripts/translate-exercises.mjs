@@ -3,10 +3,10 @@
  * translate-exercises.mjs
  *
  * Translates exercise content (title, description, hints, tests[].description)
- * to a target locale using OpenAI gpt-4o-mini.
+ * to a target locale using Claude (Anthropic API).
  *
  * Usage:
- *   OPENAI_API_KEY=sk-... node scripts/translate-exercises.mjs [--locale es] [--batch 20]
+ *   ANTHROPIC_API_KEY=sk-ant-... node scripts/translate-exercises.mjs [--locale es] [--batch 20]
  *
  * Idempotent: already-translated slugs are skipped.
  * Output: messages/exercises/<locale>.json
@@ -15,6 +15,7 @@
 import fs from 'fs'
 import path from 'path'
 import { fileURLToPath } from 'url'
+import Anthropic from '@anthropic-ai/sdk'
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url))
 const ROOT = path.resolve(__dirname, '..')
@@ -24,11 +25,14 @@ const args = process.argv.slice(2)
 const locale = args[args.indexOf('--locale') + 1] ?? 'es'
 const batchSize = parseInt(args[args.indexOf('--batch') + 1] ?? '20', 10)
 
-const GEMINI_API_KEY = process.env.GEMINI_API_KEY
-if (!GEMINI_API_KEY) {
-  console.error('Error: GEMINI_API_KEY environment variable is required.')
+const ANTHROPIC_API_KEY = process.env.ANTHROPIC_API_KEY
+if (!ANTHROPIC_API_KEY) {
+  console.error('Error: ANTHROPIC_API_KEY environment variable is required.')
+  console.error('Get your key at: https://console.anthropic.com/settings/keys')
   process.exit(1)
 }
+
+const anthropic = new Anthropic({ apiKey: ANTHROPIC_API_KEY })
 
 // ── Load exercises ─────────────────────────────────────────────────────────────
 const dataDir = path.join(ROOT, 'src/features/exercises/infrastructure/data')
@@ -106,7 +110,7 @@ if (toTranslate.length === 0) {
   process.exit(0)
 }
 
-// ── Gemini call ────────────────────────────────────────────────────────────────
+// ── Claude call ────────────────────────────────────────────────────────────────
 async function translateBatch(batch) {
   const LOCALE_NAMES = { es: 'Spanish', fr: 'French', de: 'German', pt: 'Portuguese' }
   const targetName = LOCALE_NAMES[locale] ?? locale
@@ -124,25 +128,18 @@ Do NOT translate: code blocks (\`\`\`), inline code (\`...\`), variable names, m
 Exercises:
 ${JSON.stringify(batch, null, 2)}`
 
-  const url = `https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash:generateContent?key=${GEMINI_API_KEY}`
-  const response = await fetch(url, {
-    method: 'POST',
-    headers: { 'Content-Type': 'application/json' },
-    body: JSON.stringify({
-      contents: [{ parts: [{ text: prompt }] }],
-      generationConfig: { responseMimeType: 'application/json', temperature: 0.2 },
-    }),
+  const message = await anthropic.messages.create({
+    model: 'claude-haiku-4-5',
+    max_tokens: 8192,
+    messages: [{ role: 'user', content: prompt }],
   })
 
-  if (!response.ok) {
-    const err = await response.text()
-    throw new Error(`Gemini API error: ${response.status} ${err}`)
-  }
+  const text = message.content[0]?.text
+  if (!text) throw new Error('Empty response from Claude')
 
-  const data = await response.json()
-  const text = data.candidates?.[0]?.content?.parts?.[0]?.text
-  if (!text) throw new Error('Empty response from Gemini')
-  const parsed = JSON.parse(text)
+  // Strip markdown code fences if present
+  const cleaned = text.replace(/^```(?:json)?\n?/m, '').replace(/\n?```$/m, '').trim()
+  const parsed = JSON.parse(cleaned)
   return Array.isArray(parsed) ? parsed : parsed.exercises ?? parsed.translations ?? []
 }
 
