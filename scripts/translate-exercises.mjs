@@ -24,9 +24,9 @@ const args = process.argv.slice(2)
 const locale = args[args.indexOf('--locale') + 1] ?? 'es'
 const batchSize = parseInt(args[args.indexOf('--batch') + 1] ?? '20', 10)
 
-const OPENAI_API_KEY = process.env.OPENAI_API_KEY
-if (!OPENAI_API_KEY) {
-  console.error('Error: OPENAI_API_KEY environment variable is required.')
+const GEMINI_API_KEY = process.env.GEMINI_API_KEY
+if (!GEMINI_API_KEY) {
+  console.error('Error: GEMINI_API_KEY environment variable is required.')
   process.exit(1)
 }
 
@@ -106,13 +106,13 @@ if (toTranslate.length === 0) {
   process.exit(0)
 }
 
-// ── OpenAI call ────────────────────────────────────────────────────────────────
+// ── Gemini call ────────────────────────────────────────────────────────────────
 async function translateBatch(batch) {
   const LOCALE_NAMES = { es: 'Spanish', fr: 'French', de: 'German', pt: 'Portuguese' }
   const targetName = LOCALE_NAMES[locale] ?? locale
 
   const prompt = `Translate the following JavaScript exercise data from English to ${targetName}.
-Return a JSON array with one object per exercise, in the same order. Each object must have:
+Return a JSON object with key "exercises" containing an array with one object per exercise, in the same order. Each object must have:
 - slug (unchanged)
 - title (translated)
 - description (translated, preserve Markdown formatting and code blocks unchanged)
@@ -124,29 +124,25 @@ Do NOT translate: code blocks (\`\`\`), inline code (\`...\`), variable names, m
 Exercises:
 ${JSON.stringify(batch, null, 2)}`
 
-  const response = await fetch('https://api.openai.com/v1/chat/completions', {
+  const url = `https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash:generateContent?key=${GEMINI_API_KEY}`
+  const response = await fetch(url, {
     method: 'POST',
-    headers: {
-      'Content-Type': 'application/json',
-      Authorization: `Bearer ${OPENAI_API_KEY}`,
-    },
+    headers: { 'Content-Type': 'application/json' },
     body: JSON.stringify({
-      model: 'gpt-4o-mini',
-      messages: [{ role: 'user', content: prompt }],
-      response_format: { type: 'json_object' },
-      temperature: 0.2,
+      contents: [{ parts: [{ text: prompt }] }],
+      generationConfig: { responseMimeType: 'application/json', temperature: 0.2 },
     }),
   })
 
   if (!response.ok) {
     const err = await response.text()
-    throw new Error(`OpenAI API error: ${response.status} ${err}`)
+    throw new Error(`Gemini API error: ${response.status} ${err}`)
   }
 
   const data = await response.json()
-  const content = data.choices[0].message.content
-  const parsed = JSON.parse(content)
-  // The model returns { exercises: [...] } or just [...]
+  const text = data.candidates?.[0]?.content?.parts?.[0]?.text
+  if (!text) throw new Error('Empty response from Gemini')
+  const parsed = JSON.parse(text)
   return Array.isArray(parsed) ? parsed : parsed.exercises ?? parsed.translations ?? []
 }
 
