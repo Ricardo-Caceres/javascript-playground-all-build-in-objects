@@ -32,29 +32,61 @@ if (!OPENAI_API_KEY) {
 
 // ── Load exercises ─────────────────────────────────────────────────────────────
 const dataDir = path.join(ROOT, 'src/features/exercises/infrastructure/data')
-const allFiles = fs.readdirSync(dataDir).filter((f) => f.endsWith('.ts'))
+
+function walkTs(dir) {
+  const entries = fs.readdirSync(dir, { withFileTypes: true })
+  const files = []
+  for (const entry of entries) {
+    const full = path.join(dir, entry.name)
+    if (entry.isDirectory()) files.push(...walkTs(full))
+    else if (entry.name.endsWith('.ts')) files.push(full)
+  }
+  return files
+}
+
+const allFiles = walkTs(dataDir)
+
+function parseExercisesFromFile(content) {
+  const result = []
+  const slugRegex = /\bslug:\s*['"]([^'"]+)['"]/g
+  let m
+  while ((m = slugRegex.exec(content)) !== null) {
+    const slug = m[1]
+    // Walk backwards to find the opening { of this exercise object
+    let start = m.index - 1
+    let depth = 0
+    while (start >= 0) {
+      if (content[start] === '}') depth++
+      if (content[start] === '{') { if (depth === 0) break; depth-- }
+      start--
+    }
+    // Walk forwards to find the closing }
+    let end = start + 1
+    depth = 1
+    while (end < content.length && depth > 0) {
+      if (content[end] === '{') depth++
+      if (content[end] === '}') depth--
+      end++
+    }
+    const block = content.slice(start, end)
+    const title = (block.match(/\btitle:\s*['"`]([^'"`\n]+)['"`]/) ?? [])[1] ?? ''
+    const description = (block.match(/\bdescription:\s*`([\s\S]*?)`/) ?? [])[1] ?? ''
+    const hintsMatch = block.match(/\bhints:\s*\[([\s\S]*?)\]/)
+    const hints = hintsMatch
+      ? [...hintsMatch[1].matchAll(/`([\s\S]*?)`|'([^'\\]*(?:\\.[^'\\]*)*)'|"([^"\\]*(?:\\.[^"\\]*)*)"/g)].map(
+          (hm) => hm[1] ?? hm[2] ?? hm[3],
+        ).filter(Boolean)
+      : []
+    const testDescriptions = [...block.matchAll(/\bdescription:\s*['"]([^'"]+)['"]/g)].map((t) => t[1])
+    result.push({ slug, title, description, hints, testDescriptions })
+  }
+  return result
+}
 
 const exercises = []
 for (const file of allFiles) {
-  const content = fs.readFileSync(path.join(dataDir, file), 'utf-8')
-  // Extract exercise objects via regex — parse title, description, hints, tests[].description, slug
-  const exerciseBlocks = content.matchAll(
-    /\{[^{}]*slug:\s*['"]([^'"]+)['"][^{}]*\}/gs,
-  )
-  for (const match of exerciseBlocks) {
-    const block = match[0]
-    const slug = match[1]
-    const title = (block.match(/title:\s*['"`]([^'"`]+)['"`]/) ?? [])[1] ?? ''
-    const description = (block.match(/description:\s*`([\s\S]*?)`/) ?? [])[1] ?? ''
-    const hintsMatch = block.match(/hints:\s*\[([\s\S]*?)\]/)
-    const hints = hintsMatch
-      ? [...hintsMatch[1].matchAll(/['"`]([\s\S]*?)['"`]/g)].map((m) => m[1])
-      : []
-    const testDescriptions = [...block.matchAll(/description:\s*['"`]([^'"`]+)['"`]/g)].map(
-      (m) => m[1],
-    )
-    if (slug) exercises.push({ slug, title, description, hints, testDescriptions })
-  }
+  const content = fs.readFileSync(file, 'utf-8')
+  exercises.push(...parseExercisesFromFile(content))
 }
 
 console.log(`Loaded ${exercises.length} exercises from data files.`)
