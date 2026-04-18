@@ -7,6 +7,9 @@ export type ExerciseCategory =
   | 'instance-method'
   | 'instance-property'
   | 'inheritance'
+  | 'type-guard'
+  | 'generic'
+  | 'utility-type'
 
 export type Difficulty = 'beginner' | 'intermediate' | 'advanced'
 
