@@ -305,11 +305,11 @@ assertNonNull(null)      // throws Error
   if (x === null || x === undefined) throw new Error(msg ?? 'Assertion failed: value is null or undefined')
 }`,
     tests: [
-      { description: 'does not throw for value', assertion: "expect(() => assertNonNull('hello')).not.toThrow()" },
+      { description: 'does not throw for value', assertion: "assertNonNull('hello'); expect(true).toBe(true)" },
       { description: 'throws for null', assertion: "expect(() => assertNonNull(null)).toThrow()" },
       { description: 'throws for undefined', assertion: "expect(() => assertNonNull(undefined)).toThrow()" },
       { description: 'custom message in throw', assertion: "expect(() => assertNonNull(null, 'custom')).toThrow()" },
-      { description: 'does not throw for 0', assertion: "expect(() => assertNonNull(0)).not.toThrow()" },
+      { description: 'does not throw for 0', assertion: "assertNonNull(0); expect(true).toBe(true)" },
     ],
     hints: ['Throw if x === null || x === undefined, otherwise do nothing.'],
     tags: ['TypeScript', 'type-guard', 'assertion', 'intermediate'],
