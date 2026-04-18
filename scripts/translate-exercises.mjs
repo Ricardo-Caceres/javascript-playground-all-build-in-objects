@@ -36,7 +36,7 @@ function getArg(flag, defaultVal) {
 }
 
 const locale = getArg('--locale', 'es')
-const batchSize = parseInt(getArg('--batch', '20'), 10)
+const batchSize = parseInt(getArg('--batch', '5'), 10)
 const fixBroken = args.includes('--fix-broken')
 
 const ANTHROPIC_API_KEY = process.env.ANTHROPIC_API_KEY
@@ -143,41 +143,62 @@ async function translateBatch(batch) {
   const targetName = LOCALE_NAMES[locale] ?? locale
 
   const prompt = `Translate the following JavaScript exercise data from English to ${targetName}.
-Return a JSON object with key "exercises" containing an array with one object per exercise, in the same order. Each object must have:
+Return ONLY valid JSON (no markdown fences, no explanation) with key "exercises" containing an array with one object per exercise, in the same order. Each object must have:
 - slug (unchanged)
 - title (translated)
-- description (translated, preserve Markdown formatting and code blocks unchanged)
+- description (translated, preserve Markdown formatting and inline code unchanged)
 - hints (array of translated strings, same length as input)
 - tests (array of objects with translated "description" field, same length as input)
 
-Do NOT translate: code blocks (\`\`\`), inline code (\`...\`), variable names, method names, or technical terms like "slug", "Array", "Promise", etc.
+Do NOT translate: inline code (\`...\`), variable names, method names, or technical terms like "Array", "Promise", etc.
 
 Exercises:
 ${JSON.stringify(batch, null, 2)}`
 
   const message = await anthropic.messages.create({
     model: 'claude-haiku-4-5',
-    max_tokens: 8192,
+    max_tokens: 16000,
     messages: [{ role: 'user', content: prompt }],
   })
 
   const text = message.content[0]?.text
   if (!text) throw new Error('Empty response from Claude')
 
-  // Strip markdown code fences if present
-  const cleaned = text.replace(/^```(?:json)?\n?/m, '').replace(/\n?```$/m, '').trim()
-  const parsed = JSON.parse(cleaned)
+  // Robustly extract the outermost JSON object from the response
+  const start = text.indexOf('{')
+  const end = text.lastIndexOf('}')
+  if (start === -1 || end === -1 || end <= start) {
+    throw new Error(`No JSON object found in response (first 300 chars): ${text.slice(0, 300)}`)
+  }
+  const parsed = JSON.parse(text.slice(start, end + 1))
   return Array.isArray(parsed) ? parsed : parsed.exercises ?? parsed.translations ?? []
+}
+
+async function translateWithRetry(batch) {
+  try {
+    return await translateBatch(batch)
+  } catch (err) {
+    if (batch.length === 1) throw err
+    // Retry by splitting the batch in half
+    console.warn(`  ⚠ Retrying as two halves (${err.message.slice(0, 80)})…`)
+    const mid = Math.ceil(batch.length / 2)
+    const a = await translateBatch(batch.slice(0, mid))
+    const b = await translateBatch(batch.slice(mid))
+    return [...a, ...b]
+  }
 }
 
 // ── Batch and save ─────────────────────────────────────────────────────────────
 let processed = 0
+let failed = 0
 for (let i = 0; i < toTranslate.length; i += batchSize) {
   const batch = toTranslate.slice(i, i + batchSize)
-  console.log(`Translating batch ${Math.floor(i / batchSize) + 1}/${Math.ceil(toTranslate.length / batchSize)} (${batch.length} exercises)…`)
+  const batchNum = Math.floor(i / batchSize) + 1
+  const totalBatches = Math.ceil(toTranslate.length / batchSize)
+  console.log(`Translating batch ${batchNum}/${totalBatches} (${batch.length} exercises)…`)
 
   try {
-    const results = await translateBatch(batch)
+    const results = await translateWithRetry(batch)
     for (const result of results) {
       if (!result.slug) continue
       existing[result.slug] = {
@@ -190,12 +211,12 @@ for (let i = 0; i < toTranslate.length; i += batchSize) {
     }
     // Save after every batch (idempotent)
     fs.writeFileSync(outPath, JSON.stringify(existing, null, 2) + '\n', 'utf-8')
-    console.log(`  ✓ Saved ${processed} total translations.`)
+    console.log(`  ✓ Saved ${processed} total. (${failed} skipped)`)
   } catch (err) {
-    console.error(`  ✗ Batch failed: ${err.message}`)
-    console.error('  Saving progress and stopping.')
+    failed += batch.length
+    console.error(`  ✗ Batch failed (skipping ${batch.length}): ${err.message.slice(0, 120)}`)
+    // Save progress and continue with next batch
     fs.writeFileSync(outPath, JSON.stringify(existing, null, 2) + '\n', 'utf-8')
-    process.exit(1)
   }
 
   // Rate limit: 500ms between batches
@@ -204,4 +225,5 @@ for (let i = 0; i < toTranslate.length; i += batchSize) {
   }
 }
 
-console.log(`\nDone! Translated ${processed} exercises → ${outPath}`)
+console.log(`\nDone! Translated ${processed} new, ${failed} skipped → ${outPath}`)
+if (failed > 0) console.log(`Re-run with --fix-broken to retry the ${failed} skipped exercises.`)
