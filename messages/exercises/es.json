@@ -48302,5 +48302,2165 @@
         "description": "el resultado es truthy"
       }
     ]
+  },
+  "ts-type-guard-1": {
+    "title": "Type Guard — isString",
+    "description": "## Type Guards: isString\n\nUn *type guard* es una función que retorna un **predicado de tipo** (ej. `x is string`) permitiendo a TypeScript estrechar el tipo dentro de un bloque condicional.\n\n**Desafío:** Implementa `isString(value: unknown): value is string` — retorna `true` si el valor es una cadena de texto.\n\n```ts\nisString('hola')   // → true\nisString(42)       // → false\n```",
+    "hints": [
+      "typeof x === \"string\" es la comprobación estándar en tiempo de ejecución."
+    ],
+    "tests": [
+      {
+        "description": "false para number"
+      },
+      {
+        "description": "false para boolean"
+      },
+      {
+        "description": "false para null"
+      },
+      {
+        "description": "true para cadena vacía"
+      }
+    ]
+  },
+  "ts-type-guard-2": {
+    "title": "Type Guard — isNumber",
+    "description": "## Type Guards: isNumber\n\n**Desafío:** Implementa `isNumber(x: unknown): x is number`.\n\nNota: `NaN` también es `typeof === 'number'` en JavaScript, por lo que `isNumber(NaN)` debe retornar `true`.\n\n```ts\nisNumber(42)       // → true\nisNumber('42')     // → false\nisNumber(NaN)      // → true\n```",
+    "hints": [
+      "typeof NaN === \"number\" es true en JavaScript."
+    ],
+    "tests": [
+      {
+        "description": "true para float"
+      },
+      {
+        "description": "false para string"
+      },
+      {
+        "description": "true para NaN"
+      },
+      {
+        "description": "false para null"
+      }
+    ]
+  },
+  "ts-type-guard-3": {
+    "title": "Type Guard — isBoolean",
+    "description": "## Type Guards: isBoolean\n\n**Desafío:** Implementa `isBoolean(x: unknown): x is boolean` — retorna `true` solo para los valores `true` o `false`.\n\n```ts\nisBoolean(true)    // → true\nisBoolean(false)   // → true\nisBoolean(1)       // → false\n```",
+    "hints": [
+      "typeof x === \"boolean\" reduce el tipo exactamente a true o false."
+    ],
+    "tests": [
+      {
+        "description": "true para false"
+      },
+      {
+        "description": "false para 1"
+      },
+      {
+        "description": "false para string"
+      },
+      {
+        "description": "false para null"
+      }
+    ]
+  },
+  "ts-type-guard-4": {
+    "title": "Type Guard — isArray",
+    "description": "## Type Guards: isArray\n\n**Desafío:** Implementa `isArray(x: unknown): x is unknown[]` — retorna `true` si `x` es un array, incluyendo arrays vacíos.\n\n```ts\nisArray([])        // → true\nisArray([1, 2])    // → true\nisArray({})        // → false\n```",
+    "hints": [
+      "Array.isArray() es la forma estándar de comprobar arrays."
+    ],
+    "tests": [
+      {
+        "description": "true para array vacío"
+      },
+      {
+        "description": "false para object"
+      },
+      {
+        "description": "false para string"
+      },
+      {
+        "description": "false para null"
+      }
+    ]
+  },
+  "ts-type-guard-5": {
+    "title": "Type Guard — isObject",
+    "description": "## Type Guards: isObject\n\n**Desafío:** Implementa `isObject(x: unknown): x is Record<string, unknown>` — retorna `true` solo para objetos planos (no arrays, no null).\n\n```ts\nisObject({})       // → true\nisObject(null)     // → false\nisObject([])       // → false\n```",
+    "hints": [
+      "Verifica typeof, excluye null, excluye arrays."
+    ],
+    "tests": [
+      {
+        "description": "false para null"
+      },
+      {
+        "description": "false para array"
+      },
+      {
+        "description": "false para number"
+      },
+      {
+        "description": "true para objeto vacío"
+      }
+    ]
+  },
+  "ts-type-guard-6": {
+    "title": "Type Guard — isNullOrUndefined",
+    "description": "## Type Guards: isNullOrUndefined\n\n**Desafío:** Implementa `isNullOrUndefined(x: unknown): x is null | undefined` — retorna `true` para `null` o `undefined`, y `false` para cualquier otro valor.\n\n```ts\nisNullOrUndefined(null)        // → true\nisNullOrUndefined(undefined)   // → true\nisNullOrUndefined(0)           // → false\n```",
+    "hints": [
+      "Usa igualdad estricta (===) con null y con undefined."
+    ],
+    "tests": [
+      {
+        "description": "true para undefined"
+      },
+      {
+        "description": "false para 0"
+      },
+      {
+        "description": "false para cadena vacía"
+      },
+      {
+        "description": "false para false"
+      }
+    ]
+  },
+  "ts-type-guard-7": {
+    "title": "Type Guard — hasProperty",
+    "description": "## Type Guards: hasProperty\n\n**Desafío:** Implementa `hasProperty<K extends string>(obj: unknown, key: K): obj is Record<K, unknown>` — retorna `true` si `obj` es un objeto no nulo que contiene la propiedad `key`.\n\n```ts\nhasProperty({ a: 1 }, 'a')    // → true\nhasProperty(null, 'a')        // → false\n```",
+    "hints": [
+      "Combina una comprobación de nulidad con el operador in."
+    ],
+    "tests": [
+      {
+        "description": "false cuando falta la clave"
+      },
+      {
+        "description": "false para null"
+      },
+      {
+        "description": "false para primitivo"
+      },
+      {
+        "description": "true para anidado"
+      }
+    ]
+  },
+  "ts-type-guard-8": {
+    "title": "Type Guard — isStringArray",
+    "description": "## Type Guards: isStringArray\n\n**Desafío:** Implementa `isStringArray(x: unknown): x is string[]` — retorna `true` solo si `x` es un array donde *todos* los elementos son cadenas de texto.\n\n```ts\nisStringArray(['a', 'b'])      // → true\nisStringArray(['a', 1])        // → false\nisStringArray([])              // → true\n```",
+    "hints": [
+      "Array.isArray + every(item => typeof item === \"string\")."
+    ],
+    "tests": [
+      {
+        "description": "false para array mixto"
+      },
+      {
+        "description": "true para array vacío"
+      },
+      {
+        "description": "false para no-array"
+      },
+      {
+        "description": "false para array de números"
+      }
+    ]
+  },
+  "ts-type-guard-9": {
+    "title": "Type Guard — isInstance",
+    "description": "## Type Guards: isInstance\n\n**Desafío:** Implementa `isInstance<T>(x: unknown, ctor: new (...args: any[]) => T): x is T` — retorna `true` si `x` es una instancia de la clase constructora dada.\n\n```ts\nisInstance(new Date(), Date)    // → true\nisInstance('hola', Date)        // → false\n```",
+    "hints": [
+      "x instanceof ctor es el mecanismo integrado para comprobar la cadena de prototipos."
+    ],
+    "tests": [
+      {
+        "description": "false para string vs Date"
+      },
+      {
+        "description": "true para Error"
+      },
+      {
+        "description": "false para null"
+      },
+      {
+        "description": "true para Array"
+      }
+    ]
+  },
+  "ts-type-guard-10": {
+    "title": "Type Guard — assertNonNull",
+    "description": "## Type Guards: assertNonNull\n\n**Desafío:** Implementa `assertNonNull<T>(x: T | null | undefined, msg?: string): asserts x is T` — lanza un `Error` si `x` es `null` o `undefined`.\n\n```ts\nassertNonNull(null)      // → throws Error\nassertNonNull(0)         // → no lanza\n```",
+    "hints": [
+      "Lanza si x === null || x === undefined, de lo contrario no hace nada."
+    ],
+    "tests": [
+      {
+        "description": "lanza para null"
+      },
+      {
+        "description": "lanza para undefined"
+      },
+      {
+        "description": "mensaje personalizado en el error"
+      },
+      {
+        "description": "no lanza para 0"
+      }
+    ]
+  },
+  "ts-type-guard-11": {
+    "title": "Type Guard — isPositiveNumber",
+    "description": "## Type Guards: isPositiveNumber\n\n**Desafío:** Implementa `isPositiveNumber(x: unknown): x is number` — retorna `true` solo si `x` es un número finito mayor que cero.\n\n```ts\nisPositiveNumber(5)         // → true\nisPositiveNumber(-1)        // → false\nisPositiveNumber(Infinity)  // → false\n```",
+    "hints": [
+      "Comprobación de typeof + Number.isFinite + x > 0."
+    ],
+    "tests": [
+      {
+        "description": "false para negativo"
+      },
+      {
+        "description": "false para cero"
+      },
+      {
+        "description": "false para Infinity"
+      },
+      {
+        "description": "false para string"
+      }
+    ]
+  },
+  "ts-type-guard-12": {
+    "title": "Type Guard — isNonEmptyString",
+    "description": "## Type Guards: isNonEmptyString\n\n**Desafío:** Implementa `isNonEmptyString(x: unknown): x is string` — retorna `true` solo si `x` es una cadena con al menos un carácter.\n\n```ts\nisNonEmptyString('hola')   // → true\nisNonEmptyString('')       // → false\nisNonEmptyString(null)     // → false\n```",
+    "hints": [
+      "Comprueba typeof y length > 0."
+    ],
+    "tests": [
+      {
+        "description": "false para cadena vacía"
+      },
+      {
+        "description": "false para null"
+      },
+      {
+        "description": "false para número"
+      },
+      {
+        "description": "true para espacios en blanco (sigue siendo string)"
+      }
+    ]
+  },
+  "ts-type-guard-13": {
+    "title": "Type Guard — unión discriminada",
+    "description": "## Type Guards: Unión Discriminada\n\nUna *unión discriminada* es un tipo unión donde cada miembro tiene una propiedad literal compartida (`kind`, `type`, etc.) que actúa como discriminador.\n\n**Desafío:** Implementa `area(shape: Shape): number` usando un `switch` sobre `shape.kind` para calcular el área.\n\n```ts\narea({ kind: 'circle', radius: 1 })    // → Math.PI\narea({ kind: 'rect', width: 3, height: 4 })  // → 12\n```",
+    "hints": [
+      "switch(shape.kind) con casos exhaustivos — TypeScript reduce el tipo en cada rama."
+    ],
+    "tests": [
+      {
+        "description": "área del rectángulo"
+      },
+      {
+        "description": "área del triángulo"
+      },
+      {
+        "description": "círculo grande"
+      },
+      {
+        "description": "cuadrado es rectángulo"
+      }
+    ]
+  },
+  "ts-type-guard-14": {
+    "title": "Type Guard — parseJSON",
+    "description": "## Type Guards: parseJSON\n\n**Desafío:** Implementa `parseJSON<T>(s: string, guard: (x: unknown) => x is T): T | null` — parsea el JSON de forma segura y aplica el type guard al resultado.\n\n```ts\nparseJSON('42', isNumber)       // → 42\nparseJSON('bad', isNumber)      // → null\nparseJSON('\"hola\"', isNumber)   // → null\n```",
+    "hints": [
+      "Envuelve JSON.parse en try/catch y aplica el guard al resultado."
+    ],
+    "tests": [
+      {
+        "description": "retorna null para JSON inválido"
+      },
+      {
+        "description": "retorna null cuando el guard falla"
+      },
+      {
+        "description": "retorna número cuando el guard pasa"
+      },
+      {
+        "description": "retorna null para cadena vacía"
+      }
+    ]
+  },
+  "ts-type-guard-15": {
+    "title": "Type Guard — exhaustiveCheck",
+    "description": "## Type Guards: exhaustiveCheck\n\n**Desafío:** Implementa `exhaustiveCheck(x: never): never` — una función que siempre lanza un `Error`. Se usa en el caso `default` de switches exhaustivos para garantizar que se tratan todos los casos.\n\n```ts\nexhaustiveCheck(x as never)   // → throws Error\n```",
+    "hints": [
+      "Esta función siempre debe lanzar — su tipo de retorno es never."
+    ],
+    "tests": [
+      {
+        "description": "lanza Error"
+      },
+      {
+        "description": "el mensaje incluye el valor"
+      },
+      {
+        "description": "lanza para objeto"
+      },
+      {
+        "description": "lanza para null pasado"
+      }
+    ]
+  },
+  "ts-type-guard-16": {
+    "title": "Type Guard — isOneOf",
+    "description": "## Type Guards: isOneOf\n\n**Desafío:** Implementa `isOneOf<T>(x: unknown, allowed: T[]): x is T` — retorna `true` si `x` está en el array `allowed`.\n\n```ts\nisOneOf('rojo', ['rojo', 'verde', 'azul'])  // → true\nisOneOf('amarillo', ['rojo', 'verde'])       // → false\n```",
+    "hints": [
+      "Array.includes usa igualdad estricta — perfecto para comprobar valores."
+    ],
+    "tests": [
+      {
+        "description": "false para valor excluido"
+      },
+      {
+        "description": "funciona con números"
+      },
+      {
+        "description": "false para array vacío"
+      },
+      {
+        "description": "comprobación de igualdad estricta"
+      }
+    ]
+  },
+  "ts-type-guard-17": {
+    "title": "Type Guard — isTuple",
+    "description": "## Type Guards: isTuple\n\n**Desafío:** Implementa `isTuple<A, B>(x: unknown, guardA: (v: unknown) => v is A, guardB: (v: unknown) => v is B): x is [A, B]` — retorna `true` si `x` es un array de longitud 2 donde cada elemento pasa su respectivo guard.\n\n```ts\nisTuple([42, 'hola'], isNumber, isString)    // → true\nisTuple([42, 43], isNumber, isString)        // → false\n```",
+    "hints": [
+      "Comprueba Array.isArray, length === 2, y ambos guards."
+    ],
+    "tests": [
+      {
+        "description": "false para segundo tipo incorrecto"
+      },
+      {
+        "description": "false para longitud incorrecta"
+      },
+      {
+        "description": "false para no-array"
+      },
+      {
+        "description": "true para boolean+string"
+      }
+    ]
+  },
+  "ts-type-guard-18": {
+    "title": "Type Guard — narrowUnion",
+    "description": "## Type Guards: narrowUnion\n\n**Desafío:** Implementa `narrowUnion<T>(value: T | Error): { value: T; error: null } | { value: null; error: Error }` — envuelve el resultado distinguiendo entre éxito y error.\n\n```ts\nnarrowUnion(42)            // → { value: 42, error: null }\nnarrowUnion(new Error())   // → { value: null, error: Error }\n```",
+    "hints": [
+      "instanceof Error distingue el error del valor de éxito."
+    ],
+    "tests": [
+      {
+        "description": "error null para éxito"
+      },
+      {
+        "description": "value null para error"
+      },
+      {
+        "description": "envuelve el error"
+      },
+      {
+        "description": "funciona con número"
+      }
+    ]
+  },
+  "ts-type-guard-19": {
+    "title": "Type Guard — acceso seguro",
+    "description": "## Type Guards: Acceso Seguro\n\n**Desafío:** Implementa `safeGet<T, K extends keyof T>(obj: T | null | undefined, key: K): T[K] | undefined` — retorna `obj[key]` si `obj` existe, de lo contrario `undefined`.\n\n```ts\nsafeGet({ a: 1 }, 'a')   // → 1\nsafeGet(null, 'a')        // → undefined\n```",
+    "hints": [
+      "obj != null es true cuando obj no es ni null ni undefined (desigualdad débil)."
+    ],
+    "tests": [
+      {
+        "description": "retorna undefined para null"
+      },
+      {
+        "description": "retorna undefined para undefined"
+      },
+      {
+        "description": "retorna valor anidado"
+      },
+      {
+        "description": "retorna valor de propiedad undefined"
+      }
+    ]
+  },
+  "ts-type-guard-20": {
+    "title": "Type Guard — validar esquema",
+    "description": "## Type Guards: Validar Esquema\n\n**Desafío:** Implementa `isUserRecord(x: unknown): x is { name: string; age: number }` — retorna `true` si `x` es un objeto con `name` (string) y `age` (number).\n\n```ts\nisUserRecord({ name: 'Ana', age: 30 })   // → true\nisUserRecord({ name: 'Ana' })            // → false\nisUserRecord(null)                       // → false\n```",
+    "hints": [
+      "Comprueba typeof para cada propiedad después de verificar que la clave existe."
+    ],
+    "tests": [
+      {
+        "description": "false para age faltante"
+      },
+      {
+        "description": "false para tipo age incorrecto"
+      },
+      {
+        "description": "false para null"
+      },
+      {
+        "description": "false para objeto vacío"
+      }
+    ]
+  },
+  "ts-interface-1": {
+    "title": "Interface — createUser",
+    "description": "## Interfaces: createUser\n\nUna **interfaz** en TypeScript define la forma de un objeto — qué propiedades tiene y sus tipos.\n\n**Desafío:** Define la interfaz `User` con `name: string` y `age: number`, luego implementa `createUser(name: string, age: number): User`.\n\n```ts\ncreateUser('Ana', 30)   // → { name: 'Ana', age: 30 }\n```",
+    "hints": [
+      "Sintaxis abreviada de objeto: { name, age } es igual a { name: name, age: age }."
+    ],
+    "tests": [
+      {
+        "description": "age está definida"
+      },
+      {
+        "description": "name es string"
+      },
+      {
+        "description": "age es number"
+      },
+      {
+        "description": "forma completa del objeto"
+      }
+    ]
+  },
+  "ts-interface-2": {
+    "title": "Interface — Propiedades Opcionales",
+    "description": "## Interfaces: Propiedades Opcionales\n\nMarca una propiedad como opcional con `?` en la interfaz. La función debe incluirla solo si se proporciona.\n\n**Desafío:** Implementa `createPoint(x: number, y: number, z?: number): Point` con la interfaz `Point { x, y, z? }`.\n\n```ts\ncreatePoint(1, 2)      // → { x: 1, y: 2 }\ncreatePoint(1, 2, 3)   // → { x: 1, y: 2, z: 3 }\n```",
+    "hints": [
+      "Comprueba z !== undefined antes de incluirlo, para evitar { x, y, z: undefined }."
+    ],
+    "tests": [
+      {
+        "description": "z es undefined cuando se omite"
+      },
+      {
+        "description": "z se establece cuando se proporciona"
+      },
+      {
+        "description": "forma del punto 2D"
+      },
+      {
+        "description": "forma del punto 3D"
+      }
+    ]
+  },
+  "ts-interface-3": {
+    "title": "Interface — Propiedades Readonly",
+    "description": "## Interfaces: Propiedades Readonly\n\nLas propiedades marcadas con `readonly` no pueden ser reasignadas después de la creación.\n\n**Desafío:** Define `ServerConfig { readonly host: string; readonly port: number }` e implementa `createServerConfig(host, port)` devolviendo un objeto congelado.\n\n```ts\nconst cfg = createServerConfig('localhost', 3000)\ncfg.port = 8080  // Error TypeScript\n```",
+    "hints": [
+      "Object.freeze previene la mutación de propiedades en tiempo de ejecución."
+    ],
+    "tests": [
+      {
+        "description": "port está definido"
+      },
+      {
+        "description": "el objeto está congelado"
+      },
+      {
+        "description": "acepta host real"
+      },
+      {
+        "description": "forma completa"
+      }
+    ]
+  },
+  "ts-interface-4": {
+    "title": "Interface — Firma de Índice",
+    "description": "## Interfaces: Firma de Índice\n\nUna *firma de índice* `[key: string]: V` permite acceder a cualquier propiedad de cadena con tipo `V`.\n\n**Desafío:** Define `StringMap { [key: string]: string }` e implementa `createStringMap(entries: [string, string][]): StringMap`.\n\n```ts\ncreateStringMap([['a','1'],['b','2']])  // → { a: '1', b: '2' }\n```",
+    "hints": [
+      "Object.fromEntries convierte un array de pares [clave, valor] en un objeto."
+    ],
+    "tests": [
+      {
+        "description": "crea mapa desde entradas"
+      },
+      {
+        "description": "objeto vacío para array vacío"
+      },
+      {
+        "description": "acceso por clave"
+      },
+      {
+        "description": "conteo de claves"
+      }
+    ]
+  },
+  "ts-interface-5": {
+    "title": "Interface — Unión Discriminada",
+    "description": "## Interfaces: Unión Discriminada\n\n**Desafío:** Define las interfaces `Success<T>` y `Failure` unidas como `Result<T>`. Implementa `createSuccess<T>(data: T): Result<T>` y `createFailure(message: string): Result<never>`.\n\n```ts\ncreateSuccess(42)           // → { ok: true, data: 42 }\ncreateFailure('error')      // → { ok: false, message: 'error' }\n```",
+    "hints": [
+      "El campo discriminador ok: true/false permite a TypeScript reducir el tipo en condicionales."
+    ],
+    "tests": [
+      {
+        "description": "ok es true para éxito"
+      },
+      {
+        "description": "data está en éxito"
+      },
+      {
+        "description": "ok es false para fallo"
+      },
+      {
+        "description": "message está en fallo"
+      }
+    ]
+  },
+  "ts-interface-6": {
+    "title": "Interface — Extends",
+    "description": "## Interfaces: Extends\n\nUna interfaz puede extender otra para heredar sus propiedades.\n\n**Desafío:** Define `Animal { name: string; sound: string }` y `Dog extends Animal { breed: string }`. Implementa `createDog(name, sound, breed): Dog`.\n\n```ts\ncreatedog('Rex', 'woof', 'Labrador')  // → { name, sound, breed }\n```",
+    "hints": [
+      "Dog hereda name y sound de Animal — no necesitas redeclararlos."
+    ],
+    "tests": [
+      {
+        "description": "name se hereda"
+      },
+      {
+        "description": "breed está en Dog"
+      },
+      {
+        "description": "sound se hereda"
+      },
+      {
+        "description": "forma completa"
+      }
+    ]
+  },
+  "ts-interface-7": {
+    "title": "Interface — Tipos de Intersección",
+    "description": "## Interfaces: Tipos de Intersección\n\nUn tipo intersección `A & B` combina ambas formas. Úsalo para mixins y composición.\n\n**Desafío:** Define los tipos `Serializable { serialize(): string }` y `Loggable { log(): void }`. Implementa `createEntity(data: string)` retornando `Serializable & Loggable`.\n\n```ts\nconst e = createEntity('test')\ne.serialize()   // → 'test'\ne.log()         // no retorna valor\n```",
+    "hints": [
+      "Retorna un objeto con ambos métodos para satisfacer la intersección."
+    ],
+    "tests": [
+      {
+        "description": "serialize retorna el dato"
+      },
+      {
+        "description": "log es una función"
+      },
+      {
+        "description": "tiene ambos métodos"
+      },
+      {
+        "description": "log no retorna valor"
+      }
+    ]
+  },
+  "ts-interface-8": {
+    "title": "Interface — Parser de Tipo Unión",
+    "description": "## Interfaces: Parser de Tipo Unión\n\n**Desafío:** Implementa `parseValue(s: string): number | boolean | string` — parsea a `number` si es numérico, a `boolean` si es `'true'`/`'false'`, o devuelve la cadena original.\n\n```ts\nparseValue('42')     // → 42\nparseValue('true')   // → true\nparseValue('hola')   // → 'hola'\n```",
+    "hints": [
+      "Usa Number() y Number.isNaN() para detectar si la cadena es numérica."
+    ],
+    "tests": [
+      {
+        "description": "parsea a número"
+      },
+      {
+        "description": "parsea a boolean"
+      },
+      {
+        "description": "retorna string"
+      },
+      {
+        "description": "parsea false"
+      }
+    ]
+  },
+  "ts-interface-9": {
+    "title": "Interface — Tipo Función",
+    "description": "## Interfaces: Tipo Función\n\nPuedes definir tipos de función en interfaces con la sintaxis `(params): ReturnType`.\n\n**Desafío:** Define la interfaz `Transformer<T, U> { (input: T): U }` e implementa `applyTransformer<T, U>(value: T, transformer: Transformer<T, U>): U`.\n\n```ts\napplyTransformer(5, x => x * 2)      // → 10\napplyTransformer('hola', s => s.length)  // → 4\n```",
+    "hints": [
+      "La interfaz de función define la firma de llamada — instancias son funciones directamente."
+    ],
+    "tests": [
+      {
+        "description": "aplica transformador numérico"
+      },
+      {
+        "description": "aplica transformador de string"
+      },
+      {
+        "description": "retorna el tipo correcto"
+      },
+      {
+        "description": "funciona con identidad"
+      }
+    ]
+  },
+  "ts-interface-10": {
+    "title": "Interface — Tipo Recursivo",
+    "description": "## Interfaces: Tipo Recursivo\n\nUna interfaz puede referenciarse a sí misma para modelar estructuras de árbol.\n\n**Desafío:** Define `TreeNode<T> { value: T; children: TreeNode<T>[] }` e implementa `countNodes<T>(root: TreeNode<T>): number`.\n\n```ts\ncountNodes({ value: 1, children: [] })   // → 1\ncountNodes({ value: 1, children: [{ value: 2, children: [] }] })  // → 2\n```",
+    "hints": [
+      "Suma 1 (nodo raíz) + suma recursiva de los hijos."
+    ],
+    "tests": [
+      {
+        "description": "1 para hoja sola"
+      },
+      {
+        "description": "2 para raíz con un hijo"
+      },
+      {
+        "description": "conteo profundo"
+      },
+      {
+        "description": "varios hijos"
+      }
+    ]
+  },
+  "ts-interface-11": {
+    "title": "Interface — con Método",
+    "description": "## Interfaces: Con Método\n\n**Desafío:** Define la interfaz `Counter { count: number; increment(): void; reset(): void }` e implementa `createCounter(initial?: number): Counter`.\n\n```ts\nconst c = createCounter(5)\nc.increment()\nc.count  // → 6\nc.reset()\nc.count  // → 0\n```",
+    "hints": [
+      "Usa una variable count en el ámbito del closure, y retorna un objeto con los métodos."
+    ],
+    "tests": [
+      {
+        "description": "comienza en 0 por defecto"
+      },
+      {
+        "description": "increment suma 1"
+      },
+      {
+        "description": "reset va a 0"
+      },
+      {
+        "description": "comienza en initial"
+      }
+    ]
+  },
+  "ts-interface-12": {
+    "title": "Interface — Tipo Tupla",
+    "description": "## Interfaces: Tipo Tupla\n\nUna *tupla* es un array tipado con longitud y tipos de elementos fijos.\n\n**Desafío:** Implementa `swap<A, B>(pair: [A, B]): [B, A]` — intercambia los dos elementos de un par.\n\n```ts\nswap([1, 'hola'])   // → ['hola', 1]\nswap([true, 42])    // → [42, true]\n```",
+    "hints": [
+      "Desestructura el par y crea un nuevo array en orden invertido."
+    ],
+    "tests": [
+      {
+        "description": "intercambia number y string"
+      },
+      {
+        "description": "longitud correcta"
+      },
+      {
+        "description": "intercambia boolean y number"
+      },
+      {
+        "description": "primer elemento correcto"
+      }
+    ]
+  },
+  "ts-interface-13": {
+    "title": "Interface — Tipo Opaco/Brand",
+    "description": "## Interfaces: Tipo Opaco/Brand\n\nUn *tipo brand* previene mezclar inadvertidamente tipos primitivos del mismo tipo subyacente.\n\n**Desafío:** Define `type UserId = string & { readonly _brand: 'UserId' }` e implementa `createUserId(id: string): UserId`.\n\n```ts\nconst uid = createUserId('abc')\n// uid no es intercambiable con string ordinario en tipos\n```",
+    "hints": [
+      "Un cast con 'as' es suficiente en tiempo de ejecución — el branding es solo en tiempo de compilación."
+    ],
+    "tests": [
+      {
+        "description": "retorna la cadena de id"
+      },
+      {
+        "description": "tipos diferentes no son directamente asignables"
+      },
+      {
+        "description": "el valor es el id original"
+      },
+      {
+        "description": "funciona con id vacío"
+      }
+    ]
+  },
+  "ts-interface-14": {
+    "title": "Interface — Readonly Array",
+    "description": "## Interfaces: ReadonlyArray\n\nUn `ReadonlyArray<T>` garantiza que el array no puede ser mutado.\n\n**Desafío:** Implementa `createReadonlyList<T>(items: T[]): ReadonlyArray<T>` retornando el array congelado.\n\n```ts\nconst list = createReadonlyList([1, 2, 3])\nlist[0]   // → 1\n// list.push(4)  → Error TypeScript\n```",
+    "hints": [
+      "Object.freeze previene la mutación; retorna el array como ReadonlyArray."
+    ],
+    "tests": [
+      {
+        "description": "retorna el array"
+      },
+      {
+        "description": "mantiene los valores"
+      },
+      {
+        "description": "está congelado"
+      },
+      {
+        "description": "funciona con strings"
+      }
+    ]
+  },
+  "ts-interface-15": {
+    "title": "Interface — Optional Chaining DisplayName",
+    "description": "## Interfaces: Optional Chaining\n\n**Desafío:** Implementa `getDisplayName(user: { name?: { first?: string; last?: string } }): string` retornando `'first last'`, o solo `first`/`last` si uno falta, o `'Anonymous'` si ambos faltan.\n\n```ts\ngetDisplayName({ name: { first: 'Ana', last: 'López' } })  // → 'Ana López'\ngetDisplayName({})  // → 'Anonymous'\n```",
+    "hints": [
+      "Optional chaining (?.) y nullish coalescing (??) simplifican el acceso a propiedades anidadas."
+    ],
+    "tests": [
+      {
+        "description": "nombre completo"
+      },
+      {
+        "description": "solo first"
+      },
+      {
+        "description": "solo last"
+      },
+      {
+        "description": "Anonymous si ninguno"
+      }
+    ]
+  },
+  "ts-interface-16": {
+    "title": "Interface — Structural Typing Guard",
+    "description": "## Interfaces: Structural Typing\n\nTypeScript usa *tipado estructural* — dos tipos son compatibles si tienen la misma forma, sin importar el nombre.\n\n**Desafío:** Implementa `isDuck(x: unknown): x is { quack(): void }` — retorna `true` si el objeto tiene un método `quack`.\n\n```ts\nisDuck({ quack: () => {} })   // → true\nisDuck({ bark: () => {} })    // → false\n```",
+    "hints": [
+      "Comprueba que x es un objeto no nulo y que typeof x.quack === 'function'."
+    ],
+    "tests": [
+      {
+        "description": "true para pato (duck)"
+      },
+      {
+        "description": "false para perro (no-pato)"
+      },
+      {
+        "description": "false para null"
+      },
+      {
+        "description": "false para string"
+      }
+    ]
+  },
+  "ts-interface-17": {
+    "title": "Interface — Implementar una Pila",
+    "description": "## Interfaces: Implementar una Pila (Stack)\n\n**Desafío:** Define la interfaz `Stack<T> { push(item: T): void; pop(): T | undefined; peek(): T | undefined; size: number }` e impleméntala en `createStack<T>(): Stack<T>`.\n\n```ts\nconst stack = createStack<number>()\nstack.push(1); stack.push(2)\nstack.pop()   // → 2\nstack.size    // → 1\n```",
+    "hints": [
+      "Un array interno con métodos que usan push/pop del array funciona perfectamente."
+    ],
+    "tests": [
+      {
+        "description": "push añade elemento"
+      },
+      {
+        "description": "pop elimina el tope"
+      },
+      {
+        "description": "peek no elimina"
+      },
+      {
+        "description": "size se actualiza"
+      }
+    ]
+  },
+  "ts-interface-18": {
+    "title": "Interface — Función como Argumento",
+    "description": "## Interfaces: Función como Argumento\n\n**Desafío:** Define la interfaz `Predicate<T> { (item: T): boolean }` e implementa `filterWith<T>(arr: T[], pred: Predicate<T>): T[]`.\n\n```ts\nfilterWith([1, 2, 3, 4], x => x % 2 === 0)  // → [2, 4]\nfilterWith(['a', 'bb', 'ccc'], s => s.length > 1)  // → ['bb', 'ccc']\n```",
+    "hints": [
+      "La interfaz Predicate es equivalente a (item: T) => boolean."
+    ],
+    "tests": [
+      {
+        "description": "filtra pares"
+      },
+      {
+        "description": "filtra strings largos"
+      },
+      {
+        "description": "array vacío"
+      },
+      {
+        "description": "todos pasan el predicado"
+      }
+    ]
+  },
+  "ts-interface-19": {
+    "title": "Interface — Switch Exhaustivo",
+    "description": "## Interfaces: Switch Exhaustivo\n\n**Desafío:** Define el tipo `Direction = 'north' | 'south' | 'east' | 'west'` e implementa `describe(d: Direction): string` con un switch exhaustivo que lanza si se llega al `default`.\n\n```ts\ndescribe('north')  // → 'Moving north'\ndescribe('south')  // → 'Moving south'\n```",
+    "hints": [
+      "Pasa el valor `default` a una función `assertNever(x: never): never` que lanza."
+    ],
+    "tests": [
+      {
+        "description": "north"
+      },
+      {
+        "description": "south"
+      },
+      {
+        "description": "east"
+      },
+      {
+        "description": "west"
+      }
+    ]
+  },
+  "ts-interface-20": {
+    "title": "Interface — Contenedor Genérico",
+    "description": "## Interfaces: Contenedor Genérico\n\n**Desafío:** Define la interfaz `Container<T> { value: T; map<U>(fn: (v: T) => U): Container<U> }` e implementa `wrap<T>(value: T): Container<T>`.\n\n```ts\nwrap(5).map(x => x * 2).value       // → 10\nwrap('hola').map(s => s.length).value  // → 4\n```",
+    "hints": [
+      "Retorna un nuevo objeto con map que envuelve el resultado transformado en un nuevo Container."
+    ],
+    "tests": [
+      {
+        "description": "value es accesible"
+      },
+      {
+        "description": "map transforma el valor"
+      },
+      {
+        "description": "map es encadenable"
+      },
+      {
+        "description": "funciona con strings"
+      }
+    ]
+  },
+  "ts-generic-1": {
+    "title": "Genéricos — identity<T>",
+    "description": "## Genéricos: identity<T>\n\nUna función genérica preserva información de tipo que se perdería con `any`.\n\n**Desafío:** Implementa `identity<T>(value: T): T` — retorna el valor sin modificar.\n\n```ts\nidentity(42)      // → 42\nidentity('hola')  // → 'hola'\n```",
+    "hints": [
+      "El tipo T se infiere del argumento pasado — no necesitas especificarlo explícitamente."
+    ],
+    "tests": [
+      {
+        "description": "retorna número"
+      },
+      {
+        "description": "retorna string"
+      },
+      {
+        "description": "retorna boolean"
+      },
+      {
+        "description": "retorna null"
+      }
+    ]
+  },
+  "ts-generic-2": {
+    "title": "Genéricos — head<T>",
+    "description": "## Genéricos: head<T>\n\n**Desafío:** Implementa `head<T>(arr: T[]): T | undefined` — retorna el primer elemento del array o `undefined` si está vacío.\n\n```ts\nhead([1, 2, 3])   // → 1\nhead([])           // → undefined\n```",
+    "hints": [
+      "arr[0] retorna undefined automáticamente para arrays vacíos."
+    ],
+    "tests": [
+      {
+        "description": "primer número"
+      },
+      {
+        "description": "undefined para vacío"
+      },
+      {
+        "description": "primer string"
+      },
+      {
+        "description": "primer booleano"
+      }
+    ]
+  },
+  "ts-generic-3": {
+    "title": "Genéricos — tail<T>",
+    "description": "## Genéricos: tail<T>\n\n**Desafío:** Implementa `tail<T>(arr: T[]): T[]` — retorna todos los elementos excepto el primero.\n\n```ts\ntail([1, 2, 3])   // → [2, 3]\ntail([1])          // → []\ntail([])           // → []\n```",
+    "hints": [
+      "arr.slice(1) retorna un nuevo array sin el primer elemento."
+    ],
+    "tests": [
+      {
+        "description": "remueve el primero"
+      },
+      {
+        "description": "array de un elemento"
+      },
+      {
+        "description": "array vacío"
+      },
+      {
+        "description": "preserva el orden"
+      }
+    ]
+  },
+  "ts-generic-4": {
+    "title": "Genéricos — last<T>",
+    "description": "## Genéricos: last<T>\n\n**Desafío:** Implementa `last<T>(arr: T[]): T | undefined` — retorna el último elemento o `undefined` si está vacío.\n\n```ts\nlast([1, 2, 3])   // → 3\nlast([])           // → undefined\n```",
+    "hints": [
+      "arr[arr.length - 1] retorna undefined para arrays vacíos."
+    ],
+    "tests": [
+      {
+        "description": "último número"
+      },
+      {
+        "description": "undefined para vacío"
+      },
+      {
+        "description": "último string"
+      },
+      {
+        "description": "array de un elemento"
+      }
+    ]
+  },
+  "ts-generic-5": {
+    "title": "Genéricos — nth<T>",
+    "description": "## Genéricos: nth<T>\n\n**Desafío:** Implementa `nth<T>(arr: T[], n: number): T | undefined` — retorna el elemento en el índice `n` (base 0), o `undefined` si está fuera de rango.\n\n```ts\nnth([1, 2, 3], 1)    // → 2\nnth([1, 2, 3], 10)   // → undefined\n```",
+    "hints": [
+      "arr[n] retorna undefined automáticamente para índices fuera de rango."
+    ],
+    "tests": [
+      {
+        "description": "índice 0"
+      },
+      {
+        "description": "índice fuera de rango"
+      },
+      {
+        "description": "índice negativo"
+      },
+      {
+        "description": "índice medio"
+      }
+    ]
+  },
+  "ts-generic-6": {
+    "title": "Genéricos — swap<T, U>",
+    "description": "## Genéricos: swap<T, U>\n\n**Desafío:** Implementa `swap<T, U>(pair: [T, U]): [U, T]` — intercambia los elementos de un par.\n\n```ts\nswap([1, 'hola'])   // → ['hola', 1]\nswap([true, 42])    // → [42, true]\n```",
+    "hints": [
+      "Desestructura la tupla y devuelve los elementos en orden inverso."
+    ],
+    "tests": [
+      {
+        "description": "number y string"
+      },
+      {
+        "description": "boolean y number"
+      },
+      {
+        "description": "longitud correcta"
+      },
+      {
+        "description": "tipos mantenidos"
+      }
+    ]
+  },
+  "ts-generic-7": {
+    "title": "Genéricos — pick<T, K>",
+    "description": "## Genéricos: pick<T, K extends keyof T>\n\n**Desafío:** Implementa `pick<T, K extends keyof T>(obj: T, keys: K[]): Pick<T, K>` — retorna un nuevo objeto con solo las claves especificadas.\n\n```ts\npick({ a: 1, b: 2, c: 3 }, ['a', 'c'])  // → { a: 1, c: 3 }\n```",
+    "hints": [
+      "Object.fromEntries + filter por claves incluidas en el array keys."
+    ],
+    "tests": [
+      {
+        "description": "selecciona dos claves"
+      },
+      {
+        "description": "una sola clave"
+      },
+      {
+        "description": "array de claves vacío"
+      },
+      {
+        "description": "claves correctas"
+      }
+    ]
+  },
+  "ts-generic-8": {
+    "title": "Genéricos — getLength<T extends {length}>",
+    "description": "## Genéricos: getLength con restricción\n\n**Desafío:** Implementa `getLength<T extends { length: number }>(x: T): number` — retorna `x.length`. La restricción garantiza que `x` tenga una propiedad `length`.\n\n```ts\ngetLength([1, 2, 3])   // → 3\ngetLength('hola')       // → 4\n```",
+    "hints": [
+      "extends { length: number } permite acceder a .length de forma segura en strings, arrays, etc."
+    ],
+    "tests": [
+      {
+        "description": "longitud de array"
+      },
+      {
+        "description": "longitud de string"
+      },
+      {
+        "description": "array vacío"
+      },
+      {
+        "description": "string vacío"
+      }
+    ]
+  },
+  "ts-generic-9": {
+    "title": "Genéricos — Clase Stack Genérica",
+    "description": "## Genéricos: Clase Stack\n\n**Desafío:** Implementa `class Stack<T>` con métodos `push(item: T): void`, `pop(): T | undefined`, `peek(): T | undefined`, y una propiedad getter `size: number`.\n\n```ts\nconst s = new Stack<number>()\ns.push(1); s.push(2)\ns.peek()  // → 2\ns.pop()   // → 2\ns.size    // → 1\n```",
+    "hints": [
+      "Un array privado items: T[] almacena los elementos; push/pop se delegan al array."
+    ],
+    "tests": [
+      {
+        "description": "push aumenta size"
+      },
+      {
+        "description": "pop retorna el tope"
+      },
+      {
+        "description": "peek no elimina"
+      },
+      {
+        "description": "pop en vacío da undefined"
+      }
+    ]
+  },
+  "ts-generic-10": {
+    "title": "Genéricos — Clase Queue Genérica",
+    "description": "## Genéricos: Clase Queue\n\n**Desafío:** Implementa `class Queue<T>` con métodos `enqueue(item: T): void`, `dequeue(): T | undefined`, `front(): T | undefined`, y `size: number`.\n\n```ts\nconst q = new Queue<string>()\nq.enqueue('a'); q.enqueue('b')\nq.front()     // → 'a'\nq.dequeue()   // → 'a'\nq.size        // → 1\n```",
+    "hints": [
+      "Un array interno; enqueue usa push y dequeue usa shift."
+    ],
+    "tests": [
+      {
+        "description": "enqueue aumenta size"
+      },
+      {
+        "description": "dequeue retorna el frente"
+      },
+      {
+        "description": "front no elimina"
+      },
+      {
+        "description": "dequeue en vacío da undefined"
+      }
+    ]
+  },
+  "ts-generic-11": {
+    "title": "Genéricos — zip<T, U>",
+    "description": "## Genéricos: zip<T, U>\n\n**Desafío:** Implementa `zip<T, U>(a: T[], b: U[]): [T, U][]` — empareja elementos de dos arrays, truncando al más corto.\n\n```ts\nzip([1, 2, 3], ['a', 'b', 'c'])  // → [[1,'a'],[2,'b'],[3,'c']]\nzip([1, 2], ['a'])               // → [[1,'a']]\n```",
+    "hints": [
+      "Itera hasta Math.min(a.length, b.length) y crea pares [a[i], b[i]]."
+    ],
+    "tests": [
+      {
+        "description": "arrays iguales"
+      },
+      {
+        "description": "trunca al más corto"
+      },
+      {
+        "description": "arrays vacíos"
+      },
+      {
+        "description": "tuplas correctas"
+      }
+    ]
+  },
+  "ts-generic-12": {
+    "title": "Genéricos — unique<T>",
+    "description": "## Genéricos: unique<T>\n\n**Desafío:** Implementa `unique<T>(arr: T[]): T[]` — retorna solo valores únicos preservando el orden de primera aparición.\n\n```ts\nunique([1, 2, 1, 3, 2])   // → [1, 2, 3]\nunique([])                 // → []\n```",
+    "hints": [
+      "Set elimina duplicados; [...new Set(arr)] los convierte de vuelta a array."
+    ],
+    "tests": [
+      {
+        "description": "elimina duplicados"
+      },
+      {
+        "description": "preserva el orden"
+      },
+      {
+        "description": "array vacío"
+      },
+      {
+        "description": "sin duplicados"
+      }
+    ]
+  },
+  "ts-generic-13": {
+    "title": "Genéricos — mapValues<T, U>",
+    "description": "## Genéricos: mapValues<T extends object, U>\n\n**Desafío:** Implementa `mapValues<T extends object, U>(obj: T, fn: (v: T[keyof T]) => U): Record<keyof T, U>` — transforma cada valor del objeto con `fn`.\n\n```ts\nmapValues({ a: 1, b: 2 }, v => v * 10)  // → { a: 10, b: 20 }\n```",
+    "hints": [
+      "Object.entries + reduce o Object.fromEntries con map."
+    ],
+    "tests": [
+      {
+        "description": "multiplica valores"
+      },
+      {
+        "description": "convierte a string"
+      },
+      {
+        "description": "objeto vacío"
+      },
+      {
+        "description": "preserva las claves"
+      }
+    ]
+  },
+  "ts-generic-14": {
+    "title": "Genéricos — filter<T>",
+    "description": "## Genéricos: filter<T>\n\n**Desafío:** Implementa `filter<T>(arr: T[], predicate: (x: T) => boolean): T[]` — retorna los elementos que pasan el predicado.\n\n```ts\nfilter([1, 2, 3, 4], x => x % 2 === 0)  // → [2, 4]\n```",
+    "hints": [
+      "Puedes usar arr.filter directamente."
+    ],
+    "tests": [
+      {
+        "description": "filtra pares"
+      },
+      {
+        "description": "ninguno pasa"
+      },
+      {
+        "description": "todos pasan"
+      },
+      {
+        "description": "array vacío"
+      }
+    ]
+  },
+  "ts-generic-15": {
+    "title": "Genéricos — reduce<T, U>",
+    "description": "## Genéricos: reduce<T, U>\n\n**Desafío:** Implementa `reduce<T, U>(arr: T[], fn: (acc: U, cur: T) => U, initial: U): U` — reduce el array a un único valor acumulando con `fn`.\n\n```ts\nreduce([1, 2, 3], (acc, x) => acc + x, 0)  // → 6\n```",
+    "hints": [
+      "arr.reduce con el acumulador tipado como U funciona directamente."
+    ],
+    "tests": [
+      {
+        "description": "suma números"
+      },
+      {
+        "description": "recolecta en array"
+      },
+      {
+        "description": "acumula en objeto"
+      },
+      {
+        "description": "array vacío"
+      }
+    ]
+  },
+  "ts-generic-16": {
+    "title": "Genéricos — chunk<T>",
+    "description": "## Genéricos: chunk<T>\n\n**Desafío:** Implementa `chunk<T>(arr: T[], size: number): T[][]` — divide el array en subarrays de tamaño `size`.\n\n```ts\nchunk([1, 2, 3, 4, 5], 2)  // → [[1,2],[3,4],[5]]\n```",
+    "hints": [
+      "Itera con pasos de size usando slice(i, i+size)."
+    ],
+    "tests": [
+      {
+        "description": "chunks de tamaño 2"
+      },
+      {
+        "description": "último chunk parcial"
+      },
+      {
+        "description": "array vacío"
+      },
+      {
+        "description": "size mayor que array"
+      }
+    ]
+  },
+  "ts-generic-17": {
+    "title": "Genéricos — flatten<T>",
+    "description": "## Genéricos: flatten<T>\n\n**Desafío:** Implementa `flatten<T>(arr: T[][]): T[]` — aplana un array de arrays un nivel.\n\n```ts\nflatten([[1, 2], [3, 4], [5]])  // → [1, 2, 3, 4, 5]\n```",
+    "hints": [
+      "arr.flat() aplana un nivel; también puedes usar spread con concat o reduce."
+    ],
+    "tests": [
+      {
+        "description": "aplana un nivel"
+      },
+      {
+        "description": "array vacío"
+      },
+      {
+        "description": "subarrays vacíos"
+      },
+      {
+        "description": "longitud correcta"
+      }
+    ]
+  },
+  "ts-generic-18": {
+    "title": "Genéricos — partition<T>",
+    "description": "## Genéricos: partition<T>\n\n**Desafío:** Implementa `partition<T>(arr: T[], predicate: (x: T) => boolean): [T[], T[]]` — divide el array en dos: los que pasan el predicado y los que no.\n\n```ts\npartition([1, 2, 3, 4], x => x % 2 === 0)  // → [[2,4],[1,3]]\n```",
+    "hints": [
+      "Itera una vez, empujando a dos arrays separados según el predicado."
+    ],
+    "tests": [
+      {
+        "description": "pares y impares"
+      },
+      {
+        "description": "todos pasan"
+      },
+      {
+        "description": "ninguno pasa"
+      },
+      {
+        "description": "longitudes correctas"
+      }
+    ]
+  },
+  "ts-generic-19": {
+    "title": "Genéricos — groupBy<T>",
+    "description": "## Genéricos: groupBy<T>\n\n**Desafío:** Implementa `groupBy<T>(arr: T[], keyFn: (x: T) => string): Record<string, T[]>` — agrupa los elementos por el valor de clave retornado por `keyFn`.\n\n```ts\ngroupBy([1,2,3,4], x => x % 2 === 0 ? 'even' : 'odd')\n// → { even: [2,4], odd: [1,3] }\n```",
+    "hints": [
+      "Acumula en un objeto; inicializa el grupo como [] si la clave no existe aún."
+    ],
+    "tests": [
+      {
+        "description": "agrupa pares e impares"
+      },
+      {
+        "description": "agrupa por primera letra"
+      },
+      {
+        "description": "array vacío"
+      },
+      {
+        "description": "todos en un grupo"
+      }
+    ]
+  },
+  "ts-generic-20": {
+    "title": "Genéricos — pipe<T>",
+    "description": "## Genéricos: pipe<T>\n\n**Desafío:** Implementa `pipe<T>(value: T, ...fns: ((x: T) => T)[]): T` — aplica una secuencia de funciones de izquierda a derecha.\n\n```ts\npipe(5, x => x * 2, x => x + 1)  // → 11\n```",
+    "hints": [
+      "reduce sobre fns, partiendo del valor inicial."
+    ],
+    "tests": [
+      {
+        "description": "aplica dos funciones"
+      },
+      {
+        "description": "sin funciones retorna el valor"
+      },
+      {
+        "description": "orden izquierda-derecha"
+      },
+      {
+        "description": "tres funciones"
+      }
+    ]
+  },
+  "ts-utility-1": {
+    "title": "Utility Types — Partial<T>",
+    "description": "## Utility Types: Partial<T>\n\n`Partial<T>` hace todas las propiedades de `T` opcionales — útil para actualizaciones parciales.\n\n**Desafío:** Implementa `updateUser(user: User, patch: Partial<User>): User` que hace merge del patch sobre el usuario.\n\n```ts\nupdateUser({ name: 'Ana', age: 30 }, { age: 31 })\n// → { name: 'Ana', age: 31 }\n```",
+    "hints": [
+      "{ ...user, ...patch } hace el merge de forma idiomática con spread."
+    ],
+    "tests": [
+      {
+        "description": "actualiza age"
+      },
+      {
+        "description": "patch vacío no cambia nada"
+      },
+      {
+        "description": "actualiza name"
+      },
+      {
+        "description": "actualiza ambos campos"
+      }
+    ]
+  },
+  "ts-utility-2": {
+    "title": "Utility Types — Pick<T, K>",
+    "description": "## Utility Types: Pick<T, K>\n\n`Pick<T, K>` crea un tipo con solo las propiedades seleccionadas de `T`.\n\n**Desafío:** Implementa `pickUser(user: User): Pick<User, 'name' | 'email'>` — extrae solo `name` y `email`.\n\n```ts\npickUser({ name: 'Ana', email: 'a@b.com', age: 30 })\n// → { name: 'Ana', email: 'a@b.com' }\n```",
+    "hints": [
+      "Desestructura las propiedades que necesitas y retorna solo esas."
+    ],
+    "tests": [
+      {
+        "description": "tiene name"
+      },
+      {
+        "description": "tiene email"
+      },
+      {
+        "description": "no tiene age"
+      },
+      {
+        "description": "solo dos propiedades"
+      }
+    ]
+  },
+  "ts-utility-3": {
+    "title": "Utility Types — Omit<T, K>",
+    "description": "## Utility Types: Omit<T, K>\n\n`Omit<T, K>` crea un tipo excluyendo las propiedades `K` de `T`.\n\n**Desafío:** Implementa `omitPassword<T extends { password: unknown }>(obj: T): Omit<T, 'password'>` — elimina el campo `password`.\n\n```ts\nomitPassword({ name: 'Ana', password: '123' })\n// → { name: 'Ana' }\n```",
+    "hints": [
+      "Desestructura omitiendo password: `const { password, ...rest } = obj`."
+    ],
+    "tests": [
+      {
+        "description": "elimina password"
+      },
+      {
+        "description": "conserva otras propiedades"
+      },
+      {
+        "description": "solo una propiedad restante"
+      },
+      {
+        "description": "múltiples propiedades restantes"
+      }
+    ]
+  },
+  "ts-utility-4": {
+    "title": "Utility Types — Readonly<T>",
+    "description": "## Utility Types: Readonly<T>\n\n`Readonly<T>` marca todas las propiedades como de solo lectura, previniendo reasignaciones.\n\n**Desafío:** Implementa `freeze<T extends object>(obj: T): Readonly<T>` usando `Object.freeze`.\n\n```ts\nconst frozen = freeze({ x: 1, y: 2 })\nfrozen.x = 99  // Error TypeScript\n```",
+    "hints": [
+      "Object.freeze ya tiene tipo Readonly<T> en su declaración."
+    ],
+    "tests": [
+      {
+        "description": "retorna el objeto"
+      },
+      {
+        "description": "el objeto está congelado"
+      },
+      {
+        "description": "preserva los valores"
+      },
+      {
+        "description": "funciona con strings"
+      }
+    ]
+  },
+  "ts-utility-5": {
+    "title": "Utility Types — Record<K, V>",
+    "description": "## Utility Types: Record<K, V>\n\n`Record<K, V>` crea un tipo de objeto mapeado con claves `K` y valores `V`.\n\n**Desafío:** Implementa `fromPairs<V>(pairs: [string, V][]): Record<string, V>` convirtiendo pares clave-valor en un objeto.\n\n```ts\nfromPairs([['a', 1], ['b', 2]])  // → { a: 1, b: 2 }\n```",
+    "hints": [
+      "Object.fromEntries convierte directamente."
+    ],
+    "tests": [
+      {
+        "description": "crea objeto desde pares"
+      },
+      {
+        "description": "array vacío da {}"
+      },
+      {
+        "description": "acceso por clave"
+      },
+      {
+        "description": "conteo de claves"
+      }
+    ]
+  },
+  "ts-utility-6": {
+    "title": "Utility Types — Required<T>",
+    "description": "## Utility Types: Required<T>\n\n`Required<T>` hace todas las propiedades opcionales en obligatorias.\n\n**Desafío:** Implementa `withDefaults<T>(partial: Partial<T>, defaults: Required<T>): Required<T>` mezclando los defaults con los valores parciales.\n\n```ts\nwithDefaults({ name: 'Ana' }, { name: '', age: 0 })\n// → { name: 'Ana', age: 0 }\n```",
+    "hints": [
+      "{ ...defaults, ...partial } aplica los valores parciales sobre los defaults."
+    ],
+    "tests": [
+      {
+        "description": "usa defaults para los faltantes"
+      },
+      {
+        "description": "los valores parciales sobreescriben"
+      },
+      {
+        "description": "partial vacío usa todos los defaults"
+      },
+      {
+        "description": "forma completa"
+      }
+    ]
+  },
+  "ts-utility-7": {
+    "title": "Utility Types — NonNullable<T>",
+    "description": "## Utility Types: NonNullable<T>\n\n`NonNullable<T>` elimina `null` y `undefined` de un tipo unión.\n\n**Desafío:** Implementa `compact<T>(arr: (T | null | undefined)[]): NonNullable<T>[]` filtrando valores nullish.\n\n```ts\ncompact([1, null, 2, undefined, 3])  // → [1, 2, 3]\n```",
+    "hints": [
+      "Filtra con x !== null && x !== undefined, usando predicado de tipo para el retorno."
+    ],
+    "tests": [
+      {
+        "description": "elimina null y undefined"
+      },
+      {
+        "description": "array vacío"
+      },
+      {
+        "description": "todos nullish"
+      },
+      {
+        "description": "ninguno nullish"
+      }
+    ]
+  },
+  "ts-utility-8": {
+    "title": "Utility Types — operador keyof",
+    "description": "## Utility Types: operador keyof\n\n`keyof T` produce una unión de literales de todas las claves de `T`.\n\n**Desafío:** Implementa `getProperty<T, K extends keyof T>(obj: T, key: K): T[K]` — accede a la propiedad de forma segura en tipos.\n\n```ts\ngetProperty({ name: 'Ana', age: 30 }, 'name')  // → 'Ana'\n```",
+    "hints": [
+      "K extends keyof T garantiza que key es una clave válida de obj."
+    ],
+    "tests": [
+      {
+        "description": "obtiene name"
+      },
+      {
+        "description": "obtiene age"
+      },
+      {
+        "description": "tipo correcto"
+      },
+      {
+        "description": "objeto anidado"
+      }
+    ]
+  },
+  "ts-utility-9": {
+    "title": "Utility Types — typeof + ReturnType<T>",
+    "description": "## Utility Types: typeof + ReturnType<T>\n\n`ReturnType<typeof fn>` extrae el tipo de retorno de una función en tiempo de compilación.\n\n**Desafío:** Implementa `createConfig()` retornando un objeto de configuración, luego define `type Config = ReturnType<typeof createConfig>`.\n\n```ts\nconst cfg = createConfig()\ncfg.debug    // boolean\ncfg.timeout  // number\n```",
+    "hints": [
+      "ReturnType<typeof createConfig> infiere el tipo desde la implementación."
+    ],
+    "tests": [
+      {
+        "description": "tiene debug"
+      },
+      {
+        "description": "tiene timeout"
+      },
+      {
+        "description": "debug es boolean"
+      },
+      {
+        "description": "timeout es number"
+      }
+    ]
+  },
+  "ts-utility-10": {
+    "title": "Utility Types — transformRecord<T, U>",
+    "description": "## Utility Types: transformRecord\n\n**Desafío:** Implementa `transformRecord<T, U>(record: Record<string, T>, fn: (v: T) => U): Record<string, U>` transformando cada valor del record.\n\n```ts\ntransformRecord({ a: 1, b: 2 }, v => v * 10)  // → { a: 10, b: 20 }\n```",
+    "hints": [
+      "Object.fromEntries(Object.entries(record).map(([k,v]) => [k, fn(v)]))."
+    ],
+    "tests": [
+      {
+        "description": "multiplica valores"
+      },
+      {
+        "description": "convierte a string"
+      },
+      {
+        "description": "record vacío"
+      },
+      {
+        "description": "preserva las claves"
+      }
+    ]
+  },
+  "ts-utility-11": {
+    "title": "Utility Types — hasAllKeys<T>",
+    "description": "## Utility Types: hasAllKeys\n\n**Desafío:** Implementa `hasAllKeys<T extends object>(obj: unknown, keys: (keyof T)[]): obj is T` — retorna `true` si el objeto tiene todas las claves requeridas.\n\n```ts\nhasAllKeys({ a: 1, b: 2 }, ['a', 'b'])  // → true\nhasAllKeys({ a: 1 }, ['a', 'b'])        // → false\n```",
+    "hints": [
+      "keys.every(k => k in (obj as object))."
+    ],
+    "tests": [
+      {
+        "description": "true cuando todas presentes"
+      },
+      {
+        "description": "false cuando falta una"
+      },
+      {
+        "description": "array vacío de claves"
+      },
+      {
+        "description": "false para null"
+      }
+    ]
+  },
+  "ts-utility-12": {
+    "title": "Utility Types — Object.fromEntries",
+    "description": "## Utility Types: Object.fromEntries\n\n**Desafío:** Implementa `entriesMap<V, R>(obj: Record<string, V>, fn: (k: string, v: V) => R): Record<string, R>` transformando claves y valores usando `fn`.\n\n```ts\nentriesMap({ a: 1, b: 2 }, (k, v) => `${k}:${v}`)  // → { a: 'a:1', b: 'b:2' }\n```",
+    "hints": [
+      "Object.fromEntries(Object.entries(obj).map(([k,v]) => [k, fn(k,v)]))."
+    ],
+    "tests": [
+      {
+        "description": "transforma con clave y valor"
+      },
+      {
+        "description": "objeto vacío"
+      },
+      {
+        "description": "solo usa clave"
+      },
+      {
+        "description": "solo usa valor"
+      }
+    ]
+  },
+  "ts-utility-13": {
+    "title": "Utility Types — deepMerge",
+    "description": "## Utility Types: deepMerge\n\n**Desafío:** Implementa `deepMerge<T extends object>(target: T, source: Partial<T>): T` haciendo merge recursivo de source sobre target.\n\n```ts\ndeepMerge({ a: { b: 1, c: 2 } }, { a: { b: 99 } })\n// → { a: { b: 99, c: 2 } }\n```",
+    "hints": [
+      "Para cada clave, si ambos valores son objetos, recurre; de lo contrario, usa el valor de source."
+    ],
+    "tests": [
+      {
+        "description": "merge superficial"
+      },
+      {
+        "description": "merge profundo"
+      },
+      {
+        "description": "source vacío"
+      },
+      {
+        "description": "preserva claves no modificadas"
+      }
+    ]
+  },
+  "ts-utility-14": {
+    "title": "Utility Types — pluck<T>",
+    "description": "## Utility Types: pluck\n\n**Desafío:** Implementa `pluck<T, K extends keyof T>(arr: T[], key: K): T[K][]` — extrae el valor de una propiedad de cada elemento.\n\n```ts\npluck([{ name: 'Ana', age: 30 }, { name: 'Bob', age: 25 }], 'name')\n// → ['Ana', 'Bob']\n```",
+    "hints": [
+      "arr.map(item => item[key])."
+    ],
+    "tests": [
+      {
+        "description": "extrae names"
+      },
+      {
+        "description": "extrae ages"
+      },
+      {
+        "description": "array vacío"
+      },
+      {
+        "description": "array de un elemento"
+      }
+    ]
+  },
+  "ts-utility-15": {
+    "title": "Utility Types — invertRecord",
+    "description": "## Utility Types: invertRecord\n\n**Desafío:** Implementa `invertRecord<K extends string, V extends string>(record: Record<K, V>): Record<V, K>` intercambiando claves y valores.\n\n```ts\ninvertRecord({ a: '1', b: '2' })  // → { '1': 'a', '2': 'b' }\n```",
+    "hints": [
+      "Object.fromEntries(Object.entries(record).map(([k,v]) => [v,k]))."
+    ],
+    "tests": [
+      {
+        "description": "invierte correctamente"
+      },
+      {
+        "description": "record vacío"
+      },
+      {
+        "description": "una entrada"
+      },
+      {
+        "description": "conteo de claves"
+      }
+    ]
+  },
+  "ts-utility-16": {
+    "title": "Utility Types — keyValuePairs",
+    "description": "## Utility Types: keyValuePairs\n\n**Desafío:** Implementa `keyValuePairs<T extends object>(obj: T): [keyof T, T[keyof T]][]` convirtiendo un objeto en un array de pares `[clave, valor]`.\n\n```ts\nkeyValuePairs({ a: 1, b: 2 })  // → [['a', 1], ['b', 2]]\n```",
+    "hints": [
+      "Object.entries(obj) ya retorna pares [string, value]."
+    ],
+    "tests": [
+      {
+        "description": "pares de objeto"
+      },
+      {
+        "description": "objeto vacío"
+      },
+      {
+        "description": "par único"
+      },
+      {
+        "description": "longitud correcta"
+      }
+    ]
+  },
+  "ts-utility-17": {
+    "title": "Utility Types — withDefaults",
+    "description": "## Utility Types: withDefaults\n\n**Desafío:** Implementa `withDefaults<T extends object>(partial: Partial<T>, defaults: T): T` — aplica defaults para las propiedades undefined de partial.\n\n```ts\nwithDefaults({ color: 'red' }, { color: 'blue', size: 10 })\n// → { color: 'red', size: 10 }\n```",
+    "hints": [
+      "{ ...defaults, ...partial } sobreescribe defaults con los valores parciales provistos."
+    ],
+    "tests": [
+      {
+        "description": "usa defaults para los faltantes"
+      },
+      {
+        "description": "los valores de partial sobreescriben"
+      },
+      {
+        "description": "partial vacío usa todos los defaults"
+      },
+      {
+        "description": "todos los campos presentes"
+      }
+    ]
+  },
+  "ts-utility-18": {
+    "title": "Utility Types — pickByPredicate",
+    "description": "## Utility Types: pickByPredicate\n\n**Desafío:** Implementa `pickByPredicate<T>(obj: T, pred: (v: T[keyof T], k: keyof T) => boolean): Partial<T>` — retorna un objeto con solo las propiedades que pasan el predicado.\n\n```ts\npickByPredicate({ a: 1, b: 2, c: 3 }, v => v > 1)  // → { b: 2, c: 3 }\n```",
+    "hints": [
+      "Object.fromEntries(Object.entries(obj).filter(([k,v]) => pred(v as any, k as any)))."
+    ],
+    "tests": [
+      {
+        "description": "valores mayores que 1"
+      },
+      {
+        "description": "ninguno pasa"
+      },
+      {
+        "description": "todos pasan"
+      },
+      {
+        "description": "objeto vacío"
+      }
+    ]
+  },
+  "ts-utility-19": {
+    "title": "Utility Types — mapKeys",
+    "description": "## Utility Types: mapKeys\n\n**Desafío:** Implementa `mapKeys<T>(obj: Record<string, T>, fn: (k: string) => string): Record<string, T>` transformando cada clave.\n\n```ts\nmapKeys({ foo: 1, bar: 2 }, k => k.toUpperCase())  // → { FOO: 1, BAR: 2 }\n```",
+    "hints": [
+      "Object.fromEntries(Object.entries(obj).map(([k,v]) => [fn(k), v]))."
+    ],
+    "tests": [
+      {
+        "description": "claves en mayúsculas"
+      },
+      {
+        "description": "prefija claves"
+      },
+      {
+        "description": "objeto vacío"
+      },
+      {
+        "description": "preserva valores"
+      }
+    ]
+  },
+  "ts-utility-20": {
+    "title": "Utility Types — countBy",
+    "description": "## Utility Types: countBy\n\n**Desafío:** Implementa `countBy<T>(arr: T[], fn: (x: T) => string): Record<string, number>` — cuenta cuántos elementos producen cada clave.\n\n```ts\ncountBy([1,2,3,4,5], x => x % 2 === 0 ? 'even' : 'odd')  // → { even: 2, odd: 3 }\n```",
+    "hints": [
+      "Acumula un objeto con contadores; incrementa por 1 (o inicializa a 1) para cada clave."
+    ],
+    "tests": [
+      {
+        "description": "cuenta pares e impares"
+      },
+      {
+        "description": "array vacío"
+      },
+      {
+        "description": "todos iguales"
+      },
+      {
+        "description": "por primera letra"
+      }
+    ]
+  },
+  "ts-advanced-1": {
+    "title": "Avanzado — deepFreeze",
+    "description": "## Patrones Avanzados: deepFreeze\n\n**Desafío:** Implementa `deepFreeze<T extends object>(obj: T): Readonly<T>` que congela recursivamente un objeto y todos sus objetos anidados.\n\n```ts\nconst obj = deepFreeze({ a: { b: 1 } })\nObject.isFrozen(obj.a)  // → true\n```",
+    "hints": [
+      "Recurre en cada valor que es un objeto antes de congelar el padre."
+    ],
+    "tests": [
+      {
+        "description": "nivel superior congelado"
+      },
+      {
+        "description": "objeto anidado congelado"
+      },
+      {
+        "description": "retorna la misma estructura"
+      },
+      {
+        "description": "objeto vacío congelado"
+      },
+      {
+        "description": "anidación profunda congelada"
+      }
+    ]
+  },
+  "ts-advanced-2": {
+    "title": "Avanzado — filterNullish",
+    "description": "## Patrones Avanzados: filterNullish\n\n**Desafío:** Implementa `filterNullish<T>(arr: (T | null | undefined)[]): T[]` retornando solo los valores no-nulos y no-undefined.\n\n```ts\nfilterNullish([1, null, 2, undefined, 3])  // → [1, 2, 3]\n```",
+    "hints": [
+      "Un predicado de tipo (x): x is T permite a TypeScript reducir el tipo de retorno."
+    ],
+    "tests": [
+      {
+        "description": "elimina null y undefined"
+      },
+      {
+        "description": "array vacío"
+      },
+      {
+        "description": "todos nullish"
+      },
+      {
+        "description": "ninguno nullish"
+      },
+      {
+        "description": "preserva cero y false"
+      }
+    ]
+  },
+  "ts-advanced-3": {
+    "title": "Avanzado — flatMap<T, U>",
+    "description": "## Avanzado: flatMap\n\n**Desafío:** Implementa `flatMap<T, U>(arr: T[], fn: (x: T) => U[]): U[]` mapeando y luego aplanando un nivel.\n\n```ts\nflatMap([1, 2, 3], x => [x, x * 2])  // → [1, 2, 2, 4, 3, 6]\n```",
+    "hints": [
+      "Array.prototype.flatMap mapea y aplana un nivel."
+    ],
+    "tests": [
+      {
+        "description": "mapea y aplana"
+      },
+      {
+        "description": "array vacío"
+      },
+      {
+        "description": "subarrays vacíos"
+      },
+      {
+        "description": "expansión de string"
+      },
+      {
+        "description": "comprobación de longitud"
+      }
+    ]
+  },
+  "ts-advanced-4": {
+    "title": "Avanzado — flattenDeep",
+    "description": "## Avanzado: Aplanado Recursivo\n\n**Desafío:** Implementa `flattenDeep(arr: unknown[]): unknown[]` aplanando arrays anidados arbitrariamente.\n\n```ts\nflattenDeep([1, [2, [3, [4]]]])  // → [1, 2, 3, 4]\n```",
+    "hints": [
+      "Array.flat(Infinity) aplana recursivamente todos los niveles."
+    ],
+    "tests": [
+      {
+        "description": "aplana anidación profunda"
+      },
+      {
+        "description": "array vacío"
+      },
+      {
+        "description": "ya plano"
+      },
+      {
+        "description": "un solo nivel anidado"
+      },
+      {
+        "description": "longitud correcta"
+      }
+    ]
+  },
+  "ts-advanced-5": {
+    "title": "Avanzado — mapObject",
+    "description": "## Avanzado: mapObject\n\n**Desafío:** Implementa `mapObject<T extends object, U>(obj: T, fn: (k: keyof T, v: T[keyof T]) => U): Record<keyof T, U>` transformando los valores con acceso a la clave.\n\n```ts\nmapObject({ a: 1, b: 2 }, (k, v) => v * 10)  // → { a: 10, b: 20 }\n```",
+    "hints": [
+      "Tanto la clave como el valor se pasan a fn — usa ambos o cualquiera de ellos."
+    ],
+    "tests": [
+      {
+        "description": "multiplica valores"
+      },
+      {
+        "description": "usa la clave en la transformación"
+      },
+      {
+        "description": "objeto vacío"
+      },
+      {
+        "description": "conteo de claves preservado"
+      },
+      {
+        "description": "valores string"
+      }
+    ]
+  },
+  "ts-advanced-6": {
+    "title": "Avanzado — invertObject",
+    "description": "## Avanzado: Invertir Objeto con Comprobación de Unicidad\n\n**Desafío:** Implementa `invertObject<T extends Record<string, string>>(obj: T): Record<string, keyof T>` lanzando si existen valores duplicados.\n\n```ts\ninvertObject({ a: '1', b: '2' })   // → { '1': 'a', '2': 'b' }\ninvertObject({ a: '1', b: '1' })   // throws\n```",
+    "hints": [
+      "Comprueba el objeto resultado antes de asignar para detectar valores duplicados."
+    ],
+    "tests": [
+      {
+        "description": "invierte correctamente"
+      },
+      {
+        "description": "lanza en valores duplicados"
+      },
+      {
+        "description": "objeto vacío"
+      },
+      {
+        "description": "entrada única"
+      },
+      {
+        "description": "conteo de claves preservado"
+      }
+    ]
+  },
+  "ts-advanced-7": {
+    "title": "Avanzado — deepEqual",
+    "description": "## Avanzado: Comprobación de Igualdad Profunda\n\n**Desafío:** Implementa `deepEqual(a: unknown, b: unknown): boolean` retornando `true` si los dos valores son recursivamente iguales.\n\n```ts\ndeepEqual({ a: { b: 1 } }, { a: { b: 1 } })  // → true\ndeepEqual({ a: 1 }, { a: 2 })                 // → false\n```",
+    "hints": [
+      "Comienza con igualdad estricta, luego recurre en las claves del objeto."
+    ],
+    "tests": [
+      {
+        "description": "objetos anidados iguales"
+      },
+      {
+        "description": "anidado desigual"
+      },
+      {
+        "description": "primitivos"
+      },
+      {
+        "description": "tipos diferentes"
+      },
+      {
+        "description": "objetos vacíos"
+      }
+    ]
+  },
+  "ts-advanced-8": {
+    "title": "Avanzado — toCamelCase",
+    "description": "## Avanzado: Transformación de String — camelCase\n\n**Desafío:** Implementa `toCamelCase(str: string): string` convirtiendo una cadena en snake_case o kebab-case a camelCase.\n\n```ts\ntoCamelCase('hello_world')    // → 'helloWorld'\ntoCamelCase('foo-bar-baz')    // → 'fooBarBaz'\n```",
+    "hints": [
+      "Una regex que reemplaza [-_] seguido de un carácter, capitalizándolo, funciona de forma limpia."
+    ],
+    "tests": [
+      {
+        "description": "snake_case"
+      },
+      {
+        "description": "kebab-case"
+      },
+      {
+        "description": "sin separador"
+      },
+      {
+        "description": "múltiples palabras"
+      },
+      {
+        "description": "separadores mixtos"
+      }
+    ]
+  },
+  "ts-advanced-9": {
+    "title": "Avanzado — toSnakeCase",
+    "description": "## Avanzado: Transformación de String — snake_case\n\n**Desafío:** Implementa `toSnakeCase(str: string): string` convirtiendo una cadena camelCase a snake_case.\n\n```ts\ntoSnakeCase('helloWorld')    // → 'hello_world'\ntoSnakeCase('fooBarBaz')    // → 'foo_bar_baz'\n```",
+    "hints": [
+      "Reemplaza cada letra mayúscula con _minúscula usando una regex."
+    ],
+    "tests": [
+      {
+        "description": "camelCase a snake_case"
+      },
+      {
+        "description": "múltiples mayúsculas"
+      },
+      {
+        "description": "sin mayúsculas"
+      },
+      {
+        "description": "una mayúscula"
+      },
+      {
+        "description": "todo minúsculas preservado"
+      }
+    ]
+  },
+  "ts-advanced-10": {
+    "title": "Avanzado — zipWith<T, U, R>",
+    "description": "## Avanzado: zipWith\n\n**Desafío:** Implementa `zipWith<T, U, R>(a: T[], b: U[], fn: (x: T, y: U) => R): R[]` combinando dos arrays elemento a elemento usando una función.\n\n```ts\nzipWith([1,2,3], [4,5,6], (a,b) => a + b)  // → [5, 7, 9]\n```",
+    "hints": [
+      "Como zip, pero aplica fn a cada par en lugar de envolverlos en una tupla."
+    ],
+    "tests": [
+      {
+        "description": "suma por pares"
+      },
+      {
+        "description": "crea tuplas"
+      },
+      {
+        "description": "arrays vacíos"
+      },
+      {
+        "description": "trunca al más corto"
+      },
+      {
+        "description": "longitud correcta"
+      }
+    ]
+  },
+  "ts-advanced-11": {
+    "title": "Avanzado — splitEvery<T>",
+    "description": "## Avanzado: splitEvery\n\n**Desafío:** Implementa `splitEvery<T>(n: number, arr: T[]): T[][]` dividiendo un array en trozos de tamaño `n`.\n\n```ts\nsplitEvery(2, [1,2,3,4,5])  // → [[1,2],[3,4],[5]]\n```",
+    "hints": [
+      "Igual que chunk pero con el orden de argumentos invertido."
+    ],
+    "tests": [
+      {
+        "description": "divide en pares"
+      },
+      {
+        "description": "tamaño 3"
+      },
+      {
+        "description": "array vacío"
+      },
+      {
+        "description": "tamaño mayor que array"
+      },
+      {
+        "description": "tamaño 1"
+      }
+    ]
+  },
+  "ts-advanced-12": {
+    "title": "Avanzado — transpose<T>",
+    "description": "## Avanzado: Transponer Matriz\n\n**Desafío:** Implementa `transpose<T>(matrix: T[][]): T[][]` rotando una matriz 2D 90° intercambiando filas y columnas.\n\n```ts\ntranspose([[1,2,3],[4,5,6]])  // → [[1,4],[2,5],[3,6]]\n```",
+    "hints": [
+      "Mapea sobre el índice de columna de la primera fila, luego mapea cada fila a esa columna."
+    ],
+    "tests": [
+      {
+        "description": "2x3 a 3x2"
+      },
+      {
+        "description": "matriz cuadrada"
+      },
+      {
+        "description": "matriz vacía"
+      },
+      {
+        "description": "1x3 a 3x1"
+      },
+      {
+        "description": "el número de filas se convierte en columnas"
+      }
+    ]
+  },
+  "ts-advanced-13": {
+    "title": "Avanzado — cartesianProduct",
+    "description": "## Avanzado: Producto Cartesiano\n\n**Desafío:** Implementa `cartesianProduct<T, U>(a: T[], b: U[]): [T, U][]` generando todas las combinaciones.\n\n```ts\ncartesianProduct([1,2], ['a','b'])\n// → [[1,'a'],[1,'b'],[2,'a'],[2,'b']]\n```",
+    "hints": [
+      "flatMap sobre a, map interior sobre b, combinar en tuplas [x, y]."
+    ],
+    "tests": [
+      {
+        "description": "todas las combinaciones"
+      },
+      {
+        "description": "longitud es el producto"
+      },
+      {
+        "description": "primero vacío"
+      },
+      {
+        "description": "segundo vacío"
+      },
+      {
+        "description": "un elemento cada uno"
+      }
+    ]
+  },
+  "ts-advanced-14": {
+    "title": "Avanzado — interleave<T>",
+    "description": "## Avanzado: Entrelazar Dos Arrays\n\n**Desafío:** Implementa `interleave<T>(a: T[], b: T[]): T[]` alternando elementos de ambos arrays.\n\n```ts\ninterleave([1,3,5], [2,4,6])  // → [1,2,3,4,5,6]\ninterleave([1,2], ['a','b','c'])  // → [1,'a',2,'b','c']\n```",
+    "hints": [
+      "Itera hasta max(a.length, b.length), empuja cada elemento cuando existe."
+    ],
+    "tests": [
+      {
+        "description": "alterna misma longitud"
+      },
+      {
+        "description": "añade el resto"
+      },
+      {
+        "description": "primero vacío"
+      },
+      {
+        "description": "segundo vacío"
+      },
+      {
+        "description": "ambos vacíos"
+      }
+    ]
+  },
+  "ts-advanced-15": {
+    "title": "Avanzado — countOccurrences",
+    "description": "## Avanzado: Contar Ocurrencias de un Elemento\n\n**Desafío:** Implementa `countOccurrences<T>(arr: T[], value: T): number` contando cuántas veces aparece `value`.\n\n```ts\ncountOccurrences([1,2,3,2,1,2], 2)  // → 3\n```",
+    "hints": [
+      "Filtra por igualdad estricta, luego comprueba la longitud."
+    ],
+    "tests": [
+      {
+        "description": "cuenta ocurrencias"
+      },
+      {
+        "description": "ninguna ocurrencia"
+      },
+      {
+        "description": "array vacío"
+      },
+      {
+        "description": "todos iguales"
+      },
+      {
+        "description": "ocurrencias de string"
+      }
+    ]
+  },
+  "ts-advanced-16": {
+    "title": "Avanzado — rotateLeft",
+    "description": "## Avanzado: Rotación de Array\n\n**Desafío:** Implementa `rotateLeft<T>(arr: T[], n: number): T[]` desplazando elementos a la izquierda `n` posiciones (con wrap-around).\n\n```ts\nrotateLeft([1,2,3,4,5], 2)  // → [3,4,5,1,2]\n```",
+    "hints": [
+      "Aplica módulo de n por length para manejar sobre-rotación, luego slice y spread."
+    ],
+    "tests": [
+      {
+        "description": "rota 2"
+      },
+      {
+        "description": "rota 0"
+      },
+      {
+        "description": "rota por length"
+      },
+      {
+        "description": "array vacío"
+      },
+      {
+        "description": "rota 1"
+      }
+    ]
+  },
+  "ts-advanced-17": {
+    "title": "Avanzado — windowed",
+    "description": "## Avanzado: Ventana Deslizante\n\n**Desafío:** Implementa `windowed<T>(arr: T[], size: number): T[][]` retornando todos los subarrays contiguos de longitud `size`.\n\n```ts\nwindowed([1,2,3,4,5], 3)  // → [[1,2,3],[2,3,4],[3,4,5]]\n```",
+    "hints": [
+      "Itera mientras i + size <= arr.length, slice desde i hasta i+size."
+    ],
+    "tests": [
+      {
+        "description": "ventanas de tamaño 3"
+      },
+      {
+        "description": "tamaño igual a la longitud"
+      },
+      {
+        "description": "tamaño 1"
+      },
+      {
+        "description": "array vacío"
+      },
+      {
+        "description": "tamaño mayor que el array"
+      }
+    ]
+  },
+  "ts-advanced-18": {
+    "title": "Avanzado — groupByMultiple",
+    "description": "## Avanzado: Agrupación Multi-Clave\n\n**Desafío:** Implementa `groupByMultiple<T extends object>(arr: T[], keys: (keyof T)[]): Record<string, T[]>` creando una clave de grupo compuesta de múltiples campos.\n\n```ts\ngroupByMultiple([{a:1,b:'x'},{a:1,b:'y'},{a:2,b:'x'}], ['a','b'])\n// { '1-x': [...], '1-y': [...], '2-x': [...] }\n```",
+    "hints": [
+      "Une los valores en cada clave con un separador para formar la clave compuesta."
+    ],
+    "tests": [
+      {
+        "description": "agrupa por dos claves"
+      },
+      {
+        "description": "array vacío"
+      },
+      {
+        "description": "una clave igual que groupBy"
+      },
+      {
+        "description": "grupos únicos"
+      },
+      {
+        "description": "tres claves de grupo"
+      }
+    ]
+  },
+  "ts-advanced-19": {
+    "title": "Avanzado — memoize",
+    "description": "## Avanzado: Memoize Genérico\n\n**Desafío:** Implementa `memoize<T extends unknown[], R>(fn: (...args: T) => R): (...args: T) => R` cacheando resultados por argumentos serializados.\n\n```ts\nconst fn = memoize((n: number) => n * 2)\nfn(5)  // → 10 (calculado)\nfn(5)  // → 10 (cacheado)\n```",
+    "hints": [
+      "JSON.stringify(args) crea una clave de caché que maneja múltiples argumentos."
+    ],
+    "tests": [
+      {
+        "description": "retorna resultado correcto"
+      },
+      {
+        "description": "cachea el resultado"
+      },
+      {
+        "description": "argumentos diferentes se calculan"
+      },
+      {
+        "description": "funciona con strings"
+      },
+      {
+        "description": "funciona con dos argumentos"
+      }
+    ]
+  },
+  "ts-advanced-20": {
+    "title": "Avanzado — curry",
+    "description": "## Avanzado: curry Genérico\n\n**Desafío:** Implementa `curry<A, B, C>(fn: (a: A, b: B) => C): (a: A) => (b: B) => C` — forma currificada de una función de dos argumentos.\n\n```ts\nconst add = curry((a: number, b: number) => a + b)\nadd(3)(4)  // → 7\n```",
+    "hints": [
+      "Simplemente retorna a => b => fn(a, b)."
+    ],
+    "tests": [
+      {
+        "description": "suma dos números"
+      },
+      {
+        "description": "aplica parcialmente"
+      },
+      {
+        "description": "funciona con strings"
+      },
+      {
+        "description": "multiplica"
+      },
+      {
+        "description": "retorna función primero"
+      }
+    ]
   }
 }

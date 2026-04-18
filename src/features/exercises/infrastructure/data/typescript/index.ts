@@ -1,0 +1,5 @@
+export { typescriptBasicTypesExercises } from './basic-types'
+export { tsInterfacesExercises } from './interfaces'
+export { tsGenericsExercises } from './generics'
+export { tsUtilityTypesExercises } from './utility-types'
+export { tsConditionalMappedExercises } from './conditional-mapped'

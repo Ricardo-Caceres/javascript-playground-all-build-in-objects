@@ -1,4 +1,11 @@
 import type { Exercise } from '@/shared/types/exercises'
+import {
+  typescriptBasicTypesExercises,
+  tsInterfacesExercises,
+  tsGenericsExercises,
+  tsUtilityTypesExercises,
+  tsConditionalMappedExercises,
+} from './typescript'
 import { algoSortingExercises } from './algorithms/sorting'
 import { algoSearchingExercises } from './algorithms/searching'
 import { algoRecursionExercises } from './algorithms/recursion'
@@ -983,4 +990,10 @@ export const allExercises: Exercise[] = [
   ...algoRecursionExercises,
   ...algoStringsExercises,
   ...algoDataStructuresExercises,
+  // TypeScript exercises
+  ...typescriptBasicTypesExercises,
+  ...tsInterfacesExercises,
+  ...tsGenericsExercises,
+  ...tsUtilityTypesExercises,
+  ...tsConditionalMappedExercises,
 ]
