@@ -1,6 +1,6 @@
 import type { Exercise } from '@/shared/types/exercises'
 
-export const tsBasicTypesExercises: Exercise[] = [
+export const typescriptBasicTypesExercises: Exercise[] = [
   {
     slug: 'ts-type-guard-1',
     title: 'Type Guard — isString',
@@ -305,11 +305,11 @@ assertNonNull(null)      // throws Error
   if (x === null || x === undefined) throw new Error(msg ?? 'Assertion failed: value is null or undefined')
 }`,
     tests: [
-      { description: 'does not throw for value', assertion: "expect(() => assertNonNull('hello')).not && expect(assertNonNull('hello')).toBeUndefined()" },
+      { description: 'does not throw for value', assertion: "expect(() => assertNonNull('hello')).not.toThrow()" },
       { description: 'throws for null', assertion: "expect(() => assertNonNull(null)).toThrow()" },
       { description: 'throws for undefined', assertion: "expect(() => assertNonNull(undefined)).toThrow()" },
       { description: 'custom message in throw', assertion: "expect(() => assertNonNull(null, 'custom')).toThrow()" },
-      { description: 'does not throw for 0', assertion: "expect(() => assertNonNull(0)).toBeUndefined || expect(assertNonNull(0)).toBeUndefined()" },
+      { description: 'does not throw for 0', assertion: "expect(() => assertNonNull(0)).not.toThrow()" },
     ],
     hints: ['Throw if x === null || x === undefined, otherwise do nothing.'],
     tags: ['TypeScript', 'type-guard', 'assertion', 'intermediate'],
