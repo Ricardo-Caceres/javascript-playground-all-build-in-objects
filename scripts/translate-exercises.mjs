@@ -25,8 +25,18 @@ const ROOT = path.resolve(__dirname, '..')
 
 // ── CLI args ──────────────────────────────────────────────────────────────────
 const args = process.argv.slice(2)
-const locale = args[args.indexOf('--locale') + 1] ?? 'es'
-const batchSize = parseInt(args[args.indexOf('--batch') + 1] ?? '20', 10)
+
+function getArg(flag, defaultVal) {
+  const idx = args.indexOf(flag)
+  if (idx === -1) return defaultVal
+  const val = args[idx + 1]
+  // Treat another flag or missing value as "not provided"
+  if (!val || val.startsWith('--')) return defaultVal
+  return val
+}
+
+const locale = getArg('--locale', 'es')
+const batchSize = parseInt(getArg('--batch', '20'), 10)
 const fixBroken = args.includes('--fix-broken')
 
 const ANTHROPIC_API_KEY = process.env.ANTHROPIC_API_KEY
