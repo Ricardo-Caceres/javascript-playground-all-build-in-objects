@@ -1,5 +1,6 @@
 import { ExerciseRunner } from './ExerciseRunner'
 import ExerciseSidebar from './ExerciseSidebar'
+import { DescriptionMarkdown } from './DescriptionMarkdown'
 import type { Exercise } from '@/shared/types/exercises'
 
 interface ExerciseDetailViewProps {
@@ -41,8 +42,8 @@ export function ExerciseDetailView({ exercise }: ExerciseDetailViewProps) {
             </span>
           </div>
           <h1 className="mb-4 text-xl font-bold leading-snug">{exercise.title}</h1>
-          <div className="whitespace-pre-wrap text-sm leading-7 text-zinc-300">
-            {exercise.description}
+          <div className="prose-sm">
+            <DescriptionMarkdown content={exercise.description} />
           </div>
           {exercise.hints && exercise.hints.length > 0 && (
             <details className="mt-6">

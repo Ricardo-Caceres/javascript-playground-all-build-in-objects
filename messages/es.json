@@ -21,6 +21,11 @@
     "objectsPlaceholder": "Buscar objetos…"
   },
   "home": {
-    "title": "Práctica JavaScript"
+    "title": "Práctica JavaScript",
+    "heading": "Domina los Built-in Objects del Estándar",
+    "subtitle": "{count}+ ejercicios interactivos de TypeScript para cada constructor, método estático, método de instancia y propiedad — inspirado en Codewars y Codility.",
+    "objectsCount": "Built-in Objects ({count})",
+    "noObjects": "Ningún objeto coincide con \"{search}\"",
+    "tags": "Editor Monaco,Tests en el navegador,TypeScript,Seguimiento de progreso"
   }
 }

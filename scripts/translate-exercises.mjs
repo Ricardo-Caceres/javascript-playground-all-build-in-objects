@@ -7,6 +7,9 @@
  *
  * Usage:
  *   ANTHROPIC_API_KEY=sk-ant-... node scripts/translate-exercises.mjs [--locale es] [--batch 20]
+ *   ANTHROPIC_API_KEY=sk-ant-... node scripts/translate-exercises.mjs --fix-broken [--locale es]
+ *
+ * --fix-broken: Re-translate entries whose description ends with \ (truncation artifact).
  *
  * Idempotent: already-translated slugs are skipped.
  * Output: messages/exercises/<locale>.json
@@ -24,6 +27,7 @@ const ROOT = path.resolve(__dirname, '..')
 const args = process.argv.slice(2)
 const locale = args[args.indexOf('--locale') + 1] ?? 'es'
 const batchSize = parseInt(args[args.indexOf('--batch') + 1] ?? '20', 10)
+const fixBroken = args.includes('--fix-broken')
 
 const ANTHROPIC_API_KEY = process.env.ANTHROPIC_API_KEY
 if (!ANTHROPIC_API_KEY) {
@@ -74,7 +78,16 @@ function parseExercisesFromFile(content) {
     }
     const block = content.slice(start, end)
     const title = (block.match(/\btitle:\s*['"`]([^'"`\n]+)['"`]/) ?? [])[1] ?? ''
-    const description = (block.match(/\bdescription:\s*`([\s\S]*?)`/) ?? [])[1] ?? ''
+    // Match template literals handling escaped backticks (\`) and other escapes
+    const rawDesc = (block.match(/\bdescription:\s*`((?:[^`\\]|\\[\s\S])*)`/) ?? [])[1] ?? ''
+    // Unescape JS template literal escape sequences
+    const description = rawDesc.replace(/\\([\s\S])/g, (_, c) => {
+      if (c === 'n') return '\n'
+      if (c === 'r') return '\r'
+      if (c === 't') return '\t'
+      if (c === '\\') return '\\'
+      return c // \` → `, \' → ', etc.
+    })
     const hintsMatch = block.match(/\bhints:\s*\[([\s\S]*?)\]/)
     const hints = hintsMatch
       ? [...hintsMatch[1].matchAll(/`([\s\S]*?)`|'([^'\\]*(?:\\.[^'\\]*)*)'|"([^"\\]*(?:\\.[^"\\]*)*)"/g)].map(
@@ -102,7 +115,11 @@ if (fs.existsSync(outPath)) {
   existing = JSON.parse(fs.readFileSync(outPath, 'utf-8'))
 }
 
-const toTranslate = exercises.filter((ex) => !existing[ex.slug])
+const isBrokenEntry = (entry) => (entry?.description ?? '').endsWith('\\')
+
+const toTranslate = exercises.filter(
+  (ex) => !existing[ex.slug] || (fixBroken && isBrokenEntry(existing[ex.slug])),
+)
 console.log(`${Object.keys(existing).length} already translated. ${toTranslate.length} remaining.`)
 
 if (toTranslate.length === 0) {

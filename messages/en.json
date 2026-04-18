@@ -21,6 +21,11 @@
     "objectsPlaceholder": "Search objects…"
   },
   "home": {
-    "title": "JavaScript Practice"
+    "title": "JavaScript Practice",
+    "heading": "Master the Standard Built-in Objects",
+    "subtitle": "{count}+ interactive TypeScript exercises for every constructor, static method, instance method, and property — inspired by Codewars and Codility.",
+    "objectsCount": "Built-in Objects ({count})",
+    "noObjects": "No objects match \"{search}\"",
+    "tags": "Monaco Editor,In-browser tests,TypeScript,Progress tracking"
   }
 }

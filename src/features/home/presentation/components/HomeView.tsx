@@ -55,13 +55,10 @@ export default function HomeView() {
             {tHome('title')}
           </p>
           <h1 className="text-4xl font-bold leading-tight text-zinc-100 sm:text-5xl">
-            Master the Standard
-            <br />
-            Built-in Objects
+            {tHome('heading')}
           </h1>
           <p className="max-w-2xl text-base leading-8 text-zinc-400">
-            {allExercises.length}+ interactive TypeScript exercises for every constructor, static
-            method, instance method, and property — inspired by Codewars and Codility.
+            {tHome('subtitle', { count: allExercises.length })}
           </p>
           <div className="flex flex-wrap gap-2 pt-1">
             {['Monaco Editor', 'In-browser tests', 'TypeScript', 'Progress tracking'].map(
@@ -113,10 +110,10 @@ export default function HomeView() {
         {/* Objects grid */}
         <section>
           <h2 className="mb-4 text-xs font-semibold uppercase tracking-widest text-zinc-600">
-            Built-in Objects ({filtered.length})
+            {tHome('objectsCount', { count: filtered.length })}
           </h2>
           {filtered.length === 0 ? (
-            <p className="text-sm text-zinc-600">No objects match &ldquo;{search}&rdquo;</p>
+            <p className="text-sm text-zinc-600">{tHome('noObjects', { search })}</p>
           ) : (
             <div className="grid gap-3 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4">
               {filtered.map((obj) => {
