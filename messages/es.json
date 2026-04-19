@@ -39,6 +39,8 @@
       "diffAny": "Mixta",
       "count": "Ejercicios",
       "start": "Comenzar examen",
+      "available": "{count, plural, =1 {# ejercicio} other {# ejercicios}} disponibles para esta selección",
+      "allUsed": "— se usarán todos los {count}",
       "noExercises": "No hay ejercicios con estos filtros. Prueba otra combinación."
     },
     "runner": {

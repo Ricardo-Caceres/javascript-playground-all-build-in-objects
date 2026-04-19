@@ -119,8 +119,8 @@ export function ExamSetup() {
 
         {/* Available count hint */}
         <p className="text-xs text-zinc-600">
-          {available} exercise{available !== 1 ? 's' : ''} available for this selection
-          {count > available && available > 0 && ` — all ${available} will be used`}
+          {t('available', { count: available })}
+          {count > available && available > 0 && ` ${t('allUsed', { count: available })}`}
         </p>
 
         {!canStart && (

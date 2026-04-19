@@ -39,6 +39,8 @@
       "diffAny": "Mixed",
       "count": "Exercises",
       "start": "Start Exam",
+      "available": "{count, plural, =1 {# exercise} other {# exercises}} available for this selection",
+      "allUsed": "— all {count} will be used",
       "noExercises": "No exercises match these filters. Try a different combination."
     },
     "runner": {
