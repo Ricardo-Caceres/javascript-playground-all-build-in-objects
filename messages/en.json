@@ -27,5 +27,40 @@
     "objectsCount": "Built-in Objects ({count})",
     "noObjects": "No objects match \"{search}\"",
     "tags": "Monaco Editor,In-browser tests,TypeScript,Progress tracking"
+  },
+  "exam": {
+    "title": "Exam Mode",
+    "setup": {
+      "heading": "Configure your exam",
+      "topic": "Topic",
+      "topicAny": "Any",
+      "difficulty": "Difficulty",
+      "diffAny": "Mixed",
+      "count": "Exercises",
+      "start": "Start Exam",
+      "noExercises": "No exercises match these filters. Try a different combination."
+    },
+    "runner": {
+      "exercise": "Exercise",
+      "of": "of",
+      "elapsed": "Elapsed",
+      "next": "Next →",
+      "skip": "Skip",
+      "endExam": "End Exam",
+      "endConfirm": "End the exam now? Unfinished exercises will be marked as skipped.",
+      "allPassed": "All tests pass — click Next to continue"
+    },
+    "results": {
+      "title": "Exam Complete",
+      "score": "Score",
+      "time": "Time",
+      "xpEarned": "XP Earned",
+      "bonusXp": "+50 bonus XP for finishing",
+      "passed": "passed",
+      "skipped": "skipped",
+      "reviewMissed": "Retry Missed",
+      "newExam": "New Exam",
+      "perfect": "Perfect score! 🎉"
+    }
   }
 }

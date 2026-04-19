@@ -27,5 +27,40 @@
     "objectsCount": "Built-in Objects ({count})",
     "noObjects": "Ningún objeto coincide con \"{search}\"",
     "tags": "Editor Monaco,Tests en el navegador,TypeScript,Seguimiento de progreso"
+  },
+  "exam": {
+    "title": "Modo Examen",
+    "setup": {
+      "heading": "Configura tu examen",
+      "topic": "Tema",
+      "topicAny": "Cualquiera",
+      "difficulty": "Dificultad",
+      "diffAny": "Mixta",
+      "count": "Ejercicios",
+      "start": "Comenzar examen",
+      "noExercises": "No hay ejercicios con estos filtros. Prueba otra combinación."
+    },
+    "runner": {
+      "exercise": "Ejercicio",
+      "of": "de",
+      "elapsed": "Tiempo",
+      "next": "Siguiente →",
+      "skip": "Saltar",
+      "endExam": "Terminar examen",
+      "endConfirm": "¿Terminar el examen ahora? Los ejercicios sin completar se marcarán como omitidos.",
+      "allPassed": "Todos los tests pasan — haz clic en Siguiente para continuar"
+    },
+    "results": {
+      "title": "Examen completado",
+      "score": "Puntuación",
+      "time": "Tiempo",
+      "xpEarned": "XP ganado",
+      "bonusXp": "+50 XP de bonificación por terminar",
+      "passed": "completados",
+      "skipped": "omitidos",
+      "reviewMissed": "Repasar omitidos",
+      "newExam": "Nuevo examen",
+      "perfect": "¡Puntuación perfecta! 🎉"
+    }
   }
 }
