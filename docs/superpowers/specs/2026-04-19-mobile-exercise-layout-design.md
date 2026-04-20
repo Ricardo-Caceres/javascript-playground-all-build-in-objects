@@ -2,7 +2,7 @@
 
 **Date:** 2026-04-19  
 **Scope:** `ExerciseDetailView` responsive layout for mobile viewports  
-**Status:** Approved
+**Status:** Shipped — PR #29 merged, ARIA follow-up in `3c8f135`
 
 ---
 
@@ -70,26 +70,30 @@ Full-screen tab layout replaces the 3-column layout:
 
 | File | Change |
 |------|--------|
-| `src/features/exercises/presentation/components/ExerciseDetailView.tsx` | Add tab state + mobile layout block |
+| `src/features/exercises/presentation/components/ExerciseDetailView.tsx` | Add `'use client'`, tab state, `DescriptionPanel` component, unified layout with ARIA |
+| `messages/en.json` | Added `tabDescription`, `tabCode`, `hints`, `tablistLabel` to `exercise` namespace |
+| `messages/es.json` | Same keys in Spanish |
 
-No other files change. `ExerciseRunner`, `ExerciseSidebar`, and all other components are untouched.
+`ExerciseRunner`, `ExerciseSidebar`, and all other components are untouched.
 
 ### Key implementation notes
 
 1. **Tab state** — `const [activeTab, setActiveTab] = useState<'description' | 'code'>('description')` declared in `ExerciseDetailView`. Only meaningful on mobile; has no effect on the desktop render path.
 
-2. **Desktop block** — existing JSX wrapped in `<div className="hidden md:flex w-full h-full">`. Zero changes to its contents.
+2. **Single unified layout** — The root div is `flex flex-col md:flex-row`. Sidebar is `hidden md:block`. Description panel and editor panel are each rendered exactly once. CSS classes drive visibility per breakpoint/tab. This avoids the dual-block approach (which would have mounted `ExerciseRunner` twice — two WebWorkers, two `keydown` handlers).
 
-3. **Mobile block** — new `<div className="flex md:hidden flex-col w-full h-full">` containing:
-   - Top bar with back link and counter
-   - Tab buttons (active tab indicated by `border-b-2 border-emerald-500`)
-   - Conditional render: description JSX or `<ExerciseRunner>`
+3. **`DescriptionPanel` component** — Description content extracted into a named `function DescriptionPanel({ exercise, hintsLabel })` component. Accepts `hintsLabel: string` (pre-resolved translation) to avoid complex `ReturnType<typeof useTranslations>` generics.
 
-4. **Counter data** — `ExerciseDetailView` calls `useExerciseNavigation(objectName, exercise.slug)` to obtain `currentIndex` and `total` for the mobile top bar. `ExerciseRunner` also calls this hook internally — calling it twice is safe (same inputs, same output, no side effects).
+4. **Mobile top bar + tabs** — `shrink-0 md:hidden` wrapper. Back link goes to `/exercises/${objectName.toLowerCase()}`. Counter renders `currentIndex > 0 ? \`${currentIndex} / ${total}\` : null` (guard for invalid slugs).
 
-5. **Description JSX** — the description panel content (badges, title, `DescriptionMarkdown`, hints) is extracted into a local `const descriptionContent = (<>…</>)` variable inside the component, then rendered in both the desktop panel (`w-96` div) and the mobile Description tab. This avoids duplicating JSX while keeping everything in one file.
+5. **ARIA tablist** — Full WCAG 2.2 pattern:
+   - `role="tablist"` + `aria-label={t('tablistLabel')}` + `onKeyDown` (←/→ switches tab) on container
+   - `role="tab"` + `id` + `aria-controls` + `aria-selected` + `tabIndex` (0/−1) on each button
+   - `role="tabpanel"` + `id` + `aria-labelledby` + `tabIndex={0}` on each panel
 
-6. **Monaco height** — `ExerciseRunner` uses `height="100%"` for Monaco. The mobile Code tab container must be `flex-1 min-h-0 flex flex-col` so the flex child fills available height correctly.
+6. **Counter data** — `useExerciseNavigation(objectName, exercise.slug)` called in `ExerciseDetailView` for the mobile counter. `ExerciseRunner` also calls it internally — safe (pure memo, no side effects).
+
+7. **Monaco height** — `ExerciseRunner` uses `height="100%"`. The editor panel must be `min-h-0 flex-col` so the flex child fills available height correctly.
 
 ---
 
