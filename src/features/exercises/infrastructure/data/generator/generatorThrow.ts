@@ -12,11 +12,11 @@ export const generatorThrowExercises: Exercise[] = [
     initialCode: `function* g() { yield 1; }\nconst it = g();\nit.next();\nconst throws = () => (it as any).throw(new Error('x'));`,
     solution: `function* g() { yield 1; }\nconst it = g();\nit.next();\nconst throws = () => (it as any).throw(new Error('x'));`,
     tests: [
-      { description: 'throw() throws', assertion: '(() => { try { (it as any).throw(new Error("x")); } catch (e) { return true; } return false; })()' },
-      { description: 'typeof throw is function', assertion: 'typeof it.throw === "function"' },
-      { description: 'typeof it is object', assertion: 'typeof it === "object"' },
-      { description: 'typeof it.next is function', assertion: 'typeof it.next === "function"' },
-      { description: 'typeof it.return is function', assertion: 'typeof it.return === "function"' }
+      { description: 'throw() throws', assertion: 'expect((() => { try { it.throw(new Error("x")); } catch (e) { return true; } return false; })()).toBe(true)' },
+      { description: 'typeof throw is function', assertion: 'expect(typeof it.throw).toBe("function")' },
+      { description: 'typeof it is object', assertion: 'expect(typeof it).toBe("object")' },
+      { description: 'typeof it.next is function', assertion: 'expect(typeof it.next).toBe("function")' },
+      { description: 'typeof it.return is function', assertion: 'expect(typeof it.return).toBe("function")' }
     ],
     tags: [],
   },
@@ -31,11 +31,11 @@ export const generatorThrowExercises: Exercise[] = [
     initialCode: `function* g() { try { yield 1; } catch(e) { yield e.message; } }\nconst it = g();\nit.next();\nconst value = (it as any).throw(new Error('caught')).value;`,
     solution: `function* g() { try { yield 1; } catch(e) { yield e.message; } }\nconst it = g();\nit.next();\nconst value = (it as any).throw(new Error('caught')).value;`,
     tests: [
-      { description: 'throw() caught and yields message', assertion: '(it as any).next(); (it as any).throw(new Error("caught")).value === "caught"' },
-      { description: 'typeof throw is function', assertion: 'typeof it.throw === "function"' },
-      { description: 'typeof it is object', assertion: 'typeof it === "object"' },
-      { description: 'typeof it.next is function', assertion: 'typeof it.next === "function"' },
-      { description: 'typeof it.return is function', assertion: 'typeof it.return === "function"' }
+      { description: 'throw() caught and yields message', assertion: 'const i2 = g(); i2.next(); expect(i2.throw(new Error("caught")).value).toBe("caught")' },
+      { description: 'typeof throw is function', assertion: 'expect(typeof it.throw).toBe("function")' },
+      { description: 'typeof it is object', assertion: 'expect(typeof it).toBe("object")' },
+      { description: 'typeof it.next is function', assertion: 'expect(typeof it.next).toBe("function")' },
+      { description: 'typeof it.return is function', assertion: 'expect(typeof it.return).toBe("function")' }
     ],
     tags: [],
   },
@@ -50,11 +50,11 @@ export const generatorThrowExercises: Exercise[] = [
     initialCode: `typeof (function* g() {})().throw`,
     solution: `typeof (function* g() {})().throw`,
     tests: [
-      { description: 'typeof throw is function', assertion: 'result === "function"' },
-      { description: 'typeof throw is not object', assertion: 'result !== "object"' },
-      { description: 'typeof throw is not undefined', assertion: 'result !== "undefined"' },
-      { description: 'typeof throw is not null', assertion: 'result !== "null"' },
-      { description: 'typeof throw is not number', assertion: 'result !== "number"' }
+      { description: 'typeof throw is function', assertion: 'expect(result).toBe("function")' },
+      { description: 'typeof throw is not object', assertion: 'expect(result !== "object").toBe(true)' },
+      { description: 'typeof throw is not undefined', assertion: 'expect(result !== "undefined").toBe(true)' },
+      { description: 'typeof throw is not null', assertion: 'expect(result !== "null").toBe(true)' },
+      { description: 'typeof throw is not number', assertion: 'expect(result !== "number").toBe(true)' }
     ],
     tags: [],
   },
@@ -69,11 +69,11 @@ export const generatorThrowExercises: Exercise[] = [
     initialCode: `function* g() { yield 1; }\nconst it = g();\nconst throws = () => (it as any).throw('err');`,
     solution: `function* g() { yield 1; }\nconst it = g();\nconst throws = () => (it as any).throw('err');`,
     tests: [
-      { description: 'throw() with string throws', assertion: '(() => { try { (it as any).throw("err"); } catch (e) { return true; } return false; })()' },
-      { description: 'typeof throw is function', assertion: 'typeof it.throw === "function"' },
-      { description: 'typeof it is object', assertion: 'typeof it === "object"' },
-      { description: 'typeof it.next is function', assertion: 'typeof it.next === "function"' },
-      { description: 'typeof it.return is function', assertion: 'typeof it.return === "function"' }
+      { description: 'throw() with string throws', assertion: 'expect((() => { try { it.throw("err"); } catch (e) { return true; } return false; })()).toBe(true)' },
+      { description: 'typeof throw is function', assertion: 'expect(typeof it.throw).toBe("function")' },
+      { description: 'typeof it is object', assertion: 'expect(typeof it).toBe("object")' },
+      { description: 'typeof it.next is function', assertion: 'expect(typeof it.next).toBe("function")' },
+      { description: 'typeof it.return is function', assertion: 'expect(typeof it.return).toBe("function")' }
     ],
     tags: [],
   },
@@ -88,11 +88,11 @@ export const generatorThrowExercises: Exercise[] = [
     initialCode: `function* g() { try { yield 1; } catch { yield 'error caught'; } }\nconst it = g();\nit.next();\nconst value = (it as any).throw(new Error()).value;`,
     solution: `function* g() { try { yield 1; } catch { yield 'error caught'; } }\nconst it = g();\nit.next();\nconst value = (it as any).throw(new Error()).value;`,
     tests: [
-      { description: 'throw() caught and yields "error caught"', assertion: '(it as any).next(); (it as any).throw(new Error()).value === "error caught"' },
-      { description: 'typeof throw is function', assertion: 'typeof it.throw === "function"' },
-      { description: 'typeof it is object', assertion: 'typeof it === "object"' },
-      { description: 'typeof it.next is function', assertion: 'typeof it.next === "function"' },
-      { description: 'typeof it.return is function', assertion: 'typeof it.return === "function"' }
+      { description: 'throw() caught and yields "error caught"', assertion: 'const i2 = g(); i2.next(); expect(i2.throw(new Error()).value).toBe("error caught")' },
+      { description: 'typeof throw is function', assertion: 'expect(typeof it.throw).toBe("function")' },
+      { description: 'typeof it is object', assertion: 'expect(typeof it).toBe("object")' },
+      { description: 'typeof it.next is function', assertion: 'expect(typeof it.next).toBe("function")' },
+      { description: 'typeof it.return is function', assertion: 'expect(typeof it.return).toBe("function")' }
     ],
     tags: [],
   }

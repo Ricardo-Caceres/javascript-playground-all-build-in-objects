@@ -22,23 +22,23 @@ export const setPrototypeOfExercises: Exercise[] = [
     tests: [
       {
         description: 'Returns the same object',
-        assertion: "(() => { const obj = {}; const result = Object.setPrototypeOf(obj, null); return result === obj; })()"
+        assertion: "expect((() => { const obj = {}; const result = Object.setPrototypeOf(obj, null); return result === obj; })()).toBe(true)"
       },
       {
         description: 'Object inherits method from new prototype',
-        assertion: "(() => { const proto = { greet() { return 'hello'; } }; const obj = {}; Object.setPrototypeOf(obj, proto); return obj.greet() === 'hello'; })()"
+        assertion: "expect((() => { const proto = { greet() { return 'hello'; } }; const obj = {}; Object.setPrototypeOf(obj, proto); return obj.greet() === 'hello'; })()).toBe(true)"
       },
       {
         description: 'getPrototypeOf reflects new prototype',
-        assertion: "(() => { const proto = { x: 1 }; const obj = {}; Object.setPrototypeOf(obj, proto); return Object.getPrototypeOf(obj) === proto; })()"
+        assertion: "expect((() => { const proto = { x: 1 }; const obj = {}; Object.setPrototypeOf(obj, proto); return Object.getPrototypeOf(obj) === proto; })()).toBe(true)"
       },
       {
         description: 'Can set prototype to null',
-        assertion: "(() => { const obj = {}; Object.setPrototypeOf(obj, null); return Object.getPrototypeOf(obj) === null; })()"
+        assertion: "expect((() => { const obj = {}; Object.setPrototypeOf(obj, null); return Object.getPrototypeOf(obj) === null; })()).toBe(true)"
       },
       {
         description: 'Can override default Object.prototype',
-        assertion: "(() => { const obj = {}; const proto = { toString() { return 'custom'; } }; Object.setPrototypeOf(obj, proto); return obj.toString() === 'custom'; })()"
+        assertion: "expect((() => { const obj = {}; const proto = { toString() { return 'custom'; } }; Object.setPrototypeOf(obj, proto); return obj.toString() === 'custom'; })()).toBe(true)"
       },
     ],
     hints: ['setPrototypeOf modifies the prototype chain at runtime'],
@@ -66,15 +66,15 @@ Setting the prototype to \`null\` creates an object with no prototype chain — 
     tests: [
       {
         description: 'After null prototype, getPrototypeOf returns null',
-        assertion: "(() => { const obj = {}; Object.setPrototypeOf(obj, null); return Object.getPrototypeOf(obj) === null; })()"
+        assertion: "expect((() => { const obj = {}; Object.setPrototypeOf(obj, null); return Object.getPrototypeOf(obj) === null; })()).toBe(true)"
       },
       {
         description: 'After null prototype, toString is undefined',
-        assertion: "(() => { const obj = {}; Object.setPrototypeOf(obj, null); return typeof obj.toString === 'undefined'; })()"
+        assertion: "expect((() => { const obj = {}; Object.setPrototypeOf(obj, null); return typeof obj.toString === 'undefined'; })()).toBe(true)"
       },
       {
         description: 'Own properties are unaffected',
-        assertion: "(() => { const obj = { a: 1 }; Object.setPrototypeOf(obj, null); return obj.a === 1; })()"
+        assertion: "expect((() => { const obj = { a: 1 }; Object.setPrototypeOf(obj, null); return obj.a === 1; })()).toBe(true)"
       },
       {
         description: 'Before setPrototypeOf null, toString exists',
@@ -82,7 +82,7 @@ Setting the prototype to \`null\` creates an object with no prototype chain — 
       },
       {
         description: 'Object.create(null) is equivalent to setPrototypeOf null',
-        assertion: "(() => { const obj = Object.create(null); return Object.getPrototypeOf(obj) === null; })()"
+        assertion: "expect((() => { const obj = Object.create(null); return Object.getPrototypeOf(obj) === null; })()).toBe(true)"
       },
     ],
     hints: ['null prototype objects are useful as pure hash maps with no inherited methods'],
@@ -110,15 +110,15 @@ After calling \`Object.setPrototypeOf()\`, use \`Object.getPrototypeOf()\` to co
     tests: [
       {
         description: 'getPrototypeOf returns the newly set prototype',
-        assertion: "(() => { const proto = { x: 1 }; const obj = {}; Object.setPrototypeOf(obj, proto); return Object.getPrototypeOf(obj) === proto; })()"
+        assertion: "expect((() => { const proto = { x: 1 }; const obj = {}; Object.setPrototypeOf(obj, proto); return Object.getPrototypeOf(obj) === proto; })()).toBe(true)"
       },
       {
         description: 'Can change prototype multiple times',
-        assertion: "(() => { const p1 = { a: 1 }; const p2 = { b: 2 }; const obj = {}; Object.setPrototypeOf(obj, p1); Object.setPrototypeOf(obj, p2); return Object.getPrototypeOf(obj) === p2; })()"
+        assertion: "expect((() => { const p1 = { a: 1 }; const p2 = { b: 2 }; const obj = {}; Object.setPrototypeOf(obj, p1); Object.setPrototypeOf(obj, p2); return Object.getPrototypeOf(obj) === p2; })()).toBe(true)"
       },
       {
         description: 'Object inherits from new prototype',
-        assertion: "(() => { const proto = { double(x) { return x * 2; } }; const obj = {}; Object.setPrototypeOf(obj, proto); return obj.double(5) === 10; })()"
+        assertion: "expect((() => { const proto = { double(x) { return x * 2; } }; const obj = {}; Object.setPrototypeOf(obj, proto); return obj.double(5) === 10; })()).toBe(true)"
       },
       {
         description: 'Default prototype is Object.prototype',
@@ -126,7 +126,7 @@ After calling \`Object.setPrototypeOf()\`, use \`Object.getPrototypeOf()\` to co
       },
       {
         description: 'After setPrototypeOf, instanceof works correctly',
-        assertion: "(() => { function Animal() {} const obj = {}; Object.setPrototypeOf(obj, Animal.prototype); return obj instanceof Animal; })()"
+        assertion: "expect((() => { function Animal() {} const obj = {}; Object.setPrototypeOf(obj, Animal.prototype); return obj instanceof Animal; })()).toBe(true)"
       },
     ],
     hints: ['Use getPrototypeOf to verify the prototype was set correctly'],
@@ -156,23 +156,23 @@ After calling \`Object.setPrototypeOf()\`, use \`Object.getPrototypeOf()\` to co
     tests: [
       {
         description: 'Object inherits from intermediate prototype',
-        assertion: "(() => { const a = { x: 1 }; const b = {}; const c = {}; Object.setPrototypeOf(c, b); Object.setPrototypeOf(b, a); return c.x === 1; })()"
+        assertion: "expect((() => { const a = { x: 1 }; const b = {}; const c = {}; Object.setPrototypeOf(c, b); Object.setPrototypeOf(b, a); return c.x === 1; })()).toBe(true)"
       },
       {
         description: 'instanceof works across the chain',
-        assertion: "(() => { function A() {} function B() {} Object.setPrototypeOf(B.prototype, A.prototype); const b = new B(); return b instanceof A; })()"
+        assertion: "expect((() => { function A() {} function B() {} Object.setPrototypeOf(B.prototype, A.prototype); const b = new B(); return b instanceof A; })()).toBe(true)"
       },
       {
         description: 'isPrototypeOf works in chain',
-        assertion: "(() => { const a = {}; const b = Object.create(a); const c = Object.create(b); return a.isPrototypeOf(c); })()"
+        assertion: "expect((() => { const a = {}; const b = Object.create(a); const c = Object.create(b); return a.isPrototypeOf(c); })()).toBe(true)"
       },
       {
         description: 'Property lookup traverses chain',
-        assertion: "(() => { const grandParent = { name: 'GP' }; const parent = {}; const child = {}; Object.setPrototypeOf(child, parent); Object.setPrototypeOf(parent, grandParent); return child.name === 'GP'; })()"
+        assertion: "expect((() => { const grandParent = { name: 'GP' }; const parent = {}; const child = {}; Object.setPrototypeOf(child, parent); Object.setPrototypeOf(parent, grandParent); return child.name === 'GP'; })()).toBe(true)"
       },
       {
         description: 'Own properties shadow prototype',
-        assertion: "(() => { const proto = { x: 1 }; const obj = { x: 99 }; Object.setPrototypeOf(obj, proto); return obj.x === 99; })()"
+        assertion: "expect((() => { const proto = { x: 1 }; const obj = { x: 99 }; Object.setPrototypeOf(obj, proto); return obj.x === 99; })()).toBe(true)"
       },
     ],
     hints: ['setPrototypeOf enables dynamic prototype chain manipulation'],
@@ -200,23 +200,23 @@ After calling \`Object.setPrototypeOf()\`, use \`Object.getPrototypeOf()\` to co
     tests: [
       {
         description: 'Returns the same object reference',
-        assertion: "(() => { const obj = {}; const proto = {}; return Object.setPrototypeOf(obj, proto) === obj; })()"
+        assertion: "expect((() => { const obj = {}; const proto = {}; return Object.setPrototypeOf(obj, proto) === obj; })()).toBe(true)"
       },
       {
         description: 'Can chain method calls on result',
-        assertion: "(() => { const proto = { greet() { return 'hi'; } }; const obj = Object.setPrototypeOf({}, proto); return obj.greet() === 'hi'; })()"
+        assertion: "expect((() => { const proto = { greet() { return 'hi'; } }; const obj = Object.setPrototypeOf({}, proto); return obj.greet() === 'hi'; })()).toBe(true)"
       },
       {
         description: 'Modifies the original object in place',
-        assertion: "(() => { const obj = { a: 1 }; const proto = { b: 2 }; Object.setPrototypeOf(obj, proto); return obj.a === 1 && obj.b === 2; })()"
+        assertion: "expect((() => { const obj = { a: 1 }; const proto = { b: 2 }; Object.setPrototypeOf(obj, proto); return obj.a === 1 && obj.b === 2; })()).toBe(true)"
       },
       {
         description: 'Works with class prototype',
-        assertion: "(() => { class Animal { speak() { return 'roar'; } } const obj = {}; Object.setPrototypeOf(obj, Animal.prototype); return obj.speak() === 'roar'; })()"
+        assertion: "expect((() => { class Animal { speak() { return 'roar'; } } const obj = {}; Object.setPrototypeOf(obj, Animal.prototype); return obj.speak() === 'roar'; })()).toBe(true)"
       },
       {
         description: 'setPrototypeOf null removes inherited methods',
-        assertion: "(() => { const obj = {}; Object.setPrototypeOf(obj, null); return typeof obj.hasOwnProperty === 'undefined'; })()"
+        assertion: "expect((() => { const obj = {}; Object.setPrototypeOf(obj, null); return typeof obj.hasOwnProperty === 'undefined'; })()).toBe(true)"
       },
     ],
     hints: ['setPrototypeOf returns the object for convenient chaining'],

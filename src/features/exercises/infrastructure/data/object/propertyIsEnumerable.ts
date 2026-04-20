@@ -34,7 +34,7 @@ export const propertyIsEnumerableExercises: Exercise[] = [
       },
       {
         description: 'Non-enumerable own property returns false',
-        assertion: "(() => { const obj = {}; Object.defineProperty(obj, 'x', { value: 1, enumerable: false }); return obj.propertyIsEnumerable('x') === false; })()"
+        assertion: "expect((() => { const obj = {}; Object.defineProperty(obj, 'x', { value: 1, enumerable: false }); return obj.propertyIsEnumerable('x') === false; })()).toBe(true)"
       },
       {
         description: 'Array index is own and enumerable',
@@ -65,15 +65,15 @@ export const propertyIsEnumerableExercises: Exercise[] = [
     tests: [
       {
         description: 'Inherited property is not enumerable via propertyIsEnumerable',
-        assertion: "(() => { const proto = { x: 1 }; const obj = Object.create(proto); return obj.propertyIsEnumerable('x') === false; })()"
+        assertion: "expect((() => { const proto = { x: 1 }; const obj = Object.create(proto); return obj.propertyIsEnumerable('x') === false; })()).toBe(true)"
       },
       {
         description: 'But for..in iterates inherited enumerable',
-        assertion: "(() => { const proto = { x: 1 }; const obj = Object.create(proto); const keys = []; for (const k in obj) keys.push(k); return keys.includes('x'); })()"
+        assertion: "expect((() => { const proto = { x: 1 }; const obj = Object.create(proto); const keys = []; for (const k in obj) keys.push(k); return keys.includes('x'); })()).toBe(true)"
       },
       {
         description: 'Own property IS enumerable via propertyIsEnumerable',
-        assertion: "(() => { const proto = { x: 1 }; const obj = Object.create(proto); obj.own = 2; return obj.propertyIsEnumerable('own'); })()"
+        assertion: "expect((() => { const proto = { x: 1 }; const obj = Object.create(proto); obj.own = 2; return obj.propertyIsEnumerable('own'); })()).toBe(true)"
       },
       {
         description: 'toString is inherited and returns false',
@@ -81,7 +81,7 @@ export const propertyIsEnumerableExercises: Exercise[] = [
       },
       {
         description: 'Prototype property enumerable on proto itself',
-        assertion: "(() => { const proto = { x: 1 }; return proto.propertyIsEnumerable('x'); })()"
+        assertion: "expect((() => { const proto = { x: 1 }; return proto.propertyIsEnumerable('x'); })()).toBe(true)"
       },
     ],
     hints: ['propertyIsEnumerable only considers own properties'],
@@ -109,23 +109,23 @@ Properties created with \`Object.defineProperty\` and \`enumerable: false\` will
     tests: [
       {
         description: 'Non-enumerable defineProperty returns false',
-        assertion: "(() => { const obj = {}; Object.defineProperty(obj, 'x', { value: 1, enumerable: false }); return obj.propertyIsEnumerable('x') === false; })()"
+        assertion: "expect((() => { const obj = {}; Object.defineProperty(obj, 'x', { value: 1, enumerable: false }); return obj.propertyIsEnumerable('x') === false; })()).toBe(true)"
       },
       {
         description: 'Enumerable defineProperty returns true',
-        assertion: "(() => { const obj = {}; Object.defineProperty(obj, 'x', { value: 1, enumerable: true }); return obj.propertyIsEnumerable('x') === true; })()"
+        assertion: "expect((() => { const obj = {}; Object.defineProperty(obj, 'x', { value: 1, enumerable: true }); return obj.propertyIsEnumerable('x') === true; })()).toBe(true)"
       },
       {
         description: 'Non-enumerable property still accessible by key',
-        assertion: "(() => { const obj = {}; Object.defineProperty(obj, 'x', { value: 42, enumerable: false }); return obj.x === 42; })()"
+        assertion: "expect((() => { const obj = {}; Object.defineProperty(obj, 'x', { value: 42, enumerable: false }); return obj.x === 42; })()).toBe(true)"
       },
       {
         description: 'Non-enumerable not in Object.keys',
-        assertion: "(() => { const obj = {}; Object.defineProperty(obj, 'x', { value: 1, enumerable: false }); return !Object.keys(obj).includes('x'); })()"
+        assertion: "expect((() => { const obj = {}; Object.defineProperty(obj, 'x', { value: 1, enumerable: false }); return !Object.keys(obj).includes('x'); })()).toBe(true)"
       },
       {
         description: 'Regular assignment creates enumerable property',
-        assertion: "(() => { const obj = {}; obj.x = 1; return obj.propertyIsEnumerable('x'); })()"
+        assertion: "expect((() => { const obj = {}; obj.x = 1; return obj.propertyIsEnumerable('x'); })()).toBe(true)"
       },
     ],
     hints: ['defineProperty defaults enumerable to false if not specified'],
@@ -202,19 +202,19 @@ You can change enumerability of an existing property with \`Object.definePropert
       },
       {
         description: 'After redefine as non-enumerable, returns false',
-        assertion: "(() => { const obj = { a: 1 }; Object.defineProperty(obj, 'a', { enumerable: false }); return obj.propertyIsEnumerable('a') === false; })()"
+        assertion: "expect((() => { const obj = { a: 1 }; Object.defineProperty(obj, 'a', { enumerable: false }); return obj.propertyIsEnumerable('a') === false; })()).toBe(true)"
       },
       {
         description: 'Value still accessible after making non-enumerable',
-        assertion: "(() => { const obj = { a: 42 }; Object.defineProperty(obj, 'a', { enumerable: false }); return obj.a === 42; })()"
+        assertion: "expect((() => { const obj = { a: 42 }; Object.defineProperty(obj, 'a', { enumerable: false }); return obj.a === 42; })()).toBe(true)"
       },
       {
         description: 'Non-enumerable property excluded from for..in',
-        assertion: "(() => { const obj = { a: 1, b: 2 }; Object.defineProperty(obj, 'b', { enumerable: false }); const keys = []; for (const k in obj) keys.push(k); return !keys.includes('b'); })()"
+        assertion: "expect((() => { const obj = { a: 1, b: 2 }; Object.defineProperty(obj, 'b', { enumerable: false }); const keys = []; for (const k in obj) keys.push(k); return !keys.includes('b'); })()).toBe(true)"
       },
       {
         description: 'Can restore enumerability',
-        assertion: "(() => { const obj = { a: 1 }; Object.defineProperty(obj, 'a', { enumerable: false }); Object.defineProperty(obj, 'a', { enumerable: true }); return obj.propertyIsEnumerable('a'); })()"
+        assertion: "expect((() => { const obj = { a: 1 }; Object.defineProperty(obj, 'a', { enumerable: false }); Object.defineProperty(obj, 'a', { enumerable: true }); return obj.propertyIsEnumerable('a'); })()).toBe(true)"
       },
     ],
     hints: ['Enumerability can be toggled with defineProperty on configurable properties'],

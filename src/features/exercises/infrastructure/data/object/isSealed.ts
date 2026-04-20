@@ -32,15 +32,15 @@ A plain object is **not** sealed by default.
       },
       {
         description: 'Object after Object.seal is sealed',
-        assertion: "(() => { const obj = { a: 1 }; Object.seal(obj); return Object.isSealed(obj); })()"
+        assertion: "expect((() => { const obj = { a: 1 }; Object.seal(obj); return Object.isSealed(obj); })()).toBe(true)"
       },
       {
         description: 'Frozen object is also sealed',
-        assertion: "(() => { const obj = { a: 1 }; Object.freeze(obj); return Object.isSealed(obj); })()"
+        assertion: "expect((() => { const obj = { a: 1 }; Object.freeze(obj); return Object.isSealed(obj); })()).toBe(true)"
       },
       {
         description: 'Object.seal returns the same object',
-        assertion: "(() => { const obj = { a: 1 }; const result = Object.seal(obj); return result === obj; })()"
+        assertion: "expect((() => { const obj = { a: 1 }; const result = Object.seal(obj); return result === obj; })()).toBe(true)"
       },
     ],
     hints: ['Every frozen object is sealed, but not every sealed object is frozen'],
@@ -69,23 +69,23 @@ A plain object is **not** sealed by default.
     tests: [
       {
         description: 'Object is sealed after Object.seal',
-        assertion: "(() => { const obj = { a: 1 }; Object.seal(obj); return Object.isSealed(obj) === true; })()"
+        assertion: "expect((() => { const obj = { a: 1 }; Object.seal(obj); return Object.isSealed(obj) === true; })()).toBe(true)"
       },
       {
         description: 'Sealed object can modify existing writable props',
-        assertion: "(() => { const obj = { a: 1 }; Object.seal(obj); obj.a = 42; return obj.a === 42; })()"
+        assertion: "expect((() => { const obj = { a: 1 }; Object.seal(obj); obj.a = 42; return obj.a === 42; })()).toBe(true)"
       },
       {
         description: 'Sealed object cannot add new properties (sloppy fail)',
-        assertion: "(() => { const obj = { a: 1 }; Object.seal(obj); obj.b = 2; return obj.b === undefined; })()"
+        assertion: "expect((() => { const obj = { a: 1 }; Object.seal(obj); obj.b = 2; return obj.b === undefined; })()).toBe(true)"
       },
       {
         description: 'Sealed object cannot delete properties (sloppy fail)',
-        assertion: "(() => { const obj = { a: 1 }; Object.seal(obj); delete obj.a; return obj.a === 1; })()"
+        assertion: "expect((() => { const obj = { a: 1 }; Object.seal(obj); delete obj.a; return obj.a === 1; })()).toBe(true)"
       },
       {
         description: 'Sealed object still responds to property reads',
-        assertion: "(() => { const obj = { x: 10, y: 20 }; Object.seal(obj); return obj.x + obj.y === 30; })()"
+        assertion: "expect((() => { const obj = { x: 10, y: 20 }; Object.seal(obj); return obj.x + obj.y === 30; })()).toBe(true)"
       },
     ],
     hints: ['Sealing prevents structural changes but not value changes for writable properties'],
@@ -113,23 +113,23 @@ Since \`Object.freeze()\` makes an object non-extensible and all properties non-
     tests: [
       {
         description: 'Frozen object is also sealed',
-        assertion: "(() => { const obj = { a: 1 }; Object.freeze(obj); return Object.isSealed(obj) === true; })()"
+        assertion: "expect((() => { const obj = { a: 1 }; Object.freeze(obj); return Object.isSealed(obj) === true; })()).toBe(true)"
       },
       {
         description: 'isFrozen implies isSealed',
-        assertion: "(() => { const obj = { a: 1 }; Object.freeze(obj); return Object.isFrozen(obj) && Object.isSealed(obj); })()"
+        assertion: "expect((() => { const obj = { a: 1 }; Object.freeze(obj); return Object.isFrozen(obj) && Object.isSealed(obj); })()).toBe(true)"
       },
       {
         description: 'Sealed does not imply frozen',
-        assertion: "(() => { const obj = { a: 1 }; Object.seal(obj); return !Object.isFrozen(obj); })()"
+        assertion: "expect((() => { const obj = { a: 1 }; Object.seal(obj); return !Object.isFrozen(obj); })()).toBe(true)"
       },
       {
         description: 'Frozen object write silently fails',
-        assertion: "(() => { const obj = { a: 1 }; Object.freeze(obj); obj.a = 99; return obj.a === 1; })()"
+        assertion: "expect((() => { const obj = { a: 1 }; Object.freeze(obj); obj.a = 99; return obj.a === 1; })()).toBe(true)"
       },
       {
         description: 'Sealed object write succeeds for writable props',
-        assertion: "(() => { const obj = { a: 1 }; Object.seal(obj); obj.a = 99; return obj.a === 99; })()"
+        assertion: "expect((() => { const obj = { a: 1 }; Object.seal(obj); obj.a = 99; return obj.a === 99; })()).toBe(true)"
       },
     ],
     hints: ['freeze is a superset of seal'],
@@ -158,11 +158,11 @@ An empty object that has been made non-extensible (via \`Object.preventExtension
     tests: [
       {
         description: 'Empty + preventExtensions = sealed',
-        assertion: "(() => { const obj = {}; Object.preventExtensions(obj); return Object.isSealed(obj) === true; })()"
+        assertion: "expect((() => { const obj = {}; Object.preventExtensions(obj); return Object.isSealed(obj) === true; })()).toBe(true)"
       },
       {
         description: 'Non-empty + preventExtensions is NOT sealed (configurable props remain)',
-        assertion: "(() => { const obj = { a: 1 }; Object.preventExtensions(obj); return Object.isSealed(obj) === false; })()"
+        assertion: "expect((() => { const obj = { a: 1 }; Object.preventExtensions(obj); return Object.isSealed(obj) === false; })()).toBe(true)"
       },
       {
         description: 'Empty plain object is not sealed',
@@ -170,11 +170,11 @@ An empty object that has been made non-extensible (via \`Object.preventExtension
       },
       {
         description: 'Empty frozen object is sealed',
-        assertion: "(() => { const obj = {}; Object.freeze(obj); return Object.isSealed(obj); })()"
+        assertion: "expect((() => { const obj = {}; Object.freeze(obj); return Object.isSealed(obj); })()).toBe(true)"
       },
       {
         description: 'Empty sealed object is also frozen',
-        assertion: "(() => { const obj = {}; Object.seal(obj); return Object.isFrozen(obj); })()"
+        assertion: "expect((() => { const obj = {}; Object.seal(obj); return Object.isFrozen(obj); })()).toBe(true)"
       },
     ],
     hints: ['For empty objects, preventExtensions, seal, and freeze all have the same observable effect'],
@@ -204,15 +204,15 @@ Use \`Object.isSealed()\` to check object integrity before attempting structural
     tests: [
       {
         description: 'Deletes property on unsealed object',
-        assertion: "(() => { const obj = { a: 1, b: 2 }; delete obj.a; return !('a' in obj); })()"
+        assertion: "expect((() => { const obj = { a: 1, b: 2 }; delete obj.a; return !('a' in obj); })()).toBe(true)"
       },
       {
         description: 'Cannot delete from sealed object (returns false)',
-        assertion: "(() => { const obj = { a: 1 }; Object.seal(obj); return Object.isSealed(obj) === true; })()"
+        assertion: "expect((() => { const obj = { a: 1 }; Object.seal(obj); return Object.isSealed(obj) === true; })()).toBe(true)"
       },
       {
         description: 'Sealed delete silently fails in sloppy mode',
-        assertion: "(() => { const obj = { a: 1 }; Object.seal(obj); delete obj.a; return obj.a === 1; })()"
+        assertion: "expect((() => { const obj = { a: 1 }; Object.seal(obj); delete obj.a; return obj.a === 1; })()).toBe(true)"
       },
       {
         description: 'isSealed is false for fresh object',
@@ -220,7 +220,7 @@ Use \`Object.isSealed()\` to check object integrity before attempting structural
       },
       {
         description: 'isSealed is true after seal',
-        assertion: "(() => { const obj = { x: 1 }; Object.seal(obj); return Object.isSealed(obj); })()"
+        assertion: "expect((() => { const obj = { x: 1 }; Object.seal(obj); return Object.isSealed(obj); })()).toBe(true)"
       },
     ],
     hints: ['isSealed is useful for defensive programming'],

@@ -30,7 +30,7 @@ export const objectKeysExercises: Exercise[] = [
       },
       {
         description: 'Returns only own keys, not inherited',
-        assertion: "(() => { function Foo() { this.a = 1; } Foo.prototype.b = 2; return Object.keys(new Foo()).length === 1; })()"
+        assertion: "expect((() => { function Foo() { this.a = 1; } Foo.prototype.b = 2; return Object.keys(new Foo()).length === 1; })()).toBe(true)"
       },
       {
         description: 'Keys are in insertion order',
@@ -38,7 +38,7 @@ export const objectKeysExercises: Exercise[] = [
       },
       {
         description: 'Non-enumerable properties are excluded',
-        assertion: "(() => { const obj = {}; Object.defineProperty(obj, 'hidden', { value: 1, enumerable: false }); return Object.keys(obj).length === 0; })()"
+        assertion: "expect((() => { const obj = {}; Object.defineProperty(obj, 'hidden', { value: 1, enumerable: false }); return Object.keys(obj).length === 0; })()).toBe(true)"
       },
     ],
     hints: ['Object.keys only returns own enumerable string-keyed properties'],
@@ -65,23 +65,23 @@ Unlike \`for...in\`, \`Object.keys()\` does not include inherited properties fro
     tests: [
       {
         description: 'Does not include inherited prototype keys',
-        assertion: "(() => { const proto = { inherited: true }; const obj = Object.create(proto); obj.own = true; return !Object.keys(obj).includes('inherited'); })()"
+        assertion: "expect((() => { const proto = { inherited: true }; const obj = Object.create(proto); obj.own = true; return !Object.keys(obj).includes('inherited'); })()).toBe(true)"
       },
       {
         description: 'Includes own keys',
-        assertion: "(() => { const proto = { inherited: true }; const obj = Object.create(proto); obj.own = true; return Object.keys(obj).includes('own'); })()"
+        assertion: "expect((() => { const proto = { inherited: true }; const obj = Object.create(proto); obj.own = true; return Object.keys(obj).includes('own'); })()).toBe(true)"
       },
       {
         description: 'Object.create(null) keys still work',
-        assertion: "(() => { const obj = Object.create(null); obj.x = 1; return Object.keys(obj).length === 1; })()"
+        assertion: "expect((() => { const obj = Object.create(null); obj.x = 1; return Object.keys(obj).length === 1; })()).toBe(true)"
       },
       {
         description: 'For..in includes inherited, Object.keys does not',
-        assertion: "(() => { const proto = { b: 2 }; const obj = Object.create(proto); obj.a = 1; return Object.keys(obj).length === 1 && Object.keys(obj)[0] === 'a'; })()"
+        assertion: "expect((() => { const proto = { b: 2 }; const obj = Object.create(proto); obj.a = 1; return Object.keys(obj).length === 1 && Object.keys(obj)[0] === 'a'; })()).toBe(true)"
       },
       {
         description: 'Object with only inherited props returns empty array',
-        assertion: "(() => { const obj = Object.create({ a: 1 }); return Object.keys(obj).length === 0; })()"
+        assertion: "expect((() => { const obj = Object.create({ a: 1 }); return Object.keys(obj).length === 0; })()).toBe(true)"
       },
     ],
     hints: ['Object.keys ignores the prototype chain'],
@@ -108,15 +108,15 @@ Properties defined with \`Object.defineProperty\` and \`enumerable: false\` are 
     tests: [
       {
         description: 'Non-enumerable property excluded from Object.keys',
-        assertion: "(() => { const obj = { a: 1 }; Object.defineProperty(obj, 'b', { value: 2, enumerable: false }); return !Object.keys(obj).includes('b'); })()"
+        assertion: "expect((() => { const obj = { a: 1 }; Object.defineProperty(obj, 'b', { value: 2, enumerable: false }); return !Object.keys(obj).includes('b'); })()).toBe(true)"
       },
       {
         description: 'Enumerable property included in Object.keys',
-        assertion: "(() => { const obj = {}; Object.defineProperty(obj, 'a', { value: 1, enumerable: true }); return Object.keys(obj).includes('a'); })()"
+        assertion: "expect((() => { const obj = {}; Object.defineProperty(obj, 'a', { value: 1, enumerable: true }); return Object.keys(obj).includes('a'); })()).toBe(true)"
       },
       {
         description: 'Mix of enumerable and non-enumerable',
-        assertion: "(() => { const obj = { a: 1 }; Object.defineProperty(obj, 'b', { value: 2, enumerable: false }); return Object.keys(obj).length === 1; })()"
+        assertion: "expect((() => { const obj = { a: 1 }; Object.defineProperty(obj, 'b', { value: 2, enumerable: false }); return Object.keys(obj).length === 1; })()).toBe(true)"
       },
       {
         description: 'Array index keys are enumerable',
@@ -163,7 +163,7 @@ Properties defined with \`Object.defineProperty\` and \`enumerable: false\` are 
       },
       {
         description: 'Sparse array only includes defined indices',
-        assertion: "(() => { const arr = [1,,3]; return Object.keys(arr).length === 2; })()"
+        assertion: "expect((() => { const arr = [1,,3]; return Object.keys(arr).length === 2; })()).toBe(true)"
       },
       {
         description: 'Array-like object with numeric keys',
@@ -202,7 +202,7 @@ Properties defined with \`Object.defineProperty\` and \`enumerable: false\` are 
       },
       {
         description: 'Can iterate using Object.keys',
-        assertion: "(() => { const obj = { a: 1, b: 2 }; let sum = 0; Object.keys(obj).forEach(k => sum += obj[k]); return sum === 3; })()"
+        assertion: "expect((() => { const obj = { a: 1, b: 2 }; let sum = 0; Object.keys(obj).forEach(k => sum += obj[k]); return sum === 3; })()).toBe(true)"
       },
       {
         description: 'Object.keys returns an array',

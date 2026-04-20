@@ -11,11 +11,11 @@ export const arrayBufferByteLengthExercises: Exercise[] = [
     initialCode: 'const buf = new ArrayBuffer(16);',
     solution: 'const buf = new ArrayBuffer(16);',
     tests: [
-      { description: 'byteLength is 16', assertion: 'new ArrayBuffer(16).byteLength === 16' },
-      { description: 'byteLength is 0', assertion: 'new ArrayBuffer(0).byteLength === 0' },
-      { description: 'typeof byteLength is number', assertion: "typeof new ArrayBuffer(4).byteLength === 'number'" },
-      { description: 'byteLength is 1024', assertion: 'new ArrayBuffer(1024).byteLength === 1024' },
-      { description: 'byteLength is 2', assertion: 'new ArrayBuffer(2).byteLength === 2' }
+      { description: 'byteLength is 16', assertion: 'expect(new ArrayBuffer(16).byteLength).toBe(16)' },
+      { description: 'byteLength is 0', assertion: 'expect(new ArrayBuffer(0).byteLength).toBe(0)' },
+      { description: 'typeof byteLength is number', assertion: "expect(typeof new ArrayBuffer(4).byteLength).toBe('number')" },
+      { description: 'byteLength is 1024', assertion: 'expect(new ArrayBuffer(1024).byteLength).toBe(1024)' },
+      { description: 'byteLength is 2', assertion: 'expect(new ArrayBuffer(2).byteLength).toBe(2)' }
     ],
     tags: []
   }

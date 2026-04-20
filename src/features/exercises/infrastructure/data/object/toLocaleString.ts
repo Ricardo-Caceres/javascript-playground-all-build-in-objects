@@ -113,15 +113,15 @@ You can override \`toLocaleString()\` on your own objects to return a custom loc
     tests: [
       {
         description: 'Custom toLocaleString returns expected string',
-        assertion: "(() => { const obj = { x: 42, toLocaleString() { return 'value:' + this.x; } }; return obj.toLocaleString() === 'value:42'; })()"
+        assertion: "expect((() => { const obj = { x: 42, toLocaleString() { return 'value:' + this.x; } }; return obj.toLocaleString() === 'value:42'; })()).toBe(true)"
       },
       {
         description: 'Override takes precedence over inherited',
-        assertion: "(() => { const obj = { toLocaleString() { return 'overridden'; } }; return obj.toLocaleString() === 'overridden'; })()"
+        assertion: "expect((() => { const obj = { toLocaleString() { return 'overridden'; } }; return obj.toLocaleString() === 'overridden'; })()).toBe(true)"
       },
       {
         description: 'Override returns a string',
-        assertion: "(() => { const obj = { toLocaleString() { return 'hello'; } }; return typeof obj.toLocaleString() === 'string'; })()"
+        assertion: "expect((() => { const obj = { toLocaleString() { return 'hello'; } }; return typeof obj.toLocaleString() === 'string'; })()).toBe(true)"
       },
       {
         description: 'Without override, returns [object Object]',
@@ -129,7 +129,7 @@ You can override \`toLocaleString()\` on your own objects to return a custom loc
       },
       {
         description: 'Override can access this',
-        assertion: "(() => { const obj = { name: 'Alice', toLocaleString() { return this.name; } }; return obj.toLocaleString() === 'Alice'; })()"
+        assertion: "expect((() => { const obj = { name: 'Alice', toLocaleString() { return this.name; } }; return obj.toLocaleString() === 'Alice'; })()).toBe(true)"
       },
     ],
     hints: ['Override toLocaleString in objects needing locale-aware representation'],

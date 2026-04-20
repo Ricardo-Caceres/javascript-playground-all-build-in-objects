@@ -36,11 +36,11 @@ A plain object is **not** frozen by default.
       },
       {
         description: 'Frozen object returns true',
-        assertion: "(() => { const obj = { a: 1 }; Object.freeze(obj); return Object.isFrozen(obj); })()"
+        assertion: "expect((() => { const obj = { a: 1 }; Object.freeze(obj); return Object.isFrozen(obj); })()).toBe(true)"
       },
       {
         description: 'Object.freeze returns the same object',
-        assertion: "(() => { const obj = { a: 1 }; const result = Object.freeze(obj); return result === obj; })()"
+        assertion: "expect((() => { const obj = { a: 1 }; const result = Object.freeze(obj); return result === obj; })()).toBe(true)"
       },
     ],
     hints: ['Object.freeze() is the standard way to make an object frozen'],
@@ -68,23 +68,23 @@ After calling \`Object.freeze(obj)\`, the object becomes frozen: no new properti
     tests: [
       {
         description: 'Object is frozen after Object.freeze',
-        assertion: "(() => { const obj = { a: 1 }; Object.freeze(obj); return Object.isFrozen(obj) === true; })()"
+        assertion: "expect((() => { const obj = { a: 1 }; Object.freeze(obj); return Object.isFrozen(obj) === true; })()).toBe(true)"
       },
       {
         description: 'Frozen object write silently fails in sloppy mode',
-        assertion: "(() => { const obj = { a: 1 }; Object.freeze(obj); obj.a = 99; return obj.a === 1; })()"
+        assertion: "expect((() => { const obj = { a: 1 }; Object.freeze(obj); obj.a = 99; return obj.a === 1; })()).toBe(true)"
       },
       {
         description: 'Frozen object property delete silently fails in sloppy mode',
-        assertion: "(() => { const obj = { a: 1 }; Object.freeze(obj); delete obj.a; return obj.a === 1; })()"
+        assertion: "expect((() => { const obj = { a: 1 }; Object.freeze(obj); delete obj.a; return obj.a === 1; })()).toBe(true)"
       },
       {
         description: 'Adding a new property to frozen object silently fails',
-        assertion: "(() => { const obj = { a: 1 }; Object.freeze(obj); obj.b = 2; return obj.b === undefined; })()"
+        assertion: "expect((() => { const obj = { a: 1 }; Object.freeze(obj); obj.b = 2; return obj.b === undefined; })()).toBe(true)"
       },
       {
         description: 'Unfrozen object can be modified',
-        assertion: "(() => { const obj = { a: 1 }; obj.a = 99; return obj.a === 99; })()"
+        assertion: "expect((() => { const obj = { a: 1 }; obj.a = 99; return obj.a === 99; })()).toBe(true)"
       },
     ],
     hints: ['freeze makes an object immutable (shallowly)'],
@@ -113,19 +113,19 @@ An empty object that has been made non-extensible is considered frozen, because 
     tests: [
       {
         description: 'Empty + preventExtensions = frozen',
-        assertion: "(() => { const obj = {}; Object.preventExtensions(obj); return Object.isFrozen(obj) === true; })()"
+        assertion: "expect((() => { const obj = {}; Object.preventExtensions(obj); return Object.isFrozen(obj) === true; })()).toBe(true)"
       },
       {
         description: 'Non-empty + preventExtensions is NOT frozen (still writable)',
-        assertion: "(() => { const obj = { a: 1 }; Object.preventExtensions(obj); return Object.isFrozen(obj) === false; })()"
+        assertion: "expect((() => { const obj = { a: 1 }; Object.preventExtensions(obj); return Object.isFrozen(obj) === false; })()).toBe(true)"
       },
       {
         description: 'isFrozen implies isSealed',
-        assertion: "(() => { const obj = { a: 1 }; Object.freeze(obj); return Object.isSealed(obj); })()"
+        assertion: "expect((() => { const obj = { a: 1 }; Object.freeze(obj); return Object.isSealed(obj); })()).toBe(true)"
       },
       {
         description: 'isFrozen implies not isExtensible',
-        assertion: "(() => { const obj = { a: 1 }; Object.freeze(obj); return !Object.isExtensible(obj); })()"
+        assertion: "expect((() => { const obj = { a: 1 }; Object.freeze(obj); return !Object.isExtensible(obj); })()).toBe(true)"
       },
       {
         description: 'Plain empty object is not frozen',
@@ -157,23 +157,23 @@ An empty object that has been made non-extensible is considered frozen, because 
     tests: [
       {
         description: 'Sealed non-empty object is NOT frozen',
-        assertion: "(() => { const obj = { a: 1 }; Object.seal(obj); return Object.isFrozen(obj) === false; })()"
+        assertion: "expect((() => { const obj = { a: 1 }; Object.seal(obj); return Object.isFrozen(obj) === false; })()).toBe(true)"
       },
       {
         description: 'Sealed object can still modify existing props',
-        assertion: "(() => { const obj = { a: 1 }; Object.seal(obj); obj.a = 42; return obj.a === 42; })()"
+        assertion: "expect((() => { const obj = { a: 1 }; Object.seal(obj); obj.a = 42; return obj.a === 42; })()).toBe(true)"
       },
       {
         description: 'Sealed AND frozen means isFrozen returns true',
-        assertion: "(() => { const obj = { a: 1 }; Object.seal(obj); Object.freeze(obj); return Object.isFrozen(obj); })()"
+        assertion: "expect((() => { const obj = { a: 1 }; Object.seal(obj); Object.freeze(obj); return Object.isFrozen(obj); })()).toBe(true)"
       },
       {
         description: 'Empty sealed object IS frozen',
-        assertion: "(() => { const obj = {}; Object.seal(obj); return Object.isFrozen(obj) === true; })()"
+        assertion: "expect((() => { const obj = {}; Object.seal(obj); return Object.isFrozen(obj) === true; })()).toBe(true)"
       },
       {
         description: 'isFrozen is stronger than isSealed',
-        assertion: "(() => { const obj = { a: 1 }; Object.freeze(obj); return Object.isFrozen(obj) && Object.isSealed(obj); })()"
+        assertion: "expect((() => { const obj = { a: 1 }; Object.freeze(obj); return Object.isFrozen(obj) && Object.isSealed(obj); })()).toBe(true)"
       },
     ],
     hints: ['seal is weaker than freeze — sealed objects can still be written to'],
@@ -201,23 +201,23 @@ An empty object that has been made non-extensible is considered frozen, because 
     tests: [
       {
         description: 'Outer object is frozen',
-        assertion: "(() => { const obj = { inner: { a: 1 } }; Object.freeze(obj); return Object.isFrozen(obj); })()"
+        assertion: "expect((() => { const obj = { inner: { a: 1 } }; Object.freeze(obj); return Object.isFrozen(obj); })()).toBe(true)"
       },
       {
         description: 'Nested object is NOT frozen by shallow freeze',
-        assertion: "(() => { const obj = { inner: { a: 1 } }; Object.freeze(obj); return Object.isFrozen(obj.inner) === false; })()"
+        assertion: "expect((() => { const obj = { inner: { a: 1 } }; Object.freeze(obj); return Object.isFrozen(obj.inner) === false; })()).toBe(true)"
       },
       {
         description: 'Can still modify nested object properties',
-        assertion: "(() => { const obj = { inner: { a: 1 } }; Object.freeze(obj); obj.inner.a = 99; return obj.inner.a === 99; })()"
+        assertion: "expect((() => { const obj = { inner: { a: 1 } }; Object.freeze(obj); obj.inner.a = 99; return obj.inner.a === 99; })()).toBe(true)"
       },
       {
         description: 'Deep freeze requires recursive freeze',
-        assertion: "(() => { const obj = { inner: { a: 1 } }; Object.freeze(obj); Object.freeze(obj.inner); return Object.isFrozen(obj.inner); })()"
+        assertion: "expect((() => { const obj = { inner: { a: 1 } }; Object.freeze(obj); Object.freeze(obj.inner); return Object.isFrozen(obj.inner); })()).toBe(true)"
       },
       {
         description: 'isFrozen on a primitive-like frozen object returns true',
-        assertion: "(() => { const obj = { n: 42 }; Object.freeze(obj); return Object.isFrozen(obj); })()"
+        assertion: "expect((() => { const obj = { n: 42 }; Object.freeze(obj); return Object.isFrozen(obj); })()).toBe(true)"
       },
     ],
     hints: ['Object.freeze is shallow — use recursive freeze for deep immutability'],

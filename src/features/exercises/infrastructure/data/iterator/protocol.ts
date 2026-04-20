@@ -12,11 +12,11 @@ export const iteratorProtocolExercises: Exercise[] = [
     initialCode: `const it = [1,2,3][Symbol.iterator]();\nconst first = it.next();`,
     solution: `const it = [1,2,3][Symbol.iterator]();\nconst first = it.next();`,
     tests: [
-      { description: 'first value is 1', assertion: 'it.next().value === 1' },
-      { description: 'first done is false', assertion: 'it.next().done === false' },
-      { description: 'typeof it is object', assertion: 'typeof it === "object"' },
-      { description: 'typeof it.next is function', assertion: 'typeof it.next === "function"' },
-      { description: 'typeof it.return is function', assertion: 'typeof it.return === "function"' }
+      { description: 'first value is 1', assertion: 'const i2 = [1,2,3][Symbol.iterator](); expect(i2.next().value).toBe(1)' },
+      { description: 'first done is false', assertion: 'const i2 = [1,2,3][Symbol.iterator](); expect(i2.next().done).toBe(false)' },
+      { description: 'typeof it is object', assertion: 'expect(typeof it).toBe("object")' },
+      { description: 'typeof it.next is function', assertion: 'expect(typeof it.next).toBe("function")' },
+      { description: 'typeof it.return is function', assertion: 'expect(typeof it.return).toBe("function")' }
     ],
     tags: [],
   },
@@ -31,11 +31,11 @@ export const iteratorProtocolExercises: Exercise[] = [
     initialCode: `const it = 'ab'[Symbol.iterator]();\nit.next();\nconst second = it.next().value;`,
     solution: `const it = 'ab'[Symbol.iterator]();\nit.next();\nconst second = it.next().value;`,
     tests: [
-      { description: 'second value is b', assertion: 'it.next(); it.next().value === "b"' },
-      { description: 'typeof it is object', assertion: 'typeof it === "object"' },
-      { description: 'typeof it.next is function', assertion: 'typeof it.next === "function"' },
-      { description: 'typeof it.return is function', assertion: 'typeof it.return === "function"' },
-      { description: 'typeof it.throw is function', assertion: 'typeof it.throw === "function"' }
+      { description: 'second value is b', assertion: 'const i2 = "ab"[Symbol.iterator](); i2.next(); expect(i2.next().value).toBe("b")' },
+      { description: 'typeof it is object', assertion: 'expect(typeof it).toBe("object")' },
+      { description: 'typeof it.next is function', assertion: 'expect(typeof it.next).toBe("function")' },
+      { description: 'typeof it.return is function', assertion: 'expect(typeof it.return).toBe("function")' },
+      { description: 'typeof it.throw is undefined', assertion: 'expect(typeof it.throw).toBe("undefined")' }
     ],
     tags: [],
   },
@@ -50,11 +50,11 @@ export const iteratorProtocolExercises: Exercise[] = [
     initialCode: `const it = new Set([1,2])[Symbol.iterator]();\nconst first = it.next().value;`,
     solution: `const it = new Set([1,2])[Symbol.iterator]();\nconst first = it.next().value;`,
     tests: [
-      { description: 'first value is 1', assertion: 'it.next().value === 1' },
-      { description: 'typeof it is object', assertion: 'typeof it === "object"' },
-      { description: 'typeof it.next is function', assertion: 'typeof it.next === "function"' },
-      { description: 'typeof it.return is function', assertion: 'typeof it.return === "function"' },
-      { description: 'typeof it.throw is function', assertion: 'typeof it.throw === "function"' }
+      { description: 'first value is 1', assertion: 'const i2 = new Set([1,2])[Symbol.iterator](); expect(i2.next().value).toBe(1)' },
+      { description: 'typeof it is object', assertion: 'expect(typeof it).toBe("object")' },
+      { description: 'typeof it.next is function', assertion: 'expect(typeof it.next).toBe("function")' },
+      { description: 'typeof it.return is function', assertion: 'expect(typeof it.return).toBe("function")' },
+      { description: 'typeof it.throw is undefined', assertion: 'expect(typeof it.throw).toBe("undefined")' }
     ],
     tags: [],
   },
@@ -69,11 +69,11 @@ export const iteratorProtocolExercises: Exercise[] = [
     initialCode: `const it = new Map([['a',1]])[Symbol.iterator]();\nconst first = it.next().value;`,
     solution: `const it = new Map([['a',1]])[Symbol.iterator]();\nconst first = it.next().value;`,
     tests: [
-      { description: 'first value is ["a",1]', assertion: 'JSON.stringify(it.next().value) === JSON.stringify(["a",1])' },
-      { description: 'typeof it is object', assertion: 'typeof it === "object"' },
-      { description: 'typeof it.next is function', assertion: 'typeof it.next === "function"' },
-      { description: 'typeof it.return is function', assertion: 'typeof it.return === "function"' },
-      { description: 'typeof it.throw is function', assertion: 'typeof it.throw === "function"' }
+      { description: 'first value is ["a",1]', assertion: 'const i2 = new Map([["a",1]])[Symbol.iterator](); expect(i2.next().value).toEqual(["a",1])' },
+      { description: 'typeof it is object', assertion: 'expect(typeof it).toBe("object")' },
+      { description: 'typeof it.next is function', assertion: 'expect(typeof it.next).toBe("function")' },
+      { description: 'typeof it.return is function', assertion: 'expect(typeof it.return).toBe("function")' },
+      { description: 'typeof it.throw is undefined', assertion: 'expect(typeof it.throw).toBe("undefined")' }
     ],
     tags: [],
   },
@@ -88,11 +88,11 @@ export const iteratorProtocolExercises: Exercise[] = [
     initialCode: `const it = [1][Symbol.iterator]();\nit.next();\nconst done = it.next().done;`,
     solution: `const it = [1][Symbol.iterator]();\nit.next();\nconst done = it.next().done;`,
     tests: [
-      { description: 'done is true after iteration', assertion: 'it.next(); it.next().done === true' },
-      { description: 'typeof it is object', assertion: 'typeof it === "object"' },
-      { description: 'typeof it.next is function', assertion: 'typeof it.next === "function"' },
-      { description: 'typeof it.return is function', assertion: 'typeof it.return === "function"' },
-      { description: 'typeof it.throw is function', assertion: 'typeof it.throw === "function"' }
+      { description: 'done is true after iteration', assertion: 'const i2 = [1][Symbol.iterator](); i2.next(); expect(i2.next().done).toBe(true)' },
+      { description: 'typeof it is object', assertion: 'expect(typeof it).toBe("object")' },
+      { description: 'typeof it.next is function', assertion: 'expect(typeof it.next).toBe("function")' },
+      { description: 'typeof it.return is function', assertion: 'expect(typeof it.return).toBe("function")' },
+      { description: 'typeof it.throw is undefined', assertion: 'expect(typeof it.throw).toBe("undefined")' }
     ],
     tags: [],
   }

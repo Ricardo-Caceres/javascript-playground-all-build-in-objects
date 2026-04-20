@@ -12,11 +12,11 @@ export const iteratorForOfExercises: Exercise[] = [
     initialCode: `const arr = []; for (const x of [1,2,3]) arr.push(x);`,
     solution: `const arr = []; for (const x of [1,2,3]) arr.push(x);`,
     tests: [
-      { description: 'arr is [1,2,3]', assertion: 'JSON.stringify(arr) === JSON.stringify([1,2,3])' },
-      { description: 'arr length is 3', assertion: 'arr.length === 3' },
-      { description: 'first value is 1', assertion: 'arr[0] === 1' },
-      { description: 'last value is 3', assertion: 'arr[2] === 3' },
-      { description: 'typeof arr is object', assertion: 'typeof arr === "object"' }
+      { description: 'arr is [1,2,3]', assertion: 'expect(arr).toEqual([1,2,3])' },
+      { description: 'arr length is 3', assertion: 'expect(arr).toHaveLength(3)' },
+      { description: 'first value is 1', assertion: 'expect(arr[0]).toBe(1)' },
+      { description: 'last value is 3', assertion: 'expect(arr[2]).toBe(3)' },
+      { description: 'typeof arr is object', assertion: 'expect(typeof arr).toBe("object")' }
     ],
     tags: [],
   },
@@ -31,11 +31,11 @@ export const iteratorForOfExercises: Exercise[] = [
     initialCode: `const chars = []; for (const c of 'abc') chars.push(c);`,
     solution: `const chars = []; for (const c of 'abc') chars.push(c);`,
     tests: [
-      { description: 'chars is ["a","b","c"]', assertion: 'JSON.stringify(chars) === JSON.stringify(["a","b","c"])' },
-      { description: 'chars length is 3', assertion: 'chars.length === 3' },
-      { description: 'first value is "a"', assertion: 'chars[0] === "a"' },
-      { description: 'last value is "c"', assertion: 'chars[2] === "c"' },
-      { description: 'typeof chars is object', assertion: 'typeof chars === "object"' }
+      { description: 'chars is ["a","b","c"]', assertion: 'expect(chars).toEqual(["a","b","c"])' },
+      { description: 'chars length is 3', assertion: 'expect(chars).toHaveLength(3)' },
+      { description: 'first value is "a"', assertion: 'expect(chars[0]).toBe("a")' },
+      { description: 'last value is "c"', assertion: 'expect(chars[2]).toBe("c")' },
+      { description: 'typeof chars is object', assertion: 'expect(typeof chars).toBe("object")' }
     ],
     tags: [],
   },
@@ -50,11 +50,11 @@ export const iteratorForOfExercises: Exercise[] = [
     initialCode: `const keys = []; for (const [k] of new Map([['x',1],['y',2]])) keys.push(k);`,
     solution: `const keys = []; for (const [k] of new Map([['x',1],['y',2]])) keys.push(k);`,
     tests: [
-      { description: 'keys is ["x","y"]', assertion: 'JSON.stringify(keys) === JSON.stringify(["x","y"])' },
-      { description: 'keys length is 2', assertion: 'keys.length === 2' },
-      { description: 'first key is "x"', assertion: 'keys[0] === "x"' },
-      { description: 'last key is "y"', assertion: 'keys[1] === "y"' },
-      { description: 'typeof keys is object', assertion: 'typeof keys === "object"' }
+      { description: 'keys is ["x","y"]', assertion: 'expect(keys).toEqual(["x","y"])' },
+      { description: 'keys length is 2', assertion: 'expect(keys).toHaveLength(2)' },
+      { description: 'first key is "x"', assertion: 'expect(keys[0]).toBe("x")' },
+      { description: 'last key is "y"', assertion: 'expect(keys[1]).toBe("y")' },
+      { description: 'typeof keys is object', assertion: 'expect(typeof keys).toBe("object")' }
     ],
     tags: [],
   },
@@ -69,11 +69,11 @@ export const iteratorForOfExercises: Exercise[] = [
     initialCode: `const vals = []; for (const v of new Set([10,20,30])) vals.push(v);`,
     solution: `const vals = []; for (const v of new Set([10,20,30])) vals.push(v);`,
     tests: [
-      { description: 'vals is [10,20,30]', assertion: 'JSON.stringify(vals) === JSON.stringify([10,20,30])' },
-      { description: 'vals length is 3', assertion: 'vals.length === 3' },
-      { description: 'first value is 10', assertion: 'vals[0] === 10' },
-      { description: 'last value is 30', assertion: 'vals[2] === 30' },
-      { description: 'typeof vals is object', assertion: 'typeof vals === "object"' }
+      { description: 'vals is [10,20,30]', assertion: 'expect(vals).toEqual([10,20,30])' },
+      { description: 'vals length is 3', assertion: 'expect(vals).toHaveLength(3)' },
+      { description: 'first value is 10', assertion: 'expect(vals[0]).toBe(10)' },
+      { description: 'last value is 30', assertion: 'expect(vals[2]).toBe(30)' },
+      { description: 'typeof vals is object', assertion: 'expect(typeof vals).toBe("object")' }
     ],
     tags: [],
   },
@@ -88,11 +88,11 @@ export const iteratorForOfExercises: Exercise[] = [
     initialCode: `let sum = 0; for (const n of [1,2,3,4]) sum += n;`,
     solution: `let sum = 0; for (const n of [1,2,3,4]) sum += n;`,
     tests: [
-      { description: 'sum is 10', assertion: 'sum === 10' },
-      { description: 'typeof sum is number', assertion: 'typeof sum === "number"' },
-      { description: 'sum is not 0', assertion: 'sum !== 0' },
-      { description: 'sum is not null', assertion: 'sum !== null' },
-      { description: 'sum is not undefined', assertion: 'sum !== undefined' }
+      { description: 'sum is 10', assertion: 'expect(sum).toBe(10)' },
+      { description: 'typeof sum is number', assertion: 'expect(typeof sum).toBe("number")' },
+      { description: 'sum is not 0', assertion: 'expect(sum !== 0).toBe(true)' },
+      { description: 'sum is not null', assertion: 'expect(sum !== null).toBe(true)' },
+      { description: 'sum is not undefined', assertion: 'expect(sum !== undefined).toBe(true)' }
     ],
     tags: [],
   }

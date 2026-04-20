@@ -22,23 +22,23 @@ export const sealExercises: Exercise[] = [
     tests: [
       {
         description: 'Returns the same object',
-        assertion: "(() => { const obj = { a: 1 }; const result = Object.seal(obj); return result === obj; })()"
+        assertion: "expect((() => { const obj = { a: 1 }; const result = Object.seal(obj); return result === obj; })()).toBe(true)"
       },
       {
         description: 'Object is sealed after Object.seal',
-        assertion: "(() => { const obj = { a: 1 }; Object.seal(obj); return Object.isSealed(obj); })()"
+        assertion: "expect((() => { const obj = { a: 1 }; Object.seal(obj); return Object.isSealed(obj); })()).toBe(true)"
       },
       {
         description: 'Cannot add new property (sloppy fail)',
-        assertion: "(() => { const obj = { a: 1 }; Object.seal(obj); obj.b = 2; return obj.b === undefined; })()"
+        assertion: "expect((() => { const obj = { a: 1 }; Object.seal(obj); obj.b = 2; return obj.b === undefined; })()).toBe(true)"
       },
       {
         description: 'Can modify existing writable properties',
-        assertion: "(() => { const obj = { a: 1 }; Object.seal(obj); obj.a = 99; return obj.a === 99; })()"
+        assertion: "expect((() => { const obj = { a: 1 }; Object.seal(obj); obj.a = 99; return obj.a === 99; })()).toBe(true)"
       },
       {
         description: 'Cannot delete properties (sloppy fail)',
-        assertion: "(() => { const obj = { a: 1 }; Object.seal(obj); delete obj.a; return obj.a === 1; })()"
+        assertion: "expect((() => { const obj = { a: 1 }; Object.seal(obj); delete obj.a; return obj.a === 1; })()).toBe(true)"
       },
     ],
     hints: ['seal prevents structural changes but allows value changes'],
@@ -68,23 +68,23 @@ After sealing, you cannot delete properties from the object (in sloppy mode, the
     tests: [
       {
         description: 'Property still exists after delete on sealed object',
-        assertion: "(() => { const obj = { a: 1 }; Object.seal(obj); delete obj.a; return 'a' in obj; })()"
+        assertion: "expect((() => { const obj = { a: 1 }; Object.seal(obj); delete obj.a; return 'a' in obj; })()).toBe(true)"
       },
       {
         description: 'Strict mode delete throws TypeError',
-        assertion: "(() => { try { 'use strict'; const obj = { a: 1 }; Object.seal(obj); delete obj.a; return false; } catch(e) { return e instanceof TypeError; } })()"
+        assertion: "expect((() => { try { 'use strict'; const obj = { a: 1 }; Object.seal(obj); delete obj.a; return false; } catch(e) { return e instanceof TypeError; } })()).toBe(true)"
       },
       {
         description: 'Unsealed object property can be deleted',
-        assertion: "(() => { const obj = { a: 1 }; delete obj.a; return !('a' in obj); })()"
+        assertion: "expect((() => { const obj = { a: 1 }; delete obj.a; return !('a' in obj); })()).toBe(true)"
       },
       {
         description: 'isSealed confirms sealed state',
-        assertion: "(() => { const obj = { a: 1, b: 2 }; Object.seal(obj); return Object.isSealed(obj); })()"
+        assertion: "expect((() => { const obj = { a: 1, b: 2 }; Object.seal(obj); return Object.isSealed(obj); })()).toBe(true)"
       },
       {
         description: 'Object value readable after failed delete',
-        assertion: "(() => { const obj = { name: 'Alice' }; Object.seal(obj); delete obj.name; return obj.name === 'Alice'; })()"
+        assertion: "expect((() => { const obj = { name: 'Alice' }; Object.seal(obj); delete obj.name; return obj.name === 'Alice'; })()).toBe(true)"
       },
     ],
     hints: ['In sloppy mode, delete on sealed objects silently fails'],
@@ -114,23 +114,23 @@ Unlike \`Object.freeze()\`, sealing does NOT make properties non-writable. You c
     tests: [
       {
         description: 'Can update existing property after seal',
-        assertion: "(() => { const obj = { score: 0 }; Object.seal(obj); obj.score = 100; return obj.score === 100; })()"
+        assertion: "expect((() => { const obj = { score: 0 }; Object.seal(obj); obj.score = 100; return obj.score === 100; })()).toBe(true)"
       },
       {
         description: 'Multiple updates to existing property work',
-        assertion: "(() => { const obj = { x: 1 }; Object.seal(obj); obj.x = 2; obj.x = 3; return obj.x === 3; })()"
+        assertion: "expect((() => { const obj = { x: 1 }; Object.seal(obj); obj.x = 2; obj.x = 3; return obj.x === 3; })()).toBe(true)"
       },
       {
         description: 'Cannot add new property after seal',
-        assertion: "(() => { const obj = { x: 1 }; Object.seal(obj); obj.y = 2; return !('y' in obj); })()"
+        assertion: "expect((() => { const obj = { x: 1 }; Object.seal(obj); obj.y = 2; return !('y' in obj); })()).toBe(true)"
       },
       {
         description: 'Difference: seal allows write, freeze does not',
-        assertion: "(() => { const sealed = { a: 1 }; Object.seal(sealed); sealed.a = 2; const frozen = { a: 1 }; Object.freeze(frozen); frozen.a = 2; return sealed.a === 2 && frozen.a === 1; })()"
+        assertion: "expect((() => { const sealed = { a: 1 }; Object.seal(sealed); sealed.a = 2; const frozen = { a: 1 }; Object.freeze(frozen); frozen.a = 2; return sealed.a === 2 && frozen.a === 1; })()).toBe(true)"
       },
       {
         description: 'isSealed is true',
-        assertion: "(() => { const obj = { a: 1 }; Object.seal(obj); return Object.isSealed(obj); })()"
+        assertion: "expect((() => { const obj = { a: 1 }; Object.seal(obj); return Object.isSealed(obj); })()).toBe(true)"
       },
     ],
     hints: ['seal = non-extensible + non-configurable, but writable values still change'],
@@ -161,19 +161,19 @@ Use \`Object.isSealed(obj)\` to verify whether an object is sealed.
       },
       {
         description: 'Returns true after Object.seal',
-        assertion: "(() => { const obj = { a: 1 }; Object.seal(obj); return Object.isSealed(obj); })()"
+        assertion: "expect((() => { const obj = { a: 1 }; Object.seal(obj); return Object.isSealed(obj); })()).toBe(true)"
       },
       {
         description: 'Returns true after Object.freeze',
-        assertion: "(() => { const obj = { a: 1 }; Object.freeze(obj); return Object.isSealed(obj); })()"
+        assertion: "expect((() => { const obj = { a: 1 }; Object.freeze(obj); return Object.isSealed(obj); })()).toBe(true)"
       },
       {
         description: 'Returns false after just preventExtensions (non-empty)',
-        assertion: "(() => { const obj = { a: 1 }; Object.preventExtensions(obj); return Object.isSealed(obj) === false; })()"
+        assertion: "expect((() => { const obj = { a: 1 }; Object.preventExtensions(obj); return Object.isSealed(obj) === false; })()).toBe(true)"
       },
       {
         description: 'Sealed object is also non-extensible',
-        assertion: "(() => { const obj = { a: 1 }; Object.seal(obj); return !Object.isExtensible(obj); })()"
+        assertion: "expect((() => { const obj = { a: 1 }; Object.seal(obj); return !Object.isExtensible(obj); })()).toBe(true)"
       },
     ],
     hints: ['isSealed = non-extensible + all properties non-configurable'],
@@ -201,23 +201,23 @@ Use \`Object.isSealed(obj)\` to verify whether an object is sealed.
     tests: [
       {
         description: 'Object.seal returns the same reference',
-        assertion: "(() => { const obj = { a: 1 }; return Object.seal(obj) === obj; })()"
+        assertion: "expect((() => { const obj = { a: 1 }; return Object.seal(obj) === obj; })()).toBe(true)"
       },
       {
         description: 'Sealing is in-place, not a copy',
-        assertion: "(() => { const obj = { a: 1 }; const sealed = Object.seal(obj); sealed.a = 99; return obj.a === 99; })()"
+        assertion: "expect((() => { const obj = { a: 1 }; const sealed = Object.seal(obj); sealed.a = 99; return obj.a === 99; })()).toBe(true)"
       },
       {
         description: 'Can chain seal with other operations',
-        assertion: "(() => { const obj = Object.seal({ x: 1 }); return Object.isSealed(obj); })()"
+        assertion: "expect((() => { const obj = Object.seal({ x: 1 }); return Object.isSealed(obj); })()).toBe(true)"
       },
       {
         description: 'seal and freeze both return same reference',
-        assertion: "(() => { const obj1 = { a: 1 }; const obj2 = { b: 2 }; return Object.seal(obj1) === obj1 && Object.freeze(obj2) === obj2; })()"
+        assertion: "expect((() => { const obj1 = { a: 1 }; const obj2 = { b: 2 }; return Object.seal(obj1) === obj1 && Object.freeze(obj2) === obj2; })()).toBe(true)"
       },
       {
         description: 'Multiple seals have no additional effect',
-        assertion: "(() => { const obj = { a: 1 }; Object.seal(obj); Object.seal(obj); return Object.isSealed(obj); })()"
+        assertion: "expect((() => { const obj = { a: 1 }; Object.seal(obj); Object.seal(obj); return Object.isSealed(obj); })()).toBe(true)"
       },
     ],
     hints: ['Object.seal, freeze, and preventExtensions all return the modified object'],

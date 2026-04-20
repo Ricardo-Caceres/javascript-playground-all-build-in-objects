@@ -155,19 +155,19 @@ You can override \`toString()\` on your own objects to return a meaningful strin
     tests: [
       {
         description: 'Custom toString returns expected value',
-        assertion: "(() => { const obj = { val: 42, toString() { return 'val=' + this.val; } }; return obj.toString() === 'val=42'; })()"
+        assertion: "expect((() => { const obj = { val: 42, toString() { return 'val=' + this.val; } }; return obj.toString() === 'val=42'; })()).toBe(true)"
       },
       {
         description: 'Custom toString used in string concatenation',
-        assertion: "(() => { const obj = { toString() { return 'X'; } }; return ('pre-' + obj) === 'pre-X'; })()"
+        assertion: "expect((() => { const obj = { toString() { return 'X'; } }; return ('pre-' + obj) === 'pre-X'; })()).toBe(true)"
       },
       {
         description: 'Custom toString returns a string',
-        assertion: "(() => { const obj = { toString() { return 'custom'; } }; return typeof obj.toString() === 'string'; })()"
+        assertion: "expect((() => { const obj = { toString() { return 'custom'; } }; return typeof obj.toString() === 'string'; })()).toBe(true)"
       },
       {
         description: 'Override takes precedence over Object.prototype.toString',
-        assertion: "(() => { const obj = { toString() { return 'mine'; } }; return obj.toString() !== '[object Object]'; })()"
+        assertion: "expect((() => { const obj = { toString() { return 'mine'; } }; return obj.toString() !== '[object Object]'; })()).toBe(true)"
       },
       {
         description: 'Without override, plain object returns [object Object]',

@@ -22,11 +22,11 @@ export const isPrototypeOfExercises: Exercise[] = [
     tests: [
       {
         description: 'Direct prototype returns true',
-        assertion: "(() => { const proto = {}; const obj = Object.create(proto); return proto.isPrototypeOf(obj); })()"
+        assertion: "expect((() => { const proto = {}; const obj = Object.create(proto); return proto.isPrototypeOf(obj); })()).toBe(true)"
       },
       {
         description: 'Unrelated object returns false',
-        assertion: "(() => { const proto = {}; const obj = {}; return proto.isPrototypeOf(obj) === false; })()"
+        assertion: "expect((() => { const proto = {}; const obj = {}; return proto.isPrototypeOf(obj) === false; })()).toBe(true)"
       },
       {
         description: 'Object.prototype is in every plain object chain',
@@ -65,23 +65,23 @@ export const isPrototypeOfExercises: Exercise[] = [
     tests: [
       {
         description: 'Grandparent is prototype of grandchild',
-        assertion: "(() => { const a = {}; const b = Object.create(a); const c = Object.create(b); return a.isPrototypeOf(c); })()"
+        assertion: "expect((() => { const a = {}; const b = Object.create(a); const c = Object.create(b); return a.isPrototypeOf(c); })()).toBe(true)"
       },
       {
         description: 'Object.prototype is in multi-level chain',
-        assertion: "(() => { const a = {}; const b = Object.create(a); const c = Object.create(b); return Object.prototype.isPrototypeOf(c); })()"
+        assertion: "expect((() => { const a = {}; const b = Object.create(a); const c = Object.create(b); return Object.prototype.isPrototypeOf(c); })()).toBe(true)"
       },
       {
         description: 'Direct parent is prototype',
-        assertion: "(() => { const a = {}; const b = Object.create(a); return a.isPrototypeOf(b); })()"
+        assertion: "expect((() => { const a = {}; const b = Object.create(a); return a.isPrototypeOf(b); })()).toBe(true)"
       },
       {
         description: 'Child is NOT prototype of parent',
-        assertion: "(() => { const a = {}; const b = Object.create(a); return b.isPrototypeOf(a) === false; })()"
+        assertion: "expect((() => { const a = {}; const b = Object.create(a); return b.isPrototypeOf(a) === false; })()).toBe(true)"
       },
       {
         description: 'Object is not prototype of itself',
-        assertion: "(() => { const obj = {}; return obj.isPrototypeOf(obj) === false; })()"
+        assertion: "expect((() => { const obj = {}; return obj.isPrototypeOf(obj) === false; })()).toBe(true)"
       },
     ],
     hints: ['isPrototypeOf checks the entire chain, not just the immediate parent'],
@@ -112,15 +112,15 @@ If the object you're testing is not in the prototype chain at all, \`isPrototype
       },
       {
         description: 'Object is not prototype of array',
-        assertion: "(() => { const obj = {}; return obj.isPrototypeOf([]) === false; })()"
+        assertion: "expect((() => { const obj = {}; return obj.isPrototypeOf([]) === false; })()).toBe(true)"
       },
       {
         description: 'Sibling objects from same prototype',
-        assertion: "(() => { const proto = {}; const a = Object.create(proto); const b = Object.create(proto); return a.isPrototypeOf(b) === false; })()"
+        assertion: "expect((() => { const proto = {}; const a = Object.create(proto); const b = Object.create(proto); return a.isPrototypeOf(b) === false; })()).toBe(true)"
       },
       {
         description: 'After severing prototype chain',
-        assertion: "(() => { const proto = {}; const obj = Object.create(proto); Object.setPrototypeOf(obj, null); return proto.isPrototypeOf(obj) === false; })()"
+        assertion: "expect((() => { const proto = {}; const obj = Object.create(proto); Object.setPrototypeOf(obj, null); return proto.isPrototypeOf(obj) === false; })()).toBe(true)"
       },
       {
         description: 'Function.prototype is not in plain object chain',
@@ -151,7 +151,7 @@ Objects created with \`Object.create(null)\` have no prototype. \`Object.prototy
     tests: [
       {
         description: 'Object.prototype NOT in null-prototype chain',
-        assertion: "(() => { const obj = Object.create(null); return Object.prototype.isPrototypeOf(obj) === false; })()"
+        assertion: "expect((() => { const obj = Object.create(null); return Object.prototype.isPrototypeOf(obj) === false; })()).toBe(true)"
       },
       {
         description: 'Object.prototype IS in plain object chain',
@@ -163,11 +163,11 @@ Objects created with \`Object.create(null)\` have no prototype. \`Object.prototy
       },
       {
         description: 'getPrototypeOf null-prototype is null',
-        assertion: "(() => { const obj = Object.create(null); return Object.getPrototypeOf(obj) === null; })()"
+        assertion: "expect((() => { const obj = Object.create(null); return Object.getPrototypeOf(obj) === null; })()).toBe(true)"
       },
       {
         description: 'Null-prototype object is not related to Object.prototype',
-        assertion: "(() => { const obj = Object.create(null); return !Object.prototype.isPrototypeOf(obj); })()"
+        assertion: "expect((() => { const obj = Object.create(null); return !Object.prototype.isPrototypeOf(obj); })()).toBe(true)"
       },
     ],
     hints: ['Null-prototype objects have no inherited methods or prototype chain'],
@@ -202,11 +202,11 @@ Objects created with \`Object.create(null)\` have no prototype. \`Object.prototy
       },
       {
         description: 'isPrototypeOf matches instanceof for custom class',
-        assertion: "(() => { class Dog {} const d = new Dog(); return Dog.prototype.isPrototypeOf(d) === (d instanceof Dog); })()"
+        assertion: "expect((() => { class Dog {} const d = new Dog(); return Dog.prototype.isPrototypeOf(d) === (d instanceof Dog); })()).toBe(true)"
       },
       {
         description: 'Works through inheritance chain',
-        assertion: "(() => { class Animal {} class Dog extends Animal {} const d = new Dog(); return Animal.prototype.isPrototypeOf(d); })()"
+        assertion: "expect((() => { class Animal {} class Dog extends Animal {} const d = new Dog(); return Animal.prototype.isPrototypeOf(d); })()).toBe(true)"
       },
       {
         description: 'Object.prototype.isPrototypeOf matches instanceof Object',

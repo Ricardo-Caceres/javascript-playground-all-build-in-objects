@@ -36,11 +36,11 @@ By default, all plain objects are extensible.
       },
       {
         description: 'Object after preventExtensions is not extensible',
-        assertion: "(() => { const obj = { a: 1 }; Object.preventExtensions(obj); return Object.isExtensible(obj); })()"
+        assertion: "expect((() => { const obj = { a: 1 }; Object.preventExtensions(obj); return Object.isExtensible(obj); })()).toBe(false)"
       },
       {
         description: 'Frozen object is not extensible',
-        assertion: "(() => { const obj = { a: 1 }; Object.freeze(obj); return !Object.isExtensible(obj); })()"
+        assertion: "expect((() => { const obj = { a: 1 }; Object.freeze(obj); return !Object.isExtensible(obj); })()).toBe(true)"
       },
     ],
     hints: ['Object.isExtensible() returns true for all plain objects by default'],
@@ -68,23 +68,23 @@ Once \`Object.preventExtensions(obj)\` is called, the object cannot have new pro
     tests: [
       {
         description: 'Returns false after preventExtensions',
-        assertion: "(() => { const obj = {}; Object.preventExtensions(obj); return Object.isExtensible(obj) === false; })()"
+        assertion: "expect((() => { const obj = {}; Object.preventExtensions(obj); return Object.isExtensible(obj) === false; })()).toBe(true)"
       },
       {
         description: 'preventExtensions returns the same object',
-        assertion: "(() => { const obj = { a: 1 }; const result = Object.preventExtensions(obj); return result === obj; })()"
+        assertion: "expect((() => { const obj = { a: 1 }; const result = Object.preventExtensions(obj); return result === obj; })()).toBe(true)"
       },
       {
         description: 'After preventExtensions, existing props still work',
-        assertion: "(() => { const obj = { a: 1 }; Object.preventExtensions(obj); obj.a = 99; return obj.a === 99; })()"
+        assertion: "expect((() => { const obj = { a: 1 }; Object.preventExtensions(obj); obj.a = 99; return obj.a === 99; })()).toBe(true)"
       },
       {
         description: 'Sealed object is not extensible',
-        assertion: "(() => { const obj = { a: 1 }; Object.seal(obj); return Object.isExtensible(obj) === false; })()"
+        assertion: "expect((() => { const obj = { a: 1 }; Object.seal(obj); return Object.isExtensible(obj) === false; })()).toBe(true)"
       },
       {
         description: 'Frozen object is not extensible',
-        assertion: "(() => { const obj = { a: 1 }; Object.freeze(obj); return Object.isExtensible(obj) === false; })()"
+        assertion: "expect((() => { const obj = { a: 1 }; Object.freeze(obj); return Object.isExtensible(obj) === false; })()).toBe(true)"
       },
     ],
     hints: ['All of freeze, seal, and preventExtensions make an object non-extensible'],
@@ -111,11 +111,11 @@ Once \`Object.preventExtensions(obj)\` is called, the object cannot have new pro
     tests: [
       {
         description: 'Frozen object is not extensible',
-        assertion: "(() => { const obj = { a: 1 }; Object.freeze(obj); return !Object.isExtensible(obj); })()"
+        assertion: "expect((() => { const obj = { a: 1 }; Object.freeze(obj); return !Object.isExtensible(obj); })()).toBe(true)"
       },
       {
         description: 'Can confirm with both isFrozen and isExtensible',
-        assertion: "(() => { const obj = { a: 1 }; Object.freeze(obj); return Object.isFrozen(obj) && !Object.isExtensible(obj); })()"
+        assertion: "expect((() => { const obj = { a: 1 }; Object.freeze(obj); return Object.isFrozen(obj) && !Object.isExtensible(obj); })()).toBe(true)"
       },
       {
         description: 'Unfrozen object is extensible',
@@ -123,11 +123,11 @@ Once \`Object.preventExtensions(obj)\` is called, the object cannot have new pro
       },
       {
         description: 'After freeze, adding a new property silently fails in sloppy mode',
-        assertion: "(() => { const obj = { a: 1 }; Object.freeze(obj); obj.b = 2; return obj.b === undefined; })()"
+        assertion: "expect((() => { const obj = { a: 1 }; Object.freeze(obj); obj.b = 2; return obj.b === undefined; })()).toBe(true)"
       },
       {
         description: 'After freeze, existing property value is unchanged on write attempt',
-        assertion: "(() => { const obj = { a: 1 }; Object.freeze(obj); obj.a = 99; return obj.a === 1; })()"
+        assertion: "expect((() => { const obj = { a: 1 }; Object.freeze(obj); obj.a = 99; return obj.a === 1; })()).toBe(true)"
       },
     ],
     hints: ['freeze implies non-extensible'],
@@ -155,19 +155,19 @@ Once \`Object.preventExtensions(obj)\` is called, the object cannot have new pro
     tests: [
       {
         description: 'Sealed object is not extensible',
-        assertion: "(() => { const obj = { a: 1 }; Object.seal(obj); return Object.isExtensible(obj) === false; })()"
+        assertion: "expect((() => { const obj = { a: 1 }; Object.seal(obj); return Object.isExtensible(obj) === false; })()).toBe(true)"
       },
       {
         description: 'Sealed object can still modify existing writable properties',
-        assertion: "(() => { const obj = { a: 1 }; Object.seal(obj); obj.a = 42; return obj.a === 42; })()"
+        assertion: "expect((() => { const obj = { a: 1 }; Object.seal(obj); obj.a = 42; return obj.a === 42; })()).toBe(true)"
       },
       {
         description: 'Sealed object prevents adding new properties (sloppy fail)',
-        assertion: "(() => { const obj = { a: 1 }; Object.seal(obj); obj.b = 2; return obj.b === undefined; })()"
+        assertion: "expect((() => { const obj = { a: 1 }; Object.seal(obj); obj.b = 2; return obj.b === undefined; })()).toBe(true)"
       },
       {
         description: 'Object.seal returns the same object',
-        assertion: "(() => { const obj = { a: 1 }; const result = Object.seal(obj); return result === obj; })()"
+        assertion: "expect((() => { const obj = { a: 1 }; const result = Object.seal(obj); return result === obj; })()).toBe(true)"
       },
       {
         description: 'Plain object before seal is extensible',
@@ -201,19 +201,19 @@ Use \`Object.isExtensible()\` to guard against inadvertently modifying locked ob
     tests: [
       {
         description: 'Adds property when object is extensible',
-        assertion: "(() => { const obj = {}; const added = (() => { if (!Object.isExtensible(obj)) return false; obj.x = 1; return true; })(); return added === true && obj.x === 1; })()"
+        assertion: "expect((() => { const obj = {}; const added = (() => { if (!Object.isExtensible(obj)) return false; obj.x = 1; return true; })(); return added === true && obj.x === 1; })()).toBe(true)"
       },
       {
         description: 'Does not add property when object is frozen',
-        assertion: "(() => { const obj = {}; Object.freeze(obj); const added = (() => { if (!Object.isExtensible(obj)) return false; obj.x = 1; return true; })(); return added === false; })()"
+        assertion: "expect((() => { const obj = {}; Object.freeze(obj); const added = (() => { if (!Object.isExtensible(obj)) return false; obj.x = 1; return true; })(); return added === false; })()).toBe(true)"
       },
       {
         description: 'Does not add property when object is sealed',
-        assertion: "(() => { const obj = {}; Object.seal(obj); const added = (() => { if (!Object.isExtensible(obj)) return false; obj.x = 1; return true; })(); return added === false; })()"
+        assertion: "expect((() => { const obj = {}; Object.seal(obj); const added = (() => { if (!Object.isExtensible(obj)) return false; obj.x = 1; return true; })(); return added === false; })()).toBe(true)"
       },
       {
         description: 'Does not add when preventExtensions used',
-        assertion: "(() => { const obj = {}; Object.preventExtensions(obj); return !Object.isExtensible(obj); })()"
+        assertion: "expect((() => { const obj = {}; Object.preventExtensions(obj); return !Object.isExtensible(obj); })()).toBe(true)"
       },
       {
         description: 'Plain new object is extensible',

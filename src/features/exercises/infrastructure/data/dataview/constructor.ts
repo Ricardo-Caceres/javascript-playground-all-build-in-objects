@@ -11,11 +11,11 @@ export const dataViewConstructorExercises: Exercise[] = [
     initialCode: 'const dv = new DataView(new ArrayBuffer(4));',
     solution: 'const dv = new DataView(new ArrayBuffer(4));',
     tests: [
-      { description: 'instanceof DataView', assertion: 'new DataView(new ArrayBuffer(4)) instanceof DataView' },
-      { description: 'typeof DataView is object', assertion: "typeof new DataView(new ArrayBuffer(4)) === 'object'" },
-      { description: 'byteLength is 8', assertion: 'new DataView(new ArrayBuffer(8)).byteLength === 8' },
-      { description: 'byteOffset is 4', assertion: 'new DataView(new ArrayBuffer(8), 4).byteOffset === 4' },
-      { description: 'buffer is ArrayBuffer', assertion: 'new DataView(new ArrayBuffer(8)).buffer instanceof ArrayBuffer' }
+      { description: 'instanceof DataView', assertion: 'expect(new DataView(new ArrayBuffer(4)) instanceof DataView).toBe(true)' },
+      { description: 'typeof DataView is object', assertion: "expect(typeof new DataView(new ArrayBuffer(4))).toBe('object')" },
+      { description: 'byteLength is 8', assertion: 'expect(new DataView(new ArrayBuffer(8)).byteLength).toBe(8)' },
+      { description: 'byteOffset is 4', assertion: 'expect(new DataView(new ArrayBuffer(8), 4).byteOffset).toBe(4)' },
+      { description: 'buffer is ArrayBuffer', assertion: 'expect(new DataView(new ArrayBuffer(8)).buffer instanceof ArrayBuffer).toBe(true)' }
     ],
     tags: []
   }

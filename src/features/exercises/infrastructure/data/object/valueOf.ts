@@ -22,11 +22,11 @@ export const objectValueOfExercises: Exercise[] = [
     tests: [
       {
         description: 'Plain object valueOf returns the object itself',
-        assertion: "(() => { const obj = { a: 1 }; return obj.valueOf() === obj; })()"
+        assertion: "expect((() => { const obj = { a: 1 }; return obj.valueOf() === obj; })()).toBe(true)"
       },
       {
         description: 'Empty object valueOf returns itself',
-        assertion: "(() => { const obj = {}; return obj.valueOf() === obj; })()"
+        assertion: "expect((() => { const obj = {}; return obj.valueOf() === obj; })()).toBe(true)"
       },
       {
         description: 'valueOf is inherited from Object.prototype',
@@ -38,7 +38,7 @@ export const objectValueOfExercises: Exercise[] = [
       },
       {
         description: 'valueOf returns the same reference, not a copy',
-        assertion: "(() => { const obj = { x: 1 }; const v = obj.valueOf(); v.x = 99; return obj.x === 99; })()"
+        assertion: "expect((() => { const obj = { x: 1 }; const v = obj.valueOf(); v.x = 99; return obj.x === 99; })()).toBe(true)"
       },
     ],
     hints: ['For plain objects, valueOf returns the object itself; subclasses override it to return primitives'],
@@ -154,23 +154,23 @@ You can override \`valueOf()\` in your own objects to control how they convert t
     tests: [
       {
         description: 'Custom valueOf returns the specified value',
-        assertion: "(() => { const obj = { v: 5, valueOf() { return this.v; } }; return obj.valueOf() === 5; })()"
+        assertion: "expect((() => { const obj = { v: 5, valueOf() { return this.v; } }; return obj.valueOf() === 5; })()).toBe(true)"
       },
       {
         description: 'Custom valueOf is called in arithmetic',
-        assertion: "(() => { const obj = { v: 10, valueOf() { return this.v; } }; return obj + 5 === 15; })()"
+        assertion: "expect((() => { const obj = { v: 10, valueOf() { return this.v; } }; return obj + 5 === 15; })()).toBe(true)"
       },
       {
         description: 'Custom valueOf is called in comparison',
-        assertion: "(() => { const obj = { v: 3, valueOf() { return this.v; } }; return obj < 5; })()"
+        assertion: "expect((() => { const obj = { v: 3, valueOf() { return this.v; } }; return obj < 5; })()).toBe(true)"
       },
       {
         description: 'Override takes precedence over Object.prototype.valueOf',
-        assertion: "(() => { const obj = { valueOf() { return 42; } }; return obj.valueOf() !== obj; })()"
+        assertion: "expect((() => { const obj = { valueOf() { return 42; } }; return obj.valueOf() !== obj; })()).toBe(true)"
       },
       {
         description: 'Without override, plain object valueOf returns itself',
-        assertion: "(() => { const obj = {}; return obj.valueOf() === obj; })()"
+        assertion: "expect((() => { const obj = {}; return obj.valueOf() === obj; })()).toBe(true)"
       },
     ],
     hints: ['Override valueOf to control how an object converts to a primitive in arithmetic or comparisons'],
@@ -200,15 +200,15 @@ When an object is used in arithmetic (like \`+\`, \`-\`, \`*\`), JavaScript auto
     tests: [
       {
         description: 'valueOf called implicitly in addition',
-        assertion: "(() => { const obj = { valueOf() { return 7; } }; return obj + 3 === 10; })()"
+        assertion: "expect((() => { const obj = { valueOf() { return 7; } }; return obj + 3 === 10; })()).toBe(true)"
       },
       {
         description: 'valueOf called implicitly in multiplication',
-        assertion: "(() => { const obj = { valueOf() { return 4; } }; return obj * 2 === 8; })()"
+        assertion: "expect((() => { const obj = { valueOf() { return 4; } }; return obj * 2 === 8; })()).toBe(true)"
       },
       {
         description: 'valueOf called in comparison',
-        assertion: "(() => { const obj = { valueOf() { return 100; } }; return obj > 50; })()"
+        assertion: "expect((() => { const obj = { valueOf() { return 100; } }; return obj > 50; })()).toBe(true)"
       },
       {
         description: 'Plain object valueOf returns object (NaN in arithmetic)',
@@ -216,7 +216,7 @@ When an object is used in arithmetic (like \`+\`, \`-\`, \`*\`), JavaScript auto
       },
       {
         description: 'Custom valueOf allows numeric coercion',
-        assertion: "(() => { const obj = { valueOf() { return 5; } }; return Number(obj) === 5; })()"
+        assertion: "expect((() => { const obj = { valueOf() { return 5; } }; return Number(obj) === 5; })()).toBe(true)"
       },
     ],
     hints: ['JavaScript uses valueOf for type coercion in arithmetic and comparison contexts'],

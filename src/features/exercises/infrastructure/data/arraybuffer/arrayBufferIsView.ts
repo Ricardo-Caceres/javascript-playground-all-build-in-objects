@@ -11,11 +11,11 @@ export const arrayBufferIsViewExercises: Exercise[] = [
     initialCode: 'const arr = new Uint8Array(4);',
     solution: 'const arr = new Uint8Array(4);',
     tests: [
-      { description: 'isView(Uint8Array) is true', assertion: 'ArrayBuffer.isView(new Uint8Array(4)) === true' },
-      { description: 'isView(ArrayBuffer) is false', assertion: 'ArrayBuffer.isView(new ArrayBuffer(4)) === false' },
-      { description: 'isView(DataView) is true', assertion: 'ArrayBuffer.isView(new DataView(new ArrayBuffer(4))) === true' },
-      { description: 'isView([]) is false', assertion: 'ArrayBuffer.isView([]) === false' },
-      { description: 'isView(Int32Array) is true', assertion: 'ArrayBuffer.isView(new Int32Array(2)) === true' }
+      { description: 'isView(Uint8Array) is true', assertion: 'expect(ArrayBuffer.isView(new Uint8Array(4))).toBe(true)' },
+      { description: 'isView(ArrayBuffer) is false', assertion: 'expect(ArrayBuffer.isView(new ArrayBuffer(4))).toBe(false)' },
+      { description: 'isView(DataView) is true', assertion: 'expect(ArrayBuffer.isView(new DataView(new ArrayBuffer(4)))).toBe(true)' },
+      { description: 'isView([]) is false', assertion: 'expect(ArrayBuffer.isView([])).toBe(false)' },
+      { description: 'isView(Int32Array) is true', assertion: 'expect(ArrayBuffer.isView(new Int32Array(2))).toBe(true)' }
     ],
     tags: []
   }

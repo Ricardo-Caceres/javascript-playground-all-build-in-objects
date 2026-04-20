@@ -11,11 +11,11 @@ export const generatorConstructorExercises: Exercise[] = [
     initialCode: `function* gen() { yield 1; yield 2; }\nconst result = typeof gen();`,
     solution: `function* gen() { yield 1; yield 2; }\nconst result = typeof gen();`,
     tests: [
-      { description: 'typeof gen() is "object"', assertion: "typeof gen() === 'object'" },
-      { description: 'gen() is not null', assertion: "gen() !== null" },
-      { description: 'gen() has next method', assertion: "typeof gen().next === 'function'" },
-      { description: 'gen() has return method', assertion: "typeof gen().return === 'function'" },
-      { description: 'gen() has throw method', assertion: "typeof gen().throw === 'function'" }
+      { description: 'typeof gen() is "object"', assertion: "expect(typeof gen()).toBe('object')" },
+      { description: 'gen() is not null', assertion: "expect(gen() !== null).toBe(true)" },
+      { description: 'gen() has next method', assertion: "expect(typeof gen().next).toBe('function')" },
+      { description: 'gen() has return method', assertion: "expect(typeof gen().return).toBe('function')" },
+      { description: 'gen() has throw method', assertion: "expect(typeof gen().throw).toBe('function')" }
     ],
     tags: [],
   },
@@ -29,11 +29,11 @@ export const generatorConstructorExercises: Exercise[] = [
     initialCode: `function* gen() { yield 1; }\nconst it = gen();\nconst value = it.next().value;`,
     solution: `function* gen() { yield 1; }\nconst it = gen();\nconst value = it.next().value;`,
     tests: [
-      { description: 'it.next().value is 1', assertion: 'it.next().value === 1' },
-      { description: 'it.next().done is true after one yield', assertion: 'it.next(); it.next().done === true' },
-      { description: 'it is an object', assertion: 'typeof it === "object"' },
-      { description: 'it has next method', assertion: 'typeof it.next === "function"' },
-      { description: 'it has return method', assertion: 'typeof it.return === "function"' }
+      { description: 'it.next().value is 1', assertion: 'const i2 = gen(); expect(i2.next().value).toBe(1)' },
+      { description: 'it.next().done is true after one yield', assertion: 'const i2 = gen(); i2.next(); expect(i2.next().done).toBe(true)' },
+      { description: 'it is an object', assertion: 'expect(typeof it).toBe("object")' },
+      { description: 'it has next method', assertion: 'expect(typeof it.next).toBe("function")' },
+      { description: 'it has return method', assertion: 'expect(typeof it.return).toBe("function")' }
     ],
     tags: [],
   },
@@ -47,11 +47,11 @@ export const generatorConstructorExercises: Exercise[] = [
     initialCode: `function* gen() { yield 1; yield 2; }\nconst it = gen();\nit.next();\nconst value = it.next().value;`,
     solution: `function* gen() { yield 1; yield 2; }\nconst it = gen();\nit.next();\nconst value = it.next().value;`,
     tests: [
-      { description: 'second next().value is 2', assertion: 'it.next(); it.next().value === 2' },
-      { description: 'done is false after first next()', assertion: 'it.next().done === false' },
-      { description: 'done is false after second next()', assertion: 'it.next(); it.next().done === false' },
-      { description: 'done is true after third next()', assertion: 'it.next(); it.next(); it.next().done === true' },
-      { description: 'typeof it is object', assertion: 'typeof it === "object"' }
+      { description: 'second next().value is 2', assertion: 'const i2 = gen(); i2.next(); expect(i2.next().value).toBe(2)' },
+      { description: 'done is false after first next()', assertion: 'const i2 = gen(); expect(i2.next().done).toBe(false)' },
+      { description: 'done is false after second next()', assertion: 'const i2 = gen(); i2.next(); expect(i2.next().done).toBe(false)' },
+      { description: 'done is true after third next()', assertion: 'const i2 = gen(); i2.next(); i2.next(); expect(i2.next().done).toBe(true)' },
+      { description: 'typeof it is object', assertion: 'expect(typeof it).toBe("object")' }
     ],
     tags: [],
   },
@@ -65,11 +65,11 @@ export const generatorConstructorExercises: Exercise[] = [
     initialCode: `function* gen() {}\nconst it = gen();\nconst done = it.next().done;`,
     solution: `function* gen() {}\nconst it = gen();\nconst done = it.next().done;`,
     tests: [
-      { description: 'empty generator is done', assertion: 'it.next().done === true' },
-      { description: 'empty generator value is undefined', assertion: 'it.next().value === undefined' },
-      { description: 'typeof it is object', assertion: 'typeof it === "object"' },
-      { description: 'typeof it.next is function', assertion: 'typeof it.next === "function"' },
-      { description: 'typeof it.return is function', assertion: 'typeof it.return === "function"' }
+      { description: 'empty generator is done', assertion: 'expect(it.next().done).toBe(true)' },
+      { description: 'empty generator value is undefined', assertion: 'expect(it.next().value).toBeUndefined()' },
+      { description: 'typeof it is object', assertion: 'expect(typeof it).toBe("object")' },
+      { description: 'typeof it.next is function', assertion: 'expect(typeof it.next).toBe("function")' },
+      { description: 'typeof it.return is function', assertion: 'expect(typeof it.return).toBe("function")' }
     ],
     tags: [],
   },
@@ -82,11 +82,11 @@ export const generatorConstructorExercises: Exercise[] = [
     initialCode: `const type = typeof (function* gen() {});`,
     solution: `const type = typeof (function* gen() {});`,
     tests: [
-      { description: 'typeof generator function is function', assertion: "typeof (function* gen() {}) === 'function'" },
-      { description: 'typeof generator function is not object', assertion: "typeof (function* gen() {}) !== 'object'" },
-      { description: 'generator function is not null', assertion: "(function* gen() {}) !== null" },
-      { description: 'generator function has prototype', assertion: "typeof (function* gen() {}).prototype === 'object'" },
-      { description: 'generator function is callable', assertion: "typeof (function* gen() {}) === 'function'" }
+      { description: 'typeof generator function is function', assertion: "expect(typeof (function* gen() {})).toBe('function')" },
+      { description: 'typeof generator function is not object', assertion: "expect(typeof (function* gen() {}) !== 'object').toBe(true)" },
+      { description: 'generator function is not null', assertion: "expect((function* gen() {}) !== null).toBe(true)" },
+      { description: 'generator function has prototype', assertion: "expect(typeof (function* gen() {}).prototype).toBe('object')" },
+      { description: 'generator function is callable', assertion: "expect(typeof (function* gen() {})).toBe('function')" }
     ],
     tags: [],
   }

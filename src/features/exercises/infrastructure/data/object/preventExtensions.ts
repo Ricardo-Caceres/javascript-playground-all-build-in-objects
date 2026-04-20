@@ -22,23 +22,23 @@ export const preventExtensionsExercises: Exercise[] = [
     tests: [
       {
         description: 'Returns the same object',
-        assertion: "(() => { const obj = { a: 1 }; const result = Object.preventExtensions(obj); return result === obj; })()"
+        assertion: "expect((() => { const obj = { a: 1 }; const result = Object.preventExtensions(obj); return result === obj; })()).toBe(true)"
       },
       {
         description: 'Adding a new property silently fails in sloppy mode',
-        assertion: "(() => { const obj = { a: 1 }; Object.preventExtensions(obj); obj.b = 2; return obj.b === undefined; })()"
+        assertion: "expect((() => { const obj = { a: 1 }; Object.preventExtensions(obj); obj.b = 2; return obj.b === undefined; })()).toBe(true)"
       },
       {
         description: 'Object becomes non-extensible',
-        assertion: "(() => { const obj = { a: 1 }; Object.preventExtensions(obj); return !Object.isExtensible(obj); })()"
+        assertion: "expect((() => { const obj = { a: 1 }; Object.preventExtensions(obj); return !Object.isExtensible(obj); })()).toBe(true)"
       },
       {
         description: 'Existing properties can still be modified',
-        assertion: "(() => { const obj = { a: 1 }; Object.preventExtensions(obj); obj.a = 99; return obj.a === 99; })()"
+        assertion: "expect((() => { const obj = { a: 1 }; Object.preventExtensions(obj); obj.a = 99; return obj.a === 99; })()).toBe(true)"
       },
       {
         description: 'Existing properties can still be deleted',
-        assertion: "(() => { const obj = { a: 1, b: 2 }; Object.preventExtensions(obj); delete obj.a; return !('a' in obj); })()"
+        assertion: "expect((() => { const obj = { a: 1, b: 2 }; Object.preventExtensions(obj); delete obj.a; return !('a' in obj); })()).toBe(true)"
       },
     ],
     hints: ['preventExtensions only blocks adding new properties, not modifying or deleting existing ones'],
@@ -66,7 +66,7 @@ After calling \`Object.preventExtensions()\`, you can verify the result with \`O
     tests: [
       {
         description: 'isExtensible returns false after preventExtensions',
-        assertion: "(() => { const obj = {}; Object.preventExtensions(obj); return Object.isExtensible(obj) === false; })()"
+        assertion: "expect((() => { const obj = {}; Object.preventExtensions(obj); return Object.isExtensible(obj) === false; })()).toBe(true)"
       },
       {
         description: 'isExtensible returns true before preventExtensions',
@@ -74,15 +74,15 @@ After calling \`Object.preventExtensions()\`, you can verify the result with \`O
       },
       {
         description: 'preventExtensions does not seal the object',
-        assertion: "(() => { const obj = { a: 1 }; Object.preventExtensions(obj); return Object.isSealed(obj) === false; })()"
+        assertion: "expect((() => { const obj = { a: 1 }; Object.preventExtensions(obj); return Object.isSealed(obj) === false; })()).toBe(true)"
       },
       {
         description: 'preventExtensions does not freeze the object',
-        assertion: "(() => { const obj = { a: 1 }; Object.preventExtensions(obj); return Object.isFrozen(obj) === false; })()"
+        assertion: "expect((() => { const obj = { a: 1 }; Object.preventExtensions(obj); return Object.isFrozen(obj) === false; })()).toBe(true)"
       },
       {
         description: 'After preventExtensions, writing existing prop still works',
-        assertion: "(() => { const obj = { x: 5 }; Object.preventExtensions(obj); obj.x = 10; return obj.x === 10; })()"
+        assertion: "expect((() => { const obj = { x: 5 }; Object.preventExtensions(obj); obj.x = 10; return obj.x === 10; })()).toBe(true)"
       },
     ],
     hints: ['preventExtensions is the weakest of the three object locking methods'],
@@ -112,23 +112,23 @@ After calling \`Object.preventExtensions()\`, you can verify the result with \`O
     tests: [
       {
         description: 'Existing string property can be updated',
-        assertion: "(() => { const obj = { name: 'Alice' }; Object.preventExtensions(obj); obj.name = 'Bob'; return obj.name === 'Bob'; })()"
+        assertion: "expect((() => { const obj = { name: 'Alice' }; Object.preventExtensions(obj); obj.name = 'Bob'; return obj.name === 'Bob'; })()).toBe(true)"
       },
       {
         description: 'Existing number property can be updated',
-        assertion: "(() => { const obj = { count: 0 }; Object.preventExtensions(obj); obj.count++; return obj.count === 1; })()"
+        assertion: "expect((() => { const obj = { count: 0 }; Object.preventExtensions(obj); obj.count++; return obj.count === 1; })()).toBe(true)"
       },
       {
         description: 'Existing property can be deleted',
-        assertion: "(() => { const obj = { a: 1 }; Object.preventExtensions(obj); delete obj.a; return !('a' in obj); })()"
+        assertion: "expect((() => { const obj = { a: 1 }; Object.preventExtensions(obj); delete obj.a; return !('a' in obj); })()).toBe(true)"
       },
       {
         description: 'New property cannot be added',
-        assertion: "(() => { const obj = { a: 1 }; Object.preventExtensions(obj); obj.newProp = 'x'; return !('newProp' in obj); })()"
+        assertion: "expect((() => { const obj = { a: 1 }; Object.preventExtensions(obj); obj.newProp = 'x'; return !('newProp' in obj); })()).toBe(true)"
       },
       {
         description: 'preventExtensions returns same object reference',
-        assertion: "(() => { const obj = {}; return Object.preventExtensions(obj) === obj; })()"
+        assertion: "expect((() => { const obj = {}; return Object.preventExtensions(obj) === obj; })()).toBe(true)"
       },
     ],
     hints: ['Use isExtensible to confirm the object is non-extensible'],
@@ -161,23 +161,23 @@ After calling \`Object.preventExtensions()\`, you can verify the result with \`O
     tests: [
       {
         description: 'preventExtensions only affects the object itself',
-        assertion: "(() => { const proto = {}; const obj = Object.create(proto); Object.preventExtensions(obj); proto.x = 42; return obj.x === 42; })()"
+        assertion: "expect((() => { const proto = {}; const obj = Object.create(proto); Object.preventExtensions(obj); proto.x = 42; return obj.x === 42; })()).toBe(true)"
       },
       {
         description: 'Object itself cannot have new own properties',
-        assertion: "(() => { const obj = {}; Object.preventExtensions(obj); obj.own = 1; return !('own' in Object.getOwnPropertyDescriptors(obj)); })()"
+        assertion: "expect((() => { const obj = {}; Object.preventExtensions(obj); obj.own = 1; return !('own' in Object.getOwnPropertyDescriptors(obj)); })()).toBe(true)"
       },
       {
         description: 'Prototype remains extensible',
-        assertion: "(() => { const obj = Object.create({}); Object.preventExtensions(obj); return Object.isExtensible(Object.getPrototypeOf(obj)); })()"
+        assertion: "expect((() => { const obj = Object.create({}); Object.preventExtensions(obj); return Object.isExtensible(Object.getPrototypeOf(obj)); })()).toBe(true)"
       },
       {
         description: 'Object is non-extensible',
-        assertion: "(() => { const obj = {}; Object.preventExtensions(obj); return !Object.isExtensible(obj); })()"
+        assertion: "expect((() => { const obj = {}; Object.preventExtensions(obj); return !Object.isExtensible(obj); })()).toBe(true)"
       },
       {
         description: 'preventExtensions is one-way — cannot be undone',
-        assertion: "(() => { const obj = {}; Object.preventExtensions(obj); return !Object.isExtensible(obj); })()"
+        assertion: "expect((() => { const obj = {}; Object.preventExtensions(obj); return !Object.isExtensible(obj); })()).toBe(true)"
       },
     ],
     hints: ['preventExtensions is applied only to the direct object, not its prototype chain'],
@@ -207,23 +207,23 @@ In strict mode, attempting to add a property to a non-extensible object throws a
     tests: [
       {
         description: 'Property not added in sloppy mode after preventExtensions',
-        assertion: "(() => { const obj = {}; Object.preventExtensions(obj); obj.x = 1; return !('x' in obj); })()"
+        assertion: "expect((() => { const obj = {}; Object.preventExtensions(obj); obj.x = 1; return !('x' in obj); })()).toBe(true)"
       },
       {
         description: 'Adding to extensible object works',
-        assertion: "(() => { const obj = {}; obj.x = 1; return obj.x === 1; })()"
+        assertion: "expect((() => { const obj = {}; obj.x = 1; return obj.x === 1; })()).toBe(true)"
       },
       {
         description: 'Strict mode throws TypeError for new property',
-        assertion: "(() => { try { 'use strict'; const obj = {}; Object.preventExtensions(obj); obj.x = 1; return false; } catch(e) { return e instanceof TypeError; } })()"
+        assertion: "expect((() => { try { 'use strict'; const obj = {}; Object.preventExtensions(obj); obj.x = 1; return false; } catch(e) { return e instanceof TypeError; } })()).toBe(true)"
       },
       {
         description: 'isExtensible is false',
-        assertion: "(() => { const obj = { a: 1 }; Object.preventExtensions(obj); return !Object.isExtensible(obj); })()"
+        assertion: "expect((() => { const obj = { a: 1 }; Object.preventExtensions(obj); return !Object.isExtensible(obj); })()).toBe(true)"
       },
       {
         description: 'Existing prop survives in sloppy mode',
-        assertion: "(() => { const obj = { a: 1 }; Object.preventExtensions(obj); obj.b = 2; return obj.a === 1 && obj.b === undefined; })()"
+        assertion: "expect((() => { const obj = { a: 1 }; Object.preventExtensions(obj); obj.b = 2; return obj.a === 1 && obj.b === undefined; })()).toBe(true)"
       },
     ],
     hints: ['Use try/catch to test strict mode behavior'],

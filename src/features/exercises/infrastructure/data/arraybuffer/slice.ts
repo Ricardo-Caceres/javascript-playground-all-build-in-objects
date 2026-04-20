@@ -11,11 +11,11 @@ export const arrayBufferSliceExercises: Exercise[] = [
     initialCode: 'const buf = new ArrayBuffer(8);',
     solution: 'const buf = new ArrayBuffer(8);',
     tests: [
-      { description: 'slice(0,4) has byteLength 4', assertion: 'new ArrayBuffer(8).slice(0, 4).byteLength === 4' },
-      { description: 'slice(4) has byteLength 4', assertion: 'new ArrayBuffer(8).slice(4).byteLength === 4' },
-      { description: 'slice(0,8) is ArrayBuffer', assertion: 'new ArrayBuffer(8).slice(0, 8) instanceof ArrayBuffer' },
-      { description: 'slice(2,6) has byteLength 4', assertion: 'new ArrayBuffer(8).slice(2, 6).byteLength === 4' },
-      { description: 'typeof slice is function', assertion: "typeof ArrayBuffer.prototype.slice === 'function'" }
+      { description: 'slice(0,4) has byteLength 4', assertion: 'expect(new ArrayBuffer(8).slice(0, 4).byteLength).toBe(4)' },
+      { description: 'slice(4) has byteLength 4', assertion: 'expect(new ArrayBuffer(8).slice(4).byteLength).toBe(4)' },
+      { description: 'slice(0,8) is ArrayBuffer', assertion: 'expect(new ArrayBuffer(8).slice(0, 8) instanceof ArrayBuffer).toBe(true)' },
+      { description: 'slice(2,6) has byteLength 4', assertion: 'expect(new ArrayBuffer(8).slice(2, 6).byteLength).toBe(4)' },
+      { description: 'typeof slice is function', assertion: "expect(typeof ArrayBuffer.prototype.slice).toBe('function')" }
     ],
     tags: []
   }

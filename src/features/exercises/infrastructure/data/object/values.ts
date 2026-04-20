@@ -77,7 +77,7 @@ export const objectValuesExercises: Exercise[] = [
       },
       {
         description: 'Values include nested objects',
-        assertion: "(() => { const obj = { inner: { a: 1 } }; return Object.values(obj)[0] === obj.inner; })()"
+        assertion: "expect((() => { const obj = { inner: { a: 1 } }; return Object.values(obj)[0] === obj.inner; })()).toBe(true)"
       },
       {
         description: 'Array values are returned as-is',
@@ -108,15 +108,15 @@ Like \`Object.keys()\`, \`Object.values()\` only returns values for own **enumer
     tests: [
       {
         description: 'Non-enumerable property value excluded',
-        assertion: "(() => { const obj = { a: 1 }; Object.defineProperty(obj, 'b', { value: 2, enumerable: false }); return !Object.values(obj).includes(2); })()"
+        assertion: "expect((() => { const obj = { a: 1 }; Object.defineProperty(obj, 'b', { value: 2, enumerable: false }); return !Object.values(obj).includes(2); })()).toBe(true)"
       },
       {
         description: 'Enumerable property value included',
-        assertion: "(() => { const obj = {}; Object.defineProperty(obj, 'a', { value: 1, enumerable: true }); return Object.values(obj).includes(1); })()"
+        assertion: "expect((() => { const obj = {}; Object.defineProperty(obj, 'a', { value: 1, enumerable: true }); return Object.values(obj).includes(1); })()).toBe(true)"
       },
       {
         description: 'Count of values matches enumerable keys',
-        assertion: "(() => { const obj = { a: 1 }; Object.defineProperty(obj, 'b', { value: 2, enumerable: false }); return Object.values(obj).length === 1; })()"
+        assertion: "expect((() => { const obj = { a: 1 }; Object.defineProperty(obj, 'b', { value: 2, enumerable: false }); return Object.values(obj).length === 1; })()).toBe(true)"
       },
       {
         description: 'Standard properties are enumerable by default',
@@ -124,7 +124,7 @@ Like \`Object.keys()\`, \`Object.values()\` only returns values for own **enumer
       },
       {
         description: 'Object.keys and Object.values have same length',
-        assertion: "(() => { const obj = { a: 1, b: 2, c: 3 }; return Object.keys(obj).length === Object.values(obj).length; })()"
+        assertion: "expect((() => { const obj = { a: 1, b: 2, c: 3 }; return Object.keys(obj).length === Object.values(obj).length; })()).toBe(true)"
       },
     ],
     hints: ['Non-enumerable properties are invisible to Object.values'],
@@ -151,23 +151,23 @@ Like \`Object.keys()\`, \`Object.values()\` only returns values for own **enumer
     tests: [
       {
         description: 'Inherited values are not included',
-        assertion: "(() => { const proto = { inherited: 99 }; const obj = Object.create(proto); obj.own = 1; return !Object.values(obj).includes(99); })()"
+        assertion: "expect((() => { const proto = { inherited: 99 }; const obj = Object.create(proto); obj.own = 1; return !Object.values(obj).includes(99); })()).toBe(true)"
       },
       {
         description: 'Own value is included',
-        assertion: "(() => { const proto = { inherited: 99 }; const obj = Object.create(proto); obj.own = 1; return Object.values(obj).includes(1); })()"
+        assertion: "expect((() => { const proto = { inherited: 99 }; const obj = Object.create(proto); obj.own = 1; return Object.values(obj).includes(1); })()).toBe(true)"
       },
       {
         description: 'Object with only inherited props has empty values array',
-        assertion: "(() => { const obj = Object.create({ a: 1 }); return Object.values(obj).length === 0; })()"
+        assertion: "expect((() => { const obj = Object.create({ a: 1 }); return Object.values(obj).length === 0; })()).toBe(true)"
       },
       {
         description: 'Works with class instances',
-        assertion: "(() => { class Point { constructor(x, y) { this.x = x; this.y = y; } } const p = new Point(3, 4); return Object.values(p).length === 2; })()"
+        assertion: "expect((() => { class Point { constructor(x, y) { this.x = x; this.y = y; } } const p = new Point(3, 4); return Object.values(p).length === 2; })()).toBe(true)"
       },
       {
         description: 'Class methods not in values (non-enumerable)',
-        assertion: "(() => { class C { constructor() { this.n = 1; } method() {} } const c = new C(); return Object.values(c).length === 1; })()"
+        assertion: "expect((() => { class C { constructor() { this.n = 1; } method() {} } const c = new C(); return Object.values(c).length === 1; })()).toBe(true)"
       },
     ],
     hints: ['Own properties only — prototype chain is ignored'],

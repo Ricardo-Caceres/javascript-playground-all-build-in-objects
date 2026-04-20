@@ -30,15 +30,15 @@ export const hasOwnPropertyExercises: Exercise[] = [
       },
       {
         description: 'Returns false for inherited property',
-        assertion: "(() => { const proto = { inherited: 1 }; const obj = Object.create(proto); return obj.hasOwnProperty('inherited') === false; })()"
+        assertion: "expect((() => { const proto = { inherited: 1 }; const obj = Object.create(proto); return obj.hasOwnProperty('inherited') === false; })()).toBe(true)"
       },
       {
         description: 'Returns true for own property even when shadowing inherited',
-        assertion: "(() => { const proto = { x: 1 }; const obj = Object.create(proto); obj.x = 99; return obj.hasOwnProperty('x'); })()"
+        assertion: "expect((() => { const proto = { x: 1 }; const obj = Object.create(proto); obj.x = 99; return obj.hasOwnProperty('x'); })()).toBe(true)"
       },
       {
         description: 'Returns false after delete',
-        assertion: "(() => { const obj = { a: 1 }; delete obj.a; return obj.hasOwnProperty('a') === false; })()"
+        assertion: "expect((() => { const obj = { a: 1 }; delete obj.a; return obj.hasOwnProperty('a') === false; })()).toBe(true)"
       },
     ],
     hints: ['hasOwnProperty does not traverse the prototype chain'],
@@ -73,15 +73,15 @@ The key difference between \`hasOwnProperty()\` and the \`in\` operator is that 
       },
       {
         description: 'Own property returns true for both',
-        assertion: "(() => { const obj = { a: 1 }; return obj.hasOwnProperty('a') && ('a' in obj); })()"
+        assertion: "expect((() => { const obj = { a: 1 }; return obj.hasOwnProperty('a') && ('a' in obj); })()).toBe(true)"
       },
       {
         description: 'Inherited property: in=true, hasOwnProperty=false',
-        assertion: "(() => { const proto = { x: 1 }; const obj = Object.create(proto); return ('x' in obj) && !obj.hasOwnProperty('x'); })()"
+        assertion: "expect((() => { const proto = { x: 1 }; const obj = Object.create(proto); return ('x' in obj) && !obj.hasOwnProperty('x'); })()).toBe(true)"
       },
       {
         description: 'Missing property: both false',
-        assertion: "(() => { const obj = { a: 1 }; return !('z' in obj) && !obj.hasOwnProperty('z'); })()"
+        assertion: "expect((() => { const obj = { a: 1 }; return !('z' in obj) && !obj.hasOwnProperty('z'); })()).toBe(true)"
       },
     ],
     hints: ['hasOwnProperty checks only own props; in checks the full prototype chain'],
@@ -120,7 +120,7 @@ Standard methods like \`toString\`, \`valueOf\`, and \`hasOwnProperty\` itself c
       },
       {
         description: 'Custom added method is own',
-        assertion: "(() => { const obj = { fn() {} }; return obj.hasOwnProperty('fn'); })()"
+        assertion: "expect((() => { const obj = { fn() {} }; return obj.hasOwnProperty('fn'); })()).toBe(true)"
       },
       {
         description: 'Object.prototype.hasOwnProperty.call is safer',
@@ -152,7 +152,7 @@ Once a property is deleted with the \`delete\` operator, \`hasOwnProperty()\` re
     tests: [
       {
         description: 'hasOwnProperty is false after delete',
-        assertion: "(() => { const obj = { a: 1 }; delete obj.a; return obj.hasOwnProperty('a') === false; })()"
+        assertion: "expect((() => { const obj = { a: 1 }; delete obj.a; return obj.hasOwnProperty('a') === false; })()).toBe(true)"
       },
       {
         description: 'hasOwnProperty is true before delete',
@@ -160,15 +160,15 @@ Once a property is deleted with the \`delete\` operator, \`hasOwnProperty()\` re
       },
       {
         description: 'Deleting inherited does not affect own',
-        assertion: "(() => { const proto = { b: 2 }; const obj = Object.create(proto); obj.a = 1; delete proto.b; return obj.hasOwnProperty('a'); })()"
+        assertion: "expect((() => { const proto = { b: 2 }; const obj = Object.create(proto); obj.a = 1; delete proto.b; return obj.hasOwnProperty('a'); })()).toBe(true)"
       },
       {
         description: 'After delete, value is undefined',
-        assertion: "(() => { const obj = { a: 1 }; delete obj.a; return obj.a === undefined; })()"
+        assertion: "expect((() => { const obj = { a: 1 }; delete obj.a; return obj.a === undefined; })()).toBe(true)"
       },
       {
         description: 'Can re-add property after delete',
-        assertion: "(() => { const obj = { a: 1 }; delete obj.a; obj.a = 99; return obj.hasOwnProperty('a') && obj.a === 99; })()"
+        assertion: "expect((() => { const obj = { a: 1 }; delete obj.a; obj.a = 99; return obj.hasOwnProperty('a') && obj.a === 99; })()).toBe(true)"
       },
     ],
     hints: ['delete removes the property from the object entirely'],
@@ -199,11 +199,11 @@ Objects with a \`null\` prototype (e.g., from \`Object.create(null)\`) don't hav
       },
       {
         description: 'Safe call works on null-prototype object',
-        assertion: "(() => { const obj = Object.create(null); obj.a = 1; return Object.prototype.hasOwnProperty.call(obj, 'a'); })()"
+        assertion: "expect((() => { const obj = Object.create(null); obj.a = 1; return Object.prototype.hasOwnProperty.call(obj, 'a'); })()).toBe(true)"
       },
       {
         description: 'Null-prototype objects lack hasOwnProperty method',
-        assertion: "(() => { const obj = Object.create(null); return typeof obj.hasOwnProperty === 'undefined'; })()"
+        assertion: "expect((() => { const obj = Object.create(null); return typeof obj.hasOwnProperty === 'undefined'; })()).toBe(true)"
       },
       {
         description: 'Object.hasOwn is the modern alternative',
@@ -211,7 +211,7 @@ Objects with a \`null\` prototype (e.g., from \`Object.create(null)\`) don't hav
       },
       {
         description: 'Safe call returns false for inherited',
-        assertion: "(() => { const proto = { x: 1 }; const obj = Object.create(proto); return Object.prototype.hasOwnProperty.call(obj, 'x') === false; })()"
+        assertion: "expect((() => { const proto = { x: 1 }; const obj = Object.create(proto); return Object.prototype.hasOwnProperty.call(obj, 'x') === false; })()).toBe(true)"
       },
     ],
     hints: ['Use Object.hasOwn() (ES2022+) or Object.prototype.hasOwnProperty.call() for safety'],

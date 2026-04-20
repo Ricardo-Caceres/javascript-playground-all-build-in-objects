@@ -12,11 +12,11 @@ export const iteratorDestructuringExercises: Exercise[] = [
     initialCode: `const [a, b] = [1, 2];\nconst sum = a + b;`,
     solution: `const [a, b] = [1, 2];\nconst sum = a + b;`,
     tests: [
-      { description: 'a + b is 3', assertion: 'a + b === 3' },
-      { description: 'a is 1', assertion: 'a === 1' },
-      { description: 'b is 2', assertion: 'b === 2' },
-      { description: 'typeof a is number', assertion: 'typeof a === "number"' },
-      { description: 'typeof b is number', assertion: 'typeof b === "number"' }
+      { description: 'a + b is 3', assertion: 'expect(a + b).toBe(3)' },
+      { description: 'a is 1', assertion: 'expect(a).toBe(1)' },
+      { description: 'b is 2', assertion: 'expect(b).toBe(2)' },
+      { description: 'typeof a is number', assertion: 'expect(typeof a).toBe("number")' },
+      { description: 'typeof b is number', assertion: 'expect(typeof b).toBe("number")' }
     ],
     tags: [],
   },
@@ -31,11 +31,11 @@ export const iteratorDestructuringExercises: Exercise[] = [
     initialCode: `const [first, ...rest] = [1,2,3];`,
     solution: `const [first, ...rest] = [1,2,3];`,
     tests: [
-      { description: 'rest is [2,3]', assertion: 'JSON.stringify(rest) === JSON.stringify([2,3])' },
-      { description: 'first is 1', assertion: 'first === 1' },
-      { description: 'rest length is 2', assertion: 'rest.length === 2' },
-      { description: 'typeof rest is object', assertion: 'typeof rest === "object"' },
-      { description: 'typeof first is number', assertion: 'typeof first === "number"' }
+      { description: 'rest is [2,3]', assertion: 'expect(rest).toEqual([2,3])' },
+      { description: 'first is 1', assertion: 'expect(first).toBe(1)' },
+      { description: 'rest length is 2', assertion: 'expect(rest).toHaveLength(2)' },
+      { description: 'typeof rest is object', assertion: 'expect(typeof rest).toBe("object")' },
+      { description: 'typeof first is number', assertion: 'expect(typeof first).toBe("number")' }
     ],
     tags: [],
   },
@@ -50,11 +50,11 @@ export const iteratorDestructuringExercises: Exercise[] = [
     initialCode: `const [x, , z] = [1, 2, 3];`,
     solution: `const [x, , z] = [1, 2, 3];`,
     tests: [
-      { description: 'z is 3', assertion: 'z === 3' },
-      { description: 'x is 1', assertion: 'x === 1' },
-      { description: 'typeof z is number', assertion: 'typeof z === "number"' },
-      { description: 'typeof x is number', assertion: 'typeof x === "number"' },
-      { description: 'typeof [x, , z] is object', assertion: 'typeof [x, , z] === "object"' }
+      { description: 'z is 3', assertion: 'expect(z).toBe(3)' },
+      { description: 'x is 1', assertion: 'expect(x).toBe(1)' },
+      { description: 'typeof z is number', assertion: 'expect(typeof z).toBe("number")' },
+      { description: 'typeof x is number', assertion: 'expect(typeof x).toBe("number")' },
+      { description: 'typeof [x, , z] is object', assertion: 'expect(typeof [x,,z]).toBe("object")' }
     ],
     tags: [],
   },
@@ -69,11 +69,11 @@ export const iteratorDestructuringExercises: Exercise[] = [
     initialCode: `function* gen() { yield 'a'; yield 'b'; }\nconst [p, q] = gen();`,
     solution: `function* gen() { yield 'a'; yield 'b'; }\nconst [p, q] = gen();`,
     tests: [
-      { description: 'p is "a"', assertion: 'p === "a"' },
-      { description: 'q is "b"', assertion: 'q === "b"' },
-      { description: 'typeof p is string', assertion: 'typeof p === "string"' },
-      { description: 'typeof q is string', assertion: 'typeof q === "string"' },
-      { description: 'typeof [p, q] is object', assertion: 'typeof [p, q] === "object"' }
+      { description: 'p is "a"', assertion: 'expect(p).toBe("a")' },
+      { description: 'q is "b"', assertion: 'expect(q).toBe("b")' },
+      { description: 'typeof p is string', assertion: 'expect(typeof p).toBe("string")' },
+      { description: 'typeof q is string', assertion: 'expect(typeof q).toBe("string")' },
+      { description: 'typeof [p, q] is object', assertion: 'expect(typeof [p,q]).toBe("object")' }
     ],
     tags: [],
   },
@@ -88,11 +88,11 @@ export const iteratorDestructuringExercises: Exercise[] = [
     initialCode: `const [h, ...t] = 'hello';`,
     solution: `const [h, ...t] = 'hello';`,
     tests: [
-      { description: 'h is "h"', assertion: 'h === "h"' },
-      { description: 't is ["e","l","l","o"]', assertion: 'JSON.stringify(t) === JSON.stringify(["e","l","l","o"])' },
-      { description: 'typeof h is string', assertion: 'typeof h === "string"' },
-      { description: 'typeof t is object', assertion: 'typeof t === "object"' },
-      { description: 't length is 4', assertion: 't.length === 4' }
+      { description: 'h is "h"', assertion: 'expect(h).toBe("h")' },
+      { description: 't is ["e","l","l","o"]', assertion: 'expect(t).toEqual(["e","l","l","o"])' },
+      { description: 'typeof h is string', assertion: 'expect(typeof h).toBe("string")' },
+      { description: 'typeof t is object', assertion: 'expect(typeof t).toBe("object")' },
+      { description: 't length is 4', assertion: 'expect(t).toHaveLength(4)' }
     ],
     tags: [],
   }
