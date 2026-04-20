@@ -93,14 +93,14 @@ export default function ExerciseListView({ objectName }: Props) {
 
         {/* Filters */}
         <section className="space-y-2">
-          <div className="flex flex-wrap gap-2">
+          <div className="flex gap-2 overflow-x-auto pb-1">
             {(['all', 'beginner', 'intermediate', 'advanced'] as const).map((d) => (
               <button
                 key={d}
                 type="button"
                 onClick={() => setFilter('difficulty', d === 'all' ? null : d)}
                 aria-pressed={diffFilter === d}
-                className={`rounded-full px-3 py-1 text-xs font-medium transition-colors ${
+                className={`shrink-0 rounded-full px-3 py-1 text-xs font-medium transition-colors ${
                   diffFilter === d
                     ? 'bg-emerald-700 text-white'
                     : 'border border-zinc-700 text-zinc-400 hover:border-zinc-500 hover:text-zinc-200'
@@ -110,14 +110,14 @@ export default function ExerciseListView({ objectName }: Props) {
               </button>
             ))}
           </div>
-          <div className="flex flex-wrap gap-2">
+          <div className="flex gap-2 overflow-x-auto pb-1">
             {(['all', 'not-started', 'attempted', 'completed'] as const).map((s) => (
               <button
                 key={s}
                 type="button"
                 onClick={() => setFilter('status', s === 'all' ? null : s)}
                 aria-pressed={statusFilter === s}
-                className={`rounded-full px-3 py-1 text-xs font-medium transition-colors ${
+                className={`shrink-0 rounded-full px-3 py-1 text-xs font-medium transition-colors ${
                   statusFilter === s
                     ? 'bg-zinc-600 text-white'
                     : 'border border-zinc-700 text-zinc-400 hover:border-zinc-500 hover:text-zinc-200'

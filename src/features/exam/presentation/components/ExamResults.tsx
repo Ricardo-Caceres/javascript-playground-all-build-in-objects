@@ -68,20 +68,20 @@ export function ExamResults() {
         {/* Summary cards */}
         <div className="grid grid-cols-3 gap-4">
           <div className="rounded-xl border border-zinc-800 bg-zinc-900 p-4 text-center">
-            <p className="text-3xl font-bold text-emerald-400">
+            <p className="text-2xl sm:text-3xl font-bold text-emerald-400">
               {passedExercises.length}/{exercises.length}
             </p>
             <p className="mt-1 text-xs text-zinc-500">{t('score')}</p>
           </div>
           <div className="rounded-xl border border-zinc-800 bg-zinc-900 p-4 text-center">
-            <p className="text-3xl font-bold text-yellow-400">+{totalXp}</p>
+            <p className="text-2xl sm:text-3xl font-bold text-yellow-400">+{totalXp}</p>
             <p className="mt-1 text-xs text-zinc-500">{t('xpEarned')}</p>
             {bonusXp > 0 && (
               <p className="mt-0.5 text-[10px] text-zinc-600">{t('bonusXp')}</p>
             )}
           </div>
           <div className="rounded-xl border border-zinc-800 bg-zinc-900 p-4 text-center">
-            <p className="text-3xl font-mono font-bold text-zinc-300">
+            <p className="text-2xl sm:text-3xl font-mono font-bold text-zinc-300">
               {formatDuration(startTime, endTime)}
             </p>
             <p className="mt-1 text-xs text-zinc-500">{t('time')}</p>
@@ -117,12 +117,12 @@ export function ExamResults() {
         </div>
 
         {/* Actions */}
-        <div className="flex gap-3">
+        <div className="flex flex-col gap-3 sm:flex-row">
           {missedExercises.length > 0 && (
             <button
               type="button"
               onClick={handleRetryMissed}
-              className="rounded-lg border border-yellow-600 px-4 py-2 text-sm font-medium text-yellow-400 transition-colors hover:border-yellow-500 hover:text-yellow-300"
+              className="w-full rounded-lg border border-yellow-600 px-4 py-2 text-sm font-medium text-yellow-400 transition-colors hover:border-yellow-500 hover:text-yellow-300 sm:w-auto"
             >
               {t('reviewMissed')} ({missedExercises.length})
             </button>
@@ -130,7 +130,7 @@ export function ExamResults() {
           <button
             type="button"
             onClick={handleNewExam}
-            className="rounded-lg bg-emerald-600 px-4 py-2 text-sm font-bold text-white transition-colors hover:bg-emerald-500"
+            className="w-full rounded-lg bg-emerald-600 px-4 py-2 text-sm font-bold text-white transition-colors hover:bg-emerald-500 sm:w-auto"
           >
             {t('newExam')}
           </button>
