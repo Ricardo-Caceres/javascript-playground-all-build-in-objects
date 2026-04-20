@@ -15,7 +15,10 @@
     "timedOn": "Timed ON",
     "timedOff": "Timed OFF",
     "enableTimed": "Enable timed mode (bonus XP)",
-    "disableTimed": "Disable timed mode"
+    "disableTimed": "Disable timed mode",
+    "tabDescription": "Description",
+    "tabCode": "Code",
+    "hints": "Hints"
   },
   "search": {
     "placeholder": "Search exercises...",

@@ -15,7 +15,10 @@
     "timedOn": "Cronometrado ON",
     "timedOff": "Cronometrado OFF",
     "enableTimed": "Activar modo cronometrado (XP extra)",
-    "disableTimed": "Desactivar modo cronometrado"
+    "disableTimed": "Desactivar modo cronometrado",
+    "tabDescription": "Descripción",
+    "tabCode": "Código",
+    "hints": "Pistas"
   },
   "search": {
     "placeholder": "Buscar ejercicios...",
