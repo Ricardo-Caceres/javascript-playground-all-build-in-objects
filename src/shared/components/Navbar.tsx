@@ -19,6 +19,9 @@ export function Navbar() {
         e.preventDefault()
         setSearchOpen(true)
       }
+      if (e.key === 'Escape') {
+        setMenuOpen(false)
+      }
     }
     window.addEventListener('keydown', handleKeyDown)
     return () => window.removeEventListener('keydown', handleKeyDown)
@@ -90,13 +93,14 @@ export function Navbar() {
               onClick={() => setMenuOpen((o) => !o)}
               aria-label={menuOpen ? 'Close menu' : 'Open menu'}
               aria-expanded={menuOpen}
+              aria-controls="mobile-nav-menu"
               className="rounded border border-zinc-700 px-2 py-1 text-sm text-zinc-400 transition-colors hover:border-zinc-500 hover:text-zinc-200"
             >
               {menuOpen ? '✕' : '☰'}
             </button>
 
             {menuOpen && (
-              <div className="absolute right-0 top-9 z-50 w-48 rounded-lg border border-zinc-800 bg-zinc-900 py-2 shadow-lg">
+              <div id="mobile-nav-menu" className="absolute right-0 top-full z-50 w-48 rounded-lg border border-zinc-800 bg-zinc-900 py-2 shadow-lg">
                 <Link
                   href="/exam"
                   onClick={() => setMenuOpen(false)}
@@ -111,7 +115,7 @@ export function Navbar() {
                 >
                   {t('stats')}
                 </Link>
-                <div className="border-t border-zinc-800 px-4 py-2">
+                <div className="border-t border-zinc-800 px-4 py-2" onClick={() => setMenuOpen(false)}>
                   <LanguageSwitcher />
                 </div>
               </div>
