@@ -1,6 +1,6 @@
 'use client'
 
-import { useEffect, useState } from 'react'
+import { useEffect, useRef, useState } from 'react'
 import { useTranslations } from 'next-intl'
 import { Link } from '@/i18n/navigation'
 import { GamificationBar } from '@/features/gamification/presentation/components/GamificationBar'
@@ -10,6 +10,8 @@ import { LanguageSwitcher } from './LanguageSwitcher'
 export function Navbar() {
   const t = useTranslations('nav')
   const [searchOpen, setSearchOpen] = useState(false)
+  const [menuOpen, setMenuOpen] = useState(false)
+  const menuRef = useRef<HTMLDivElement>(null)
 
   useEffect(() => {
     function handleKeyDown(e: KeyboardEvent) {
@@ -22,21 +24,31 @@ export function Navbar() {
     return () => window.removeEventListener('keydown', handleKeyDown)
   }, [])
 
+  useEffect(() => {
+    function handleClickOutside(e: MouseEvent) {
+      if (menuRef.current && !menuRef.current.contains(e.target as Node)) {
+        setMenuOpen(false)
+      }
+    }
+    if (menuOpen) document.addEventListener('mousedown', handleClickOutside)
+    return () => document.removeEventListener('mousedown', handleClickOutside)
+  }, [menuOpen])
+
   return (
     <header className="sticky top-0 z-50 h-12 shrink-0 border-b border-zinc-800 bg-zinc-950/95 backdrop-blur">
       <div className="mx-auto flex h-full max-w-7xl items-center justify-between px-6">
         <Link
           href="/"
-          className="font-mono text-sm font-semibold text-emerald-400 hover:text-emerald-300 transition-colors"
+          className="font-mono text-sm font-semibold text-emerald-400 transition-colors hover:text-emerald-300"
         >
           {t('brand')}
         </Link>
+
         <nav aria-label="Site navigation">
-          <div className="flex items-center gap-4">
+          {/* Desktop — unchanged layout */}
+          <div className="hidden items-center gap-4 sm:flex">
             <LanguageSwitcher />
-            <div className="hidden sm:block">
-              <GamificationBar />
-            </div>
+            <GamificationBar />
             <button
               type="button"
               onClick={() => setSearchOpen(true)}
@@ -44,8 +56,8 @@ export function Navbar() {
               className="flex items-center gap-1.5 rounded border border-zinc-700 px-3 py-1 text-xs text-zinc-400 transition-colors hover:border-zinc-500 hover:text-zinc-200"
             >
               <span className="text-base leading-none">⌕</span>
-              <span className="hidden sm:inline">{t('search')}</span>
-              <kbd className="hidden sm:inline rounded border border-zinc-700 px-1 py-0.5 font-mono text-[10px] text-zinc-600">
+              <span>{t('search')}</span>
+              <kbd className="rounded border border-zinc-700 px-1 py-0.5 font-mono text-[10px] text-zinc-600">
                 ⌘K
               </kbd>
             </button>
@@ -62,8 +74,52 @@ export function Navbar() {
               {t('stats')}
             </Link>
           </div>
+
+          {/* Mobile — search icon + hamburger */}
+          <div ref={menuRef} className="relative flex items-center gap-2 sm:hidden">
+            <button
+              type="button"
+              onClick={() => setSearchOpen(true)}
+              aria-label="Search exercises"
+              className="flex items-center rounded border border-zinc-700 px-2 py-1 text-base text-zinc-400 transition-colors hover:border-zinc-500 hover:text-zinc-200"
+            >
+              ⌕
+            </button>
+            <button
+              type="button"
+              onClick={() => setMenuOpen((o) => !o)}
+              aria-label={menuOpen ? 'Close menu' : 'Open menu'}
+              aria-expanded={menuOpen}
+              className="rounded border border-zinc-700 px-2 py-1 text-sm text-zinc-400 transition-colors hover:border-zinc-500 hover:text-zinc-200"
+            >
+              {menuOpen ? '✕' : '☰'}
+            </button>
+
+            {menuOpen && (
+              <div className="absolute right-0 top-9 z-50 w-48 rounded-lg border border-zinc-800 bg-zinc-900 py-2 shadow-lg">
+                <Link
+                  href="/exam"
+                  onClick={() => setMenuOpen(false)}
+                  className="block px-4 py-2 text-sm text-zinc-400 transition-colors hover:bg-zinc-800 hover:text-zinc-200"
+                >
+                  {t('exam')}
+                </Link>
+                <Link
+                  href="/stats"
+                  onClick={() => setMenuOpen(false)}
+                  className="block px-4 py-2 text-sm text-zinc-400 transition-colors hover:bg-zinc-800 hover:text-zinc-200"
+                >
+                  {t('stats')}
+                </Link>
+                <div className="border-t border-zinc-800 px-4 py-2">
+                  <LanguageSwitcher />
+                </div>
+              </div>
+            )}
+          </div>
         </nav>
       </div>
+
       <SearchModal open={searchOpen} onClose={() => setSearchOpen(false)} />
     </header>
   )
