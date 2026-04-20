@@ -18,7 +18,8 @@
     "disableTimed": "Desactivar modo cronometrado",
     "tabDescription": "Descripción",
     "tabCode": "Código",
-    "hints": "Pistas"
+    "hints": "Pistas",
+    "tablistLabel": "Secciones del ejercicio"
   },
   "search": {
     "placeholder": "Buscar ejercicios...",

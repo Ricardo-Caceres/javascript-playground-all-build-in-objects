@@ -96,11 +96,22 @@ export function ExerciseDetailView({ exercise }: ExerciseDetailViewProps) {
               {currentIndex > 0 ? `${currentIndex} / ${total}` : null}
             </span>
           </div>
-          <div role="tablist" className="flex border-b border-zinc-800">
+          <div
+            role="tablist"
+            aria-label={t('tablistLabel')}
+            className="flex border-b border-zinc-800"
+            onKeyDown={(e) => {
+              if (e.key === 'ArrowRight') setActiveTab('code')
+              if (e.key === 'ArrowLeft') setActiveTab('description')
+            }}
+          >
             <button
               role="tab"
               type="button"
+              id="tab-description"
               aria-selected={activeTab === 'description'}
+              aria-controls="panel-description"
+              tabIndex={activeTab === 'description' ? 0 : -1}
               onClick={() => setActiveTab('description')}
               className={`flex-1 py-2 text-xs font-medium transition-colors ${
                 activeTab === 'description'
@@ -113,7 +124,10 @@ export function ExerciseDetailView({ exercise }: ExerciseDetailViewProps) {
             <button
               role="tab"
               type="button"
+              id="tab-code"
               aria-selected={activeTab === 'code'}
+              aria-controls="panel-code"
+              tabIndex={activeTab === 'code' ? 0 : -1}
               onClick={() => setActiveTab('code')}
               className={`flex-1 py-2 text-xs font-medium transition-colors ${
                 activeTab === 'code'
@@ -133,6 +147,10 @@ export function ExerciseDetailView({ exercise }: ExerciseDetailViewProps) {
               - Desktop: always visible, fixed width, right border
               - Mobile: visible only on description tab */}
           <div
+            role="tabpanel"
+            id="panel-description"
+            aria-labelledby="tab-description"
+            tabIndex={0}
             className={`overflow-y-auto p-4 md:block md:w-96 md:shrink-0 md:border-r md:border-zinc-700 md:p-6 ${
               activeTab === 'description' ? 'block w-full' : 'hidden'
             }`}
@@ -142,6 +160,10 @@ export function ExerciseDetailView({ exercise }: ExerciseDetailViewProps) {
 
           {/* Editor panel — rendered ONCE, shown based on tab on mobile, always on desktop */}
           <div
+            role="tabpanel"
+            id="panel-code"
+            aria-labelledby="tab-code"
+            tabIndex={0}
             className={`min-h-0 flex-col md:flex md:flex-1 ${
               activeTab === 'code' ? 'flex flex-1' : 'hidden'
             }`}

@@ -18,7 +18,8 @@
     "disableTimed": "Disable timed mode",
     "tabDescription": "Description",
     "tabCode": "Code",
-    "hints": "Hints"
+    "hints": "Hints",
+    "tablistLabel": "Exercise sections"
   },
   "search": {
     "placeholder": "Search exercises...",
