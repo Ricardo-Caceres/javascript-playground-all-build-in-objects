@@ -13,13 +13,15 @@ interface ExerciseDetailViewProps {
   exercise: Exercise
 }
 
-export function ExerciseDetailView({ exercise }: ExerciseDetailViewProps) {
-  const objectName = exercise.builtIn
-  const [activeTab, setActiveTab] = useState<'description' | 'code'>('description')
-  const { currentIndex, total } = useExerciseNavigation(objectName, exercise.slug)
-  const t = useTranslations('exercise')
-
-  const descriptionContent = (
+// Extracted as a named component to avoid JSX-variable anti-pattern
+function DescriptionPanel({
+  exercise,
+  hintsLabel,
+}: {
+  exercise: Exercise
+  hintsLabel: string
+}) {
+  return (
     <>
       <div className="mb-4 flex flex-wrap gap-2">
         <span className="rounded bg-zinc-800 px-2 py-1 text-xs font-medium text-emerald-400">
@@ -49,7 +51,7 @@ export function ExerciseDetailView({ exercise }: ExerciseDetailViewProps) {
       {exercise.hints && exercise.hints.length > 0 && (
         <details className="mt-6">
           <summary className="cursor-pointer text-sm font-semibold text-zinc-500 hover:text-zinc-300">
-            💡 {t('hints')} ({exercise.hints.length})
+            💡 {hintsLabel} ({exercise.hints.length})
           </summary>
           <ul className="mt-3 space-y-2">
             {exercise.hints.map((hint, i) => (
@@ -62,76 +64,93 @@ export function ExerciseDetailView({ exercise }: ExerciseDetailViewProps) {
       )}
     </>
   )
+}
+
+export function ExerciseDetailView({ exercise }: ExerciseDetailViewProps) {
+  const objectName = exercise.builtIn
+  const [activeTab, setActiveTab] = useState<'description' | 'code'>('description')
+  const { currentIndex, total } = useExerciseNavigation(objectName, exercise.slug)
+  const t = useTranslations('exercise')
 
   return (
-    <div className="flex h-[calc(100vh-3rem)] overflow-hidden bg-zinc-950 text-zinc-100">
+    <div className="flex h-[calc(100vh-3rem)] flex-col overflow-hidden bg-zinc-950 text-zinc-100 md:flex-row">
 
-      {/* ── DESKTOP (md+): unchanged 3-column layout ── */}
-      <div className="hidden md:flex w-full h-full">
+      {/* Sidebar: desktop only */}
+      <div className="hidden md:block">
         <ExerciseSidebar objectName={objectName} currentSlug={exercise.slug} />
-        <div className="flex min-w-0 flex-1">
-          <div className="w-96 shrink-0 overflow-y-auto border-r border-zinc-700 p-6">
-            {descriptionContent}
-          </div>
-          <div className="flex min-w-0 flex-1 flex-col">
-            <ExerciseRunner exercise={exercise} objectName={objectName} />
-          </div>
-        </div>
       </div>
 
-      {/* ── MOBILE (<md): tab layout ── */}
-      <div className="flex md:hidden w-full flex-col">
-        {/* Top bar */}
-        <div className="flex shrink-0 items-center justify-between border-b border-zinc-800 px-4 py-2">
-          <Link
-            href={`/exercises/${objectName.toLowerCase()}`}
-            className="font-mono text-sm text-emerald-400 hover:text-emerald-300 transition-colors"
-          >
-            ← {objectName}
-          </Link>
-          <span className="font-mono text-xs text-zinc-600">
-            {currentIndex} / {total}
-          </span>
-        </div>
+      {/* Main content area */}
+      <div className="flex min-h-0 flex-1 flex-col overflow-hidden">
 
-        {/* Tabs */}
-        <div className="flex shrink-0 border-b border-zinc-800">
-          <button
-            type="button"
-            onClick={() => setActiveTab('description')}
-            className={`flex-1 py-2 text-xs font-medium transition-colors ${
-              activeTab === 'description'
-                ? 'border-b-2 border-emerald-500 text-emerald-400'
-                : 'text-zinc-500 hover:text-zinc-300'
-            }`}
-          >
-            📖 {t('tabDescription')}
-          </button>
-          <button
-            type="button"
-            onClick={() => setActiveTab('code')}
-            className={`flex-1 py-2 text-xs font-medium transition-colors ${
-              activeTab === 'code'
-                ? 'border-b-2 border-emerald-500 text-emerald-400'
-                : 'text-zinc-500 hover:text-zinc-300'
-            }`}
-          >
-            💻 {t('tabCode')}
-          </button>
-        </div>
-
-        {/* Tab content */}
-        {activeTab === 'description' ? (
-          <div className="flex-1 overflow-y-auto p-4">
-            {descriptionContent}
+        {/* Mobile top bar + tabs (hidden on desktop) */}
+        <div className="shrink-0 md:hidden">
+          <div className="flex items-center justify-between border-b border-zinc-800 px-4 py-2">
+            <Link
+              href={`/exercises/${objectName.toLowerCase()}`}
+              className="font-mono text-sm text-emerald-400 transition-colors hover:text-emerald-300"
+            >
+              ← {objectName}
+            </Link>
+            <span className="font-mono text-xs text-zinc-600">
+              {currentIndex > 0 ? `${currentIndex} / ${total}` : null}
+            </span>
           </div>
-        ) : (
-          <div className="flex min-h-0 flex-1 flex-col">
+          <div role="tablist" className="flex border-b border-zinc-800">
+            <button
+              role="tab"
+              type="button"
+              aria-selected={activeTab === 'description'}
+              onClick={() => setActiveTab('description')}
+              className={`flex-1 py-2 text-xs font-medium transition-colors ${
+                activeTab === 'description'
+                  ? 'border-b-2 border-emerald-500 text-emerald-400'
+                  : 'text-zinc-500 hover:text-zinc-300'
+              }`}
+            >
+              📖 {t('tabDescription')}
+            </button>
+            <button
+              role="tab"
+              type="button"
+              aria-selected={activeTab === 'code'}
+              onClick={() => setActiveTab('code')}
+              className={`flex-1 py-2 text-xs font-medium transition-colors ${
+                activeTab === 'code'
+                  ? 'border-b-2 border-emerald-500 text-emerald-400'
+                  : 'text-zinc-500 hover:text-zinc-300'
+              }`}
+            >
+              💻 {t('tabCode')}
+            </button>
+          </div>
+        </div>
+
+        {/* Content row: description + editor */}
+        <div className="flex min-h-0 flex-1 overflow-hidden">
+
+          {/* Description panel:
+              - Desktop: always visible, fixed width, right border
+              - Mobile: visible only on description tab */}
+          <div
+            className={`overflow-y-auto p-4 md:block md:w-96 md:shrink-0 md:border-r md:border-zinc-700 md:p-6 ${
+              activeTab === 'description' ? 'block w-full' : 'hidden'
+            }`}
+          >
+            <DescriptionPanel exercise={exercise} hintsLabel={t('hints')} />
+          </div>
+
+          {/* Editor panel — rendered ONCE, shown based on tab on mobile, always on desktop */}
+          <div
+            className={`min-h-0 flex-col md:flex md:flex-1 ${
+              activeTab === 'code' ? 'flex flex-1' : 'hidden'
+            }`}
+          >
             <ExerciseRunner exercise={exercise} objectName={objectName} />
           </div>
-        )}
-      </div>
 
+        </div>
+      </div>
     </div>
   )
 }
