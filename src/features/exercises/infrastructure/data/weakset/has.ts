@@ -15,7 +15,7 @@ export const weakSetHasExercises: Exercise[] = [
       { description: 'has true for added object', assertion: 'const ws1 = new WeakSet(); const o1={}; ws1.add(o1); expect(ws1.has(o1)).toBe(true)' },
       { description: 'result is truthy', assertion: 'const ws2 = new WeakSet(); const o2={}; ws2.add(o2); expect(ws2.has(o2)).toBeTruthy()' },
       { description: 'has true for function object', assertion: 'const ws3 = new WeakSet(); const fn = () => {}; ws3.add(fn); expect(ws3.has(fn)).toBe(true)' },
-      { description: 'has true for array object', assertion: 'const ws4 = new WeakSet(); const arr: object = []; ws4.add(arr); expect(ws4.has(arr)).toBe(true)' },
+      { description: 'has true for array object', assertion: 'const ws4 = new WeakSet(); const arr = []; ws4.add(arr); expect(ws4.has(arr)).toBe(true)' },
       { description: 'has is a boolean', assertion: 'const ws5 = new WeakSet(); const o5={}; ws5.add(o5); expect(typeof ws5.has(o5)).toBe("boolean")' },
     ],
     hints: ['has() returns a boolean indicating presence.'],

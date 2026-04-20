@@ -20,11 +20,11 @@ export const reflectHasExercises: Exercise[] = [
   return Reflect.has({ x: 1 }, 'x')
 }`,
     tests: [
-      { description: 'Reflect.has({x:1}, x) is true', assertion: "expect(Reflect.has({x: 1}, 'x')).toBe(true)" },
-      { description: 'result is boolean', assertion: "expect(typeof Reflect.has({x: 1}, 'x')).toBe('boolean')" },
-      { description: 'result is truthy', assertion: "expect(Reflect.has({x: 1}, 'x')).toBeTruthy()" },
-      { description: 'equals true', assertion: "expect(Reflect.has({x: 1}, 'x') === true).toBe(true)" },
-      { description: 'different key also true', assertion: "expect(Reflect.has({a: 1}, 'a')).toBe(true)" },
+      { description: 'Reflect.has({x:1}, x) is true', assertion:"expect(Reflect.has({x: 1}, 'x')).toBe(true)" },
+      { description: 'result is boolean', assertion:"expect(typeof Reflect.has({x: 1}, 'x')).toBe('boolean')" },
+      { description: 'result is truthy', assertion:"expect(Reflect.has({x: 1}, 'x')).toBeTruthy()" },
+      { description: 'equals true', assertion:"expect(Reflect.has({x: 1}, 'x') === true).toBe(true)" },
+      { description: 'different key also true', assertion:"expect(Reflect.has({a: 1}, 'a')).toBe(true)" },
     ],
     hints: [
       '`Reflect.has(target, key)` is equivalent to `key in target`.',
@@ -50,11 +50,11 @@ When the key does not exist in the object or its prototype chain, \`Reflect.has(
   return Reflect.has({}, 'missing')
 }`,
     tests: [
-      { description: 'missing key returns false', assertion: "expect(Reflect.has({}, 'missing')).toBe(false)" },
-      { description: 'result is boolean', assertion: "expect(typeof Reflect.has({}, 'missing')).toBe('boolean')" },
-      { description: 'result is falsy', assertion: "expect(Reflect.has({}, 'missing')).toBeFalsy()" },
-      { description: 'equals false', assertion: "expect(Reflect.has({}, 'missing') === false).toBe(true)" },
-      { description: 'not true', assertion: "expect(Reflect.has({}, 'missing')).not.toBe(true)" },
+      { description: 'missing key returns false', assertion:"expect(Reflect.has({}, 'missing')).toBe(false)" },
+      { description: 'result is boolean', assertion:"expect(typeof Reflect.has({}, 'missing')).toBe('boolean')" },
+      { description: 'result is falsy', assertion:"expect(Reflect.has({}, 'missing')).toBeFalsy()" },
+      { description: 'equals false', assertion:"expect(Reflect.has({}, 'missing') === false).toBe(true)" },
+      { description: 'not true', assertion:"expect(Reflect.has({}, 'missing') !== true).toBe(true)" },
     ],
     hints: [
       '`Reflect.has` returns `false` for keys that do not exist on the target or its prototype chain.',
@@ -80,11 +80,11 @@ Array indices are property keys. \`Reflect.has([1,2,3], 0)\` checks if index \`0
   return Reflect.has([1, 2, 3], 0)
 }`,
     tests: [
-      { description: 'index 0 exists', assertion: 'expect(Reflect.has([1,2,3], 0)).toBe(true)' },
-      { description: 'result is boolean', assertion: "expect(typeof Reflect.has([1,2,3], 0)).toBe('boolean')" },
-      { description: 'result is truthy', assertion: 'expect(Reflect.has([1,2,3], 0)).toBeTruthy()' },
-      { description: 'out-of-bounds index is false', assertion: 'expect(Reflect.has([1,2,3], 10)).toBe(false)' },
-      { description: 'length key exists', assertion: "expect(Reflect.has([1,2,3], 'length')).toBe(true)" },
+      { description: 'index 0 exists', assertion:'expect(Reflect.has([1,2,3], 0)).toBe(true)' },
+      { description: 'result is boolean', assertion:"expect(typeof Reflect.has([1,2,3], 0)).toBe('boolean')" },
+      { description: 'result is truthy', assertion:'expect(Reflect.has([1,2,3], 0)).toBeTruthy()' },
+      { description: 'out-of-bounds index is false', assertion:'expect(Reflect.has([1,2,3], 10)).toBe(false)' },
+      { description: 'length key exists', assertion:"expect(Reflect.has([1,2,3], 'length')).toBe(true)" },
     ],
     hints: [
       'Array indices are numeric string keys on the array object.',
@@ -110,11 +110,11 @@ Array indices are property keys. \`Reflect.has([1,2,3], 0)\` checks if index \`0
   return typeof Reflect.has
 }`,
     tests: [
-      { description: 'typeof Reflect.has is function', assertion: "expect(typeof Reflect.has).toBe('function')" },
-      { description: 'Reflect.has is truthy', assertion: 'expect(Reflect.has).toBeTruthy()' },
-      { description: 'Reflect.has not null', assertion: 'expect(Reflect.has).not.toBeNull()' },
-      { description: 'Reflect.has not undefined', assertion: 'expect(Reflect.has).not.toBeUndefined()' },
-      { description: 'equals function string', assertion: "expect(typeof Reflect.has === 'function').toBe(true)" },
+      { description: 'typeof Reflect.has is function', assertion:"expect(typeof Reflect.has).toBe('function')" },
+      { description: 'Reflect.has is truthy', assertion:'expect(Reflect.has).toBeTruthy()' },
+      { description: 'Reflect.has not null', assertion:'expect(Reflect.has !== null).toBe(true)' },
+      { description: 'Reflect.has not undefined', assertion:'expect(Reflect.has !== undefined).toBe(true)' },
+      { description: 'equals function string', assertion:"expect(typeof Reflect.has === 'function').toBe(true)" },
     ],
     hints: [
       'All `Reflect` methods are functions.',
@@ -140,11 +140,11 @@ Array indices are property keys. \`Reflect.has([1,2,3], 0)\` checks if index \`0
   return Reflect.has({ a: 1, b: 2 }, 'b')
 }`,
     tests: [
-      { description: 'b exists', assertion: "expect(Reflect.has({a:1, b:2}, 'b')).toBe(true)" },
-      { description: 'result is boolean', assertion: "expect(typeof Reflect.has({a:1, b:2}, 'b')).toBe('boolean')" },
-      { description: 'result is truthy', assertion: "expect(Reflect.has({a:1, b:2}, 'b')).toBeTruthy()" },
-      { description: 'a also exists', assertion: "expect(Reflect.has({a:1, b:2}, 'a')).toBe(true)" },
-      { description: 'c does not exist', assertion: "expect(Reflect.has({a:1, b:2}, 'c')).toBe(false)" },
+      { description: 'b exists', assertion:"expect(Reflect.has({a:1, b:2}, 'b')).toBe(true)" },
+      { description: 'result is boolean', assertion:"expect(typeof Reflect.has({a:1, b:2}, 'b')).toBe('boolean')" },
+      { description: 'result is truthy', assertion:"expect(Reflect.has({a:1, b:2}, 'b')).toBeTruthy()" },
+      { description: 'a also exists', assertion:"expect(Reflect.has({a:1, b:2}, 'a')).toBe(true)" },
+      { description: 'c does not exist', assertion:"expect(Reflect.has({a:1, b:2}, 'c')).toBe(false)" },
     ],
     hints: [
       '`Reflect.has` checks the full prototype chain just like the `in` operator.',

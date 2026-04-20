@@ -25,11 +25,11 @@ getLength([])        // → 0
   return arr.length
 }`,
     tests: [
-      { description: 'returns 3 for a 3-element array', assertion: 'expect(getLength([1, 2, 3])).toBe(3)' },
-      { description: 'returns 0 for empty array', assertion: 'expect(getLength([])).toBe(0)' },
-      { description: 'returns 1 for single element', assertion: 'expect(getLength([42])).toBe(1)' },
-      { description: 'works with mixed types', assertion: "expect(getLength([1, 'two', true])).toBe(3)" },
-      { description: 'returns a number', assertion: 'expect(typeof getLength([1, 2])).toBe(\'number\')' },
+      { description: 'returns 3 for a 3-element array', assertion:'expect(getLength([1, 2, 3])).toBe(3)' },
+      { description: 'returns 0 for empty array', assertion:'expect(getLength([])).toBe(0)' },
+      { description: 'returns 1 for single element', assertion:'expect(getLength([42])).toBe(1)' },
+      { description: 'works with mixed types', assertion:"expect(getLength([1, 'two', true])).toBe(3)" },
+      { description: 'returns a number', assertion:'expect(typeof getLength([1, 2])).toBe(\'number\')' },
     ],
     hints: [
       '`arr.length` is a property — no parentheses needed.',
@@ -60,11 +60,11 @@ emptyLength() // → 0
   return [].length
 }`,
     tests: [
-      { description: 'returns 0', assertion: 'expect(emptyLength()).toBe(0)' },
-      { description: 'returns a number', assertion: "expect(typeof emptyLength()).toBe('number')" },
-      { description: 'is falsy', assertion: 'expect(emptyLength()).toBeFalsy()' },
-      { description: 'equals 0 strictly', assertion: 'expect(emptyLength() === 0).toBe(true)' },
-      { description: 'is not -1', assertion: 'expect(emptyLength()).not.toBe(-1)' },
+      { description: 'returns 0', assertion:'expect(emptyLength()).toBe(0)' },
+      { description: 'returns a number', assertion:"expect(typeof emptyLength()).toBe('number')" },
+      { description: 'is falsy', assertion:'expect(emptyLength()).toBeFalsy()' },
+      { description: 'equals 0 strictly', assertion:'expect(emptyLength() === 0).toBe(true)' },
+      { description: 'is not -1', assertion:'expect(emptyLength() !== -1).toBe(true)' },
     ],
     hints: [
       '`[].length` evaluates to `0` — there are no elements.',
@@ -97,11 +97,11 @@ truncate([1, 2, 3], 0)       // → []
   return arr
 }`,
     tests: [
-      { description: 'truncates to first 3 elements', assertion: 'expect(truncate([1, 2, 3, 4, 5], 3)).toEqual([1, 2, 3])' },
-      { description: 'truncates to empty array', assertion: 'expect(truncate([1, 2, 3], 0)).toEqual([])' },
-      { description: 'no-op when n equals length', assertion: 'expect(truncate([1, 2], 2)).toEqual([1, 2])' },
-      { description: 'mutates the original array', assertion: 'const a = [1, 2, 3, 4]; truncate(a, 2); expect(a).toHaveLength(2)' },
-      { description: 'result has correct length', assertion: 'expect(truncate([10, 20, 30, 40], 2)).toHaveLength(2)' },
+      { description: 'truncates to first 3 elements', assertion:'expect(truncate([1, 2, 3, 4, 5], 3)).toEqual([1, 2, 3])' },
+      { description: 'truncates to empty array', assertion:'expect(truncate([1, 2, 3], 0)).toEqual([])' },
+      { description: 'no-op when n equals length', assertion:'expect(truncate([1, 2], 2)).toEqual([1, 2])' },
+      { description: 'mutates the original array', assertion:'const a = [1, 2, 3, 4]; truncate(a, 2); expect(a).toHaveLength(2)' },
+      { description: 'result has correct length', assertion:'expect(truncate([10, 20, 30, 40], 2)).toHaveLength(2)' },
     ],
     hints: [
       'Assigning to `arr.length` mutates the array in place.',
@@ -134,11 +134,11 @@ extend([], 3)     // → 3
   return arr.length
 }`,
     tests: [
-      { description: 'returns the new length', assertion: 'expect(extend([1, 2], 5)).toBe(5)' },
-      { description: 'extends empty array', assertion: 'expect(extend([], 3)).toBe(3)' },
-      { description: 'original array length changes', assertion: 'const a = [1]; extend(a, 4); expect(a.length).toBe(4)' },
-      { description: 'no-op when n equals current length', assertion: 'expect(extend([1, 2, 3], 3)).toBe(3)' },
-      { description: 'returns a number', assertion: "expect(typeof extend([1], 10)).toBe('number')" },
+      { description: 'returns the new length', assertion:'expect(extend([1, 2], 5)).toBe(5)' },
+      { description: 'extends empty array', assertion:'expect(extend([], 3)).toBe(3)' },
+      { description: 'original array length changes', assertion:'const a = [1]; extend(a, 4); expect(a.length).toBe(4)' },
+      { description: 'no-op when n equals current length', assertion:'expect(extend([1, 2, 3], 3)).toBe(3)' },
+      { description: 'returns a number', assertion:"expect(typeof extend([1], 10)).toBe('number')" },
     ],
     hints: [
       'Setting `arr.length` to a larger value creates sparse "holes".',
@@ -172,11 +172,11 @@ lengthAfterPush([], 10)        // → 1
   return arr.length
 }`,
     tests: [
-      { description: 'returns 4 after pushing 2 elements onto 2-element array', assertion: 'expect(lengthAfterPush([1, 2], 3, 4)).toBe(4)' },
-      { description: 'returns 1 after pushing one element onto empty array', assertion: 'expect(lengthAfterPush([], 10)).toBe(1)' },
-      { description: 'pushing nothing leaves length unchanged', assertion: 'expect(lengthAfterPush([1, 2, 3])).toBe(3)' },
-      { description: 'mutates the original array', assertion: 'const a = [1]; lengthAfterPush(a, 2, 3); expect(a).toHaveLength(3)' },
-      { description: 'pushing 3 elements onto empty array returns 3', assertion: 'expect(lengthAfterPush([], 1, 2, 3)).toBe(3)' },
+      { description: 'returns 4 after pushing 2 elements onto 2-element array', assertion:'expect(lengthAfterPush([1, 2], 3, 4)).toBe(4)' },
+      { description: 'returns 1 after pushing one element onto empty array', assertion:'expect(lengthAfterPush([], 10)).toBe(1)' },
+      { description: 'pushing nothing leaves length unchanged', assertion:'expect(lengthAfterPush([1, 2, 3])).toBe(3)' },
+      { description: 'mutates the original array', assertion:'const a = [1]; lengthAfterPush(a, 2, 3); expect(a).toHaveLength(3)' },
+      { description: 'pushing 3 elements onto empty array returns 3', assertion:'expect(lengthAfterPush([], 1, 2, 3)).toBe(3)' },
     ],
     hints: [
       '`arr.push(...vals)` spreads all rest arguments into the push call.',

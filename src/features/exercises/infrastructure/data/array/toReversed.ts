@@ -25,11 +25,11 @@ reverseImmutable([10, 20])  // → [20, 10]
   return arr.toReversed()
 }`,
     tests: [
-      { description: 'reverses a 3-element array', assertion: 'expect(reverseImmutable([1, 2, 3])).toEqual([3, 2, 1])' },
-      { description: 'reverses a 2-element array', assertion: 'expect(reverseImmutable([10, 20])).toEqual([20, 10])' },
-      { description: 'empty array returns empty', assertion: 'expect(reverseImmutable([])).toEqual([])' },
-      { description: 'single element unchanged', assertion: 'expect(reverseImmutable([42])).toEqual([42])' },
-      { description: 'returns an array', assertion: 'expect(Array.isArray(reverseImmutable([1, 2, 3]))).toBe(true)' },
+      { description: 'reverses a 3-element array', assertion:'expect(reverseImmutable([1, 2, 3])).toEqual([3, 2, 1])' },
+      { description: 'reverses a 2-element array', assertion:'expect(reverseImmutable([10, 20])).toEqual([20, 10])' },
+      { description: 'empty array returns empty', assertion:'expect(reverseImmutable([])).toEqual([])' },
+      { description: 'single element unchanged', assertion:'expect(reverseImmutable([42])).toEqual([42])' },
+      { description: 'returns an array', assertion:'expect(Array.isArray(reverseImmutable([1, 2, 3]))).toBe(true)' },
     ],
     hints: [
       '`toReversed()` is the immutable counterpart of `reverse()`.',
@@ -61,11 +61,11 @@ checkImmutable([1, 2, 3]) // → [1, 2, 3]  (original order preserved)
   return arr
 }`,
     tests: [
-      { description: 'original array unchanged after toReversed', assertion: 'expect(checkImmutable([1, 2, 3])).toEqual([1, 2, 3])' },
-      { description: 'first element still first', assertion: 'expect(checkImmutable([5, 6, 7])[0]).toBe(5)' },
-      { description: 'length preserved', assertion: 'expect(checkImmutable([1, 2, 3, 4])).toHaveLength(4)' },
-      { description: 'empty array stays empty', assertion: 'expect(checkImmutable([])).toEqual([])' },
-      { description: 'single element unchanged', assertion: 'expect(checkImmutable([99])).toEqual([99])' },
+      { description: 'original array unchanged after toReversed', assertion:'expect(checkImmutable([1, 2, 3])).toEqual([1, 2, 3])' },
+      { description: 'first element still first', assertion:'expect(checkImmutable([5, 6, 7])[0]).toBe(5)' },
+      { description: 'length preserved', assertion:'expect(checkImmutable([1, 2, 3, 4])).toHaveLength(4)' },
+      { description: 'empty array stays empty', assertion:'expect(checkImmutable([])).toEqual([])' },
+      { description: 'single element unchanged', assertion:'expect(checkImmutable([99])).toEqual([99])' },
     ],
     hints: [
       '`toReversed()` creates a new array — the original is never touched.',
@@ -97,11 +97,11 @@ reverseStringArray(['hello', 'world']) // → ['world', 'hello']
   return arr.toReversed()
 }`,
     tests: [
-      { description: 'reverses string array', assertion: "expect(reverseStringArray(['a', 'b', 'c'])).toEqual(['c', 'b', 'a'])" },
-      { description: 'two strings reversed', assertion: "expect(reverseStringArray(['hello', 'world'])).toEqual(['world', 'hello'])" },
-      { description: 'empty string array returns empty', assertion: "expect(reverseStringArray([])).toEqual([])" },
-      { description: 'single string unchanged', assertion: "expect(reverseStringArray(['only'])).toEqual(['only'])" },
-      { description: 'does not mutate original', assertion: "const a = ['x','y','z']; reverseStringArray(a); expect(a[0]).toBe('x')" },
+      { description: 'reverses string array', assertion:"expect(reverseStringArray(['a', 'b', 'c'])).toEqual(['c', 'b', 'a'])" },
+      { description: 'two strings reversed', assertion:"expect(reverseStringArray(['hello', 'world'])).toEqual(['world', 'hello'])" },
+      { description: 'empty string array returns empty', assertion:"expect(reverseStringArray([])).toEqual([])" },
+      { description: 'single string unchanged', assertion:"expect(reverseStringArray(['only'])).toEqual(['only'])" },
+      { description: 'does not mutate original', assertion:"const a = ['x','y','z']; reverseStringArray(a); expect(a[0]).toBe('x')" },
     ],
     hints: [
       '`toReversed()` is generic — it works the same way regardless of element type.',
@@ -132,11 +132,11 @@ toReversedReturnsNew([1, 2, 3]) // → true
   return arr.toReversed() !== arr
 }`,
     tests: [
-      { description: 'returns true for non-empty array', assertion: 'expect(toReversedReturnsNew([1, 2, 3])).toBe(true)' },
-      { description: 'returns true for single element', assertion: 'expect(toReversedReturnsNew([1])).toBe(true)' },
-      { description: 'returns true for empty array', assertion: 'expect(toReversedReturnsNew([])).toBe(true)' },
-      { description: 'result is a boolean', assertion: "expect(typeof toReversedReturnsNew([1,2])).toBe('boolean')" },
-      { description: 'never returns false', assertion: 'expect(toReversedReturnsNew([5, 4, 3])).not.toBe(false)' },
+      { description: 'returns true for non-empty array', assertion:'expect(toReversedReturnsNew([1, 2, 3])).toBe(true)' },
+      { description: 'returns true for single element', assertion:'expect(toReversedReturnsNew([1])).toBe(true)' },
+      { description: 'returns true for empty array', assertion:'expect(toReversedReturnsNew([])).toBe(true)' },
+      { description: 'result is a boolean', assertion:"expect(typeof toReversedReturnsNew([1,2])).toBe('boolean')" },
+      { description: 'never returns false', assertion:'expect(toReversedReturnsNew([5, 4, 3]) !== false).toBe(true)' },
     ],
     hints: [
       '`!==` checks reference identity — two arrays with the same values are still different objects.',
@@ -167,11 +167,11 @@ toReversedEmpty() // → []
   return ([] as number[]).toReversed()
 }`,
     tests: [
-      { description: 'returns an empty array', assertion: 'expect(toReversedEmpty()).toEqual([])' },
-      { description: 'result has length 0', assertion: 'expect(toReversedEmpty()).toHaveLength(0)' },
-      { description: 'returns an array', assertion: 'expect(Array.isArray(toReversedEmpty())).toBe(true)' },
-      { description: 'result is not null', assertion: 'expect(toReversedEmpty()).not.toBeNull()' },
-      { description: 'result is truthy', assertion: 'expect(toReversedEmpty()).toBeTruthy()' },
+      { description: 'returns an empty array', assertion:'expect(toReversedEmpty()).toEqual([])' },
+      { description: 'result has length 0', assertion:'expect(toReversedEmpty()).toHaveLength(0)' },
+      { description: 'returns an array', assertion:'expect(Array.isArray(toReversedEmpty())).toBe(true)' },
+      { description: 'result is not null', assertion:'expect(toReversedEmpty() !== null).toBe(true)' },
+      { description: 'result is truthy', assertion:'expect(toReversedEmpty()).toBeTruthy()' },
     ],
     hints: [
       'An empty array reversed is still an empty array.',

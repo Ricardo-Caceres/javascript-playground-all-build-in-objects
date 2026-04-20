@@ -26,11 +26,11 @@ o.a        // → 1
   return Object.freeze(obj)
 }`,
     tests: [
-      { description: 'assignment silently fails', assertion: "const o = freezeObj({ a: 1 }) as any; o.a = 99; expect(o.a).toBe(1)" },
-      { description: 'adding a property silently fails', assertion: "const o = freezeObj({}) as any; o.newKey = 1; expect(o.newKey).toBeUndefined()" },
-      { description: 'deleting a property silently fails', assertion: "const o = freezeObj({ x: 1 }) as any; delete o.x; expect(o.x).toBe(1)" },
-      { description: 'returns the same reference', assertion: "const o = { a: 1 }; expect(freezeObj(o) === o).toBe(true)" },
-      { description: 'existing values are readable', assertion: "expect(freezeObj({ name: 'Alice' }).name).toBe('Alice')" },
+      { description: 'assignment silently fails', assertion:"const o = freezeObj({ a: 1 }); o.a = 99; expect(o.a).toBe(1)" },
+      { description: 'adding a property silently fails', assertion:"const o = freezeObj({}); o.newKey = 1; expect(o.newKey).toBeUndefined()" },
+      { description: 'deleting a property silently fails', assertion:"const o = freezeObj({ x: 1 }); delete o.x; expect(o.x).toBe(1)" },
+      { description: 'returns the same reference', assertion:"const o = { a: 1 }; expect(freezeObj(o) === o).toBe(true)" },
+      { description: 'existing values are readable', assertion:"expect(freezeObj({ name: 'Alice' }).name).toBe('Alice')" },
     ],
     hints: [
       '`Object.freeze` returns the same object passed to it.',
@@ -62,11 +62,11 @@ checkFrozen({ a: 1 }) // → true
   return Object.isFrozen(obj)
 }`,
     tests: [
-      { description: 'returns true after freeze', assertion: "expect(checkFrozen({ a: 1 })).toBe(true)" },
-      { description: 'non-frozen object is not frozen', assertion: "expect(Object.isFrozen({ a: 1 })).toBe(false)" },
-      { description: 'empty object becomes frozen', assertion: "expect(checkFrozen({})).toBe(true)" },
-      { description: 'Object.isFrozen true after manual freeze', assertion: "const o = {}; Object.freeze(o); expect(Object.isFrozen(o)).toBe(true)" },
-      { description: 'frozen object keeps its values', assertion: "const o = { x: 5 }; Object.freeze(o); expect(o.x).toBe(5)" },
+      { description: 'returns true after freeze', assertion:"expect(checkFrozen({ a: 1 })).toBe(true)" },
+      { description: 'non-frozen object is not frozen', assertion:"expect(Object.isFrozen({ a: 1 })).toBe(false)" },
+      { description: 'empty object becomes frozen', assertion:"expect(checkFrozen({})).toBe(true)" },
+      { description: 'Object.isFrozen true after manual freeze', assertion:"const o = {}; Object.freeze(o); expect(Object.isFrozen(o)).toBe(true)" },
+      { description: 'frozen object keeps its values', assertion:"const o = { x: 5 }; Object.freeze(o); expect(o.x).toBe(5)" },
     ],
     hints: [
       '`Object.isFrozen` returns `true` if the object has been frozen.',
@@ -97,11 +97,11 @@ frozenRef({ a: 1 }) // → true
   return Object.freeze(obj) === obj
 }`,
     tests: [
-      { description: 'returns true (same reference)', assertion: "expect(frozenRef({ a: 1 })).toBe(true)" },
-      { description: 'also true for empty object', assertion: "expect(frozenRef({})).toBe(true)" },
-      { description: 'direct reference check', assertion: "const o = { x: 1 }; expect(Object.freeze(o) === o).toBe(true)" },
-      { description: 'frozen object equals original', assertion: "const o = { a: 2 }; const f = Object.freeze(o); expect(f).toEqual(o)" },
-      { description: 'object is still accessible after freeze', assertion: "const o = Object.freeze({ n: 7 }); expect(o.n).toBe(7)" },
+      { description: 'returns true (same reference)', assertion:"expect(frozenRef({ a: 1 })).toBe(true)" },
+      { description: 'also true for empty object', assertion:"expect(frozenRef({})).toBe(true)" },
+      { description: 'direct reference check', assertion:"const o = { x: 1 }; expect(Object.freeze(o) === o).toBe(true)" },
+      { description: 'frozen object equals original', assertion:"const o = { a: 2 }; const f = Object.freeze(o); expect(f).toEqual(o)" },
+      { description: 'object is still accessible after freeze', assertion:"const o = Object.freeze({ n: 7 }); expect(o.n).toBe(7)" },
     ],
     hints: [
       '`Object.freeze` mutates and returns the same reference, unlike `Object.assign` which can take a fresh target.',
@@ -136,11 +136,11 @@ o.nested.a       // → 99
   return obj.nested.a === 99
 }`,
     tests: [
-      { description: 'nested object can still be mutated', assertion: "expect(shallowFreezeTest({ nested: { a: 1 } })).toBe(true)" },
-      { description: 'outer property cannot be changed', assertion: "const o = Object.freeze({ nested: { a: 1 } }) as any; o.nested = {}; expect(o.nested).toEqual({ a: 1 })" },
-      { description: 'nested object is not frozen', assertion: "const o = Object.freeze({ inner: { x: 1 } }); expect(Object.isFrozen(o.inner)).toBe(false)" },
-      { description: 'outer object is frozen', assertion: "const o = Object.freeze({ inner: { x: 1 } }); expect(Object.isFrozen(o)).toBe(true)" },
-      { description: 'can add key to nested', assertion: "const o = Object.freeze({ child: {} }) as any; o.child.newKey = 1; expect(o.child.newKey).toBe(1)" },
+      { description: 'nested object can still be mutated', assertion:"expect(shallowFreezeTest({ nested: { a: 1 } })).toBe(true)" },
+      { description: 'outer property cannot be changed', assertion:"const o = Object.freeze({ nested: { a: 1 } }); o.nested = {}; expect(o.nested).toEqual({ a: 1 })" },
+      { description: 'nested object is not frozen', assertion:"const o = Object.freeze({ inner: { x: 1 } }); expect(Object.isFrozen(o.inner)).toBe(false)" },
+      { description: 'outer object is frozen', assertion:"const o = Object.freeze({ inner: { x: 1 } }); expect(Object.isFrozen(o)).toBe(true)" },
+      { description: 'can add key to nested', assertion:"const o = Object.freeze({ child: {} }); o.child.newKey = 1; expect(o.child.newKey).toBe(1)" },
     ],
     hints: [
       '`Object.freeze` only prevents changes to **own properties** of the frozen object.',
@@ -173,11 +173,11 @@ tryAddToFrozen() // → 1 (only 'a', 'b' was not added)
   return Object.keys(o).length
 }`,
     tests: [
-      { description: 'returns 1 (new key not added)', assertion: "expect(tryAddToFrozen()).toBe(1)" },
-      { description: 'frozen object only has original key', assertion: "const o = Object.freeze({ a: 1 }) as any; o.b = 2; expect(Object.keys(o)).toEqual(['a'])" },
-      { description: 'b is undefined on frozen object', assertion: "const o = Object.freeze({ a: 1 }) as any; o.b = 2; expect(o.b).toBeUndefined()" },
-      { description: 'original key still accessible', assertion: "const o = Object.freeze({ a: 1 }) as any; o.b = 2; expect(o.a).toBe(1)" },
-      { description: 'object is frozen', assertion: "const o = Object.freeze({}); expect(Object.isFrozen(o)).toBe(true)" },
+      { description: 'returns 1 (new key not added)', assertion:"expect(tryAddToFrozen()).toBe(1)" },
+      { description: 'frozen object only has original key', assertion:"const o = Object.freeze({ a: 1 }); o.b = 2; expect(Object.keys(o)).toEqual(['a'])" },
+      { description: 'b is undefined on frozen object', assertion:"const o = Object.freeze({ a: 1 }); o.b = 2; expect(o.b).toBeUndefined()" },
+      { description: 'original key still accessible', assertion:"const o = Object.freeze({ a: 1 }); o.b = 2; expect(o.a).toBe(1)" },
+      { description: 'object is frozen', assertion:"const o = Object.freeze({}); expect(Object.isFrozen(o)).toBe(true)" },
     ],
     hints: [
       'Adding a property to a frozen object silently fails in sloppy mode.',

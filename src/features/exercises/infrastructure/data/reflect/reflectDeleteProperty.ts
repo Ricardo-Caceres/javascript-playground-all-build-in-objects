@@ -24,11 +24,11 @@ export const reflectDeletePropertyExercises: Exercise[] = [
   return obj.x
 }`,
     tests: [
-      { description: 'obj.x is undefined after delete', assertion: "const obj = {x: 1}; Reflect.deleteProperty(obj, 'x'); expect(obj.x).toBeUndefined()" },
-      { description: 'x not in obj', assertion: "const obj = {x: 1}; Reflect.deleteProperty(obj, 'x'); expect('x' in obj).toBe(false)" },
-      { description: 'obj still exists', assertion: "const obj = {x: 1}; Reflect.deleteProperty(obj, 'x'); expect(obj).toBeTruthy()" },
-      { description: 'result is undefined', assertion: "const obj = {x: 1}; Reflect.deleteProperty(obj, 'x'); expect(obj.x).not.toBe(1)" },
-      { description: 'obj is an object', assertion: "const obj = {x: 1}; Reflect.deleteProperty(obj, 'x'); expect(typeof obj).toBe('object')" },
+      { description: 'obj.x is undefined after delete', assertion:"const obj = {x: 1}; Reflect.deleteProperty(obj, 'x'); expect(obj.x).toBeUndefined()" },
+      { description: 'x not in obj', assertion:"const obj = {x: 1}; Reflect.deleteProperty(obj, 'x'); expect('x' in obj).toBe(false)" },
+      { description: 'obj still exists', assertion:"const obj = {x: 1}; Reflect.deleteProperty(obj, 'x'); expect(obj).toBeTruthy()" },
+      { description: 'result is undefined', assertion:"const obj = {x: 1}; Reflect.deleteProperty(obj, 'x'); expect(obj.x !== 1).toBe(true)" },
+      { description: 'obj is an object', assertion:"const obj = {x: 1}; Reflect.deleteProperty(obj, 'x'); expect(typeof obj).toBe('object')" },
     ],
     hints: [
       '`Reflect.deleteProperty(target, key)` is equivalent to `delete target[key]`.',
@@ -54,11 +54,11 @@ export const reflectDeletePropertyExercises: Exercise[] = [
   return Reflect.deleteProperty({ x: 1 }, 'x')
 }`,
     tests: [
-      { description: 'returns true', assertion: "expect(Reflect.deleteProperty({x: 1}, 'x')).toBe(true)" },
-      { description: 'result is boolean', assertion: "expect(typeof Reflect.deleteProperty({x: 1}, 'x')).toBe('boolean')" },
-      { description: 'result is truthy', assertion: "expect(Reflect.deleteProperty({x: 1}, 'x')).toBeTruthy()" },
-      { description: 'equals true', assertion: "expect(Reflect.deleteProperty({x: 1}, 'x') === true).toBe(true)" },
-      { description: 'another key also returns true', assertion: "expect(Reflect.deleteProperty({a: 2}, 'a')).toBe(true)" },
+      { description: 'returns true', assertion:"expect(Reflect.deleteProperty({x: 1}, 'x')).toBe(true)" },
+      { description: 'result is boolean', assertion:"expect(typeof Reflect.deleteProperty({x: 1}, 'x')).toBe('boolean')" },
+      { description: 'result is truthy', assertion:"expect(Reflect.deleteProperty({x: 1}, 'x')).toBeTruthy()" },
+      { description: 'equals true', assertion:"expect(Reflect.deleteProperty({x: 1}, 'x') === true).toBe(true)" },
+      { description: 'another key also returns true', assertion:"expect(Reflect.deleteProperty({a: 2}, 'a')).toBe(true)" },
     ],
     hints: [
       '`Reflect.deleteProperty` returns `true` for successful deletions.',
@@ -84,11 +84,11 @@ Deleting a nonexistent key is not an error — it just returns \`true\`.
   return Reflect.deleteProperty({}, 'nonexistent')
 }`,
     tests: [
-      { description: 'nonexistent key returns true', assertion: "expect(Reflect.deleteProperty({}, 'nonexistent')).toBe(true)" },
-      { description: 'result is boolean', assertion: "expect(typeof Reflect.deleteProperty({}, 'nonexistent')).toBe('boolean')" },
-      { description: 'result is truthy', assertion: "expect(Reflect.deleteProperty({}, 'nonexistent')).toBeTruthy()" },
-      { description: 'equals true', assertion: "expect(Reflect.deleteProperty({}, 'nonexistent') === true).toBe(true)" },
-      { description: 'no error thrown', assertion: "expect(() => Reflect.deleteProperty({}, 'any')).not.toThrow()" },
+      { description: 'nonexistent key returns true', assertion:"expect(Reflect.deleteProperty({}, 'nonexistent')).toBe(true)" },
+      { description: 'result is boolean', assertion:"expect(typeof Reflect.deleteProperty({}, 'nonexistent')).toBe('boolean')" },
+      { description: 'result is truthy', assertion:"expect(Reflect.deleteProperty({}, 'nonexistent')).toBeTruthy()" },
+      { description: 'equals true', assertion:"expect(Reflect.deleteProperty({}, 'nonexistent') === true).toBe(true)" },
+      { description: 'no error thrown', assertion:"expect((() => { try { (() => Reflect.deleteProperty({}, 'any'))(); return true; } catch(e) { return false; } })()).toBe(true)" },
     ],
     hints: [
       'Deleting a key that doesn\'t exist is a no-op that returns `true`.',
@@ -114,11 +114,11 @@ Deleting a nonexistent key is not an error — it just returns \`true\`.
   return typeof Reflect.deleteProperty
 }`,
     tests: [
-      { description: 'typeof Reflect.deleteProperty is function', assertion: "expect(typeof Reflect.deleteProperty).toBe('function')" },
-      { description: 'Reflect.deleteProperty is truthy', assertion: 'expect(Reflect.deleteProperty).toBeTruthy()' },
-      { description: 'Reflect.deleteProperty not null', assertion: 'expect(Reflect.deleteProperty).not.toBeNull()' },
-      { description: 'Reflect.deleteProperty not undefined', assertion: 'expect(Reflect.deleteProperty).not.toBeUndefined()' },
-      { description: 'equals function string', assertion: "expect(typeof Reflect.deleteProperty === 'function').toBe(true)" },
+      { description: 'typeof Reflect.deleteProperty is function', assertion:"expect(typeof Reflect.deleteProperty).toBe('function')" },
+      { description: 'Reflect.deleteProperty is truthy', assertion:'expect(Reflect.deleteProperty).toBeTruthy()' },
+      { description: 'Reflect.deleteProperty not null', assertion:'expect(Reflect.deleteProperty !== null).toBe(true)' },
+      { description: 'Reflect.deleteProperty not undefined', assertion:'expect(Reflect.deleteProperty !== undefined).toBe(true)' },
+      { description: 'equals function string', assertion:"expect(typeof Reflect.deleteProperty === 'function').toBe(true)" },
     ],
     hints: [
       'All `Reflect` methods are functions.',
@@ -148,11 +148,11 @@ After deletion, the key is gone from the object — \`'a' in o\` returns \`false
   return 'a' in o
 }`,
     tests: [
-      { description: 'a not in o', assertion: "const o = {a:1, b:2}; Reflect.deleteProperty(o, 'a'); expect('a' in o).toBe(false)" },
-      { description: 'b still in o', assertion: "const o = {a:1, b:2}; Reflect.deleteProperty(o, 'a'); expect('b' in o).toBe(true)" },
-      { description: 'result is boolean', assertion: "const o = {a:1, b:2}; Reflect.deleteProperty(o, 'a'); expect(typeof ('a' in o)).toBe('boolean')" },
-      { description: 'result is falsy', assertion: "const o = {a:1, b:2}; Reflect.deleteProperty(o, 'a'); expect('a' in o).toBeFalsy()" },
-      { description: 'o.a is undefined', assertion: "const o = {a:1, b:2}; Reflect.deleteProperty(o, 'a'); expect(o.a).toBeUndefined()" },
+      { description: 'a not in o', assertion:"const o = {a:1, b:2}; Reflect.deleteProperty(o, 'a'); expect('a' in o).toBe(false)" },
+      { description: 'b still in o', assertion:"const o = {a:1, b:2}; Reflect.deleteProperty(o, 'a'); expect('b' in o).toBe(true)" },
+      { description: 'result is boolean', assertion:"const o = {a:1, b:2}; Reflect.deleteProperty(o, 'a'); expect(typeof ('a' in o)).toBe('boolean')" },
+      { description: 'result is falsy', assertion:"const o = {a:1, b:2}; Reflect.deleteProperty(o, 'a'); expect('a' in o).toBeFalsy()" },
+      { description: 'o.a is undefined', assertion:"const o = {a:1, b:2}; Reflect.deleteProperty(o, 'a'); expect(o.a).toBeUndefined()" },
     ],
     hints: [
       'After `Reflect.deleteProperty`, the key is fully removed from the object.',

@@ -22,11 +22,11 @@ The \`length\` property of a function returns the number of formal parameters it
   return f.length
 }`,
     tests: [
-      { description: 'f.length equals 3', assertion: 'function f(a, b, c) {} expect(f.length).toBe(3)' },
-      { description: 'result is number', assertion: "function f(a, b, c) {} expect(typeof f.length).toBe('number')" },
-      { description: 'f.length === 3 is true', assertion: 'function f(a, b, c) {} expect(f.length === 3).toBe(true)' },
-      { description: 'length is truthy', assertion: 'function f(a, b, c) {} expect(f.length).toBeTruthy()' },
-      { description: 'not zero', assertion: 'function f(a, b, c) {} expect(f.length).not.toBe(0)' },
+      { description: 'f.length equals 3', assertion:'function f(a, b, c) {} expect(f.length).toBe(3)' },
+      { description: 'result is number', assertion:"function f(a, b, c) {} expect(typeof f.length).toBe('number')" },
+      { description: 'f.length === 3 is true', assertion:'function f(a, b, c) {} expect(f.length === 3).toBe(true)' },
+      { description: 'length is truthy', assertion:'function f(a, b, c) {} expect(f.length).toBeTruthy()' },
+      { description: 'not zero', assertion:'function f(a, b, c) {} expect(f.length !== 0).toBe(true)' },
     ],
     hints: [
       '`fn.length` counts only the positional parameters before any defaults or rest.',
@@ -54,11 +54,11 @@ A function with no parameters has a \`length\` of \`0\`.
   return g.length
 }`,
     tests: [
-      { description: 'g.length equals 0', assertion: 'function g() {} expect(g.length).toBe(0)' },
-      { description: 'result is number', assertion: "function g() {} expect(typeof g.length).toBe('number')" },
-      { description: 'g.length === 0 is true', assertion: 'function g() {} expect(g.length === 0).toBe(true)' },
-      { description: 'length is not negative', assertion: 'function g() {} expect(g.length >= 0).toBe(true)' },
-      { description: 'length is falsy (0)', assertion: 'function g() {} expect(g.length).toBeFalsy()' },
+      { description: 'g.length equals 0', assertion:'function g() {} expect(g.length).toBe(0)' },
+      { description: 'result is number', assertion:"function g() {} expect(typeof g.length).toBe('number')" },
+      { description: 'g.length === 0 is true', assertion:'function g() {} expect(g.length === 0).toBe(true)' },
+      { description: 'length is not negative', assertion:'function g() {} expect(g.length >= 0).toBe(true)' },
+      { description: 'length is falsy (0)', assertion:'function g() {} expect(g.length).toBeFalsy()' },
     ],
     hints: [
       'A function with no declared parameters has `length` of `0`.',
@@ -86,11 +86,11 @@ Parameters with default values are **not** counted in \`fn.length\`. Only the pa
   return h.length
 }`,
     tests: [
-      { description: 'h.length equals 1', assertion: 'function h(a, b = 1) {} expect(h.length).toBe(1)' },
-      { description: 'result is number', assertion: "function h(a, b = 1) {} expect(typeof h.length).toBe('number')" },
-      { description: 'h.length === 1 is true', assertion: 'function h(a, b = 1) {} expect(h.length === 1).toBe(true)' },
-      { description: 'not equal to 2', assertion: 'function h(a, b = 1) {} expect(h.length).not.toBe(2)' },
-      { description: 'result is truthy', assertion: 'function h(a, b = 1) {} expect(h.length).toBeTruthy()' },
+      { description: 'h.length equals 1', assertion:'function h(a, b = 1) {} expect(h.length).toBe(1)' },
+      { description: 'result is number', assertion:"function h(a, b = 1) {} expect(typeof h.length).toBe('number')" },
+      { description: 'h.length === 1 is true', assertion:'function h(a, b = 1) {} expect(h.length === 1).toBe(true)' },
+      { description: 'not equal to 2', assertion:'function h(a, b = 1) {} expect(h.length !== 2).toBe(true)' },
+      { description: 'result is truthy', assertion:'function h(a, b = 1) {} expect(h.length).toBeTruthy()' },
     ],
     hints: [
       'Parameters with defaults do not count towards `fn.length`.',
@@ -118,11 +118,11 @@ Rest parameters (\`...args\`) are never counted in \`fn.length\`. A function wit
   return fn.length
 }`,
     tests: [
-      { description: 'rest-only fn has length 0', assertion: 'expect(((...args) => {}).length).toBe(0)' },
-      { description: 'result equals 0', assertion: 'expect(((...args) => {}).length === 0).toBe(true)' },
-      { description: 'result is number', assertion: "expect(typeof ((...args) => {}).length).toBe('number')" },
-      { description: 'result is falsy', assertion: 'expect(((...args) => {}).length).toBeFalsy()' },
-      { description: 'not equal to 1', assertion: 'expect(((...args) => {}).length).not.toBe(1)' },
+      { description: 'rest-only fn has length 0', assertion:'expect(((...args) => {}).length).toBe(0)' },
+      { description: 'result equals 0', assertion:'expect(((...args) => {}).length === 0).toBe(true)' },
+      { description: 'result is number', assertion:"expect(typeof ((...args) => {}).length).toBe('number')" },
+      { description: 'result is falsy', assertion:'expect(((...args) => {}).length).toBeFalsy()' },
+      { description: 'not equal to 1', assertion:'expect(((...args) => {}).length !== 1).toBe(true)' },
     ],
     hints: [
       'Rest parameters (`...args`) are excluded from `fn.length`.',
@@ -148,11 +148,11 @@ Rest parameters (\`...args\`) are never counted in \`fn.length\`. A function wit
   return typeof ((a: unknown) => {}).length
 }`,
     tests: [
-      { description: 'typeof length is number', assertion: "expect(typeof ((a) => {}).length).toBe('number')" },
-      { description: 'result equals number string', assertion: "expect(typeof ((a) => {}).length === 'number').toBe(true)" },
-      { description: 'length value is 1', assertion: 'expect(((a) => {}).length).toBe(1)' },
-      { description: 'length is truthy', assertion: 'expect(((a) => {}).length).toBeTruthy()' },
-      { description: 'not string', assertion: "expect(typeof ((a) => {}).length).not.toBe('string')" },
+      { description: 'typeof length is number', assertion:"expect(typeof ((a) => {}).length).toBe('number')" },
+      { description: 'result equals number string', assertion:"expect(typeof ((a) => {}).length === 'number').toBe(true)" },
+      { description: 'length value is 1', assertion:'expect(((a) => {}).length).toBe(1)' },
+      { description: 'length is truthy', assertion:'expect(((a) => {}).length).toBeTruthy()' },
+      { description: 'not string', assertion:"expect(typeof ((a) => {}).length !== 'string').toBe(true)" },
     ],
     hints: [
       '`fn.length` is always a non-negative integer — a `number`.',

@@ -28,11 +28,11 @@ function callGreet(): string {
   return greet.call({ name: 'Alice' })
 }`,
     tests: [
-      { description: 'returns Alice', assertion: "function greet() { return this.name; } expect(greet.call({ name: 'Alice' })).toBe('Alice')" },
-      { description: 'this.name is accessible', assertion: "function greet() { return this.name; } expect(greet.call({ name: 'Alice' }) === 'Alice').toBe(true)" },
-      { description: 'result is string', assertion: "function greet() { return this.name; } expect(typeof greet.call({ name: 'Alice' })).toBe('string')" },
-      { description: 'works with different name', assertion: "function greet() { return this.name; } expect(greet.call({ name: 'Bob' })).toBe('Bob')" },
-      { description: 'result is truthy', assertion: "function greet() { return this.name; } expect(greet.call({ name: 'Alice' })).toBeTruthy()" },
+      { description: 'returns Alice', assertion:"function greet() { return this.name; } expect(greet.call({ name: 'Alice' })).toBe('Alice')" },
+      { description: 'this.name is accessible', assertion:"function greet() { return this.name; } expect(greet.call({ name: 'Alice' }) === 'Alice').toBe(true)" },
+      { description: 'result is string', assertion:"function greet() { return this.name; } expect(typeof greet.call({ name: 'Alice' })).toBe('string')" },
+      { description: 'works with different name', assertion:"function greet() { return this.name; } expect(greet.call({ name: 'Bob' })).toBe('Bob')" },
+      { description: 'result is truthy', assertion:"function greet() { return this.name; } expect(greet.call({ name: 'Alice' })).toBeTruthy()" },
     ],
     hints: [
       '`fn.call(ctx, arg1, arg2)` sets `this` to `ctx`.',
@@ -67,11 +67,11 @@ function callAdd(): number {
   return add.call(null, 2, 3)
 }`,
     tests: [
-      { description: 'add.call(null, 2, 3) returns 5', assertion: 'function add(a, b) { return a + b; } expect(add.call(null, 2, 3)).toBe(5)' },
-      { description: 'result equals 5', assertion: 'function add(a, b) { return a + b; } expect(add.call(null, 2, 3) === 5).toBe(true)' },
-      { description: 'result is number', assertion: "function add(a, b) { return a + b; } expect(typeof add.call(null, 2, 3)).toBe('number')" },
-      { description: 'add.call(null, 10, 5) returns 15', assertion: 'function add(a, b) { return a + b; } expect(add.call(null, 10, 5)).toBe(15)' },
-      { description: 'result is truthy', assertion: 'function add(a, b) { return a + b; } expect(add.call(null, 2, 3)).toBeTruthy()' },
+      { description: 'add.call(null, 2, 3) returns 5', assertion:'function add(a, b) { return a + b; } expect(add.call(null, 2, 3)).toBe(5)' },
+      { description: 'result equals 5', assertion:'function add(a, b) { return a + b; } expect(add.call(null, 2, 3) === 5).toBe(true)' },
+      { description: 'result is number', assertion:"function add(a, b) { return a + b; } expect(typeof add.call(null, 2, 3)).toBe('number')" },
+      { description: 'add.call(null, 10, 5) returns 15', assertion:'function add(a, b) { return a + b; } expect(add.call(null, 10, 5)).toBe(15)' },
+      { description: 'result is truthy', assertion:'function add(a, b) { return a + b; } expect(add.call(null, 2, 3)).toBeTruthy()' },
     ],
     hints: [
       'Use `null` as the first argument when `this` is not needed.',
@@ -100,11 +100,11 @@ When you pass an object as \`thisArg\`, \`this\` inside the function will be tha
   return typeof getThis.call({ x: 1 })
 }`,
     tests: [
-      { description: 'typeof this is object', assertion: "function getThis() { return this; } expect(typeof getThis.call({x:1})).toBe('object')" },
-      { description: 'this has property x', assertion: 'function getThis() { return this; } expect(getThis.call({x:1}).x).toBe(1)' },
-      { description: 'this is not null', assertion: 'function getThis() { return this; } expect(getThis.call({x:1})).not.toBeNull()' },
-      { description: 'this is truthy', assertion: 'function getThis() { return this; } expect(getThis.call({x:1})).toBeTruthy()' },
-      { description: 'this is the passed object', assertion: 'const ctx = {x:1}; function getThis() { return this; } expect(getThis.call(ctx)).toBe(ctx)' },
+      { description: 'typeof this is object', assertion:"function getThis() { return this; } expect(typeof getThis.call({x:1})).toBe('object')" },
+      { description: 'this has property x', assertion:'function getThis() { return this; } expect(getThis.call({x:1}).x).toBe(1)' },
+      { description: 'this is not null', assertion:'function getThis() { return this; } expect(getThis.call({x:1}) !== null).toBe(true)' },
+      { description: 'this is truthy', assertion:'function getThis() { return this; } expect(getThis.call({x:1})).toBeTruthy()' },
+      { description: 'this is the passed object', assertion:'const ctx = {x:1}; function getThis() { return this; } expect(getThis.call(ctx)).toBe(ctx)' },
     ],
     hints: [
       '`this` in a regular function is the `thisArg` passed to `call()`.',
@@ -134,11 +134,11 @@ You can borrow built-in array methods for array-like objects using \`call()\`.
   return arr
 }`,
     tests: [
-      { description: 'arr[0] is 10', assertion: 'const arr = []; [].push.call(arr, 10); expect(arr[0]).toBe(10)' },
-      { description: 'arr has length 1', assertion: 'const arr = []; [].push.call(arr, 10); expect(arr).toHaveLength(1)' },
-      { description: 'arr contains 10', assertion: 'const arr = []; [].push.call(arr, 10); expect(arr).toContain(10)' },
-      { description: 'arr equals [10]', assertion: 'const arr = []; [].push.call(arr, 10); expect(arr).toEqual([10])' },
-      { description: 'arr is truthy', assertion: 'const arr = []; [].push.call(arr, 10); expect(arr).toBeTruthy()' },
+      { description: 'arr[0] is 10', assertion:'const arr = []; [].push.call(arr, 10); expect(arr[0]).toBe(10)' },
+      { description: 'arr has length 1', assertion:'const arr = []; [].push.call(arr, 10); expect(arr).toHaveLength(1)' },
+      { description: 'arr contains 10', assertion:'const arr = []; [].push.call(arr, 10); expect(arr).toContain(10)' },
+      { description: 'arr equals [10]', assertion:'const arr = []; [].push.call(arr, 10); expect(arr).toEqual([10])' },
+      { description: 'arr is truthy', assertion:'const arr = []; [].push.call(arr, 10); expect(arr).toBeTruthy()' },
     ],
     hints: [
       '`[].push.call(target, value)` calls `Array.prototype.push` on `target`.',
@@ -164,11 +164,11 @@ You can borrow built-in array methods for array-like objects using \`call()\`.
   return Math.max.call(null, 1, 2, 3)
 }`,
     tests: [
-      { description: 'Math.max.call(null,1,2,3) returns 3', assertion: 'expect(Math.max.call(null, 1, 2, 3)).toBe(3)' },
-      { description: 'result equals 3', assertion: 'expect(Math.max.call(null, 1, 2, 3) === 3).toBe(true)' },
-      { description: 'result is number', assertion: "expect(typeof Math.max.call(null, 1, 2, 3)).toBe('number')" },
-      { description: 'max of negatives', assertion: 'expect(Math.max.call(null, -1, -2, -3)).toBe(-1)' },
-      { description: 'result is truthy', assertion: 'expect(Math.max.call(null, 1, 2, 3)).toBeTruthy()' },
+      { description: 'Math.max.call(null,1,2,3) returns 3', assertion:'expect(Math.max.call(null, 1, 2, 3)).toBe(3)' },
+      { description: 'result equals 3', assertion:'expect(Math.max.call(null, 1, 2, 3) === 3).toBe(true)' },
+      { description: 'result is number', assertion:"expect(typeof Math.max.call(null, 1, 2, 3)).toBe('number')" },
+      { description: 'max of negatives', assertion:'expect(Math.max.call(null, -1, -2, -3)).toBe(-1)' },
+      { description: 'result is truthy', assertion:'expect(Math.max.call(null, 1, 2, 3)).toBeTruthy()' },
     ],
     hints: [
       '`Math.max` does not use `this`, so pass `null` as `thisArg`.',

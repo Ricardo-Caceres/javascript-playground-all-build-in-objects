@@ -28,11 +28,11 @@ function applyAdd(): number {
   return add.apply(null, [2, 3])
 }`,
     tests: [
-      { description: 'add.apply(null, [2,3]) returns 5', assertion: 'function add(a, b) { return a + b; } expect(add.apply(null, [2, 3])).toBe(5)' },
-      { description: 'result equals 5', assertion: 'function add(a, b) { return a + b; } expect(add.apply(null, [2, 3]) === 5).toBe(true)' },
-      { description: 'result is number', assertion: "function add(a, b) { return a + b; } expect(typeof add.apply(null, [2, 3])).toBe('number')" },
-      { description: 'apply(null, [10, 5]) returns 15', assertion: 'function add(a, b) { return a + b; } expect(add.apply(null, [10, 5])).toBe(15)' },
-      { description: 'result is truthy', assertion: 'function add(a, b) { return a + b; } expect(add.apply(null, [2, 3])).toBeTruthy()' },
+      { description: 'add.apply(null, [2,3]) returns 5', assertion:'function add(a, b) { return a + b; } expect(add.apply(null, [2, 3])).toBe(5)' },
+      { description: 'result equals 5', assertion:'function add(a, b) { return a + b; } expect(add.apply(null, [2, 3]) === 5).toBe(true)' },
+      { description: 'result is number', assertion:"function add(a, b) { return a + b; } expect(typeof add.apply(null, [2, 3])).toBe('number')" },
+      { description: 'apply(null, [10, 5]) returns 15', assertion:'function add(a, b) { return a + b; } expect(add.apply(null, [10, 5])).toBe(15)' },
+      { description: 'result is truthy', assertion:'function add(a, b) { return a + b; } expect(add.apply(null, [2, 3])).toBeTruthy()' },
     ],
     hints: [
       '`apply()` takes an array as the second argument instead of spread args.',
@@ -58,11 +58,11 @@ Because \`apply()\` spreads an array as arguments, it is perfect for calling \`M
   return Math.max.apply(null, [1, 5, 3])
 }`,
     tests: [
-      { description: 'Math.max.apply(null, [1,5,3]) returns 5', assertion: 'expect(Math.max.apply(null, [1, 5, 3])).toBe(5)' },
-      { description: 'result equals 5', assertion: 'expect(Math.max.apply(null, [1, 5, 3]) === 5).toBe(true)' },
-      { description: 'result is number', assertion: "expect(typeof Math.max.apply(null, [1, 5, 3])).toBe('number')" },
-      { description: 'apply with larger array', assertion: 'expect(Math.max.apply(null, [10, 20, 30])).toBe(30)' },
-      { description: 'result is truthy', assertion: 'expect(Math.max.apply(null, [1, 5, 3])).toBeTruthy()' },
+      { description: 'Math.max.apply(null, [1,5,3]) returns 5', assertion:'expect(Math.max.apply(null, [1, 5, 3])).toBe(5)' },
+      { description: 'result equals 5', assertion:'expect(Math.max.apply(null, [1, 5, 3]) === 5).toBe(true)' },
+      { description: 'result is number', assertion:"expect(typeof Math.max.apply(null, [1, 5, 3])).toBe('number')" },
+      { description: 'apply with larger array', assertion:'expect(Math.max.apply(null, [10, 20, 30])).toBe(30)' },
+      { description: 'result is truthy', assertion:'expect(Math.max.apply(null, [1, 5, 3])).toBeTruthy()' },
     ],
     hints: [
       'Before spread syntax existed, `apply` was the idiomatic way to spread an array into `Math.max`.',
@@ -90,11 +90,11 @@ Functions using rest parameters gather all arguments. \`apply()\` lets you pass 
   return sum.apply(null, [1, 2, 3])
 }`,
     tests: [
-      { description: 'sum.apply(null,[1,2,3]) returns 6', assertion: 'function sum(...args) { return args.reduce((a,b)=>a+b,0); } expect(sum.apply(null,[1,2,3])).toBe(6)' },
-      { description: 'result equals 6', assertion: 'function sum(...args) { return args.reduce((a,b)=>a+b,0); } expect(sum.apply(null,[1,2,3]) === 6).toBe(true)' },
-      { description: 'result is number', assertion: "function sum(...args) { return args.reduce((a,b)=>a+b,0); } expect(typeof sum.apply(null,[1,2,3])).toBe('number')" },
-      { description: 'sum of [10,20] is 30', assertion: 'function sum(...args) { return args.reduce((a,b)=>a+b,0); } expect(sum.apply(null,[10,20])).toBe(30)' },
-      { description: 'result is truthy', assertion: 'function sum(...args) { return args.reduce((a,b)=>a+b,0); } expect(sum.apply(null,[1,2,3])).toBeTruthy()' },
+      { description: 'sum.apply(null,[1,2,3]) returns 6', assertion:'function sum(...args) { return args.reduce((a,b)=>a+b,0); } expect(sum.apply(null,[1,2,3])).toBe(6)' },
+      { description: 'result equals 6', assertion:'function sum(...args) { return args.reduce((a,b)=>a+b,0); } expect(sum.apply(null,[1,2,3]) === 6).toBe(true)' },
+      { description: 'result is number', assertion:"function sum(...args) { return args.reduce((a,b)=>a+b,0); } expect(typeof sum.apply(null,[1,2,3])).toBe('number')" },
+      { description: 'sum of [10,20] is 30', assertion:'function sum(...args) { return args.reduce((a,b)=>a+b,0); } expect(sum.apply(null,[10,20])).toBe(30)' },
+      { description: 'result is truthy', assertion:'function sum(...args) { return args.reduce((a,b)=>a+b,0); } expect(sum.apply(null,[1,2,3])).toBeTruthy()' },
     ],
     hints: [
       '`apply(thisArg, array)` — array elements become the function\'s arguments.',
@@ -124,11 +124,11 @@ Functions using rest parameters gather all arguments. \`apply()\` lets you pass 
   return arr
 }`,
     tests: [
-      { description: 'arr equals [1,2,3]', assertion: 'const arr = [1]; [].push.apply(arr, [2, 3]); expect(arr).toEqual([1, 2, 3])' },
-      { description: 'arr has length 3', assertion: 'const arr = [1]; [].push.apply(arr, [2, 3]); expect(arr).toHaveLength(3)' },
-      { description: 'arr contains 2', assertion: 'const arr = [1]; [].push.apply(arr, [2, 3]); expect(arr).toContain(2)' },
-      { description: 'arr contains 3', assertion: 'const arr = [1]; [].push.apply(arr, [2, 3]); expect(arr).toContain(3)' },
-      { description: 'arr[2] is 3', assertion: 'const arr = [1]; [].push.apply(arr, [2, 3]); expect(arr[2]).toBe(3)' },
+      { description: 'arr equals [1,2,3]', assertion:'const arr = [1]; [].push.apply(arr, [2, 3]); expect(arr).toEqual([1, 2, 3])' },
+      { description: 'arr has length 3', assertion:'const arr = [1]; [].push.apply(arr, [2, 3]); expect(arr).toHaveLength(3)' },
+      { description: 'arr contains 2', assertion:'const arr = [1]; [].push.apply(arr, [2, 3]); expect(arr).toContain(2)' },
+      { description: 'arr contains 3', assertion:'const arr = [1]; [].push.apply(arr, [2, 3]); expect(arr).toContain(3)' },
+      { description: 'arr[2] is 3', assertion:'const arr = [1]; [].push.apply(arr, [2, 3]); expect(arr[2]).toBe(3)' },
     ],
     hints: [
       '`[].push.apply(target, items)` is equivalent to `target.push(...items)`.',
@@ -154,11 +154,11 @@ Functions using rest parameters gather all arguments. \`apply()\` lets you pass 
   return typeof Function.prototype.apply
 }`,
     tests: [
-      { description: 'typeof apply is function', assertion: "expect(typeof Function.prototype.apply).toBe('function')" },
-      { description: 'apply is truthy', assertion: 'expect(Function.prototype.apply).toBeTruthy()' },
-      { description: 'not undefined', assertion: 'expect(Function.prototype.apply).not.toBeUndefined()' },
-      { description: 'not null', assertion: 'expect(Function.prototype.apply).not.toBeNull()' },
-      { description: 'equals function string', assertion: "expect(typeof Function.prototype.apply === 'function').toBe(true)" },
+      { description: 'typeof apply is function', assertion:"expect(typeof Function.prototype.apply).toBe('function')" },
+      { description: 'apply is truthy', assertion:'expect(Function.prototype.apply).toBeTruthy()' },
+      { description: 'not undefined', assertion:'expect(Function.prototype.apply !== undefined).toBe(true)' },
+      { description: 'not null', assertion:'expect(Function.prototype.apply !== null).toBe(true)' },
+      { description: 'equals function string', assertion:"expect(typeof Function.prototype.apply === 'function').toBe(true)" },
     ],
     hints: [
       '`apply` lives on `Function.prototype` and is therefore a function itself.',

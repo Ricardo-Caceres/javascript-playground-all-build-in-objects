@@ -25,11 +25,11 @@ groupByType([{type:'a',v:1},{type:'b',v:2},{type:'a',v:3}])
   return (Object as any).groupBy(items, (item: { type: string }) => item.type)
 }`,
     tests: [
-      { description: 'groups by type correctly', assertion: "expect(groupByType([{type:'a',v:1},{type:'b',v:2},{type:'a',v:3}])).toEqual({ a: [{type:'a',v:1},{type:'a',v:3}], b: [{type:'b',v:2}] })" },
-      { description: 'single type group', assertion: "expect(groupByType([{type:'x',v:1}])).toEqual({ x: [{type:'x',v:1}] })" },
-      { description: 'empty array returns empty object', assertion: "expect(groupByType([])).toEqual({})" },
-      { description: 'three items same type', assertion: "expect(groupByType([{type:'a',v:1},{type:'a',v:2},{type:'a',v:3}]).a).toHaveLength(3)" },
-      { description: 'result has two keys for two types', assertion: "expect(Object.keys(groupByType([{type:'a',v:1},{type:'b',v:2}]))).toHaveLength(2)" },
+      { description: 'groups by type correctly', assertion:"expect(groupByType([{type:'a',v:1},{type:'b',v:2},{type:'a',v:3}])).toEqual({ a: [{type:'a',v:1},{type:'a',v:3}], b: [{type:'b',v:2}] })" },
+      { description: 'single type group', assertion:"expect(groupByType([{type:'x',v:1}])).toEqual({ x: [{type:'x',v:1}] })" },
+      { description: 'empty array returns empty object', assertion:"expect(groupByType([])).toEqual({})" },
+      { description: 'three items same type', assertion:"expect(groupByType([{type:'a',v:1},{type:'a',v:2},{type:'a',v:3}]).a).toHaveLength(3)" },
+      { description: 'result has two keys for two types', assertion:"expect(Object.keys(groupByType([{type:'a',v:1},{type:'b',v:2}]))).toHaveLength(2)" },
     ],
     hints: [
       '`Object.groupBy(array, item => item.type)` groups by the `type` property.',
@@ -60,11 +60,11 @@ groupEvenOdd([1, 2, 3, 4]) // → { odd: [1, 3], even: [2, 4] }
   return (Object as any).groupBy(nums, (n: number) => n % 2 === 0 ? 'even' : 'odd')
 }`,
     tests: [
-      { description: 'groups correctly', assertion: "expect(groupEvenOdd([1, 2, 3, 4])).toEqual({ odd: [1, 3], even: [2, 4] })" },
-      { description: 'all even', assertion: "expect(groupEvenOdd([2, 4, 6]).even).toHaveLength(3)" },
-      { description: 'all odd', assertion: "expect(groupEvenOdd([1, 3, 5]).odd).toHaveLength(3)" },
-      { description: 'empty array returns empty object', assertion: "expect(groupEvenOdd([])).toEqual({})" },
-      { description: 'single even number', assertion: "expect(groupEvenOdd([4])).toEqual({ even: [4] })" },
+      { description: 'groups correctly', assertion:"expect(groupEvenOdd([1, 2, 3, 4])).toEqual({ odd: [1, 3], even: [2, 4] })" },
+      { description: 'all even', assertion:"expect(groupEvenOdd([2, 4, 6]).even).toHaveLength(3)" },
+      { description: 'all odd', assertion:"expect(groupEvenOdd([1, 3, 5]).odd).toHaveLength(3)" },
+      { description: 'empty array returns empty object', assertion:"expect(groupEvenOdd([])).toEqual({})" },
+      { description: 'single even number', assertion:"expect(groupEvenOdd([4])).toEqual({ even: [4] })" },
     ],
     hints: [
       'Return `"even"` or `"odd"` from the key function based on `n % 2`.',
@@ -95,11 +95,11 @@ groupByLength(['a', 'bb', 'cc', 'ddd'])
   return (Object as any).groupBy(words, (w: string) => w.length)
 }`,
     tests: [
-      { description: 'groups by length correctly', assertion: "expect(groupByLength(['a', 'bb', 'cc', 'ddd'])).toEqual({ '1': ['a'], '2': ['bb', 'cc'], '3': ['ddd'] })" },
-      { description: 'empty array returns empty object', assertion: "expect(groupByLength([])).toEqual({})" },
-      { description: 'single word group', assertion: "expect(groupByLength(['hi'])).toEqual({ '2': ['hi'] })" },
-      { description: 'all same length', assertion: "expect(Object.keys(groupByLength(['ab', 'cd', 'ef']))).toHaveLength(1)" },
-      { description: 'group length 3 has two items', assertion: "expect(groupByLength(['abc', 'def', 'x'])['3']).toHaveLength(2)" },
+      { description: 'groups by length correctly', assertion:"expect(groupByLength(['a', 'bb', 'cc', 'ddd'])).toEqual({ '1': ['a'], '2': ['bb', 'cc'], '3': ['ddd'] })" },
+      { description: 'empty array returns empty object', assertion:"expect(groupByLength([])).toEqual({})" },
+      { description: 'single word group', assertion:"expect(groupByLength(['hi'])).toEqual({ '2': ['hi'] })" },
+      { description: 'all same length', assertion:"expect(Object.keys(groupByLength(['ab', 'cd', 'ef']))).toHaveLength(1)" },
+      { description: 'group length 3 has two items', assertion:"expect(groupByLength(['abc', 'def', 'x'])['3']).toHaveLength(2)" },
     ],
     hints: [
       'Return `w.length` from the key function — numbers are coerced to string keys.',
@@ -129,11 +129,11 @@ groupEmpty() // → {}
   return (Object as any).groupBy([], () => 'x')
 }`,
     tests: [
-      { description: 'returns empty object', assertion: "expect(groupEmpty()).toEqual({})" },
-      { description: 'has no keys', assertion: "expect(Object.keys(groupEmpty())).toHaveLength(0)" },
-      { description: 'is typeof object', assertion: "expect(typeof groupEmpty()).toBe('object')" },
-      { description: 'is not null', assertion: "expect(groupEmpty()).not.toBeNull()" },
-      { description: 'empty iterable always gives empty result', assertion: "expect((Object as any).groupBy([], (x: unknown) => x)).toEqual({})" },
+      { description: 'returns empty object', assertion:"expect(groupEmpty()).toEqual({})" },
+      { description: 'has no keys', assertion:"expect(Object.keys(groupEmpty())).toHaveLength(0)" },
+      { description: 'is typeof object', assertion:"expect(typeof groupEmpty()).toBe('object')" },
+      { description: 'is not null', assertion:"expect(groupEmpty() !== null).toBe(true)" },
+      { description: 'empty iterable always gives empty result', assertion:"expect((Object).groupBy([], (x) => x)).toEqual({})" },
     ],
     hints: [
       'An empty iterable always results in no groups.',
@@ -164,11 +164,11 @@ groupByFirstLetter(['apple', 'ant', 'banana'])
   return (Object as any).groupBy(words, (w: string) => w[0])
 }`,
     tests: [
-      { description: 'groups by first letter', assertion: "expect(groupByFirstLetter(['apple', 'ant', 'banana'])).toEqual({ a: ['apple', 'ant'], b: ['banana'] })" },
-      { description: 'empty array returns empty object', assertion: "expect(groupByFirstLetter([])).toEqual({})" },
-      { description: 'single word', assertion: "expect(groupByFirstLetter(['cat'])).toEqual({ c: ['cat'] })" },
-      { description: 'three distinct first letters', assertion: "expect(Object.keys(groupByFirstLetter(['a', 'b', 'c']))).toHaveLength(3)" },
-      { description: 'one letter two words', assertion: "expect(groupByFirstLetter(['dog', 'duck']).d).toHaveLength(2)" },
+      { description: 'groups by first letter', assertion:"expect(groupByFirstLetter(['apple', 'ant', 'banana'])).toEqual({ a: ['apple', 'ant'], b: ['banana'] })" },
+      { description: 'empty array returns empty object', assertion:"expect(groupByFirstLetter([])).toEqual({})" },
+      { description: 'single word', assertion:"expect(groupByFirstLetter(['cat'])).toEqual({ c: ['cat'] })" },
+      { description: 'three distinct first letters', assertion:"expect(Object.keys(groupByFirstLetter(['a', 'b', 'c']))).toHaveLength(3)" },
+      { description: 'one letter two words', assertion:"expect(groupByFirstLetter(['dog', 'duck']).d).toHaveLength(2)" },
     ],
     hints: [
       'Return `w[0]` (or `w.charAt(0)`) from the key function.',

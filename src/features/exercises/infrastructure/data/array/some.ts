@@ -25,11 +25,11 @@ hasNegative([1, 2, 3])   // → false
   return nums.some(n => n < 0)
 }`,
     tests: [
-      { description: 'returns true when a negative exists', assertion: 'expect(hasNegative([1, -2, 3])).toBe(true)' },
-      { description: 'returns false when all positive', assertion: 'expect(hasNegative([1, 2, 3])).toBe(false)' },
-      { description: 'empty array returns false', assertion: 'expect(hasNegative([])).toBe(false)' },
-      { description: 'zero is not negative', assertion: 'expect(hasNegative([0, 1, 2])).toBe(false)' },
-      { description: 'single negative value returns true', assertion: 'expect(hasNegative([-1])).toBe(true)' },
+      { description: 'returns true when a negative exists', assertion:'expect(hasNegative([1, -2, 3])).toBe(true)' },
+      { description: 'returns false when all positive', assertion:'expect(hasNegative([1, 2, 3])).toBe(false)' },
+      { description: 'empty array returns false', assertion:'expect(hasNegative([])).toBe(false)' },
+      { description: 'zero is not negative', assertion:'expect(hasNegative([0, 1, 2])).toBe(false)' },
+      { description: 'single negative value returns true', assertion:'expect(hasNegative([-1])).toBe(true)' },
     ],
     hints: [
       '`some(n => n < 0)` checks every element until it finds one less than zero.',
@@ -61,11 +61,11 @@ hasLong(['hi', 'hey'], 5)          // → false
   return strs.some(s => s.length >= minLen)
 }`,
     tests: [
-      { description: 'finds string with length >= 5', assertion: "expect(hasLong(['hi', 'hello', 'hey'], 5)).toBe(true)" },
-      { description: 'returns false when none long enough', assertion: "expect(hasLong(['hi', 'hey'], 5)).toBe(false)" },
-      { description: 'empty array returns false', assertion: "expect(hasLong([], 1)).toBe(false)" },
-      { description: 'exact match on length counts', assertion: "expect(hasLong(['abc'], 3)).toBe(true)" },
-      { description: 'minLen 0 always true for non-empty', assertion: "expect(hasLong(['x'], 0)).toBe(true)" },
+      { description: 'finds string with length >= 5', assertion:"expect(hasLong(['hi', 'hello', 'hey'], 5)).toBe(true)" },
+      { description: 'returns false when none long enough', assertion:"expect(hasLong(['hi', 'hey'], 5)).toBe(false)" },
+      { description: 'empty array returns false', assertion:"expect(hasLong([], 1)).toBe(false)" },
+      { description: 'exact match on length counts', assertion:"expect(hasLong(['abc'], 3)).toBe(true)" },
+      { description: 'minLen 0 always true for non-empty', assertion:"expect(hasLong(['x'], 0)).toBe(true)" },
     ],
     hints: [
       'Access `.length` on each string inside the predicate: `s => s.length >= minLen`.',
@@ -96,11 +96,11 @@ someEmpty() // → false
   return ([] as boolean[]).some(() => true)
 }`,
     tests: [
-      { description: 'empty array some returns false', assertion: 'expect(someEmpty()).toBe(false)' },
-      { description: 'returns a boolean', assertion: "expect(typeof someEmpty()).toBe('boolean')" },
-      { description: 'is strictly false not falsy', assertion: 'expect(someEmpty() === false).toBe(true)' },
-      { description: 'always returns false regardless of predicate', assertion: 'expect(someEmpty()).toBeFalsy()' },
-      { description: 'not true', assertion: 'expect(someEmpty()).not.toBe(true)' },
+      { description: 'empty array some returns false', assertion:'expect(someEmpty()).toBe(false)' },
+      { description: 'returns a boolean', assertion:"expect(typeof someEmpty()).toBe('boolean')" },
+      { description: 'is strictly false not falsy', assertion:'expect(someEmpty() === false).toBe(true)' },
+      { description: 'always returns false regardless of predicate', assertion:'expect(someEmpty()).toBeFalsy()' },
+      { description: 'not true', assertion:'expect(someEmpty() !== true).toBe(true)' },
     ],
     hints: [
       '`[].some(predicate)` returns `false` no matter what the predicate does.',
@@ -132,11 +132,11 @@ hasAdmin([{role: 'user'}, {role: 'mod'}])   // → false
   return users.some(u => u.role === 'admin')
 }`,
     tests: [
-      { description: 'returns true when admin present', assertion: "expect(hasAdmin([{role:'user'},{role:'admin'}])).toBe(true)" },
-      { description: 'returns false with no admin', assertion: "expect(hasAdmin([{role:'user'},{role:'mod'}])).toBe(false)" },
-      { description: 'empty array returns false', assertion: 'expect(hasAdmin([])).toBe(false)' },
-      { description: 'single admin returns true', assertion: "expect(hasAdmin([{role:'admin'}])).toBe(true)" },
-      { description: 'role must be exactly admin', assertion: "expect(hasAdmin([{role:'administrator'}])).toBe(false)" },
+      { description: 'returns true when admin present', assertion:"expect(hasAdmin([{role:'user'},{role:'admin'}])).toBe(true)" },
+      { description: 'returns false with no admin', assertion:"expect(hasAdmin([{role:'user'},{role:'mod'}])).toBe(false)" },
+      { description: 'empty array returns false', assertion:'expect(hasAdmin([])).toBe(false)' },
+      { description: 'single admin returns true', assertion:"expect(hasAdmin([{role:'admin'}])).toBe(true)" },
+      { description: 'role must be exactly admin', assertion:"expect(hasAdmin([{role:'administrator'}])).toBe(false)" },
     ],
     hints: [
       'Destructure the object in the predicate for clarity: `({ role }) => role === \'admin\'`.',
@@ -168,11 +168,11 @@ containsDuplicate([1, 2, 3])    // → false
   return arr.some((val, idx) => arr.indexOf(val) !== idx)
 }`,
     tests: [
-      { description: 'detects duplicate', assertion: 'expect(containsDuplicate([1, 2, 3, 2])).toBe(true)' },
-      { description: 'returns false for all unique', assertion: 'expect(containsDuplicate([1, 2, 3])).toBe(false)' },
-      { description: 'empty array no duplicates', assertion: 'expect(containsDuplicate([])).toBe(false)' },
-      { description: 'all same element is duplicate', assertion: 'expect(containsDuplicate([5, 5, 5])).toBe(true)' },
-      { description: 'single element no duplicate', assertion: 'expect(containsDuplicate([42])).toBe(false)' },
+      { description: 'detects duplicate', assertion:'expect(containsDuplicate([1, 2, 3, 2])).toBe(true)' },
+      { description: 'returns false for all unique', assertion:'expect(containsDuplicate([1, 2, 3])).toBe(false)' },
+      { description: 'empty array no duplicates', assertion:'expect(containsDuplicate([])).toBe(false)' },
+      { description: 'all same element is duplicate', assertion:'expect(containsDuplicate([5, 5, 5])).toBe(true)' },
+      { description: 'single element no duplicate', assertion:'expect(containsDuplicate([42])).toBe(false)' },
     ],
     hints: [
       '`indexOf` always returns the **first** occurrence index. If `idx` differs from `indexOf(val)`, the element is a duplicate.',

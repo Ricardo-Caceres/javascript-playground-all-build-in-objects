@@ -27,11 +27,11 @@ sumArray([])            // → 0
   return sum
 }`,
     tests: [
-      { description: 'sums [1,2,3,4] to 10', assertion: "expect(sumArray([1, 2, 3, 4])).toBe(10)" },
-      { description: 'empty array returns 0', assertion: "expect(sumArray([])).toBe(0)" },
-      { description: 'single element', assertion: "expect(sumArray([5])).toBe(5)" },
-      { description: 'negative numbers', assertion: "expect(sumArray([-1, -2, 3])).toBe(0)" },
-      { description: 'all zeros', assertion: "expect(sumArray([0, 0, 0])).toBe(0)" },
+      { description: 'sums [1,2,3,4] to 10', assertion:"expect(sumArray([1, 2, 3, 4])).toBe(10)" },
+      { description: 'empty array returns 0', assertion:"expect(sumArray([])).toBe(0)" },
+      { description: 'single element', assertion:"expect(sumArray([5])).toBe(5)" },
+      { description: 'negative numbers', assertion:"expect(sumArray([-1, -2, 3])).toBe(0)" },
+      { description: 'all zeros', assertion:"expect(sumArray([0, 0, 0])).toBe(0)" },
     ],
     hints: [
       'Declare `let sum = 0` before `forEach`, then add each element inside the callback.',
@@ -65,11 +65,11 @@ collectStrings([])                         // → []
   return result
 }`,
     tests: [
-      { description: 'collects labels from objects', assertion: "expect(collectStrings([{label:'a'},{label:'b'}])).toEqual(['a', 'b'])" },
-      { description: 'empty array returns empty', assertion: "expect(collectStrings([])).toEqual([])" },
-      { description: 'single item', assertion: "expect(collectStrings([{label:'x'}])).toEqual(['x'])" },
-      { description: 'result has same length as input', assertion: "expect(collectStrings([{label:'a'},{label:'b'},{label:'c'}])).toHaveLength(3)" },
-      { description: 'order is preserved', assertion: "expect(collectStrings([{label:'z'},{label:'a'}])).toEqual(['z', 'a'])" },
+      { description: 'collects labels from objects', assertion:"expect(collectStrings([{label:'a'},{label:'b'}])).toEqual(['a', 'b'])" },
+      { description: 'empty array returns empty', assertion:"expect(collectStrings([])).toEqual([])" },
+      { description: 'single item', assertion:"expect(collectStrings([{label:'x'}])).toEqual(['x'])" },
+      { description: 'result has same length as input', assertion:"expect(collectStrings([{label:'a'},{label:'b'},{label:'c'}])).toHaveLength(3)" },
+      { description: 'order is preserved', assertion:"expect(collectStrings([{label:'z'},{label:'a'}])).toEqual(['z', 'a'])" },
     ],
     hints: [
       'Declare an empty array before `forEach`, then `push` inside the callback.',
@@ -102,11 +102,11 @@ multiplyInPlace(arr, 2)
   arr.forEach((val, idx) => { arr[idx] = val * factor })
 }`,
     tests: [
-      { description: 'multiplies each element by 2', assertion: "const a = [1,2,3]; multiplyInPlace(a, 2); expect(a).toEqual([2, 4, 6])" },
-      { description: 'multiplies by 0 zeros out', assertion: "const a = [1,2,3]; multiplyInPlace(a, 0); expect(a).toEqual([0, 0, 0])" },
-      { description: 'multiplies by 1 unchanged', assertion: "const a = [1,2,3]; multiplyInPlace(a, 1); expect(a).toEqual([1, 2, 3])" },
-      { description: 'returns undefined', assertion: "const a = [1,2,3]; expect(multiplyInPlace(a, 2)).toBeUndefined()" },
-      { description: 'empty array no-op', assertion: "const a: number[] = []; multiplyInPlace(a, 5); expect(a).toEqual([])" },
+      { description: 'multiplies each element by 2', assertion:"const a = [1,2,3]; multiplyInPlace(a, 2); expect(a).toEqual([2, 4, 6])" },
+      { description: 'multiplies by 0 zeros out', assertion:"const a = [1,2,3]; multiplyInPlace(a, 0); expect(a).toEqual([0, 0, 0])" },
+      { description: 'multiplies by 1 unchanged', assertion:"const a = [1,2,3]; multiplyInPlace(a, 1); expect(a).toEqual([1, 2, 3])" },
+      { description: 'returns undefined', assertion:"const a = [1,2,3]; expect(multiplyInPlace(a, 2)).toBeUndefined()" },
+      { description: 'empty array no-op', assertion:"const a[] = []; multiplyInPlace(a, 5); expect(a).toEqual([])" },
     ],
     hints: [
       'The third argument to the callback is the original array — use `array[index] = ...` to mutate it.',
@@ -137,11 +137,11 @@ forEachReturns([1, 2, 3]) // → undefined
   return arr.forEach(() => {}) as undefined
 }`,
     tests: [
-      { description: 'returns undefined', assertion: "expect(forEachReturns([1, 2, 3])).toBeUndefined()" },
-      { description: 'returns undefined for empty array', assertion: "expect(forEachReturns([])).toBeUndefined()" },
-      { description: 'returns undefined regardless of callback', assertion: "expect(forEachReturns([1, 2, 3])).toBe(undefined)" },
-      { description: 'is strictly undefined not null', assertion: "expect(forEachReturns([1]) === undefined).toBe(true)" },
-      { description: 'result is falsy', assertion: "expect(forEachReturns([1, 2])).toBeFalsy()" },
+      { description: 'returns undefined', assertion:"expect(forEachReturns([1, 2, 3])).toBeUndefined()" },
+      { description: 'returns undefined for empty array', assertion:"expect(forEachReturns([])).toBeUndefined()" },
+      { description: 'returns undefined regardless of callback', assertion:"expect(forEachReturns([1, 2, 3])).toBe(undefined)" },
+      { description: 'is strictly undefined not null', assertion:"expect(forEachReturns([1]) === undefined).toBe(true)" },
+      { description: 'result is falsy', assertion:"expect(forEachReturns([1, 2])).toBeFalsy()" },
     ],
     hints: [
       '`forEach` is void — it never returns a value.',
@@ -174,11 +174,11 @@ mapWithForEach([1, 2, 3], n => n * 2) // → [2, 4, 6]
   return result
 }`,
     tests: [
-      { description: 'applies fn to each element', assertion: "expect(mapWithForEach([1, 2, 3], n => n * 2)).toEqual([2, 4, 6])" },
-      { description: 'empty array returns empty', assertion: "expect(mapWithForEach([], n => n + 1)).toEqual([])" },
-      { description: 'identity function returns same values', assertion: "expect(mapWithForEach([1, 2, 3], n => n)).toEqual([1, 2, 3])" },
-      { description: 'result has same length', assertion: "expect(mapWithForEach([1, 2, 3, 4], n => n + 10)).toHaveLength(4)" },
-      { description: 'original array not modified', assertion: "const a = [1,2,3]; mapWithForEach(a, n => n*2); expect(a).toEqual([1,2,3])" },
+      { description: 'applies fn to each element', assertion:"expect(mapWithForEach([1, 2, 3], n => n * 2)).toEqual([2, 4, 6])" },
+      { description: 'empty array returns empty', assertion:"expect(mapWithForEach([], n => n + 1)).toEqual([])" },
+      { description: 'identity function returns same values', assertion:"expect(mapWithForEach([1, 2, 3], n => n)).toEqual([1, 2, 3])" },
+      { description: 'result has same length', assertion:"expect(mapWithForEach([1, 2, 3, 4], n => n + 10)).toHaveLength(4)" },
+      { description: 'original array not modified', assertion:"const a = [1,2,3]; mapWithForEach(a, n => n*2); expect(a).toEqual([1,2,3])" },
     ],
     hints: [
       'Create an empty result array, then `push(fn(n))` for each element.',

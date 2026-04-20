@@ -25,11 +25,11 @@ checkOwn({ a: 1 }, 'b') // → false
   return Object.hasOwn(obj, key)
 }`,
     tests: [
-      { description: 'existing own property returns true', assertion: "expect(checkOwn({ a: 1 }, 'a')).toBe(true)" },
-      { description: 'missing property returns false', assertion: "expect(checkOwn({ a: 1 }, 'b')).toBe(false)" },
-      { description: 'empty object returns false', assertion: "expect(checkOwn({}, 'x')).toBe(false)" },
-      { description: 'multiple own keys', assertion: "expect(checkOwn({ x: 1, y: 2 }, 'y')).toBe(true)" },
-      { description: 'value does not matter', assertion: "expect(checkOwn({ n: undefined }, 'n')).toBe(true)" },
+      { description: 'existing own property returns true', assertion:"expect(checkOwn({ a: 1 }, 'a')).toBe(true)" },
+      { description: 'missing property returns false', assertion:"expect(checkOwn({ a: 1 }, 'b')).toBe(false)" },
+      { description: 'empty object returns false', assertion:"expect(checkOwn({}, 'x')).toBe(false)" },
+      { description: 'multiple own keys', assertion:"expect(checkOwn({ x: 1, y: 2 }, 'y')).toBe(true)" },
+      { description: 'value does not matter', assertion:"expect(checkOwn({ n: undefined }, 'n')).toBe(true)" },
     ],
     hints: [
       '`Object.hasOwn(obj, key)` is equivalent to `Object.prototype.hasOwnProperty.call(obj, key)` but cleaner.',
@@ -60,11 +60,11 @@ isMissing({ a: 1 }, 'a') // → false
   return !Object.hasOwn(obj, key)
 }`,
     tests: [
-      { description: 'non-existent key returns true', assertion: "expect(isMissing({ a: 1 }, 'b')).toBe(true)" },
-      { description: 'existing key returns false', assertion: "expect(isMissing({ a: 1 }, 'a')).toBe(false)" },
-      { description: 'empty object always missing', assertion: "expect(isMissing({}, 'anything')).toBe(true)" },
-      { description: 'inherited key treated as missing by hasOwn', assertion: "const p = { x: 1 }; const o = Object.create(p); expect(isMissing(o, 'x')).toBe(true)" },
-      { description: 'own property with undefined value is not missing', assertion: "expect(isMissing({ k: undefined }, 'k')).toBe(false)" },
+      { description: 'non-existent key returns true', assertion:"expect(isMissing({ a: 1 }, 'b')).toBe(true)" },
+      { description: 'existing key returns false', assertion:"expect(isMissing({ a: 1 }, 'a')).toBe(false)" },
+      { description: 'empty object always missing', assertion:"expect(isMissing({}, 'anything')).toBe(true)" },
+      { description: 'inherited key treated as missing by hasOwn', assertion:"const p = { x: 1 }; const o = Object.create(p); expect(isMissing(o, 'x')).toBe(true)" },
+      { description: 'own property with undefined value is not missing', assertion:"expect(isMissing({ k: undefined }, 'k')).toBe(false)" },
     ],
     hints: [
       'Negate `Object.hasOwn` to check for absence.',
@@ -97,11 +97,11 @@ ownVsInherited(proto, obj, 'x')
   return { ownResult: Object.hasOwn(obj, key), inResult: key in obj }
 }`,
     tests: [
-      { description: 'inherited key: hasOwn false, in true', assertion: "const p = { x: 1 }; const o = Object.create(p); expect(ownVsInherited(p, o, 'x')).toEqual({ ownResult: false, inResult: true })" },
-      { description: 'own key: hasOwn true, in true', assertion: "const p = {}; const o = Object.create(p) as any; o.y = 2; expect(ownVsInherited(p, o, 'y')).toEqual({ ownResult: true, inResult: true })" },
-      { description: 'missing key: both false', assertion: "expect(ownVsInherited({}, {}, 'z')).toEqual({ ownResult: false, inResult: false })" },
-      { description: 'toString is inherited by plain object', assertion: "expect(Object.hasOwn({}, 'toString')).toBe(false)" },
-      { description: 'toString accessible via in', assertion: "expect('toString' in {}).toBe(true)" },
+      { description: 'inherited key: hasOwn false, in true', assertion:"const p = { x: 1 }; const o = Object.create(p); expect(ownVsInherited(p, o, 'x')).toEqual({ ownResult: false, inResult: true })" },
+      { description: 'own key: hasOwn true, in true', assertion:"const p = {}; const o = Object.create(p); o.y = 2; expect(ownVsInherited(p, o, 'y')).toEqual({ ownResult: true, inResult: true })" },
+      { description: 'missing key: both false', assertion:"expect(ownVsInherited({}, {}, 'z')).toEqual({ ownResult: false, inResult: false })" },
+      { description: 'toString is inherited by plain object', assertion:"expect(Object.hasOwn({}, 'toString')).toBe(false)" },
+      { description: 'toString accessible via in', assertion:"expect('toString' in {}).toBe(true)" },
     ],
     hints: [
       '`in` traverses the prototype chain; `Object.hasOwn` does not.',
@@ -131,11 +131,11 @@ safeCheck({ a: 1 }, 'a') // → true
   return Object.hasOwn(obj, key)
 }`,
     tests: [
-      { description: 'own property returns true', assertion: "expect(safeCheck({ a: 1 }, 'a')).toBe(true)" },
-      { description: 'missing property returns false', assertion: "expect(safeCheck({ a: 1 }, 'z')).toBe(false)" },
-      { description: 'works on null-prototype object', assertion: "const o = Object.create(null) as any; o.key = 'val'; expect(safeCheck(o, 'key')).toBe(true)" },
-      { description: 'works when hasOwnProperty is overridden', assertion: "const o: any = { hasOwnProperty: () => false, a: 1 }; expect(safeCheck(o, 'a')).toBe(true)" },
-      { description: 'inherited key is false', assertion: "const p = { x: 1 }; const o = Object.create(p); expect(safeCheck(o, 'x')).toBe(false)" },
+      { description: 'own property returns true', assertion:"expect(safeCheck({ a: 1 }, 'a')).toBe(true)" },
+      { description: 'missing property returns false', assertion:"expect(safeCheck({ a: 1 }, 'z')).toBe(false)" },
+      { description: 'works on null-prototype object', assertion:"const o = Object.create(null); o.key = 'val'; expect(safeCheck(o, 'key')).toBe(true)" },
+      { description: 'works when hasOwnProperty is overridden', assertion:"const o: any = { hasOwnProperty: () => false, a: 1 }; expect(safeCheck(o, 'a')).toBe(true)" },
+      { description: 'inherited key is false', assertion:"const p = { x: 1 }; const o = Object.create(p); expect(safeCheck(o, 'x')).toBe(false)" },
     ],
     hints: [
       '`Object.hasOwn` works even on objects with no prototype (`Object.create(null)`) or with a shadowed `hasOwnProperty`.',
@@ -167,11 +167,11 @@ checkNullProto('id', 42) // → true
   return Object.hasOwn(obj, key)
 }`,
     tests: [
-      { description: 'own key on null-proto returns true', assertion: "expect(checkNullProto('id', 42)).toBe(true)" },
-      { description: 'missing key returns false', assertion: "const o = Object.create(null); expect(Object.hasOwn(o, 'missing')).toBe(false)" },
-      { description: 'null-proto has no hasOwnProperty method', assertion: "const o = Object.create(null) as any; expect(o.hasOwnProperty).toBeUndefined()" },
-      { description: 'Object.hasOwn still works', assertion: "const o = Object.create(null) as any; o.x = 1; expect(Object.hasOwn(o, 'x')).toBe(true)" },
-      { description: 'different key returns false', assertion: "expect(checkNullProto('a', 1) && !Object.hasOwn(Object.create(null), 'b')).toBe(true)" },
+      { description: 'own key on null-proto returns true', assertion:"expect(checkNullProto('id', 42)).toBe(true)" },
+      { description: 'missing key returns false', assertion:"const o = Object.create(null); expect(Object.hasOwn(o, 'missing')).toBe(false)" },
+      { description: 'null-proto has no hasOwnProperty method', assertion:"const o = Object.create(null); expect(o.hasOwnProperty).toBeUndefined()" },
+      { description: 'Object.hasOwn still works', assertion:"const o = Object.create(null); o.x = 1; expect(Object.hasOwn(o, 'x')).toBe(true)" },
+      { description: 'different key returns false', assertion:"expect(checkNullProto('a', 1) && !Object.hasOwn(Object.create(null), 'b')).toBe(true)" },
     ],
     hints: [
       '`Object.hasOwn` is a static method and never relies on the object\'s own `hasOwnProperty`.',

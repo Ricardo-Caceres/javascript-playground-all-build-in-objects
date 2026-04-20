@@ -16,7 +16,7 @@ export const weakSetDeleteExercises: Exercise[] = [
       { description: 'result is truthy', assertion: 'const ws2 = new WeakSet(); const o2={}; ws2.add(o2); expect(ws2.delete(o2)).toBeTruthy()' },
       { description: 'returns boolean true', assertion: "const ws3 = new WeakSet(); const o3={}; ws3.add(o3); expect(typeof ws3.delete(o3)).toBe('boolean')" },
       { description: 'delete function object returns true', assertion: 'const ws4 = new WeakSet(); const fn = () => {}; ws4.add(fn); expect(ws4.delete(fn)).toBe(true)' },
-      { description: 'delete array object returns true', assertion: 'const ws5 = new WeakSet(); const arr: object = []; ws5.add(arr); expect(ws5.delete(arr)).toBe(true)' },
+      { description: 'delete array object returns true', assertion: 'const ws5 = new WeakSet(); const arr = []; ws5.add(arr); expect(ws5.delete(arr)).toBe(true)' },
     ],
     hints: ['delete() returns true when the object existed in the set.'],
     tags: ['weakset', 'delete', 'instance-method'],

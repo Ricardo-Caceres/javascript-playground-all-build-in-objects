@@ -30,11 +30,11 @@ The \`deleteProperty\` trap intercepts the \`delete\` operator. Use it to observ
   return deleted
 }`,
     tests: [
-      { description: 'deleted contains x', assertion: "const deleted = []; const p = new Proxy({x:1}, { deleteProperty(t, k) { deleted.push(k); return true; } }); delete p.x; expect(deleted).toEqual(['x'])" },
-      { description: 'deleted has length 1', assertion: "const deleted = []; const p = new Proxy({x:1}, { deleteProperty(t, k) { deleted.push(k); return true; } }); delete p.x; expect(deleted).toHaveLength(1)" },
-      { description: 'deleted[0] is x', assertion: "const deleted = []; const p = new Proxy({x:1}, { deleteProperty(t, k) { deleted.push(k); return true; } }); delete p.x; expect(deleted[0]).toBe('x')" },
-      { description: 'deleted is truthy', assertion: "const deleted = []; const p = new Proxy({x:1}, { deleteProperty(t, k) { deleted.push(k); return true; } }); delete p.x; expect(deleted).toBeTruthy()" },
-      { description: 'deleted contains the key', assertion: "const deleted = []; const p = new Proxy({x:1}, { deleteProperty(t, k) { deleted.push(k); return true; } }); delete p.x; expect(deleted).toContain('x')" },
+      { description: 'deleted contains x', assertion:"const deleted = []; const p = new Proxy({x:1}, { deleteProperty(t, k) { deleted.push(k); return true; } }); delete p.x; expect(deleted).toEqual(['x'])" },
+      { description: 'deleted has length 1', assertion:"const deleted = []; const p = new Proxy({x:1}, { deleteProperty(t, k) { deleted.push(k); return true; } }); delete p.x; expect(deleted).toHaveLength(1)" },
+      { description: 'deleted[0] is x', assertion:"const deleted = []; const p = new Proxy({x:1}, { deleteProperty(t, k) { deleted.push(k); return true; } }); delete p.x; expect(deleted[0]).toBe('x')" },
+      { description: 'deleted is truthy', assertion:"const deleted = []; const p = new Proxy({x:1}, { deleteProperty(t, k) { deleted.push(k); return true; } }); delete p.x; expect(deleted).toBeTruthy()" },
+      { description: 'deleted contains the key', assertion:"const deleted = []; const p = new Proxy({x:1}, { deleteProperty(t, k) { deleted.push(k); return true; } }); delete p.x; expect(deleted).toContain('x')" },
     ],
     hints: [
       'The `deleteProperty(target, key)` trap is called when `delete proxy.key` is executed.',
@@ -64,11 +64,11 @@ Without a \`deleteProperty\` trap, \`delete\` forwards to the target and actuall
   return p.x
 }`,
     tests: [
-      { description: 'p.x is undefined after delete', assertion: 'const p = new Proxy({x: 1}, {}); delete p.x; expect(p.x).toBeUndefined()' },
-      { description: 'property no longer exists', assertion: "const p = new Proxy({x: 1}, {}); delete p.x; expect('x' in p).toBe(false)" },
-      { description: 'delete returns true', assertion: 'const p = new Proxy({x: 1}, {}); expect(delete p.x).toBe(true)' },
-      { description: 'proxy still exists', assertion: 'const p = new Proxy({x: 1}, {}); delete p.x; expect(p).toBeTruthy()' },
-      { description: 'proxy is object', assertion: "const p = new Proxy({x: 1}, {}); delete p.x; expect(typeof p).toBe('object')" },
+      { description: 'p.x is undefined after delete', assertion:'const p = new Proxy({x: 1}, {}); delete p.x; expect(p.x).toBeUndefined()' },
+      { description: 'property no longer exists', assertion:"const p = new Proxy({x: 1}, {}); delete p.x; expect('x' in p).toBe(false)" },
+      { description: 'delete returns true', assertion:'const p = new Proxy({x: 1}, {}); expect(delete p.x).toBe(true)' },
+      { description: 'proxy still exists', assertion:'const p = new Proxy({x: 1}, {}); delete p.x; expect(p).toBeTruthy()' },
+      { description: 'proxy is object', assertion:"const p = new Proxy({x: 1}, {}); delete p.x; expect(typeof p).toBe('object')" },
     ],
     hints: [
       'Without a trap, `delete proxy.key` delegates to the target object.',
@@ -96,11 +96,11 @@ When the \`deleteProperty\` trap returns \`false\`, the \`delete\` expression ev
   return delete (p as any).x
 }`,
     tests: [
-      { description: 'delete p.x returns false', assertion: 'const p = new Proxy({}, { deleteProperty: () => false }); expect(delete (p).x).toBe(false)' },
-      { description: 'result is boolean', assertion: "const p = new Proxy({}, { deleteProperty: () => false }); expect(typeof delete (p).x).toBe('boolean')" },
-      { description: 'result is falsy', assertion: 'const p = new Proxy({}, { deleteProperty: () => false }); expect(delete (p).x).toBeFalsy()' },
-      { description: 'equals false', assertion: 'const p = new Proxy({}, { deleteProperty: () => false }); expect((delete (p).x) === false).toBe(true)' },
-      { description: 'trap returning true gives true', assertion: 'const p = new Proxy({}, { deleteProperty: () => true }); expect(delete (p).x).toBe(true)' },
+      { description: 'delete p.x returns false', assertion:'const p = new Proxy({}, { deleteProperty: () => false }); expect(delete (p).x).toBe(false)' },
+      { description: 'result is boolean', assertion:"const p = new Proxy({}, { deleteProperty: () => false }); expect(typeof delete (p).x).toBe('boolean')" },
+      { description: 'result is falsy', assertion:'const p = new Proxy({}, { deleteProperty: () => false }); expect(delete (p).x).toBeFalsy()' },
+      { description: 'equals false', assertion:'const p = new Proxy({}, { deleteProperty: () => false }); expect((delete (p).x) === false).toBe(true)' },
+      { description: 'trap returning true gives true', assertion:'const p = new Proxy({}, { deleteProperty: () => true }); expect(delete (p).x).toBe(true)' },
     ],
     hints: [
       'Returning `false` from `deleteProperty` prevents deletion and makes `delete` evaluate to `false`.',
@@ -130,11 +130,11 @@ After a passthrough \`delete\`, the property no longer exists on the proxy (or i
   return 'x' in p
 }`,
     tests: [
-      { description: 'x not in p after delete', assertion: "const p = new Proxy({x:1, y:2}, {}); delete p.x; expect('x' in p).toBe(false)" },
-      { description: 'y still in p', assertion: "const p = new Proxy({x:1, y:2}, {}); delete p.x; expect('y' in p).toBe(true)" },
-      { description: 'result is boolean', assertion: "const p = new Proxy({x:1, y:2}, {}); delete p.x; expect(typeof ('x' in p)).toBe('boolean')" },
-      { description: 'result is falsy', assertion: "const p = new Proxy({x:1, y:2}, {}); delete p.x; expect('x' in p).toBeFalsy()" },
-      { description: 'p.x is undefined', assertion: 'const p = new Proxy({x:1, y:2}, {}); delete p.x; expect(p.x).toBeUndefined()' },
+      { description: 'x not in p after delete', assertion:"const p = new Proxy({x:1, y:2}, {}); delete p.x; expect('x' in p).toBe(false)" },
+      { description: 'y still in p', assertion:"const p = new Proxy({x:1, y:2}, {}); delete p.x; expect('y' in p).toBe(true)" },
+      { description: 'result is boolean', assertion:"const p = new Proxy({x:1, y:2}, {}); delete p.x; expect(typeof ('x' in p)).toBe('boolean')" },
+      { description: 'result is falsy', assertion:"const p = new Proxy({x:1, y:2}, {}); delete p.x; expect('x' in p).toBeFalsy()" },
+      { description: 'p.x is undefined', assertion:'const p = new Proxy({x:1, y:2}, {}); delete p.x; expect(p.x).toBeUndefined()' },
     ],
     hints: [
       'A passthrough `delete` removes the key from the target, so `in` returns `false`.',
@@ -159,11 +159,11 @@ After a passthrough \`delete\`, the property no longer exists on the proxy (or i
   return typeof Proxy
 }`,
     tests: [
-      { description: 'typeof Proxy is function', assertion: "expect(typeof Proxy).toBe('function')" },
-      { description: 'equals function string', assertion: "expect(typeof Proxy === 'function').toBe(true)" },
-      { description: 'Proxy is truthy', assertion: 'expect(Proxy).toBeTruthy()' },
-      { description: 'Proxy is not null', assertion: 'expect(Proxy).not.toBeNull()' },
-      { description: 'Proxy is not undefined', assertion: 'expect(Proxy).not.toBeUndefined()' },
+      { description: 'typeof Proxy is function', assertion:"expect(typeof Proxy).toBe('function')" },
+      { description: 'equals function string', assertion:"expect(typeof Proxy === 'function').toBe(true)" },
+      { description: 'Proxy is truthy', assertion:'expect(Proxy).toBeTruthy()' },
+      { description: 'Proxy is not null', assertion:'expect(Proxy !== null).toBe(true)' },
+      { description: 'Proxy is not undefined', assertion:'expect(Proxy !== undefined).toBe(true)' },
     ],
     hints: [
       '`Proxy` is a built-in constructor function.',

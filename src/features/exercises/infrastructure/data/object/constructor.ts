@@ -24,11 +24,11 @@ createEmpty() // → {}
   return new Object()
 }`,
     tests: [
-      { description: 'returns an object', assertion: "expect(typeof createEmpty()).toBe('object')" },
-      { description: 'returns an empty object', assertion: "expect(createEmpty()).toEqual({})" },
-      { description: 'is not null', assertion: "expect(createEmpty()).not.toBeNull()" },
-      { description: 'has no own keys', assertion: "expect(Object.keys(createEmpty())).toHaveLength(0)" },
-      { description: 'each call returns a distinct object', assertion: "expect(createEmpty() === createEmpty()).toBe(false)" },
+      { description: 'returns an object', assertion:"expect(typeof createEmpty()).toBe('object')" },
+      { description: 'returns an empty object', assertion:"expect(createEmpty()).toEqual({})" },
+      { description: 'is not null', assertion:"expect(createEmpty() !== null).toBe(true)" },
+      { description: 'has no own keys', assertion:"expect(Object.keys(createEmpty())).toHaveLength(0)" },
+      { description: 'each call returns a distinct object', assertion:"expect(createEmpty() === createEmpty()).toBe(false)" },
     ],
     hints: [
       '`new Object()` is equivalent to writing `{}`.',
@@ -60,11 +60,11 @@ typeof Object('hi')   // → 'object'
   return Object(val)
 }`,
     tests: [
-      { description: 'wrapping a number returns an object', assertion: "expect(typeof wrapValue(42)).toBe('object')" },
-      { description: 'wrapping a string returns an object', assertion: "expect(typeof wrapValue('hi')).toBe('object')" },
-      { description: 'wrapping a boolean returns an object', assertion: "expect(typeof wrapValue(true)).toBe('object')" },
-      { description: 'primitive value is preserved inside', assertion: "expect(wrapValue(99).valueOf()).toBe(99)" },
-      { description: 'wrapped string valueOf returns original', assertion: "expect(wrapValue('abc').valueOf()).toBe('abc')" },
+      { description: 'wrapping a number returns an object', assertion:"expect(typeof wrapValue(42)).toBe('object')" },
+      { description: 'wrapping a string returns an object', assertion:"expect(typeof wrapValue('hi')).toBe('object')" },
+      { description: 'wrapping a boolean returns an object', assertion:"expect(typeof wrapValue(true)).toBe('object')" },
+      { description: 'primitive value is preserved inside', assertion:"expect(wrapValue(99).valueOf()).toBe(99)" },
+      { description: 'wrapped string valueOf returns original', assertion:"expect(wrapValue('abc').valueOf()).toBe('abc')" },
     ],
     hints: [
       '`Object(42)` creates a `Number` object — its `valueOf()` returns the original primitive.',
@@ -95,11 +95,11 @@ fromNull() // → {}
   return Object(null)
 }`,
     tests: [
-      { description: 'returns an object', assertion: "expect(typeof fromNull()).toBe('object')" },
-      { description: 'is not null', assertion: "expect(fromNull()).not.toBeNull()" },
-      { description: 'equals an empty object', assertion: "expect(fromNull()).toEqual({})" },
-      { description: 'has no own keys', assertion: "expect(Object.keys(fromNull())).toHaveLength(0)" },
-      { description: 'Object(undefined) also returns empty object', assertion: "expect(Object(undefined)).toEqual({})" },
+      { description: 'returns an object', assertion:"expect(typeof fromNull()).toBe('object')" },
+      { description: 'is not null', assertion:"expect(fromNull() !== null).toBe(true)" },
+      { description: 'equals an empty object', assertion:"expect(fromNull()).toEqual({})" },
+      { description: 'has no own keys', assertion:"expect(Object.keys(fromNull())).toHaveLength(0)" },
+      { description: 'Object(undefined) also returns empty object', assertion:"expect(Object(undefined)).toEqual({})" },
     ],
     hints: [
       '`Object(null)` safely returns `{}` — it does not throw.',
@@ -130,11 +130,11 @@ fromUndefined() // → {}
   return Object(undefined)
 }`,
     tests: [
-      { description: 'returns an object', assertion: "expect(typeof fromUndefined()).toBe('object')" },
-      { description: 'is not null', assertion: "expect(fromUndefined()).not.toBeNull()" },
-      { description: 'equals empty object', assertion: "expect(fromUndefined()).toEqual({})" },
-      { description: 'has no own enumerable keys', assertion: "expect(Object.keys(fromUndefined())).toHaveLength(0)" },
-      { description: 'each call returns a new object', assertion: "expect(fromUndefined() === fromUndefined()).toBe(false)" },
+      { description: 'returns an object', assertion:"expect(typeof fromUndefined()).toBe('object')" },
+      { description: 'is not null', assertion:"expect(fromUndefined() !== null).toBe(true)" },
+      { description: 'equals empty object', assertion:"expect(fromUndefined()).toEqual({})" },
+      { description: 'has no own enumerable keys', assertion:"expect(Object.keys(fromUndefined())).toHaveLength(0)" },
+      { description: 'each call returns a new object', assertion:"expect(fromUndefined() === fromUndefined()).toBe(false)" },
     ],
     hints: [
       '`Object(undefined)` behaves exactly like `new Object()` or `{}`.',
@@ -166,11 +166,11 @@ identityWrap(o) === o // → true
   return Object(obj)
 }`,
     tests: [
-      { description: 'returns the same reference', assertion: "const o = { a: 1 }; expect(identityWrap(o) === o).toBe(true)" },
-      { description: 'mutations on result affect original', assertion: "const o = { x: 1 } as any; identityWrap(o).x = 99; expect(o.x).toBe(99)" },
-      { description: 'works with array', assertion: "const a = [1, 2]; expect(identityWrap(a) === a).toBe(true)" },
-      { description: 'result has same keys', assertion: "const o = { k: 'v' }; expect(Object.keys(identityWrap(o))).toEqual(['k'])" },
-      { description: 'result deep-equals original', assertion: "const o = { n: 42 }; expect(identityWrap(o)).toEqual({ n: 42 })" },
+      { description: 'returns the same reference', assertion:"const o = { a: 1 }; expect(identityWrap(o) === o).toBe(true)" },
+      { description: 'mutations on result affect original', assertion:"const o = { x: 1 }; identityWrap(o).x = 99; expect(o.x).toBe(99)" },
+      { description: 'works with array', assertion:"const a = [1, 2]; expect(identityWrap(a) === a).toBe(true)" },
+      { description: 'result has same keys', assertion:"const o = { k: 'v' }; expect(Object.keys(identityWrap(o))).toEqual(['k'])" },
+      { description: 'result deep-equals original', assertion:"const o = { n: 42 }; expect(identityWrap(o)).toEqual({ n: 42 })" },
     ],
     hints: [
       'When the argument is already an object, `Object(obj)` returns the same reference unchanged.',

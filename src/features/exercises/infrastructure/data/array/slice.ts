@@ -25,11 +25,11 @@ getSlice([10, 20, 30], 0, 2)    // → [10, 20]
   return arr.slice(start, end)
 }`,
     tests: [
-      { description: 'slices from index 1 to 3', assertion: 'expect(getSlice([1, 2, 3, 4, 5], 1, 3)).toEqual([2, 3])' },
-      { description: 'slices from 0 to 2', assertion: 'expect(getSlice([10, 20, 30], 0, 2)).toEqual([10, 20])' },
-      { description: 'start equals end returns empty array', assertion: 'expect(getSlice([1, 2, 3], 2, 2)).toEqual([])' },
-      { description: 'end beyond array length returns to end', assertion: 'expect(getSlice([1, 2, 3], 1, 10)).toEqual([2, 3])' },
-      { description: 'returns an array', assertion: 'expect(Array.isArray(getSlice([1, 2, 3], 0, 1))).toBe(true)' },
+      { description: 'slices from index 1 to 3', assertion:'expect(getSlice([1, 2, 3, 4, 5], 1, 3)).toEqual([2, 3])' },
+      { description: 'slices from 0 to 2', assertion:'expect(getSlice([10, 20, 30], 0, 2)).toEqual([10, 20])' },
+      { description: 'start equals end returns empty array', assertion:'expect(getSlice([1, 2, 3], 2, 2)).toEqual([])' },
+      { description: 'end beyond array length returns to end', assertion:'expect(getSlice([1, 2, 3], 1, 10)).toEqual([2, 3])' },
+      { description: 'returns an array', assertion:'expect(Array.isArray(getSlice([1, 2, 3], 0, 1))).toBe(true)' },
     ],
     hints: [
       '`slice(start, end)` does not include the element at `end`.',
@@ -60,11 +60,11 @@ shallowCopy([1, 2, 3]) // → [1, 2, 3]  (new array reference)
   return arr.slice()
 }`,
     tests: [
-      { description: 'returns same values', assertion: 'expect(shallowCopy([1, 2, 3])).toEqual([1, 2, 3])' },
-      { description: 'empty array copies to empty array', assertion: 'expect(shallowCopy([])).toEqual([])' },
-      { description: 'returns a different reference', assertion: 'const a = [1, 2]; expect(shallowCopy(a)).not.toBe(a)' },
-      { description: 'single element copy', assertion: 'expect(shallowCopy([42])).toEqual([42])' },
-      { description: 'result has same length', assertion: 'expect(shallowCopy([1, 2, 3, 4])).toHaveLength(4)' },
+      { description: 'returns same values', assertion:'expect(shallowCopy([1, 2, 3])).toEqual([1, 2, 3])' },
+      { description: 'empty array copies to empty array', assertion:'expect(shallowCopy([])).toEqual([])' },
+      { description: 'returns a different reference', assertion:'const a = [1, 2]; expect(shallowCopy(a) !== a).toBe(true)' },
+      { description: 'single element copy', assertion:'expect(shallowCopy([42])).toEqual([42])' },
+      { description: 'result has same length', assertion:'expect(shallowCopy([1, 2, 3, 4])).toHaveLength(4)' },
     ],
     hints: [
       '`arr.slice()` with no arguments is equivalent to `arr.slice(0)`.',
@@ -96,11 +96,11 @@ lastN([10, 20, 30], 1)    // → [30]
   return arr.slice(-n)
 }`,
     tests: [
-      { description: 'last 2 elements', assertion: 'expect(lastN([1, 2, 3, 4, 5], 2)).toEqual([4, 5])' },
-      { description: 'last 1 element', assertion: 'expect(lastN([10, 20, 30], 1)).toEqual([30])' },
-      { description: 'last 3 of 3 returns all', assertion: 'expect(lastN([7, 8, 9], 3)).toEqual([7, 8, 9])' },
-      { description: 'last 0 returns empty', assertion: 'expect(lastN([1, 2, 3], 0)).toEqual([])' },
-      { description: 'does not mutate original', assertion: 'const a = [1,2,3]; lastN(a, 2); expect(a).toEqual([1,2,3])' },
+      { description: 'last 2 elements', assertion:'expect(lastN([1, 2, 3, 4, 5], 2)).toEqual([4, 5])' },
+      { description: 'last 1 element', assertion:'expect(lastN([10, 20, 30], 1)).toEqual([30])' },
+      { description: 'last 3 of 3 returns all', assertion:'expect(lastN([7, 8, 9], 3)).toEqual([7, 8, 9])' },
+      { description: 'last 0 returns empty', assertion:'expect(lastN([1, 2, 3], 0)).toEqual([])' },
+      { description: 'does not mutate original', assertion:'const a = [1,2,3]; lastN(a, 2); expect(a).toEqual([1,2,3])' },
     ],
     hints: [
       '`slice(-n)` is shorthand for `slice(arr.length - n)`.',
@@ -132,11 +132,11 @@ firstN([10, 20], 1)         // → [10]
   return arr.slice(0, n)
 }`,
     tests: [
-      { description: 'first 3 of 5', assertion: 'expect(firstN([1, 2, 3, 4, 5], 3)).toEqual([1, 2, 3])' },
-      { description: 'first 1', assertion: 'expect(firstN([10, 20], 1)).toEqual([10])' },
-      { description: 'n=0 returns empty array', assertion: 'expect(firstN([1, 2, 3], 0)).toEqual([])' },
-      { description: 'n >= length returns all', assertion: 'expect(firstN([1, 2], 5)).toEqual([1, 2])' },
-      { description: 'does not mutate original', assertion: 'const a = [1,2,3]; firstN(a, 2); expect(a).toHaveLength(3)' },
+      { description: 'first 3 of 5', assertion:'expect(firstN([1, 2, 3, 4, 5], 3)).toEqual([1, 2, 3])' },
+      { description: 'first 1', assertion:'expect(firstN([10, 20], 1)).toEqual([10])' },
+      { description: 'n=0 returns empty array', assertion:'expect(firstN([1, 2, 3], 0)).toEqual([])' },
+      { description: 'n >= length returns all', assertion:'expect(firstN([1, 2], 5)).toEqual([1, 2])' },
+      { description: 'does not mutate original', assertion:'const a = [1,2,3]; firstN(a, 2); expect(a).toHaveLength(3)' },
     ],
     hints: [
       '`slice(0, n)` starts at index 0 and stops before index `n`.',
@@ -168,11 +168,11 @@ withoutFirstAndLast([10, 20, 30])     // → [20]
   return arr.slice(1, -1)
 }`,
     tests: [
-      { description: 'removes first and last from 5 elements', assertion: 'expect(withoutFirstAndLast([1, 2, 3, 4, 5])).toEqual([2, 3, 4])' },
-      { description: 'removes first and last from 3 elements', assertion: 'expect(withoutFirstAndLast([10, 20, 30])).toEqual([20])' },
-      { description: 'two elements returns empty', assertion: 'expect(withoutFirstAndLast([1, 2])).toEqual([])' },
-      { description: 'single element returns empty', assertion: 'expect(withoutFirstAndLast([5])).toEqual([])' },
-      { description: 'does not mutate original', assertion: 'const a = [1,2,3,4]; withoutFirstAndLast(a); expect(a).toHaveLength(4)' },
+      { description: 'removes first and last from 5 elements', assertion:'expect(withoutFirstAndLast([1, 2, 3, 4, 5])).toEqual([2, 3, 4])' },
+      { description: 'removes first and last from 3 elements', assertion:'expect(withoutFirstAndLast([10, 20, 30])).toEqual([20])' },
+      { description: 'two elements returns empty', assertion:'expect(withoutFirstAndLast([1, 2])).toEqual([])' },
+      { description: 'single element returns empty', assertion:'expect(withoutFirstAndLast([5])).toEqual([])' },
+      { description: 'does not mutate original', assertion:'const a = [1,2,3,4]; withoutFirstAndLast(a); expect(a).toHaveLength(4)' },
     ],
     hints: [
       '`slice(1, -1)` combines a positive start index with a negative end index.',

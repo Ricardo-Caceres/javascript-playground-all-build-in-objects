@@ -24,11 +24,11 @@ getAllNames({ a: 1, b: 2 }) // → ['a', 'b']
   return Object.getOwnPropertyNames(obj)
 }`,
     tests: [
-      { description: 'returns all own names', assertion: "expect(getAllNames({ a: 1, b: 2 })).toEqual(['a', 'b'])" },
-      { description: 'empty object returns []', assertion: "expect(getAllNames({})).toEqual([])" },
-      { description: 'includes non-enumerable', assertion: "const o: any = {}; Object.defineProperty(o, 'h', { value: 1, enumerable: false }); expect(getAllNames(o)).toContain('h')" },
-      { description: 'result is an array', assertion: "expect(Array.isArray(getAllNames({ x: 1 }))).toBe(true)" },
-      { description: 'correct length', assertion: "expect(getAllNames({ a: 1, b: 2, c: 3 })).toHaveLength(3)" },
+      { description: 'returns all own names', assertion:"expect(getAllNames({ a: 1, b: 2 })).toEqual(['a', 'b'])" },
+      { description: 'empty object returns []', assertion:"expect(getAllNames({})).toEqual([])" },
+      { description: 'includes non-enumerable', assertion:"const o: any = {}; Object.defineProperty(o, 'h', { value: 1, enumerable: false }); expect(getAllNames(o)).toContain('h')" },
+      { description: 'result is an array', assertion:"expect(Array.isArray(getAllNames({ x: 1 }))).toBe(true)" },
+      { description: 'correct length', assertion:"expect(getAllNames({ a: 1, b: 2, c: 3 })).toHaveLength(3)" },
     ],
     hints: [
       '`Object.getOwnPropertyNames` is like `Object.keys` but also includes non-enumerable properties.',
@@ -60,11 +60,11 @@ extraNames(obj) // → ['_h']
   return Object.getOwnPropertyNames(obj).filter(n => !keys.has(n))
 }`,
     tests: [
-      { description: 'returns non-enumerable names', assertion: "const o: any = { a: 1 }; Object.defineProperty(o, '_h', { value: 2, enumerable: false, configurable: true }); expect(extraNames(o)).toEqual(['_h'])" },
-      { description: 'empty when all are enumerable', assertion: "expect(extraNames({ a: 1, b: 2 })).toEqual([])" },
-      { description: 'empty object returns []', assertion: "expect(extraNames({})).toEqual([])" },
-      { description: 'multiple non-enumerable', assertion: "const o: any = {}; Object.defineProperty(o, 'x', { value: 1, enumerable: false, configurable: true }); Object.defineProperty(o, 'y', { value: 2, enumerable: false, configurable: true }); expect(extraNames(o)).toHaveLength(2)" },
-      { description: 'does not include inherited', assertion: "const p = { inherited: 1 }; const o = Object.create(p); expect(extraNames(o)).toHaveLength(0)" },
+      { description: 'returns non-enumerable names', assertion:"const o: any = { a: 1 }; Object.defineProperty(o, '_h', { value: 2, enumerable: false, configurable: true }); expect(extraNames(o)).toEqual(['_h'])" },
+      { description: 'empty when all are enumerable', assertion:"expect(extraNames({ a: 1, b: 2 })).toEqual([])" },
+      { description: 'empty object returns []', assertion:"expect(extraNames({})).toEqual([])" },
+      { description: 'multiple non-enumerable', assertion:"const o: any = {}; Object.defineProperty(o, 'x', { value: 1, enumerable: false, configurable: true }); Object.defineProperty(o, 'y', { value: 2, enumerable: false, configurable: true }); expect(extraNames(o)).toHaveLength(2)" },
+      { description: 'does not include inherited', assertion:"const p = { inherited: 1 }; const o = Object.create(p); expect(extraNames(o)).toHaveLength(0)" },
     ],
     hints: [
       'Filter `getOwnPropertyNames` result by removing items that also appear in `Object.keys`.',
@@ -95,11 +95,11 @@ isEmptyObject({ a: 1 })  // → false
   return Object.getOwnPropertyNames(obj).length === 0
 }`,
     tests: [
-      { description: 'empty object returns true', assertion: "expect(isEmptyObject({})).toBe(true)" },
-      { description: 'non-empty object returns false', assertion: "expect(isEmptyObject({ a: 1 })).toBe(false)" },
-      { description: 'non-enumerable property still makes it non-empty', assertion: "const o: any = {}; Object.defineProperty(o, 'h', { value: 1, enumerable: false }); expect(isEmptyObject(o)).toBe(false)" },
-      { description: 'null-prototype empty object is empty', assertion: "expect(isEmptyObject(Object.create(null))).toBe(true)" },
-      { description: 'object with only symbol keys returns true', assertion: "const s = Symbol('k'); const o: any = { [s]: 1 }; expect(isEmptyObject(o)).toBe(true)" },
+      { description: 'empty object returns true', assertion:"expect(isEmptyObject({})).toBe(true)" },
+      { description: 'non-empty object returns false', assertion:"expect(isEmptyObject({ a: 1 })).toBe(false)" },
+      { description: 'non-enumerable property still makes it non-empty', assertion:"const o: any = {}; Object.defineProperty(o, 'h', { value: 1, enumerable: false }); expect(isEmptyObject(o)).toBe(false)" },
+      { description: 'null-prototype empty object is empty', assertion:"expect(isEmptyObject(Object.create(null))).toBe(true)" },
+      { description: 'object with only symbol keys returns true', assertion:"const s = Symbol('k'); const o: any = { [s]: 1 }; expect(isEmptyObject(o)).toBe(true)" },
     ],
     hints: [
       'Symbols are NOT returned by `getOwnPropertyNames` — use `getOwnPropertySymbols` for those.',
@@ -129,11 +129,11 @@ namesIncludeLength([1, 2, 3]) // → true
   return Object.getOwnPropertyNames(arr).includes('length')
 }`,
     tests: [
-      { description: 'array has length in names', assertion: "expect(namesIncludeLength([1, 2, 3])).toBe(true)" },
-      { description: 'empty array also has length', assertion: "expect(namesIncludeLength([])).toBe(true)" },
-      { description: 'Object.keys does not include length', assertion: "expect(Object.keys([1, 2])).not.toContain('length')" },
-      { description: 'length descriptor is non-enumerable', assertion: "expect(Object.getOwnPropertyDescriptor([1, 2], 'length')?.enumerable).toBe(false)" },
-      { description: 'array indices are also in names', assertion: "expect(Object.getOwnPropertyNames([10, 20])).toContain('0')" },
+      { description: 'array has length in names', assertion:"expect(namesIncludeLength([1, 2, 3])).toBe(true)" },
+      { description: 'empty array also has length', assertion:"expect(namesIncludeLength([])).toBe(true)" },
+      { description: 'Object.keys does not include length', assertion:"expect(Object.keys([1, 2]).includes('length')).toBe(false)" },
+      { description: 'length descriptor is non-enumerable', assertion:"expect(Object.getOwnPropertyDescriptor([1, 2], 'length')?.enumerable).toBe(false)" },
+      { description: 'array indices are also in names', assertion:"expect(Object.getOwnPropertyNames([10, 20])).toContain('0')" },
     ],
     hints: [
       "`Array.prototype.length` is a non-enumerable own property of every array.",
@@ -167,11 +167,11 @@ ownNamesOnly(obj) // → ['own']
   return Object.getOwnPropertyNames(obj)
 }`,
     tests: [
-      { description: 'excludes inherited property', assertion: "const p = { inherited: 1 }; const o = Object.create(p) as any; o.own = 2; expect(ownNamesOnly(o)).toEqual(['own'])" },
-      { description: 'inherited key accessible via in', assertion: "const p = { x: 1 }; const o = Object.create(p); expect('x' in o).toBe(true)" },
-      { description: 'inherited key not in getOwnPropertyNames', assertion: "const p = { x: 1 }; const o = Object.create(p); expect(ownNamesOnly(o)).toHaveLength(0)" },
-      { description: 'own properties are included', assertion: "const o = { a: 1, b: 2 }; expect(ownNamesOnly(o)).toHaveLength(2)" },
-      { description: 'toString not in getOwnPropertyNames for plain obj', assertion: "expect(ownNamesOnly({})).toHaveLength(0)" },
+      { description: 'excludes inherited property', assertion:"const p = { inherited: 1 }; const o = Object.create(p); o.own = 2; expect(ownNamesOnly(o)).toEqual(['own'])" },
+      { description: 'inherited key accessible via in', assertion:"const p = { x: 1 }; const o = Object.create(p); expect('x' in o).toBe(true)" },
+      { description: 'inherited key not in getOwnPropertyNames', assertion:"const p = { x: 1 }; const o = Object.create(p); expect(ownNamesOnly(o)).toHaveLength(0)" },
+      { description: 'own properties are included', assertion:"const o = { a: 1, b: 2 }; expect(ownNamesOnly(o)).toHaveLength(2)" },
+      { description: 'toString not in getOwnPropertyNames for plain obj', assertion:"expect(ownNamesOnly({})).toHaveLength(0)" },
     ],
     hints: [
       '`Object.getOwnPropertyNames` does not traverse the prototype chain.',

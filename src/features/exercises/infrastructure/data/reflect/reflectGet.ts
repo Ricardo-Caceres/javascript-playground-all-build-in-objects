@@ -20,11 +20,11 @@ export const reflectGetExercises: Exercise[] = [
   return Reflect.get({ x: 1 }, 'x')
 }`,
     tests: [
-      { description: 'Reflect.get({x:1}, x) returns 1', assertion: "expect(Reflect.get({x: 1}, 'x')).toBe(1)" },
-      { description: 'result equals 1', assertion: "expect(Reflect.get({x: 1}, 'x') === 1).toBe(true)" },
-      { description: 'result is number', assertion: "expect(typeof Reflect.get({x: 1}, 'x')).toBe('number')" },
-      { description: 'result is truthy', assertion: "expect(Reflect.get({x: 1}, 'x')).toBeTruthy()" },
-      { description: 'get value 42', assertion: "expect(Reflect.get({x: 42}, 'x')).toBe(42)" },
+      { description: 'Reflect.get({x:1}, x) returns 1', assertion:"expect(Reflect.get({x: 1}, 'x')).toBe(1)" },
+      { description: 'result equals 1', assertion:"expect(Reflect.get({x: 1}, 'x') === 1).toBe(true)" },
+      { description: 'result is number', assertion:"expect(typeof Reflect.get({x: 1}, 'x')).toBe('number')" },
+      { description: 'result is truthy', assertion:"expect(Reflect.get({x: 1}, 'x')).toBeTruthy()" },
+      { description: 'get value 42', assertion:"expect(Reflect.get({x: 42}, 'x')).toBe(42)" },
     ],
     hints: [
       '`Reflect.get(target, key)` is equivalent to `target[key]`.',
@@ -50,11 +50,11 @@ export const reflectGetExercises: Exercise[] = [
   return Reflect.get([10, 20], 1)
 }`,
     tests: [
-      { description: 'Reflect.get([10,20], 1) returns 20', assertion: 'expect(Reflect.get([10, 20], 1)).toBe(20)' },
-      { description: 'result equals 20', assertion: 'expect(Reflect.get([10, 20], 1) === 20).toBe(true)' },
-      { description: 'result is number', assertion: "expect(typeof Reflect.get([10, 20], 1)).toBe('number')" },
-      { description: 'index 0 returns 10', assertion: 'expect(Reflect.get([10, 20], 0)).toBe(10)' },
-      { description: 'result is truthy', assertion: 'expect(Reflect.get([10, 20], 1)).toBeTruthy()' },
+      { description: 'Reflect.get([10,20], 1) returns 20', assertion:'expect(Reflect.get([10, 20], 1)).toBe(20)' },
+      { description: 'result equals 20', assertion:'expect(Reflect.get([10, 20], 1) === 20).toBe(true)' },
+      { description: 'result is number', assertion:"expect(typeof Reflect.get([10, 20], 1)).toBe('number')" },
+      { description: 'index 0 returns 10', assertion:'expect(Reflect.get([10, 20], 0)).toBe(10)' },
+      { description: 'result is truthy', assertion:'expect(Reflect.get([10, 20], 1)).toBeTruthy()' },
     ],
     hints: [
       '`Reflect.get` works on any object including arrays.',
@@ -80,11 +80,11 @@ Reading a non-existent key with \`Reflect.get()\` returns \`undefined\`, just li
   return Reflect.get({}, 'missing') as undefined
 }`,
     tests: [
-      { description: 'missing key returns undefined', assertion: "expect(Reflect.get({}, 'missing')).toBeUndefined()" },
-      { description: 'result is undefined', assertion: "expect(Reflect.get({}, 'missing') === undefined).toBe(true)" },
-      { description: 'null check', assertion: "expect(Reflect.get({}, 'missing')).not.toBe(null)" },
-      { description: 'not a string', assertion: "expect(typeof Reflect.get({}, 'missing')).not.toBe('string')" },
-      { description: 'result is falsy', assertion: "expect(Reflect.get({}, 'missing')).toBeFalsy()" },
+      { description: 'missing key returns undefined', assertion:"expect(Reflect.get({}, 'missing')).toBeUndefined()" },
+      { description: 'result is undefined', assertion:"expect(Reflect.get({}, 'missing') === undefined).toBe(true)" },
+      { description: 'null check', assertion:"expect(Reflect.get({}, 'missing') !== null).toBe(true)" },
+      { description: 'not a string', assertion:"expect(typeof Reflect.get({}, 'missing') !== 'string').toBe(true)" },
+      { description: 'result is falsy', assertion:"expect(Reflect.get({}, 'missing')).toBeFalsy()" },
     ],
     hints: [
       'Missing keys always return `undefined` in JavaScript.',
@@ -110,11 +110,11 @@ Reading a non-existent key with \`Reflect.get()\` returns \`undefined\`, just li
   return typeof Reflect.get
 }`,
     tests: [
-      { description: 'typeof Reflect.get is function', assertion: "expect(typeof Reflect.get).toBe('function')" },
-      { description: 'Reflect.get is truthy', assertion: 'expect(Reflect.get).toBeTruthy()' },
-      { description: 'Reflect.get not null', assertion: 'expect(Reflect.get).not.toBeNull()' },
-      { description: 'Reflect.get not undefined', assertion: 'expect(Reflect.get).not.toBeUndefined()' },
-      { description: 'equals function string', assertion: "expect(typeof Reflect.get === 'function').toBe(true)" },
+      { description: 'typeof Reflect.get is function', assertion:"expect(typeof Reflect.get).toBe('function')" },
+      { description: 'Reflect.get is truthy', assertion:'expect(Reflect.get).toBeTruthy()' },
+      { description: 'Reflect.get not null', assertion:'expect(Reflect.get !== null).toBe(true)' },
+      { description: 'Reflect.get not undefined', assertion:'expect(Reflect.get !== undefined).toBe(true)' },
+      { description: 'equals function string', assertion:"expect(typeof Reflect.get === 'function').toBe(true)" },
     ],
     hints: [
       '`Reflect` methods are all functions.',
@@ -140,11 +140,11 @@ Reading a non-existent key with \`Reflect.get()\` returns \`undefined\`, just li
   return Reflect.get({ a: 'hello' }, 'a') as string
 }`,
     tests: [
-      { description: 'returns hello', assertion: "expect(Reflect.get({a: 'hello'}, 'a')).toBe('hello')" },
-      { description: 'equals hello string', assertion: "expect(Reflect.get({a: 'hello'}, 'a') === 'hello').toBe(true)" },
-      { description: 'result is string', assertion: "expect(typeof Reflect.get({a: 'hello'}, 'a')).toBe('string')" },
-      { description: 'result is truthy', assertion: "expect(Reflect.get({a: 'hello'}, 'a')).toBeTruthy()" },
-      { description: 'contains hello', assertion: "expect(Reflect.get({a: 'hello'}, 'a')).toContain('hello')" },
+      { description: 'returns hello', assertion:"expect(Reflect.get({a: 'hello'}, 'a')).toBe('hello')" },
+      { description: 'equals hello string', assertion:"expect(Reflect.get({a: 'hello'}, 'a') === 'hello').toBe(true)" },
+      { description: 'result is string', assertion:"expect(typeof Reflect.get({a: 'hello'}, 'a')).toBe('string')" },
+      { description: 'result is truthy', assertion:"expect(Reflect.get({a: 'hello'}, 'a')).toBeTruthy()" },
+      { description: 'contains hello', assertion:"expect(Reflect.get({a: 'hello'}, 'a')).toContain('hello')" },
     ],
     hints: [
       '`Reflect.get` is just a functional form of the property access operator.',

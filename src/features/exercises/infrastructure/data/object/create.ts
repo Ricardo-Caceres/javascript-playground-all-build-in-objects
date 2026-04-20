@@ -26,11 +26,11 @@ Object.getPrototypeOf(dog) === animal // → true
   return Object.create(proto)
 }`,
     tests: [
-      { description: 'prototype is set correctly', assertion: "const p = { x: 1 }; expect(Object.getPrototypeOf(createWithProto(p)) === p).toBe(true)" },
-      { description: 'new object has no own keys', assertion: "const p = { x: 1 }; expect(Object.keys(createWithProto(p))).toHaveLength(0)" },
-      { description: 'can access inherited property', assertion: "const p = { greet: () => 'hi' }; const o = createWithProto(p) as any; expect(o.greet()).toBe('hi')" },
-      { description: 'own property shadows inherited', assertion: "const p = { val: 1 }; const o = createWithProto(p) as any; o.val = 99; expect(o.val).toBe(99)" },
-      { description: 'returns an object', assertion: "expect(typeof createWithProto({})).toBe('object')" },
+      { description: 'prototype is set correctly', assertion:"const p = { x: 1 }; expect(Object.getPrototypeOf(createWithProto(p)) === p).toBe(true)" },
+      { description: 'new object has no own keys', assertion:"const p = { x: 1 }; expect(Object.keys(createWithProto(p))).toHaveLength(0)" },
+      { description: 'can access inherited property', assertion:"const p = { greet: () => 'hi' }; const o = createWithProto(p); expect(o.greet()).toBe('hi')" },
+      { description: 'own property shadows inherited', assertion:"const p = { val: 1 }; const o = createWithProto(p); o.val = 99; expect(o.val).toBe(99)" },
+      { description: 'returns an object', assertion:"expect(typeof createWithProto({})).toBe('object')" },
     ],
     hints: [
       '`Object.create(proto)` sets `proto` as the `[[Prototype]]` of the new object.',
@@ -65,11 +65,11 @@ makeGreeter('Alice').greet() // → 'Hello, Alice'
   return obj
 }`,
     tests: [
-      { description: "greet returns 'Hello, Alice'", assertion: "expect(makeGreeter('Alice').greet()).toBe('Hello, Alice')" },
-      { description: "greet returns 'Hello, Bob'", assertion: "expect(makeGreeter('Bob').greet()).toBe('Hello, Bob')" },
-      { description: 'greet is not an own property', assertion: "const o = makeGreeter('X') as any; expect(Object.prototype.hasOwnProperty.call(o, 'greet')).toBe(false)" },
-      { description: 'name is an own property', assertion: "const o = makeGreeter('Y') as any; expect(Object.prototype.hasOwnProperty.call(o, 'name')).toBe(true)" },
-      { description: 'result is an object', assertion: "expect(typeof makeGreeter('Z')).toBe('object')" },
+      { description: "greet returns 'Hello, Alice'", assertion:"expect(makeGreeter('Alice').greet()).toBe('Hello, Alice')" },
+      { description: "greet returns 'Hello, Bob'", assertion:"expect(makeGreeter('Bob').greet()).toBe('Hello, Bob')" },
+      { description: 'greet is not an own property', assertion:"const o = makeGreeter('X'); expect(Object.prototype.hasOwnProperty.call(o, 'greet')).toBe(false)" },
+      { description: 'name is an own property', assertion:"const o = makeGreeter('Y'); expect(Object.prototype.hasOwnProperty.call(o, 'name')).toBe(true)" },
+      { description: 'result is an object', assertion:"expect(typeof makeGreeter('Z')).toBe('object')" },
     ],
     hints: [
       'Define the prototype object with the shared method, then use `Object.create(proto)` to create the instance.',
@@ -100,11 +100,11 @@ Object.getPrototypeOf(createNullProto()) // → null
   return Object.create(null)
 }`,
     tests: [
-      { description: 'prototype is null', assertion: "expect(Object.getPrototypeOf(createNullProto())).toBeNull()" },
-      { description: 'has no own keys', assertion: "expect(Object.keys(createNullProto())).toHaveLength(0)" },
-      { description: 'does not inherit toString', assertion: "const o = createNullProto() as any; expect(o.toString).toBeUndefined()" },
-      { description: 'can assign own properties', assertion: "const o = createNullProto() as any; o.key = 'val'; expect(o.key).toBe('val')" },
-      { description: 'is still typeof object', assertion: "expect(typeof createNullProto()).toBe('object')" },
+      { description: 'prototype is null', assertion:"expect(Object.getPrototypeOf(createNullProto())).toBeNull()" },
+      { description: 'has no own keys', assertion:"expect(Object.keys(createNullProto())).toHaveLength(0)" },
+      { description: 'does not inherit toString', assertion:"const o = createNullProto(); expect(o.toString).toBeUndefined()" },
+      { description: 'can assign own properties', assertion:"const o = createNullProto(); o.key = 'val'; expect(o.key).toBe('val')" },
+      { description: 'is still typeof object', assertion:"expect(typeof createNullProto()).toBe('object')" },
     ],
     hints: [
       '`Object.create(null)` produces a truly empty object — no `toString`, no `hasOwnProperty`.',
@@ -137,11 +137,11 @@ canAccessInherited({ role: 'admin' }, 'age')  // → false
   return key in obj
 }`,
     tests: [
-      { description: "inherited key 'role' is accessible", assertion: "expect(canAccessInherited({ role: 'admin' }, 'role')).toBe(true)" },
-      { description: 'missing key returns false', assertion: "expect(canAccessInherited({ role: 'admin' }, 'age')).toBe(false)" },
-      { description: 'own property also accessible', assertion: "const p = { x: 1 }; const o = Object.create(p); o.y = 2; expect('y' in o).toBe(true)" },
-      { description: 'key not in Object.keys', assertion: "const p = { hidden: 1 }; const o = Object.create(p); expect(Object.keys(o)).toHaveLength(0)" },
-      { description: 'empty proto has no keys', assertion: "expect(canAccessInherited({}, 'anything')).toBe(false)" },
+      { description: "inherited key 'role' is accessible", assertion:"expect(canAccessInherited({ role: 'admin' }, 'role')).toBe(true)" },
+      { description: 'missing key returns false', assertion:"expect(canAccessInherited({ role: 'admin' }, 'age')).toBe(false)" },
+      { description: 'own property also accessible', assertion:"const p = { x: 1 }; const o = Object.create(p); o.y = 2; expect('y' in o).toBe(true)" },
+      { description: 'key not in Object.keys', assertion:"const p = { hidden: 1 }; const o = Object.create(p); expect(Object.keys(o)).toHaveLength(0)" },
+      { description: 'empty proto has no keys', assertion:"expect(canAccessInherited({}, 'anything')).toBe(false)" },
     ],
     hints: [
       'The `in` operator checks the prototype chain, unlike `Object.keys` or `hasOwnProperty`.',
@@ -174,11 +174,11 @@ protoMatches(p, o) // → true
   return Object.getPrototypeOf(obj) === proto
 }`,
     tests: [
-      { description: 'returns true when prototype matches', assertion: "const p = {}; const o = Object.create(p); expect(protoMatches(p, o)).toBe(true)" },
-      { description: 'returns false for different prototype', assertion: "const p1 = {}; const p2 = {}; const o = Object.create(p1); expect(protoMatches(p2, o)).toBe(false)" },
-      { description: 'null proto created with Object.create(null)', assertion: "const o = Object.create(null); expect(Object.getPrototypeOf(o)).toBeNull()" },
-      { description: 'plain object prototype is Object.prototype', assertion: "expect(Object.getPrototypeOf({}) === Object.prototype).toBe(true)" },
-      { description: 'confirms prototype chain link', assertion: "const base = { a: 1 }; const child = Object.create(base); expect(protoMatches(base, child)).toBe(true)" },
+      { description: 'returns true when prototype matches', assertion:"const p = {}; const o = Object.create(p); expect(protoMatches(p, o)).toBe(true)" },
+      { description: 'returns false for different prototype', assertion:"const p1 = {}; const p2 = {}; const o = Object.create(p1); expect(protoMatches(p2, o)).toBe(false)" },
+      { description: 'null proto created with Object.create(null)', assertion:"const o = Object.create(null); expect(Object.getPrototypeOf(o)).toBeNull()" },
+      { description: 'plain object prototype is Object.prototype', assertion:"expect(Object.getPrototypeOf({}) === Object.prototype).toBe(true)" },
+      { description: 'confirms prototype chain link', assertion:"const base = { a: 1 }; const child = Object.create(base); expect(protoMatches(base, child)).toBe(true)" },
     ],
     hints: [
       '`Object.getPrototypeOf(obj)` is the standard way to inspect the prototype.',

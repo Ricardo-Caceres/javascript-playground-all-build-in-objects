@@ -28,11 +28,11 @@ o.x // → 42
   Object.defineProperty(obj, key, { value: val, writable: true, enumerable: true, configurable: true })
 }`,
     tests: [
-      { description: 'property is set correctly', assertion: "const o: any = {}; addProperty(o, 'x', 42); expect(o.x).toBe(42)" },
-      { description: 'property appears in Object.keys', assertion: "const o: any = {}; addProperty(o, 'name', 'test'); expect(Object.keys(o)).toContain('name')" },
-      { description: 'writable property can be reassigned', assertion: "const o: any = {}; addProperty(o, 'n', 1); o.n = 99; expect(o.n).toBe(99)" },
-      { description: 'works with string value', assertion: "const o: any = {}; addProperty(o, 'label', 'hi'); expect(o.label).toBe('hi')" },
-      { description: 'works with boolean value', assertion: "const o: any = {}; addProperty(o, 'flag', true); expect(o.flag).toBe(true)" },
+      { description: 'property is set correctly', assertion:"const o: any = {}; addProperty(o, 'x', 42); expect(o.x).toBe(42)" },
+      { description: 'property appears in Object.keys', assertion:"const o: any = {}; addProperty(o, 'name', 'test'); expect(Object.keys(o)).toContain('name')" },
+      { description: 'writable property can be reassigned', assertion:"const o: any = {}; addProperty(o, 'n', 1); o.n = 99; expect(o.n).toBe(99)" },
+      { description: 'works with string value', assertion:"const o: any = {}; addProperty(o, 'label', 'hi'); expect(o.label).toBe('hi')" },
+      { description: 'works with boolean value', assertion:"const o: any = {}; addProperty(o, 'flag', true); expect(o.flag).toBe(true)" },
     ],
     hints: [
       'A data descriptor needs at least `value`. Add `writable:true, enumerable:true, configurable:true` to make it behave like a normal property.',
@@ -66,11 +66,11 @@ o.x       // → 1
   Object.defineProperty(obj, key, { value: val, writable: false, enumerable: true, configurable: true })
 }`,
     tests: [
-      { description: 'property is set to initial value', assertion: "const o: any = {}; makeReadOnly(o, 'x', 1); expect(o.x).toBe(1)" },
-      { description: 'assignment silently fails', assertion: "const o: any = {}; makeReadOnly(o, 'x', 1); o.x = 99; expect(o.x).toBe(1)" },
-      { description: 'property appears in Object.keys', assertion: "const o: any = {}; makeReadOnly(o, 'y', 2); expect(Object.keys(o)).toContain('y')" },
-      { description: 'descriptor shows writable false', assertion: "const o: any = {}; makeReadOnly(o, 'z', 5); expect(Object.getOwnPropertyDescriptor(o, 'z')?.writable).toBe(false)" },
-      { description: 'works with string value', assertion: "const o: any = {}; makeReadOnly(o, 'name', 'Alice'); o.name = 'Bob'; expect(o.name).toBe('Alice')" },
+      { description: 'property is set to initial value', assertion:"const o: any = {}; makeReadOnly(o, 'x', 1); expect(o.x).toBe(1)" },
+      { description: 'assignment silently fails', assertion:"const o: any = {}; makeReadOnly(o, 'x', 1); o.x = 99; expect(o.x).toBe(1)" },
+      { description: 'property appears in Object.keys', assertion:"const o: any = {}; makeReadOnly(o, 'y', 2); expect(Object.keys(o)).toContain('y')" },
+      { description: 'descriptor shows writable false', assertion:"const o: any = {}; makeReadOnly(o, 'z', 5); expect(Object.getOwnPropertyDescriptor(o, 'z')?.writable).toBe(false)" },
+      { description: 'works with string value', assertion:"const o: any = {}; makeReadOnly(o, 'name', 'Alice'); o.name = 'Bob'; expect(o.name).toBe('Alice')" },
     ],
     hints: [
       'Set `writable: false` in the property descriptor.',
@@ -104,11 +104,11 @@ Object.keys(o)    // → []  (not visible)
   Object.defineProperty(obj, key, { value: val, writable: true, enumerable: false, configurable: true })
 }`,
     tests: [
-      { description: 'property value is accessible', assertion: "const o: any = {}; addHidden(o, '_id', 42); expect(o._id).toBe(42)" },
-      { description: 'not in Object.keys', assertion: "const o: any = {}; addHidden(o, '_id', 42); expect(Object.keys(o)).toHaveLength(0)" },
-      { description: 'not in for...in loop', assertion: "const o: any = {}; addHidden(o, '_id', 42); const keys: string[] = []; for (const k in o) keys.push(k); expect(keys).toHaveLength(0)" },
-      { description: 'visible with getOwnPropertyNames', assertion: "const o: any = {}; addHidden(o, 'secret', 1); expect(Object.getOwnPropertyNames(o)).toContain('secret')" },
-      { description: 'enumerable descriptor is false', assertion: "const o: any = {}; addHidden(o, 'h', 9); expect(Object.getOwnPropertyDescriptor(o, 'h')?.enumerable).toBe(false)" },
+      { description: 'property value is accessible', assertion:"const o: any = {}; addHidden(o, '_id', 42); expect(o._id).toBe(42)" },
+      { description: 'not in Object.keys', assertion:"const o: any = {}; addHidden(o, '_id', 42); expect(Object.keys(o)).toHaveLength(0)" },
+      { description: 'not in for...in loop', assertion:"const o: any = {}; addHidden(o, '_id', 42); const keys[] = []; for (const k in o) keys.push(k); expect(keys).toHaveLength(0)" },
+      { description: 'visible with getOwnPropertyNames', assertion:"const o: any = {}; addHidden(o, 'secret', 1); expect(Object.getOwnPropertyNames(o)).toContain('secret')" },
+      { description: 'enumerable descriptor is false', assertion:"const o: any = {}; addHidden(o, 'h', 9); expect(Object.getOwnPropertyDescriptor(o, 'h')?.enumerable).toBe(false)" },
     ],
     hints: [
       '`enumerable: false` hides the property from iteration methods like `Object.keys`.',
@@ -141,11 +141,11 @@ o.double // → 10
   Object.defineProperty(obj, key, { get: fn, enumerable: true, configurable: true })
 }`,
     tests: [
-      { description: 'getter returns computed value', assertion: "const o: any = { _n: 5 }; addGetter(o, 'double', function(this: any) { return this._n * 2 }); expect(o.double).toBe(10)" },
-      { description: 'getter is called on each access', assertion: "let count = 0; const o: any = {}; addGetter(o, 'c', () => ++count); o.c; o.c; expect(o.c).toBe(3)" },
-      { description: 'descriptor has get function', assertion: "const o: any = {}; addGetter(o, 'g', () => 1); expect(typeof Object.getOwnPropertyDescriptor(o, 'g')?.get).toBe('function')" },
-      { description: 'no value key in descriptor', assertion: "const o: any = {}; addGetter(o, 'g', () => 1); expect(Object.getOwnPropertyDescriptor(o, 'g')?.value).toBeUndefined()" },
-      { description: 'getter returning constant', assertion: "const o: any = {}; addGetter(o, 'pi', () => 3.14); expect(o.pi).toBe(3.14)" },
+      { description: 'getter returns computed value', assertion:"const o: any = { _n: 5 }; addGetter(o, 'double', function(this) { return this._n * 2 }); expect(o.double).toBe(10)" },
+      { description: 'getter is called on each access', assertion:"let count = 0; const o: any = {}; addGetter(o, 'c', () => ++count); o.c; o.c; expect(o.c).toBe(3)" },
+      { description: 'descriptor has get function', assertion:"const o: any = {}; addGetter(o, 'g', () => 1); expect(typeof Object.getOwnPropertyDescriptor(o, 'g')?.get).toBe('function')" },
+      { description: 'no value key in descriptor', assertion:"const o: any = {}; addGetter(o, 'g', () => 1); expect(Object.getOwnPropertyDescriptor(o, 'g')?.value).toBeUndefined()" },
+      { description: 'getter returning constant', assertion:"const o: any = {}; addGetter(o, 'pi', () => 3.14); expect(o.pi).toBe(3.14)" },
     ],
     hints: [
       'Use `{ get: fn }` in the descriptor. Do NOT include `value` or `writable` — they conflict with `get`.',
@@ -179,11 +179,11 @@ o.id          // → 1
   Object.defineProperty(obj, key, { value: val, writable: false, enumerable: true, configurable: false })
 }`,
     tests: [
-      { description: 'property value is accessible', assertion: "const o: any = {}; lockProperty(o, 'id', 1); expect(o.id).toBe(1)" },
-      { description: 'assignment silently fails', assertion: "const o: any = {}; lockProperty(o, 'id', 1); o.id = 99; expect(o.id).toBe(1)" },
-      { description: 'delete silently fails', assertion: "const o: any = {}; lockProperty(o, 'id', 1); delete o.id; expect(o.id).toBe(1)" },
-      { description: 'configurable is false', assertion: "const o: any = {}; lockProperty(o, 'id', 1); expect(Object.getOwnPropertyDescriptor(o, 'id')?.configurable).toBe(false)" },
-      { description: 'writable is false', assertion: "const o: any = {}; lockProperty(o, 'id', 1); expect(Object.getOwnPropertyDescriptor(o, 'id')?.writable).toBe(false)" },
+      { description: 'property value is accessible', assertion:"const o: any = {}; lockProperty(o, 'id', 1); expect(o.id).toBe(1)" },
+      { description: 'assignment silently fails', assertion:"const o: any = {}; lockProperty(o, 'id', 1); o.id = 99; expect(o.id).toBe(1)" },
+      { description: 'delete silently fails', assertion:"const o: any = {}; lockProperty(o, 'id', 1); delete o.id; expect(o.id).toBe(1)" },
+      { description: 'configurable is false', assertion:"const o: any = {}; lockProperty(o, 'id', 1); expect(Object.getOwnPropertyDescriptor(o, 'id')?.configurable).toBe(false)" },
+      { description: 'writable is false', assertion:"const o: any = {}; lockProperty(o, 'id', 1); expect(Object.getOwnPropertyDescriptor(o, 'id')?.writable).toBe(false)" },
     ],
     hints: [
       'Set both `writable: false` and `configurable: false` to fully lock a property.',

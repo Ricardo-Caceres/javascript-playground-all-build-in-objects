@@ -25,11 +25,11 @@ removeLast([42])      // → 42 (arr is now [])
   return arr.pop()
 }`,
     tests: [
-      { description: 'returns the last element', assertion: 'expect(removeLast([1, 2, 3])).toBe(3)' },
-      { description: 'returns only element of single-item array', assertion: 'expect(removeLast([42])).toBe(42)' },
-      { description: 'removes the last element from array', assertion: 'const a = [1, 2, 3]; removeLast(a); expect(a).toEqual([1, 2])' },
-      { description: 'works with negative numbers', assertion: 'expect(removeLast([-1, -2, -3])).toBe(-3)' },
-      { description: 'result is the value at the last index', assertion: 'const a = [10, 20, 30]; expect(removeLast(a)).toBe(30)' },
+      { description: 'returns the last element', assertion:'expect(removeLast([1, 2, 3])).toBe(3)' },
+      { description: 'returns only element of single-item array', assertion:'expect(removeLast([42])).toBe(42)' },
+      { description: 'removes the last element from array', assertion:'const a = [1, 2, 3]; removeLast(a); expect(a).toEqual([1, 2])' },
+      { description: 'works with negative numbers', assertion:'expect(removeLast([-1, -2, -3])).toBe(-3)' },
+      { description: 'result is the value at the last index', assertion:'const a = [10, 20, 30]; expect(removeLast(a)).toBe(30)' },
     ],
     hints: [
       '`pop()` both mutates the array and returns the removed element.',
@@ -60,11 +60,11 @@ popEmpty() // → undefined
   return ([] as number[]).pop()
 }`,
     tests: [
-      { description: 'returns undefined', assertion: 'expect(popEmpty()).toBeUndefined()' },
-      { description: 'is not null', assertion: 'expect(popEmpty()).not.toBeNull()' },
-      { description: 'is falsy', assertion: 'expect(popEmpty()).toBeFalsy()' },
-      { description: 'return type includes undefined', assertion: "expect(typeof popEmpty()).toBe('undefined')" },
-      { description: 'does not throw', assertion: 'expect(() => popEmpty()).not.toThrow()' },
+      { description: 'returns undefined', assertion:'expect(popEmpty()).toBeUndefined()' },
+      { description: 'is not null', assertion:'expect(popEmpty() !== null).toBe(true)' },
+      { description: 'is falsy', assertion:'expect(popEmpty()).toBeFalsy()' },
+      { description: 'return type includes undefined', assertion:"expect(typeof popEmpty()).toBe('undefined')" },
+      { description: 'does not throw', assertion:'expect((() => { try { (() => popEmpty())(); return true; } catch(e) { return false; } })()).toBe(true)' },
     ],
     hints: [
       'Calling `pop()` on `[]` is safe — it returns `undefined` without throwing.',
@@ -97,11 +97,11 @@ popAndCheck([10])      // → []
   return arr
 }`,
     tests: [
-      { description: 'returns the array without the last element', assertion: 'expect(popAndCheck([1, 2, 3])).toEqual([1, 2])' },
-      { description: 'returns empty array when single element popped', assertion: 'expect(popAndCheck([10])).toEqual([])' },
-      { description: 'returned array has length - 1', assertion: 'expect(popAndCheck([1, 2, 3, 4])).toHaveLength(3)' },
-      { description: 'mutates the original reference', assertion: 'const a = [1, 2, 3]; popAndCheck(a); expect(a).toHaveLength(2)' },
-      { description: 'returns the same reference', assertion: 'const a = [1, 2]; expect(popAndCheck(a)).toBe(a)' },
+      { description: 'returns the array without the last element', assertion:'expect(popAndCheck([1, 2, 3])).toEqual([1, 2])' },
+      { description: 'returns empty array when single element popped', assertion:'expect(popAndCheck([10])).toEqual([])' },
+      { description: 'returned array has length - 1', assertion:'expect(popAndCheck([1, 2, 3, 4])).toHaveLength(3)' },
+      { description: 'mutates the original reference', assertion:'const a = [1, 2, 3]; popAndCheck(a); expect(a).toHaveLength(2)' },
+      { description: 'returns the same reference', assertion:'const a = [1, 2]; expect(popAndCheck(a)).toBe(a)' },
     ],
     hints: [
       'Call `arr.pop()` and then `return arr` — the array has already been mutated.',
@@ -133,11 +133,11 @@ stackPop([99])      // → 99 (stack is now [])
   return stack.pop()
 }`,
     tests: [
-      { description: 'returns the top element', assertion: 'expect(stackPop([1, 2, 3])).toBe(3)' },
-      { description: 'stack shrinks by one', assertion: 'const s = [1, 2, 3]; stackPop(s); expect(s).toHaveLength(2)' },
-      { description: 'returns undefined for empty stack', assertion: 'expect(stackPop([])).toBeUndefined()' },
-      { description: 'sequential pops follow LIFO order', assertion: 'const s = [1, 2, 3]; expect(stackPop(s)).toBe(3); expect(stackPop(s)).toBe(2)' },
-      { description: 'works with single-element stack', assertion: 'expect(stackPop([7])).toBe(7)' },
+      { description: 'returns the top element', assertion:'expect(stackPop([1, 2, 3])).toBe(3)' },
+      { description: 'stack shrinks by one', assertion:'const s = [1, 2, 3]; stackPop(s); expect(s).toHaveLength(2)' },
+      { description: 'returns undefined for empty stack', assertion:'expect(stackPop([])).toBeUndefined()' },
+      { description: 'sequential pops follow LIFO order', assertion:'const s = [1, 2, 3]; expect(stackPop(s)).toBe(3); expect(stackPop(s)).toBe(2)' },
+      { description: 'works with single-element stack', assertion:'expect(stackPop([7])).toBe(7)' },
     ],
     hints: [
       'A stack\'s "top" is the last element of the array.',
@@ -169,11 +169,11 @@ removeLastWord(['only'])           // → 'only'
   return words.pop()
 }`,
     tests: [
-      { description: "returns 'world' from ['hello', 'world']", assertion: "expect(removeLastWord(['hello', 'world'])).toBe('world')" },
-      { description: 'returns the only element', assertion: "expect(removeLastWord(['only'])).toBe('only')" },
-      { description: 'removes the word from the array', assertion: "const w = ['a', 'b', 'c']; removeLastWord(w); expect(w).toEqual(['a', 'b'])" },
-      { description: 'returns undefined for empty array', assertion: "expect(removeLastWord([])).toBeUndefined()" },
-      { description: 'returns a string', assertion: "expect(typeof removeLastWord(['foo', 'bar'])).toBe('string')" },
+      { description: "returns 'world' from ['hello', 'world']", assertion:"expect(removeLastWord(['hello', 'world'])).toBe('world')" },
+      { description: 'returns the only element', assertion:"expect(removeLastWord(['only'])).toBe('only')" },
+      { description: 'removes the word from the array', assertion:"const w = ['a', 'b', 'c']; removeLastWord(w); expect(w).toEqual(['a', 'b'])" },
+      { description: 'returns undefined for empty array', assertion:"expect(removeLastWord([])).toBeUndefined()" },
+      { description: 'returns a string', assertion:"expect(typeof removeLastWord(['foo', 'bar'])).toBe('string')" },
     ],
     hints: [
       '`pop()` works identically for string arrays — it removes and returns the last element.',

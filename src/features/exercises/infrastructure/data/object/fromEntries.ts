@@ -24,11 +24,11 @@ pairsToObject([['a', 1], ['b', 2]]) // → { a: 1, b: 2 }
   return Object.fromEntries(pairs)
 }`,
     tests: [
-      { description: 'converts pairs to object', assertion: "expect(pairsToObject([['a', 1], ['b', 2]])).toEqual({ a: 1, b: 2 })" },
-      { description: 'empty array returns empty object', assertion: "expect(pairsToObject([])).toEqual({})" },
-      { description: 'single pair', assertion: "expect(pairsToObject([['x', 99]])).toEqual({ x: 99 })" },
-      { description: 'string values', assertion: "expect(pairsToObject([['name', 'Alice']])).toEqual({ name: 'Alice' })" },
-      { description: 'duplicate key uses last value', assertion: "expect(pairsToObject([['a', 1], ['a', 2]])).toEqual({ a: 2 })" },
+      { description: 'converts pairs to object', assertion:"expect(pairsToObject([['a', 1], ['b', 2]])).toEqual({ a: 1, b: 2 })" },
+      { description: 'empty array returns empty object', assertion:"expect(pairsToObject([])).toEqual({})" },
+      { description: 'single pair', assertion:"expect(pairsToObject([['x', 99]])).toEqual({ x: 99 })" },
+      { description: 'string values', assertion:"expect(pairsToObject([['name', 'Alice']])).toEqual({ name: 'Alice' })" },
+      { description: 'duplicate key uses last value', assertion:"expect(pairsToObject([['a', 1], ['a', 2]])).toEqual({ a: 2 })" },
     ],
     hints: [
       '`Object.fromEntries` is the reverse of `Object.entries`.',
@@ -59,11 +59,11 @@ mapToObject(new Map([['a', 1], ['b', 2]])) // → { a: 1, b: 2 }
   return Object.fromEntries(map)
 }`,
     tests: [
-      { description: 'converts Map to object', assertion: "expect(mapToObject(new Map([['a', 1], ['b', 2]]))).toEqual({ a: 1, b: 2 })" },
-      { description: 'empty Map returns empty object', assertion: "expect(mapToObject(new Map())).toEqual({})" },
-      { description: 'single entry Map', assertion: "expect(mapToObject(new Map([['x', 5]]))).toEqual({ x: 5 })" },
-      { description: 'string value preserved', assertion: "expect(mapToObject(new Map([['k', 'v']]))).toEqual({ k: 'v' })" },
-      { description: 'result has correct key count', assertion: "expect(Object.keys(mapToObject(new Map([['a', 1], ['b', 2], ['c', 3]]))).length).toBe(3)" },
+      { description: 'converts Map to object', assertion:"expect(mapToObject(new Map([['a', 1], ['b', 2]]))).toEqual({ a: 1, b: 2 })" },
+      { description: 'empty Map returns empty object', assertion:"expect(mapToObject(new Map())).toEqual({})" },
+      { description: 'single entry Map', assertion:"expect(mapToObject(new Map([['x', 5]]))).toEqual({ x: 5 })" },
+      { description: 'string value preserved', assertion:"expect(mapToObject(new Map([['k', 'v']]))).toEqual({ k: 'v' })" },
+      { description: 'result has correct key count', assertion:"expect(Object.keys(mapToObject(new Map([['a', 1], ['b', 2], ['c', 3]]))).length).toBe(3)" },
     ],
     hints: [
       '`Map` is iterable and yields `[key, value]` pairs — exactly what `Object.fromEntries` expects.',
@@ -93,11 +93,11 @@ roundTrip({ a: 1, b: 2 }) // → { a: 1, b: 2 }
   return Object.fromEntries(Object.entries(obj))
 }`,
     tests: [
-      { description: 'round-trip preserves object', assertion: "expect(roundTrip({ a: 1, b: 2 })).toEqual({ a: 1, b: 2 })" },
-      { description: 'result is a different reference', assertion: "const o = { a: 1 }; expect(roundTrip(o) === o).toBe(false)" },
-      { description: 'empty object stays empty', assertion: "expect(roundTrip({})).toEqual({})" },
-      { description: 'string values preserved', assertion: "expect(roundTrip({ name: 'Bob' })).toEqual({ name: 'Bob' })" },
-      { description: 'key count preserved', assertion: "expect(Object.keys(roundTrip({ x: 1, y: 2, z: 3 }))).toHaveLength(3)" },
+      { description: 'round-trip preserves object', assertion:"expect(roundTrip({ a: 1, b: 2 })).toEqual({ a: 1, b: 2 })" },
+      { description: 'result is a different reference', assertion:"const o = { a: 1 }; expect(roundTrip(o) === o).toBe(false)" },
+      { description: 'empty object stays empty', assertion:"expect(roundTrip({})).toEqual({})" },
+      { description: 'string values preserved', assertion:"expect(roundTrip({ name: 'Bob' })).toEqual({ name: 'Bob' })" },
+      { description: 'key count preserved', assertion:"expect(Object.keys(roundTrip({ x: 1, y: 2, z: 3 }))).toHaveLength(3)" },
     ],
     hints: [
       '`Object.fromEntries(Object.entries(obj))` is a common shallow-clone pattern.',
@@ -127,11 +127,11 @@ doubleValues({ a: 1, b: 3 }) // → { a: 2, b: 6 }
   return Object.fromEntries(Object.entries(obj).map(([k, v]) => [k, v * 2]))
 }`,
     tests: [
-      { description: 'doubles all values', assertion: "expect(doubleValues({ a: 1, b: 3 })).toEqual({ a: 2, b: 6 })" },
-      { description: 'empty object returns empty', assertion: "expect(doubleValues({})).toEqual({})" },
-      { description: 'single value doubled', assertion: "expect(doubleValues({ x: 5 })).toEqual({ x: 10 })" },
-      { description: 'zero doubled is zero', assertion: "expect(doubleValues({ n: 0 })).toEqual({ n: 0 })" },
-      { description: 'does not mutate original', assertion: "const o = { a: 1 }; doubleValues(o); expect(o).toEqual({ a: 1 })" },
+      { description: 'doubles all values', assertion:"expect(doubleValues({ a: 1, b: 3 })).toEqual({ a: 2, b: 6 })" },
+      { description: 'empty object returns empty', assertion:"expect(doubleValues({})).toEqual({})" },
+      { description: 'single value doubled', assertion:"expect(doubleValues({ x: 5 })).toEqual({ x: 10 })" },
+      { description: 'zero doubled is zero', assertion:"expect(doubleValues({ n: 0 })).toEqual({ n: 0 })" },
+      { description: 'does not mutate original', assertion:"const o = { a: 1 }; doubleValues(o); expect(o).toEqual({ a: 1 })" },
     ],
     hints: [
       'Chain: `Object.fromEntries(Object.entries(obj).map(([k, v]) => [k, v * 2]))`.',
@@ -161,11 +161,11 @@ emptyFromEntries() // → {}
   return Object.fromEntries([])
 }`,
     tests: [
-      { description: 'returns empty object', assertion: "expect(emptyFromEntries()).toEqual({})" },
-      { description: 'has no keys', assertion: "expect(Object.keys(emptyFromEntries())).toHaveLength(0)" },
-      { description: 'is typeof object', assertion: "expect(typeof emptyFromEntries()).toBe('object')" },
-      { description: 'is not null', assertion: "expect(emptyFromEntries()).not.toBeNull()" },
-      { description: 'empty Map also works', assertion: "expect(Object.fromEntries(new Map())).toEqual({})" },
+      { description: 'returns empty object', assertion:"expect(emptyFromEntries()).toEqual({})" },
+      { description: 'has no keys', assertion:"expect(Object.keys(emptyFromEntries())).toHaveLength(0)" },
+      { description: 'is typeof object', assertion:"expect(typeof emptyFromEntries()).toBe('object')" },
+      { description: 'is not null', assertion:"expect(emptyFromEntries() !== null).toBe(true)" },
+      { description: 'empty Map also works', assertion:"expect(Object.fromEntries(new Map())).toEqual({})" },
     ],
     hints: [
       '`Object.fromEntries([])` is valid and returns `{}`.',
