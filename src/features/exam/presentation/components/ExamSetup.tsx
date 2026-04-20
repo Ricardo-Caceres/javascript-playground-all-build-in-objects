@@ -76,13 +76,13 @@ export function ExamSetup() {
           <label className="text-xs font-semibold uppercase tracking-widest text-zinc-500">
             {t('difficulty')}
           </label>
-          <div className="flex gap-2">
+          <div className="grid grid-cols-2 gap-2">
             {DIFFICULTIES.map((d) => (
               <button
                 key={d}
                 type="button"
                 onClick={() => setDifficulty(d)}
-                className={`flex-1 rounded-lg border px-3 py-2 text-xs font-medium capitalize transition-colors ${
+                className={`rounded-lg border px-3 py-2 text-xs font-medium capitalize transition-colors ${
                   difficulty === d
                     ? 'border-emerald-500 bg-emerald-500/10 text-emerald-400'
                     : 'border-zinc-700 bg-zinc-900 text-zinc-400 hover:border-zinc-500'
