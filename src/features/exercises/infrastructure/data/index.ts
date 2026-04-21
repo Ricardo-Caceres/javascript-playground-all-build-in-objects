@@ -1,4 +1,6 @@
 import type { Exercise } from '@/shared/types/exercises'
+import { reduxLegacyExercises } from './redux-legacy'
+import { reduxToolkitExercises } from './redux-toolkit'
 import {
   typescriptBasicTypesExercises,
   tsInterfacesExercises,
@@ -996,4 +998,7 @@ export const allExercises: Exercise[] = [
   ...tsGenericsExercises,
   ...tsUtilityTypesExercises,
   ...tsConditionalMappedExercises,
+  // Redux exercises
+  ...reduxLegacyExercises,
+  ...reduxToolkitExercises,
 ]
