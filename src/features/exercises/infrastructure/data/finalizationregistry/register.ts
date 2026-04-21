@@ -20,6 +20,15 @@ export const finalizationRegistryRegisterExercises: Exercise[] = [
     ],
     hints: ['register is defined on FinalizationRegistry.prototype.'],
     tags: ['finalizationregistry', 'register', 'prototype'],
+    usageExample: {
+      code: `const reg = new FinalizationRegistry(k => console.log(k, 'collected'))
+let obj = { data: 42 }
+reg.register(obj, 'myKey')`,
+      explanation: {
+        en: "register() links an object to a cleanup key; the callback fires with the key when the object is GC-ed.",
+        es: "register() vincula un objeto a una clave de limpieza; el callback se dispara con la clave cuando el objeto es recolectado.",
+      },
+    },
   },
   {
     slug: 'finalizationregistry-register-2',
@@ -40,6 +49,15 @@ export const finalizationRegistryRegisterExercises: Exercise[] = [
     ],
     hints: ['register(target, heldValue) registers an object for cleanup notification.'],
     tags: ['finalizationregistry', 'register', 'instance-method'],
+    usageExample: {
+      code: `const reg = new FinalizationRegistry(k => releaseResource(k))
+let resource = acquireResource()
+reg.register(resource, resource.id)`,
+      explanation: {
+        en: "Use register() to track external resource handles tied to JavaScript object lifetimes.",
+        es: "Usa register() para rastrear manejadores de recursos externos vinculados a las vidas de objetos JavaScript.",
+      },
+    },
   },
   {
     slug: 'finalizationregistry-register-3',
@@ -60,6 +78,17 @@ export const finalizationRegistryRegisterExercises: Exercise[] = [
     ],
     hints: ['unregister allows you to cancel a previously registered cleanup callback.'],
     tags: ['finalizationregistry', 'register', 'unregister'],
+    usageExample: {
+      code: `const reg = new FinalizationRegistry(k => {})
+let obj = {}
+const token = {}
+reg.register(obj, 'key', token)
+reg.unregister(token)  // cancels the cleanup`,
+      explanation: {
+        en: "Pass a third (token) argument to register() so you can later unregister before GC.",
+        es: "Pasa un tercer argumento (token) a register() para poder cancelar el registro antes del GC.",
+      },
+    },
   },
   {
     slug: 'finalizationregistry-register-4',
@@ -80,6 +109,16 @@ export const finalizationRegistryRegisterExercises: Exercise[] = [
     ],
     hints: ['instanceof checks the prototype chain.'],
     tags: ['finalizationregistry', 'register', 'instanceof'],
+    usageExample: {
+      code: `const reg = new FinalizationRegistry(k => console.log('GC:', k))
+let tmp = { id: 1 }
+reg.register(tmp, tmp.id)
+tmp = null  // allows GC`,
+      explanation: {
+        en: "Set the variable to null to allow the garbage collector to reclaim the object.",
+        es: "Establece la variable a null para permitir que el recolector de basura reclame el objeto.",
+      },
+    },
   },
   {
     slug: 'finalizationregistry-register-5',
@@ -100,5 +139,15 @@ export const finalizationRegistryRegisterExercises: Exercise[] = [
     ],
     hints: ['Both register and unregister are defined on FinalizationRegistry.prototype.'],
     tags: ['finalizationregistry', 'register', 'unregister', 'prototype'],
+    usageExample: {
+      code: `const reg = new FinalizationRegistry(k => {})
+let o = {}
+reg.register(o, 'data')
+// reg holds a weak reference; o can still be GC-ed`,
+      explanation: {
+        en: "FinalizationRegistry holds only a weak reference, so it does not prevent garbage collection.",
+        es: "FinalizationRegistry mantiene solo una referencia débil, por lo que no impide la recolección de basura.",
+      },
+    },
   },
 ]

@@ -20,6 +20,13 @@ export const globalEncodeURIExercises: Exercise[] = [
     ],
     hints: ['encodeURI encodes spaces as %20.'],
     tags: ['globalfunctions', 'encodeURI', 'url'],
+    usageExample: {
+      code: `encodeURI('hello world')   // → 'hello%20world'`,
+      explanation: {
+        en: 'encodeURI() percent-encodes characters that are not valid in a URI.',
+        es: 'encodeURI() codifica en porcentaje los caracteres no válidos en una URI.',
+      },
+    },
   },
   {
     slug: 'global-encodeuri-2',
@@ -40,6 +47,14 @@ export const globalEncodeURIExercises: Exercise[] = [
     ],
     hints: ['encodeURI does not encode characters that are valid in a URL like ://.'],
     tags: ['globalfunctions', 'encodeURI', 'url'],
+    usageExample: {
+      code: `encodeURI('https://example.com/path')   // unchanged
+// :// and / are valid URI characters`,
+      explanation: {
+        en: 'encodeURI() preserves characters valid in a URI structure like :, /, ?, and &.',
+        es: 'encodeURI() preserva caracteres válidos en la estructura de URI como :, /, ? y &.',
+      },
+    },
   },
   {
     slug: 'global-encodeuri-3',
@@ -60,6 +75,14 @@ export const globalEncodeURIExercises: Exercise[] = [
     ],
     hints: ['encodeURI preserves characters that are valid in a full URI including & = and ?.'],
     tags: ['globalfunctions', 'encodeURI', 'url'],
+    usageExample: {
+      code: `encodeURI('a=1&b=2')   // → 'a=1&b=2'
+// & and = are valid URI characters`,
+      explanation: {
+        en: 'encodeURI() does not encode & or = because they are valid URI characters.',
+        es: 'encodeURI() no codifica & ni = porque son caracteres válidos de URI.',
+      },
+    },
   },
   {
     slug: 'global-encodeuri-4',
@@ -80,6 +103,13 @@ export const globalEncodeURIExercises: Exercise[] = [
     ],
     hints: ['encodeURI always returns a string.'],
     tags: ['globalfunctions', 'encodeURI', 'typeof'],
+    usageExample: {
+      code: `typeof encodeURI('test')   // → 'string'`,
+      explanation: {
+        en: 'encodeURI() always returns a string.',
+        es: 'encodeURI() siempre devuelve una cadena.',
+      },
+    },
   },
   {
     slug: 'global-encodeuri-5',
@@ -100,5 +130,13 @@ export const globalEncodeURIExercises: Exercise[] = [
     ],
     hints: ['Non-ASCII characters are percent-encoded as their UTF-8 byte sequences.'],
     tags: ['globalfunctions', 'encodeURI', 'unicode'],
+    usageExample: {
+      code: `encodeURI('caf\u00e9') !== 'caf\u00e9'  // → true
+// non-ASCII characters are percent-encoded as UTF-8 bytes`,
+      explanation: {
+        en: 'encodeURI() percent-encodes non-ASCII characters as their UTF-8 byte sequences.',
+        es: 'encodeURI() codifica en porcentaje los caracteres no-ASCII como sus bytes UTF-8.',
+      },
+    },
   },
 ]

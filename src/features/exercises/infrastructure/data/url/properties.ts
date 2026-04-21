@@ -19,6 +19,14 @@ export const urlPropertiesExercises: Exercise[] = [
     ],
     hints: ['protocol always ends with a colon'],
     tags: ['URL', 'instance-property', 'href', 'protocol'],
+    usageExample: {
+      code: `const u = new URL('https://user:pass@example.com:8080/path?q=1#frag')
+u.protocol  // → 'https:'`,
+      explanation: {
+        en: "The protocol property returns the URL scheme including the trailing colon.",
+        es: "La propiedad protocol devuelve el esquema de la URL incluyendo los dos puntos finales.",
+      },
+    },
   },
   {
     slug: 'url-instance-property-2',
@@ -38,6 +46,14 @@ export const urlPropertiesExercises: Exercise[] = [
     ],
     hints: ['port is empty string when using the default port for the protocol'],
     tags: ['URL', 'instance-property', 'hostname', 'port', 'host'],
+    usageExample: {
+      code: `const u = new URL('https://example.com/page')
+u.pathname  // → '/page'`,
+      explanation: {
+        en: "pathname returns the path portion of the URL.",
+        es: "pathname devuelve la parte de ruta de la URL.",
+      },
+    },
   },
   {
     slug: 'url-instance-property-3',
@@ -57,6 +73,14 @@ export const urlPropertiesExercises: Exercise[] = [
     ],
     hints: ['search includes the leading ? character'],
     tags: ['URL', 'instance-property', 'pathname', 'search'],
+    usageExample: {
+      code: `const u = new URL('https://example.com#section')
+u.hash  // → '#section'`,
+      explanation: {
+        en: "hash returns the fragment identifier including the '#' character.",
+        es: "hash devuelve el identificador de fragmento incluyendo el carácter '#'.",
+      },
+    },
   },
   {
     slug: 'url-instance-property-4',
@@ -76,6 +100,14 @@ export const urlPropertiesExercises: Exercise[] = [
     ],
     hints: ['hash includes the # character; origin never includes path or query'],
     tags: ['URL', 'instance-property', 'hash', 'origin'],
+    usageExample: {
+      code: `const u = new URL('https://example.com?a=1')
+u.searchParams.get('a')  // → '1'`,
+      explanation: {
+        en: "searchParams gives a URLSearchParams object for convenient query string manipulation.",
+        es: "searchParams da un objeto URLSearchParams para una manipulación conveniente de la cadena de consulta.",
+      },
+    },
   },
   {
     slug: 'url-instance-property-5',
@@ -95,5 +127,13 @@ export const urlPropertiesExercises: Exercise[] = [
     ],
     hints: ['url.searchParams is a live view — changes to it are reflected in url.href immediately'],
     tags: ['URL', 'instance-property', 'searchParams', 'mutation', 'live'],
+    usageExample: {
+      code: `const u = new URL('https://example.com')
+u.origin  // → 'https://example.com'`,
+      explanation: {
+        en: "origin combines the protocol and host without path, search, or hash.",
+        es: "origin combina el protocolo y el host sin ruta, búsqueda ni fragmento.",
+      },
+    },
   },
 ]

@@ -38,6 +38,14 @@ function applyAdd(): number {
       '`apply()` takes an array as the second argument instead of spread args.',
     ],
     tags: ['Function', 'apply', 'beginner'],
+    usageExample: {
+      code: `function add(a, b) { return a + b }
+add.apply(null, [3, 4])  // → 7`,
+      explanation: {
+        en: "apply() invokes a function with a specified this and an array of arguments.",
+        es: "apply() invoca una función con un this especificado y un arreglo de argumentos.",
+      },
+    },
   },
   {
     slug: 'function-apply-math-max',
@@ -68,6 +76,14 @@ Because \`apply()\` spreads an array as arguments, it is perfect for calling \`M
       'Before spread syntax existed, `apply` was the idiomatic way to spread an array into `Math.max`.',
     ],
     tags: ['Function', 'apply', 'Math', 'beginner'],
+    usageExample: {
+      code: `const nums = [5, 1, 9, 3]
+Math.max.apply(null, nums)  // → 9`,
+      explanation: {
+        en: "Use apply() to spread an array as individual arguments to a function.",
+        es: "Usa apply() para expandir un arreglo como argumentos individuales a una función.",
+      },
+    },
   },
   {
     slug: 'function-apply-rest-params',
@@ -100,6 +116,14 @@ Functions using rest parameters gather all arguments. \`apply()\` lets you pass 
       '`apply(thisArg, array)` — array elements become the function\'s arguments.',
     ],
     tags: ['Function', 'apply', 'rest', 'intermediate'],
+    usageExample: {
+      code: `function greet(hi) { return \`\${hi}, \${this.name}\` }
+greet.apply({ name: 'Ana' }, ['Hello'])  // → 'Hello, Ana'`,
+      explanation: {
+        en: "apply() combines this binding and argument spreading in one call.",
+        es: "apply() combina el enlace de this y la expansión de argumentos en una sola llamada.",
+      },
+    },
   },
   {
     slug: 'function-apply-push',
@@ -134,6 +158,15 @@ Functions using rest parameters gather all arguments. \`apply()\` lets you pass 
       '`[].push.apply(target, items)` is equivalent to `target.push(...items)`.',
     ],
     tags: ['Function', 'apply', 'Array', 'intermediate'],
+    usageExample: {
+      code: `const args = [1, 2, 3]
+function sum(a, b, c) { return a + b + c }
+sum.apply(null, args)  // → 6`,
+      explanation: {
+        en: "apply() is useful when arguments are already in an array.",
+        es: "apply() es útil cuando los argumentos ya están en un arreglo.",
+      },
+    },
   },
   {
     slug: 'function-apply-typeof',
@@ -164,5 +197,13 @@ Functions using rest parameters gather all arguments. \`apply()\` lets you pass 
       '`apply` lives on `Function.prototype` and is therefore a function itself.',
     ],
     tags: ['Function', 'apply', 'typeof', 'beginner'],
+    usageExample: {
+      code: `// ES6 spread is often cleaner than apply:
+Math.max(...[1,2,3])  // → 3`,
+      explanation: {
+        en: "Modern code often uses spread syntax instead of apply() for array arguments.",
+        es: "El código moderno a menudo usa la sintaxis de propagación en lugar de apply() para argumentos de arreglo.",
+      },
+    },
   },
 ]

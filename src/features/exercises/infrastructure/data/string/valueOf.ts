@@ -34,6 +34,15 @@ getValueOf('hello') // → 'hello'
       'For a primitive string, `valueOf()` returns the string itself.',
     ],
     tags: ['String', 'String.prototype.valueOf', 'beginner'],
+    usageExample: {
+      code: `const str = 'Hello'
+str.valueOf()               // → 'Hello'
+new String('hi').valueOf()   // → 'hi'`,
+      explanation: {
+        en: "Use valueOf() to return the primitive string value, useful when working with String wrapper objects.",
+        es: "Usa valueOf() para obtener el valor de cadena primitivo, útil al trabajar con objetos envolventes String.",
+      },
+    },
   },
   {
     slug: 'string-value-of-same-as-tostring',
@@ -68,6 +77,15 @@ valueOfEqualsToString('hello') // → true
       'For string primitives, `valueOf()` and `toString()` are equivalent.',
     ],
     tags: ['String', 'String.prototype.valueOf', 'beginner'],
+    usageExample: {
+      code: `const str = 'Hello'
+str.valueOf()               // → 'Hello'
+new String('hi').valueOf()   // → 'hi'`,
+      explanation: {
+        en: "Use valueOf() to return the primitive string value, useful when working with String wrapper objects.",
+        es: "Usa valueOf() para obtener el valor de cadena primitivo, útil al trabajar con objetos envolventes String.",
+      },
+    },
   },
   {
     slug: 'string-value-of-object-primitive',
@@ -102,6 +120,15 @@ objectValueOf(new String('hello')) // → 'hello'
       '`new String("hello").valueOf()` returns the primitive `"hello"`.',
     ],
     tags: ['String', 'String.prototype.valueOf', 'intermediate'],
+    usageExample: {
+      code: `const str = 'Hello'
+str.valueOf()               // → 'Hello'
+new String('hi').valueOf()   // → 'hi'`,
+      explanation: {
+        en: "Use valueOf() to return the primitive string value, useful when working with String wrapper objects.",
+        es: "Usa valueOf() para obtener el valor de cadena primitivo, útil al trabajar con objetos envolventes String.",
+      },
+    },
   },
   {
     slug: 'string-value-of-arithmetic',
@@ -136,6 +163,15 @@ strLength('hello') // → 5
       '`str.valueOf()` returns the string itself, so `.valueOf().length` is the same as `.length`.',
     ],
     tags: ['String', 'String.prototype.valueOf', 'beginner'],
+    usageExample: {
+      code: `const str = 'Hello'
+str.valueOf()               // → 'Hello'
+new String('hi').valueOf()   // → 'hi'`,
+      explanation: {
+        en: "Use valueOf() to return the primitive string value, useful when working with String wrapper objects.",
+        es: "Usa valueOf() para obtener el valor de cadena primitivo, útil al trabajar con objetos envolventes String.",
+      },
+    },
   },
   {
     slug: 'string-value-of-empty',
@@ -170,5 +206,14 @@ emptyValueOf() // → ''
       '`"".valueOf()` returns `""` — the primitive empty string.',
     ],
     tags: ['String', 'String.prototype.valueOf', 'beginner'],
+    usageExample: {
+      code: `const str = 'Hello'
+str.valueOf()               // → 'Hello'
+new String('hi').valueOf()   // → 'hi'`,
+      explanation: {
+        en: "Use valueOf() to return the primitive string value, useful when working with String wrapper objects.",
+        es: "Usa valueOf() para obtener el valor de cadena primitivo, útil al trabajar con objetos envolventes String.",
+      },
+    },
   },
 ]

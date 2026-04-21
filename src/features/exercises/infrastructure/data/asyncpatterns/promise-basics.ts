@@ -19,6 +19,14 @@ export const asyncPromiseBasicsExercises: Exercise[] = [
     ],
     hints: ['Promise.resolve() always returns a Promise.', 'Use instanceof to check.'],
     tags: ['promise', 'basics', 'resolve'],
+    usageExample: {
+      code: `const p = Promise.resolve(42);
+p instanceof Promise; // true`,
+      explanation: {
+        en: "Promise.resolve() wraps a value in an already-fulfilled Promise.",
+        es: "Promise.resolve() envuelve un valor en una Promise ya cumplida.",
+      },
+    },
   },
   {
     slug: 'async-promise-2',
@@ -38,6 +46,14 @@ export const asyncPromiseBasicsExercises: Exercise[] = [
     ],
     hints: ['Async functions always return Promises.', 'The return value is wrapped in a resolved Promise.'],
     tags: ['async', 'function', 'promise'],
+    usageExample: {
+      code: `async function double(n) { return n * 2; }
+double(5) instanceof Promise; // true`,
+      explanation: {
+        en: "async functions always return a Promise, even when they return primitives.",
+        es: "Las funciones async siempre devuelven una Promise, incluso cuando devuelven primitivos.",
+      },
+    },
   },
   {
     slug: 'async-promise-3',
@@ -57,6 +73,14 @@ export const asyncPromiseBasicsExercises: Exercise[] = [
     ],
     hints: ['Promise.reject() returns a Promise.', 'Always attach .catch() or .then() to prevent unhandled rejections.'],
     tags: ['promise', 'reject', 'error'],
+    usageExample: {
+      code: `const p = Promise.reject(new Error('oops'));
+p instanceof Promise; // true`,
+      explanation: {
+        en: "Promise.reject() creates a rejected Promise from an error or value.",
+        es: "Promise.reject() crea una Promise rechazada a partir de un error o valor.",
+      },
+    },
   },
   {
     slug: 'async-promise-4',
@@ -76,6 +100,14 @@ export const asyncPromiseBasicsExercises: Exercise[] = [
     ],
     hints: ['.then() always returns a new Promise.', 'The returned Promise may have a different state than the original.'],
     tags: ['promise', 'then', 'chaining'],
+    usageExample: {
+      code: `const p = Promise.resolve(1).then(v => v + 1);
+// p is a new Promise resolving to 2`,
+      explanation: {
+        en: ".then() returns a new Promise — the original is unchanged.",
+        es: ".then() devuelve una nueva Promise — la original no cambia.",
+      },
+    },
   },
   {
     slug: 'async-promise-5',
@@ -95,5 +127,14 @@ export const asyncPromiseBasicsExercises: Exercise[] = [
     ],
     hints: ['The executor function runs synchronously.', 'The executor runs before .then() callbacks.', 'Use this to understand the Promise execution model.'],
     tags: ['promise', 'executor', 'synchronous'],
+    usageExample: {
+      code: `let ran = false;
+new Promise(resolve => { ran = true; resolve(); });
+// ran is true immediately`,
+      explanation: {
+        en: "The executor function runs synchronously when the Promise is created.",
+        es: "La función ejecutora se ejecuta de forma síncrona cuando se crea la Promise.",
+      },
+    },
   },
 ]

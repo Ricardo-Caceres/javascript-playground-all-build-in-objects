@@ -20,6 +20,14 @@ export const globalIsNaNExercises: Exercise[] = [
     ],
     hints: ['NaN stands for "Not a Number" but typeof NaN is still "number".'],
     tags: ['globalfunctions', 'isNaN', 'NaN'],
+    usageExample: {
+      code: `isNaN(NaN)     // → true
+typeof NaN     // → 'number'  (quirk!)`,
+      explanation: {
+        en: 'isNaN() returns true when its argument is NaN or coerces to NaN.',
+        es: 'isNaN() devuelve true cuando el argumento es NaN o se convierte en NaN.',
+      },
+    },
   },
   {
     slug: 'global-isnan-2',
@@ -40,6 +48,14 @@ export const globalIsNaNExercises: Exercise[] = [
     ],
     hints: ['isNaN(42) is false because 42 is a valid number.'],
     tags: ['globalfunctions', 'isNaN', 'number'],
+    usageExample: {
+      code: `isNaN(42)     // → false
+isNaN(3.14)   // → false`,
+      explanation: {
+        en: 'isNaN() returns false for any valid numeric value.',
+        es: 'isNaN() devuelve false para cualquier valor numérico válido.',
+      },
+    },
   },
   {
     slug: 'global-isnan-3',
@@ -60,6 +76,14 @@ export const globalIsNaNExercises: Exercise[] = [
     ],
     hints: ['The global isNaN coerces its argument to a number first, unlike Number.isNaN.'],
     tags: ['globalfunctions', 'isNaN', 'coercion'],
+    usageExample: {
+      code: `isNaN('hello')        // → true  (Number('hello') → NaN)
+Number.isNaN('hello')  // → false (no coercion)`,
+      explanation: {
+        en: 'The global isNaN() coerces strings to numbers first — use Number.isNaN() to skip coercion.',
+        es: 'El isNaN() global convierte cadenas a número primero; usa Number.isNaN() para evitar la coerción.',
+      },
+    },
   },
   {
     slug: 'global-isnan-4',
@@ -80,6 +104,14 @@ export const globalIsNaNExercises: Exercise[] = [
     ],
     hints: ["The string '42' coerces to the number 42, which is not NaN."],
     tags: ['globalfunctions', 'isNaN', 'coercion'],
+    usageExample: {
+      code: `isNaN('42')           // → false (coerced: Number('42') → 42)
+Number.isNaN('42')    // → false`,
+      explanation: {
+        en: 'The string \'42\' coerces to 42, which is not NaN, so isNaN returns false.',
+        es: 'La cadena \'42\' se convierte al número 42, que no es NaN, por lo que isNaN devuelve false.',
+      },
+    },
   },
   {
     slug: 'global-isnan-5',
@@ -100,5 +132,13 @@ export const globalIsNaNExercises: Exercise[] = [
     ],
     hints: ['Number(undefined) is NaN, so isNaN(undefined) is true.'],
     tags: ['globalfunctions', 'isNaN', 'undefined', 'coercion'],
+    usageExample: {
+      code: `isNaN(undefined)    // → true
+Number(undefined)   // → NaN`,
+      explanation: {
+        en: 'undefined coerces to NaN, so the global isNaN(undefined) returns true.',
+        es: 'undefined se convierte en NaN, por lo que el isNaN global devuelve true para undefined.',
+      },
+    },
   },
 ]

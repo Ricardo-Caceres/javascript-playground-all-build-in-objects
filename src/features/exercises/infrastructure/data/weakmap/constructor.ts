@@ -19,6 +19,14 @@ export const weakMapConstructorExercises: Exercise[] = [
     ],
     hints: ['WeakMap is a constructor that creates WeakMap instances.'],
     tags: ['weakmap', 'constructor', 'instanceof'],
+    usageExample: {
+      code: `const wm = new WeakMap()
+wm instanceof WeakMap  // → true`,
+      explanation: {
+        en: "WeakMap is a collection of key-value pairs where keys must be objects.",
+        es: "WeakMap es una colección de pares clave-valor donde las claves deben ser objetos.",
+      },
+    },
   },
   {
     slug: 'weakmap-constructor-2',
@@ -38,6 +46,15 @@ export const weakMapConstructorExercises: Exercise[] = [
     ],
     hints: ['All WeakMap instances are objects.'],
     tags: ['weakmap', 'constructor', 'typeof'],
+    usageExample: {
+      code: `const wm = new WeakMap()
+const key = {}
+wm.set(key, 'data')`,
+      explanation: {
+        en: "Create a WeakMap and use object references as keys.",
+        es: "Crea un WeakMap y usa referencias de objeto como claves.",
+      },
+    },
   },
   {
     slug: 'weakmap-constructor-3',
@@ -57,6 +74,14 @@ export const weakMapConstructorExercises: Exercise[] = [
     ],
     hints: ['WeakMap keys must be objects.'],
     tags: ['weakmap', 'constructor', 'set', 'get'],
+    usageExample: {
+      code: `const wm = new WeakMap([[{}, 'a'], [{}, 'b']])
+// initialized with entries`,
+      explanation: {
+        en: "You can initialize a WeakMap with an iterable of [key, value] pairs.",
+        es: "Puedes inicializar un WeakMap con un iterable de pares [clave, valor].",
+      },
+    },
   },
   {
     slug: 'weakmap-constructor-4',
@@ -76,6 +101,14 @@ export const weakMapConstructorExercises: Exercise[] = [
     ],
     hints: ['Pass an iterable of [key, value] pairs to the constructor.'],
     tags: ['weakmap', 'constructor', 'iterable'],
+    usageExample: {
+      code: `const wm = new WeakMap()
+typeof wm  // → 'object'`,
+      explanation: {
+        en: "WeakMap instances are objects with no size property or iteration methods.",
+        es: "Las instancias de WeakMap son objetos sin propiedad size ni métodos de iteración.",
+      },
+    },
   },
   {
     slug: 'weakmap-constructor-5',
@@ -95,5 +128,13 @@ export const weakMapConstructorExercises: Exercise[] = [
     ],
     hints: ['Only objects (and Symbols in modern engines) are valid WeakMap keys.'],
     tags: ['weakmap', 'constructor', 'error'],
+    usageExample: {
+      code: `const wm = new WeakMap()
+new WeakMap() === new WeakMap()  // → false`,
+      explanation: {
+        en: "Each WeakMap() call creates a distinct new instance.",
+        es: "Cada llamada a WeakMap() crea una nueva instancia distinta.",
+      },
+    },
   },
 ]

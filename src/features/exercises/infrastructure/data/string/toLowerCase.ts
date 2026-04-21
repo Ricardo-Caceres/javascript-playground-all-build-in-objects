@@ -35,6 +35,15 @@ lower('WORLD') // → 'world'
       '`toLowerCase()` converts every uppercase letter to its lowercase equivalent.',
     ],
     tags: ['String', 'String.prototype.toLowerCase', 'beginner'],
+    usageExample: {
+      code: `'HELLO World'.toLowerCase()   // → 'hello world'
+'ABC'.toLowerCase()           // → 'abc'
+'XYZ123'.toLowerCase()        // → 'xyz123'`,
+      explanation: {
+        en: "Use toLowerCase() to convert all alphabetical characters in a string to lowercase.",
+        es: "Usa toLowerCase() para convertir todos los caracteres alfabéticos de una cadena a minúsculas.",
+      },
+    },
   },
   {
     slug: 'string-to-lower-case-mixed',
@@ -69,6 +78,15 @@ normalize('HeLLo WoRLd') // → 'hello world'
       '`toLowerCase()` only affects uppercase letters — other characters are unchanged.',
     ],
     tags: ['String', 'String.prototype.toLowerCase', 'beginner'],
+    usageExample: {
+      code: `'HELLO World'.toLowerCase()   // → 'hello world'
+'ABC'.toLowerCase()           // → 'abc'
+'XYZ123'.toLowerCase()        // → 'xyz123'`,
+      explanation: {
+        en: "Use toLowerCase() to convert all alphabetical characters in a string to lowercase.",
+        es: "Usa toLowerCase() para convertir todos los caracteres alfabéticos de una cadena a minúsculas.",
+      },
+    },
   },
   {
     slug: 'string-to-lower-case-already-lower',
@@ -103,6 +121,15 @@ ensureLowercase('hello') // → 'hello'
       '`toLowerCase()` is safe to call on already-lowercase strings.',
     ],
     tags: ['String', 'String.prototype.toLowerCase', 'beginner'],
+    usageExample: {
+      code: `'HELLO World'.toLowerCase()   // → 'hello world'
+'ABC'.toLowerCase()           // → 'abc'
+'XYZ123'.toLowerCase()        // → 'xyz123'`,
+      explanation: {
+        en: "Use toLowerCase() to convert all alphabetical characters in a string to lowercase.",
+        es: "Usa toLowerCase() para convertir todos los caracteres alfabéticos de una cadena a minúsculas.",
+      },
+    },
   },
   {
     slug: 'string-to-lower-case-numbers',
@@ -137,6 +164,15 @@ lowerAlpha('ABC 123!') // → 'abc 123!'
       'Only letter characters are converted; numbers, symbols, and spaces are left as-is.',
     ],
     tags: ['String', 'String.prototype.toLowerCase', 'beginner'],
+    usageExample: {
+      code: `'HELLO World'.toLowerCase()   // → 'hello world'
+'ABC'.toLowerCase()           // → 'abc'
+'XYZ123'.toLowerCase()        // → 'xyz123'`,
+      explanation: {
+        en: "Use toLowerCase() to convert all alphabetical characters in a string to lowercase.",
+        es: "Usa toLowerCase() para convertir todos los caracteres alfabéticos de una cadena a minúsculas.",
+      },
+    },
   },
   {
     slug: 'string-to-lower-case-empty',
@@ -172,5 +208,14 @@ safeLower('HI') // → 'hi'
       '`"".toLowerCase()` returns `""`.',
     ],
     tags: ['String', 'String.prototype.toLowerCase', 'beginner'],
+    usageExample: {
+      code: `'HELLO World'.toLowerCase()   // → 'hello world'
+'ABC'.toLowerCase()           // → 'abc'
+'XYZ123'.toLowerCase()        // → 'xyz123'`,
+      explanation: {
+        en: "Use toLowerCase() to convert all alphabetical characters in a string to lowercase.",
+        es: "Usa toLowerCase() para convertir todos los caracteres alfabéticos de una cadena a minúsculas.",
+      },
+    },
   },
 ]

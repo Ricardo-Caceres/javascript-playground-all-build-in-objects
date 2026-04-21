@@ -20,6 +20,15 @@ export const dateUTCExercises: Exercise[] = [
     ],
     hints: ['Month is 0-indexed in Date.UTC just like in the Date constructor'],
     tags: ['Date', 'UTC', 'static-method', 'epoch'],
+    usageExample: {
+      code: `Date.UTC(2024, 0, 15)  // → 1705276800000
+// month is 0-indexed
+new Date(Date.UTC(2024, 0, 15)).toISOString()  // → '2024-01-15T00:00:00.000Z'`,
+      explanation: {
+        en: 'Use Date.UTC() to compute the millisecond timestamp for a UTC date without constructing a Date object first.',
+        es: 'Usa Date.UTC() para calcular el timestamp en milisegundos de una fecha UTC sin construir primero un objeto Date.',
+      },
+    },
   },
   {
     slug: 'date-utc-2',
@@ -40,6 +49,15 @@ export const dateUTCExercises: Exercise[] = [
     ],
     hints: ['Dates after 1970 produce positive UTC timestamps'],
     tags: ['Date', 'UTC', 'static-method'],
+    usageExample: {
+      code: `Date.UTC(2024, 0, 15)  // → 1705276800000
+// month is 0-indexed
+new Date(Date.UTC(2024, 0, 15)).toISOString()  // → '2024-01-15T00:00:00.000Z'`,
+      explanation: {
+        en: 'Use Date.UTC() to compute the millisecond timestamp for a UTC date without constructing a Date object first.',
+        es: 'Usa Date.UTC() para calcular el timestamp en milisegundos de una fecha UTC sin construir primero un objeto Date.',
+      },
+    },
   },
   {
     slug: 'date-utc-3',
@@ -60,6 +78,15 @@ export const dateUTCExercises: Exercise[] = [
     ],
     hints: ['All three static Date methods (now, parse, UTC) return a number primitive'],
     tags: ['Date', 'UTC', 'static-method', 'typeof'],
+    usageExample: {
+      code: `Date.UTC(2024, 0, 15)  // → 1705276800000
+// month is 0-indexed
+new Date(Date.UTC(2024, 0, 15)).toISOString()  // → '2024-01-15T00:00:00.000Z'`,
+      explanation: {
+        en: 'Use Date.UTC() to compute the millisecond timestamp for a UTC date without constructing a Date object first.',
+        es: 'Usa Date.UTC() para calcular el timestamp en milisegundos de una fecha UTC sin construir primero un objeto Date.',
+      },
+    },
   },
   {
     slug: 'date-utc-4',
@@ -80,6 +107,15 @@ export const dateUTCExercises: Exercise[] = [
     ],
     hints: ['Date.UTC accepts (year, month, day, hours, minutes, seconds, ms) — 1 second = 1000 ms'],
     tags: ['Date', 'UTC', 'static-method', 'seconds'],
+    usageExample: {
+      code: `Date.UTC(2024, 0, 15)  // → 1705276800000
+// month is 0-indexed
+new Date(Date.UTC(2024, 0, 15)).toISOString()  // → '2024-01-15T00:00:00.000Z'`,
+      explanation: {
+        en: 'Use Date.UTC() to compute the millisecond timestamp for a UTC date without constructing a Date object first.',
+        es: 'Usa Date.UTC() para calcular el timestamp en milisegundos de una fecha UTC sin construir primero un objeto Date.',
+      },
+    },
   },
   {
     slug: 'date-utc-5',
@@ -100,5 +136,14 @@ export const dateUTCExercises: Exercise[] = [
     ],
     hints: ['Date.UTC uses 0-indexed months; use getUTCMonth() (not getMonth()) to avoid timezone drift'],
     tags: ['Date', 'UTC', 'static-method', 'getUTCMonth'],
+    usageExample: {
+      code: `Date.UTC(2024, 0, 15)  // → 1705276800000
+// month is 0-indexed
+new Date(Date.UTC(2024, 0, 15)).toISOString()  // → '2024-01-15T00:00:00.000Z'`,
+      explanation: {
+        en: 'Use Date.UTC() to compute the millisecond timestamp for a UTC date without constructing a Date object first.',
+        es: 'Usa Date.UTC() para calcular el timestamp en milisegundos de una fecha UTC sin construir primero un objeto Date.',
+      },
+    },
   },
 ]

@@ -19,6 +19,13 @@ export const performancePropertiesExercises: Exercise[] = [
     ],
     hints: ['timeOrigin is a Unix epoch timestamp in milliseconds'],
     tags: ['performance', 'timeOrigin', 'instance-property'],
+    usageExample: {
+      code: `performance.timeOrigin  // → e.g. 1712345678000.5`,
+      explanation: {
+        en: "performance.timeOrigin is the high-resolution timestamp of when the page started loading.",
+        es: "performance.timeOrigin es el timestamp de alta resolución de cuando la página comenzó a cargarse.",
+      },
+    },
   },
   {
     slug: 'performance-properties-2',
@@ -38,6 +45,14 @@ export const performancePropertiesExercises: Exercise[] = [
     ],
     hints: ['The smallest valid value would be milliseconds since 1970-01-01T00:00:00Z'],
     tags: ['performance', 'timeOrigin', 'instance-property'],
+    usageExample: {
+      code: `const t = performance.now()
+// t is milliseconds since timeOrigin`,
+      explanation: {
+        en: "performance.now() returns milliseconds elapsed since performance.timeOrigin.",
+        es: "performance.now() devuelve los milisegundos transcurridos desde performance.timeOrigin.",
+      },
+    },
   },
   {
     slug: 'performance-properties-3',
@@ -57,6 +72,14 @@ export const performancePropertiesExercises: Exercise[] = [
     ],
     hints: ['We add 1ms to account for the tiny time elapsed between evaluating timeOrigin and Date.now()'],
     tags: ['performance', 'timeOrigin', 'instance-property'],
+    usageExample: {
+      code: `performance.timeOrigin + performance.now()
+// → approx Date.now()`,
+      explanation: {
+        en: "Adding timeOrigin and now() approximates the current Unix timestamp in milliseconds.",
+        es: "Sumar timeOrigin y now() aproxima el timestamp Unix actual en milisegundos.",
+      },
+    },
   },
   {
     slug: 'performance-properties-4',
@@ -76,6 +99,13 @@ export const performancePropertiesExercises: Exercise[] = [
     ],
     hints: ['performance.timeOrigin + performance.now() approximates Date.now() with higher resolution'],
     tags: ['performance', 'timeOrigin', 'now', 'instance-property'],
+    usageExample: {
+      code: `typeof performance.timeOrigin  // → 'number'`,
+      explanation: {
+        en: "timeOrigin is a plain number (DOMHighResTimeStamp) with sub-millisecond precision.",
+        es: "timeOrigin es un número simple (DOMHighResTimeStamp) con precisión de submilisegundos.",
+      },
+    },
   },
   {
     slug: 'performance-properties-5',
@@ -95,5 +125,12 @@ export const performancePropertiesExercises: Exercise[] = [
     ],
     hints: ['Number.isFinite returns false for Infinity, -Infinity, and NaN'],
     tags: ['performance', 'timeOrigin', 'instance-property'],
+    usageExample: {
+      code: `performance.timeOrigin > 0  // → true`,
+      explanation: {
+        en: "timeOrigin is always a positive number representing a real point in time.",
+        es: "timeOrigin es siempre un número positivo que representa un momento real en el tiempo.",
+      },
+    },
   },
 ]

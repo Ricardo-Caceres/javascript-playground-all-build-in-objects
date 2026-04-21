@@ -20,6 +20,13 @@ export const globalDecodeURIComponentExercises: Exercise[] = [
     ],
     hints: ['decodeURIComponent decodes percent-encoded URI components.'],
     tags: ['globalfunctions', 'decodeURIComponent', 'url'],
+    usageExample: {
+      code: `decodeURIComponent('hello%20world')   // → 'hello world'`,
+      explanation: {
+        en: 'decodeURIComponent() decodes percent-encoded URI component characters, including &, =, and ?.',
+        es: 'decodeURIComponent() decodifica caracteres codificados en porcentaje, incluidos &, = y ?.',
+      },
+    },
   },
   {
     slug: 'global-decodeuricomponent-2',
@@ -40,6 +47,14 @@ export const globalDecodeURIComponentExercises: Exercise[] = [
     ],
     hints: ['%3D decodes to = and %26 decodes to &.'],
     tags: ['globalfunctions', 'decodeURIComponent', 'url'],
+    usageExample: {
+      code: `decodeURIComponent('a%3D1%26b%3D2')   // → 'a=1&b=2'
+// %3D=equals, %26=ampersand`,
+      explanation: {
+        en: 'decodeURIComponent() decodes special URI characters like = (%3D) and & (%26).',
+        es: 'decodeURIComponent() decodifica caracteres especiales de URI como = (%3D) y & (%26).',
+      },
+    },
   },
   {
     slug: 'global-decodeuricomponent-3',
@@ -60,6 +75,14 @@ export const globalDecodeURIComponentExercises: Exercise[] = [
     ],
     hints: ['%3F decodes to ?.'],
     tags: ['globalfunctions', 'decodeURIComponent', 'url'],
+    usageExample: {
+      code: `decodeURIComponent('%3Fkey%3Dvalue')   // → '?key=value'
+// %3F=question mark`,
+      explanation: {
+        en: 'decodeURIComponent() decodes characters like ? (%3F) that encodeURI would leave intact.',
+        es: 'decodeURIComponent() decodifica caracteres como ? (%3F) que encodeURI dejaría intactos.',
+      },
+    },
   },
   {
     slug: 'global-decodeuricomponent-4',
@@ -80,6 +103,13 @@ export const globalDecodeURIComponentExercises: Exercise[] = [
     ],
     hints: ['decodeURIComponent always returns a string.'],
     tags: ['globalfunctions', 'decodeURIComponent', 'typeof'],
+    usageExample: {
+      code: `typeof decodeURIComponent('test')   // → 'string'`,
+      explanation: {
+        en: 'decodeURIComponent() always returns a string.',
+        es: 'decodeURIComponent() siempre devuelve una cadena.',
+      },
+    },
   },
   {
     slug: 'global-decodeuricomponent-5',
@@ -100,5 +130,12 @@ export const globalDecodeURIComponentExercises: Exercise[] = [
     ],
     hints: ['%41 is A, %42 is B, %43 is C in ASCII/UTF-8.'],
     tags: ['globalfunctions', 'decodeURIComponent', 'hex'],
+    usageExample: {
+      code: `decodeURIComponent('%41%42%43')   // → 'ABC'`,
+      explanation: {
+        en: 'decodeURIComponent() converts percent-encoded hex sequences back to their original characters.',
+        es: 'decodeURIComponent() convierte secuencias hex codificadas a sus caracteres originales.',
+      },
+    },
   },
 ]

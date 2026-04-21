@@ -19,6 +19,13 @@ export const textEncoderMethodsExercises: Exercise[] = [
     ],
     hints: ['ASCII codes: A=65, B=66, H=72, Z=90.'],
     tags: ['TextEncoder', 'encode', 'Uint8Array', 'ASCII'],
+    usageExample: {
+      code: `new TextEncoder().encode('Hi')  // → Uint8Array [72, 105]`,
+      explanation: {
+        en: "encode() converts a string into a Uint8Array of UTF-8 byte values.",
+        es: "encode() convierte una cadena en un Uint8Array de valores de bytes UTF-8.",
+      },
+    },
   },
   {
     slug: 'textencoder-methods-2',
@@ -38,6 +45,14 @@ export const textEncoderMethodsExercises: Exercise[] = [
     ],
     hints: ['ASCII strings encode as one byte per character.'],
     tags: ['TextEncoder', 'encode', 'length'],
+    usageExample: {
+      code: `const enc = new TextEncoder()
+enc.encode('')  // → Uint8Array []`,
+      explanation: {
+        en: "Encoding an empty string returns an empty Uint8Array.",
+        es: "Codificar una cadena vacía devuelve un Uint8Array vacío.",
+      },
+    },
   },
   {
     slug: 'textencoder-methods-3',
@@ -57,6 +72,15 @@ export const textEncoderMethodsExercises: Exercise[] = [
     ],
     hints: ['ASCII: A=65, B=66, C=67. Each character is one byte.'],
     tags: ['TextEncoder', 'encode', 'Uint8Array', 'index'],
+    usageExample: {
+      code: `const enc = new TextEncoder()
+const buf = enc.encode('🎉')
+buf.length  // → 4 (4 bytes for this emoji)`,
+      explanation: {
+        en: "Emoji and other multi-byte characters produce multiple bytes per character.",
+        es: "Los emoji y otros caracteres de múltiples bytes producen varios bytes por carácter.",
+      },
+    },
   },
   {
     slug: 'textencoder-methods-4',
@@ -76,6 +100,15 @@ export const textEncoderMethodsExercises: Exercise[] = [
     ],
     hints: ['encodeInto returns a TextEncoderEncodeIntoResult with read and written.'],
     tags: ['TextEncoder', 'encodeInto', 'written'],
+    usageExample: {
+      code: `const dest = new Uint8Array(10)
+const { read, written } = new TextEncoder().encodeInto('Hello', dest)
+// read: 5, written: 5`,
+      explanation: {
+        en: "encodeInto() writes bytes into an existing buffer and reports how many were read/written.",
+        es: "encodeInto() escribe bytes en un búfer existente e informa cuántos se leyeron/escribieron.",
+      },
+    },
   },
   {
     slug: 'textencoder-methods-5',
@@ -95,5 +128,13 @@ export const textEncoderMethodsExercises: Exercise[] = [
     ],
     hints: ['For ASCII strings, read === written === string.length.'],
     tags: ['TextEncoder', 'encodeInto', 'read'],
+    usageExample: {
+      code: `const bytes = new TextEncoder().encode('ABC')
+new TextDecoder().decode(bytes)  // → 'ABC'`,
+      explanation: {
+        en: "Use TextEncoder/TextDecoder together to round-trip strings through binary buffers.",
+        es: "Usa TextEncoder/TextDecoder juntos para hacer viajes de ida y vuelta de cadenas a través de búferes binarios.",
+      },
+    },
   },
 ]

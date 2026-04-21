@@ -19,6 +19,14 @@ export const textDecoderConstructorExercises: Exercise[] = [
     ],
     hints: ['TextDecoder defaults to UTF-8 when no label is provided.'],
     tags: ['TextDecoder', 'constructor', 'encoding'],
+    usageExample: {
+      code: `const dec = new TextDecoder()
+dec.decode(new Uint8Array([72,105]))  // → 'Hi'`,
+      explanation: {
+        en: "TextDecoder converts a Uint8Array of bytes into a JavaScript string.",
+        es: "TextDecoder convierte un Uint8Array de bytes en una cadena JavaScript.",
+      },
+    },
   },
   {
     slug: 'textdecoder-constructor-2',
@@ -38,6 +46,14 @@ export const textDecoderConstructorExercises: Exercise[] = [
     ],
     hints: ['Passing UTF-8 explicitly is the same as the default.'],
     tags: ['TextDecoder', 'constructor', 'encoding', 'utf-8'],
+    usageExample: {
+      code: `const dec = new TextDecoder('utf-8')
+dec.encoding  // → 'utf-8'`,
+      explanation: {
+        en: "Pass an encoding label to TextDecoder; defaults to 'utf-8' if omitted.",
+        es: "Pasa una etiqueta de codificación a TextDecoder; por defecto es 'utf-8' si se omite.",
+      },
+    },
   },
   {
     slug: 'textdecoder-constructor-3',
@@ -57,6 +73,14 @@ export const textDecoderConstructorExercises: Exercise[] = [
     ],
     hints: ['fatal: false means invalid bytes are silently replaced.'],
     tags: ['TextDecoder', 'constructor', 'fatal'],
+    usageExample: {
+      code: `const bytes = new Uint8Array([240,159,144,136])
+new TextDecoder().decode(bytes)  // → '🐈'`,
+      explanation: {
+        en: "TextDecoder correctly handles multi-byte UTF-8 sequences like emoji.",
+        es: "TextDecoder maneja correctamente las secuencias UTF-8 de múltiples bytes como los emoji.",
+      },
+    },
   },
   {
     slug: 'textdecoder-constructor-4',
@@ -76,6 +100,13 @@ export const textDecoderConstructorExercises: Exercise[] = [
     ],
     hints: ['ignoreBOM defaults to false; set it to true to keep the BOM in output.'],
     tags: ['TextDecoder', 'constructor', 'ignoreBOM'],
+    usageExample: {
+      code: `new TextDecoder() instanceof TextDecoder  // → true`,
+      explanation: {
+        en: "TextDecoder instances can be checked with instanceof.",
+        es: "Las instancias de TextDecoder se pueden verificar con instanceof.",
+      },
+    },
   },
   {
     slug: 'textdecoder-constructor-5',
@@ -95,5 +126,13 @@ export const textDecoderConstructorExercises: Exercise[] = [
     ],
     hints: ['TextDecoder is a constructor, so new TextDecoder() is an instance of it.'],
     tags: ['TextDecoder', 'constructor', 'instanceof'],
+    usageExample: {
+      code: `const dec = new TextDecoder('iso-8859-1')
+dec.encoding  // → 'windows-1252'`,
+      explanation: {
+        en: "TextDecoder normalizes encoding labels to their canonical names.",
+        es: "TextDecoder normaliza las etiquetas de codificación a sus nombres canónicos.",
+      },
+    },
   },
 ]

@@ -20,6 +20,14 @@ export const booleanValueOfExercises: Exercise[] = [
     ],
     hints: ['valueOf() unwraps the boolean primitive.'],
     tags: ['boolean', 'valueOf', 'instance-method'],
+    usageExample: {
+      code: `true.valueOf()   // → true
+false.valueOf()  // → false`,
+      explanation: {
+        en: "valueOf() returns the primitive boolean value of a Boolean object.",
+        es: "valueOf() devuelve el valor booleano primitivo de un objeto Boolean.",
+      },
+    },
   },
   {
     slug: 'boolean-valueof-2',
@@ -40,6 +48,14 @@ export const booleanValueOfExercises: Exercise[] = [
     ],
     hints: ['false.valueOf() gives back the false primitive.'],
     tags: ['boolean', 'valueOf', 'instance-method'],
+    usageExample: {
+      code: `const b = new Boolean(true)
+b.valueOf()  // → true`,
+      explanation: {
+        en: "Use valueOf() to extract the primitive from a Boolean wrapper object.",
+        es: "Usa valueOf() para extraer el primitivo de un objeto Boolean envolvente.",
+      },
+    },
   },
   {
     slug: 'boolean-valueof-3',
@@ -60,6 +76,13 @@ export const booleanValueOfExercises: Exercise[] = [
     ],
     hints: ['Boolean wrapper objects have type "object" but valueOf() returns the primitive.'],
     tags: ['boolean', 'valueOf', 'wrapper-object'],
+    usageExample: {
+      code: `new Boolean(false).valueOf()  // → false`,
+      explanation: {
+        en: "valueOf() on a Boolean wrapper returns the underlying primitive false.",
+        es: "valueOf() en un envoltorio Boolean devuelve el primitivo subyacente false.",
+      },
+    },
   },
   {
     slug: 'boolean-valueof-4',
@@ -80,6 +103,14 @@ export const booleanValueOfExercises: Exercise[] = [
     ],
     hints: ['The Boolean wrapper object is always truthy; valueOf() gives the primitive.'],
     tags: ['boolean', 'valueOf', 'wrapper-object'],
+    usageExample: {
+      code: `const obj = new Boolean(1)
+obj.valueOf()  // → true`,
+      explanation: {
+        en: "valueOf() converts a Boolean wrapper created from a truthy value to true.",
+        es: "valueOf() convierte un envoltorio Boolean creado desde un valor truthy a true.",
+      },
+    },
   },
   {
     slug: 'boolean-valueof-5',
@@ -100,5 +131,12 @@ export const booleanValueOfExercises: Exercise[] = [
     ],
     hints: ['valueOf() always returns a boolean primitive.'],
     tags: ['boolean', 'valueOf', 'typeof'],
+    usageExample: {
+      code: `true.valueOf() === true  // → true`,
+      explanation: {
+        en: "valueOf() on a primitive boolean returns the same primitive value.",
+        es: "valueOf() sobre un booleano primitivo devuelve el mismo valor primitivo.",
+      },
+    },
   },
 ]

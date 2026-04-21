@@ -19,6 +19,14 @@ export const asyncAwaitExercises: Exercise[] = [
     ],
     hints: ['All async functions return Promises.', 'The returned value is automatically wrapped.'],
     tags: ['async', 'function', 'promise'],
+    usageExample: {
+      code: `async function greet() { return 'hello'; }
+greet() instanceof Promise; // true`,
+      explanation: {
+        en: "Any async function always returns a Promise, even if you return a plain value.",
+        es: "Toda función async siempre devuelve una Promise, incluso si devuelves un valor simple.",
+      },
+    },
   },
   {
     slug: 'async-await-2',
@@ -38,6 +46,14 @@ export const asyncAwaitExercises: Exercise[] = [
     ],
     hints: ['Async arrow functions work the same as async regular functions.', 'They return Promises.'],
     tags: ['async', 'arrow', 'promise'],
+    usageExample: {
+      code: `const greet = async () => 'hello';
+greet() instanceof Promise; // true`,
+      explanation: {
+        en: "Async arrow functions also always return a Promise.",
+        es: "Las funciones flecha async también siempre devuelven una Promise.",
+      },
+    },
   },
   {
     slug: 'async-await-3',
@@ -57,6 +73,15 @@ export const asyncAwaitExercises: Exercise[] = [
     ],
     hints: ['.then callbacks are microtasks, not synchronous.', 'They queue after the current execution context.', 'This is key to understanding the Promise execution model.'],
     tags: ['promise', 'then', 'microtask', 'async'],
+    usageExample: {
+      code: `let x = 0;
+Promise.resolve().then(() => { x = 1; });
+// x is still 0 here — .then runs as a microtask`,
+      explanation: {
+        en: ".then callbacks are microtasks — they run after synchronous code completes.",
+        es: "Los callbacks de .then son microtareas — se ejecutan después del código síncrono.",
+      },
+    },
   },
   {
     slug: 'async-await-4',
@@ -76,6 +101,17 @@ export const asyncAwaitExercises: Exercise[] = [
     ],
     hints: ['The executor function runs synchronously.', '.then() and .catch() handlers run asynchronously as microtasks.', 'Synchronous code after the Promise runs before microtask handlers.'],
     tags: ['promise', 'executor', 'then', 'microtask', 'execution-order'],
+    usageExample: {
+      code: `let order = [];
+new Promise(resolve => { order.push(1); resolve(); })
+  .then(() => order.push(3));
+order.push(2);
+// order is [1, 2] — then handler has not run yet`,
+      explanation: {
+        en: "The Promise executor runs synchronously; .then handlers run asynchronously.",
+        es: "El ejecutor de Promise se ejecuta de forma síncrona; los handlers .then de forma asíncrona.",
+      },
+    },
   },
   {
     slug: 'async-await-5',
@@ -95,5 +131,16 @@ export const asyncAwaitExercises: Exercise[] = [
     ],
     hints: ['All async functions return Promises.', 'No return means the Promise resolves to undefined.', 'Each call returns a new Promise instance.'],
     tags: ['async', 'function', 'promise', 'undefined'],
+    usageExample: {
+      code: `async function fetchData() {
+  const data = await Promise.resolve(42);
+  return data;
+}
+// await pauses inside the async function`,
+      explanation: {
+        en: "await pauses execution inside an async function until the Promise resolves.",
+        es: "await pausa la ejecución dentro de una función async hasta que la Promise se resuelve.",
+      },
+    },
   },
 ]

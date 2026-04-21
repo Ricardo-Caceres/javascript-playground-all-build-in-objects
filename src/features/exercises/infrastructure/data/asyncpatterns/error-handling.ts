@@ -19,6 +19,14 @@ export const asyncErrorHandlingExercises: Exercise[] = [
     ],
     hints: ['.catch() returns a new Promise.', 'It handles rejection and transforms it.', 'The returned Promise can be resolved or rejected depending on the handler.'],
     tags: ['promise', 'catch', 'error-handling'],
+    usageExample: {
+      code: `const p = Promise.reject('oops').catch(err => err + ' handled');
+// resolves to 'oops handled'`,
+      explanation: {
+        en: ".catch() handles a rejection and returns a new resolved Promise.",
+        es: ".catch() maneja un rechazo y devuelve una nueva Promise resuelta.",
+      },
+    },
   },
   {
     slug: 'async-error-2',
@@ -38,6 +46,14 @@ export const asyncErrorHandlingExercises: Exercise[] = [
     ],
     hints: ['.finally() returns a new Promise.', 'The callback runs regardless of resolution or rejection.', 'The callback does not receive the value or reason.'],
     tags: ['promise', 'finally', 'cleanup'],
+    usageExample: {
+      code: `const p = Promise.resolve(1).finally(() => console.log('done'));
+// logs 'done', then resolves to 1`,
+      explanation: {
+        en: ".finally() runs cleanup regardless of resolve or reject, passing the value through.",
+        es: ".finally() ejecuta limpieza sin importar resolve o reject, pasando el valor hacia adelante.",
+      },
+    },
   },
   {
     slug: 'async-error-3',
@@ -57,6 +73,14 @@ export const asyncErrorHandlingExercises: Exercise[] = [
     ],
     hints: ['Promise.reject() always returns a Promise.', 'The Promise is rejected with the provided reason.', 'Attach .catch() to prevent unhandled rejection warnings.'],
     tags: ['promise', 'reject', 'error'],
+    usageExample: {
+      code: `const p = Promise.reject(new Error('failed'));
+p instanceof Promise; // true`,
+      explanation: {
+        en: "Promise.reject() creates an already-rejected Promise.",
+        es: "Promise.reject() crea una Promise ya rechazada.",
+      },
+    },
   },
   {
     slug: 'async-error-4',
@@ -76,6 +100,14 @@ export const asyncErrorHandlingExercises: Exercise[] = [
     ],
     hints: ['Async functions always return Promises.', 'Throwing in an async function creates a rejected Promise.', 'Error handling with try/catch still returns a Promise.'],
     tags: ['async', 'error', 'promise', 'throw'],
+    usageExample: {
+      code: `async function risky() { throw new Error('oops'); }
+risky() instanceof Promise; // true`,
+      explanation: {
+        en: "An async function that throws still returns a Promise — a rejected one.",
+        es: "Una función async que lanza un error sigue devolviendo una Promise, pero rechazada.",
+      },
+    },
   },
   {
     slug: 'async-error-5',
@@ -95,5 +127,15 @@ export const asyncErrorHandlingExercises: Exercise[] = [
     ],
     hints: ['Each .then(), .catch(), and .finally() returns a new Promise.', 'Promises can be chained indefinitely.', 'Error handlers in the chain can recover from errors.'],
     tags: ['promise', 'chain', 'catch', 'error-handling'],
+    usageExample: {
+      code: `const safe = Promise.reject('err')
+  .then(v => v)
+  .catch(e => 'caught: ' + e);
+// resolves to 'caught: err'`,
+      explanation: {
+        en: ".catch chained after .then still catches rejections from earlier in the chain.",
+        es: ".catch encadenado después de .then aún captura rechazos anteriores en la cadena.",
+      },
+    },
   },
 ]

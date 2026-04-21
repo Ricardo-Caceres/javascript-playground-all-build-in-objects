@@ -19,6 +19,15 @@ export const formDataConstructorExercises: Exercise[] = [
     ],
     hints: ['FormData is a Web API class available in browsers and Node.js 18+'],
     tags: ['FormData', 'constructor'],
+    usageExample: {
+      code: `const fd = new FormData()
+fd.append('name', 'Ana')
+fd.get('name')  // → 'Ana'`,
+      explanation: {
+        en: "FormData builds a set of key-value pairs for submitting form data.",
+        es: "FormData construye un conjunto de pares clave-valor para enviar datos de formulario.",
+      },
+    },
   },
   {
     slug: 'formdata-constructor-2',
@@ -38,6 +47,14 @@ export const formDataConstructorExercises: Exercise[] = [
     ],
     hints: ['All constructed objects have typeof === "object"'],
     tags: ['FormData', 'constructor', 'typeof'],
+    usageExample: {
+      code: `const fd = new FormData()
+fd instanceof FormData  // → true`,
+      explanation: {
+        en: "FormData instances can be verified with instanceof.",
+        es: "Las instancias de FormData se pueden verificar con instanceof.",
+      },
+    },
   },
   {
     slug: 'formdata-constructor-3',
@@ -57,6 +74,15 @@ export const formDataConstructorExercises: Exercise[] = [
     ],
     hints: ['Use Array.from() to convert the iterator returned by entries()'],
     tags: ['FormData', 'constructor', 'entries'],
+    usageExample: {
+      code: `const fd = new FormData()
+fd.append('file', new Blob(['data']), 'file.txt')
+fd.get('file').name  // → 'file.txt'`,
+      explanation: {
+        en: "FormData can hold Blob or File objects for file uploads.",
+        es: "FormData puede contener objetos Blob o File para cargas de archivos.",
+      },
+    },
   },
   {
     slug: 'formdata-constructor-4',
@@ -76,6 +102,16 @@ export const formDataConstructorExercises: Exercise[] = [
     ],
     hints: ['append(name, value) adds an entry; get(name) retrieves the first match'],
     tags: ['FormData', 'constructor', 'append', 'get'],
+    usageExample: {
+      code: `const fd = new FormData()
+fd.set('a', '1')
+fd.set('a', '2')
+fd.get('a')  // → '2'`,
+      explanation: {
+        en: "set() replaces any existing values for a key; append() does not.",
+        es: "set() reemplaza cualquier valor existente para una clave; append() no lo hace.",
+      },
+    },
   },
   {
     slug: 'formdata-constructor-5',
@@ -95,5 +131,15 @@ export const formDataConstructorExercises: Exercise[] = [
     ],
     hints: ['All objects are truthy in JavaScript'],
     tags: ['FormData', 'constructor', 'truthy'],
+    usageExample: {
+      code: `const fd = new FormData()
+fd.append('x', '1')
+fd.append('x', '2')
+fd.getAll('x')  // → ['1', '2']`,
+      explanation: {
+        en: "Use getAll() to retrieve all values for a key that has multiple entries.",
+        es: "Usa getAll() para recuperar todos los valores de una clave que tiene múltiples entradas.",
+      },
+    },
   },
 ]

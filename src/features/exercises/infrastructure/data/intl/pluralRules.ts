@@ -39,6 +39,14 @@ export const intlPluralRulesExercises: Exercise[] = [
     ],
     hints: ['Use new Intl.PluralRules(locale)'],
     tags: [],
+    usageExample: {
+      code: `const pr = new Intl.PluralRules('en-US');
+// Creates a plural rules classifier for English`,
+      explanation: {
+        en: "Intl.PluralRules determines the plural category for a given number in a locale.",
+        es: "Intl.PluralRules determina la categoría plural de un número en un idioma dado.",
+      },
+    },
   },
   {
     slug: 'intl-pluralrules-select',
@@ -78,6 +86,15 @@ export const intlPluralRulesExercises: Exercise[] = [
     ],
     hints: ['Use .select(n)'],
     tags: [],
+    usageExample: {
+      code: `const pr = new Intl.PluralRules('en');
+pr.select(1); // 'one'
+pr.select(2); // 'other'`,
+      explanation: {
+        en: "select() returns the plural category ('one', 'other', 'few', etc.) for a count.",
+        es: "select() devuelve la categoría plural ('one', 'other', 'few', etc.) para una cantidad.",
+      },
+    },
   },
   {
     slug: 'intl-pluralrules-ordinal',
@@ -117,6 +134,15 @@ export const intlPluralRulesExercises: Exercise[] = [
     ],
     hints: ['Use type: "ordinal"'],
     tags: [],
+    usageExample: {
+      code: `const pr = new Intl.PluralRules('en-US', { type: 'ordinal' });
+pr.select(1); // 'one'  (1st)
+pr.select(2); // 'two'  (2nd)`,
+      explanation: {
+        en: "Use type:'ordinal' for ordinal numbers (1st, 2nd, 3rd...).",
+        es: "Usa type:'ordinal' para números ordinales (1.º, 2.º, 3.º...).",
+      },
+    },
   },
   {
     slug: 'intl-pluralrules-supportedLocalesOf',
@@ -156,6 +182,14 @@ export const intlPluralRulesExercises: Exercise[] = [
     ],
     hints: ['Use Intl.PluralRules.supportedLocalesOf(locales)'],
     tags: [],
+    usageExample: {
+      code: `const supported = Intl.PluralRules.supportedLocalesOf(['en', 'ar', 'xx']);
+// ['en', 'ar']`,
+      explanation: {
+        en: "supportedLocalesOf() lists which locales have plural rule data available.",
+        es: "supportedLocalesOf() lista qué idiomas tienen datos de reglas plurales disponibles.",
+      },
+    },
   },
   {
     slug: 'intl-pluralrules-resolvedOptions',
@@ -195,5 +229,13 @@ export const intlPluralRulesExercises: Exercise[] = [
     ],
     hints: ['Use .resolvedOptions()'],
     tags: [],
+    usageExample: {
+      code: `const opts = new Intl.PluralRules('en').resolvedOptions();
+// { locale: 'en', type: 'cardinal', ... }`,
+      explanation: {
+        en: "resolvedOptions() shows the exact locale and type the PluralRules instance uses.",
+        es: "resolvedOptions() muestra el idioma y tipo exactos que usa la instancia de PluralRules.",
+      },
+    },
   },
 ];

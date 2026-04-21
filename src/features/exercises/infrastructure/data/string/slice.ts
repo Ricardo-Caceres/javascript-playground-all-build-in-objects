@@ -34,6 +34,16 @@ getMiddle('abcdefgh') // → 'cde'
       '`str.slice(2, 5)` extracts characters at positions 2, 3, and 4.',
     ],
     tags: ['String', 'String.prototype.slice', 'beginner'],
+    usageExample: {
+      code: `const str = 'Hello, World!'
+str.slice(7, 12)    // → 'World'
+str.slice(-6, -1)   // → 'World'
+str.slice(7)        // → 'World!'`,
+      explanation: {
+        en: "Use slice() to extract a portion of a string by start and end indices, supporting negative indices.",
+        es: "Usa slice() para extraer una porción de una cadena mediante índices de inicio y fin, admitiendo índices negativos.",
+      },
+    },
   },
   {
     slug: 'string-slice-negative-start',
@@ -69,6 +79,16 @@ lastThree('hi')     // → 'hi'
       '`str.slice(-3)` is equivalent to `str.slice(str.length - 3)`.',
     ],
     tags: ['String', 'String.prototype.slice', 'negative index', 'beginner'],
+    usageExample: {
+      code: `const str = 'Hello, World!'
+str.slice(7, 12)    // → 'World'
+str.slice(-6, -1)   // → 'World'
+str.slice(7)        // → 'World!'`,
+      explanation: {
+        en: "Use slice() to extract a portion of a string by start and end indices, supporting negative indices.",
+        es: "Usa slice() para extraer una porción de una cadena mediante índices de inicio y fin, admitiendo índices negativos.",
+      },
+    },
   },
   {
     slug: 'string-slice-negative-end',
@@ -104,6 +124,16 @@ dropLast('ab')    // → 'a'
       '`str.slice(0, -1)` is equivalent to `str.slice(0, str.length - 1)`.',
     ],
     tags: ['String', 'String.prototype.slice', 'negative index', 'beginner'],
+    usageExample: {
+      code: `const str = 'Hello, World!'
+str.slice(7, 12)    // → 'World'
+str.slice(-6, -1)   // → 'World'
+str.slice(7)        // → 'World!'`,
+      explanation: {
+        en: "Use slice() to extract a portion of a string by start and end indices, supporting negative indices.",
+        es: "Usa slice() para extraer una porción de una cadena mediante índices de inicio y fin, admitiendo índices negativos.",
+      },
+    },
   },
   {
     slug: 'string-slice-omit-end',
@@ -139,6 +169,16 @@ fromIndex('abcdef', 3)      // → 'def'
       '`str.slice(n)` without a second argument is equivalent to `str.slice(n, str.length)`.',
     ],
     tags: ['String', 'String.prototype.slice', 'beginner'],
+    usageExample: {
+      code: `const str = 'Hello, World!'
+str.slice(7, 12)    // → 'World'
+str.slice(-6, -1)   // → 'World'
+str.slice(7)        // → 'World!'`,
+      explanation: {
+        en: "Use slice() to extract a portion of a string by start and end indices, supporting negative indices.",
+        es: "Usa slice() para extraer una porción de una cadena mediante índices de inicio y fin, admitiendo índices negativos.",
+      },
+    },
   },
   {
     slug: 'string-slice-single-char',
@@ -174,5 +214,15 @@ charAt('world', 4) // → 'd'
       '`str.slice(n, n + 1)` extracts exactly one character at index `n`.',
     ],
     tags: ['String', 'String.prototype.slice', 'beginner'],
+    usageExample: {
+      code: `const str = 'Hello, World!'
+str.slice(7, 12)    // → 'World'
+str.slice(-6, -1)   // → 'World'
+str.slice(7)        // → 'World!'`,
+      explanation: {
+        en: "Use slice() to extract a portion of a string by start and end indices, supporting negative indices.",
+        es: "Usa slice() para extraer una porción de una cadena mediante índices de inicio y fin, admitiendo índices negativos.",
+      },
+    },
   },
 ]

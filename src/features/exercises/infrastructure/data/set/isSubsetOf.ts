@@ -20,6 +20,16 @@ export const setIsSubsetOfExercises: Exercise[] = [
     ],
     hints: ['isSubsetOf returns true if every element of A exists in B'],
     tags: ['Set', 'isSubsetOf', 'ES2025'],
+    usageExample: {
+      code: `const a = new Set([1, 2])
+const b = new Set([1, 2, 3])
+a.isSubsetOf(b)   // → true
+b.isSubsetOf(a)   // → false`,
+      explanation: {
+        en: 'Use Set.isSubsetOf() to check whether every element of this set is also in another set.',
+        es: 'Usa Set.isSubsetOf() para verificar si todos los elementos de este conjunto están en otro.',
+      },
+    },
   },
   {
     slug: 'set-issubsetof-2',
@@ -40,6 +50,16 @@ export const setIsSubsetOfExercises: Exercise[] = [
     ],
     hints: ['isSubsetOf returns false if any element of A is missing from B'],
     tags: ['Set', 'isSubsetOf', 'nonSubset'],
+    usageExample: {
+      code: `const a = new Set([1, 2])
+const b = new Set([1, 2, 3])
+a.isSubsetOf(b)   // → true
+b.isSubsetOf(a)   // → false`,
+      explanation: {
+        en: 'Use Set.isSubsetOf() to check whether every element of this set is also in another set.',
+        es: 'Usa Set.isSubsetOf() para verificar si todos los elementos de este conjunto están en otro.',
+      },
+    },
   },
   {
     slug: 'set-issubsetof-3',
@@ -60,6 +80,16 @@ export const setIsSubsetOfExercises: Exercise[] = [
     ],
     hints: ['The empty Set has no elements that could be missing from B, so it is always a subset'],
     tags: ['Set', 'isSubsetOf', 'empty'],
+    usageExample: {
+      code: `const a = new Set([1, 2])
+const b = new Set([1, 2, 3])
+a.isSubsetOf(b)   // → true
+b.isSubsetOf(a)   // → false`,
+      explanation: {
+        en: 'Use Set.isSubsetOf() to check whether every element of this set is also in another set.',
+        es: 'Usa Set.isSubsetOf() para verificar si todos los elementos de este conjunto están en otro.',
+      },
+    },
   },
   {
     slug: 'set-issubsetof-4',
@@ -80,6 +110,16 @@ export const setIsSubsetOfExercises: Exercise[] = [
     ],
     hints: ['A set is always a subset of itself or any equal set'],
     tags: ['Set', 'isSubsetOf', 'equal'],
+    usageExample: {
+      code: `const a = new Set([1, 2])
+const b = new Set([1, 2, 3])
+a.isSubsetOf(b)   // → true
+b.isSubsetOf(a)   // → false`,
+      explanation: {
+        en: 'Use Set.isSubsetOf() to check whether every element of this set is also in another set.',
+        es: 'Usa Set.isSubsetOf() para verificar si todos los elementos de este conjunto están en otro.',
+      },
+    },
   },
   {
     slug: 'set-issubsetof-5',
@@ -100,5 +140,15 @@ export const setIsSubsetOfExercises: Exercise[] = [
     ],
     hints: ['For a single-element set, isSubsetOf reduces to has() on B'],
     tags: ['Set', 'isSubsetOf', 'single'],
+    usageExample: {
+      code: `const a = new Set([1, 2])
+const b = new Set([1, 2, 3])
+a.isSubsetOf(b)   // → true
+b.isSubsetOf(a)   // → false`,
+      explanation: {
+        en: 'Use Set.isSubsetOf() to check whether every element of this set is also in another set.',
+        es: 'Usa Set.isSubsetOf() para verificar si todos los elementos de este conjunto están en otro.',
+      },
+    },
   },
 ]

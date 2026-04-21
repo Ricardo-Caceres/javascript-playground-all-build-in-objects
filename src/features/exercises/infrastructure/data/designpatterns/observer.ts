@@ -58,6 +58,19 @@ emitter.emit('test', 'hello')`,
     ],
     hints: ['Use an object to store listeners by event name', 'Use nullish coalescing (??) to initialize array if needed', 'forEach over all listeners for an event and call them'],
     tags: ['observer', 'event-emitter', 'pub-sub', 'design-pattern'],
+    usageExample: {
+      code: `const emitter = {
+  handlers: [],
+  on(fn) { this.handlers.push(fn); },
+  emit(v) { this.handlers.forEach(h => h(v)); }
+};
+emitter.on(v => console.log(v));
+emitter.emit('hello');`,
+      explanation: {
+        en: "The Observer pattern lets objects subscribe to events emitted by a subject.",
+        es: "El patrón Observer permite que los objetos se suscriban a eventos emitidos por un sujeto.",
+      },
+    },
   },
   {
     slug: 'dp-observer-2',
@@ -115,6 +128,18 @@ emitter.emit('increment')`,
     ],
     hints: ['Store listeners in an array for each event', 'forEach over all listeners when emitting', 'Listeners execute in the order they were added'],
     tags: ['observer', 'multiple-listeners', 'pub-sub', 'event-emitter'],
+    usageExample: {
+      code: `const emitter = createEmitter();
+const log1 = v => console.log('A:', v);
+const log2 = v => console.log('B:', v);
+emitter.on(log1);
+emitter.on(log2);
+emitter.emit(42); // A: 42 then B: 42`,
+      explanation: {
+        en: "Multiple listeners all receive the same emitted value.",
+        es: "Múltiples oyentes reciben el mismo valor emitido.",
+      },
+    },
   },
   {
     slug: 'dp-observer-3',
@@ -171,6 +196,15 @@ emitter.on('data', () => {})`,
     ],
     hints: ['Use listenerCount to return the length of the listener array', 'Initialize empty array if event has no listeners yet', 'Keep track of listeners per event name'],
     tags: ['observer', 'event-tracking', 'listener-count', 'event-emitter'],
+    usageExample: {
+      code: `emitter.on(handler1);
+emitter.on(handler2);
+emitter.listeners.length; // 2`,
+      explanation: {
+        en: "Track how many subscribers are registered by checking the listeners array length.",
+        es: "Rastrea cuántos suscriptores están registrados comprobando la longitud del array de oyentes.",
+      },
+    },
   },
   {
     slug: 'dp-observer-4',
@@ -219,6 +253,14 @@ emitter.emit('nonexistent')`,
     ],
     hints: ['Use nullish coalescing to default to empty array', 'forEach on empty array does nothing', 'No error handling needed if you use the nullish operator'],
     tags: ['observer', 'safe-emit', 'error-handling', 'event-emitter'],
+    usageExample: {
+      code: `const emitter = createEmitter();
+emitter.emit('test'); // no listeners — no error`,
+      explanation: {
+        en: "Emitting with no listeners should be a no-op — not throw an error.",
+        es: "Emitir sin oyentes debe ser una operación nula, no lanzar un error.",
+      },
+    },
   },
   {
     slug: 'dp-observer-5',
@@ -280,5 +322,14 @@ emitter.emit('test')`,
     ],
     hints: ['Use filter to remove listener that matches the reference', 'Compare function references with ===', 'Only the exact function reference should be removed'],
     tags: ['observer', 'unsubscribe', 'off', 'event-management'],
+    usageExample: {
+      code: `emitter.on(handler);
+emitter.off(handler);
+emitter.listeners.length; // 0`,
+      explanation: {
+        en: "off() removes a listener so it no longer receives future events.",
+        es: "off() elimina un oyente para que ya no reciba futuros eventos.",
+      },
+    },
   },
 ]

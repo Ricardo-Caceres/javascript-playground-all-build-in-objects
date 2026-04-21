@@ -34,6 +34,15 @@ localeUpper('hello') // → 'HELLO'
       'For ASCII strings, `toLocaleUpperCase()` behaves identically to `toUpperCase()`.',
     ],
     tags: ['String', 'String.prototype.toLocaleUpperCase', 'beginner'],
+    usageExample: {
+      code: `'hello'.toLocaleUpperCase()   // → 'HELLO'
+'world'.toLocaleUpperCase()   // → 'WORLD'
+'abc123'.toLocaleUpperCase()  // → 'ABC123'`,
+      explanation: {
+        en: "Use toLocaleUpperCase() to convert a string to uppercase using the locale-specific rules of the host environment.",
+        es: "Usa toLocaleUpperCase() para convertir una cadena a mayúsculas usando las reglas específicas del locale del sistema.",
+      },
+    },
   },
   {
     slug: 'string-to-locale-upper-case-mixed',
@@ -68,6 +77,15 @@ normalizeUpper('HeLLo WoRLd') // → 'HELLO WORLD'
       'Every lowercase ASCII letter is converted to its uppercase equivalent.',
     ],
     tags: ['String', 'String.prototype.toLocaleUpperCase', 'beginner'],
+    usageExample: {
+      code: `'hello'.toLocaleUpperCase()   // → 'HELLO'
+'world'.toLocaleUpperCase()   // → 'WORLD'
+'abc123'.toLocaleUpperCase()  // → 'ABC123'`,
+      explanation: {
+        en: "Use toLocaleUpperCase() to convert a string to uppercase using the locale-specific rules of the host environment.",
+        es: "Usa toLocaleUpperCase() para convertir una cadena a mayúsculas usando las reglas específicas del locale del sistema.",
+      },
+    },
   },
   {
     slug: 'string-to-locale-upper-case-already-upper',
@@ -102,6 +120,15 @@ ensureUpper('HELLO') // → 'HELLO'
       'Calling `toLocaleUpperCase()` on an uppercase string is a no-op.',
     ],
     tags: ['String', 'String.prototype.toLocaleUpperCase', 'beginner'],
+    usageExample: {
+      code: `'hello'.toLocaleUpperCase()   // → 'HELLO'
+'world'.toLocaleUpperCase()   // → 'WORLD'
+'abc123'.toLocaleUpperCase()  // → 'ABC123'`,
+      explanation: {
+        en: "Use toLocaleUpperCase() to convert a string to uppercase using the locale-specific rules of the host environment.",
+        es: "Usa toLocaleUpperCase() para convertir una cadena a mayúsculas usando las reglas específicas del locale del sistema.",
+      },
+    },
   },
   {
     slug: 'string-to-locale-upper-case-numbers',
@@ -136,6 +163,15 @@ upperLettersOnly('abc123') // → 'ABC123'
       'Numbers and punctuation have no concept of case and are returned unchanged.',
     ],
     tags: ['String', 'String.prototype.toLocaleUpperCase', 'beginner'],
+    usageExample: {
+      code: `'hello'.toLocaleUpperCase()   // → 'HELLO'
+'world'.toLocaleUpperCase()   // → 'WORLD'
+'abc123'.toLocaleUpperCase()  // → 'ABC123'`,
+      explanation: {
+        en: "Use toLocaleUpperCase() to convert a string to uppercase using the locale-specific rules of the host environment.",
+        es: "Usa toLocaleUpperCase() para convertir una cadena a mayúsculas usando las reglas específicas del locale del sistema.",
+      },
+    },
   },
   {
     slug: 'string-to-locale-upper-case-empty',
@@ -171,5 +207,14 @@ safeLocaleUpper('hi') // → 'HI'
       '`"".toLocaleUpperCase()` returns `""`.',
     ],
     tags: ['String', 'String.prototype.toLocaleUpperCase', 'beginner'],
+    usageExample: {
+      code: `'hello'.toLocaleUpperCase()   // → 'HELLO'
+'world'.toLocaleUpperCase()   // → 'WORLD'
+'abc123'.toLocaleUpperCase()  // → 'ABC123'`,
+      explanation: {
+        en: "Use toLocaleUpperCase() to convert a string to uppercase using the locale-specific rules of the host environment.",
+        es: "Usa toLocaleUpperCase() para convertir una cadena a mayúsculas usando las reglas específicas del locale del sistema.",
+      },
+    },
   },
 ]

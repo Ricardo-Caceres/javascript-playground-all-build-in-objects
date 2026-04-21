@@ -20,6 +20,16 @@ export const setIsSupersetOfExercises: Exercise[] = [
     ],
     hints: ['isSupersetOf returns true if every element of B exists in A'],
     tags: ['Set', 'isSupersetOf', 'ES2025'],
+    usageExample: {
+      code: `const a = new Set([1, 2, 3])
+const b = new Set([1, 2])
+a.isSupersetOf(b)   // → true
+b.isSupersetOf(a)   // → false`,
+      explanation: {
+        en: 'Use Set.isSupersetOf() to check whether a set contains all elements of another set.',
+        es: 'Usa Set.isSupersetOf() para verificar si un conjunto contiene todos los elementos de otro.',
+      },
+    },
   },
   {
     slug: 'set-issupersetof-2',
@@ -40,6 +50,16 @@ export const setIsSupersetOfExercises: Exercise[] = [
     ],
     hints: ['isSupersetOf returns false if any element of B is missing from A'],
     tags: ['Set', 'isSupersetOf', 'nonSuperset'],
+    usageExample: {
+      code: `const a = new Set([1, 2, 3])
+const b = new Set([1, 2])
+a.isSupersetOf(b)   // → true
+b.isSupersetOf(a)   // → false`,
+      explanation: {
+        en: 'Use Set.isSupersetOf() to check whether a set contains all elements of another set.',
+        es: 'Usa Set.isSupersetOf() para verificar si un conjunto contiene todos los elementos de otro.',
+      },
+    },
   },
   {
     slug: 'set-issupersetof-3',
@@ -60,6 +80,16 @@ export const setIsSupersetOfExercises: Exercise[] = [
     ],
     hints: ['Every set is a superset of ∅ because there are no elements to fail'],
     tags: ['Set', 'isSupersetOf', 'empty'],
+    usageExample: {
+      code: `const a = new Set([1, 2, 3])
+const b = new Set([1, 2])
+a.isSupersetOf(b)   // → true
+b.isSupersetOf(a)   // → false`,
+      explanation: {
+        en: 'Use Set.isSupersetOf() to check whether a set contains all elements of another set.',
+        es: 'Usa Set.isSupersetOf() para verificar si un conjunto contiene todos los elementos de otro.',
+      },
+    },
   },
   {
     slug: 'set-issupersetof-4',
@@ -80,6 +110,16 @@ export const setIsSupersetOfExercises: Exercise[] = [
     ],
     hints: ['A set is always a superset of itself or any equal set'],
     tags: ['Set', 'isSupersetOf', 'equal'],
+    usageExample: {
+      code: `const a = new Set([1, 2, 3])
+const b = new Set([1, 2])
+a.isSupersetOf(b)   // → true
+b.isSupersetOf(a)   // → false`,
+      explanation: {
+        en: 'Use Set.isSupersetOf() to check whether a set contains all elements of another set.',
+        es: 'Usa Set.isSupersetOf() para verificar si un conjunto contiene todos los elementos de otro.',
+      },
+    },
   },
   {
     slug: 'set-issupersetof-5',
@@ -100,5 +140,15 @@ export const setIsSupersetOfExercises: Exercise[] = [
     ],
     hints: ['isSupersetOf({x}) is equivalent to has(x)'],
     tags: ['Set', 'isSupersetOf', 'single'],
+    usageExample: {
+      code: `const a = new Set([1, 2, 3])
+const b = new Set([1, 2])
+a.isSupersetOf(b)   // → true
+b.isSupersetOf(a)   // → false`,
+      explanation: {
+        en: 'Use Set.isSupersetOf() to check whether a set contains all elements of another set.',
+        es: 'Usa Set.isSupersetOf() para verificar si un conjunto contiene todos los elementos de otro.',
+      },
+    },
   },
 ]

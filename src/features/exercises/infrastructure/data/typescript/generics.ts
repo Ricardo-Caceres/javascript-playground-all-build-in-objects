@@ -33,6 +33,15 @@ identity('hello') // → 'hello'
     ],
     hints: ['The simplest generic function — just return what you receive.'],
     tags: ['TypeScript', 'generic', 'identity', 'beginner'],
+    usageExample: {
+      code: `function identity<T>(x: T): T { return x }
+identity(42)        // → 42
+identity('hello')   // → 'hello'`,
+      explanation: {
+        en: 'The identity function is the simplest generic — it preserves the type of its input.',
+        es: 'La función identity es el genérico más simple: preserva el tipo de su entrada.',
+      },
+    },
   },
   {
     slug: 'ts-generic-2',
@@ -63,6 +72,15 @@ head([])         // → undefined
     ],
     hints: ['arr[0] returns undefined for empty arrays naturally.'],
     tags: ['TypeScript', 'generic', 'array', 'beginner'],
+    usageExample: {
+      code: `function head<T>(arr: T[]): T | undefined { return arr[0] }
+head([1, 2, 3])   // → 1
+head([])          // → undefined`,
+      explanation: {
+        en: 'head<T> returns the first element, preserving the array element type via generic inference.',
+        es: 'head<T> devuelve el primer elemento, preservando el tipo de los elementos por inferencia genérica.',
+      },
+    },
   },
   {
     slug: 'ts-generic-3',
@@ -93,6 +111,15 @@ tail([1])        // → []
     ],
     hints: ['arr.slice(1) starts at index 1 and goes to the end.'],
     tags: ['TypeScript', 'generic', 'array', 'beginner'],
+    usageExample: {
+      code: `function tail<T>(arr: T[]): T[] { return arr.slice(1) }
+tail([1, 2, 3])   // → [2, 3]
+tail([1])         // → []`,
+      explanation: {
+        en: 'tail<T> returns all elements except the first, preserving the generic element type.',
+        es: 'tail<T> devuelve todos los elementos excepto el primero, preservando el tipo genérico.',
+      },
+    },
   },
   {
     slug: 'ts-generic-4',
@@ -123,6 +150,15 @@ last([])         // → undefined
     ],
     hints: ['arr[arr.length - 1] returns undefined for empty arrays.'],
     tags: ['TypeScript', 'generic', 'array', 'beginner'],
+    usageExample: {
+      code: `function last<T>(arr: T[]): T | undefined { return arr[arr.length - 1] }
+last([1, 2, 3])   // → 3
+last([])          // → undefined`,
+      explanation: {
+        en: 'last<T> returns the final element, or undefined for an empty array.',
+        es: 'last<T> devuelve el último elemento, o undefined para un array vacío.',
+      },
+    },
   },
   {
     slug: 'ts-generic-5',
@@ -153,6 +189,14 @@ nth([1, 2, 3], 5)     // → undefined
     ],
     hints: ['arr[n] is fine — returns undefined automatically when out of range.'],
     tags: ['TypeScript', 'generic', 'array', 'beginner'],
+    usageExample: {
+      code: `function nth<T>(arr: T[], n: number): T | undefined { return arr[n] }
+nth([10, 20, 30], 1)   // → 20`,
+      explanation: {
+        en: 'nth<T> retrieves the element at index n, returning undefined for out-of-bounds indices.',
+        es: 'nth<T> recupera el elemento en el índice n, devolviendo undefined para índices fuera de rango.',
+      },
+    },
   },
   {
     slug: 'ts-generic-6',
@@ -183,6 +227,14 @@ swap([true, 42])   // → [42, true]
     ],
     hints: ['Just destructure or index into the tuple.'],
     tags: ['TypeScript', 'generic', 'tuple', 'beginner'],
+    usageExample: {
+      code: `function swap<T, U>(pair: [T, U]): [U, T] { return [pair[1], pair[0]] }
+swap([1, 'hello'])   // → ['hello', 1]`,
+      explanation: {
+        en: 'swap<T, U> reverses a two-element tuple, preserving the individual types.',
+        es: 'swap<T, U> invierte una tupla de dos elementos, preservando los tipos individuales.',
+      },
+    },
   },
   {
     slug: 'ts-generic-7',
@@ -213,6 +265,17 @@ pick({ name: 'Alice', age: 30 }, 'name')  // → 'Alice'
     ],
     hints: ['K extends keyof T guarantees the key exists — TypeScript will catch mistakes.'],
     tags: ['TypeScript', 'generic', 'keyof', 'intermediate'],
+    usageExample: {
+      code: `function pick<T, K extends keyof T>(obj: T, keys: K[]): Pick<T, K> {
+  const r = {} as Pick<T, K>
+  for (const k of keys) r[k] = obj[k]
+  return r
+}`,
+      explanation: {
+        en: 'pick<T, K> uses keyof and Pick<T, K> to return a type-safe subset of an object.',
+        es: 'pick<T, K> usa keyof y Pick<T, K> para devolver un subconjunto con tipo seguro de un objeto.',
+      },
+    },
   },
   {
     slug: 'ts-generic-8',
@@ -245,6 +308,15 @@ getLength('hello')   // → 5
     ],
     hints: ['The constraint T extends { length: number } ensures .length is always available.'],
     tags: ['TypeScript', 'generic', 'constraint', 'intermediate'],
+    usageExample: {
+      code: `function getLength<T extends { length: number }>(x: T): number { return x.length }
+getLength([1, 2, 3])   // → 3
+getLength('hello')     // → 5`,
+      explanation: {
+        en: 'A generic constraint T extends { length: number } allows the function to work on any \'lengthable\'.',
+        es: 'Una restricción T extends { length: number } permite que la función opere sobre cualquier \'longitable\'.',
+      },
+    },
   },
   {
     slug: 'ts-generic-9',
@@ -310,6 +382,16 @@ s.size    // → 1
     ],
     hints: ['Arrays have push/pop built-in which map directly to stack operations.'],
     tags: ['TypeScript', 'generic', 'class', 'stack', 'intermediate'],
+    usageExample: {
+      code: `const stack = new Stack<number>()
+stack.push(1)
+stack.push(2)
+stack.pop()   // → 2`,
+      explanation: {
+        en: 'A generic Stack<T> class enforces a single element type across push, pop, and peek.',
+        es: 'Una clase genérica Stack<T> impone un único tipo de elemento en push, pop y peek.',
+      },
+    },
   },
   {
     slug: 'ts-generic-10',
@@ -374,6 +456,16 @@ q.size       // → 1
     ],
     hints: ['shift() removes and returns the first element — use it for dequeue.'],
     tags: ['TypeScript', 'generic', 'class', 'queue', 'intermediate'],
+    usageExample: {
+      code: `const q = new Queue<string>()
+q.enqueue('a')
+q.enqueue('b')
+q.dequeue()   // → 'a'`,
+      explanation: {
+        en: 'A generic Queue<T> class enforces a single element type with FIFO semantics.',
+        es: 'Una clase genérica Queue<T> impone un único tipo de elemento con semántica FIFO.',
+      },
+    },
   },
   {
     slug: 'ts-generic-11',
@@ -405,6 +497,13 @@ zip([1,2], ['a','b','c'])    // → [[1,'a'],[2,'b']]
     ],
     hints: ['Math.min(a.length, b.length) gives the safe iteration count.'],
     tags: ['TypeScript', 'generic', 'zip', 'intermediate'],
+    usageExample: {
+      code: `zip([1, 2, 3], ['a', 'b', 'c'])   // → [[1,'a'], [2,'b'], [3,'c']]`,
+      explanation: {
+        en: 'zip<T, U> pairs elements from two arrays into tuples, stopping at the shorter array.',
+        es: 'zip<T, U> empareja elementos de dos arrays en tuplas, deteniéndose en el array más corto.',
+      },
+    },
   },
   {
     slug: 'ts-generic-12',
@@ -435,6 +534,14 @@ unique(['a', 'b', 'a'])  // → ['a', 'b']
     ],
     hints: ['Set preserves insertion order and removes duplicates.'],
     tags: ['TypeScript', 'generic', 'Set', 'beginner'],
+    usageExample: {
+      code: `unique([1, 2, 2, 3, 3, 3])   // → [1, 2, 3]
+unique(['a', 'a', 'b'])       // → ['a', 'b']`,
+      explanation: {
+        en: 'unique<T> removes duplicates by passing the array through a Set, preserving insertion order.',
+        es: 'unique<T> elimina duplicados pasando el array por un Set, preservando el orden de inserción.',
+      },
+    },
   },
   {
     slug: 'ts-generic-13',
@@ -467,6 +574,13 @@ mapValues({ x: 'hi' }, s => s.length)   // → { x: 2 }
     ],
     hints: ['Object.keys gives all own enumerable keys.'],
     tags: ['TypeScript', 'generic', 'record', 'intermediate'],
+    usageExample: {
+      code: `mapValues({ a: 1, b: 2 }, v => v * 10)   // → { a: 10, b: 20 }`,
+      explanation: {
+        en: 'mapValues<T, U> transforms every value in a Record, preserving keys and type-checking the result.',
+        es: 'mapValues<T, U> transforma cada valor de un Record, preservando las claves y comprobando el tipo.',
+      },
+    },
   },
   {
     slug: 'ts-generic-14',
@@ -496,6 +610,13 @@ filter([1,2,3,4,5], x => x % 2 === 0)  // → [2, 4]
     ],
     hints: ['Delegate to Array.prototype.filter.'],
     tags: ['TypeScript', 'generic', 'filter', 'beginner'],
+    usageExample: {
+      code: `filter([1, 2, 3, 4, 5], x => x % 2 === 0)   // → [2, 4]`,
+      explanation: {
+        en: 'A generic filter<T> accepts a predicate and returns only elements for which it is true.',
+        es: 'Un genérico filter<T> acepta un predicado y devuelve solo los elementos para los que es verdadero.',
+      },
+    },
   },
   {
     slug: 'ts-generic-15',
@@ -525,6 +646,13 @@ reduce([1,2,3,4], (acc, x) => acc + x, 0)  // → 10
     ],
     hints: ['Delegate to Array.prototype.reduce.'],
     tags: ['TypeScript', 'generic', 'reduce', 'intermediate'],
+    usageExample: {
+      code: `reduce([1, 2, 3, 4], (acc, x) => acc + x, 0)   // → 10`,
+      explanation: {
+        en: 'reduce<T, U> folds an array into a single value using an accumulator function.',
+        es: 'reduce<T, U> reduce un array a un único valor usando una función acumuladora.',
+      },
+    },
   },
   {
     slug: 'ts-generic-16',
@@ -557,6 +685,13 @@ chunk([1,2,3,4,5], 2)  // → [[1,2],[3,4],[5]]
     ],
     hints: ['Loop with step = size, use slice to grab each chunk.'],
     tags: ['TypeScript', 'generic', 'chunk', 'intermediate'],
+    usageExample: {
+      code: `chunk([1, 2, 3, 4, 5], 2)   // → [[1, 2], [3, 4], [5]]`,
+      explanation: {
+        en: 'chunk<T> splits an array into sub-arrays of a fixed size, preserving the element type.',
+        es: 'chunk<T> divide un array en sub-arrays de tamaño fijo, preservando el tipo de los elementos.',
+      },
+    },
   },
   {
     slug: 'ts-generic-17',
@@ -586,6 +721,13 @@ flatten([[1,2],[3,4]])  // → [1,2,3,4]
     ],
     hints: ['Array.prototype.flat() with default depth=1 does exactly this.'],
     tags: ['TypeScript', 'generic', 'flatten', 'beginner'],
+    usageExample: {
+      code: `flatten([[1, 2], [3, 4], [5]])   // → [1, 2, 3, 4, 5]`,
+      explanation: {
+        en: 'flatten<T> collapses one level of nesting, returning a flat array of the same element type.',
+        es: 'flatten<T> colapsa un nivel de anidamiento, devolviendo un array plano del mismo tipo de elementos.',
+      },
+    },
   },
   {
     slug: 'ts-generic-18',
@@ -617,6 +759,14 @@ partition([1,2,3,4,5], x => x % 2 === 0)  // → [[2,4],[1,3,5]]
     ],
     hints: ['Use a conditional push to two separate arrays, then return them as a tuple.'],
     tags: ['TypeScript', 'generic', 'partition', 'intermediate'],
+    usageExample: {
+      code: `partition([1, 2, 3, 4, 5], x => x % 2 === 0)
+// → [[2, 4], [1, 3, 5]]`,
+      explanation: {
+        en: 'partition<T> splits an array into two groups — those matching a predicate and those that don\'t.',
+        es: 'partition<T> divide un array en dos grupos: los que cumplen el predicado y los que no.',
+      },
+    },
   },
   {
     slug: 'ts-generic-19',
@@ -653,6 +803,14 @@ groupBy([{type:'a',v:1},{type:'b',v:2},{type:'a',v:3}], 'type')
     ],
     hints: ['Convert the key value to string for the Record key.'],
     tags: ['TypeScript', 'generic', 'groupBy', 'intermediate'],
+    usageExample: {
+      code: `groupBy(['a', 'bb', 'ccc', 'dd'], s => s.length)
+// → { 1: ['a'], 2: ['bb', 'dd'], 3: ['ccc'] }`,
+      explanation: {
+        en: 'groupBy<T> clusters array elements by a derived key, building a Record of arrays.',
+        es: 'groupBy<T> agrupa elementos de un array por una clave derivada, construyendo un Record de arrays.',
+      },
+    },
   },
   {
     slug: 'ts-generic-20',
@@ -683,5 +841,16 @@ pipe()(42)                         // → 42
     ],
     hints: ['reduce with the initial value x threads the value through all functions.'],
     tags: ['TypeScript', 'generic', 'pipe', 'composition', 'advanced'],
+    usageExample: {
+      code: `const result = pipe(
+  5,
+  x => x * 2,
+  x => x + 1
+)  // → 11`,
+      explanation: {
+        en: 'pipe<T> threads a value through a sequence of transformations left-to-right.',
+        es: 'pipe<T> hace pasar un valor por una secuencia de transformaciones de izquierda a derecha.',
+      },
+    },
   },
 ]

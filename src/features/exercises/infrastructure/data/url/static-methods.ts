@@ -19,6 +19,14 @@ export const urlStaticMethodsExercises: Exercise[] = [
     ],
     hints: ['URL.canParse() is a safe alternative to try/catch around new URL()'],
     tags: ['URL', 'static-method', 'canParse'],
+    usageExample: {
+      code: `URL.canParse('https://example.com')  // → true
+URL.canParse('not a url')         // → false`,
+      explanation: {
+        en: "URL.canParse() returns true if the string is a valid URL without throwing.",
+        es: "URL.canParse() devuelve true si la cadena es una URL válida sin lanzar excepción.",
+      },
+    },
   },
   {
     slug: 'url-static-method-2',
@@ -38,6 +46,14 @@ export const urlStaticMethodsExercises: Exercise[] = [
     ],
     hints: ['Without a base, a relative path is not a valid URL'],
     tags: ['URL', 'static-method', 'canParse', 'validation'],
+    usageExample: {
+      code: `const blob = new Blob(['hello'])
+URL.createObjectURL(blob)  // → 'blob:...'`,
+      explanation: {
+        en: "URL.createObjectURL() creates a temporary URL pointing to a Blob or File.",
+        es: "URL.createObjectURL() crea una URL temporal que apunta a un Blob o File.",
+      },
+    },
   },
   {
     slug: 'url-static-method-3',
@@ -57,6 +73,13 @@ export const urlStaticMethodsExercises: Exercise[] = [
     ],
     hints: ['The second argument to URL.canParse() is the base URL'],
     tags: ['URL', 'static-method', 'canParse', 'relative'],
+    usageExample: {
+      code: `URL.revokeObjectURL(blobUrl)  // releases the blob from memory`,
+      explanation: {
+        en: "URL.revokeObjectURL() frees the memory associated with a blob URL when no longer needed.",
+        es: "URL.revokeObjectURL() libera la memoria asociada con una URL blob cuando ya no es necesaria.",
+      },
+    },
   },
   {
     slug: 'url-static-method-4',
@@ -76,6 +99,13 @@ export const urlStaticMethodsExercises: Exercise[] = [
     ],
     hints: ['An empty string has no scheme so it cannot be a valid URL'],
     tags: ['URL', 'static-method', 'canParse'],
+    usageExample: {
+      code: `URL.canParse('/path', 'https://example.com')  // → true`,
+      explanation: {
+        en: "URL.canParse() also accepts a base URL to resolve relative URLs before validation.",
+        es: "URL.canParse() también acepta una URL base para resolver URLs relativas antes de validar.",
+      },
+    },
   },
   {
     slug: 'url-static-method-5',
@@ -95,5 +125,12 @@ export const urlStaticMethodsExercises: Exercise[] = [
     ],
     hints: ['Static methods live on the class, not the instance'],
     tags: ['URL', 'static-method', 'canParse'],
+    usageExample: {
+      code: `typeof URL.canParse  // → 'function'`,
+      explanation: {
+        en: "URL.canParse is a static method and does not require instantiation.",
+        es: "URL.canParse es un método estático y no requiere instanciación.",
+      },
+    },
   },
 ]

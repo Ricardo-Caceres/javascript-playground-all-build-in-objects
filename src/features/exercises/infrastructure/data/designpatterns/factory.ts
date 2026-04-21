@@ -39,6 +39,16 @@ const user = createUser('Alice', 'admin')`,
     ],
     hints: ['Return an object literal with all required properties', 'Use the parameters to populate the object', 'Each call to the factory creates a new object'],
     tags: ['factory', 'design-pattern', 'object-creation', 'encapsulation'],
+    usageExample: {
+      code: `function createUser(name, role) {
+  return { name, role, greet() { return 'Hi, I am ' + name; } };
+}
+const admin = createUser('Alice', 'admin');`,
+      explanation: {
+        en: "A factory function returns a new object, hiding the creation logic from the caller.",
+        es: "Una función factory devuelve un nuevo objeto, ocultando la lógica de creación al llamador.",
+      },
+    },
   },
   {
     slug: 'dp-factory-2',
@@ -85,6 +95,17 @@ const bike = createVehicle('bike')`,
     ],
     hints: ['Use if statements or switch to differentiate types', 'Return appropriate object for each type', 'Include both type and wheels properties'],
     tags: ['factory', 'type-creation', 'design-pattern', 'polymorphism'],
+    usageExample: {
+      code: `function createShape(type) {
+  if (type === 'circle') return { type, area: r => Math.PI * r * r };
+  if (type === 'square') return { type, area: s => s * s };
+}
+const c = createShape('circle');`,
+      explanation: {
+        en: "A factory can return different object types based on a parameter.",
+        es: "Una factory puede devolver diferentes tipos de objetos según un parámetro.",
+      },
+    },
   },
   {
     slug: 'dp-factory-3',
@@ -137,6 +158,20 @@ btn.click()`,
     ],
     hints: ['Return object with methods', 'Use this to access the label in methods', 'Each factory call creates a new object with its own label'],
     tags: ['factory', 'methods', 'design-pattern', 'encapsulation'],
+    usageExample: {
+      code: `function createCounter(start = 0) {
+  let count = start;
+  return {
+    increment() { count++; },
+    value() { return count; },
+  };
+}
+const c = createCounter(10);`,
+      explanation: {
+        en: "Factory functions can capture private state via closures.",
+        es: "Las funciones factory pueden capturar estado privado mediante clausuras.",
+      },
+    },
   },
   {
     slug: 'dp-factory-4',
@@ -192,6 +227,17 @@ conn.connect()`,
     ],
     hints: ['Initialize isConnected to false', 'Methods modify the isConnected property', 'Store host and port parameters'],
     tags: ['factory', 'state-management', 'design-pattern', 'initialization'],
+    usageExample: {
+      code: `function createConnection(url) {
+  const parsed = new URL(url);
+  return { host: parsed.hostname, port: parsed.port };
+}
+const conn = createConnection('http://localhost:3000');`,
+      explanation: {
+        en: "Use a factory to hide constructor complexity like parsing or validation.",
+        es: "Usa una factory para ocultar complejidad del constructor como parseo o validación.",
+      },
+    },
   },
   {
     slug: 'dp-factory-5',
@@ -241,5 +287,15 @@ const square = createShape('square')`,
     ],
     hints: ['Use an object as registry to map type names to shapes', 'Store both type and area function in registry', 'Return the appropriate shape object from registry'],
     tags: ['factory', 'registry', 'design-pattern', 'mapping'],
+    usageExample: {
+      code: `const registry = {};
+function register(type, factory) { registry[type] = factory; }
+function create(type, ...args) { return registry[type]?.(...args); }
+register('dog', name => ({ name, speak: () => 'woof' }));`,
+      explanation: {
+        en: "A factory registry maps type names to factory functions for dynamic object creation.",
+        es: "Un registro de factories mapea nombres de tipo a funciones factory para creación dinámica de objetos.",
+      },
+    },
   },
 ]

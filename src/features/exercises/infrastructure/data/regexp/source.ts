@@ -20,6 +20,14 @@ export const regexpSourceExercises: Exercise[] = [
     ],
     hints: ['source returns only the pattern text, not the slashes or flags'],
     tags: ['RegExp', 'source', 'property'],
+    usageExample: {
+      code: `const re = /hello world/i
+console.log(re.source) // → 'hello world'`,
+      explanation: {
+        en: 'Read RegExp.source to get the pattern text of the regular expression without slashes or flags.',
+        es: 'Lee RegExp.source para obtener el texto del patrón de la expresión regular sin barras ni banderas.',
+      },
+    },
   },
   {
     slug: 'regexp-source-2',
@@ -40,6 +48,14 @@ export const regexpSourceExercises: Exercise[] = [
     ],
     hints: ['Escape sequences in the pattern are preserved as-is in source'],
     tags: ['RegExp', 'source', 'escape'],
+    usageExample: {
+      code: `const re = /hello world/i
+console.log(re.source) // → 'hello world'`,
+      explanation: {
+        en: 'Read RegExp.source to get the pattern text of the regular expression without slashes or flags.',
+        es: 'Lee RegExp.source para obtener el texto del patrón de la expresión regular sin barras ni banderas.',
+      },
+    },
   },
   {
     slug: 'regexp-source-3',
@@ -60,6 +76,14 @@ export const regexpSourceExercises: Exercise[] = [
     ],
     hints: ['Alternation operator | is part of the source'],
     tags: ['RegExp', 'source', 'alternation'],
+    usageExample: {
+      code: `const re = /hello world/i
+console.log(re.source) // → 'hello world'`,
+      explanation: {
+        en: 'Read RegExp.source to get the pattern text of the regular expression without slashes or flags.',
+        es: 'Lee RegExp.source para obtener el texto del patrón de la expresión regular sin barras ni banderas.',
+      },
+    },
   },
   {
     slug: 'regexp-source-4',
@@ -80,6 +104,14 @@ export const regexpSourceExercises: Exercise[] = [
     ],
     hints: ['source always returns a string value'],
     tags: ['RegExp', 'source', 'typeof'],
+    usageExample: {
+      code: `const re = /hello world/i
+console.log(re.source) // → 'hello world'`,
+      explanation: {
+        en: 'Read RegExp.source to get the pattern text of the regular expression without slashes or flags.',
+        es: 'Lee RegExp.source para obtener el texto del patrón de la expresión regular sin barras ni banderas.',
+      },
+    },
   },
   {
     slug: 'regexp-source-5',
@@ -100,5 +132,13 @@ export const regexpSourceExercises: Exercise[] = [
     ],
     hints: ['An empty RegExp literal is represented as /(?:)/ to distinguish from comments'],
     tags: ['RegExp', 'source', 'empty'],
+    usageExample: {
+      code: `const re = /hello world/i
+console.log(re.source) // → 'hello world'`,
+      explanation: {
+        en: 'Read RegExp.source to get the pattern text of the regular expression without slashes or flags.',
+        es: 'Lee RegExp.source para obtener el texto del patrón de la expresión regular sin barras ni banderas.',
+      },
+    },
   },
 ]

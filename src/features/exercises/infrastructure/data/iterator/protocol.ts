@@ -19,6 +19,17 @@ export const iteratorProtocolExercises: Exercise[] = [
       { description: 'typeof it.return is function', assertion: 'expect(typeof it.return).toBe("function")' }
     ],
     tags: [],
+    usageExample: {
+      code: `const arr = [1, 2, 3]
+const iter = arr[Symbol.iterator]()
+console.log(iter.next()) // → { value: 1, done: false }
+console.log(iter.next()) // → { value: 2, done: false }
+console.log(iter.next()) // → { value: 3, done: false }`,
+      explanation: {
+        en: 'The iterator protocol requires an object to implement a next() method returning { value, done } objects.',
+        es: 'El protocolo iterador requiere que un objeto implemente un método next() que devuelva objetos { value, done }.',
+      },
+    },
   },
   {
     slug: 'iterator-protocol-string',
@@ -38,6 +49,17 @@ export const iteratorProtocolExercises: Exercise[] = [
       { description: 'typeof it.throw is undefined', assertion: 'expect(typeof it.throw).toBe("undefined")' }
     ],
     tags: [],
+    usageExample: {
+      code: `const arr = [1, 2, 3]
+const iter = arr[Symbol.iterator]()
+console.log(iter.next()) // → { value: 1, done: false }
+console.log(iter.next()) // → { value: 2, done: false }
+console.log(iter.next()) // → { value: 3, done: false }`,
+      explanation: {
+        en: 'The iterator protocol requires an object to implement a next() method returning { value, done } objects.',
+        es: 'El protocolo iterador requiere que un objeto implemente un método next() que devuelva objetos { value, done }.',
+      },
+    },
   },
   {
     slug: 'iterator-protocol-set',
@@ -57,6 +79,17 @@ export const iteratorProtocolExercises: Exercise[] = [
       { description: 'typeof it.throw is undefined', assertion: 'expect(typeof it.throw).toBe("undefined")' }
     ],
     tags: [],
+    usageExample: {
+      code: `const arr = [1, 2, 3]
+const iter = arr[Symbol.iterator]()
+console.log(iter.next()) // → { value: 1, done: false }
+console.log(iter.next()) // → { value: 2, done: false }
+console.log(iter.next()) // → { value: 3, done: false }`,
+      explanation: {
+        en: 'The iterator protocol requires an object to implement a next() method returning { value, done } objects.',
+        es: 'El protocolo iterador requiere que un objeto implemente un método next() que devuelva objetos { value, done }.',
+      },
+    },
   },
   {
     slug: 'iterator-protocol-map',
@@ -76,6 +109,17 @@ export const iteratorProtocolExercises: Exercise[] = [
       { description: 'typeof it.throw is undefined', assertion: 'expect(typeof it.throw).toBe("undefined")' }
     ],
     tags: [],
+    usageExample: {
+      code: `const arr = [1, 2, 3]
+const iter = arr[Symbol.iterator]()
+console.log(iter.next()) // → { value: 1, done: false }
+console.log(iter.next()) // → { value: 2, done: false }
+console.log(iter.next()) // → { value: 3, done: false }`,
+      explanation: {
+        en: 'The iterator protocol requires an object to implement a next() method returning { value, done } objects.',
+        es: 'El protocolo iterador requiere que un objeto implemente un método next() que devuelva objetos { value, done }.',
+      },
+    },
   },
   {
     slug: 'iterator-protocol-done',

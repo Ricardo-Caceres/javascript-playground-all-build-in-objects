@@ -20,6 +20,16 @@ export const setValuesExercises: Exercise[] = [
     ],
     hints: ['Spread the iterator with [...set.values()] to get an array'],
     tags: ['Set', 'values', 'iterator'],
+    usageExample: {
+      code: `const s = new Set([1, 2, 3])
+for (const v of s.values()) {
+  console.log(v) // 1, 2, 3
+}`,
+      explanation: {
+        en: 'Use Set.values() to iterate over all values in insertion order.',
+        es: 'Usa Set.values() para iterar sobre todos los valores en orden de inserción.',
+      },
+    },
   },
   {
     slug: 'set-values-2',
@@ -40,6 +50,16 @@ export const setValuesExercises: Exercise[] = [
     ],
     hints: ['values() yields values in insertion order'],
     tags: ['Set', 'values', 'order'],
+    usageExample: {
+      code: `const s = new Set([1, 2, 3])
+for (const v of s.values()) {
+  console.log(v) // 1, 2, 3
+}`,
+      explanation: {
+        en: 'Use Set.values() to iterate over all values in insertion order.',
+        es: 'Usa Set.values() para iterar sobre todos los valores en orden de inserción.',
+      },
+    },
   },
   {
     slug: 'set-values-3',
@@ -60,6 +80,16 @@ export const setValuesExercises: Exercise[] = [
     ],
     hints: ['values() iterates only the unique values stored in the Set'],
     tags: ['Set', 'values', 'deduplication'],
+    usageExample: {
+      code: `const s = new Set([1, 2, 3])
+for (const v of s.values()) {
+  console.log(v) // 1, 2, 3
+}`,
+      explanation: {
+        en: 'Use Set.values() to iterate over all values in insertion order.',
+        es: 'Usa Set.values() para iterar sobre todos los valores en orden de inserción.',
+      },
+    },
   },
   {
     slug: 'set-values-4',
@@ -80,6 +110,16 @@ export const setValuesExercises: Exercise[] = [
     ],
     hints: ['An empty Set has no values to iterate'],
     tags: ['Set', 'values', 'empty'],
+    usageExample: {
+      code: `const s = new Set([1, 2, 3])
+for (const v of s.values()) {
+  console.log(v) // 1, 2, 3
+}`,
+      explanation: {
+        en: 'Use Set.values() to iterate over all values in insertion order.',
+        es: 'Usa Set.values() para iterar sobre todos los valores en orden de inserción.',
+      },
+    },
   },
   {
     slug: 'set-values-5',
@@ -100,5 +140,15 @@ export const setValuesExercises: Exercise[] = [
     ],
     hints: ['values() returns a SetIterator — an iterable iterator'],
     tags: ['Set', 'values', 'type'],
+    usageExample: {
+      code: `const s = new Set([1, 2, 3])
+for (const v of s.values()) {
+  console.log(v) // 1, 2, 3
+}`,
+      explanation: {
+        en: 'Use Set.values() to iterate over all values in insertion order.',
+        es: 'Usa Set.values() para iterar sobre todos los valores en orden de inserción.',
+      },
+    },
   },
 ]

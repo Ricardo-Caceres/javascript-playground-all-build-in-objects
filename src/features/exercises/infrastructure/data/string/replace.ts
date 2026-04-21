@@ -35,6 +35,14 @@ replaceFirst('foo bar foo', 'foo', 'baz') // → 'baz bar foo'
       'Use `replaceAll` or a `/g` regex to replace all occurrences.',
     ],
     tags: ['String', 'String.prototype.replace', 'beginner'],
+    usageExample: {
+      code: `'foo bar foo'.replace('foo', 'baz')    // → 'baz bar foo'
+'hello'.replace(/[aeiou]/g, '*')       // → 'h*ll*'`,
+      explanation: {
+        en: "Use replace() to replace the first occurrence of a pattern; use a /g regex to replace all occurrences.",
+        es: "Usa replace() para reemplazar la primera ocurrencia de un patrón; usa /g en la expresión regular para reemplazar todas.",
+      },
+    },
   },
   {
     slug: 'string-replace-regex-pattern',
@@ -71,6 +79,14 @@ removeDigits('hello')  // → 'hello'
       'Replace with `""` to delete them.',
     ],
     tags: ['String', 'String.prototype.replace', 'regex', 'intermediate'],
+    usageExample: {
+      code: `'foo bar foo'.replace('foo', 'baz')    // → 'baz bar foo'
+'hello'.replace(/[aeiou]/g, '*')       // → 'h*ll*'`,
+      explanation: {
+        en: "Use replace() to replace the first occurrence of a pattern; use a /g regex to replace all occurrences.",
+        es: "Usa replace() para reemplazar la primera ocurrencia de un patrón; usa /g en la expresión regular para reemplazar todas.",
+      },
+    },
   },
   {
     slug: 'string-replace-function',
@@ -106,6 +122,14 @@ doubleNumbers('a1b2') // → 'a2b4'
       'Convert with `Number(match)`, multiply, then convert back to `String`.',
     ],
     tags: ['String', 'String.prototype.replace', 'function', 'intermediate'],
+    usageExample: {
+      code: `'foo bar foo'.replace('foo', 'baz')    // → 'baz bar foo'
+'hello'.replace(/[aeiou]/g, '*')       // → 'h*ll*'`,
+      explanation: {
+        en: "Use replace() to replace the first occurrence of a pattern; use a /g regex to replace all occurrences.",
+        es: "Usa replace() para reemplazar la primera ocurrencia de un patrón; usa /g en la expresión regular para reemplazar todas.",
+      },
+    },
   },
   {
     slug: 'string-replace-capture-groups',
@@ -141,6 +165,14 @@ swapWords('hello world') // → 'world hello'
       '`$1` and `$2` refer to the first and second captured groups.',
     ],
     tags: ['String', 'String.prototype.replace', 'capture groups', 'intermediate'],
+    usageExample: {
+      code: `'foo bar foo'.replace('foo', 'baz')    // → 'baz bar foo'
+'hello'.replace(/[aeiou]/g, '*')       // → 'h*ll*'`,
+      explanation: {
+        en: "Use replace() to replace the first occurrence of a pattern; use a /g regex to replace all occurrences.",
+        es: "Usa replace() para reemplazar la primera ocurrencia de un patrón; usa /g en la expresión regular para reemplazar todas.",
+      },
+    },
   },
   {
     slug: 'string-replace-no-match',
@@ -176,5 +208,13 @@ safeReplace('hello', 'ell', 'ELL') // → 'hELLo'
       '`.replace()` never throws — it just returns the original string if nothing matched.',
     ],
     tags: ['String', 'String.prototype.replace', 'beginner'],
+    usageExample: {
+      code: `'foo bar foo'.replace('foo', 'baz')    // → 'baz bar foo'
+'hello'.replace(/[aeiou]/g, '*')       // → 'h*ll*'`,
+      explanation: {
+        en: "Use replace() to replace the first occurrence of a pattern; use a /g regex to replace all occurrences.",
+        es: "Usa replace() para reemplazar la primera ocurrencia de un patrón; usa /g en la expresión regular para reemplazar todas.",
+      },
+    },
   },
 ]

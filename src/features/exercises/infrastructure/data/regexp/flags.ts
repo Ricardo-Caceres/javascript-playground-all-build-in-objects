@@ -20,6 +20,14 @@ export const regexpFlagsExercises: Exercise[] = [
     ],
     hints: ['flags are returned in alphabetical order'],
     tags: ['RegExp', 'flags', 'property'],
+    usageExample: {
+      code: `const re = /hello/gi
+console.log(re.flags) // → 'gi'`,
+      explanation: {
+        en: 'Read RegExp.flags to get a string of all active flags on the regular expression.',
+        es: 'Lee RegExp.flags para obtener una cadena con todas las banderas activas de la expresión regular.',
+      },
+    },
   },
   {
     slug: 'regexp-flags-2',
@@ -40,6 +48,14 @@ export const regexpFlagsExercises: Exercise[] = [
     ],
     hints: ['If no flags are set, flags returns an empty string'],
     tags: ['RegExp', 'flags', 'empty'],
+    usageExample: {
+      code: `const re = /hello/gi
+console.log(re.flags) // → 'gi'`,
+      explanation: {
+        en: 'Read RegExp.flags to get a string of all active flags on the regular expression.',
+        es: 'Lee RegExp.flags para obtener una cadena con todas las banderas activas de la expresión regular.',
+      },
+    },
   },
   {
     slug: 'regexp-flags-3',
@@ -60,6 +76,14 @@ export const regexpFlagsExercises: Exercise[] = [
     ],
     hints: ['Flags are returned alphabetically: d, g, i, m, s, u, v, y'],
     tags: ['RegExp', 'flags', 'multiline', 'ignoreCase'],
+    usageExample: {
+      code: `const re = /hello/gi
+console.log(re.flags) // → 'gi'`,
+      explanation: {
+        en: 'Read RegExp.flags to get a string of all active flags on the regular expression.',
+        es: 'Lee RegExp.flags para obtener una cadena con todas las banderas activas de la expresión regular.',
+      },
+    },
   },
   {
     slug: 'regexp-flags-4',
@@ -80,6 +104,14 @@ export const regexpFlagsExercises: Exercise[] = [
     ],
     hints: ['flags always returns a string, even if empty'],
     tags: ['RegExp', 'flags', 'typeof'],
+    usageExample: {
+      code: `const re = /hello/gi
+console.log(re.flags) // → 'gi'`,
+      explanation: {
+        en: 'Read RegExp.flags to get a string of all active flags on the regular expression.',
+        es: 'Lee RegExp.flags para obtener una cadena con todas las banderas activas de la expresión regular.',
+      },
+    },
   },
   {
     slug: 'regexp-flags-5',
@@ -100,5 +132,13 @@ export const regexpFlagsExercises: Exercise[] = [
     ],
     hints: ['flags returns all set flags sorted alphabetically'],
     tags: ['RegExp', 'flags', 'gim'],
+    usageExample: {
+      code: `const re = /hello/gi
+console.log(re.flags) // → 'gi'`,
+      explanation: {
+        en: 'Read RegExp.flags to get a string of all active flags on the regular expression.',
+        es: 'Lee RegExp.flags para obtener una cadena con todas las banderas activas de la expresión regular.',
+      },
+    },
   },
 ]

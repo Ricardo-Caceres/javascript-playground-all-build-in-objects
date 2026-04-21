@@ -20,6 +20,14 @@ export const symbolKeyForExercises: Exercise[] = [
     ],
     hints: ['Symbol.keyFor reverses the Symbol.for lookup.'],
     tags: ['symbol', 'Symbol.keyFor', 'global-registry'],
+    usageExample: {
+      code: `const s = Symbol.for('hello')
+Symbol.keyFor(s)   // → 'hello'`,
+      explanation: {
+        en: 'Symbol.keyFor() reverses Symbol.for() — it returns the string key used to register a global symbol.',
+        es: 'Symbol.keyFor() invierte Symbol.for(): devuelve la clave usada para registrar un símbolo global.',
+      },
+    },
   },
   {
     slug: 'symbol-keyfor-2',
@@ -40,6 +48,14 @@ export const symbolKeyForExercises: Exercise[] = [
     ],
     hints: ['Only globally registered symbols have a key.'],
     tags: ['symbol', 'Symbol.keyFor', 'undefined'],
+    usageExample: {
+      code: `const local = Symbol('local')
+Symbol.keyFor(local)   // → undefined`,
+      explanation: {
+        en: 'Local symbols created with Symbol() are not in the registry, so keyFor returns undefined.',
+        es: 'Los símbolos locales creados con Symbol() no están en el registro, por lo que keyFor devuelve undefined.',
+      },
+    },
   },
   {
     slug: 'symbol-keyfor-3',
@@ -60,6 +76,14 @@ export const symbolKeyForExercises: Exercise[] = [
     ],
     hints: ['The result is either a string or undefined.'],
     tags: ['symbol', 'Symbol.keyFor', 'typeof'],
+    usageExample: {
+      code: `const s = Symbol.for('x')
+typeof Symbol.keyFor(s)   // → 'string'`,
+      explanation: {
+        en: 'When a key is found, Symbol.keyFor() returns a string; otherwise it returns undefined.',
+        es: 'Cuando se encuentra la clave, Symbol.keyFor() devuelve un string; si no, devuelve undefined.',
+      },
+    },
   },
   {
     slug: 'symbol-keyfor-4',
@@ -80,6 +104,14 @@ export const symbolKeyForExercises: Exercise[] = [
     ],
     hints: ['Well-known symbols live outside the global string registry.'],
     tags: ['symbol', 'Symbol.keyFor', 'well-known-symbols'],
+    usageExample: {
+      code: `Symbol.keyFor(Symbol.iterator)    // → undefined
+Symbol.keyFor(Symbol.for('x'))     // → 'x'`,
+      explanation: {
+        en: 'Well-known symbols are not in the global registry, so Symbol.keyFor returns undefined for them.',
+        es: 'Los símbolos conocidos no están en el registro global, por lo que keyFor devuelve undefined para ellos.',
+      },
+    },
   },
   {
     slug: 'symbol-keyfor-5',
@@ -100,5 +132,14 @@ export const symbolKeyForExercises: Exercise[] = [
     ],
     hints: ['Symbol.for and Symbol.keyFor are inverse operations.'],
     tags: ['symbol', 'Symbol.keyFor', 'Symbol.for', 'round-trip'],
+    usageExample: {
+      code: `const key = 'userId'
+const s = Symbol.for(key)
+Symbol.keyFor(s) === key   // → true`,
+      explanation: {
+        en: 'Symbol.for(key) and Symbol.keyFor(sym) are inverse operations — a perfect round-trip.',
+        es: 'Symbol.for(key) y Symbol.keyFor(sym) son operaciones inversas: un viaje de ida y vuelta perfecto.',
+      },
+    },
   },
 ]

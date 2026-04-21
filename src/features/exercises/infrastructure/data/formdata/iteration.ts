@@ -19,6 +19,16 @@ export const formDataIterationExercises: Exercise[] = [
     ],
     hints: ['keys() returns an iterator; wrap with Array.from() to convert to an array'],
     tags: ['FormData', 'keys', 'iteration', 'instance-method'],
+    usageExample: {
+      code: `const fd = new FormData()
+fd.append('a', '1')
+fd.append('b', '2')
+for (const [k, v] of fd) { console.log(k, v) }`,
+      explanation: {
+        en: "FormData is iterable; each entry yields a [key, value] pair.",
+        es: "FormData es iterable; cada entrada produce un par [clave, valor].",
+      },
+    },
   },
   {
     slug: 'formdata-iteration-2',
@@ -38,6 +48,16 @@ export const formDataIterationExercises: Exercise[] = [
     ],
     hints: ['values() returns an iterator; wrap with Array.from() to convert to an array'],
     tags: ['FormData', 'values', 'iteration', 'instance-method'],
+    usageExample: {
+      code: `const fd = new FormData()
+fd.append('x', '1')
+[...fd.keys()]    // → ['x']
+[...fd.values()]  // → ['1']`,
+      explanation: {
+        en: "keys() and values() return iterators over the FormData field names and values.",
+        es: "keys() y values() devuelven iteradores sobre los nombres de campo y valores del FormData.",
+      },
+    },
   },
   {
     slug: 'formdata-iteration-3',
@@ -57,6 +77,15 @@ export const formDataIterationExercises: Exercise[] = [
     ],
     hints: ['entries() returns [name, value] tuples; use Array.from() and index [0] to get the first'],
     tags: ['FormData', 'entries', 'iteration', 'instance-method'],
+    usageExample: {
+      code: `const fd = new FormData()
+fd.append('q', 'hi')
+[...fd.entries()]  // → [['q', 'hi']]`,
+      explanation: {
+        en: "entries() returns an iterator of [key, value] pairs.",
+        es: "entries() devuelve un iterador de pares [clave, valor].",
+      },
+    },
   },
   {
     slug: 'formdata-iteration-4',
@@ -76,6 +105,16 @@ export const formDataIterationExercises: Exercise[] = [
     ],
     hints: ['forEach(callback) passes (value, name, formData) to each call'],
     tags: ['FormData', 'forEach', 'iteration', 'instance-method'],
+    usageExample: {
+      code: `const fd = new FormData()
+fd.append('a', '1')
+fd.append('b', '2')
+fd.forEach((val, key) => console.log(key, val))`,
+      explanation: {
+        en: "forEach() iterates over all fields with a callback(value, key) signature.",
+        es: "forEach() itera sobre todos los campos con una firma callback(value, key).",
+      },
+    },
   },
   {
     slug: 'formdata-iteration-5',
@@ -95,5 +134,15 @@ export const formDataIterationExercises: Exercise[] = [
     ],
     hints: ['Iterators that also implement Symbol.iterator are called iterables — they can be used in for...of loops'],
     tags: ['FormData', 'entries', 'Symbol.iterator', 'iterator', 'instance-method'],
+    usageExample: {
+      code: `const fd = new FormData()
+fd.append('x', '1')
+fd.append('x', '2')
+[...fd].length  // → 2 (counts each entry)`,
+      explanation: {
+        en: "Spreading FormData gives all [key, value] entries including duplicate keys.",
+        es: "Expandir FormData da todas las entradas [clave, valor] incluidas las claves duplicadas.",
+      },
+    },
   },
 ]

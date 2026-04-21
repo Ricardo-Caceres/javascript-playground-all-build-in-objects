@@ -20,6 +20,16 @@ export const weakMapGetExercises: Exercise[] = [
     ],
     hints: ['get() retrieves the value stored for the given key.'],
     tags: ['weakmap', 'get', 'instance-method'],
+    usageExample: {
+      code: `const wm = new WeakMap()
+const k = {}
+wm.set(k, 99)
+wm.get(k)  // → 99`,
+      explanation: {
+        en: "get() retrieves the value associated with the given object key.",
+        es: "get() recupera el valor asociado con la clave de objeto dada.",
+      },
+    },
   },
   {
     slug: 'weakmap-get-2',
@@ -40,6 +50,15 @@ export const weakMapGetExercises: Exercise[] = [
     ],
     hints: ['WeakMap.get() returns undefined when the key is absent.'],
     tags: ['weakmap', 'get', 'undefined'],
+    usageExample: {
+      code: `const wm = new WeakMap()
+const k = {}
+wm.get(k)  // → undefined (not set)`,
+      explanation: {
+        en: "get() returns undefined when the key has no associated value.",
+        es: "get() devuelve undefined cuando la clave no tiene ningún valor asociado.",
+      },
+    },
   },
   {
     slug: 'weakmap-get-3',
@@ -60,6 +79,16 @@ export const weakMapGetExercises: Exercise[] = [
     ],
     hints: ['Deleted keys return undefined from get().'],
     tags: ['weakmap', 'get', 'delete'],
+    usageExample: {
+      code: `const wm = new WeakMap()
+const a = {}, b = {}
+wm.set(a, 'A')
+wm.get(b)  // → undefined`,
+      explanation: {
+        en: "Different object references are always separate keys.",
+        es: "Las diferentes referencias de objeto siempre son claves separadas.",
+      },
+    },
   },
   {
     slug: 'weakmap-get-4',
@@ -80,6 +109,16 @@ export const weakMapGetExercises: Exercise[] = [
     ],
     hints: ['Any value type can be stored, including objects.'],
     tags: ['weakmap', 'get', 'object-value'],
+    usageExample: {
+      code: `const wm = new WeakMap()
+const k = {}
+wm.set(k, [1,2,3])
+wm.get(k).length  // → 3`,
+      explanation: {
+        en: "get() can retrieve complex values like arrays or objects.",
+        es: "get() puede recuperar valores complejos como arreglos u objetos.",
+      },
+    },
   },
   {
     slug: 'weakmap-get-5',
@@ -100,5 +139,15 @@ export const weakMapGetExercises: Exercise[] = [
     ],
     hints: ['Each object key is unique regardless of content.'],
     tags: ['weakmap', 'get', 'keys'],
+    usageExample: {
+      code: `const wm = new WeakMap()
+const k = {}
+wm.set(k, null)
+wm.get(k)  // → null`,
+      explanation: {
+        en: "Stored values can be null; get() returns null (not undefined) in that case.",
+        es: "Los valores almacenados pueden ser null; get() devuelve null (no undefined) en ese caso.",
+      },
+    },
   },
 ]

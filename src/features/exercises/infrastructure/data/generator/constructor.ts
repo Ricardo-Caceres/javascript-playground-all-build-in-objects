@@ -18,6 +18,17 @@ export const generatorConstructorExercises: Exercise[] = [
       { description: 'gen() has throw method', assertion: "expect(typeof gen().throw).toBe('function')" }
     ],
     tags: [],
+    usageExample: {
+      code: `function* gen() { yield 1; yield 2 }
+const it = gen()
+console.log(it.next()) // → { value: 1, done: false }
+console.log(it.next()) // → { value: 2, done: false }
+console.log(it.next()) // → { value: undefined, done: true }`,
+      explanation: {
+        en: 'A generator function returns a generator object that implements the iterator protocol via successive next() calls.',
+        es: 'Una función generadora devuelve un objeto generador que implementa el protocolo iterador mediante llamadas sucesivas a next().',
+      },
+    },
   },
   {
     slug: 'generator-next-value',
@@ -36,6 +47,17 @@ export const generatorConstructorExercises: Exercise[] = [
       { description: 'it has return method', assertion: 'expect(typeof it.return).toBe("function")' }
     ],
     tags: [],
+    usageExample: {
+      code: `function* gen() { yield 1; yield 2 }
+const it = gen()
+console.log(it.next()) // → { value: 1, done: false }
+console.log(it.next()) // → { value: 2, done: false }
+console.log(it.next()) // → { value: undefined, done: true }`,
+      explanation: {
+        en: 'A generator function returns a generator object that implements the iterator protocol via successive next() calls.',
+        es: 'Una función generadora devuelve un objeto generador que implementa el protocolo iterador mediante llamadas sucesivas a next().',
+      },
+    },
   },
   {
     slug: 'generator-next-second-value',
@@ -54,6 +76,17 @@ export const generatorConstructorExercises: Exercise[] = [
       { description: 'typeof it is object', assertion: 'expect(typeof it).toBe("object")' }
     ],
     tags: [],
+    usageExample: {
+      code: `function* gen() { yield 1; yield 2 }
+const it = gen()
+console.log(it.next()) // → { value: 1, done: false }
+console.log(it.next()) // → { value: 2, done: false }
+console.log(it.next()) // → { value: undefined, done: true }`,
+      explanation: {
+        en: 'A generator function returns a generator object that implements the iterator protocol via successive next() calls.',
+        es: 'Una función generadora devuelve un objeto generador que implementa el protocolo iterador mediante llamadas sucesivas a next().',
+      },
+    },
   },
   {
     slug: 'generator-empty-done',
@@ -72,6 +105,17 @@ export const generatorConstructorExercises: Exercise[] = [
       { description: 'typeof it.return is function', assertion: 'expect(typeof it.return).toBe("function")' }
     ],
     tags: [],
+    usageExample: {
+      code: `function* gen() { yield 1; yield 2 }
+const it = gen()
+console.log(it.next()) // → { value: 1, done: false }
+console.log(it.next()) // → { value: 2, done: false }
+console.log(it.next()) // → { value: undefined, done: true }`,
+      explanation: {
+        en: 'A generator function returns a generator object that implements the iterator protocol via successive next() calls.',
+        es: 'Una función generadora devuelve un objeto generador que implementa el protocolo iterador mediante llamadas sucesivas a next().',
+      },
+    },
   },
   {
     slug: 'generator-typeof-function','title': 'Generator: typeof generator function is function',

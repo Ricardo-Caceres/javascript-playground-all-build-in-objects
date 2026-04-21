@@ -42,6 +42,19 @@ counter()`,
     ],
     hints: ['Use a variable outside the returned function to store state', 'Each call to makeCounter should create a new independent counter'],
     tags: ['closures', 'counter', 'state', 'closure-state'],
+    usageExample: {
+      code: `function makeCounter() {
+  let n = 0
+  return () => ++n
+}
+const counter = makeCounter()
+counter()  // → 1
+counter()  // → 2`,
+      explanation: {
+        en: 'The counter closure keeps its own private count variable, so each call increments independently without any global state.',
+        es: 'El closure del contador mantiene su propia variable de conteo privada, por lo que cada llamada incrementa de forma independiente sin ningún estado global.',
+      },
+    },
   },
   {
     slug: 'closures-counter-2',
@@ -99,6 +112,24 @@ counter.increment()`,
     ],
     hints: ['Return an object with multiple methods', 'All methods share the same closure variable'],
     tags: ['closures', 'counter', 'object-methods', 'shared-state'],
+    usageExample: {
+      code: `function makeCounter() {
+  let n = 0
+  return {
+    increment() { return ++n },
+    reset()     { n = 0 },
+    value()     { return n },
+  }
+}
+const counter = makeCounter()
+counter.increment()  // → 1
+counter.reset()
+counter.value()      // → 0`,
+      explanation: {
+        en: 'Returning an object of methods from a closure lets multiple operations share the same private variable, forming a clean stateful API.',
+        es: 'Retornar un objeto de métodos desde un closure permite que múltiples operaciones compartan la misma variable privada, formando una API con estado limpia.',
+      },
+    },
   },
   {
     slug: 'closures-counter-3',
@@ -141,6 +172,20 @@ counter()`,
     ],
     hints: ['Store the step value in closure', 'Modify counter by adding step on each call'],
     tags: ['closures', 'counter', 'parameter-capture', 'step'],
+    usageExample: {
+      code: `function makeStepCounter(step) {
+  let n = 0
+  return () => (n += step)
+}
+const byFive = makeStepCounter(5)
+byFive()  // → 5
+byFive()  // → 10
+byFive()  // → 15`,
+      explanation: {
+        en: 'Capturing a custom step in the closure means each produced counter advances by its own preset increment, independent of all others.',
+        es: 'Capturar un paso personalizado en el closure significa que cada contador producido avanza por su propio incremento preestablecido, independiente de los demás.',
+      },
+    },
   },
   {
     slug: 'closures-counter-4',
@@ -185,6 +230,21 @@ countdown()`,
     ],
     hints: ['Use a conditional to prevent negative values', 'Return the value before or after decrementing carefully'],
     tags: ['closures', 'counter', 'countdown', 'state-management'],
+    usageExample: {
+      code: `function makeCountdown(from) {
+  let n = from
+  return () => (n > 0 ? n-- : 0)
+}
+const cd = makeCountdown(3)
+cd()  // → 3
+cd()  // → 2
+cd()  // → 1
+cd()  // → 0`,
+      explanation: {
+        en: 'The countdown closure holds its own private counter, decrementing on each call and clamping at zero to prevent negative values.',
+        es: 'El closure de cuenta regresiva mantiene su propio contador privado, decrementando en cada llamada y limitándose a cero para evitar valores negativos.',
+      },
+    },
   },
   {
     slug: 'closures-counter-5',
@@ -239,5 +299,21 @@ memoized(5)`,
     ],
     hints: ['Use a flag to track if the function has been called', 'Store the result in a closure variable', 'Always return the cached result after first call'],
     tags: ['closures', 'memoization', 'cache', 'performance'],
+    usageExample: {
+      code: `function memoizeOnce(fn) {
+  let called = false, result
+  return (...args) => {
+    if (!called) { called = true; result = fn(...args) }
+    return result
+  }
+}
+const expensive = memoizeOnce(x => x * 1000)
+expensive(7)   // → 7000 (fn called)
+expensive(99)  // → 7000 (cached)`,
+      explanation: {
+        en: 'Memoization via closures caches the first return value in a private variable, preventing redundant computation on subsequent calls.',
+        es: 'La memoización mediante closures almacena en caché el primer valor de retorno en una variable privada, evitando cómputo redundante en llamadas posteriores.',
+      },
+    },
   },
 ]

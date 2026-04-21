@@ -36,6 +36,15 @@ repeatStr('x', 0)  // → ''
       '`str.repeat(1)` returns a copy of the original string.',
     ],
     tags: ['String', 'String.prototype.repeat', 'beginner'],
+    usageExample: {
+      code: `'ab'.repeat(3)    // → 'ababab'
+'-'.repeat(5)     // → '-----'
+'x'.repeat(0)    // → ''`,
+      explanation: {
+        en: "Use repeat() to create a new string with the original repeated a specified number of times.",
+        es: "Usa repeat() para crear una nueva cadena con el original repetido un número específico de veces.",
+      },
+    },
   },
   {
     slug: 'string-repeat-zero-count',
@@ -71,6 +80,15 @@ isRepeatEmpty('')      // → true
       '`str.repeat(0)` is always `""` regardless of what `str` is.',
     ],
     tags: ['String', 'String.prototype.repeat', 'beginner'],
+    usageExample: {
+      code: `'ab'.repeat(3)    // → 'ababab'
+'-'.repeat(5)     // → '-----'
+'x'.repeat(0)    // → ''`,
+      explanation: {
+        en: "Use repeat() to create a new string with the original repeated a specified number of times.",
+        es: "Usa repeat() para crear una nueva cadena con el original repetido un número específico de veces.",
+      },
+    },
   },
   {
     slug: 'string-repeat-count-one',
@@ -105,6 +123,15 @@ repeatOnce('hello') // → 'hello'
       '`str.repeat(1)` is equivalent to copying the string.',
     ],
     tags: ['String', 'String.prototype.repeat', 'beginner'],
+    usageExample: {
+      code: `'ab'.repeat(3)    // → 'ababab'
+'-'.repeat(5)     // → '-----'
+'x'.repeat(0)    // → ''`,
+      explanation: {
+        en: "Use repeat() to create a new string with the original repeated a specified number of times.",
+        es: "Usa repeat() para crear una nueva cadena con el original repetido un número específico de veces.",
+      },
+    },
   },
   {
     slug: 'string-repeat-long',
@@ -140,6 +167,15 @@ buildLine('ab', 4) // → 'abababab'
       'The resulting string length will be `char.length * n`.',
     ],
     tags: ['String', 'String.prototype.repeat', 'beginner'],
+    usageExample: {
+      code: `'ab'.repeat(3)    // → 'ababab'
+'-'.repeat(5)     // → '-----'
+'x'.repeat(0)    // → ''`,
+      explanation: {
+        en: "Use repeat() to create a new string with the original repeated a specified number of times.",
+        es: "Usa repeat() para crear una nueva cadena con el original repetido un número específico de veces.",
+      },
+    },
   },
   {
     slug: 'string-repeat-empty-input',
@@ -175,5 +211,14 @@ repeatEmpty(0)   // → ''
       'An empty string has no characters to repeat, so the result is always `""`.',
     ],
     tags: ['String', 'String.prototype.repeat', 'beginner'],
+    usageExample: {
+      code: `'ab'.repeat(3)    // → 'ababab'
+'-'.repeat(5)     // → '-----'
+'x'.repeat(0)    // → ''`,
+      explanation: {
+        en: "Use repeat() to create a new string with the original repeated a specified number of times.",
+        es: "Usa repeat() para crear una nueva cadena con el original repetido un número específico de veces.",
+      },
+    },
   },
 ]

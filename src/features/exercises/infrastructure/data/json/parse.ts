@@ -20,6 +20,13 @@ export const jsonParseExercises: Exercise[] = [
     ],
     hints: ['JSON.parse converts a JSON string into a JS value.'],
     tags: ['json', 'parse', 'object'],
+    usageExample: {
+      code: `JSON.parse('{"a":1}')  // → { a: 1 }`,
+      explanation: {
+        en: "JSON.parse() converts a JSON string into a JavaScript object or value.",
+        es: "JSON.parse() convierte una cadena JSON en un objeto o valor de JavaScript.",
+      },
+    },
   },
   {
     slug: 'json-parse-2',
@@ -40,6 +47,13 @@ export const jsonParseExercises: Exercise[] = [
     ],
     hints: ['Arrays are valid JSON top-level values.'],
     tags: ['json', 'parse', 'array'],
+    usageExample: {
+      code: `JSON.parse('[1,2,3]')  // → [1, 2, 3]`,
+      explanation: {
+        en: "JSON.parse() can parse JSON arrays into JavaScript arrays.",
+        es: "JSON.parse() puede analizar arreglos JSON en arreglos de JavaScript.",
+      },
+    },
   },
   {
     slug: 'json-parse-3',
@@ -60,6 +74,14 @@ export const jsonParseExercises: Exercise[] = [
     ],
     hints: ['JSON strings require double quotes inside the JSON text.'],
     tags: ['json', 'parse', 'string'],
+    usageExample: {
+      code: `JSON.parse('42')    // → 42
+JSON.parse('true') // → true`,
+      explanation: {
+        en: "JSON.parse() handles primitive JSON values like numbers, booleans, and null.",
+        es: "JSON.parse() maneja valores primitivos JSON como números, booleanos y null.",
+      },
+    },
   },
   {
     slug: 'json-parse-4',
@@ -80,6 +102,14 @@ export const jsonParseExercises: Exercise[] = [
     ],
     hints: ['null is a valid JSON value.'],
     tags: ['json', 'parse', 'null'],
+    usageExample: {
+      code: `const data = '{"name":"Ana","age":30}'
+JSON.parse(data).name  // → 'Ana'`,
+      explanation: {
+        en: "Use JSON.parse() to deserialize API responses into JavaScript objects.",
+        es: "Usa JSON.parse() para deserializar respuestas de API en objetos JavaScript.",
+      },
+    },
   },
   {
     slug: 'json-parse-5',
@@ -100,5 +130,12 @@ export const jsonParseExercises: Exercise[] = [
     ],
     hints: ['Wrap the call in an arrow function for toThrow().'],
     tags: ['json', 'parse', 'error', 'SyntaxError'],
+    usageExample: {
+      code: `JSON.parse('{"x":{"y":2}}').x.y  // → 2`,
+      explanation: {
+        en: "JSON.parse() handles nested JSON objects recursively.",
+        es: "JSON.parse() maneja objetos JSON anidados de forma recursiva.",
+      },
+    },
   },
 ]

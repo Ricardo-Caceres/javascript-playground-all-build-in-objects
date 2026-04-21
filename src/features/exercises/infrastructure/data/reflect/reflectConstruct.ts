@@ -20,6 +20,16 @@ export const reflectConstructExercises: Exercise[] = [
     ],
     hints: ['Reflect.construct(Array, [n]) is equivalent to new Array(n).'],
     tags: ['Reflect', 'construct', 'Array', 'beginner'],
+    usageExample: {
+      code: `function Point(x, y) { this.x = x; this.y = y }
+const p = Reflect.construct(Point, [1, 2])
+console.log(p.x, p.y)        // → 1 2
+console.log(p instanceof Point) // → true`,
+      explanation: {
+        en: 'Reflect.construct() acts like the new operator but as a function, creating a new instance of the target constructor.',
+        es: 'Reflect.construct() actúa como el operador new pero como función, creando una nueva instancia del constructor objetivo.',
+      },
+    },
   },
   {
     slug: 'reflect-construct-object-instanceof',
@@ -40,6 +50,16 @@ export const reflectConstructExercises: Exercise[] = [
     ],
     hints: ['Reflect.construct fully respects the prototype chain of the constructor.'],
     tags: ['Reflect', 'construct', 'instanceof', 'beginner'],
+    usageExample: {
+      code: `function Point(x, y) { this.x = x; this.y = y }
+const p = Reflect.construct(Point, [1, 2])
+console.log(p.x, p.y)        // → 1 2
+console.log(p instanceof Point) // → true`,
+      explanation: {
+        en: 'Reflect.construct() acts like the new operator but as a function, creating a new instance of the target constructor.',
+        es: 'Reflect.construct() actúa como el operador new pero como función, creando una nueva instancia del constructor objetivo.',
+      },
+    },
   },
   {
     slug: 'reflect-construct-date-instanceof',
@@ -60,6 +80,16 @@ export const reflectConstructExercises: Exercise[] = [
     ],
     hints: ['Reflect.construct(Date, [ms]) is equivalent to new Date(ms).'],
     tags: ['Reflect', 'construct', 'Date', 'beginner'],
+    usageExample: {
+      code: `function Point(x, y) { this.x = x; this.y = y }
+const p = Reflect.construct(Point, [1, 2])
+console.log(p.x, p.y)        // → 1 2
+console.log(p instanceof Point) // → true`,
+      explanation: {
+        en: 'Reflect.construct() acts like the new operator but as a function, creating a new instance of the target constructor.',
+        es: 'Reflect.construct() actúa como el operador new pero como función, creando una nueva instancia del constructor objetivo.',
+      },
+    },
   },
   {
     slug: 'reflect-construct-typeof',
@@ -80,6 +110,16 @@ export const reflectConstructExercises: Exercise[] = [
     ],
     hints: ['All Reflect methods are functions.'],
     tags: ['Reflect', 'construct', 'typeof', 'beginner'],
+    usageExample: {
+      code: `function Point(x, y) { this.x = x; this.y = y }
+const p = Reflect.construct(Point, [1, 2])
+console.log(p.x, p.y)        // → 1 2
+console.log(p instanceof Point) // → true`,
+      explanation: {
+        en: 'Reflect.construct() acts like the new operator but as a function, creating a new instance of the target constructor.',
+        es: 'Reflect.construct() actúa como el operador new pero como función, creando una nueva instancia del constructor objetivo.',
+      },
+    },
   },
   {
     slug: 'reflect-construct-class-point',
@@ -100,5 +140,15 @@ export const reflectConstructExercises: Exercise[] = [
     ],
     hints: ['Reflect.construct(Constructor, [args]) is equivalent to new Constructor(...args).'],
     tags: ['Reflect', 'construct', 'class', 'intermediate'],
+    usageExample: {
+      code: `function Point(x, y) { this.x = x; this.y = y }
+const p = Reflect.construct(Point, [1, 2])
+console.log(p.x, p.y)        // → 1 2
+console.log(p instanceof Point) // → true`,
+      explanation: {
+        en: 'Reflect.construct() acts like the new operator but as a function, creating a new instance of the target constructor.',
+        es: 'Reflect.construct() actúa como el operador new pero como función, creando una nueva instancia del constructor objetivo.',
+      },
+    },
   },
 ]

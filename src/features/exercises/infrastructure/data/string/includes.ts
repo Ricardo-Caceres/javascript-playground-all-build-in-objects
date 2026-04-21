@@ -35,6 +35,16 @@ containsHello('goodbye world')   // → false
       '`.includes()` returns a boolean — no need to check index.',
     ],
     tags: ['String', 'String.prototype.includes', 'beginner'],
+    usageExample: {
+      code: `const str = 'Hello, World!'
+str.includes('World')    // → true
+str.includes('xyz')      // → false
+str.includes('Hello', 1) // → false`,
+      explanation: {
+        en: "Use includes() to check if a string contains a specific substring, with an optional start position.",
+        es: "Usa includes() para verificar si una cadena contiene una subcadena específica, con una posición de inicio opcional.",
+      },
+    },
   },
   {
     slug: 'string-includes-not-found',
@@ -70,6 +80,16 @@ lacksDigit('h5llo') // → false
       'Negate the result with `!` to check for absence.',
     ],
     tags: ['String', 'String.prototype.includes', 'negation', 'beginner'],
+    usageExample: {
+      code: `const str = 'Hello, World!'
+str.includes('World')    // → true
+str.includes('xyz')      // → false
+str.includes('Hello', 1) // → false`,
+      explanation: {
+        en: "Use includes() to check if a string contains a specific substring, with an optional start position.",
+        es: "Usa includes() para verificar si una cadena contiene una subcadena específica, con una posición de inicio opcional.",
+      },
+    },
   },
   {
     slug: 'string-includes-case-sensitive',
@@ -104,6 +124,16 @@ includesIgnoreCase('Hello World', 'hello') // → true
       'Convert both strings to lowercase before calling `.includes()`.',
     ],
     tags: ['String', 'String.prototype.includes', 'case-insensitive', 'intermediate'],
+    usageExample: {
+      code: `const str = 'Hello, World!'
+str.includes('World')    // → true
+str.includes('xyz')      // → false
+str.includes('Hello', 1) // → false`,
+      explanation: {
+        en: "Use includes() to check if a string contains a specific substring, with an optional start position.",
+        es: "Usa includes() para verificar si una cadena contiene una subcadena específica, con una posición de inicio opcional.",
+      },
+    },
   },
   {
     slug: 'string-includes-with-position',
@@ -139,6 +169,16 @@ The optional second argument \`position\` sets where the search starts.
       '`str.includes(search, position)` starts searching from `position`.',
     ],
     tags: ['String', 'String.prototype.includes', 'position', 'intermediate'],
+    usageExample: {
+      code: `const str = 'Hello, World!'
+str.includes('World')    // → true
+str.includes('xyz')      // → false
+str.includes('Hello', 1) // → false`,
+      explanation: {
+        en: "Use includes() to check if a string contains a specific substring, with an optional start position.",
+        es: "Usa includes() para verificar si una cadena contiene una subcadena específica, con una posición de inicio opcional.",
+      },
+    },
   },
   {
     slug: 'string-includes-empty-always-true',
@@ -174,5 +214,15 @@ alwaysTrue('')          // → true
       'The empty string is a substring of every string.',
     ],
     tags: ['String', 'String.prototype.includes', 'empty string', 'beginner'],
+    usageExample: {
+      code: `const str = 'Hello, World!'
+str.includes('World')    // → true
+str.includes('xyz')      // → false
+str.includes('Hello', 1) // → false`,
+      explanation: {
+        en: "Use includes() to check if a string contains a specific substring, with an optional start position.",
+        es: "Usa includes() para verificar si una cadena contiene una subcadena específica, con una posición de inicio opcional.",
+      },
+    },
   },
 ]

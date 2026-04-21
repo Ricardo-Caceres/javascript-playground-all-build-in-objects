@@ -20,6 +20,13 @@ export const symbolToPrimitiveExercises: Exercise[] = [
     ],
     hints: ['Symbol.toPrimitive is a well-known symbol on the Symbol constructor.'],
     tags: ['symbol', 'Symbol.toPrimitive', 'well-known'],
+    usageExample: {
+      code: `typeof Symbol.toPrimitive   // → 'symbol'`,
+      explanation: {
+        en: 'Symbol.toPrimitive is a well-known symbol used to define custom type coercion.',
+        es: 'Symbol.toPrimitive es un símbolo conocido para definir coerción de tipo personalizada.',
+      },
+    },
   },
   {
     slug: 'symbol-toprimitive-2',
@@ -40,6 +47,18 @@ export const symbolToPrimitiveExercises: Exercise[] = [
     ],
     hints: ['Use the unary + operator to trigger the number hint.'],
     tags: ['symbol', 'Symbol.toPrimitive', 'coercion', 'hint'],
+    usageExample: {
+      code: `const money = {
+  [Symbol.toPrimitive](hint: string) {
+    return hint === 'number' ? 100 : 'USD'
+  }
+}
++money   // → 100`,
+      explanation: {
+        en: 'Unary + triggers the \'number\' hint, calling [Symbol.toPrimitive] with hint === \'number\'.',
+        es: 'El operador + unario activa el hint \'number\', llamando a [Symbol.toPrimitive] con hint === \'number\'.',
+      },
+    },
   },
   {
     slug: 'symbol-toprimitive-3',
@@ -60,6 +79,18 @@ export const symbolToPrimitiveExercises: Exercise[] = [
     ],
     hints: ['Template literals use the string hint.'],
     tags: ['symbol', 'Symbol.toPrimitive', 'coercion', 'string-hint'],
+    usageExample: {
+      code: `const tag = {
+  [Symbol.toPrimitive](hint: string) {
+    return hint === 'string' ? 'Hello' : 0
+  }
+}
+\`\${tag}\`   // → 'Hello'`,
+      explanation: {
+        en: 'Template literals trigger the \'string\' hint, calling [Symbol.toPrimitive] with hint === \'string\'.',
+        es: 'Los literales de plantilla activan el hint \'string\', llamando a [Symbol.toPrimitive] con hint === \'string\'.',
+      },
+    },
   },
   {
     slug: 'symbol-toprimitive-4',
@@ -80,6 +111,14 @@ export const symbolToPrimitiveExercises: Exercise[] = [
     ],
     hints: ['Well-known symbols always have type "symbol".'],
     tags: ['symbol', 'Symbol.toPrimitive', 'typeof'],
+    usageExample: {
+      code: `typeof Symbol.toPrimitive            // → 'symbol'
+Symbol.toPrimitive === Symbol.toPrimitive  // → true`,
+      explanation: {
+        en: 'Symbol.toPrimitive is always a symbol primitive with a stable identity.',
+        es: 'Symbol.toPrimitive es siempre un primitivo símbolo con identidad estable.',
+      },
+    },
   },
   {
     slug: 'symbol-toprimitive-5',
@@ -100,5 +139,12 @@ export const symbolToPrimitiveExercises: Exercise[] = [
     ],
     hints: ['Well-known symbols are not global registry symbols.'],
     tags: ['symbol', 'Symbol.toPrimitive', 'well-known', 'uniqueness'],
+    usageExample: {
+      code: `Symbol.keyFor(Symbol.toPrimitive)   // → undefined`,
+      explanation: {
+        en: 'Well-known symbols are distinct from globally registered symbols.',
+        es: 'Los símbolos conocidos son distintos de los registrados globalmente.',
+      },
+    },
   },
 ]

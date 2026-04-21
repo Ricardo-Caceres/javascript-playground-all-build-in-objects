@@ -20,6 +20,14 @@ export const dateToUTCStringExercises: Exercise[] = [
     ],
     hints: ['toUTCString() returns a string representation of the date in UTC'],
     tags: ['Date', 'toUTCString', 'instance-method', 'UTC'],
+    usageExample: {
+      code: `const d = new Date('2024-01-15T00:00:00.000Z')
+d.toUTCString()  // → 'Mon, 15 Jan 2024 00:00:00 GMT'`,
+      explanation: {
+        en: 'Use toUTCString() to get a human-readable UTC date string in RFC 7231 format (e.g., used in HTTP headers).',
+        es: 'Usa toUTCString() para obtener una cadena de fecha UTC legible en formato RFC 7231 (p. ej., usada en cabeceras HTTP).',
+      },
+    },
   },
   {
     slug: 'date-toutcstring-2',
@@ -40,6 +48,14 @@ export const dateToUTCStringExercises: Exercise[] = [
     ],
     hints: ['The epoch is Jan 1 1970, so the year 1970 always appears in the output'],
     tags: ['Date', 'toUTCString', 'instance-method', 'epoch'],
+    usageExample: {
+      code: `const d = new Date('2024-01-15T00:00:00.000Z')
+d.toUTCString()  // → 'Mon, 15 Jan 2024 00:00:00 GMT'`,
+      explanation: {
+        en: 'Use toUTCString() to get a human-readable UTC date string in RFC 7231 format (e.g., used in HTTP headers).',
+        es: 'Usa toUTCString() para obtener una cadena de fecha UTC legible en formato RFC 7231 (p. ej., usada en cabeceras HTTP).',
+      },
+    },
   },
   {
     slug: 'date-toutcstring-3',
@@ -60,6 +76,14 @@ export const dateToUTCStringExercises: Exercise[] = [
     ],
     hints: ['GMT (Greenwich Mean Time) = UTC; toUTCString() always appends "GMT"'],
     tags: ['Date', 'toUTCString', 'instance-method', 'GMT'],
+    usageExample: {
+      code: `const d = new Date('2024-01-15T00:00:00.000Z')
+d.toUTCString()  // → 'Mon, 15 Jan 2024 00:00:00 GMT'`,
+      explanation: {
+        en: 'Use toUTCString() to get a human-readable UTC date string in RFC 7231 format (e.g., used in HTTP headers).',
+        es: 'Usa toUTCString() para obtener una cadena de fecha UTC legible en formato RFC 7231 (p. ej., usada en cabeceras HTTP).',
+      },
+    },
   },
   {
     slug: 'date-toutcstring-4',
@@ -80,6 +104,14 @@ export const dateToUTCStringExercises: Exercise[] = [
     ],
     hints: ['Non-empty strings are always truthy in JavaScript'],
     tags: ['Date', 'toUTCString', 'instance-method', 'truthy'],
+    usageExample: {
+      code: `const d = new Date('2024-01-15T00:00:00.000Z')
+d.toUTCString()  // → 'Mon, 15 Jan 2024 00:00:00 GMT'`,
+      explanation: {
+        en: 'Use toUTCString() to get a human-readable UTC date string in RFC 7231 format (e.g., used in HTTP headers).',
+        es: 'Usa toUTCString() para obtener una cadena de fecha UTC legible en formato RFC 7231 (p. ej., usada en cabeceras HTTP).',
+      },
+    },
   },
   {
     slug: 'date-toutcstring-5',
@@ -100,5 +132,13 @@ export const dateToUTCStringExercises: Exercise[] = [
     ],
     hints: ['The year always appears in the toUTCString() output'],
     tags: ['Date', 'toUTCString', 'instance-method'],
+    usageExample: {
+      code: `const d = new Date('2024-01-15T00:00:00.000Z')
+d.toUTCString()  // → 'Mon, 15 Jan 2024 00:00:00 GMT'`,
+      explanation: {
+        en: 'Use toUTCString() to get a human-readable UTC date string in RFC 7231 format (e.g., used in HTTP headers).',
+        es: 'Usa toUTCString() para obtener una cadena de fecha UTC legible en formato RFC 7231 (p. ej., usada en cabeceras HTTP).',
+      },
+    },
   },
 ]

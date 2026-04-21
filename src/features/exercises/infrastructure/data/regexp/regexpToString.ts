@@ -20,6 +20,14 @@ export const regexpToStringExercises: Exercise[] = [
     ],
     hints: ['toString() wraps the pattern in forward slashes and appends any flags'],
     tags: ['RegExp', 'toString', 'method'],
+    usageExample: {
+      code: `const re = /hello/gi
+console.log(re.toString()) // → '/hello/gi'`,
+      explanation: {
+        en: 'Use RegExp.toString() to get the string representation of the regular expression including its flags.',
+        es: 'Usa RegExp.toString() para obtener la representación en cadena de la expresión regular incluyendo sus banderas.',
+      },
+    },
   },
   {
     slug: 'regexp-tostring-2',
@@ -40,6 +48,14 @@ export const regexpToStringExercises: Exercise[] = [
     ],
     hints: ['toString() appends flags after the closing slash'],
     tags: ['RegExp', 'toString', 'flags'],
+    usageExample: {
+      code: `const re = /hello/gi
+console.log(re.toString()) // → '/hello/gi'`,
+      explanation: {
+        en: 'Use RegExp.toString() to get the string representation of the regular expression including its flags.',
+        es: 'Usa RegExp.toString() para obtener la representación en cadena de la expresión regular incluyendo sus banderas.',
+      },
+    },
   },
   {
     slug: 'regexp-tostring-3',
@@ -60,6 +76,14 @@ export const regexpToStringExercises: Exercise[] = [
     ],
     hints: ['toString() always surrounds the pattern with forward slashes'],
     tags: ['RegExp', 'toString', 'slashes'],
+    usageExample: {
+      code: `const re = /hello/gi
+console.log(re.toString()) // → '/hello/gi'`,
+      explanation: {
+        en: 'Use RegExp.toString() to get the string representation of the regular expression including its flags.',
+        es: 'Usa RegExp.toString() para obtener la representación en cadena de la expresión regular incluyendo sus banderas.',
+      },
+    },
   },
   {
     slug: 'regexp-tostring-4',
@@ -80,6 +104,14 @@ export const regexpToStringExercises: Exercise[] = [
     ],
     hints: ['toString() returns a string representation of the RegExp'],
     tags: ['RegExp', 'toString', 'typeof'],
+    usageExample: {
+      code: `const re = /hello/gi
+console.log(re.toString()) // → '/hello/gi'`,
+      explanation: {
+        en: 'Use RegExp.toString() to get the string representation of the regular expression including its flags.',
+        es: 'Usa RegExp.toString() para obtener la representación en cadena de la expresión regular incluyendo sus banderas.',
+      },
+    },
   },
   {
     slug: 'regexp-tostring-5',
@@ -100,5 +132,13 @@ export const regexpToStringExercises: Exercise[] = [
     ],
     hints: ['toString() includes the raw source, including escape sequences'],
     tags: ['RegExp', 'toString', 'source'],
+    usageExample: {
+      code: `const re = /hello/gi
+console.log(re.toString()) // → '/hello/gi'`,
+      explanation: {
+        en: 'Use RegExp.toString() to get the string representation of the regular expression including its flags.',
+        es: 'Usa RegExp.toString() para obtener la representación en cadena de la expresión regular incluyendo sus banderas.',
+      },
+    },
   },
 ]

@@ -47,6 +47,18 @@ linearSearch([10, 20, 30], 99) // -1
       'Return -1 if the loop completes without finding it.',
     ],
     tags: ['searching', 'linear-search', 'sequential-search', 'loop'],
+    usageExample: {
+      code: `function linearSearch(arr, target) {
+  for (let i = 0; i < arr.length; i++)
+    if (arr[i] === target) return i;
+  return -1;
+}
+linearSearch([3, 1, 4, 1, 5], 4); // 2`,
+      explanation: {
+        en: "Linear search checks every element in order — O(n) time, works on unsorted arrays.",
+        es: "La búsqueda lineal comprueba cada elemento en orden — O(n), funciona en arrays sin ordenar.",
+      },
+    },
   },
   {
     slug: 'algo-search-2',
@@ -86,6 +98,15 @@ elementExists([10, 20, 30], 99) // false
       'Compare each element with the target.',
     ],
     tags: ['searching', 'element-existence', 'includes', 'boolean'],
+    usageExample: {
+      code: `const arr = [10, 20, 30];
+arr.includes(20); // true
+arr.includes(99); // false`,
+      explanation: {
+        en: "Array.includes() is a built-in linear search that returns a boolean.",
+        es: "Array.includes() es una búsqueda lineal integrada que devuelve un booleano.",
+      },
+    },
   },
   {
     slug: 'algo-search-3',
@@ -141,6 +162,21 @@ binarySearch([10, 20, 30], 99) // -1
       'Continue until left > right.',
     ],
     tags: ['searching', 'binary-search', 'divide-and-conquer', 'sorted-array'],
+    usageExample: {
+      code: `function binarySearch(arr, target) {
+  let lo = 0, hi = arr.length - 1;
+  while (lo <= hi) {
+    const mid = (lo + hi) >> 1;
+    if (arr[mid] === target) return mid;
+    arr[mid] < target ? (lo = mid + 1) : (hi = mid - 1);
+  }
+  return -1;
+}`,
+      explanation: {
+        en: "Binary search halves the search space each step — O(log n), requires sorted input.",
+        es: "La búsqueda binaria reduce el espacio a la mitad — O(log n), requiere entrada ordenada.",
+      },
+    },
   },
   {
     slug: 'algo-search-4',
@@ -181,6 +217,15 @@ findEven([1, 3, 5]) // undefined
       '`find()` returns undefined if no element matches.',
     ],
     tags: ['searching', 'find', 'predicate', 'higher-order-function'],
+    usageExample: {
+      code: `const users = [{ name: 'Alice', age: 30 }, { name: 'Bob', age: 25 }];
+users.find(u => u.age < 28);
+// { name: 'Bob', age: 25 }`,
+      explanation: {
+        en: "Array.find() returns the first element matching a predicate function.",
+        es: "Array.find() devuelve el primer elemento que cumple la función predicado.",
+      },
+    },
   },
   {
     slug: 'algo-search-5',
@@ -233,5 +278,22 @@ binarySearchStrict([1, 3, 5, 7, 9], 6) // -1
       'After finding the target, return immediately.',
     ],
     tags: ['searching', 'binary-search', 'edge-cases', 'pointer-arithmetic'],
+    usageExample: {
+      code: `function binarySearch(arr, target) {
+  let lo = 0, hi = arr.length - 1;
+  while (lo <= hi) {
+    const mid = (lo + hi) >> 1;
+    if (arr[mid] === target) return mid;
+    arr[mid] < target ? (lo = mid + 1) : (hi = mid - 1);
+  }
+  return -1;
+}
+binarySearch([1, 3, 5, 7], 5); // 2
+binarySearch([1, 3, 5, 7], 4); // -1`,
+      explanation: {
+        en: "Binary search returns the index if found, or -1 if the target is not in the array.",
+        es: "La búsqueda binaria devuelve el índice si se encuentra, o -1 si el objetivo no está.",
+      },
+    },
   },
 ]

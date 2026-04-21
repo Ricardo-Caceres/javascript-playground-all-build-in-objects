@@ -19,6 +19,16 @@ export const promiseConstructorExercises: Exercise[] = [
     ],
     hints: ['All Promise instances pass the instanceof Promise check.'],
     tags: ['promise', 'constructor', 'instanceof'],
+    usageExample: {
+      code: `const p = new Promise((resolve, reject) => {
+  setTimeout(() => resolve(42), 100)
+})
+p.then(v => console.log(v))  // → 42`,
+      explanation: {
+        en: 'The Promise constructor takes an executor function with resolve and reject callbacks to create a new promise.',
+        es: 'El constructor Promise recibe una función ejecutora con callbacks resolve y reject para crear una nueva promesa.',
+      },
+    },
   },
   {
     slug: 'promise-constructor-2',
@@ -38,6 +48,16 @@ export const promiseConstructorExercises: Exercise[] = [
     ],
     hints: ['Promise instances are objects.'],
     tags: ['promise', 'constructor', 'typeof'],
+    usageExample: {
+      code: `const p = new Promise((resolve, reject) => {
+  setTimeout(() => resolve(42), 100)
+})
+p.then(v => console.log(v))  // → 42`,
+      explanation: {
+        en: 'The Promise constructor takes an executor function with resolve and reject callbacks to create a new promise.',
+        es: 'El constructor Promise recibe una función ejecutora con callbacks resolve y reject para crear una nueva promesa.',
+      },
+    },
   },
   {
     slug: 'promise-constructor-3',
@@ -57,6 +77,16 @@ export const promiseConstructorExercises: Exercise[] = [
     ],
     hints: ['A Promise can be in a pending state — it is still a valid Promise.'],
     tags: ['promise', 'constructor', 'pending'],
+    usageExample: {
+      code: `const p = new Promise((resolve, reject) => {
+  setTimeout(() => resolve(42), 100)
+})
+p.then(v => console.log(v))  // → 42`,
+      explanation: {
+        en: 'The Promise constructor takes an executor function with resolve and reject callbacks to create a new promise.',
+        es: 'El constructor Promise recibe una función ejecutora con callbacks resolve y reject para crear una nueva promesa.',
+      },
+    },
   },
   {
     slug: 'promise-constructor-4',
@@ -76,6 +106,16 @@ export const promiseConstructorExercises: Exercise[] = [
     ],
     hints: ['Promise.resolve() always returns a Promise.'],
     tags: ['promise', 'constructor', 'resolve'],
+    usageExample: {
+      code: `const p = new Promise((resolve, reject) => {
+  setTimeout(() => resolve(42), 100)
+})
+p.then(v => console.log(v))  // → 42`,
+      explanation: {
+        en: 'The Promise constructor takes an executor function with resolve and reject callbacks to create a new promise.',
+        es: 'El constructor Promise recibe una función ejecutora con callbacks resolve y reject para crear una nueva promesa.',
+      },
+    },
   },
   {
     slug: 'promise-constructor-5',
@@ -95,5 +135,15 @@ export const promiseConstructorExercises: Exercise[] = [
     ],
     hints: ['Constructors are functions in JavaScript.'],
     tags: ['promise', 'constructor', 'typeof'],
+    usageExample: {
+      code: `const p = new Promise((resolve, reject) => {
+  setTimeout(() => resolve(42), 100)
+})
+p.then(v => console.log(v))  // → 42`,
+      explanation: {
+        en: 'The Promise constructor takes an executor function with resolve and reject callbacks to create a new promise.',
+        es: 'El constructor Promise recibe una función ejecutora con callbacks resolve y reject para crear una nueva promesa.',
+      },
+    },
   },
 ]

@@ -20,6 +20,16 @@ export const weakMapSetExercises: Exercise[] = [
     ],
     hints: ['set() accepts any value, but the key must be an object.'],
     tags: ['weakmap', 'set', 'instance-method'],
+    usageExample: {
+      code: `const wm = new WeakMap()
+const k = {}
+wm.set(k, 42)
+wm.get(k)  // → 42`,
+      explanation: {
+        en: "Use set() to associate a value with an object key in a WeakMap.",
+        es: "Usa set() para asociar un valor con una clave de objeto en un WeakMap.",
+      },
+    },
   },
   {
     slug: 'weakmap-set-2',
@@ -40,6 +50,17 @@ export const weakMapSetExercises: Exercise[] = [
     ],
     hints: ['Like Map.set(), WeakMap.set() returns the map itself.'],
     tags: ['weakmap', 'set', 'chaining'],
+    usageExample: {
+      code: `const wm = new WeakMap()
+const k = {}
+wm.set(k, 'hello')
+wm.set(k, 'world')
+wm.get(k)  // → 'world'`,
+      explanation: {
+        en: "Calling set() with the same key overwrites the previous value.",
+        es: "Llamar a set() con la misma clave sobreescribe el valor anterior.",
+      },
+    },
   },
   {
     slug: 'weakmap-set-3',
@@ -60,6 +81,15 @@ export const weakMapSetExercises: Exercise[] = [
     ],
     hints: ['Each set() call replaces the previous value for the same key.'],
     tags: ['weakmap', 'set', 'overwrite'],
+    usageExample: {
+      code: `const wm = new WeakMap()
+const k = {id: 1}
+wm.set(k, {data: true})`,
+      explanation: {
+        en: "Values in a WeakMap can be any type, including objects.",
+        es: "Los valores en un WeakMap pueden ser de cualquier tipo, incluidos objetos.",
+      },
+    },
   },
   {
     slug: 'weakmap-set-4',
@@ -80,6 +110,16 @@ export const weakMapSetExercises: Exercise[] = [
     ],
     hints: ['Each object reference is a distinct key.'],
     tags: ['weakmap', 'set', 'multiple-keys'],
+    usageExample: {
+      code: `const wm = new WeakMap()
+const k = {}
+const result = wm.set(k, 1)
+result === wm  // → true`,
+      explanation: {
+        en: "set() returns the WeakMap itself, enabling method chaining.",
+        es: "set() devuelve el propio WeakMap, permitiendo el encadenamiento de métodos.",
+      },
+    },
   },
   {
     slug: 'weakmap-set-5',
@@ -100,5 +140,14 @@ export const weakMapSetExercises: Exercise[] = [
     ],
     hints: ['null is a valid value (not a key) in WeakMap.'],
     tags: ['weakmap', 'set', 'null'],
+    usageExample: {
+      code: `const wm = new WeakMap()
+const a = {}, b = {}
+wm.set(a, 1).set(b, 2)`,
+      explanation: {
+        en: "Chain multiple set() calls to add several entries at once.",
+        es: "Encadena múltiples llamadas a set() para agregar varias entradas a la vez.",
+      },
+    },
   },
 ]

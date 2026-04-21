@@ -19,6 +19,14 @@ export const urlConstructorExercises: Exercise[] = [
     ],
     hints: ['new URL() takes an absolute URL string as its first argument'],
     tags: ['URL', 'constructor', 'beginner'],
+    usageExample: {
+      code: `const u = new URL('https://example.com/path?q=1')
+u.hostname  // → 'example.com'`,
+      explanation: {
+        en: "URL() parses a URL string into structured components like hostname, pathname, and search.",
+        es: "URL() analiza una cadena URL en componentes estructurados como hostname, pathname y search.",
+      },
+    },
   },
   {
     slug: 'url-constructor-2',
@@ -38,6 +46,14 @@ export const urlConstructorExercises: Exercise[] = [
     ],
     hints: ['The second argument to new URL() is the base URL'],
     tags: ['URL', 'constructor', 'relative'],
+    usageExample: {
+      code: `const u = new URL('/path', 'https://example.com')
+u.href  // → 'https://example.com/path'`,
+      explanation: {
+        en: "Pass a base URL as the second argument to resolve relative URLs.",
+        es: "Pasa una URL base como segundo argumento para resolver URLs relativas.",
+      },
+    },
   },
   {
     slug: 'url-constructor-3',
@@ -57,6 +73,14 @@ export const urlConstructorExercises: Exercise[] = [
     ],
     hints: ['Wrap new URL() in a try/catch to handle the TypeError'],
     tags: ['URL', 'constructor', 'TypeError'],
+    usageExample: {
+      code: `const u = new URL('https://example.com')
+u instanceof URL  // → true`,
+      explanation: {
+        en: "URL instances can be checked with instanceof.",
+        es: "Las instancias de URL se pueden verificar con instanceof.",
+      },
+    },
   },
   {
     slug: 'url-constructor-4',
@@ -76,6 +100,13 @@ export const urlConstructorExercises: Exercise[] = [
     ],
     hints: ['The URL constructor parses each component into a separate property'],
     tags: ['URL', 'constructor', 'parsing'],
+    usageExample: {
+      code: `new URL('https://x.com?a=1&b=2').search  // → '?a=1&b=2'`,
+      explanation: {
+        en: "The search property gives the raw query string including the leading '?'.",
+        es: "La propiedad search da la cadena de consulta sin procesar incluyendo el '?' inicial.",
+      },
+    },
   },
   {
     slug: 'url-constructor-5',
@@ -95,5 +126,13 @@ export const urlConstructorExercises: Exercise[] = [
     ],
     hints: ['href is the full serialized URL string'],
     tags: ['URL', 'constructor', 'round-trip'],
+    usageExample: {
+      code: `const u = new URL('https://example.com:8080/path')
+u.port  // → '8080'`,
+      explanation: {
+        en: "URL() extracts the port number when it is specified in the URL.",
+        es: "URL() extrae el número de puerto cuando se especifica en la URL.",
+      },
+    },
   },
 ]

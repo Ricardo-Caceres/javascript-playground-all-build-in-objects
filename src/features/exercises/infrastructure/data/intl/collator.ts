@@ -39,6 +39,14 @@ export const intlCollatorExercises: Exercise[] = [
     ],
     hints: ['Use new Intl.Collator(locale)'],
     tags: [],
+    usageExample: {
+      code: `const collator = new Intl.Collator('en');
+collator.compare('apple', 'banana'); // -1`,
+      explanation: {
+        en: "Intl.Collator creates a locale-aware string comparator object.",
+        es: "Intl.Collator crea un objeto comparador de cadenas que respeta las reglas del idioma.",
+      },
+    },
   },
   {
     slug: 'intl-collator-compare',
@@ -78,6 +86,16 @@ export const intlCollatorExercises: Exercise[] = [
     ],
     hints: ['Use .compare(a, b)'],
     tags: [],
+    usageExample: {
+      code: `const col = new Intl.Collator('en');
+col.compare('a', 'b'); // negative
+col.compare('b', 'a'); // positive
+col.compare('a', 'a'); // 0`,
+      explanation: {
+        en: "compare() returns a negative, positive, or zero number based on sort order.",
+        es: "compare() devuelve un número negativo, positivo o cero según el orden de clasificación.",
+      },
+    },
   },
   {
     slug: 'intl-collator-sort',
@@ -117,6 +135,15 @@ export const intlCollatorExercises: Exercise[] = [
     ],
     hints: ['Use .sort(collator.compare)'],
     tags: [],
+    usageExample: {
+      code: `const words = ['banana', 'Apple', 'cherry'];
+words.sort(new Intl.Collator('en').compare);
+// ['Apple', 'banana', 'cherry']`,
+      explanation: {
+        en: "Pass compare as a sort callback for locale-aware sorting.",
+        es: "Pasa compare como callback de sort para ordenar con reglas del idioma.",
+      },
+    },
   },
   {
     slug: 'intl-collator-sensitivity',
@@ -156,6 +183,14 @@ export const intlCollatorExercises: Exercise[] = [
     ],
     hints: ['Use sensitivity: "case"'],
     tags: [],
+    usageExample: {
+      code: `const supported = Intl.Collator.supportedLocalesOf(['en', 'de', 'xx-ZZ']);
+// ['en', 'de']`,
+      explanation: {
+        en: "supportedLocalesOf() returns which locales are supported without fallback.",
+        es: "supportedLocalesOf() devuelve qué idiomas son compatibles sin necesidad de alternativa.",
+      },
+    },
   },
   {
     slug: 'intl-collator-resolvedOptions',
@@ -195,5 +230,13 @@ export const intlCollatorExercises: Exercise[] = [
     ],
     hints: ['Use .resolvedOptions()'],
     tags: [],
+    usageExample: {
+      code: `const opts = new Intl.Collator('en', { sensitivity: 'base' }).resolvedOptions();
+// { locale: 'en', sensitivity: 'base', ... }`,
+      explanation: {
+        en: "resolvedOptions() returns the actual locale and options the collator uses.",
+        es: "resolvedOptions() devuelve el idioma y las opciones reales que usa el cotejador.",
+      },
+    },
   },
 ];

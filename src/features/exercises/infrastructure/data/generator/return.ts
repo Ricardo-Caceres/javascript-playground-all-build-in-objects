@@ -19,6 +19,17 @@ export const generatorReturnExercises: Exercise[] = [
       { description: 'return(42).value is 42', assertion: 'const i2 = g(); expect(i2.return(42).value).toBe(42)' }
     ],
     tags: [],
+    usageExample: {
+      code: `function* gen() { yield 1; yield 2; yield 3 }
+const it = gen()
+console.log(it.next())       // → { value: 1, done: false }
+console.log(it.return(99))   // → { value: 99, done: true }
+console.log(it.next())       // → { value: undefined, done: true }`,
+      explanation: {
+        en: 'generator.return() terminates the generator early and returns the provided value with done set to true.',
+        es: 'generator.return() termina el generador antes de tiempo y devuelve el valor proporcionado con done en true.',
+      },
+    },
   },
   {
     slug: 'generator-return-done',
@@ -38,6 +49,17 @@ export const generatorReturnExercises: Exercise[] = [
       { description: 'typeof it.throw is function', assertion: 'expect(typeof it.throw).toBe("function")' }
     ],
     tags: [],
+    usageExample: {
+      code: `function* gen() { yield 1; yield 2; yield 3 }
+const it = gen()
+console.log(it.next())       // → { value: 1, done: false }
+console.log(it.return(99))   // → { value: 99, done: true }
+console.log(it.next())       // → { value: undefined, done: true }`,
+      explanation: {
+        en: 'generator.return() terminates the generator early and returns the provided value with done set to true.',
+        es: 'generator.return() termina el generador antes de tiempo y devuelve el valor proporcionado con done en true.',
+      },
+    },
   },
   {
     slug: 'generator-return-after-next',
@@ -57,6 +79,17 @@ export const generatorReturnExercises: Exercise[] = [
       { description: 'typeof it.next is function', assertion: 'expect(typeof it.next).toBe("function")' }
     ],
     tags: [],
+    usageExample: {
+      code: `function* gen() { yield 1; yield 2; yield 3 }
+const it = gen()
+console.log(it.next())       // → { value: 1, done: false }
+console.log(it.return(99))   // → { value: 99, done: true }
+console.log(it.next())       // → { value: undefined, done: true }`,
+      explanation: {
+        en: 'generator.return() terminates the generator early and returns the provided value with done set to true.',
+        es: 'generator.return() termina el generador antes de tiempo y devuelve el valor proporcionado con done en true.',
+      },
+    },
   },
   {
     slug: 'generator-return-typeof',
@@ -76,6 +109,17 @@ export const generatorReturnExercises: Exercise[] = [
       { description: 'typeof return is not number', assertion: 'expect(result !== "number").toBe(true)' }
     ],
     tags: [],
+    usageExample: {
+      code: `function* gen() { yield 1; yield 2; yield 3 }
+const it = gen()
+console.log(it.next())       // → { value: 1, done: false }
+console.log(it.return(99))   // → { value: 99, done: true }
+console.log(it.next())       // → { value: undefined, done: true }`,
+      explanation: {
+        en: 'generator.return() terminates the generator early and returns the provided value with done set to true.',
+        es: 'generator.return() termina el generador antes de tiempo y devuelve el valor proporcionado con done en true.',
+      },
+    },
   },
   {
     slug: 'generator-return-value',

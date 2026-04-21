@@ -33,6 +33,14 @@ const isObjectPrototype = proto === Object.prototype`,
     ],
     hints: ['Object.getPrototypeOf retrieves the internal [[Prototype]]', 'Every object (except null-prototype objects) has Object.prototype at the end of the chain'],
     tags: ['prototypes', 'prototype-chain', 'object-model', 'inheritance'],
+    usageExample: {
+      code: `const obj = {};
+Object.getPrototypeOf(obj) === Object.prototype; // true`,
+      explanation: {
+        en: "Every plain object's prototype is Object.prototype at the top of the chain.",
+        es: "El prototipo de todo objeto simple es Object.prototype en la cima de la cadena.",
+      },
+    },
   },
   {
     slug: 'prototypes-chain-2',
@@ -78,6 +86,15 @@ const greeting = obj.greet()`,
     ],
     hints: ['Use Object.create() to set up the prototype chain', 'Properties not found on object are looked up on prototype'],
     tags: ['prototypes', 'inheritance', 'method-lookup', 'property-access'],
+    usageExample: {
+      code: `const proto = { greet() { return 'hello'; } };
+const obj = Object.create(proto);
+obj.greet(); // found via prototype chain`,
+      explanation: {
+        en: "JavaScript walks up the prototype chain to find properties not on the object itself.",
+        es: "JavaScript recorre la cadena de prototipos para encontrar propiedades que no están en el objeto.",
+      },
+    },
   },
   {
     slug: 'prototypes-chain-3',
@@ -119,6 +136,15 @@ const yIsOwn = obj.hasOwnProperty('y')`,
     ],
     hints: ['hasOwnProperty only returns true for properties directly on the object', 'Inherited properties exist but are not own properties'],
     tags: ['prototypes', 'hasOwnProperty', 'property-ownership', 'inheritance'],
+    usageExample: {
+      code: `function Person(name) { this.name = name; }
+Person.prototype.greet = function() { return 'Hi, ' + this.name; };
+new Person('Alice').greet(); // 'Hi, Alice'`,
+      explanation: {
+        en: "Add methods to a constructor prototype to share them across all instances.",
+        es: "Añade métodos al prototipo de un constructor para compartirlos entre todas las instancias.",
+      },
+    },
   },
   {
     slug: 'prototypes-chain-4',
@@ -158,6 +184,17 @@ const proto_a = Object.getPrototypeOf(a)`,
     ],
     hints: ['Each call to Object.getPrototypeOf moves up one level in the chain', 'Eventually the chain reaches null (after Object.prototype)'],
     tags: ['prototypes', 'chain-traversal', 'getPrototypeOf', 'inheritance'],
+    usageExample: {
+      code: `class Animal {}
+class Dog extends Animal {}
+const d = new Dog();
+d instanceof Dog; // true
+d instanceof Animal; // true`,
+      explanation: {
+        en: "instanceof traverses the prototype chain — a Dog is also an Animal.",
+        es: "instanceof recorre la cadena de prototipos — un Dog también es un Animal.",
+      },
+    },
   },
   {
     slug: 'prototypes-chain-5',
@@ -207,5 +244,15 @@ const name = myDog.name`,
     ],
     hints: ['Property lookup continues up the chain until found', 'Own properties shadow inherited ones', 'this always refers to the object on which the method was called'],
     tags: ['prototypes', 'complex-chains', 'inheritance', 'property-resolution'],
+    usageExample: {
+      code: `const obj = { x: 1 };
+const child = Object.create(obj);
+child.hasOwnProperty('x'); // false
+'x' in child; // true`,
+      explanation: {
+        en: "hasOwnProperty distinguishes own properties from inherited ones; 'in' checks the whole chain.",
+        es: "hasOwnProperty distingue propiedades propias de heredadas; 'in' comprueba toda la cadena.",
+      },
+    },
   },
 ]

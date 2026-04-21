@@ -33,6 +33,15 @@ export const funcBindExercises: Exercise[] = [
       'The bound `this` cannot be changed by `call` or `apply`.',
     ],
     tags: ['Function', 'bind', 'this', 'beginner'],
+    usageExample: {
+      code: `function greet() { return this.name }
+const hi = greet.bind({ name: 'Alice' })
+hi()  // → 'Alice'`,
+      explanation: {
+        en: "bind() returns a new function with this permanently set to the provided object.",
+        es: "bind() devuelve una nueva función con this establecido permanentemente en el objeto proporcionado.",
+      },
+    },
   },
   {
     slug: 'function-bind-partial-application',
@@ -65,6 +74,15 @@ Arguments passed to \`bind()\` after \`thisArg\` are prepended when calling the 
       'Arguments after `thisArg` in `bind()` are partially applied.',
     ],
     tags: ['Function', 'bind', 'partial application', 'intermediate'],
+    usageExample: {
+      code: `function add(a, b) { return a + b }
+const add5 = add.bind(null, 5)
+add5(3)  // → 8`,
+      explanation: {
+        en: "Pass extra arguments to bind() to pre-fill (partially apply) the function's parameters.",
+        es: "Pasa argumentos adicionales a bind() para rellenar previamente (aplicar parcialmente) los parámetros de la función.",
+      },
+    },
   },
   {
     slug: 'function-bind-returns-function',
@@ -97,6 +115,16 @@ Arguments passed to \`bind()\` after \`thisArg\` are prepended when calling the 
       '`bind()` always returns a new function object.',
     ],
     tags: ['Function', 'bind', 'typeof', 'beginner'],
+    usageExample: {
+      code: `const obj = { x: 10 }
+function getX() { return this.x }
+const fn = getX.bind(obj)
+fn()  // → 10`,
+      explanation: {
+        en: "Use bind() when passing a method as a callback to preserve its this context.",
+        es: "Usa bind() al pasar un método como callback para preservar su contexto this.",
+      },
+    },
   },
   {
     slug: 'function-bind-multiply-double',
@@ -129,6 +157,14 @@ Bind the first argument of \`multiply\` to \`2\` to create a \`double\` function
       'Partial application with `bind` creates specialized functions from general ones.',
     ],
     tags: ['Function', 'bind', 'partial application', 'intermediate'],
+    usageExample: {
+      code: `const fn = function() { return this.val }.bind({ val: 42 })
+fn()  // → 42`,
+      explanation: {
+        en: "bind() works on both function declarations and function expressions.",
+        es: "bind() funciona tanto en declaraciones de función como en expresiones de función.",
+      },
+    },
   },
   {
     slug: 'function-bind-bound-this-x',
@@ -161,5 +197,13 @@ When a function references \`this.x\`, binding it to an object with \`x: 42\` en
       '`this.x` resolves to the bound context\'s `x` property.',
     ],
     tags: ['Function', 'bind', 'this', 'beginner'],
+    usageExample: {
+      code: `const doubled = [1,2,3].map(n => n * 2)
+// Arrow functions don't need bind() — they capture this lexically`,
+      explanation: {
+        en: "Arrow functions lexically capture this and never need bind().",
+        es: "Las funciones flecha capturan this léxicamente y nunca necesitan bind().",
+      },
+    },
   },
 ]

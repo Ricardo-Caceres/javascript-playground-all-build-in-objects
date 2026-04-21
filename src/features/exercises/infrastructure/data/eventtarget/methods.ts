@@ -27,6 +27,15 @@ fired`,
     ],
     hints: ['dispatchEvent is synchronous — listeners run before it returns'],
     tags: ['EventTarget', 'addEventListener', 'dispatchEvent'],
+    usageExample: {
+      code: `const et = new EventTarget()
+et.addEventListener('ping', () => console.log('pong'))
+et.dispatchEvent(new Event('ping'))  // → pong`,
+      explanation: {
+        en: "addEventListener registers a listener; dispatchEvent fires the event.",
+        es: "addEventListener registra un oyente; dispatchEvent dispara el evento.",
+      },
+    },
   },
   {
     slug: 'eventtarget-methods-2',
@@ -58,6 +67,16 @@ n`,
     ],
     hints: ['You must pass the exact same function reference to removeEventListener'],
     tags: ['EventTarget', 'removeEventListener'],
+    usageExample: {
+      code: `const et = new EventTarget()
+const fn = () => console.log('hi')
+et.addEventListener('click', fn)
+et.removeEventListener('click', fn)  // removes the listener`,
+      explanation: {
+        en: "removeEventListener unregisters a previously added listener.",
+        es: "removeEventListener cancela el registro de un oyente previamente añadido.",
+      },
+    },
   },
   {
     slug: 'eventtarget-methods-3',
@@ -81,6 +100,18 @@ t.dispatchEvent(new Event('e'))`,
     ],
     hints: ['dispatchEvent returns false only when preventDefault() is called on a cancelable event'],
     tags: ['EventTarget', 'dispatchEvent'],
+    usageExample: {
+      code: `const et = new EventTarget()
+let count = 0
+et.addEventListener('inc', () => count++, { once: true })
+et.dispatchEvent(new Event('inc'))
+et.dispatchEvent(new Event('inc'))
+count  // → 1`,
+      explanation: {
+        en: "Use { once: true } to automatically remove the listener after its first invocation.",
+        es: "Usa { once: true } para eliminar automáticamente el oyente después de su primera invocación.",
+      },
+    },
   },
   {
     slug: 'eventtarget-methods-4',
@@ -108,6 +139,15 @@ type`,
     ],
     hints: ['The first argument to any event listener is the Event object'],
     tags: ['EventTarget', 'addEventListener', 'event object'],
+    usageExample: {
+      code: `const et = new EventTarget()
+const result = et.dispatchEvent(new Event('x', { cancelable: true }))
+result  // → true (not cancelled)`,
+      explanation: {
+        en: "dispatchEvent() returns true if the event was not cancelled.",
+        es: "dispatchEvent() devuelve true si el evento no fue cancelado.",
+      },
+    },
   },
   {
     slug: 'eventtarget-methods-5',
@@ -137,5 +177,14 @@ n`,
     ],
     hints: ['{ once: true } is equivalent to adding a listener that calls removeEventListener on itself after the first call'],
     tags: ['EventTarget', 'addEventListener', 'once'],
+    usageExample: {
+      code: `const et = new EventTarget()
+et.addEventListener('signal', e => console.log(e.type))
+et.dispatchEvent(new Event('signal'))  // → 'signal'`,
+      explanation: {
+        en: "The listener receives the Event object with type and other properties.",
+        es: "El oyente recibe el objeto Event con type y otras propiedades.",
+      },
+    },
   },
 ]

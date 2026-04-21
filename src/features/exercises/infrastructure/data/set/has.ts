@@ -20,6 +20,15 @@ export const setHasExercises: Exercise[] = [
     ],
     hints: ['has() returns true if the value exists in the Set'],
     tags: ['Set', 'has', 'method'],
+    usageExample: {
+      code: `const s = new Set([1, 2, 3])
+s.has(2)   // → true
+s.has(99)  // → false`,
+      explanation: {
+        en: 'Use Set.has() to check if a value exists in the set.',
+        es: 'Usa Set.has() para verificar si un valor existe en el conjunto.',
+      },
+    },
   },
   {
     slug: 'set-has-2',
@@ -40,6 +49,15 @@ export const setHasExercises: Exercise[] = [
     ],
     hints: ['has() returns false (not undefined) for missing values'],
     tags: ['Set', 'has', 'missing'],
+    usageExample: {
+      code: `const s = new Set([1, 2, 3])
+s.has(2)   // → true
+s.has(99)  // → false`,
+      explanation: {
+        en: 'Use Set.has() to check if a value exists in the set.',
+        es: 'Usa Set.has() para verificar si un valor existe en el conjunto.',
+      },
+    },
   },
   {
     slug: 'set-has-3',
@@ -60,6 +78,15 @@ export const setHasExercises: Exercise[] = [
     ],
     hints: ['has() checks for value existence, not value truthiness'],
     tags: ['Set', 'has', 'add'],
+    usageExample: {
+      code: `const s = new Set([1, 2, 3])
+s.has(2)   // → true
+s.has(99)  // → false`,
+      explanation: {
+        en: 'Use Set.has() to check if a value exists in the set.',
+        es: 'Usa Set.has() para verificar si un valor existe en el conjunto.',
+      },
+    },
   },
   {
     slug: 'set-has-4',
@@ -80,6 +107,15 @@ export const setHasExercises: Exercise[] = [
     ],
     hints: ['delete() removes the value; has() returns false afterwards'],
     tags: ['Set', 'has', 'delete'],
+    usageExample: {
+      code: `const s = new Set([1, 2, 3])
+s.has(2)   // → true
+s.has(99)  // → false`,
+      explanation: {
+        en: 'Use Set.has() to check if a value exists in the set.',
+        es: 'Usa Set.has() para verificar si un valor existe en el conjunto.',
+      },
+    },
   },
   {
     slug: 'set-has-5',
@@ -100,5 +136,14 @@ export const setHasExercises: Exercise[] = [
     ],
     hints: ['Sets use SameValueZero — NaN equals NaN, 0 equals -0, objects by reference'],
     tags: ['Set', 'has', 'reference'],
+    usageExample: {
+      code: `const s = new Set([1, 2, 3])
+s.has(2)   // → true
+s.has(99)  // → false`,
+      explanation: {
+        en: 'Use Set.has() to check if a value exists in the set.',
+        es: 'Usa Set.has() para verificar si un valor existe en el conjunto.',
+      },
+    },
   },
 ]

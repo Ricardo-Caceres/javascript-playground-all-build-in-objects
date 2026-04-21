@@ -34,6 +34,14 @@ replaceAllOccurrences('foo bar foo', 'foo', 'baz') // → 'baz bar baz'
       '`replaceAll` is like `replace` with a `/g` flag regex but works with plain strings.',
     ],
     tags: ['String', 'String.prototype.replaceAll', 'beginner'],
+    usageExample: {
+      code: `'foo bar foo'.replaceAll('foo', 'baz')  // → 'baz bar baz'
+'banana'.replaceAll('a', 'o')           // → 'bonono'`,
+      explanation: {
+        en: "Use replaceAll() to replace every occurrence of a search string or regex (with /g flag) with the replacement.",
+        es: "Usa replaceAll() para reemplazar cada ocurrencia de una cadena o expresión regular (con bandera /g) con el reemplazo.",
+      },
+    },
   },
   {
     slug: 'string-replace-all-vs-replace',
@@ -70,6 +78,14 @@ replaceAllOccurrences('foo bar foo', 'foo', 'baz') // → 'baz bar baz'
       '`str.replaceAll("a", "b")` replaces every `"a"` in the string.',
     ],
     tags: ['String', 'String.prototype.replaceAll', 'beginner'],
+    usageExample: {
+      code: `'foo bar foo'.replaceAll('foo', 'baz')  // → 'baz bar baz'
+'banana'.replaceAll('a', 'o')           // → 'bonono'`,
+      explanation: {
+        en: "Use replaceAll() to replace every occurrence of a search string or regex (with /g flag) with the replacement.",
+        es: "Usa replaceAll() para reemplazar cada ocurrencia de una cadena o expresión regular (con bandera /g) con el reemplazo.",
+      },
+    },
   },
   {
     slug: 'string-replace-all-regex-g',
@@ -105,6 +121,14 @@ removeVowels('hello world') // → 'hll wrld'
       '`/[aeiou]/gi` matches all vowels case-insensitively.',
     ],
     tags: ['String', 'String.prototype.replaceAll', 'regex', 'intermediate'],
+    usageExample: {
+      code: `'foo bar foo'.replaceAll('foo', 'baz')  // → 'baz bar baz'
+'banana'.replaceAll('a', 'o')           // → 'bonono'`,
+      explanation: {
+        en: "Use replaceAll() to replace every occurrence of a search string or regex (with /g flag) with the replacement.",
+        es: "Usa replaceAll() para reemplazar cada ocurrencia de una cadena o expresión regular (con bandera /g) con el reemplazo.",
+      },
+    },
   },
   {
     slug: 'string-replace-all-empty-string',
@@ -139,6 +163,14 @@ joinCharsWithDash('abc') // → '-a-b-c-'
       'Replacing `""` inserts the replacement at every position, including the start and end.',
     ],
     tags: ['String', 'String.prototype.replaceAll', 'intermediate'],
+    usageExample: {
+      code: `'foo bar foo'.replaceAll('foo', 'baz')  // → 'baz bar baz'
+'banana'.replaceAll('a', 'o')           // → 'bonono'`,
+      explanation: {
+        en: "Use replaceAll() to replace every occurrence of a search string or regex (with /g flag) with the replacement.",
+        es: "Usa replaceAll() para reemplazar cada ocurrencia de una cadena o expresión regular (con bandera /g) con el reemplazo.",
+      },
+    },
   },
   {
     slug: 'string-replace-all-no-match',
@@ -173,5 +205,13 @@ tryReplaceAll('hello', 'xyz', '!!!') // → 'hello'
       '`replaceAll` is case-sensitive by default.',
     ],
     tags: ['String', 'String.prototype.replaceAll', 'beginner'],
+    usageExample: {
+      code: `'foo bar foo'.replaceAll('foo', 'baz')  // → 'baz bar baz'
+'banana'.replaceAll('a', 'o')           // → 'bonono'`,
+      explanation: {
+        en: "Use replaceAll() to replace every occurrence of a search string or regex (with /g flag) with the replacement.",
+        es: "Usa replaceAll() para reemplazar cada ocurrencia de una cadena o expresión regular (con bandera /g) con el reemplazo.",
+      },
+    },
   },
 ]

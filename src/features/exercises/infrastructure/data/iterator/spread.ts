@@ -19,6 +19,17 @@ export const iteratorSpreadExercises: Exercise[] = [
       { description: 'typeof arr is object', assertion: 'expect(typeof arr).toBe("object")' }
     ],
     tags: [],
+    usageExample: {
+      code: `const arr = [1, 2, 3]
+const copy = [...arr]
+console.log(copy) // → [1, 2, 3]
+const merged = [...[1, 2], ...[3, 4]]
+console.log(merged) // → [1, 2, 3, 4]`,
+      explanation: {
+        en: 'The spread operator uses the iterator protocol to expand an iterable into individual elements.',
+        es: 'El operador spread usa el protocolo iterador para expandir un iterable en elementos individuales.',
+      },
+    },
   },
   {
     slug: 'iterator-spread-string',
@@ -38,6 +49,17 @@ export const iteratorSpreadExercises: Exercise[] = [
       { description: 'typeof arr is object', assertion: 'expect(typeof arr).toBe("object")' }
     ],
     tags: [],
+    usageExample: {
+      code: `const arr = [1, 2, 3]
+const copy = [...arr]
+console.log(copy) // → [1, 2, 3]
+const merged = [...[1, 2], ...[3, 4]]
+console.log(merged) // → [1, 2, 3, 4]`,
+      explanation: {
+        en: 'The spread operator uses the iterator protocol to expand an iterable into individual elements.',
+        es: 'El operador spread usa el protocolo iterador para expandir un iterable en elementos individuales.',
+      },
+    },
   },
   {
     slug: 'iterator-spread-map',
@@ -57,6 +79,17 @@ export const iteratorSpreadExercises: Exercise[] = [
       { description: 'typeof arr[0] is object', assertion: 'expect(typeof arr[0]).toBe("object")' }
     ],
     tags: [],
+    usageExample: {
+      code: `const arr = [1, 2, 3]
+const copy = [...arr]
+console.log(copy) // → [1, 2, 3]
+const merged = [...[1, 2], ...[3, 4]]
+console.log(merged) // → [1, 2, 3, 4]`,
+      explanation: {
+        en: 'The spread operator uses the iterator protocol to expand an iterable into individual elements.',
+        es: 'El operador spread usa el protocolo iterador para expandir un iterable en elementos individuales.',
+      },
+    },
   },
   {
     slug: 'iterator-spread-generator',
@@ -76,6 +109,17 @@ export const iteratorSpreadExercises: Exercise[] = [
       { description: 'typeof arr is object', assertion: 'expect(typeof arr).toBe("object")' }
     ],
     tags: [],
+    usageExample: {
+      code: `const arr = [1, 2, 3]
+const copy = [...arr]
+console.log(copy) // → [1, 2, 3]
+const merged = [...[1, 2], ...[3, 4]]
+console.log(merged) // → [1, 2, 3, 4]`,
+      explanation: {
+        en: 'The spread operator uses the iterator protocol to expand an iterable into individual elements.',
+        es: 'El operador spread usa el protocolo iterador para expandir un iterable en elementos individuales.',
+      },
+    },
   },
   {
     slug: 'iterator-spread-multi',

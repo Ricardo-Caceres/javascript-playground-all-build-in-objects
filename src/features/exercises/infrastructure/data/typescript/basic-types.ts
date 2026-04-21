@@ -33,6 +33,17 @@ isString(42)       // → false
     ],
     hints: ['typeof x === "string" is the standard runtime check.'],
     tags: ['TypeScript', 'type-guard', 'string', 'beginner'],
+    usageExample: {
+      code: `function isString(x: unknown): x is string {
+  return typeof x === 'string'
+}
+isString('hello')   // → true
+isString(42)        // → false`,
+      explanation: {
+        en: 'A type guard with a type predicate (x is string) narrows the type in the calling scope.',
+        es: 'Un type guard con predicado de tipo (x is string) estrecha el tipo en el ámbito de llamada.',
+      },
+    },
   },
   {
     slug: 'ts-type-guard-2',
@@ -65,6 +76,17 @@ isNumber('42')    // → false
     ],
     hints: ['typeof NaN === "number" is true in JavaScript.'],
     tags: ['TypeScript', 'type-guard', 'number', 'beginner'],
+    usageExample: {
+      code: `function isNumber(x: unknown): x is number {
+  return typeof x === 'number'
+}
+isNumber(42)    // → true
+isNumber(NaN)   // → true  (NaN has type number!)`,
+      explanation: {
+        en: 'typeof x === \'number\' is true even for NaN, so NaN passes the isNumber type guard.',
+        es: 'typeof x === \'number\' es verdadero incluso para NaN, por lo que NaN pasa el type guard.',
+      },
+    },
   },
   {
     slug: 'ts-type-guard-3',
@@ -96,6 +118,17 @@ isBoolean(1)      // → false  (1 is truthy, not boolean)
     ],
     hints: ['typeof x === "boolean" narrows to exactly true or false.'],
     tags: ['TypeScript', 'type-guard', 'boolean', 'beginner'],
+    usageExample: {
+      code: `function isBoolean(x: unknown): x is boolean {
+  return typeof x === 'boolean'
+}
+isBoolean(true)   // → true
+isBoolean(1)      // → false`,
+      explanation: {
+        en: 'typeof x === \'boolean\' checks for exactly true or false, not truthy/falsy values.',
+        es: 'typeof x === \'boolean\' comprueba exactamente true o false, no valores truthy/falsy.',
+      },
+    },
   },
   {
     slug: 'ts-type-guard-4',
@@ -126,6 +159,17 @@ isArray({})         // → false
     ],
     hints: ['Array.isArray() is the standard way to check for arrays.'],
     tags: ['TypeScript', 'type-guard', 'array', 'beginner'],
+    usageExample: {
+      code: `function isArray(x: unknown): x is unknown[] {
+  return Array.isArray(x)
+}
+isArray([1, 2])   // → true
+isArray('abc')    // → false`,
+      explanation: {
+        en: 'Array.isArray() is the reliable way to check for arrays, handling cross-frame edge cases.',
+        es: 'Array.isArray() es la forma fiable de comprobar arrays, manejando casos de múltiples frames.',
+      },
+    },
   },
   {
     slug: 'ts-type-guard-5',
@@ -158,6 +202,17 @@ isObject(null)   // → false  (typeof null === 'object' — a classic JS gotcha
     ],
     hints: ['Check typeof, exclude null, exclude arrays.'],
     tags: ['TypeScript', 'type-guard', 'object', 'beginner'],
+    usageExample: {
+      code: `function isObject(x: unknown): x is Record<string, unknown> {
+  return typeof x === 'object' && x !== null
+}
+isObject({})     // → true
+isObject(null)   // → false`,
+      explanation: {
+        en: 'A proper isObject guard checks typeof === \'object\' AND x !== null, since typeof null is \'object\'.',
+        es: 'Un guard isObject correcto verifica typeof === \'object\' Y x !== null, ya que typeof null es \'object\'.',
+      },
+    },
   },
   {
     slug: 'ts-type-guard-6',
@@ -189,6 +244,17 @@ isNullOrUndefined(0)         // → false
     ],
     hints: ['Use strict equality (===) with both null and undefined.'],
     tags: ['TypeScript', 'type-guard', 'nullish', 'beginner'],
+    usageExample: {
+      code: `function isNullOrUndefined(x: unknown): x is null | undefined {
+  return x === null || x === undefined
+}
+isNullOrUndefined(null)   // → true
+isNullOrUndefined(0)      // → false`,
+      explanation: {
+        en: 'Check x === null || x === undefined to detect both nullish values precisely.',
+        es: 'Comprueba x === null || x === undefined para detectar ambos valores nullish con precisión.',
+      },
+    },
   },
   {
     slug: 'ts-type-guard-7',
@@ -219,6 +285,16 @@ hasProperty({ name: 'Alice' }, 'age')   // → false
     ],
     hints: ['Combine a null check with the in operator.'],
     tags: ['TypeScript', 'type-guard', 'property', 'intermediate'],
+    usageExample: {
+      code: `function hasProperty<K extends string>(x: unknown, key: K): x is Record<K, unknown> {
+  return typeof x === 'object' && x !== null && key in x
+}
+hasProperty({ name: 'Alice' }, 'name')   // → true`,
+      explanation: {
+        en: 'The \'in\' operator checks property existence, narrowing to Record<K, unknown> in TypeScript.',
+        es: 'El operador \'in\' comprueba la existencia de una propiedad, estrechando a Record<K, unknown>.',
+      },
+    },
   },
   {
     slug: 'ts-type-guard-8',
@@ -249,6 +325,17 @@ isStringArray(['a', 1, 'c'])    // → false
     ],
     hints: ['Array.isArray + every(item => typeof item === "string").'],
     tags: ['TypeScript', 'type-guard', 'array', 'intermediate'],
+    usageExample: {
+      code: `function isStringArray(x: unknown): x is string[] {
+  return Array.isArray(x) && x.every(item => typeof item === 'string')
+}
+isStringArray(['a', 'b'])   // → true
+isStringArray([1, 'a'])    // → false`,
+      explanation: {
+        en: 'Combining Array.isArray with every() lets you narrow the element type of an array.',
+        es: 'Combinar Array.isArray con every() permite estrechar el tipo de los elementos de un array.',
+      },
+    },
   },
   {
     slug: 'ts-type-guard-9',
@@ -280,6 +367,16 @@ isInstance(new Error('e'), Error)  // → true
     ],
     hints: ['x instanceof ctor is the built-in mechanism for checking prototype chain membership.'],
     tags: ['TypeScript', 'type-guard', 'instanceof', 'intermediate'],
+    usageExample: {
+      code: `function isInstance<T>(x: unknown, ctor: new (...a: any[]) => T): x is T {
+  return x instanceof ctor
+}
+isInstance(new Date(), Date)   // → true`,
+      explanation: {
+        en: 'A generic isInstance guard uses instanceof with a constructor type to narrow any class.',
+        es: 'Un guard genérico isInstance usa instanceof con un tipo constructor para estrechar cualquier clase.',
+      },
+    },
   },
   {
     slug: 'ts-type-guard-10',
@@ -313,6 +410,16 @@ assertNonNull(null)      // throws Error
     ],
     hints: ['Throw if x === null || x === undefined, otherwise do nothing.'],
     tags: ['TypeScript', 'type-guard', 'assertion', 'intermediate'],
+    usageExample: {
+      code: `function assertNonNull<T>(val: T | null | undefined): asserts val is T {
+  if (val == null) throw new Error('Unexpected null')
+}
+assertNonNull(value)  // TypeScript knows value is T after this line`,
+      explanation: {
+        en: 'An assertion function with \'asserts val is T\' tells TypeScript the value is non-null after the call.',
+        es: 'Una función de aserción con \'asserts val is T\' informa a TypeScript que el valor no es null.',
+      },
+    },
   },
   {
     slug: 'ts-type-guard-11',
@@ -345,6 +452,17 @@ isPositiveNumber(Infinity) // → false
     ],
     hints: ['typeof check + Number.isFinite + x > 0.'],
     tags: ['TypeScript', 'type-guard', 'number', 'intermediate'],
+    usageExample: {
+      code: `function isPositiveNumber(x: unknown): x is number {
+  return typeof x === 'number' && x > 0
+}
+isPositiveNumber(5)    // → true
+isPositiveNumber(-1)   // → false`,
+      explanation: {
+        en: 'Combining a typeof check with a value constraint creates a refined numeric type guard.',
+        es: 'Combinar un typeof con una restricción de valor crea un type guard numérico refinado.',
+      },
+    },
   },
   {
     slug: 'ts-type-guard-12',
@@ -376,6 +494,17 @@ isNonEmptyString(null)     // → false
     ],
     hints: ['Check typeof and length > 0.'],
     tags: ['TypeScript', 'type-guard', 'string', 'beginner'],
+    usageExample: {
+      code: `function isNonEmptyString(x: unknown): x is string {
+  return typeof x === 'string' && x.length > 0
+}
+isNonEmptyString('')        // → false
+isNonEmptyString('hello')   // → true`,
+      explanation: {
+        en: 'Layering value-level constraints onto typeof checks creates more specific type guards.',
+        es: 'Añadir restricciones de valor a los typeof checks crea type guards más específicos.',
+      },
+    },
   },
   {
     slug: 'ts-type-guard-13',
@@ -423,6 +552,16 @@ function getArea(shape: Shape): number {
     ],
     hints: ['switch(shape.kind) with exhaustive cases — TypeScript narrows the type in each branch.'],
     tags: ['TypeScript', 'type-guard', 'discriminated-union', 'intermediate'],
+    usageExample: {
+      code: `type Shape = { kind: 'circle'; r: number } | { kind: 'square'; s: number }
+function isCircle(sh: Shape): sh is Extract<Shape, { kind: 'circle' }> {
+  return sh.kind === 'circle'
+}`,
+      explanation: {
+        en: 'Checking the discriminant property narrows a union to a specific member type.',
+        es: 'Comprobar la propiedad discriminante estrecha una unión a un tipo miembro específico.',
+      },
+    },
   },
   {
     slug: 'ts-type-guard-14',
@@ -458,6 +597,16 @@ parseJSON('bad json', () => true)  // → null
     ],
     hints: ['Wrap JSON.parse in a try/catch and apply the guard to the result.'],
     tags: ['TypeScript', 'type-guard', 'JSON', 'intermediate'],
+    usageExample: {
+      code: `function parseJSON<T>(json: string, guard: (x: unknown) => x is T): T | null {
+  try { const v = JSON.parse(json); return guard(v) ? v : null }
+  catch { return null }
+}`,
+      explanation: {
+        en: 'Pairing JSON.parse with a type guard validates the parsed data at the TypeScript boundary.',
+        es: 'Combinar JSON.parse con un type guard valida los datos analizados en la frontera de TypeScript.',
+      },
+    },
   },
   {
     slug: 'ts-type-guard-15',
@@ -491,6 +640,16 @@ default: throw exhaustiveCheck(shape)
     ],
     hints: ['This function should always throw — its return type is never.'],
     tags: ['TypeScript', 'type-guard', 'never', 'exhaustive', 'advanced'],
+    usageExample: {
+      code: `function exhaustiveCheck(x: never): never {
+  throw new Error('Unexpected value: ' + x)
+}
+// Place at the default branch to catch unhandled union members`,
+      explanation: {
+        en: 'An exhaustive check using never ensures all union members are handled at compile time.',
+        es: 'Una comprobación exhaustiva con never garantiza que todos los miembros de la unión se manejen.',
+      },
+    },
   },
   {
     slug: 'ts-type-guard-16',
@@ -521,6 +680,16 @@ isOneOf('pink', ['red', 'green', 'blue'] as const) // → false
     ],
     hints: ['Array.includes uses strict equality — perfect for value checking.'],
     tags: ['TypeScript', 'type-guard', 'literal', 'intermediate'],
+    usageExample: {
+      code: `function isOneOf<T extends readonly unknown[]>(vals: T, x: unknown): x is T[number] {
+  return (vals as readonly unknown[]).includes(x)
+}
+isOneOf(['red', 'blue'] as const, 'red')   // → true`,
+      explanation: {
+        en: 'isOneOf creates a type guard that narrows to a literal union from a fixed list of values.',
+        es: 'isOneOf crea un type guard que estrecha a una unión literal desde una lista fija de valores.',
+      },
+    },
   },
   {
     slug: 'ts-type-guard-17',
@@ -559,6 +728,18 @@ isTuple([1, 2], isNumber, isString)    // → false
     ],
     hints: ['Check Array.isArray, length === 2, and both guards.'],
     tags: ['TypeScript', 'type-guard', 'tuple', 'advanced'],
+    usageExample: {
+      code: `function isTuple<T extends unknown[]>(
+  arr: unknown,
+  ...guards: { [K in keyof T]: (x: unknown) => x is T[K] }
+): arr is T {
+  return Array.isArray(arr) && guards.every((g, i) => g((arr as unknown[])[i]))
+}`,
+      explanation: {
+        en: 'A generic isTuple validator checks each element with its own type guard for precise tuple types.',
+        es: 'Un validador genérico isTuple comprueba cada elemento con su propio type guard para tipos tupla precisos.',
+      },
+    },
   },
   {
     slug: 'ts-type-guard-18',
@@ -590,6 +771,16 @@ narrowUnion(new Error())   // → [null, Error]
     ],
     hints: ['instanceof Error distinguishes error from success value.'],
     tags: ['TypeScript', 'type-guard', 'result', 'union', 'advanced'],
+    usageExample: {
+      code: `type Result<T> = { ok: true; value: T } | { ok: false; error: string }
+function isOk<T>(r: Result<T>): r is { ok: true; value: T } {
+  return r.ok === true
+}`,
+      explanation: {
+        en: 'Discriminating on a boolean literal property is a clean way to narrow Result-style union types.',
+        es: 'Discriminar en una propiedad literal booleana es una forma limpia de estrechar tipos de unión tipo Result.',
+      },
+    },
   },
   {
     slug: 'ts-type-guard-19',
@@ -620,6 +811,16 @@ safeGet(null, 'name')               // → undefined
     ],
     hints: ['obj != null is true when obj is neither null nor undefined (loose inequality).'],
     tags: ['TypeScript', 'type-guard', 'optional-chaining', 'beginner'],
+    usageExample: {
+      code: `function safeGet<T>(obj: T | null | undefined, key: keyof NonNullable<T>) {
+  return obj?.[key as keyof typeof obj]
+}
+// Returns undefined safely when obj is null or undefined`,
+      explanation: {
+        en: 'Optional chaining (?.) safely accesses properties on potentially nullish values without throwing.',
+        es: 'El encadenamiento opcional (?.) accede de forma segura a propiedades de valores potencialmente nullish.',
+      },
+    },
   },
   {
     slug: 'ts-type-guard-20',
@@ -658,5 +859,18 @@ validateUser({ name: 'Carol', age: 'old' }) // → false (wrong type)
     ],
     hints: ['Check typeof for each property after verifying the key exists.'],
     tags: ['TypeScript', 'type-guard', 'validation', 'intermediate'],
+    usageExample: {
+      code: `function isUserSchema(x: unknown): x is { name: string; age: number } {
+  return (
+    typeof x === 'object' && x !== null &&
+    typeof (x as any).name === 'string' &&
+    typeof (x as any).age === 'number'
+  )
+}`,
+      explanation: {
+        en: 'Combining property checks into one type guard validates a complete object schema at runtime.',
+        es: 'Combinar comprobaciones de propiedades en un type guard valida un esquema de objeto completo en runtime.',
+      },
+    },
   },
 ]

@@ -34,6 +34,15 @@ padRight('hi', 5) // → 'hi   '
       '`.padEnd()` adds padding to the end (right side) of the string.',
     ],
     tags: ['String', 'String.prototype.padEnd', 'padding', 'beginner'],
+    usageExample: {
+      code: `'5'.padEnd(3, '0')       // → '500'
+'hello'.padEnd(8, '-')   // → 'hello---'
+'hi'.padEnd(2)           // → 'hi'`,
+      explanation: {
+        en: "Use padEnd() to pad the end of a string with a fill character until it reaches the target length.",
+        es: "Usa padEnd() para rellenar el final de una cadena con un carácter hasta alcanzar la longitud objetivo.",
+      },
+    },
   },
   {
     slug: 'string-pad-end-custom-fill',
@@ -68,6 +77,15 @@ padDots('hi', 6) // → 'hi....'
       '`str.padEnd(length, ".")` fills with dots.',
     ],
     tags: ['String', 'String.prototype.padEnd', 'custom fill', 'beginner'],
+    usageExample: {
+      code: `'5'.padEnd(3, '0')       // → '500'
+'hello'.padEnd(8, '-')   // → 'hello---'
+'hi'.padEnd(2)           // → 'hi'`,
+      explanation: {
+        en: "Use padEnd() to pad the end of a string with a fill character until it reaches the target length.",
+        es: "Usa padEnd() para rellenar el final de una cadena con un carácter hasta alcanzar la longitud objetivo.",
+      },
+    },
   },
   {
     slug: 'string-pad-end-no-padding',
@@ -103,6 +121,15 @@ padToTen('hello')        // → 'hello     '
       'If the string is already at or beyond the target length, `.padEnd()` returns it as-is.',
     ],
     tags: ['String', 'String.prototype.padEnd', 'beginner'],
+    usageExample: {
+      code: `'5'.padEnd(3, '0')       // → '500'
+'hello'.padEnd(8, '-')   // → 'hello---'
+'hi'.padEnd(2)           // → 'hi'`,
+      explanation: {
+        en: "Use padEnd() to pad the end of a string with a fill character until it reaches the target length.",
+        es: "Usa padEnd() para rellenar el final de una cadena con un carácter hasta alcanzar la longitud objetivo.",
+      },
+    },
   },
   {
     slug: 'string-pad-end-truncated-fill',
@@ -140,6 +167,15 @@ padPattern('ab', 7) // → 'ab12312'
       'The fill string cycles: `"123"` → `"123123..."` truncated to fit the gap.',
     ],
     tags: ['String', 'String.prototype.padEnd', 'fill string', 'intermediate'],
+    usageExample: {
+      code: `'5'.padEnd(3, '0')       // → '500'
+'hello'.padEnd(8, '-')   // → 'hello---'
+'hi'.padEnd(2)           // → 'hi'`,
+      explanation: {
+        en: "Use padEnd() to pad the end of a string with a fill character until it reaches the target length.",
+        es: "Usa padEnd() para rellenar el final de una cadena con un carácter hasta alcanzar la longitud objetivo.",
+      },
+    },
   },
   {
     slug: 'string-pad-end-fixed-width',
@@ -174,5 +210,14 @@ formatRow('Name', 'Alice') // → 'Name           Alice'
       '`label.padEnd(15)` ensures the label takes exactly 15 characters.',
     ],
     tags: ['String', 'String.prototype.padEnd', 'formatting', 'intermediate'],
+    usageExample: {
+      code: `'5'.padEnd(3, '0')       // → '500'
+'hello'.padEnd(8, '-')   // → 'hello---'
+'hi'.padEnd(2)           // → 'hi'`,
+      explanation: {
+        en: "Use padEnd() to pad the end of a string with a fill character until it reaches the target length.",
+        es: "Usa padEnd() para rellenar el final de una cadena con un carácter hasta alcanzar la longitud objetivo.",
+      },
+    },
   },
 ]

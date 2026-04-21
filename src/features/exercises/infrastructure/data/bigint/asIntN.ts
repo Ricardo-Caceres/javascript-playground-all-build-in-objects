@@ -20,6 +20,13 @@ export const bigintAsIntNExercises: Exercise[] = [
     ],
     hints: ['Signed 8-bit max is 127; 255 wraps to -1 in two\'s complement.'],
     tags: ['bigint', 'asIntN', 'static-method'],
+    usageExample: {
+      code: `BigInt.asIntN(8, 255n)  // → -1n (wraps as signed 8-bit)`,
+      explanation: {
+        en: "BigInt.asIntN() wraps a BigInt to fit within a signed N-bit integer.",
+        es: "BigInt.asIntN() ajusta un BigInt para que quepa en un entero con signo de N bits.",
+      },
+    },
   },
   {
     slug: 'bigint-asIntN-2',
@@ -40,6 +47,13 @@ export const bigintAsIntNExercises: Exercise[] = [
     ],
     hints: ['Values within -128..127 are returned unchanged.'],
     tags: ['bigint', 'asIntN', 'static-method'],
+    usageExample: {
+      code: `BigInt.asIntN(4, 7n)  // → 7n`,
+      explanation: {
+        en: "If the value fits in N bits, asIntN() returns it unchanged.",
+        es: "Si el valor cabe en N bits, asIntN() lo devuelve sin cambios.",
+      },
+    },
   },
   {
     slug: 'bigint-asIntN-3',
@@ -60,6 +74,13 @@ export const bigintAsIntNExercises: Exercise[] = [
     ],
     hints: ['Signed 4-bit range is -8..7.'],
     tags: ['bigint', 'asIntN', 'static-method'],
+    usageExample: {
+      code: `BigInt.asIntN(8, 128n)  // → -128n`,
+      explanation: {
+        en: "Values that overflow wrap around like signed integer overflow.",
+        es: "Los valores que desbordan se envuelven como un desbordamiento de entero con signo.",
+      },
+    },
   },
   {
     slug: 'bigint-asIntN-4',
@@ -80,6 +101,13 @@ export const bigintAsIntNExercises: Exercise[] = [
     ],
     hints: ['asIntN always returns a bigint.'],
     tags: ['bigint', 'asIntN', 'typeof'],
+    usageExample: {
+      code: `BigInt.asIntN(1, 1n)  // → -1n`,
+      explanation: {
+        en: "A 1-bit signed integer can only represent 0 or -1.",
+        es: "Un entero con signo de 1 bit solo puede representar 0 o -1.",
+      },
+    },
   },
   {
     slug: 'bigint-asIntN-5',
@@ -100,5 +128,12 @@ export const bigintAsIntNExercises: Exercise[] = [
     ],
     hints: ['Signed 8-bit maximum is 127; 128 becomes -128.'],
     tags: ['bigint', 'asIntN', 'static-method'],
+    usageExample: {
+      code: `BigInt.asIntN(64, 2n ** 63n)  // → -9223372036854775808n`,
+      explanation: {
+        en: "Use asIntN(64, ...) to simulate 64-bit signed integer overflow behavior.",
+        es: "Usa asIntN(64, ...) para simular el comportamiento de desbordamiento de entero de 64 bits con signo.",
+      },
+    },
   },
 ]

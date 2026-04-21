@@ -38,6 +38,16 @@ export const structuredCloneExercises: Exercise[] = [
     ],
     hints: ['structuredClone() performs a deep copy'],
     tags: [],
+    usageExample: {
+      code: `const obj = { a: 1, b: { c: 2 } }
+const clone = structuredClone(obj)
+clone.b.c = 99
+obj.b.c  // → 2 (original unchanged)`,
+      explanation: {
+        en: "structuredClone() creates a deep clone so modifying the copy does not affect the original.",
+        es: "structuredClone() crea una copia profunda; modificar la copia no afecta al original.",
+      },
+    },
   },
   {
     slug: 'structuredclone-nested-object',
@@ -76,6 +86,16 @@ export const structuredCloneExercises: Exercise[] = [
     ],
     hints: ['structuredClone deep-copies all nested levels'],
     tags: [],
+    usageExample: {
+      code: `const arr = [[1, 2], [3, 4]]
+const copy = structuredClone(arr)
+copy[0][0] = 99
+arr[0][0]  // → 1`,
+      explanation: {
+        en: "Use structuredClone() to deep-copy nested arrays without shared references.",
+        es: "Usa structuredClone() para copiar profundamente arreglos anidados sin referencias compartidas.",
+      },
+    },
   },
   {
     slug: 'structuredclone-array',
@@ -114,6 +134,15 @@ export const structuredCloneExercises: Exercise[] = [
     ],
     hints: ['structuredClone works with arrays and nested arrays'],
     tags: [],
+    usageExample: {
+      code: `const map = new Map([['key', 'value']])
+const clone = structuredClone(map)
+clone.get('key')  // → 'value'`,
+      explanation: {
+        en: "structuredClone() supports Maps, Sets, Dates, and other complex types that JSON.parse/stringify cannot handle.",
+        es: "structuredClone() admite Map, Set, Date y otros tipos complejos que JSON.parse/stringify no puede manejar.",
+      },
+    },
   },
   {
     slug: 'structuredclone-date',
@@ -152,6 +181,15 @@ export const structuredCloneExercises: Exercise[] = [
     ],
     hints: ['structuredClone supports Date objects'],
     tags: [],
+    usageExample: {
+      code: `const date = new Date('2024-01-01')
+const clone = structuredClone(date)
+clone instanceof Date  // → true`,
+      explanation: {
+        en: "Unlike JSON serialization, structuredClone() preserves Date objects as Date instances.",
+        es: "A diferencia de la serialización JSON, structuredClone() preserva los objetos Date como instancias Date.",
+      },
+    },
   },
   {
     slug: 'structuredclone-map',
@@ -190,5 +228,14 @@ export const structuredCloneExercises: Exercise[] = [
     ],
     hints: ['structuredClone supports Map objects'],
     tags: [],
+    usageExample: {
+      code: `const set = new Set([1, 2, 3])
+const clone = structuredClone(set)
+clone.has(2)  // → true`,
+      explanation: {
+        en: "structuredClone() can deep-clone Set objects while preserving their type.",
+        es: "structuredClone() puede clonar profundamente objetos Set preservando su tipo.",
+      },
+    },
   },
 ]

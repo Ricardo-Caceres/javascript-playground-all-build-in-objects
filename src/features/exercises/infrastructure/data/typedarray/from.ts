@@ -39,6 +39,14 @@ export const typedArrayFromExercises: Exercise[] = [
     ],
     hints: ['Use Int32Array.from(array)'],
     tags: [],
+    usageExample: {
+      code: `const arr = Int32Array.from([10, 20, 30]);
+// Int32Array [10, 20, 30]`,
+      explanation: {
+        en: "TypedArray.from() creates a TypedArray from an iterable or array-like.",
+        es: "TypedArray.from() crea un TypedArray desde un iterable o array-like.",
+      },
+    },
   },
   {
     slug: 'typedarray-from-float-array',
@@ -78,6 +86,14 @@ export const typedArrayFromExercises: Exercise[] = [
     ],
     hints: ['Use Float64Array.from(array)'],
     tags: [],
+    usageExample: {
+      code: `const floats = Float64Array.from([1.1, 2.2, 3.3]);
+// Float64Array [1.1, 2.2, 3.3]`,
+      explanation: {
+        en: "Use Float64Array.from() to work with decimal (floating-point) numbers.",
+        es: "Usa Float64Array.from() para trabajar con números decimales (punto flotante).",
+      },
+    },
   },
   {
     slug: 'typedarray-from-with-map',
@@ -117,6 +133,14 @@ export const typedArrayFromExercises: Exercise[] = [
     ],
     hints: ['Int32Array.from(array, x => x * 2)'],
     tags: [],
+    usageExample: {
+      code: `const doubled = Int32Array.from([1, 2, 3], x => x * 2);
+// Int32Array [2, 4, 6]`,
+      explanation: {
+        en: "Pass a map function as the second argument to transform values during creation.",
+        es: "Pasa una función map como segundo argumento para transformar valores al crear el array.",
+      },
+    },
   },
   {
     slug: 'typedarray-from-string',
@@ -156,6 +180,14 @@ export const typedArrayFromExercises: Exercise[] = [
     ],
     hints: ['Use Uint8Array.from(str, x => parseInt(x))'],
     tags: [],
+    usageExample: {
+      code: `const bytes = Uint8Array.from('ABC', c => c.charCodeAt(0));
+// Uint8Array [65, 66, 67]`,
+      explanation: {
+        en: "Convert string characters to their byte codes using charCodeAt.",
+        es: "Convierte caracteres de cadena a sus códigos de byte usando charCodeAt.",
+      },
+    },
   },
   {
     slug: 'typedarray-from-array-like-object',
@@ -195,5 +227,13 @@ export const typedArrayFromExercises: Exercise[] = [
     ],
     hints: ['Use Int32Array.from({length: n}, (_, i) => i * 10)'],
     tags: [],
+    usageExample: {
+      code: `const arr = Int32Array.from({ length: 3, 0: 10, 1: 20, 2: 30 });
+// Int32Array [10, 20, 30]`,
+      explanation: {
+        en: "Array-like objects with a length property work with TypedArray.from().",
+        es: "Los objetos array-like con propiedad length funcionan con TypedArray.from().",
+      },
+    },
   },
 ]

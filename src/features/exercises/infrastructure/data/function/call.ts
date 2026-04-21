@@ -39,6 +39,14 @@ function callGreet(): string {
       'Pass the object as the first argument to `call()`.',
     ],
     tags: ['Function', 'call', 'this', 'beginner'],
+    usageExample: {
+      code: `function greet() { return this.name }
+greet.call({ name: 'Bob' })  // → 'Bob'`,
+      explanation: {
+        en: "call() invokes a function immediately with a specified this value.",
+        es: "call() invoca una función inmediatamente con un valor this especificado.",
+      },
+    },
   },
   {
     slug: 'function-call-with-args',
@@ -78,6 +86,14 @@ function callAdd(): number {
       'Arguments come after the `thisArg`.',
     ],
     tags: ['Function', 'call', 'arguments', 'beginner'],
+    usageExample: {
+      code: `function add(a, b) { return a + b }
+add.call(null, 3, 4)  // → 7`,
+      explanation: {
+        en: "Pass arguments individually to call() after the this argument.",
+        es: "Pasa argumentos individualmente a call() después del argumento this.",
+      },
+    },
   },
   {
     slug: 'function-call-this-type',
@@ -110,6 +126,14 @@ When you pass an object as \`thisArg\`, \`this\` inside the function will be tha
       '`this` in a regular function is the `thisArg` passed to `call()`.',
     ],
     tags: ['Function', 'call', 'this', 'intermediate'],
+    usageExample: {
+      code: `const arr = [1, 2, 3]
+Math.max.call(null, ...arr)  // → 3`,
+      explanation: {
+        en: "Use call() to invoke built-in methods with a custom this or argument list.",
+        es: "Usa call() para invocar métodos integrados con un this o lista de argumentos personalizada.",
+      },
+    },
   },
   {
     slug: 'function-call-array-push',
@@ -144,6 +168,16 @@ You can borrow built-in array methods for array-like objects using \`call()\`.
       '`[].push.call(target, value)` calls `Array.prototype.push` on `target`.',
     ],
     tags: ['Function', 'call', 'Array', 'intermediate'],
+    usageExample: {
+      code: `function Point(x, y) { this.x = x; this.y = y }
+const p = {}
+Point.call(p, 1, 2)
+p  // → { x: 1, y: 2 }`,
+      explanation: {
+        en: "call() is used to invoke a constructor function on an existing object.",
+        es: "call() se usa para invocar una función constructora en un objeto existente.",
+      },
+    },
   },
   {
     slug: 'function-call-math-max',
@@ -174,5 +208,14 @@ You can borrow built-in array methods for array-like objects using \`call()\`.
       '`Math.max` does not use `this`, so pass `null` as `thisArg`.',
     ],
     tags: ['Function', 'call', 'Math', 'beginner'],
+    usageExample: {
+      code: `const obj = { val: 5 }
+function double() { return this.val * 2 }
+double.call(obj)  // → 10`,
+      explanation: {
+        en: "call() is identical to apply() except arguments are passed individually.",
+        es: "call() es idéntico a apply() excepto que los argumentos se pasan individualmente.",
+      },
+    },
   },
 ]

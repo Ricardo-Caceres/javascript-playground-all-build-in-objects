@@ -19,6 +19,14 @@ export const urlSearchParamsConstructorExercises: Exercise[] = [
     ],
     hints: ['Pass a query string (without the leading ?) to the constructor'],
     tags: ['URLSearchParams', 'constructor', 'string'],
+    usageExample: {
+      code: `const p = new URLSearchParams('a=1&b=2')
+p.get('a')  // → '1'`,
+      explanation: {
+        en: "URLSearchParams parses query strings into key-value pairs.",
+        es: "URLSearchParams analiza las cadenas de consulta en pares clave-valor.",
+      },
+    },
   },
   {
     slug: 'urlsearchparams-constructor-2',
@@ -38,6 +46,14 @@ export const urlSearchParamsConstructorExercises: Exercise[] = [
     ],
     hints: ['Object values must be strings when using object init'],
     tags: ['URLSearchParams', 'constructor', 'object'],
+    usageExample: {
+      code: `const p = new URLSearchParams({ name: 'Ana', age: '30' })
+p.toString()  // → 'name=Ana&age=30'`,
+      explanation: {
+        en: "Pass an object to URLSearchParams to build a query string from key-value pairs.",
+        es: "Pasa un objeto a URLSearchParams para construir una cadena de consulta a partir de pares clave-valor.",
+      },
+    },
   },
   {
     slug: 'urlsearchparams-constructor-3',
@@ -57,6 +73,14 @@ export const urlSearchParamsConstructorExercises: Exercise[] = [
     ],
     hints: ['Each sub-array must have exactly two elements: [key, value]'],
     tags: ['URLSearchParams', 'constructor', 'array'],
+    usageExample: {
+      code: `const p = new URLSearchParams([['x', '1'], ['y', '2']])
+p.get('x')  // → '1'`,
+      explanation: {
+        en: "Initialize URLSearchParams with an array of [key, value] pairs.",
+        es: "Inicializa URLSearchParams con un arreglo de pares [clave, valor].",
+      },
+    },
   },
   {
     slug: 'urlsearchparams-constructor-4',
@@ -76,6 +100,13 @@ export const urlSearchParamsConstructorExercises: Exercise[] = [
     ],
     hints: ['An empty constructor creates params with no entries'],
     tags: ['URLSearchParams', 'constructor', 'empty'],
+    usageExample: {
+      code: `new URLSearchParams('?a=1').get('a')  // → '1' (leading ? is stripped)`,
+      explanation: {
+        en: "URLSearchParams automatically strips the leading '?' from query strings.",
+        es: "URLSearchParams elimina automáticamente el '?' inicial de las cadenas de consulta.",
+      },
+    },
   },
   {
     slug: 'urlsearchparams-constructor-5',
@@ -95,5 +126,12 @@ export const urlSearchParamsConstructorExercises: Exercise[] = [
     ],
     hints: ['Passing url.searchParams to the URLSearchParams constructor creates a snapshot — mutations to the copy do not affect the original URL.'],
     tags: ['URLSearchParams', 'constructor', 'copy'],
+    usageExample: {
+      code: `new URLSearchParams() instanceof URLSearchParams  // → true`,
+      explanation: {
+        en: "URLSearchParams instances can be checked with instanceof.",
+        es: "Las instancias de URLSearchParams se pueden verificar con instanceof.",
+      },
+    },
   },
 ]

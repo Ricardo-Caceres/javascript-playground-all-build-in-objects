@@ -19,6 +19,14 @@ export const eventTargetConstructorExercises: Exercise[] = [
     ],
     hints: ['EventTarget is the base class for all DOM event-capable objects'],
     tags: ['EventTarget', 'constructor'],
+    usageExample: {
+      code: `const et = new EventTarget()
+et instanceof EventTarget  // → true`,
+      explanation: {
+        en: "EventTarget is the base class for objects that can receive events.",
+        es: "EventTarget es la clase base para objetos que pueden recibir eventos.",
+      },
+    },
   },
   {
     slug: 'eventtarget-constructor-2',
@@ -38,6 +46,15 @@ export const eventTargetConstructorExercises: Exercise[] = [
     ],
     hints: ['All three event methods are inherited from the EventTarget prototype'],
     tags: ['EventTarget', 'constructor', 'addEventListener'],
+    usageExample: {
+      code: `const et = new EventTarget()
+et.addEventListener('greet', e => console.log('hello'))
+et.dispatchEvent(new Event('greet'))  // → logs 'hello'`,
+      explanation: {
+        en: "EventTarget supports adding, removing, and dispatching events.",
+        es: "EventTarget soporta agregar, eliminar y despachar eventos.",
+      },
+    },
   },
   {
     slug: 'eventtarget-constructor-3',
@@ -57,6 +74,15 @@ export const eventTargetConstructorExercises: Exercise[] = [
     ],
     hints: ['removeEventListener removes a previously-added listener'],
     tags: ['EventTarget', 'constructor', 'removeEventListener'],
+    usageExample: {
+      code: `class MyEmitter extends EventTarget {}
+const em = new MyEmitter()
+em instanceof EventTarget  // → true`,
+      explanation: {
+        en: "Extend EventTarget to add event dispatch capabilities to any class.",
+        es: "Extiende EventTarget para agregar capacidades de despacho de eventos a cualquier clase.",
+      },
+    },
   },
   {
     slug: 'eventtarget-constructor-4',
@@ -76,6 +102,14 @@ export const eventTargetConstructorExercises: Exercise[] = [
     ],
     hints: ['dispatchEvent synchronously invokes all registered listeners for the given event'],
     tags: ['EventTarget', 'constructor', 'dispatchEvent'],
+    usageExample: {
+      code: `const et = new EventTarget()
+typeof et.addEventListener  // → 'function'`,
+      explanation: {
+        en: "EventTarget provides addEventListener, removeEventListener, and dispatchEvent.",
+        es: "EventTarget proporciona addEventListener, removeEventListener y dispatchEvent.",
+      },
+    },
   },
   {
     slug: 'eventtarget-constructor-5',
@@ -95,5 +129,12 @@ export const eventTargetConstructorExercises: Exercise[] = [
     ],
     hints: ['Objects are always truthy in JavaScript — only falsy primitives like null/undefined/0/"" are falsy'],
     tags: ['EventTarget', 'constructor'],
+    usageExample: {
+      code: `new EventTarget() === new EventTarget()  // → false`,
+      explanation: {
+        en: "Each EventTarget() call creates a new independent instance.",
+        es: "Cada llamada a EventTarget() crea una nueva instancia independiente.",
+      },
+    },
   },
 ]

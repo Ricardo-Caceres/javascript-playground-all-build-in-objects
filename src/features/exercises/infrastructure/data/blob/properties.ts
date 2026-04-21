@@ -19,6 +19,14 @@ export const blobPropertiesExercises: Exercise[] = [
     ],
     hints: ['ASCII characters take 1 byte each in UTF-8.'],
     tags: ['Blob', 'size', 'instance-property'],
+    usageExample: {
+      code: `const b = new Blob(['hello'])
+b.size  // → 5`,
+      explanation: {
+        en: "size returns the number of bytes in the Blob.",
+        es: "size devuelve el número de bytes en el Blob.",
+      },
+    },
   },
   {
     slug: 'blob-properties-2',
@@ -38,6 +46,14 @@ export const blobPropertiesExercises: Exercise[] = [
     ],
     hints: ['Blob concatenates all parts; size is the total byte count.'],
     tags: ['Blob', 'size', 'instance-property', 'multi-part'],
+    usageExample: {
+      code: `const b = new Blob(['hi'], { type: 'text/html' })
+b.type  // → 'text/html'`,
+      explanation: {
+        en: "type returns the MIME type of the Blob, or empty string if not specified.",
+        es: "type devuelve el tipo MIME del Blob, o cadena vacía si no se especificó.",
+      },
+    },
   },
   {
     slug: 'blob-properties-3',
@@ -57,6 +73,14 @@ export const blobPropertiesExercises: Exercise[] = [
     ],
     hints: ["If you don't pass a type option, blob.type is an empty string."],
     tags: ['Blob', 'type', 'instance-property'],
+    usageExample: {
+      code: `new Blob().size   // → 0
+new Blob().type   // → ''`,
+      explanation: {
+        en: "An empty Blob has size 0 and an empty type string.",
+        es: "Un Blob vacío tiene tamaño 0 y una cadena de tipo vacía.",
+      },
+    },
   },
   {
     slug: 'blob-properties-4',
@@ -76,6 +100,14 @@ export const blobPropertiesExercises: Exercise[] = [
     ],
     hints: ['The type option stores a MIME type string on the Blob.'],
     tags: ['Blob', 'type', 'instance-property', 'MIME'],
+    usageExample: {
+      code: `const b = new Blob(['abc', 'def'])
+b.size  // → 6 (concatenated)`,
+      explanation: {
+        en: "Blob concatenates all parts and reports their combined size.",
+        es: "Blob concatena todas las partes e informa su tamaño combinado.",
+      },
+    },
   },
   {
     slug: 'blob-properties-5',
@@ -95,5 +127,13 @@ export const blobPropertiesExercises: Exercise[] = [
     ],
     hints: ['No parts → no bytes → size is 0.'],
     tags: ['Blob', 'size', 'instance-property', 'empty'],
+    usageExample: {
+      code: `const emoji = new Blob(['😀'])
+emoji.size  // → 4 (UTF-8 encoding uses 4 bytes)`,
+      explanation: {
+        en: "size counts bytes (UTF-8 encoded), not characters.",
+        es: "size cuenta bytes (codificados en UTF-8), no caracteres.",
+      },
+    },
   },
 ]

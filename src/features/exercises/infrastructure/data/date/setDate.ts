@@ -20,6 +20,15 @@ export const dateSetDateExercises: Exercise[] = [
     ],
     hints: ['setDate() sets the day-of-month (1-indexed); month and year are unchanged'],
     tags: ['Date', 'setDate', 'instance-method', 'mutation'],
+    usageExample: {
+      code: `const d = new Date(2024, 0, 15)
+d.setDate(1)
+d.getDate()  // → 1`,
+      explanation: {
+        en: 'Use setDate() to mutate the day-of-month of a Date object in place and get back the updated timestamp.',
+        es: 'Usa setDate() para mutar el día del mes de un objeto Date en su lugar y obtener el timestamp actualizado.',
+      },
+    },
   },
   {
     slug: 'date-setdate-2',
@@ -40,6 +49,15 @@ export const dateSetDateExercises: Exercise[] = [
     ],
     hints: ['Day 28 is safe to use for any month since even February has at least 28 days'],
     tags: ['Date', 'setDate', 'instance-method'],
+    usageExample: {
+      code: `const d = new Date(2024, 0, 15)
+d.setDate(1)
+d.getDate()  // → 1`,
+      explanation: {
+        en: 'Use setDate() to mutate the day-of-month of a Date object in place and get back the updated timestamp.',
+        es: 'Usa setDate() para mutar el día del mes de un objeto Date en su lugar y obtener el timestamp actualizado.',
+      },
+    },
   },
   {
     slug: 'date-setdate-3',
@@ -60,6 +78,15 @@ export const dateSetDateExercises: Exercise[] = [
     ],
     hints: ['setDate() returns the new timestamp in ms, just like setFullYear() and setMonth()'],
     tags: ['Date', 'setDate', 'instance-method', 'return-value'],
+    usageExample: {
+      code: `const d = new Date(2024, 0, 15)
+d.setDate(1)
+d.getDate()  // → 1`,
+      explanation: {
+        en: 'Use setDate() to mutate the day-of-month of a Date object in place and get back the updated timestamp.',
+        es: 'Usa setDate() para mutar el día del mes de un objeto Date en su lugar y obtener el timestamp actualizado.',
+      },
+    },
   },
   {
     slug: 'date-setdate-4',
@@ -80,6 +107,15 @@ export const dateSetDateExercises: Exercise[] = [
     ],
     hints: ['setDate() mutates in place — useful for rolling forward/back a date'],
     tags: ['Date', 'setDate', 'instance-method', 'mutation'],
+    usageExample: {
+      code: `const d = new Date(2024, 0, 15)
+d.setDate(1)
+d.getDate()  // → 1`,
+      explanation: {
+        en: 'Use setDate() to mutate the day-of-month of a Date object in place and get back the updated timestamp.',
+        es: 'Usa setDate() para mutar el día del mes de un objeto Date en su lugar y obtener el timestamp actualizado.',
+      },
+    },
   },
   {
     slug: 'date-setdate-5',
@@ -100,5 +136,14 @@ export const dateSetDateExercises: Exercise[] = [
     ],
     hints: ['January has 31 days; day 32 = day 1 of February. This overflow behaviour is by spec.'],
     tags: ['Date', 'setDate', 'instance-method', 'overflow'],
+    usageExample: {
+      code: `const d = new Date(2024, 0, 15)
+d.setDate(1)
+d.getDate()  // → 1`,
+      explanation: {
+        en: 'Use setDate() to mutate the day-of-month of a Date object in place and get back the updated timestamp.',
+        es: 'Usa setDate() para mutar el día del mes de un objeto Date en su lugar y obtener el timestamp actualizado.',
+      },
+    },
   },
 ]

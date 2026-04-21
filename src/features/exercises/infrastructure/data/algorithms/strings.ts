@@ -51,6 +51,17 @@ isAnagram('listen', 'silent') // true
       'Compare the two sorted strings.',
     ],
     tags: ['strings', 'anagram', 'character-sorting', 'normalization'],
+    usageExample: {
+      code: `function isAnagram(a, b) {
+  const sort = s => s.split('').sort().join('');
+  return sort(a) === sort(b);
+}
+isAnagram('listen', 'silent'); // true`,
+      explanation: {
+        en: "Check if two strings are anagrams by sorting their characters and comparing.",
+        es: "Comprueba si dos cadenas son anagramas ordenando sus caracteres y comparando.",
+      },
+    },
   },
   {
     slug: 'algo-string-2',
@@ -100,6 +111,16 @@ reverseWords('hello world') // "world hello"
       'This can be done in one line.',
     ],
     tags: ['strings', 'word-reversal', 'split-join', 'array-methods'],
+    usageExample: {
+      code: `function reverseWords(s) {
+  return s.split(' ').reverse().join(' ');
+}
+reverseWords('Hello World'); // 'World Hello'`,
+      explanation: {
+        en: "Reverse word order by splitting on spaces, reversing the array, and joining back.",
+        es: "Invierte el orden de palabras dividiendo por espacios, invirtiendo y uniendo de nuevo.",
+      },
+    },
   },
   {
     slug: 'algo-string-3',
@@ -150,6 +171,16 @@ countVowels('hello') // 2
       'Handle the case where `match()` returns null with `|| []`.',
     ],
     tags: ['strings', 'vowel-counting', 'regex', 'pattern-matching'],
+    usageExample: {
+      code: `function countVowels(s) {
+  return (s.match(/[aeiou]/gi) || []).length;
+}
+countVowels('Hello World'); // 3`,
+      explanation: {
+        en: "Count vowels using a regex match that captures all vowels case-insensitively.",
+        es: "Cuenta vocales con una coincidencia regex que captura todas las vocales sin distinción de mayúsculas.",
+      },
+    },
   },
   {
     slug: 'algo-string-4',
@@ -199,6 +230,16 @@ toSnakeCase('helloWorld') // "hello_world"
       'Return "_" + m.toLowerCase() to insert underscore and lowercase.',
     ],
     tags: ['strings', 'case-conversion', 'regex-replace', 'naming-conventions'],
+    usageExample: {
+      code: `function toSnakeCase(s) {
+  return s.replace(/([A-Z])/g, '_$1').toLowerCase();
+}
+toSnakeCase('camelCaseString'); // 'camel_case_string'`,
+      explanation: {
+        en: "Convert camelCase to snake_case by inserting underscores before capital letters.",
+        es: "Convierte camelCase a snake_case insertando guiones bajos antes de las letras mayúsculas.",
+      },
+    },
   },
   {
     slug: 'algo-string-5',
@@ -257,5 +298,18 @@ longestCommonPrefix(['flower', 'flow', 'flight']) // "fl"
       'Use `startsWith()` to check prefix match.',
     ],
     tags: ['strings', 'prefix', 'algorithm', 'string-comparison'],
+    usageExample: {
+      code: `function longestCommonPrefix(strs) {
+  if (!strs.length) return '';
+  let prefix = strs[0];
+  for (const s of strs) while (!s.startsWith(prefix)) prefix = prefix.slice(0, -1);
+  return prefix;
+}
+longestCommonPrefix(['flower', 'flow', 'flight']); // 'fl'`,
+      explanation: {
+        en: "Find the longest common prefix by progressively trimming the candidate string.",
+        es: "Encuentra el prefijo común más largo recortando progresivamente la cadena candidata.",
+      },
+    },
   },
 ]

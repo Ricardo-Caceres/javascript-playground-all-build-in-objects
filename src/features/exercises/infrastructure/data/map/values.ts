@@ -20,6 +20,16 @@ export const mapValuesExercises: Exercise[] = [
     ],
     hints: ['Spread the iterator with [...map.values()] to get an array of values'],
     tags: ['Map', 'values', 'iterator'],
+    usageExample: {
+      code: `const m = new Map([['a', 1], ['b', 2]])
+for (const v of m.values()) {
+  console.log(v) // 1, 2
+}`,
+      explanation: {
+        en: 'Use Map.values() to iterate over all values in insertion order.',
+        es: 'Usa Map.values() para iterar sobre todos los valores en orden de inserción.',
+      },
+    },
   },
   {
     slug: 'map-values-2',
@@ -40,6 +50,16 @@ export const mapValuesExercises: Exercise[] = [
     ],
     hints: ['values() yields values in the same order as keys() and entries()'],
     tags: ['Map', 'values', 'order'],
+    usageExample: {
+      code: `const m = new Map([['a', 1], ['b', 2]])
+for (const v of m.values()) {
+  console.log(v) // 1, 2
+}`,
+      explanation: {
+        en: 'Use Map.values() to iterate over all values in insertion order.',
+        es: 'Usa Map.values() para iterar sobre todos los valores en orden de inserción.',
+      },
+    },
   },
   {
     slug: 'map-values-3',
@@ -60,6 +80,16 @@ export const mapValuesExercises: Exercise[] = [
     ],
     hints: ['values() returns a MapIterator — an iterable iterator'],
     tags: ['Map', 'values', 'type'],
+    usageExample: {
+      code: `const m = new Map([['a', 1], ['b', 2]])
+for (const v of m.values()) {
+  console.log(v) // 1, 2
+}`,
+      explanation: {
+        en: 'Use Map.values() to iterate over all values in insertion order.',
+        es: 'Usa Map.values() para iterar sobre todos los valores en orden de inserción.',
+      },
+    },
   },
   {
     slug: 'map-values-4',
@@ -80,6 +110,16 @@ export const mapValuesExercises: Exercise[] = [
     ],
     hints: ['An empty Map has no values to iterate'],
     tags: ['Map', 'values', 'empty'],
+    usageExample: {
+      code: `const m = new Map([['a', 1], ['b', 2]])
+for (const v of m.values()) {
+  console.log(v) // 1, 2
+}`,
+      explanation: {
+        en: 'Use Map.values() to iterate over all values in insertion order.',
+        es: 'Usa Map.values() para iterar sobre todos los valores en orden de inserción.',
+      },
+    },
   },
   {
     slug: 'map-values-5',
@@ -100,5 +140,15 @@ export const mapValuesExercises: Exercise[] = [
     ],
     hints: ['Map values can be any JavaScript value, including null and undefined'],
     tags: ['Map', 'values', 'mixedTypes'],
+    usageExample: {
+      code: `const m = new Map([['a', 1], ['b', 2]])
+for (const v of m.values()) {
+  console.log(v) // 1, 2
+}`,
+      explanation: {
+        en: 'Use Map.values() to iterate over all values in insertion order.',
+        es: 'Usa Map.values() para iterar sobre todos los valores en orden de inserción.',
+      },
+    },
   },
 ]

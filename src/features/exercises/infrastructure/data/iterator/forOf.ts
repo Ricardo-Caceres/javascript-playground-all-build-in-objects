@@ -19,6 +19,18 @@ export const iteratorForOfExercises: Exercise[] = [
       { description: 'typeof arr is object', assertion: 'expect(typeof arr).toBe("object")' }
     ],
     tags: [],
+    usageExample: {
+      code: `for (const x of [10, 20, 30]) {
+  console.log(x)
+}
+// → 10
+// → 20
+// → 30`,
+      explanation: {
+        en: 'for...of iterates over any iterable object using the iterator protocol to yield successive values.',
+        es: 'for...of itera sobre cualquier objeto iterable usando el protocolo iterador para producir valores sucesivos.',
+      },
+    },
   },
   {
     slug: 'iterator-forof-string',
@@ -38,6 +50,18 @@ export const iteratorForOfExercises: Exercise[] = [
       { description: 'typeof chars is object', assertion: 'expect(typeof chars).toBe("object")' }
     ],
     tags: [],
+    usageExample: {
+      code: `for (const x of [10, 20, 30]) {
+  console.log(x)
+}
+// → 10
+// → 20
+// → 30`,
+      explanation: {
+        en: 'for...of iterates over any iterable object using the iterator protocol to yield successive values.',
+        es: 'for...of itera sobre cualquier objeto iterable usando el protocolo iterador para producir valores sucesivos.',
+      },
+    },
   },
   {
     slug: 'iterator-forof-map',
@@ -57,6 +81,18 @@ export const iteratorForOfExercises: Exercise[] = [
       { description: 'typeof keys is object', assertion: 'expect(typeof keys).toBe("object")' }
     ],
     tags: [],
+    usageExample: {
+      code: `for (const x of [10, 20, 30]) {
+  console.log(x)
+}
+// → 10
+// → 20
+// → 30`,
+      explanation: {
+        en: 'for...of iterates over any iterable object using the iterator protocol to yield successive values.',
+        es: 'for...of itera sobre cualquier objeto iterable usando el protocolo iterador para producir valores sucesivos.',
+      },
+    },
   },
   {
     slug: 'iterator-forof-set',
@@ -76,6 +112,18 @@ export const iteratorForOfExercises: Exercise[] = [
       { description: 'typeof vals is object', assertion: 'expect(typeof vals).toBe("object")' }
     ],
     tags: [],
+    usageExample: {
+      code: `for (const x of [10, 20, 30]) {
+  console.log(x)
+}
+// → 10
+// → 20
+// → 30`,
+      explanation: {
+        en: 'for...of iterates over any iterable object using the iterator protocol to yield successive values.',
+        es: 'for...of itera sobre cualquier objeto iterable usando el protocolo iterador para producir valores sucesivos.',
+      },
+    },
   },
   {
     slug: 'iterator-forof-sum',

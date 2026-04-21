@@ -35,6 +35,15 @@ function createUser(name: string, age: number): User {
     ],
     hints: ['Object shorthand: { name, age } is shorthand for { name: name, age: age }.'],
     tags: ['TypeScript', 'interface', 'structural-typing', 'beginner'],
+    usageExample: {
+      code: `interface User { name: string; age: number }
+const u: User = createUser('Alice', 30)
+// → { name: 'Alice', age: 30 }`,
+      explanation: {
+        en: 'An interface defines the required shape — any object with matching properties satisfies it.',
+        es: 'Una interfaz define la forma requerida: cualquier objeto con propiedades coincidentes la satisface.',
+      },
+    },
   },
   {
     slug: 'ts-interface-2',
@@ -71,6 +80,15 @@ function createPoint(x: number, y: number, z?: number): Point {
     ],
     hints: ['Check z !== undefined before including it, to avoid { x, y, z: undefined }.'],
     tags: ['TypeScript', 'interface', 'optional', 'beginner'],
+    usageExample: {
+      code: `interface Point { x: number; y: number; z?: number }
+createPoint(1, 2)      // → { x: 1, y: 2 }
+createPoint(1, 2, 3)   // → { x: 1, y: 2, z: 3 }`,
+      explanation: {
+        en: 'A ? suffix marks an interface property as optional — it may be omitted from the object.',
+        es: 'El sufijo ? marca una propiedad de interfaz como opcional; puede omitirse del objeto.',
+      },
+    },
   },
   {
     slug: 'ts-interface-3',
@@ -107,6 +125,15 @@ function createFrozenConfig(host: string, port: number): Readonly<Config> {
     ],
     hints: ['Object.freeze prevents property mutation at runtime.'],
     tags: ['TypeScript', 'interface', 'readonly', 'beginner'],
+    usageExample: {
+      code: `interface Config { readonly host: string; readonly port: number }
+const cfg = createFrozenConfig('localhost', 3000)
+Object.isFrozen(cfg)   // → true`,
+      explanation: {
+        en: 'readonly interface properties cannot be reassigned; Object.freeze enforces this at runtime.',
+        es: 'Las propiedades readonly no pueden reasignarse; Object.freeze lo impone en tiempo de ejecución.',
+      },
+    },
   },
   {
     slug: 'ts-interface-4',
@@ -140,6 +167,15 @@ d['hello'] // → 'world'
     ],
     hints: ['An empty object literal {} satisfies any index signature.'],
     tags: ['TypeScript', 'interface', 'index-signature', 'beginner'],
+    usageExample: {
+      code: `interface Dict { [key: string]: number }
+const d: Dict = { a: 1, b: 2 }
+d['c'] = 3`,
+      explanation: {
+        en: 'An index signature [key: string]: T allows any string key while enforcing a value type.',
+        es: 'Una firma de índice [key: string]: T permite cualquier clave string imponiendo un tipo de valor.',
+      },
+    },
   },
   {
     slug: 'ts-interface-5',
@@ -181,6 +217,17 @@ function processShape(shape: Shape): number {
     ],
     hints: ['After the if check, TypeScript knows exactly which shape you have — no cast needed.'],
     tags: ['TypeScript', 'interface', 'discriminated-union', 'intermediate'],
+    usageExample: {
+      code: `type Shape = { kind: 'circle'; r: number } | { kind: 'rect'; w: number; h: number }
+switch (shape.kind) {
+  case 'circle': return Math.PI * shape.r ** 2
+  case 'rect':   return shape.w * shape.h
+}`,
+      explanation: {
+        en: 'A discriminated union uses a shared literal property to select the correct variant.',
+        es: 'Una unión discriminada usa una propiedad literal compartida para seleccionar la variante correcta.',
+      },
+    },
   },
   {
     slug: 'ts-interface-6',
@@ -218,6 +265,15 @@ function createDog(name: string, breed: string): Dog {
     ],
     hints: ['The Dog interface inherits name and sound from Animal.'],
     tags: ['TypeScript', 'interface', 'extends', 'beginner'],
+    usageExample: {
+      code: `interface Animal { name: string }
+interface Dog extends Animal { breed: string }
+const d: Dog = { name: 'Rex', breed: 'Labrador' }`,
+      explanation: {
+        en: 'Interface extends inherits all properties from a base interface and adds new ones.',
+        es: 'La extensión de interfaz hereda todas las propiedades de la interfaz base y añade nuevas.',
+      },
+    },
   },
   {
     slug: 'ts-interface-7',
@@ -249,6 +305,14 @@ mergeObjects({ a: 1 }, { b: 2 })  // → { a: 1, b: 2 }
     ],
     hints: ['Object.assign({}, a, b) spreads both objects into a fresh one.'],
     tags: ['TypeScript', 'interface', 'intersection', 'intermediate'],
+    usageExample: {
+      code: `type AB = { a: number } & { b: string }
+const v: AB = { a: 1, b: 'hello' }  // must have both a and b`,
+      explanation: {
+        en: 'An intersection type (A & B) requires an object to satisfy all constituent types simultaneously.',
+        es: 'Un tipo intersección (A & B) requiere que un objeto satisfaga todos los tipos constituyentes.',
+      },
+    },
   },
   {
     slug: 'ts-interface-8',
@@ -286,6 +350,16 @@ parseValue('true')  // → true
     ],
     hints: ['Number(str) returns NaN for non-numeric strings — isNaN() can detect this.'],
     tags: ['TypeScript', 'interface', 'union', 'intermediate'],
+    usageExample: {
+      code: `type Input = string | number
+function toString(x: Input): string {
+  return typeof x === 'string' ? x : x.toString()
+}`,
+      explanation: {
+        en: 'A union type A | B accepts either type; narrowing with typeof enables type-specific operations.',
+        es: 'Un tipo unión A | B acepta cualquiera de los tipos; typeof permite operaciones específicas.',
+      },
+    },
   },
   {
     slug: 'ts-interface-9',
@@ -323,6 +397,15 @@ const compareByAge: Comparator<Person> = (a, b) => {
     ],
     hints: ['Array.sort uses negative/zero/positive to determine order.'],
     tags: ['TypeScript', 'interface', 'function-type', 'beginner'],
+    usageExample: {
+      code: `interface Transformer { (input: string): string }
+const upper: Transformer = s => s.toUpperCase()
+upper('hello')   // → 'HELLO'`,
+      explanation: {
+        en: 'A call signature in an interface declares the shape of a function type with full TypeScript checking.',
+        es: 'Una firma de llamada en una interfaz declara la forma de un tipo función con verificación TypeScript.',
+      },
+    },
   },
   {
     slug: 'ts-interface-10',
@@ -359,6 +442,17 @@ function createTreeNode<T>(value: T, children: TreeNode<T>[] = []): TreeNode<T> 
     ],
     hints: ['Default parameter values are evaluated per call, so [] is safe here.'],
     tags: ['TypeScript', 'interface', 'recursive', 'intermediate'],
+    usageExample: {
+      code: `interface TreeNode<T> {
+  value: T
+  children: TreeNode<T>[]
+}
+const root: TreeNode<number> = { value: 1, children: [] }`,
+      explanation: {
+        en: 'A recursive interface refers to itself, enabling tree and nested data structures.',
+        es: 'Una interfaz recursiva se refiere a sí misma, habilitando estructuras de datos anidadas como árboles.',
+      },
+    },
   },
   {
     slug: 'ts-interface-11',
@@ -394,6 +488,16 @@ function createPrintable(label: string, value: unknown): Printable {
     ],
     hints: ['Template literals automatically call toString() on values.'],
     tags: ['TypeScript', 'interface', 'method', 'beginner'],
+    usageExample: {
+      code: `interface Counter { count: number; increment(): void; decrement(): void }
+const c = createCounter()
+c.increment()
+c.count   // → 1`,
+      explanation: {
+        en: 'Interface method signatures declare both the function shape and ensure objects provide implementations.',
+        es: 'Las firmas de métodos en interfaces declaran la forma de la función y aseguran que los objetos la provean.',
+      },
+    },
   },
   {
     slug: 'ts-interface-12',
@@ -430,6 +534,16 @@ function createPair<T, U>(first: T, second: U): Pair<T, U> {
     ],
     hints: ['Tuples are just arrays. [first, second] is all you need.'],
     tags: ['TypeScript', 'interface', 'tuple', 'beginner'],
+    usageExample: {
+      code: `type Pair = [string, number]
+const entry: Pair = ['age', 30]
+entry[0]   // → 'age'  (string)
+entry[1]   // → 30     (number)`,
+      explanation: {
+        en: 'Tuple types enforce fixed-length arrays with specific types at each position.',
+        es: 'Los tipos tupla imponen arrays de longitud fija con tipos específicos en cada posición.',
+      },
+    },
   },
   {
     slug: 'ts-interface-13',
@@ -466,6 +580,16 @@ function createUserId(id: string): UserId {
     ],
     hints: ['At runtime, a branded type is just the underlying primitive. The brand only exists at the type level.'],
     tags: ['TypeScript', 'interface', 'brand', 'intermediate'],
+    usageExample: {
+      code: `type UserId = string & { readonly __brand: 'UserId' }
+function createUserId(id: string): UserId {
+  return id as UserId
+}`,
+      explanation: {
+        en: 'A branded type uses an intersection with a phantom property to distinguish nominally equal types.',
+        es: 'Un tipo marcado usa una intersección con una propiedad fantasma para distinguir tipos nominalmente iguales.',
+      },
+    },
   },
   {
     slug: 'ts-interface-14',
@@ -496,6 +620,15 @@ Object.isFrozen(arr)  // → true
     ],
     hints: ['Spread the array first so the original is not frozen.'],
     tags: ['TypeScript', 'interface', 'readonly-array', 'beginner'],
+    usageExample: {
+      code: `interface Config { readonly options: ReadonlyArray<string> }
+const c: Config = { options: ['a', 'b', 'c'] }
+// c.options.push('d')  → Error: read-only array`,
+      explanation: {
+        en: 'ReadonlyArray<T> prevents mutation methods like push and splice on array-type properties.',
+        es: 'ReadonlyArray<T> impide métodos de mutación como push y splice en propiedades de tipo array.',
+      },
+    },
   },
   {
     slug: 'ts-interface-15',
@@ -534,6 +667,16 @@ function getUserDisplayName(user: UserProfile): string {
     ],
     hints: ['?? only falls back on null/undefined, not empty string.'],
     tags: ['TypeScript', 'interface', 'optional-chaining', 'nullish-coalescing', 'intermediate'],
+    usageExample: {
+      code: `interface Profile { displayName?: string; username: string }
+function getName(p: Profile): string {
+  return p.displayName ?? p.username
+}`,
+      explanation: {
+        en: 'The nullish coalescing operator (??) provides a fallback when an optional property is undefined.',
+        es: 'El operador nullish coalescing (??) proporciona un valor alternativo cuando una propiedad opcional es undefined.',
+      },
+    },
   },
   {
     slug: 'ts-interface-16',
@@ -575,6 +718,17 @@ function isConformingShape(value: unknown): value is HasName {
     ],
     hints: ['Check object, not null, then property existence, then property type.'],
     tags: ['TypeScript', 'interface', 'structural-typing', 'runtime-guard', 'intermediate'],
+    usageExample: {
+      code: `interface Serializable { serialize(): string }
+function isSerializable(x: unknown): x is Serializable {
+  return typeof x === 'object' && x !== null &&
+    typeof (x as any).serialize === 'function'
+}`,
+      explanation: {
+        en: 'TypeScript\'s structural typing means any object with the right methods satisfies an interface at runtime.',
+        es: 'El tipado estructural de TypeScript significa que cualquier objeto con los métodos correctos satisface una interfaz.',
+      },
+    },
   },
   {
     slug: 'ts-interface-17',
@@ -628,6 +782,19 @@ function createStack<T>(): Stack<T> {
     ],
     hints: ['Use a getter for size so it reflects the current array length.'],
     tags: ['TypeScript', 'interface', 'stack', 'closure', 'intermediate'],
+    usageExample: {
+      code: `function createStack<T>() {
+  const items: T[] = []
+  return {
+    push: (x: T) => items.push(x),
+    pop: () => items.pop(),
+  }
+}`,
+      explanation: {
+        en: 'Closures can implement interfaces without classes — returning an object with typed method signatures.',
+        es: 'Las closures pueden implementar interfaces sin clases, devolviendo un objeto con firmas de métodos tipadas.',
+      },
+    },
   },
   {
     slug: 'ts-interface-18',
@@ -662,6 +829,16 @@ function applyCallback<T, U>(value: T, callback: Transform<T, U>): U {
     ],
     hints: ['Just call callback(value).'],
     tags: ['TypeScript', 'interface', 'function-type', 'beginner'],
+    usageExample: {
+      code: `interface Predicate<T> { (x: T): boolean }
+function keepIf<T>(arr: T[], pred: Predicate<T>): T[] {
+  return arr.filter(pred)
+}`,
+      explanation: {
+        en: 'Passing a typed function interface as an argument enforces the callback signature at compile time.',
+        es: 'Pasar una interfaz de función tipada como argumento impone la firma del callback en tiempo de compilación.',
+      },
+    },
   },
   {
     slug: 'ts-interface-19',
@@ -709,6 +886,15 @@ function processStatus(status: Status): string {
     ],
     hints: ['TypeScript narrows status inside each case branch.'],
     tags: ['TypeScript', 'interface', 'discriminated-union', 'switch', 'intermediate'],
+    usageExample: {
+      code: `type Dir = 'N' | 'S' | 'E' | 'W'
+// switch with default assigned to never
+// will cause a compile error if any member is unhandled`,
+      explanation: {
+        en: 'An exhaustive switch assigns the default to never, causing a compile error if a union member is unhandled.',
+        es: 'Un switch exhaustivo asigna el default a never, causando un error de compilación si falta un miembro.',
+      },
+    },
   },
   {
     slug: 'ts-interface-20',
@@ -752,5 +938,14 @@ function createContainer<T>(value: T): Container<T> {
     ],
     hints: ['map should call createContainer recursively to return a new Container.'],
     tags: ['TypeScript', 'interface', 'generic', 'functor', 'advanced'],
+    usageExample: {
+      code: `interface Container<T> { map<U>(f: (x: T) => U): Container<U> }
+const box: Container<number> = createBox(5)
+box.map(x => x.toString())   // Container<string>`,
+      explanation: {
+        en: 'A generic Container interface with a map method models the Functor pattern from functional programming.',
+        es: 'Una interfaz genérica Container con un método map modela el patrón Functor de la programación funcional.',
+      },
+    },
   },
 ]

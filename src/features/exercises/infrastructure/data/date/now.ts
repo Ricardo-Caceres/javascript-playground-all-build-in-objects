@@ -20,6 +20,14 @@ export const dateNowExercises: Exercise[] = [
     ],
     hints: ['Date.now() is the static shorthand for getting the current timestamp in ms'],
     tags: ['Date', 'now', 'static-method', 'timestamp'],
+    usageExample: {
+      code: `const ts = Date.now()  // e.g. 1705276800000
+typeof ts  // → 'number'`,
+      explanation: {
+        en: 'Use Date.now() to get the current time as milliseconds since the Unix epoch without creating a Date object.',
+        es: 'Usa Date.now() para obtener la hora actual en milisegundos desde el epoch Unix sin crear un objeto Date.',
+      },
+    },
   },
   {
     slug: 'date-now-2',
@@ -40,6 +48,14 @@ export const dateNowExercises: Exercise[] = [
     ],
     hints: ['Any time after 1970-01-01T00:00:00Z gives a positive timestamp'],
     tags: ['Date', 'now', 'static-method'],
+    usageExample: {
+      code: `const ts = Date.now()  // e.g. 1705276800000
+typeof ts  // → 'number'`,
+      explanation: {
+        en: 'Use Date.now() to get the current time as milliseconds since the Unix epoch without creating a Date object.',
+        es: 'Usa Date.now() para obtener la hora actual en milisegundos desde el epoch Unix sin crear un objeto Date.',
+      },
+    },
   },
   {
     slug: 'date-now-3',
@@ -60,6 +76,14 @@ export const dateNowExercises: Exercise[] = [
     ],
     hints: ['Timestamps are counted in whole milliseconds — no fractional part'],
     tags: ['Date', 'now', 'static-method', 'integer'],
+    usageExample: {
+      code: `const ts = Date.now()  // e.g. 1705276800000
+typeof ts  // → 'number'`,
+      explanation: {
+        en: 'Use Date.now() to get the current time as milliseconds since the Unix epoch without creating a Date object.',
+        es: 'Usa Date.now() para obtener la hora actual en milisegundos desde el epoch Unix sin crear un objeto Date.',
+      },
+    },
   },
   {
     slug: 'date-now-4',
@@ -80,6 +104,14 @@ export const dateNowExercises: Exercise[] = [
     ],
     hints: ['Compare Date.now() with a fixed past timestamp using >='],
     tags: ['Date', 'now', 'static-method', 'comparison'],
+    usageExample: {
+      code: `const ts = Date.now()  // e.g. 1705276800000
+typeof ts  // → 'number'`,
+      explanation: {
+        en: 'Use Date.now() to get the current time as milliseconds since the Unix epoch without creating a Date object.',
+        es: 'Usa Date.now() para obtener la hora actual en milisegundos desde el epoch Unix sin crear un objeto Date.',
+      },
+    },
   },
   {
     slug: 'date-now-5',
@@ -100,5 +132,13 @@ export const dateNowExercises: Exercise[] = [
     ],
     hints: ['Date.now() is the preferred static shorthand — same result as new Date().getTime()'],
     tags: ['Date', 'now', 'static-method', 'getTime'],
+    usageExample: {
+      code: `const ts = Date.now()  // e.g. 1705276800000
+typeof ts  // → 'number'`,
+      explanation: {
+        en: 'Use Date.now() to get the current time as milliseconds since the Unix epoch without creating a Date object.',
+        es: 'Usa Date.now() para obtener la hora actual en milisegundos desde el epoch Unix sin crear un objeto Date.',
+      },
+    },
   },
 ]

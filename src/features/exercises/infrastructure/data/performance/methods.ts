@@ -19,6 +19,16 @@ export const performanceMethodsExercises: Exercise[] = [
     ],
     hints: ['performance.now() returns DOMHighResTimeStamp — a floating-point number'],
     tags: ['performance', 'now', 'instance-method'],
+    usageExample: {
+      code: `const t0 = performance.now()
+doWork()
+const t1 = performance.now()
+console.log(t1 - t0, 'ms')`,
+      explanation: {
+        en: "performance.now() returns a high-resolution timestamp to measure elapsed time.",
+        es: "performance.now() devuelve un timestamp de alta resolución para medir el tiempo transcurrido.",
+      },
+    },
   },
   {
     slug: 'performance-methods-2',
@@ -38,6 +48,16 @@ export const performanceMethodsExercises: Exercise[] = [
     ],
     hints: ['The performance origin is the time the page or process started — always in the past'],
     tags: ['performance', 'now', 'instance-method'],
+    usageExample: {
+      code: `performance.mark('start')
+doWork()
+performance.mark('end')
+performance.measure('task', 'start', 'end')`,
+      explanation: {
+        en: "Use performance.mark() and measure() to create named timing benchmarks.",
+        es: "Usa performance.mark() y measure() para crear puntos de referencia de tiempo con nombre.",
+      },
+    },
   },
   {
     slug: 'performance-methods-3',
@@ -58,6 +78,14 @@ performance.mark('test-mark-3') instanceof PerformanceMark`,
     ],
     hints: ['performance.mark() was updated to return the created PerformanceMark in modern browsers'],
     tags: ['performance', 'mark', 'PerformanceMark', 'instance-method'],
+    usageExample: {
+      code: `performance.clearMarks()
+performance.clearMeasures()`,
+      explanation: {
+        en: "clearMarks() and clearMeasures() remove stored timing entries from the buffer.",
+        es: "clearMarks() y clearMeasures() eliminan las entradas de temporización almacenadas del búfer.",
+      },
+    },
   },
   {
     slug: 'performance-methods-4',
@@ -82,6 +110,14 @@ performance.getEntriesByName('m4').length`,
     ],
     hints: ['Always clearMarks before marking in tests to prevent entries accumulating across runs'],
     tags: ['performance', 'getEntriesByName', 'mark', 'instance-method'],
+    usageExample: {
+      code: `const entries = performance.getEntriesByName('task')
+entries[0].duration  // → elapsed ms`,
+      explanation: {
+        en: "getEntriesByName() retrieves the duration of a specific named performance measure.",
+        es: "getEntriesByName() recupera la duración de una medida de rendimiento con nombre específico.",
+      },
+    },
   },
   {
     slug: 'performance-methods-5',
@@ -106,5 +142,12 @@ performance.getEntriesByName('cm5').length`,
     ],
     hints: ['clearMarks() with no argument clears all marks; with a name, only that name is cleared'],
     tags: ['performance', 'clearMarks', 'instance-method'],
+    usageExample: {
+      code: `performance.getEntries().forEach(e => console.log(e.name, e.duration))`,
+      explanation: {
+        en: "getEntries() returns all recorded performance entries for inspection.",
+        es: "getEntries() devuelve todas las entradas de rendimiento registradas para inspección.",
+      },
+    },
   },
 ]

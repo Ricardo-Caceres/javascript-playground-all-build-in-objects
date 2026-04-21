@@ -20,6 +20,16 @@ export const setEntriesExercises: Exercise[] = [
     ],
     hints: ['Set.entries() yields [value, value] pairs for each value'],
     tags: ['Set', 'entries', 'structure'],
+    usageExample: {
+      code: `const s = new Set(['a', 'b'])
+for (const [key, val] of s.entries()) {
+  console.log(key, val) // 'a' 'a', then 'b' 'b'
+}`,
+      explanation: {
+        en: 'Use Set.entries() to iterate over [value, value] pairs; both elements are the same.',
+        es: 'Usa Set.entries() para iterar pares [valor, valor]; ambos elementos son iguales.',
+      },
+    },
   },
   {
     slug: 'set-entries-2',
@@ -40,6 +50,16 @@ export const setEntriesExercises: Exercise[] = [
     ],
     hints: ['Set entries are [v, v] pairs — unlike Map where they are [k, v]'],
     tags: ['Set', 'entries', 'sameValue'],
+    usageExample: {
+      code: `const s = new Set(['a', 'b'])
+for (const [key, val] of s.entries()) {
+  console.log(key, val) // 'a' 'a', then 'b' 'b'
+}`,
+      explanation: {
+        en: 'Use Set.entries() to iterate over [value, value] pairs; both elements are the same.',
+        es: 'Usa Set.entries() para iterar pares [valor, valor]; ambos elementos son iguales.',
+      },
+    },
   },
   {
     slug: 'set-entries-3',
@@ -60,6 +80,16 @@ export const setEntriesExercises: Exercise[] = [
     ],
     hints: ['Spread entries() to get the full list of [value, value] pairs'],
     tags: ['Set', 'entries', 'spread'],
+    usageExample: {
+      code: `const s = new Set(['a', 'b'])
+for (const [key, val] of s.entries()) {
+  console.log(key, val) // 'a' 'a', then 'b' 'b'
+}`,
+      explanation: {
+        en: 'Use Set.entries() to iterate over [value, value] pairs; both elements are the same.',
+        es: 'Usa Set.entries() para iterar pares [valor, valor]; ambos elementos son iguales.',
+      },
+    },
   },
   {
     slug: 'set-entries-4',
@@ -80,6 +110,16 @@ export const setEntriesExercises: Exercise[] = [
     ],
     hints: ['An empty Set has no entries to iterate'],
     tags: ['Set', 'entries', 'empty'],
+    usageExample: {
+      code: `const s = new Set(['a', 'b'])
+for (const [key, val] of s.entries()) {
+  console.log(key, val) // 'a' 'a', then 'b' 'b'
+}`,
+      explanation: {
+        en: 'Use Set.entries() to iterate over [value, value] pairs; both elements are the same.',
+        es: 'Usa Set.entries() para iterar pares [valor, valor]; ambos elementos son iguales.',
+      },
+    },
   },
   {
     slug: 'set-entries-5',
@@ -100,5 +140,15 @@ export const setEntriesExercises: Exercise[] = [
     ],
     hints: ['entries() respects insertion order, same as values() and keys()'],
     tags: ['Set', 'entries', 'order'],
+    usageExample: {
+      code: `const s = new Set(['a', 'b'])
+for (const [key, val] of s.entries()) {
+  console.log(key, val) // 'a' 'a', then 'b' 'b'
+}`,
+      explanation: {
+        en: 'Use Set.entries() to iterate over [value, value] pairs; both elements are the same.',
+        es: 'Usa Set.entries() para iterar pares [valor, valor]; ambos elementos son iguales.',
+      },
+    },
   },
 ]

@@ -20,6 +20,16 @@ export const regexpGlobalExercises: Exercise[] = [
     ],
     hints: ['The global flag g allows matching all occurrences, not just the first'],
     tags: ['RegExp', 'global', 'property'],
+    usageExample: {
+      code: `const re = /a/g
+console.log(re.global) // → true
+const re2 = /a/
+console.log(re2.global) // → false`,
+      explanation: {
+        en: "Read RegExp.global to check whether the 'g' flag is set on the regular expression.",
+        es: "Lee RegExp.global para verificar si la bandera 'g' está activada en la expresión regular.",
+      },
+    },
   },
   {
     slug: 'regexp-global-2',
@@ -40,6 +50,16 @@ export const regexpGlobalExercises: Exercise[] = [
     ],
     hints: ['Without the g flag, global returns false'],
     tags: ['RegExp', 'global', 'property'],
+    usageExample: {
+      code: `const re = /a/g
+console.log(re.global) // → true
+const re2 = /a/
+console.log(re2.global) // → false`,
+      explanation: {
+        en: "Read RegExp.global to check whether the 'g' flag is set on the regular expression.",
+        es: "Lee RegExp.global para verificar si la bandera 'g' está activada en la expresión regular.",
+      },
+    },
   },
   {
     slug: 'regexp-global-3',
@@ -60,6 +80,16 @@ export const regexpGlobalExercises: Exercise[] = [
     ],
     hints: ['global is always a boolean — either true or false'],
     tags: ['RegExp', 'global', 'typeof'],
+    usageExample: {
+      code: `const re = /a/g
+console.log(re.global) // → true
+const re2 = /a/
+console.log(re2.global) // → false`,
+      explanation: {
+        en: "Read RegExp.global to check whether the 'g' flag is set on the regular expression.",
+        es: "Lee RegExp.global para verificar si la bandera 'g' está activada en la expresión regular.",
+      },
+    },
   },
   {
     slug: 'regexp-global-4',
@@ -80,6 +110,16 @@ export const regexpGlobalExercises: Exercise[] = [
     ],
     hints: ['global checks only for the g flag, regardless of other flags'],
     tags: ['RegExp', 'global', 'flags'],
+    usageExample: {
+      code: `const re = /a/g
+console.log(re.global) // → true
+const re2 = /a/
+console.log(re2.global) // → false`,
+      explanation: {
+        en: "Read RegExp.global to check whether the 'g' flag is set on the regular expression.",
+        es: "Lee RegExp.global para verificar si la bandera 'g' está activada en la expresión regular.",
+      },
+    },
   },
   {
     slug: 'regexp-global-5',
@@ -100,5 +140,15 @@ export const regexpGlobalExercises: Exercise[] = [
     ],
     hints: ['global returns a strict boolean, not a truthy/falsy value'],
     tags: ['RegExp', 'global', 'boolean'],
+    usageExample: {
+      code: `const re = /a/g
+console.log(re.global) // → true
+const re2 = /a/
+console.log(re2.global) // → false`,
+      explanation: {
+        en: "Read RegExp.global to check whether the 'g' flag is set on the regular expression.",
+        es: "Lee RegExp.global para verificar si la bandera 'g' está activada en la expresión regular.",
+      },
+    },
   },
 ]

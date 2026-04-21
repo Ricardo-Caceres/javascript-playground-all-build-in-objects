@@ -19,6 +19,14 @@ export const errorConstructorExercises: Exercise[] = [
     ],
     hints: ['The message passed to new Error() is stored in .message.'],
     tags: ['error', 'constructor', 'message'],
+    usageExample: {
+      code: `const err = new Error('Something went wrong')
+err.message  // → 'Something went wrong'`,
+      explanation: {
+        en: "Create an Error with new Error(message) to capture a human-readable error description.",
+        es: "Crea un Error con new Error(message) para capturar una descripción de error legible.",
+      },
+    },
   },
   {
     slug: 'error-constructor-2',
@@ -38,6 +46,14 @@ export const errorConstructorExercises: Exercise[] = [
     ],
     hints: ['Error instances pass the instanceof Error check.'],
     tags: ['error', 'constructor', 'instanceof'],
+    usageExample: {
+      code: `const err = new Error('oops')
+err instanceof Error  // → true`,
+      explanation: {
+        en: "Error instances can be checked with instanceof to distinguish error types.",
+        es: "Las instancias de Error se pueden verificar con instanceof para distinguir tipos de error.",
+      },
+    },
   },
   {
     slug: 'error-constructor-3',
@@ -57,6 +73,17 @@ export const errorConstructorExercises: Exercise[] = [
     ],
     hints: ['Without an argument, the message defaults to an empty string.'],
     tags: ['error', 'constructor', 'message'],
+    usageExample: {
+      code: `try {
+  throw new Error('fail')
+} catch (e) {
+  e.message  // → 'fail'
+}`,
+      explanation: {
+        en: "throw new Error() is the standard way to signal exceptional situations.",
+        es: "throw new Error() es la forma estándar de señalar situaciones excepcionales.",
+      },
+    },
   },
   {
     slug: 'error-constructor-4',
@@ -76,6 +103,13 @@ export const errorConstructorExercises: Exercise[] = [
     ],
     hints: ['Error instances are objects.'],
     tags: ['error', 'constructor', 'typeof'],
+    usageExample: {
+      code: `new Error().name  // → 'Error'`,
+      explanation: {
+        en: "The name property identifies the error type; it defaults to 'Error'.",
+        es: "La propiedad name identifica el tipo de error; por defecto es 'Error'.",
+      },
+    },
   },
   {
     slug: 'error-constructor-5',
@@ -95,5 +129,12 @@ export const errorConstructorExercises: Exercise[] = [
     ],
     hints: ['The name property identifies the error type.'],
     tags: ['error', 'constructor', 'name'],
+    usageExample: {
+      code: `new Error('x') instanceof Object  // → true`,
+      explanation: {
+        en: "Error inherits from Object and has stack, message, and name properties.",
+        es: "Error hereda de Object y tiene las propiedades stack, message y name.",
+      },
+    },
   },
 ]

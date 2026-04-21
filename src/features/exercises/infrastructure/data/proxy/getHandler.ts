@@ -33,6 +33,17 @@ The \`get\` trap intercepts property reads. Use it to transform the key.
       'The `get` trap receives `(target, key, receiver)` — use `key` to build the return value.',
     ],
     tags: ['Proxy', 'get trap', 'intermediate'],
+    usageExample: {
+      code: `const p = new Proxy({}, {
+  get: (target, key) => 'got ' + String(key)
+})
+console.log(p.foo) // → 'got foo'
+console.log(p.bar) // → 'got bar'`,
+      explanation: {
+        en: 'The get trap intercepts property reads on a proxy, letting you return custom values for any key instead of actual target values.',
+        es: 'La trampa get intercepta lecturas de propiedades en un proxy, permitiendo devolver valores personalizados en lugar de las propiedades reales del objetivo.',
+      },
+    },
   },
   {
     slug: 'proxy-get-double-value',
@@ -65,6 +76,17 @@ The \`get\` trap can access the real target and transform its values.
       'Access `target[key]` inside the trap to get the original value.',
     ],
     tags: ['Proxy', 'get trap', 'intermediate'],
+    usageExample: {
+      code: `const p = new Proxy({}, {
+  get: (target, key) => 'got ' + String(key)
+})
+console.log(p.foo) // → 'got foo'
+console.log(p.bar) // → 'got bar'`,
+      explanation: {
+        en: 'The get trap intercepts property reads on a proxy, letting you return custom values for any key instead of actual target values.',
+        es: 'La trampa get intercepta lecturas de propiedades en un proxy, permitiendo devolver valores personalizados en lugar de las propiedades reales del objetivo.',
+      },
+    },
   },
   {
     slug: 'proxy-get-intercepted-constant',
@@ -97,6 +119,17 @@ A \`get\` trap that ignores the target always returns a fixed value for any prop
       'Returning a constant in the `get` trap intercepts all property reads.',
     ],
     tags: ['Proxy', 'get trap', 'beginner'],
+    usageExample: {
+      code: `const p = new Proxy({}, {
+  get: (target, key) => 'got ' + String(key)
+})
+console.log(p.foo) // → 'got foo'
+console.log(p.bar) // → 'got bar'`,
+      explanation: {
+        en: 'The get trap intercepts property reads on a proxy, letting you return custom values for any key instead of actual target values.',
+        es: 'La trampa get intercepta lecturas de propiedades en un proxy, permitiendo devolver valores personalizados en lugar de las propiedades reales del objetivo.',
+      },
+    },
   },
   {
     slug: 'proxy-get-passthrough',
@@ -129,6 +162,17 @@ An empty handler means the proxy forwards all reads to the target unchanged.
       'Without a `get` trap, the proxy reads directly from the target.',
     ],
     tags: ['Proxy', 'get trap', 'passthrough', 'beginner'],
+    usageExample: {
+      code: `const p = new Proxy({}, {
+  get: (target, key) => 'got ' + String(key)
+})
+console.log(p.foo) // → 'got foo'
+console.log(p.bar) // → 'got bar'`,
+      explanation: {
+        en: 'The get trap intercepts property reads on a proxy, letting you return custom values for any key instead of actual target values.',
+        es: 'La trampa get intercepta lecturas de propiedades en un proxy, permitiendo devolver valores personalizados en lugar de las propiedades reales del objetivo.',
+      },
+    },
   },
   {
     slug: 'proxy-get-typeof-key',
@@ -161,5 +205,16 @@ Property keys are strings (or Symbols). A \`get\` trap returning \`typeof k\` wi
       'String property keys have `typeof key === \'string\'`.',
     ],
     tags: ['Proxy', 'get trap', 'typeof', 'intermediate'],
+    usageExample: {
+      code: `const p = new Proxy({}, {
+  get: (target, key) => 'got ' + String(key)
+})
+console.log(p.foo) // → 'got foo'
+console.log(p.bar) // → 'got bar'`,
+      explanation: {
+        en: 'The get trap intercepts property reads on a proxy, letting you return custom values for any key instead of actual target values.',
+        es: 'La trampa get intercepta lecturas de propiedades en un proxy, permitiendo devolver valores personalizados en lugar de las propiedades reales del objetivo.',
+      },
+    },
   },
 ]

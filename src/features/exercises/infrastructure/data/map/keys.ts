@@ -20,6 +20,16 @@ export const mapKeysExercises: Exercise[] = [
     ],
     hints: ['Spread the iterator with [...map.keys()] to get an array'],
     tags: ['Map', 'keys', 'iterator'],
+    usageExample: {
+      code: `const m = new Map([['a', 1], ['b', 2]])
+for (const k of m.keys()) {
+  console.log(k) // 'a', 'b'
+}`,
+      explanation: {
+        en: 'Use Map.keys() to iterate over all keys in insertion order.',
+        es: 'Usa Map.keys() para iterar sobre todas las claves en orden de inserción.',
+      },
+    },
   },
   {
     slug: 'map-keys-2',
@@ -40,6 +50,16 @@ export const mapKeysExercises: Exercise[] = [
     ],
     hints: ['Map.keys() respects insertion order, unlike plain object keys'],
     tags: ['Map', 'keys', 'order'],
+    usageExample: {
+      code: `const m = new Map([['a', 1], ['b', 2]])
+for (const k of m.keys()) {
+  console.log(k) // 'a', 'b'
+}`,
+      explanation: {
+        en: 'Use Map.keys() to iterate over all keys in insertion order.',
+        es: 'Usa Map.keys() para iterar sobre todas las claves en orden de inserción.',
+      },
+    },
   },
   {
     slug: 'map-keys-3',
@@ -60,6 +80,16 @@ export const mapKeysExercises: Exercise[] = [
     ],
     hints: ['keys() returns a MapIterator — an iterable iterator object'],
     tags: ['Map', 'keys', 'type'],
+    usageExample: {
+      code: `const m = new Map([['a', 1], ['b', 2]])
+for (const k of m.keys()) {
+  console.log(k) // 'a', 'b'
+}`,
+      explanation: {
+        en: 'Use Map.keys() to iterate over all keys in insertion order.',
+        es: 'Usa Map.keys() para iterar sobre todas las claves en orden de inserción.',
+      },
+    },
   },
   {
     slug: 'map-keys-4',
@@ -80,6 +110,16 @@ export const mapKeysExercises: Exercise[] = [
     ],
     hints: ['keys() on an empty Map yields no values'],
     tags: ['Map', 'keys', 'empty'],
+    usageExample: {
+      code: `const m = new Map([['a', 1], ['b', 2]])
+for (const k of m.keys()) {
+  console.log(k) // 'a', 'b'
+}`,
+      explanation: {
+        en: 'Use Map.keys() to iterate over all keys in insertion order.',
+        es: 'Usa Map.keys() para iterar sobre todas las claves en orden de inserción.',
+      },
+    },
   },
   {
     slug: 'map-keys-5',
@@ -100,5 +140,15 @@ export const mapKeysExercises: Exercise[] = [
     ],
     hints: ['Map accepts any value as a key, including numbers, booleans, null, objects'],
     tags: ['Map', 'keys', 'mixedTypes'],
+    usageExample: {
+      code: `const m = new Map([['a', 1], ['b', 2]])
+for (const k of m.keys()) {
+  console.log(k) // 'a', 'b'
+}`,
+      explanation: {
+        en: 'Use Map.keys() to iterate over all keys in insertion order.',
+        es: 'Usa Map.keys() para iterar sobre todas las claves en orden de inserción.',
+      },
+    },
   },
 ]

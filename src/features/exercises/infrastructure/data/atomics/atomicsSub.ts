@@ -56,5 +56,15 @@ expect(result).toBe(-2);`
     ],
     hints: ['Use Atomics.sub(typedArray, index, value)'],
     tags: [],
+    usageExample: {
+      code: `const i32 = new Int32Array(new SharedArrayBuffer(4))
+Atomics.store(i32, 0, 10)
+Atomics.sub(i32, 0, 3)  // → 10 (old value)
+Atomics.load(i32, 0)   // → 7`,
+      explanation: {
+        en: "Atomics.sub() atomically subtracts a value, returning the old value before subtraction.",
+        es: "Atomics.sub() resta atómicamente un valor, devolviendo el valor anterior a la resta.",
+      },
+    },
   },
 ];

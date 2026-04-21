@@ -20,6 +20,13 @@ export const globalDecodeURIExercises: Exercise[] = [
     ],
     hints: ['decodeURI reverses encodeURI by decoding percent-encoded characters.'],
     tags: ['globalfunctions', 'decodeURI', 'url'],
+    usageExample: {
+      code: `decodeURI('hello%20world')   // → 'hello world'`,
+      explanation: {
+        en: 'decodeURI() replaces percent-encoded sequences with their original characters.',
+        es: 'decodeURI() reemplaza las secuencias codificadas en porcentaje con sus caracteres originales.',
+      },
+    },
   },
   {
     slug: 'global-decodeuri-2',
@@ -40,6 +47,13 @@ export const globalDecodeURIExercises: Exercise[] = [
     ],
     hints: ['URLs with no encoded characters are returned unchanged.'],
     tags: ['globalfunctions', 'decodeURI', 'url'],
+    usageExample: {
+      code: `decodeURI('https://example.com')   // → 'https://example.com'`,
+      explanation: {
+        en: 'decodeURI() leaves URLs that contain no encoded characters unchanged.',
+        es: 'decodeURI() no modifica las URLs que no contienen caracteres codificados.',
+      },
+    },
   },
   {
     slug: 'global-decodeuri-3',
@@ -60,6 +74,14 @@ export const globalDecodeURIExercises: Exercise[] = [
     ],
     hints: ['decodeURI and encodeURI are inverse operations.'],
     tags: ['globalfunctions', 'decodeURI', 'encodeURI', 'round-trip'],
+    usageExample: {
+      code: `const url = 'hello world'
+decodeURI(encodeURI(url))   // → 'hello world'`,
+      explanation: {
+        en: 'decodeURI() and encodeURI() are inverse operations — they form a perfect round-trip.',
+        es: 'decodeURI() y encodeURI() son operaciones inversas: forman un viaje de ida y vuelta perfecto.',
+      },
+    },
   },
   {
     slug: 'global-decodeuri-4',
@@ -80,6 +102,13 @@ export const globalDecodeURIExercises: Exercise[] = [
     ],
     hints: ['decodeURI always returns a string.'],
     tags: ['globalfunctions', 'decodeURI', 'typeof'],
+    usageExample: {
+      code: `typeof decodeURI('test')   // → 'string'`,
+      explanation: {
+        en: 'decodeURI() always returns a string regardless of the input.',
+        es: 'decodeURI() siempre devuelve una cadena independientemente de la entrada.',
+      },
+    },
   },
   {
     slug: 'global-decodeuri-5',
@@ -100,5 +129,13 @@ export const globalDecodeURIExercises: Exercise[] = [
     ],
     hints: ['%41 is the hex encoding of uppercase A, %42 is B, %43 is C.'],
     tags: ['globalfunctions', 'decodeURI', 'hex'],
+    usageExample: {
+      code: `decodeURI('%41%42%43')   // → 'ABC'
+// %41=A, %42=B, %43=C`,
+      explanation: {
+        en: 'decodeURI() converts percent-encoded hex sequences like %41 back to their ASCII characters.',
+        es: 'decodeURI() convierte secuencias hex codificadas como %41 a sus caracteres ASCII.',
+      },
+    },
   },
 ]

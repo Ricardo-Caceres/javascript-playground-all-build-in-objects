@@ -20,6 +20,13 @@ export const errorToStringExercises: Exercise[] = [
     ],
     hints: ['toString() combines the name and message with ": ".'],
     tags: ['error', 'toString', 'instance-method'],
+    usageExample: {
+      code: `new Error('oops').toString()  // → 'Error: oops'`,
+      explanation: {
+        en: "toString() returns a string combining the error's name and message.",
+        es: "toString() devuelve una cadena que combina el name y el message del error.",
+      },
+    },
   },
   {
     slug: 'error-tostring-2',
@@ -40,6 +47,13 @@ export const errorToStringExercises: Exercise[] = [
     ],
     hints: ['Each Error subclass uses its own name in toString().'],
     tags: ['error', 'toString', 'TypeError'],
+    usageExample: {
+      code: `new TypeError('bad').toString()  // → 'TypeError: bad'`,
+      explanation: {
+        en: "Subclasses include their own name in the toString() output.",
+        es: "Las subclases incluyen su propio name en la salida de toString().",
+      },
+    },
   },
   {
     slug: 'error-tostring-3',
@@ -60,6 +74,13 @@ export const errorToStringExercises: Exercise[] = [
     ],
     hints: ['When there is no message, only the name is returned — no colon.'],
     tags: ['error', 'toString', 'empty-message'],
+    usageExample: {
+      code: `new Error('').toString()  // → 'Error'`,
+      explanation: {
+        en: "If the message is empty, toString() returns just the name.",
+        es: "Si el message está vacío, toString() devuelve solo el name.",
+      },
+    },
   },
   {
     slug: 'error-tostring-4',
@@ -80,6 +101,14 @@ export const errorToStringExercises: Exercise[] = [
     ],
     hints: ['The format is "Name: message".'],
     tags: ['error', 'toString', 'name', 'message'],
+    usageExample: {
+      code: `const e = new Error('fail')
+\`\${e}\`  // → 'Error: fail'`,
+      explanation: {
+        en: "Template literals implicitly call toString() on the interpolated error.",
+        es: "Los template literals llaman implícitamente a toString() en el error interpolado.",
+      },
+    },
   },
   {
     slug: 'error-tostring-5',
@@ -100,5 +129,12 @@ export const errorToStringExercises: Exercise[] = [
     ],
     hints: ['toString() always returns a string.'],
     tags: ['error', 'toString', 'typeof'],
+    usageExample: {
+      code: `new Error('x').toString() === 'Error: x'  // → true`,
+      explanation: {
+        en: "Use toString() to convert errors to a readable string for logging.",
+        es: "Usa toString() para convertir errores a una cadena legible para el registro.",
+      },
+    },
   },
 ]

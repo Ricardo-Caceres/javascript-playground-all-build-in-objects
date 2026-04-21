@@ -19,6 +19,14 @@ export const bigintConstructorExercises: Exercise[] = [
     ],
     hints: ['BigInt literals use the `n` suffix.'],
     tags: ['bigint', 'typeof', 'constructor'],
+    usageExample: {
+      code: `const big = BigInt(9007199254740991)
+big + 1n  // → 9007199254740992n`,
+      explanation: {
+        en: "BigInt() creates arbitrarily large integers without losing precision.",
+        es: "BigInt() crea enteros arbitrariamente grandes sin perder precisión.",
+      },
+    },
   },
   {
     slug: 'bigint-constructor-2',
@@ -38,6 +46,13 @@ export const bigintConstructorExercises: Exercise[] = [
     ],
     hints: ['BigInt() converts a number to a BigInt value.'],
     tags: ['bigint', 'constructor', 'typeof'],
+    usageExample: {
+      code: `42n + 8n  // → 50n`,
+      explanation: {
+        en: "Use the n suffix to write BigInt literals directly in code.",
+        es: "Usa el sufijo n para escribir literales BigInt directamente en el código.",
+      },
+    },
   },
   {
     slug: 'bigint-constructor-3',
@@ -57,6 +72,13 @@ export const bigintConstructorExercises: Exercise[] = [
     ],
     hints: ['BigInt literals and BigInt() produce identical values.'],
     tags: ['bigint', 'constructor', 'equality'],
+    usageExample: {
+      code: `typeof 42n  // → 'bigint'`,
+      explanation: {
+        en: "BigInt values have their own type 'bigint', distinct from 'number'.",
+        es: "Los valores BigInt tienen su propio tipo 'bigint', distinto de 'number'.",
+      },
+    },
   },
   {
     slug: 'bigint-constructor-4',
@@ -76,6 +98,13 @@ export const bigintConstructorExercises: Exercise[] = [
     ],
     hints: ['BigInt arithmetic always stays in BigInt — no decimals.'],
     tags: ['bigint', 'arithmetic', 'constructor'],
+    usageExample: {
+      code: `BigInt('123456789012345678901234567890')  // → 123456789012345678901234567890n`,
+      explanation: {
+        en: "Pass a string to BigInt() to create very large integers from text.",
+        es: "Pasa una cadena a BigInt() para crear enteros muy grandes a partir de texto.",
+      },
+    },
   },
   {
     slug: 'bigint-constructor-5',
@@ -95,5 +124,12 @@ export const bigintConstructorExercises: Exercise[] = [
     ],
     hints: ['BigInt() only accepts integers; fractions cause a RangeError.'],
     tags: ['bigint', 'constructor', 'error'],
+    usageExample: {
+      code: `100n ** 100n  // → a very large integer`,
+      explanation: {
+        en: "BigInt supports all standard arithmetic operators including exponentiation.",
+        es: "BigInt admite todos los operadores aritméticos estándar, incluida la exponenciación.",
+      },
+    },
   },
 ]

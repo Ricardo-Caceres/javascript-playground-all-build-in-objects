@@ -20,6 +20,16 @@ export const setSymmetricDifferenceExercises: Exercise[] = [
     ],
     hints: ['symmetricDifference = (A union B) - (A intersection B)'],
     tags: ['Set', 'symmetricDifference', 'ES2025'],
+    usageExample: {
+      code: `const a = new Set([1, 2, 3])
+const b = new Set([2, 3, 4])
+const sym = a.symmetricDifference(b)
+console.log([...sym]) // → [1, 4]`,
+      explanation: {
+        en: 'Use Set.symmetricDifference() to get elements in either set but not in both.',
+        es: 'Usa Set.symmetricDifference() para obtener los elementos en cualquiera de los conjuntos pero no en ambos.',
+      },
+    },
   },
   {
     slug: 'set-symmetricdifference-2',
@@ -40,6 +50,16 @@ export const setSymmetricDifferenceExercises: Exercise[] = [
     ],
     hints: ['symmetric difference size = |A| + |B| - 2*|A∩B|'],
     tags: ['Set', 'symmetricDifference', 'size'],
+    usageExample: {
+      code: `const a = new Set([1, 2, 3])
+const b = new Set([2, 3, 4])
+const sym = a.symmetricDifference(b)
+console.log([...sym]) // → [1, 4]`,
+      explanation: {
+        en: 'Use Set.symmetricDifference() to get elements in either set but not in both.',
+        es: 'Usa Set.symmetricDifference() para obtener los elementos en cualquiera de los conjuntos pero no en ambos.',
+      },
+    },
   },
   {
     slug: 'set-symmetricdifference-3',
@@ -60,6 +80,16 @@ export const setSymmetricDifferenceExercises: Exercise[] = [
     ],
     hints: ['When A equals B, symmetric difference is empty — all elements are in both'],
     tags: ['Set', 'symmetricDifference', 'identical'],
+    usageExample: {
+      code: `const a = new Set([1, 2, 3])
+const b = new Set([2, 3, 4])
+const sym = a.symmetricDifference(b)
+console.log([...sym]) // → [1, 4]`,
+      explanation: {
+        en: 'Use Set.symmetricDifference() to get elements in either set but not in both.',
+        es: 'Usa Set.symmetricDifference() para obtener los elementos en cualquiera de los conjuntos pero no en ambos.',
+      },
+    },
   },
   {
     slug: 'set-symmetricdifference-4',
@@ -80,6 +110,16 @@ export const setSymmetricDifferenceExercises: Exercise[] = [
     ],
     hints: ['For disjoint Sets, every element is exclusive to one Set, so sym diff = union'],
     tags: ['Set', 'symmetricDifference', 'disjoint'],
+    usageExample: {
+      code: `const a = new Set([1, 2, 3])
+const b = new Set([2, 3, 4])
+const sym = a.symmetricDifference(b)
+console.log([...sym]) // → [1, 4]`,
+      explanation: {
+        en: 'Use Set.symmetricDifference() to get elements in either set but not in both.',
+        es: 'Usa Set.symmetricDifference() para obtener los elementos en cualquiera de los conjuntos pero no en ambos.',
+      },
+    },
   },
   {
     slug: 'set-symmetricdifference-5',
@@ -100,5 +140,15 @@ export const setSymmetricDifferenceExercises: Exercise[] = [
     ],
     hints: ['symmetricDifference() returns a new Set; originals unchanged'],
     tags: ['Set', 'symmetricDifference', 'immutable'],
+    usageExample: {
+      code: `const a = new Set([1, 2, 3])
+const b = new Set([2, 3, 4])
+const sym = a.symmetricDifference(b)
+console.log([...sym]) // → [1, 4]`,
+      explanation: {
+        en: 'Use Set.symmetricDifference() to get elements in either set but not in both.',
+        es: 'Usa Set.symmetricDifference() para obtener los elementos en cualquiera de los conjuntos pero no en ambos.',
+      },
+    },
   },
 ]

@@ -44,6 +44,19 @@ loggedAdd(2, 3)`,
     ],
     hints: ['Return a function from logged', 'Pass all arguments to the original function', 'Return the result from the original function'],
     tags: ['decorator', 'wrapper', 'higher-order-function', 'design-pattern'],
+    usageExample: {
+      code: `function logged(fn) {
+  return function(...args) {
+    console.log('calling', fn.name);
+    return fn.apply(this, args);
+  };
+}
+const safeAdd = logged(add);`,
+      explanation: {
+        en: "The decorator pattern wraps a function to add behavior without modifying the original.",
+        es: "El patrón decorator envuelve una función para añadir comportamiento sin modificar el original.",
+      },
+    },
   },
   {
     slug: 'dp-decorator-2',
@@ -94,6 +107,20 @@ timedSlow(5)`,
     ],
     hints: ['Capture the start time', 'Call the original function', 'Return the result from the original function'],
     tags: ['decorator', 'timing', 'higher-order-function', 'performance'],
+    usageExample: {
+      code: `function timed(fn) {
+  return function(...args) {
+    const start = Date.now();
+    const result = fn.apply(this, args);
+    console.log(Date.now() - start, 'ms');
+    return result;
+  };
+}`,
+      explanation: {
+        en: "A timing decorator measures how long a function takes to execute.",
+        es: "Un decorator de tiempo mide cuánto tarda en ejecutarse una función.",
+      },
+    },
   },
   {
     slug: 'dp-decorator-3',
@@ -150,6 +177,18 @@ t(3)`,
     ],
     hints: ['Create a wrapper function', 'Add callCount property to wrapper', 'Increment callCount on each call', 'Return the result from the original function'],
     tags: ['decorator', 'call-tracking', 'higher-order-function', 'monitoring'],
+    usageExample: {
+      code: `function callTracker(fn) {
+  let count = 0;
+  function tracked(...args) { count++; return fn.apply(this, args); }
+  tracked.callCount = () => count;
+  return tracked;
+}`,
+      explanation: {
+        en: "Track how many times a function has been called by wrapping it in a counter.",
+        es: "Rastrea cuántas veces se ha llamado a una función envolviéndola en un contador.",
+      },
+    },
   },
   {
     slug: 'dp-decorator-4',
@@ -204,6 +243,19 @@ o(5)`,
     ],
     hints: ['Use a flag to track if function was called', 'Store result in closure', 'Return cached result after first call', 'Do not call original function if already called'],
     tags: ['decorator', 'once', 'caching', 'higher-order-function'],
+    usageExample: {
+      code: `function once(fn) {
+  let called = false, result;
+  return function(...args) {
+    if (!called) { called = true; result = fn.apply(this, args); }
+    return result;
+  };
+}`,
+      explanation: {
+        en: "The once decorator ensures a function executes only on the first call.",
+        es: "El decorator once garantiza que una función se ejecute solo en la primera llamada.",
+      },
+    },
   },
   {
     slug: 'dp-decorator-5',
@@ -262,5 +314,16 @@ f(5)`,
     ],
     hints: ['Each decorator wraps the previous function', 'double multiplies the result', 'addTen adds to the result', 'Order of application matters'],
     tags: ['decorator', 'composition', 'higher-order-function', 'stacking'],
+    usageExample: {
+      code: `const double = fn => (...a) => fn(...a) * 2;
+const addOne = fn => (...a) => fn(...a) + 1;
+const square = x => x * x;
+const enhanced = addOne(double(square));
+enhanced(3); // (9 * 2) + 1 = 19`,
+      explanation: {
+        en: "Stack decorators by nesting them — each layer adds behavior on top of the previous.",
+        es: "Apila decorators anidándolos — cada capa añade comportamiento sobre la anterior.",
+      },
+    },
   },
 ]

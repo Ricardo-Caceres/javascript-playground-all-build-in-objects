@@ -39,6 +39,14 @@ export const typedArrayInstancePropertiesExercises: Exercise[] = [
     ],
     hints: ['Access arr.length like a regular array'],
     tags: [],
+    usageExample: {
+      code: `const arr = new Uint8Array([1, 2, 3]);
+arr.length; // 3`,
+      explanation: {
+        en: "length returns the number of elements in the typed array.",
+        es: "length devuelve el número de elementos en el array tipado.",
+      },
+    },
   },
   {
     slug: 'typedarray-bytelength-property',
@@ -78,6 +86,14 @@ export const typedArrayInstancePropertiesExercises: Exercise[] = [
     ],
     hints: ['byteLength = length × BYTES_PER_ELEMENT'],
     tags: [],
+    usageExample: {
+      code: `const arr = new Int32Array(3); // 3 x 4 bytes
+arr.byteLength; // 12`,
+      explanation: {
+        en: "byteLength returns the total size in bytes of the typed array's view.",
+        es: "byteLength devuelve el tamaño total en bytes de la vista del array tipado.",
+      },
+    },
   },
   {
     slug: 'typedarray-byteoffset-property',
@@ -117,6 +133,15 @@ export const typedArrayInstancePropertiesExercises: Exercise[] = [
     ],
     hints: ['new Int32Array(buffer, byteOffset) sets the starting offset'],
     tags: [],
+    usageExample: {
+      code: `const buf = new ArrayBuffer(16);
+const arr = new Int32Array(buf, 4);
+arr.byteOffset; // 4`,
+      explanation: {
+        en: "byteOffset is the starting byte position within the underlying ArrayBuffer.",
+        es: "byteOffset es la posición de byte inicial dentro del ArrayBuffer subyacente.",
+      },
+    },
   },
   {
     slug: 'typedarray-buffer-property',
@@ -156,6 +181,15 @@ export const typedArrayInstancePropertiesExercises: Exercise[] = [
     ],
     hints: ['arr.buffer returns the ArrayBuffer backing this typed array'],
     tags: [],
+    usageExample: {
+      code: `const arr = new Int32Array([1, 2, 3]);
+const buf = arr.buffer;
+buf instanceof ArrayBuffer; // true`,
+      explanation: {
+        en: "buffer returns the underlying ArrayBuffer that this typed array shares.",
+        es: "buffer devuelve el ArrayBuffer subyacente que comparte este array tipado.",
+      },
+    },
   },
   {
     slug: 'typedarray-instance-bytes-per-element',
@@ -195,5 +229,13 @@ export const typedArrayInstancePropertiesExercises: Exercise[] = [
     ],
     hints: ['Instance BYTES_PER_ELEMENT equals the static version'],
     tags: [],
+    usageExample: {
+      code: `const arr = new Float64Array(2);
+arr.BYTES_PER_ELEMENT; // 8`,
+      explanation: {
+        en: "Instance BYTES_PER_ELEMENT gives the byte size of each element.",
+        es: "La propiedad BYTES_PER_ELEMENT de instancia da el tamaño en bytes de cada elemento.",
+      },
+    },
   },
 ]

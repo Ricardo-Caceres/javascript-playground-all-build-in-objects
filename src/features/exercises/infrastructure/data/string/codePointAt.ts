@@ -35,6 +35,15 @@ getCodePoint('a', 0) // → 97
       'For BMP characters (code points ≤ 65535), `.codePointAt()` returns the same value as `.charCodeAt()`.',
     ],
     tags: ['String', 'String.prototype.codePointAt', 'Unicode', 'beginner'],
+    usageExample: {
+      code: `const str = 'Hello'
+str.codePointAt(0)     // → 72
+'😀'.codePointAt(0)    // → 128512`,
+      explanation: {
+        en: "Use codePointAt() to get the full Unicode code point at a position, correctly handling supplementary characters.",
+        es: "Usa codePointAt() para obtener el punto de código Unicode completo en una posición, manejando correctamente los caracteres suplementarios.",
+      },
+    },
   },
   {
     slug: 'string-code-point-at-emoji',
@@ -69,6 +78,15 @@ emojiCodePoint() // → 128512
       'Emoji code points are above 65535 and require a surrogate pair in UTF-16.',
     ],
     tags: ['String', 'String.prototype.codePointAt', 'emoji', 'supplementary', 'intermediate'],
+    usageExample: {
+      code: `const str = 'Hello'
+str.codePointAt(0)     // → 72
+'😀'.codePointAt(0)    // → 128512`,
+      explanation: {
+        en: "Use codePointAt() to get the full Unicode code point at a position, correctly handling supplementary characters.",
+        es: "Usa codePointAt() para obtener el punto de código Unicode completo en una posición, manejando correctamente los caracteres suplementarios.",
+      },
+    },
   },
   {
     slug: 'string-code-point-at-surrogate',
@@ -103,6 +121,15 @@ lowSurrogate() // → 56832  (0xDE00)
       'Low surrogates are in the range 0xDC00–0xDFFF (56320–57343).',
     ],
     tags: ['String', 'String.prototype.codePointAt', 'surrogate pair', 'advanced'],
+    usageExample: {
+      code: `const str = 'Hello'
+str.codePointAt(0)     // → 72
+'😀'.codePointAt(0)    // → 128512`,
+      explanation: {
+        en: "Use codePointAt() to get the full Unicode code point at a position, correctly handling supplementary characters.",
+        es: "Usa codePointAt() para obtener el punto de código Unicode completo en una posición, manejando correctamente los caracteres suplementarios.",
+      },
+    },
   },
   {
     slug: 'string-code-point-at-undefined',
@@ -138,6 +165,15 @@ isValidPos('hi', 5) // → false
       '`.codePointAt()` returns `undefined` for out-of-range indices.',
     ],
     tags: ['String', 'String.prototype.codePointAt', 'undefined', 'beginner'],
+    usageExample: {
+      code: `const str = 'Hello'
+str.codePointAt(0)     // → 72
+'😀'.codePointAt(0)    // → 128512`,
+      explanation: {
+        en: "Use codePointAt() to get the full Unicode code point at a position, correctly handling supplementary characters.",
+        es: "Usa codePointAt() para obtener el punto de código Unicode completo en una posición, manejando correctamente los caracteres suplementarios.",
+      },
+    },
   },
   {
     slug: 'string-code-point-at-vs-char-code',
@@ -173,5 +209,14 @@ codesMatch('😀', 0) // → false
       'BMP code points (0–65535) are the same in both methods. Supplementary code points differ.',
     ],
     tags: ['String', 'String.prototype.codePointAt', 'charCodeAt', 'intermediate'],
+    usageExample: {
+      code: `const str = 'Hello'
+str.codePointAt(0)     // → 72
+'😀'.codePointAt(0)    // → 128512`,
+      explanation: {
+        en: "Use codePointAt() to get the full Unicode code point at a position, correctly handling supplementary characters.",
+        es: "Usa codePointAt() para obtener el punto de código Unicode completo en una posición, manejando correctamente los caracteres suplementarios.",
+      },
+    },
   },
 ]

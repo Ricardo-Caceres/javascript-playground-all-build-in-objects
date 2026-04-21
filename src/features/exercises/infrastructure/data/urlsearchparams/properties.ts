@@ -19,6 +19,14 @@ export const urlSearchParamsPropExercises: Exercise[] = [
     ],
     hints: ['size reflects the number of entries, not unique keys'],
     tags: ['URLSearchParams', 'instance-property', 'size'],
+    usageExample: {
+      code: `const p = new URLSearchParams('a=1&b=2')
+p.size  // → 2`,
+      explanation: {
+        en: "size returns the total number of key-value pairs in the URLSearchParams object.",
+        es: "size devuelve el número total de pares clave-valor en el objeto URLSearchParams.",
+      },
+    },
   },
   {
     slug: 'urlsearchparams-properties-2',
@@ -38,6 +46,14 @@ export const urlSearchParamsPropExercises: Exercise[] = [
     ],
     hints: ['append() always adds a new entry, even for existing keys'],
     tags: ['URLSearchParams', 'instance-property', 'size', 'append'],
+    usageExample: {
+      code: `const p = new URLSearchParams()
+p.size  // → 0`,
+      explanation: {
+        en: "An empty URLSearchParams has a size of 0.",
+        es: "Un URLSearchParams vacío tiene un size de 0.",
+      },
+    },
   },
   {
     slug: 'urlsearchparams-properties-3',
@@ -57,6 +73,14 @@ export const urlSearchParamsPropExercises: Exercise[] = [
     ],
     hints: ['set() removes all existing entries for the key before adding one new one'],
     tags: ['URLSearchParams', 'instance-property', 'size', 'set'],
+    usageExample: {
+      code: `const p = new URLSearchParams('a=1&a=2')
+p.size  // → 2 (counts each entry)`,
+      explanation: {
+        en: "size counts each key-value entry individually, including duplicate keys.",
+        es: "size cuenta cada entrada clave-valor individualmente, incluidas las claves duplicadas.",
+      },
+    },
   },
   {
     slug: 'urlsearchparams-properties-4',
@@ -76,6 +100,15 @@ export const urlSearchParamsPropExercises: Exercise[] = [
     ],
     hints: ['Deleting a key that appears multiple times removes all its entries'],
     tags: ['URLSearchParams', 'instance-property', 'size', 'delete'],
+    usageExample: {
+      code: `const p = new URLSearchParams('x=1')
+p.delete('x')
+p.size  // → 0`,
+      explanation: {
+        en: "size reflects the current state after mutations like delete().",
+        es: "size refleja el estado actual después de mutaciones como delete().",
+      },
+    },
   },
   {
     slug: 'urlsearchparams-properties-5',
@@ -95,5 +128,13 @@ export const urlSearchParamsPropExercises: Exercise[] = [
     ],
     hints: ['size counts total entries, so duplicate keys each count as one entry'],
     tags: ['URLSearchParams', 'instance-property', 'size'],
+    usageExample: {
+      code: `const p = new URLSearchParams('a=1&b=2&c=3')
+p.size === 3  // → true`,
+      explanation: {
+        en: "Use size to quickly check how many parameters are present.",
+        es: "Usa size para verificar rápidamente cuántos parámetros están presentes.",
+      },
+    },
   },
 ]

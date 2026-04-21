@@ -20,6 +20,13 @@ export const errorNameExercises: Exercise[] = [
     ],
     hints: ['The base Error class has name "Error".'],
     tags: ['error', 'name', 'instance-property'],
+    usageExample: {
+      code: `new Error('x').name  // → 'Error'`,
+      explanation: {
+        en: "The name property of a base Error is 'Error'.",
+        es: "La propiedad name de un Error base es 'Error'.",
+      },
+    },
   },
   {
     slug: 'error-name-2',
@@ -40,6 +47,14 @@ export const errorNameExercises: Exercise[] = [
     ],
     hints: ['TypeError is a subclass of Error with name "TypeError".'],
     tags: ['error', 'name', 'TypeError'],
+    usageExample: {
+      code: `new TypeError('x').name   // → 'TypeError'
+new RangeError('x').name  // → 'RangeError'`,
+      explanation: {
+        en: "Subclasses of Error set their own name to identify the error type.",
+        es: "Las subclases de Error establecen su propio name para identificar el tipo de error.",
+      },
+    },
   },
   {
     slug: 'error-name-3',
@@ -60,6 +75,15 @@ export const errorNameExercises: Exercise[] = [
     ],
     hints: ['RangeError is for values outside the allowed range.'],
     tags: ['error', 'name', 'RangeError'],
+    usageExample: {
+      code: `const err = new Error('x')
+err.name = 'CustomError'
+err.name  // → 'CustomError'`,
+      explanation: {
+        en: "You can reassign the name property to create custom error identifiers.",
+        es: "Puedes reasignar la propiedad name para crear identificadores de error personalizados.",
+      },
+    },
   },
   {
     slug: 'error-name-4',
@@ -80,6 +104,16 @@ export const errorNameExercises: Exercise[] = [
     ],
     hints: ['SyntaxError is thrown when invalid code or JSON is parsed.'],
     tags: ['error', 'name', 'SyntaxError'],
+    usageExample: {
+      code: `class AppError extends Error {
+  constructor(msg) { super(msg); this.name = 'AppError' }
+}
+new AppError('x').name  // → 'AppError'`,
+      explanation: {
+        en: "Set this.name in subclass constructors to give custom errors a meaningful name.",
+        es: "Establece this.name en constructores de subclase para dar a los errores personalizados un nombre significativo.",
+      },
+    },
   },
   {
     slug: 'error-name-5',
@@ -100,5 +134,13 @@ export const errorNameExercises: Exercise[] = [
     ],
     hints: ['ReferenceError is thrown when accessing undeclared variables.'],
     tags: ['error', 'name', 'ReferenceError'],
+    usageExample: {
+      code: `const err = new Error('x')
+typeof err.name  // → 'string'`,
+      explanation: {
+        en: "The name property is always a string that identifies the error type.",
+        es: "La propiedad name siempre es una cadena que identifica el tipo de error.",
+      },
+    },
   },
 ]

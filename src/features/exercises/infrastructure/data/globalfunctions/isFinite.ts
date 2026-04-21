@@ -20,6 +20,14 @@ export const globalIsFiniteExercises: Exercise[] = [
     ],
     hints: ['isFinite returns true for any finite number.'],
     tags: ['globalfunctions', 'isFinite', 'number'],
+    usageExample: {
+      code: `isFinite(42)      // → true
+isFinite(-3.14)   // → true`,
+      explanation: {
+        en: 'isFinite() returns true for any number that is not Infinity, -Infinity, or NaN.',
+        es: 'isFinite() devuelve true para cualquier número que no sea Infinity, -Infinity o NaN.',
+      },
+    },
   },
   {
     slug: 'global-isfinite-2',
@@ -40,6 +48,13 @@ export const globalIsFiniteExercises: Exercise[] = [
     ],
     hints: ['Infinity is not a finite number.'],
     tags: ['globalfunctions', 'isFinite', 'Infinity'],
+    usageExample: {
+      code: `isFinite(Infinity)   // → false`,
+      explanation: {
+        en: 'isFinite() returns false for Infinity because it is not a finite value.',
+        es: 'isFinite() devuelve false para Infinity porque no es un valor finito.',
+      },
+    },
   },
   {
     slug: 'global-isfinite-3',
@@ -60,6 +75,13 @@ export const globalIsFiniteExercises: Exercise[] = [
     ],
     hints: ['-Infinity is not a finite number.'],
     tags: ['globalfunctions', 'isFinite', 'Infinity'],
+    usageExample: {
+      code: `isFinite(-Infinity)   // → false`,
+      explanation: {
+        en: 'isFinite() returns false for -Infinity just as it does for positive Infinity.',
+        es: 'isFinite() devuelve false para -Infinity igual que para Infinity positivo.',
+      },
+    },
   },
   {
     slug: 'global-isfinite-4',
@@ -80,6 +102,14 @@ export const globalIsFiniteExercises: Exercise[] = [
     ],
     hints: ['NaN is not a finite number.'],
     tags: ['globalfunctions', 'isFinite', 'NaN'],
+    usageExample: {
+      code: `isFinite(NaN)   // → false
+isNaN(NaN)      // → true`,
+      explanation: {
+        en: 'isFinite() returns false for NaN because NaN is not a finite numeric value.',
+        es: 'isFinite() devuelve false para NaN porque NaN no es un valor numérico finito.',
+      },
+    },
   },
   {
     slug: 'global-isfinite-5',
@@ -100,5 +130,13 @@ export const globalIsFiniteExercises: Exercise[] = [
     ],
     hints: ['The global isFinite coerces its argument to a number first.'],
     tags: ['globalfunctions', 'isFinite', 'coercion'],
+    usageExample: {
+      code: `isFinite('42')      // → true  (coerced to 42)
+isFinite('hello')   // → false (coerced to NaN)`,
+      explanation: {
+        en: 'The global isFinite() coerces its argument to a number first — prefer Number.isFinite() to avoid coercion.',
+        es: 'El isFinite() global convierte su argumento a número primero; usa Number.isFinite() para evitar la coerción.',
+      },
+    },
   },
 ]

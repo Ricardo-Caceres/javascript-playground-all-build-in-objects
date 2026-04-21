@@ -85,6 +85,15 @@ s.pop() // 2
       'size should return the array length.',
     ],
     tags: ['data-structures', 'stack', 'lifo', 'push-pop'],
+    usageExample: {
+      code: `const stack = [];
+stack.push(1); stack.push(2);
+stack.pop(); // 2 — last in, first out`,
+      explanation: {
+        en: "A stack uses push/pop for LIFO (Last In, First Out) behavior.",
+        es: "Un stack usa push/pop para comportamiento LIFO (último en entrar, primero en salir).",
+      },
+    },
   },
   {
     slug: 'algo-ds-2',
@@ -159,6 +168,15 @@ q.dequeue() // 1
       'size should return the array length.',
     ],
     tags: ['data-structures', 'queue', 'fifo', 'enqueue-dequeue'],
+    usageExample: {
+      code: `const queue = [];
+queue.push(1); queue.push(2);
+queue.shift(); // 1 — first in, first out`,
+      explanation: {
+        en: "A queue uses push/shift for FIFO (First In, First Out) behavior.",
+        es: "Una cola usa push/shift para comportamiento FIFO (primero en entrar, primero en salir).",
+      },
+    },
   },
   {
     slug: 'algo-ds-3',
@@ -221,6 +239,20 @@ isBalanced('([)]') // false
       'Stack should be empty at the end.',
     ],
     tags: ['data-structures', 'stack', 'bracket-matching', 'validation'],
+    usageExample: {
+      code: `function isBalanced(s) {
+  const stack = [];
+  for (const c of s) {
+    if (c === '(') stack.push(c);
+    else if (!stack.pop()) return false;
+  }
+  return stack.length === 0;
+}`,
+      explanation: {
+        en: "Use a stack to verify balanced brackets by pushing opens and popping on closes.",
+        es: "Usa un stack para verificar paréntesis balanceados empujando aperturas y sacando en cierres.",
+      },
+    },
   },
   {
     slug: 'algo-ds-4',
@@ -325,6 +357,17 @@ class LinkedList {
       'For getLength, traverse the entire list and count nodes.',
     ],
     tags: ['data-structures', 'linked-list', 'nodes', 'pointers'],
+    usageExample: {
+      code: `class Node {
+  constructor(val) { this.val = val; this.next = null; }
+}
+const head = new Node(1);
+head.next = new Node(2);`,
+      explanation: {
+        en: "A linked list chains nodes together via next pointers instead of an array.",
+        es: "Una lista enlazada encadena nodos mediante punteros next en lugar de un array.",
+      },
+    },
   },
   {
     slug: 'algo-ds-5',
@@ -410,5 +453,19 @@ ms.getMin() // 1
       'This keeps getMin at O(1) instead of O(n).',
     ],
     tags: ['data-structures', 'stack', 'min-tracking', 'optimization'],
+    usageExample: {
+      code: `class MinStack {
+  constructor() { this.stack = []; this.mins = []; }
+  push(v) {
+    this.stack.push(v);
+    this.mins.push(Math.min(v, this.mins.at(-1) ?? v));
+  }
+  min() { return this.mins.at(-1); }
+}`,
+      explanation: {
+        en: "Track minimums in O(1) by maintaining a parallel stack of running minimums.",
+        es: "Rastrea mínimos en O(1) manteniendo un stack paralelo de mínimos acumulados.",
+      },
+    },
   },
 ]

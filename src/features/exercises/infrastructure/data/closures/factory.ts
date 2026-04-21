@@ -40,6 +40,18 @@ add5(3)`,
     ],
     hints: ['Return a function that adds the captured value to its argument', 'The factory captures the preset value in closure'],
     tags: ['closures', 'factory', 'higher-order-functions', 'adder'],
+    usageExample: {
+      code: `function makeAdder(n) {
+  return x => x + n
+}
+const add5 = makeAdder(5)
+add5(3)   // → 8
+add5(10)  // → 15`,
+      explanation: {
+        en: 'Factory functions use closures to capture a preset value, producing specialized functions without repeating configuration.',
+        es: 'Las funciones de fábrica usan closures para capturar un valor preestablecido, produciendo funciones especializadas sin repetir configuración.',
+      },
+    },
   },
   {
     slug: 'closures-factory-2',
@@ -80,6 +92,19 @@ mult4(7)`,
     ],
     hints: ['Return a function that multiplies the captured value by its argument', 'Use the * operator for multiplication'],
     tags: ['closures', 'factory', 'higher-order-functions', 'multiplier'],
+    usageExample: {
+      code: `function makeMultiplier(n) {
+  return x => x * n
+}
+const double = makeMultiplier(2)
+const triple = makeMultiplier(3)
+double(5)  // → 10
+triple(5)  // → 15`,
+      explanation: {
+        en: 'Each call to the factory creates an independent closure capturing its own multiplier, so different instances never interfere with each other.',
+        es: 'Cada llamada a la fábrica crea un closure independiente que captura su propio multiplicador, por lo que distintas instancias nunca interfieren entre sí.',
+      },
+    },
   },
   {
     slug: 'closures-factory-3',
@@ -120,6 +145,18 @@ greetHello('World')`,
     ],
     hints: ['Use template literals to construct the greeting string', 'Capture the prefix in closure'],
     tags: ['closures', 'factory', 'string-formatting', 'greeter'],
+    usageExample: {
+      code: `function makeGreeter(prefix) {
+  return name => \`\${prefix} \${name}\`
+}
+const greetHi = makeGreeter('Hi')
+greetHi('Alice')  // → 'Hi Alice'
+greetHi('Bob')    // → 'Hi Bob'`,
+      explanation: {
+        en: 'The greeter factory closes over the prefix string, so each produced function always prepends the same greeting without needing extra parameters.',
+        es: 'La fábrica de saludos cierra sobre la cadena de prefijo, por lo que cada función producida siempre antepone el mismo saludo sin necesitar parámetros adicionales.',
+      },
+    },
   },
   {
     slug: 'closures-factory-4',
@@ -161,6 +198,18 @@ isInRange(15)`,
     ],
     hints: ['Use comparison operators to check if value is in range', 'Boundary values should be included in the range'],
     tags: ['closures', 'factory', 'validation', 'range-checking'],
+    usageExample: {
+      code: `function makeValidator(min, max) {
+  return value => value >= min && value <= max
+}
+const isAdult = makeValidator(18, 120)
+isAdult(25)  // → true
+isAdult(15)  // → false`,
+      explanation: {
+        en: 'Validator factories close over min and max bounds, allowing reusable range-checking functions to be created with any boundary values.',
+        es: 'Las fábricas de validadores cierran sobre los límites mínimo y máximo, permitiendo crear funciones de comprobación de rango reutilizables con cualquier valor de límite.',
+      },
+    },
   },
   {
     slug: 'closures-factory-5',
@@ -217,5 +266,18 @@ square(5)`,
     ],
     hints: ['makePower uses the ** exponentiation operator', 'makeCompose uses reduce to chain function calls', 'Each function\'s output becomes the next function\'s input'],
     tags: ['closures', 'factory', 'composition', 'function-chaining', 'advanced'],
+    usageExample: {
+      code: `function makePower(exp) {
+  return base => base ** exp
+}
+const square = makePower(2)
+const cube = makePower(3)
+square(4)  // → 16
+cube(2)    // → 8`,
+      explanation: {
+        en: 'Closures let the power factory capture the exponent, producing named math functions like square and cube without any duplicate logic.',
+        es: 'Los closures permiten que la fábrica de potencias capture el exponente, produciendo funciones matemáticas nombradas como cuadrado y cubo sin lógica duplicada.',
+      },
+    },
   },
 ]

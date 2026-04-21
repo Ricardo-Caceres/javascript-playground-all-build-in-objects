@@ -19,6 +19,16 @@ export const urlSearchParamsIterationExercises: Exercise[] = [
     ],
     hints: ['Use Array.from() or spread [...params.keys()] to convert the iterator'],
     tags: ['URLSearchParams', 'instance-method', 'keys', 'iteration'],
+    usageExample: {
+      code: `const p = new URLSearchParams('a=1&b=2')
+for (const [k, v] of p) {
+  console.log(k, v)
+}  // a 1, then b 2`,
+      explanation: {
+        en: "URLSearchParams is iterable; each entry yields a [key, value] pair.",
+        es: "URLSearchParams es iterable; cada entrada produce un par [clave, valor].",
+      },
+    },
   },
   {
     slug: 'urlsearchparams-iteration-2',
@@ -38,6 +48,15 @@ export const urlSearchParamsIterationExercises: Exercise[] = [
     ],
     hints: ['values() returns each value in insertion order'],
     tags: ['URLSearchParams', 'instance-method', 'values', 'iteration'],
+    usageExample: {
+      code: `const p = new URLSearchParams('a=1&b=2')
+[...p.keys()]    // → ['a', 'b']
+[...p.values()]  // → ['1', '2']`,
+      explanation: {
+        en: "keys() and values() return iterators over parameter keys and values respectively.",
+        es: "keys() y values() devuelven iteradores sobre las claves y valores de los parámetros respectivamente.",
+      },
+    },
   },
   {
     slug: 'urlsearchparams-iteration-3',
@@ -57,6 +76,14 @@ export const urlSearchParamsIterationExercises: Exercise[] = [
     ],
     hints: ['Each entry is a [key, value] tuple just like Object.entries()'],
     tags: ['URLSearchParams', 'instance-method', 'entries', 'iteration'],
+    usageExample: {
+      code: `const p = new URLSearchParams('x=1&y=2')
+p.forEach((val, key) => console.log(key, val))`,
+      explanation: {
+        en: "forEach() iterates over all parameters with a callback(value, key) signature.",
+        es: "forEach() itera sobre todos los parámetros con una firma callback(value, key).",
+      },
+    },
   },
   {
     slug: 'urlsearchparams-iteration-4',
@@ -76,6 +103,14 @@ export const urlSearchParamsIterationExercises: Exercise[] = [
     ],
     hints: ['The callback receives (value, key, searchParams) — note value comes first'],
     tags: ['URLSearchParams', 'instance-method', 'forEach', 'iteration'],
+    usageExample: {
+      code: `const p = new URLSearchParams('a=1&b=2')
+[...p.entries()]  // → [['a','1'],['b','2']]`,
+      explanation: {
+        en: "entries() returns an iterator of [key, value] pairs identical to the default iterator.",
+        es: "entries() devuelve un iterador de pares [clave, valor] idéntico al iterador predeterminado.",
+      },
+    },
   },
   {
     slug: 'urlsearchparams-iteration-5',
@@ -95,5 +130,14 @@ export const urlSearchParamsIterationExercises: Exercise[] = [
     ],
     hints: ['sort() modifies the params object in-place and returns undefined'],
     tags: ['URLSearchParams', 'instance-method', 'sort', 'iteration'],
+    usageExample: {
+      code: `const p = new URLSearchParams('b=2&a=1')
+p.sort()
+p.toString()  // → 'a=1&b=2'`,
+      explanation: {
+        en: "sort() sorts parameters by key in Unicode order, useful for canonical URLs.",
+        es: "sort() ordena los parámetros por clave en orden Unicode, útil para URLs canónicas.",
+      },
+    },
   },
 ]

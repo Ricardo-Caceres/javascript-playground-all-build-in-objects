@@ -30,6 +30,16 @@ export const reflectHasExercises: Exercise[] = [
       '`Reflect.has(target, key)` is equivalent to `key in target`.',
     ],
     tags: ['Reflect', 'has', 'beginner'],
+    usageExample: {
+      code: `const obj = { a: 1 }
+console.log(Reflect.has(obj, 'a'))  // → true
+console.log(Reflect.has(obj, 'b'))  // → false
+// Equivalent to: 'a' in obj`,
+      explanation: {
+        en: 'Reflect.has() checks whether an object has a property, equivalent to the in operator.',
+        es: 'Reflect.has() comprueba si un objeto tiene una propiedad, equivalente al operador in.',
+      },
+    },
   },
   {
     slug: 'reflect-has-missing-key',
@@ -60,6 +70,16 @@ When the key does not exist in the object or its prototype chain, \`Reflect.has(
       '`Reflect.has` returns `false` for keys that do not exist on the target or its prototype chain.',
     ],
     tags: ['Reflect', 'has', 'beginner'],
+    usageExample: {
+      code: `const obj = { a: 1 }
+console.log(Reflect.has(obj, 'a'))  // → true
+console.log(Reflect.has(obj, 'b'))  // → false
+// Equivalent to: 'a' in obj`,
+      explanation: {
+        en: 'Reflect.has() checks whether an object has a property, equivalent to the in operator.',
+        es: 'Reflect.has() comprueba si un objeto tiene una propiedad, equivalente al operador in.',
+      },
+    },
   },
   {
     slug: 'reflect-has-array-index',
@@ -90,6 +110,16 @@ Array indices are property keys. \`Reflect.has([1,2,3], 0)\` checks if index \`0
       'Array indices are numeric string keys on the array object.',
     ],
     tags: ['Reflect', 'has', 'array', 'beginner'],
+    usageExample: {
+      code: `const obj = { a: 1 }
+console.log(Reflect.has(obj, 'a'))  // → true
+console.log(Reflect.has(obj, 'b'))  // → false
+// Equivalent to: 'a' in obj`,
+      explanation: {
+        en: 'Reflect.has() checks whether an object has a property, equivalent to the in operator.',
+        es: 'Reflect.has() comprueba si un objeto tiene una propiedad, equivalente al operador in.',
+      },
+    },
   },
   {
     slug: 'reflect-has-typeof',
@@ -120,6 +150,16 @@ Array indices are property keys. \`Reflect.has([1,2,3], 0)\` checks if index \`0
       'All `Reflect` methods are functions.',
     ],
     tags: ['Reflect', 'has', 'typeof', 'beginner'],
+    usageExample: {
+      code: `const obj = { a: 1 }
+console.log(Reflect.has(obj, 'a'))  // → true
+console.log(Reflect.has(obj, 'b'))  // → false
+// Equivalent to: 'a' in obj`,
+      explanation: {
+        en: 'Reflect.has() checks whether an object has a property, equivalent to the in operator.',
+        es: 'Reflect.has() comprueba si un objeto tiene una propiedad, equivalente al operador in.',
+      },
+    },
   },
   {
     slug: 'reflect-has-second-key',
@@ -150,5 +190,15 @@ Array indices are property keys. \`Reflect.has([1,2,3], 0)\` checks if index \`0
       '`Reflect.has` checks the full prototype chain just like the `in` operator.',
     ],
     tags: ['Reflect', 'has', 'beginner'],
+    usageExample: {
+      code: `const obj = { a: 1 }
+console.log(Reflect.has(obj, 'a'))  // → true
+console.log(Reflect.has(obj, 'b'))  // → false
+// Equivalent to: 'a' in obj`,
+      explanation: {
+        en: 'Reflect.has() checks whether an object has a property, equivalent to the in operator.',
+        es: 'Reflect.has() comprueba si un objeto tiene una propiedad, equivalente al operador in.',
+      },
+    },
   },
 ]

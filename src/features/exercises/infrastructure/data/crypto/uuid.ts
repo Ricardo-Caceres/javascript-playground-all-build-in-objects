@@ -19,6 +19,13 @@ export const cryptoUuidExercises: Exercise[] = [
     ],
     hints: ['UUIDs are formatted as text strings'],
     tags: ['crypto', 'randomUUID', 'static-method'],
+    usageExample: {
+      code: `crypto.randomUUID()  // → e.g. '550e8400-e29b-41d4-a716-446655440000'`,
+      explanation: {
+        en: "crypto.randomUUID() generates a cryptographically secure random UUID v4 string.",
+        es: "crypto.randomUUID() genera una cadena UUID v4 aleatoria criptográficamente segura.",
+      },
+    },
   },
   {
     slug: 'crypto-uuid-2',
@@ -38,6 +45,14 @@ export const cryptoUuidExercises: Exercise[] = [
     ],
     hints: ['UUID format is 8-4-4-4-12 hex digits separated by dashes'],
     tags: ['crypto', 'randomUUID', 'static-method'],
+    usageExample: {
+      code: `const id = crypto.randomUUID()
+id.length  // → 36`,
+      explanation: {
+        en: "A UUID is always 36 characters including the four hyphens.",
+        es: "Un UUID siempre tiene 36 caracteres incluyendo los cuatro guiones.",
+      },
+    },
   },
   {
     slug: 'crypto-uuid-3',
@@ -57,6 +72,14 @@ export const cryptoUuidExercises: Exercise[] = [
     ],
     hints: ['A valid UUID has dashes at positions 8, 13, 18, and 23'],
     tags: ['crypto', 'randomUUID', 'static-method'],
+    usageExample: {
+      code: `const ids = new Set(Array.from({length: 1000}, () => crypto.randomUUID()))
+ids.size  // → 1000 (all unique)`,
+      explanation: {
+        en: "UUIDs are statistically guaranteed to be unique.",
+        es: "Los UUID están estadísticamente garantizados como únicos.",
+      },
+    },
   },
   {
     slug: 'crypto-uuid-4',
@@ -76,6 +99,14 @@ export const cryptoUuidExercises: Exercise[] = [
     ],
     hints: ['The third group always starts with 4 to indicate version 4'],
     tags: ['crypto', 'randomUUID', 'static-method'],
+    usageExample: {
+      code: `const uuid = crypto.randomUUID()
+/^[0-9a-f-]{36}$/.test(uuid)  // → true`,
+      explanation: {
+        en: "A UUID v4 matches the hexadecimal format with hyphens at fixed positions.",
+        es: "Un UUID v4 coincide con el formato hexadecimal con guiones en posiciones fijas.",
+      },
+    },
   },
   {
     slug: 'crypto-uuid-5',
@@ -95,5 +126,12 @@ export const cryptoUuidExercises: Exercise[] = [
     ],
     hints: ['UUIDs are designed to be statistically unique, so collisions are astronomically unlikely'],
     tags: ['crypto', 'randomUUID', 'static-method', 'uniqueness'],
+    usageExample: {
+      code: `const record = { id: crypto.randomUUID(), name: 'item' }`,
+      explanation: {
+        en: "Use crypto.randomUUID() to assign unique IDs to records without a server.",
+        es: "Usa crypto.randomUUID() para asignar IDs únicos a registros sin un servidor.",
+      },
+    },
   },
 ]

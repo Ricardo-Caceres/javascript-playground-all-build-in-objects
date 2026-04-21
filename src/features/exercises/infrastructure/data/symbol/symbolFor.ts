@@ -20,6 +20,14 @@ export const symbolForExercises: Exercise[] = [
     ],
     hints: ['Symbol.for() uses a global registry keyed by string.'],
     tags: ['symbol', 'Symbol.for', 'global-registry'],
+    usageExample: {
+      code: `Symbol.for('foo') === Symbol.for('foo')  // → true
+Symbol('foo')    === Symbol('foo')       // → false`,
+      explanation: {
+        en: 'Symbol.for() looks up a global registry — the same key always returns the identical symbol.',
+        es: 'Symbol.for() consulta un registro global; la misma clave siempre devuelve el mismo símbolo.',
+      },
+    },
   },
   {
     slug: 'symbol-for-2',
@@ -40,6 +48,15 @@ export const symbolForExercises: Exercise[] = [
     ],
     hints: ['Symbol.for() registers globally; Symbol() is always a new local symbol.'],
     tags: ['symbol', 'Symbol.for', 'uniqueness'],
+    usageExample: {
+      code: `const g = Symbol.for('foo')
+const l = Symbol('foo')
+g === l   // → false`,
+      explanation: {
+        en: 'Symbol.for() returns a globally shared symbol, while Symbol() always creates a new local one.',
+        es: 'Symbol.for() devuelve un símbolo global compartido; Symbol() crea siempre uno local nuevo.',
+      },
+    },
   },
   {
     slug: 'symbol-for-3',
@@ -60,6 +77,13 @@ export const symbolForExercises: Exercise[] = [
     ],
     hints: ['Even global symbols have type "symbol".'],
     tags: ['symbol', 'Symbol.for', 'typeof'],
+    usageExample: {
+      code: `typeof Symbol.for('x')   // → 'symbol'`,
+      explanation: {
+        en: 'Symbol.for() returns a symbol primitive — typeof is always \'symbol\'.',
+        es: 'Symbol.for() devuelve un primitivo símbolo; typeof es siempre \'symbol\'.',
+      },
+    },
   },
   {
     slug: 'symbol-for-4',
@@ -80,6 +104,14 @@ export const symbolForExercises: Exercise[] = [
     ],
     hints: ['Symbol.keyFor only works for globally registered symbols.'],
     tags: ['symbol', 'Symbol.for', 'Symbol.keyFor'],
+    usageExample: {
+      code: `const s = Symbol.for('app')
+Symbol.keyFor(s)   // → 'app'`,
+      explanation: {
+        en: 'Symbol.keyFor() retrieves the registration key used with Symbol.for().',
+        es: 'Symbol.keyFor() recupera la clave de registro usada con Symbol.for().',
+      },
+    },
   },
   {
     slug: 'symbol-for-5',
@@ -100,5 +132,13 @@ export const symbolForExercises: Exercise[] = [
     ],
     hints: ['The description of Symbol.for(key) equals the key.'],
     tags: ['symbol', 'Symbol.for', 'description'],
+    usageExample: {
+      code: `const s = Symbol.for('id')
+s.description   // → 'id'`,
+      explanation: {
+        en: 'For global symbols, .description is always equal to the registration key.',
+        es: 'Para símbolos globales, .description es siempre igual a la clave de registro.',
+      },
+    },
   },
 ]

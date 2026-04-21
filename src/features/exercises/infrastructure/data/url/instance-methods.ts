@@ -19,6 +19,14 @@ export const urlInstanceMethodsExercises: Exercise[] = [
     ],
     hints: ['url.toString() and url.href both return the serialized URL'],
     tags: ['URL', 'instance-method', 'toString'],
+    usageExample: {
+      code: `const u = new URL('https://example.com/path')
+u.toString()  // → 'https://example.com/path'`,
+      explanation: {
+        en: "toString() returns the full serialized URL string.",
+        es: "toString() devuelve la cadena URL serializada completa.",
+      },
+    },
   },
   {
     slug: 'url-instance-method-2',
@@ -38,6 +46,14 @@ export const urlInstanceMethodsExercises: Exercise[] = [
     ],
     hints: ['URL properties are mutable — setting them updates the URL'],
     tags: ['URL', 'instance-method', 'toString', 'mutation'],
+    usageExample: {
+      code: `const u = new URL('https://example.com/?q=1')
+u.toJSON() === u.href  // → true`,
+      explanation: {
+        en: "toJSON() returns the same string as href, used during JSON.stringify().",
+        es: "toJSON() devuelve la misma cadena que href, usada durante JSON.stringify().",
+      },
+    },
   },
   {
     slug: 'url-instance-method-3',
@@ -57,6 +73,15 @@ export const urlInstanceMethodsExercises: Exercise[] = [
     ],
     hints: ['toJSON is used when JSON.stringify serializes a URL object'],
     tags: ['URL', 'instance-method', 'toJSON'],
+    usageExample: {
+      code: `const u = new URL('https://example.com')
+u.pathname = '/new'
+u.href  // → 'https://example.com/new'`,
+      explanation: {
+        en: "Setting properties like pathname updates the URL in-place.",
+        es: "Establecer propiedades como pathname actualiza la URL en su lugar.",
+      },
+    },
   },
   {
     slug: 'url-instance-method-4',
@@ -76,6 +101,15 @@ export const urlInstanceMethodsExercises: Exercise[] = [
     ],
     hints: ['Both toJSON() and href return the fully serialized URL'],
     tags: ['URL', 'instance-method', 'toJSON', 'href'],
+    usageExample: {
+      code: `const u = new URL('https://example.com?a=1')
+u.searchParams.delete('a')
+u.href  // → 'https://example.com'`,
+      explanation: {
+        en: "Modifying searchParams automatically updates the URL's search string.",
+        es: "Modificar searchParams actualiza automáticamente la cadena de búsqueda de la URL.",
+      },
+    },
   },
   {
     slug: 'url-instance-method-5',
@@ -95,5 +129,12 @@ export const urlInstanceMethodsExercises: Exercise[] = [
     ],
     hints: ['JSON.stringify automatically calls toJSON() — URL serializes as its href string'],
     tags: ['URL', 'instance-method', 'toJSON', 'JSON.stringify'],
+    usageExample: {
+      code: `new URL('https://a.com').href  // → 'https://a.com/'`,
+      explanation: {
+        en: "href returns the full normalized URL string including trailing slash.",
+        es: "href devuelve la cadena URL normalizada completa incluyendo la barra final.",
+      },
+    },
   },
 ]

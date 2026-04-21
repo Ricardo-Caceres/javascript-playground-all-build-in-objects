@@ -19,6 +19,15 @@ export const formDataMethodsExercises: Exercise[] = [
     ],
     hints: ['has(name) checks for the presence of the key, not its value'],
     tags: ['FormData', 'has', 'instance-method'],
+    usageExample: {
+      code: `const fd = new FormData()
+fd.append('k', 'v')
+fd.has('k')  // → true`,
+      explanation: {
+        en: "has() returns true if the given key exists in the FormData.",
+        es: "has() devuelve true si la clave dada existe en el FormData.",
+      },
+    },
   },
   {
     slug: 'formdata-methods-2',
@@ -38,6 +47,16 @@ export const formDataMethodsExercises: Exercise[] = [
     ],
     hints: ['An empty FormData has no keys, so has() returns false for any name'],
     tags: ['FormData', 'has', 'instance-method'],
+    usageExample: {
+      code: `const fd = new FormData()
+fd.append('a', '1')
+fd.delete('a')
+fd.has('a')  // → false`,
+      explanation: {
+        en: "delete() removes all values associated with the given key.",
+        es: "delete() elimina todos los valores asociados con la clave dada.",
+      },
+    },
   },
   {
     slug: 'formdata-methods-3',
@@ -57,6 +76,16 @@ export const formDataMethodsExercises: Exercise[] = [
     ],
     hints: ['set() is different from append(): it replaces all existing entries for that name'],
     tags: ['FormData', 'set', 'instance-method'],
+    usageExample: {
+      code: `const fd = new FormData()
+fd.append('q', 'hello')
+fd.get('q')   // → 'hello'
+fd.get('z')   // → null`,
+      explanation: {
+        en: "get() retrieves the first value for a key, or null if absent.",
+        es: "get() recupera el primer valor de una clave, o null si está ausente.",
+      },
+    },
   },
   {
     slug: 'formdata-methods-4',
@@ -76,6 +105,16 @@ export const formDataMethodsExercises: Exercise[] = [
     ],
     hints: ['append() never removes existing entries; use set() if you want to replace them'],
     tags: ['FormData', 'append', 'getAll', 'instance-method'],
+    usageExample: {
+      code: `const fd = new FormData()
+fd.append('a', '1')
+fd.append('a', '2')
+fd.getAll('a')  // → ['1', '2']`,
+      explanation: {
+        en: "getAll() returns an array of all values for a key, including duplicates.",
+        es: "getAll() devuelve un arreglo con todos los valores de una clave, incluidos los duplicados.",
+      },
+    },
   },
   {
     slug: 'formdata-methods-5',
@@ -95,5 +134,15 @@ export const formDataMethodsExercises: Exercise[] = [
     ],
     hints: ['delete() removes ALL entries for that name, not just the first one'],
     tags: ['FormData', 'delete', 'instance-method'],
+    usageExample: {
+      code: `const fd = new FormData()
+fd.set('x', 'old')
+fd.set('x', 'new')
+fd.get('x')  // → 'new'`,
+      explanation: {
+        en: "set() replaces all existing values for a key with a single new value.",
+        es: "set() reemplaza todos los valores existentes de una clave con un único valor nuevo.",
+      },
+    },
   },
 ]

@@ -35,6 +35,15 @@ charFromCode(97) // → 'a'
       'ASCII code 65 = A, 97 = a, 48 = 0, 32 = space.',
     ],
     tags: ['String', 'String.fromCharCode', 'ASCII', 'beginner'],
+    usageExample: {
+      code: `String.fromCharCode(65)        // → 'A'
+String.fromCharCode(97)        // → 'a'
+String.fromCharCode(72, 105)   // → 'Hi'`,
+      explanation: {
+        en: "Use String.fromCharCode() to create a string from one or more UTF-16 char code values.",
+        es: "Usa String.fromCharCode() para crear una cadena a partir de uno o más valores de código de carácter UTF-16.",
+      },
+    },
   },
   {
     slug: 'string-from-char-code-word',
@@ -69,6 +78,15 @@ buildWord([72, 105]) // → 'Hi'
       'Spread the array as arguments: `String.fromCharCode(...codes)`.',
     ],
     tags: ['String', 'String.fromCharCode', 'spread', 'beginner'],
+    usageExample: {
+      code: `String.fromCharCode(65)        // → 'A'
+String.fromCharCode(97)        // → 'a'
+String.fromCharCode(72, 105)   // → 'Hi'`,
+      explanation: {
+        en: "Use String.fromCharCode() to create a string from one or more UTF-16 char code values.",
+        es: "Usa String.fromCharCode() para crear una cadena a partir de uno o más valores de código de carácter UTF-16.",
+      },
+    },
   },
   {
     slug: 'string-from-char-code-uppercase-range',
@@ -104,6 +122,15 @@ getUppercaseLetter(25) // → 'Z'
       'A = 65, B = 66, … Z = 90. So the nth letter is `String.fromCharCode(65 + n)`.',
     ],
     tags: ['String', 'String.fromCharCode', 'ASCII', 'beginner'],
+    usageExample: {
+      code: `String.fromCharCode(65)        // → 'A'
+String.fromCharCode(97)        // → 'a'
+String.fromCharCode(72, 105)   // → 'Hi'`,
+      explanation: {
+        en: "Use String.fromCharCode() to create a string from one or more UTF-16 char code values.",
+        es: "Usa String.fromCharCode() para crear una cadena a partir de uno o más valores de código de carácter UTF-16.",
+      },
+    },
   },
   {
     slug: 'string-from-char-code-special',
@@ -139,6 +166,15 @@ getChar(174) // → '®'
       '`String.fromCharCode` works for any UTF-16 code unit, not just ASCII.',
     ],
     tags: ['String', 'String.fromCharCode', 'Unicode', 'intermediate'],
+    usageExample: {
+      code: `String.fromCharCode(65)        // → 'A'
+String.fromCharCode(97)        // → 'a'
+String.fromCharCode(72, 105)   // → 'Hi'`,
+      explanation: {
+        en: "Use String.fromCharCode() to create a string from one or more UTF-16 char code values.",
+        es: "Usa String.fromCharCode() para crear una cadena a partir de uno o más valores de código de carácter UTF-16.",
+      },
+    },
   },
   {
     slug: 'string-from-char-code-roundtrip',
@@ -174,5 +210,14 @@ shiftChar('a', 2) // → 'c'
       'Use `ch.charCodeAt(0)` to get the code, then `String.fromCharCode(code + n)` to get the new char.',
     ],
     tags: ['String', 'String.fromCharCode', 'charCodeAt', 'intermediate'],
+    usageExample: {
+      code: `String.fromCharCode(65)        // → 'A'
+String.fromCharCode(97)        // → 'a'
+String.fromCharCode(72, 105)   // → 'Hi'`,
+      explanation: {
+        en: "Use String.fromCharCode() to create a string from one or more UTF-16 char code values.",
+        es: "Usa String.fromCharCode() para crear una cadena a partir de uno o más valores de código de carácter UTF-16.",
+      },
+    },
   },
 ]

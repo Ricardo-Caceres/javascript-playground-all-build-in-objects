@@ -34,6 +34,15 @@ trimStr('   hello') // → 'hello'
       '`trim()` removes all leading and trailing whitespace characters.',
     ],
     tags: ['String', 'String.prototype.trim', 'beginner'],
+    usageExample: {
+      code: `'  hello  '.trim()      // → 'hello'
+'\n text \t'.trim()   // → 'text'
+'no spaces'.trim()   // → 'no spaces'`,
+      explanation: {
+        en: "Use trim() to remove all leading and trailing whitespace characters from a string.",
+        es: "Usa trim() para eliminar todos los espacios en blanco al inicio y al final de una cadena.",
+      },
+    },
   },
   {
     slug: 'string-trim-trailing-spaces',
@@ -68,6 +77,15 @@ cleanTrailing('hello   ') // → 'hello'
       '`trim()` removes whitespace from the end as well as the start.',
     ],
     tags: ['String', 'String.prototype.trim', 'beginner'],
+    usageExample: {
+      code: `'  hello  '.trim()      // → 'hello'
+'\n text \t'.trim()   // → 'text'
+'no spaces'.trim()   // → 'no spaces'`,
+      explanation: {
+        en: "Use trim() to remove all leading and trailing whitespace characters from a string.",
+        es: "Usa trim() para eliminar todos los espacios en blanco al inicio y al final de una cadena.",
+      },
+    },
   },
   {
     slug: 'string-trim-both-ends',
@@ -102,6 +120,15 @@ trimBoth('  hello  ') // → 'hello'
       '`trim()` never removes whitespace from the middle of a string.',
     ],
     tags: ['String', 'String.prototype.trim', 'beginner'],
+    usageExample: {
+      code: `'  hello  '.trim()      // → 'hello'
+'\n text \t'.trim()   // → 'text'
+'no spaces'.trim()   // → 'no spaces'`,
+      explanation: {
+        en: "Use trim() to remove all leading and trailing whitespace characters from a string.",
+        es: "Usa trim() para eliminar todos los espacios en blanco al inicio y al final de una cadena.",
+      },
+    },
   },
   {
     slug: 'string-trim-no-whitespace',
@@ -136,6 +163,15 @@ trimClean('hello') // → 'hello'
       '`trim()` on a clean string is a no-op.',
     ],
     tags: ['String', 'String.prototype.trim', 'beginner'],
+    usageExample: {
+      code: `'  hello  '.trim()      // → 'hello'
+'\n text \t'.trim()   // → 'text'
+'no spaces'.trim()   // → 'no spaces'`,
+      explanation: {
+        en: "Use trim() to remove all leading and trailing whitespace characters from a string.",
+        es: "Usa trim() para eliminar todos los espacios en blanco al inicio y al final de una cadena.",
+      },
+    },
   },
   {
     slug: 'string-trim-tabs-and-newlines',
@@ -170,5 +206,14 @@ trimAll('\\t hello \\n') // → 'hello'
       '`trim()` removes all Unicode whitespace characters, including `\\t`, `\\n`, `\\r`, and spaces.',
     ],
     tags: ['String', 'String.prototype.trim', 'whitespace', 'beginner'],
+    usageExample: {
+      code: `'  hello  '.trim()      // → 'hello'
+'\n text \t'.trim()   // → 'text'
+'no spaces'.trim()   // → 'no spaces'`,
+      explanation: {
+        en: "Use trim() to remove all leading and trailing whitespace characters from a string.",
+        es: "Usa trim() para eliminar todos los espacios en blanco al inicio y al final de una cadena.",
+      },
+    },
   },
 ]

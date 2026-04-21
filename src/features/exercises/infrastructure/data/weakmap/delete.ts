@@ -20,6 +20,16 @@ export const weakMapDeleteExercises: Exercise[] = [
     ],
     hints: ['delete() returns true when the key was present.'],
     tags: ['weakmap', 'delete', 'instance-method'],
+    usageExample: {
+      code: `const wm = new WeakMap()
+const k = {}
+wm.set(k, 1)
+wm.delete(k)  // → true`,
+      explanation: {
+        en: "delete() removes the entry for the given key and returns true if it existed.",
+        es: "delete() elimina la entrada para la clave dada y devuelve true si existía.",
+      },
+    },
   },
   {
     slug: 'weakmap-delete-2',
@@ -40,6 +50,15 @@ export const weakMapDeleteExercises: Exercise[] = [
     ],
     hints: ['delete() returns false when the key was not found.'],
     tags: ['weakmap', 'delete', 'false'],
+    usageExample: {
+      code: `const wm = new WeakMap()
+const k = {}
+wm.delete(k)  // → false`,
+      explanation: {
+        en: "delete() returns false when the key was never in the WeakMap.",
+        es: "delete() devuelve false cuando la clave nunca estuvo en el WeakMap.",
+      },
+    },
   },
   {
     slug: 'weakmap-delete-3',
@@ -60,6 +79,17 @@ export const weakMapDeleteExercises: Exercise[] = [
     ],
     hints: ['has() is the complement of delete() — if deleted, has returns false.'],
     tags: ['weakmap', 'delete', 'has'],
+    usageExample: {
+      code: `const wm = new WeakMap()
+const k = {}
+wm.set(k, 1)
+wm.delete(k)
+wm.has(k)  // → false`,
+      explanation: {
+        en: "After delete(), has() confirms the key is gone.",
+        es: "Después de delete(), has() confirma que la clave ha desaparecido.",
+      },
+    },
   },
   {
     slug: 'weakmap-delete-4',
@@ -80,6 +110,17 @@ export const weakMapDeleteExercises: Exercise[] = [
     ],
     hints: ['After deletion, get() returns undefined.'],
     tags: ['weakmap', 'delete', 'get'],
+    usageExample: {
+      code: `const wm = new WeakMap()
+const k = {}
+wm.set(k, 1)
+wm.delete(k)
+wm.get(k)  // → undefined`,
+      explanation: {
+        en: "After delete(), get() returns undefined for the removed key.",
+        es: "Después de delete(), get() devuelve undefined para la clave eliminada.",
+      },
+    },
   },
   {
     slug: 'weakmap-delete-5',
@@ -100,5 +141,16 @@ export const weakMapDeleteExercises: Exercise[] = [
     ],
     hints: ['Each key is independent — deleting one does not affect others.'],
     tags: ['weakmap', 'delete', 'isolation'],
+    usageExample: {
+      code: `const wm = new WeakMap()
+const k = {}
+wm.set(k, 1)
+const removed = wm.delete(k)
+removed  // → true`,
+      explanation: {
+        en: "The return value of delete() tells you if the removal was successful.",
+        es: "El valor de retorno de delete() indica si la eliminación fue exitosa.",
+      },
+    },
   },
 ]

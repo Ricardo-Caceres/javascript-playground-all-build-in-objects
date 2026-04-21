@@ -20,6 +20,17 @@ export const promiseRaceExercises: Exercise[] = [
     ],
     hints: ['Promise.race() always returns a Promise.'],
     tags: ['promise', 'race', 'instanceof'],
+    usageExample: {
+      code: `const slow = new Promise(res => setTimeout(() => res('slow'), 200))
+const fast = new Promise(res => setTimeout(() => res('fast'), 50))
+Promise.race([slow, fast]).then(v => {
+  console.log(v) // → 'fast'
+})`,
+      explanation: {
+        en: 'Promise.race() returns a promise that settles as soon as the first promise in the iterable settles.',
+        es: 'Promise.race() devuelve una promesa que se resuelve tan pronto como la primera promesa del iterable se establece.',
+      },
+    },
   },
   {
     slug: 'promise-race-2',
@@ -40,6 +51,17 @@ export const promiseRaceExercises: Exercise[] = [
     ],
     hints: ['Promise.race() returns a Promise object.'],
     tags: ['promise', 'race', 'typeof'],
+    usageExample: {
+      code: `const slow = new Promise(res => setTimeout(() => res('slow'), 200))
+const fast = new Promise(res => setTimeout(() => res('fast'), 50))
+Promise.race([slow, fast]).then(v => {
+  console.log(v) // → 'fast'
+})`,
+      explanation: {
+        en: 'Promise.race() returns a promise that settles as soon as the first promise in the iterable settles.',
+        es: 'Promise.race() devuelve una promesa que se resuelve tan pronto como la primera promesa del iterable se establece.',
+      },
+    },
   },
   {
     slug: 'promise-race-3',
@@ -60,6 +82,17 @@ export const promiseRaceExercises: Exercise[] = [
     ],
     hints: ['Promise.race is a static method (function).'],
     tags: ['promise', 'race', 'typeof'],
+    usageExample: {
+      code: `const slow = new Promise(res => setTimeout(() => res('slow'), 200))
+const fast = new Promise(res => setTimeout(() => res('fast'), 50))
+Promise.race([slow, fast]).then(v => {
+  console.log(v) // → 'fast'
+})`,
+      explanation: {
+        en: 'Promise.race() returns a promise that settles as soon as the first promise in the iterable settles.',
+        es: 'Promise.race() devuelve una promesa que se resuelve tan pronto como la primera promesa del iterable se establece.',
+      },
+    },
   },
   {
     slug: 'promise-race-4',
@@ -80,6 +113,17 @@ export const promiseRaceExercises: Exercise[] = [
     ],
     hints: ['Promise.race returns a Promise regardless of input count.'],
     tags: ['promise', 'race', 'multiple'],
+    usageExample: {
+      code: `const slow = new Promise(res => setTimeout(() => res('slow'), 200))
+const fast = new Promise(res => setTimeout(() => res('fast'), 50))
+Promise.race([slow, fast]).then(v => {
+  console.log(v) // → 'fast'
+})`,
+      explanation: {
+        en: 'Promise.race() returns a promise that settles as soon as the first promise in the iterable settles.',
+        es: 'Promise.race() devuelve una promesa que se resuelve tan pronto como la primera promesa del iterable se establece.',
+      },
+    },
   },
   {
     slug: 'promise-race-5',
@@ -100,5 +144,16 @@ export const promiseRaceExercises: Exercise[] = [
     ],
     hints: ['Static methods are Function instances.'],
     tags: ['promise', 'race', 'instanceof'],
+    usageExample: {
+      code: `const slow = new Promise(res => setTimeout(() => res('slow'), 200))
+const fast = new Promise(res => setTimeout(() => res('fast'), 50))
+Promise.race([slow, fast]).then(v => {
+  console.log(v) // → 'fast'
+})`,
+      explanation: {
+        en: 'Promise.race() returns a promise that settles as soon as the first promise in the iterable settles.',
+        es: 'Promise.race() devuelve una promesa que se resuelve tan pronto como la primera promesa del iterable se establece.',
+      },
+    },
   },
 ]

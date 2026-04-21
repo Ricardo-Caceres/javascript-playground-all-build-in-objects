@@ -36,6 +36,16 @@ numToString(3.14) // → '3.14'
       'It calls the internal `ToString` abstract operation on the value.',
     ],
     tags: ['String', 'String constructor', 'coercion', 'beginner'],
+    usageExample: {
+      code: `String(42)         // → '42'
+String(true)       // → 'true'
+String(null)       // → 'null'
+String(undefined)  // → 'undefined'`,
+      explanation: {
+        en: "Use String() to safely convert any value to its string representation.",
+        es: "Usa String() para convertir de forma segura cualquier valor a su representación de cadena.",
+      },
+    },
   },
   {
     slug: 'string-constructor-coerce-boolean',
@@ -71,6 +81,16 @@ boolToString(false) // → 'false'
       '`String(true)` produces the literal string `"true"`, not `1`.',
     ],
     tags: ['String', 'String constructor', 'coercion', 'beginner'],
+    usageExample: {
+      code: `String(42)         // → '42'
+String(true)       // → 'true'
+String(null)       // → 'null'
+String(undefined)  // → 'undefined'`,
+      explanation: {
+        en: "Use String() to safely convert any value to its string representation.",
+        es: "Usa String() para convertir de forma segura cualquier valor a su representación de cadena.",
+      },
+    },
   },
   {
     slug: 'string-constructor-coerce-null-undefined',
@@ -106,6 +126,16 @@ toStr(undefined) // → 'undefined'
       '`String(null)` is safe — it will not throw like `null.toString()` would.',
     ],
     tags: ['String', 'String constructor', 'null', 'undefined', 'beginner'],
+    usageExample: {
+      code: `String(42)         // → '42'
+String(true)       // → 'true'
+String(null)       // → 'null'
+String(undefined)  // → 'undefined'`,
+      explanation: {
+        en: "Use String() to safely convert any value to its string representation.",
+        es: "Usa String() para convertir de forma segura cualquier valor a su representación de cadena.",
+      },
+    },
   },
   {
     slug: 'string-constructor-primitive-vs-object',
@@ -142,6 +172,16 @@ isPrimitiveString(new String('hi')) // → false
       '`typeof String("x")` is `"string"` — a primitive.',
     ],
     tags: ['String', 'String constructor', 'primitive', 'typeof', 'intermediate'],
+    usageExample: {
+      code: `String(42)         // → '42'
+String(true)       // → 'true'
+String(null)       // → 'null'
+String(undefined)  // → 'undefined'`,
+      explanation: {
+        en: "Use String() to safely convert any value to its string representation.",
+        es: "Usa String() para convertir de forma segura cualquier valor a su representación de cadena.",
+      },
+    },
   },
   {
     slug: 'string-constructor-coerce-array',
@@ -177,5 +217,15 @@ arrayToStr([42])       // → '42'
       '`String(arr)` internally calls `arr.toString()`, which joins elements with commas.',
     ],
     tags: ['String', 'String constructor', 'array', 'coercion', 'intermediate'],
+    usageExample: {
+      code: `String(42)         // → '42'
+String(true)       // → 'true'
+String(null)       // → 'null'
+String(undefined)  // → 'undefined'`,
+      explanation: {
+        en: "Use String() to safely convert any value to its string representation.",
+        es: "Usa String() para convertir de forma segura cualquier valor a su representación de cadena.",
+      },
+    },
   },
 ]

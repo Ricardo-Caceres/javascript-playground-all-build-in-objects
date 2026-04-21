@@ -59,6 +59,22 @@ account.deposit(50)`,
     ],
     hints: ['Store balance in a closure variable', 'Return an object with methods that modify the balance', 'Ensure the balance variable cannot be accessed directly from outside'],
     tags: ['closures', 'encapsulation', 'private-state', 'bank-account'],
+    usageExample: {
+      code: `function makeBankAccount(initial) {
+  let balance = initial
+  return {
+    deposit(n) { return (balance += n) },
+    withdraw(n) { return (balance -= n) },
+    balance() { return balance },
+  }
+}
+const acct = makeBankAccount(100)
+acct.deposit(50)   // → 150`,
+      explanation: {
+        en: 'Closures hide internal state by keeping variables private inside the outer function, accessible only through the returned methods.',
+        es: 'Los closures ocultan el estado interno manteniendo variables privadas dentro de la función externa, accesibles solo a través de los métodos retornados.',
+      },
+    },
   },
   {
     slug: 'closures-private-2',
@@ -102,6 +118,19 @@ toggle()`,
     ],
     hints: ['Toggle boolean using the NOT operator (!)', 'Store state in a closure variable'],
     tags: ['closures', 'toggle', 'boolean-state', 'private-state'],
+    usageExample: {
+      code: `function makeToggle() {
+  let state = true
+  return () => (state = !state)
+}
+const toggle = makeToggle()
+toggle()  // → true
+toggle()  // → false`,
+      explanation: {
+        en: 'A closure remembers its private state between calls, allowing a toggle to alternate its value each time it is invoked.',
+        es: 'Un closure recuerda su estado privado entre llamadas, permitiendo que un toggle alterne su valor cada vez que se invoca.',
+      },
+    },
   },
   {
     slug: 'closures-private-3',
@@ -157,6 +186,22 @@ onceIncrement()`,
     ],
     hints: ['Use a flag to track whether the function has been called', 'Store the result in a closure variable', 'Return the cached result on subsequent calls'],
     tags: ['closures', 'once', 'call-once', 'caching'],
+    usageExample: {
+      code: `function once(fn) {
+  let called = false, result
+  return (...args) => {
+    if (!called) { called = true; result = fn(...args) }
+    return result
+  }
+}
+const init = once(() => 'initialized')
+init()  // → 'initialized'
+init()  // → 'initialized' (fn not called again)`,
+      explanation: {
+        en: 'Closures preserve flags and cached results across calls, making it easy to execute a function only once and reuse its result.',
+        es: 'Los closures preservan indicadores y resultados en caché entre llamadas, facilitando ejecutar una función solo una vez y reutilizar su resultado.',
+      },
+    },
   },
   {
     slug: 'closures-private-4',
@@ -201,6 +246,18 @@ addFive(3, 2)`,
     ],
     hints: ['Use rest parameters to capture preset and new arguments', 'Return a function that combines both argument sets'],
     tags: ['closures', 'partial-application', 'currying', 'function-composition'],
+    usageExample: {
+      code: `function partial(fn, ...presetArgs) {
+  return (...newArgs) => fn(...presetArgs, ...newArgs)
+}
+const add = (a, b, c) => a + b + c
+const addFive = partial(add, 5)
+addFive(3, 2)  // → 10`,
+      explanation: {
+        en: 'Partial application uses closures to capture preset arguments, returning a new function that completes the call with the remaining arguments.',
+        es: 'La aplicación parcial usa closures para capturar argumentos preestablecidos, retornando una nueva función que completa la llamada con los argumentos restantes.',
+      },
+    },
   },
   {
     slug: 'closures-private-5',
@@ -256,5 +313,21 @@ limited()`,
     ],
     hints: ['Create a counter in closure to track calls', 'Return a wrapper that checks the counter before executing', 'Return undefined when limit is exceeded'],
     tags: ['closures', 'rate-limiting', 'call-limiting', 'throttle'],
+    usageExample: {
+      code: `function makeLimiter(maxCalls) {
+  return (fn) => {
+    let count = 0
+    return (...args) => count++ < maxCalls ? fn(...args) : undefined
+  }
+}
+const limiter = makeLimiter(2)
+const limited = limiter(() => 'ok')
+limited()  // → 'ok'
+limited()  // → undefined (limit exceeded)`,
+      explanation: {
+        en: 'Closures keep a private counter per wrapper, enabling precise control over how many times a function is allowed to execute.',
+        es: 'Los closures mantienen un contador privado por envoltorio, permitiendo un control preciso sobre cuántas veces se permite ejecutar una función.',
+      },
+    },
   },
 ]

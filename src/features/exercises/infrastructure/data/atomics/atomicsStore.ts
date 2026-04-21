@@ -56,5 +56,14 @@ expect(result).toBe(11);`
     ],
     hints: ['Use Atomics.store(typedArray, index, value)'],
     tags: [],
+    usageExample: {
+      code: `const i32 = new Int32Array(new SharedArrayBuffer(4))
+Atomics.store(i32, 0, 42)
+Atomics.load(i32, 0)  // → 42`,
+      explanation: {
+        en: "Atomics.store() writes a value atomically to a shared typed array element.",
+        es: "Atomics.store() escribe un valor atómicamente en un elemento de arreglo tipado compartido.",
+      },
+    },
   },
 ];

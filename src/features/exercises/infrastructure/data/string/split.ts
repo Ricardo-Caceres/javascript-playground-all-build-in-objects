@@ -34,6 +34,15 @@ splitByComma('a,b,c') // → ['a', 'b', 'c']
       '`str.split(",")` splits at every comma.',
     ],
     tags: ['String', 'String.prototype.split', 'beginner'],
+    usageExample: {
+      code: `'a,b,c'.split(',')    // → ['a', 'b', 'c']
+'hello'.split('')     // → ['h', 'e', 'l', 'l', 'o']
+'hi'.split()          // → ['hi']`,
+      explanation: {
+        en: "Use split() to divide a string into an array of substrings at each occurrence of the separator.",
+        es: "Usa split() para dividir una cadena en un array de subcadenas en cada ocurrencia del separador.",
+      },
+    },
   },
   {
     slug: 'string-split-by-string',
@@ -68,6 +77,15 @@ splitBySep('one::two::three', '::') // → ['one', 'two', 'three']
       'The separator can be any string, not just a single character.',
     ],
     tags: ['String', 'String.prototype.split', 'beginner'],
+    usageExample: {
+      code: `'a,b,c'.split(',')    // → ['a', 'b', 'c']
+'hello'.split('')     // → ['h', 'e', 'l', 'l', 'o']
+'hi'.split()          // → ['hi']`,
+      explanation: {
+        en: "Use split() to divide a string into an array of substrings at each occurrence of the separator.",
+        es: "Usa split() para dividir una cadena en un array de subcadenas en cada ocurrencia del separador.",
+      },
+    },
   },
   {
     slug: 'string-split-with-limit',
@@ -102,6 +120,15 @@ splitFirst('a,b,c,d', ',') // → ['a', 'b']
       '`str.split(sep, 2)` returns an array with at most 2 elements.',
     ],
     tags: ['String', 'String.prototype.split', 'limit', 'intermediate'],
+    usageExample: {
+      code: `'a,b,c'.split(',')    // → ['a', 'b', 'c']
+'hello'.split('')     // → ['h', 'e', 'l', 'l', 'o']
+'hi'.split()          // → ['hi']`,
+      explanation: {
+        en: "Use split() to divide a string into an array of substrings at each occurrence of the separator.",
+        es: "Usa split() para dividir una cadena en un array de subcadenas en cada ocurrencia del separador.",
+      },
+    },
   },
   {
     slug: 'string-split-empty-string',
@@ -136,6 +163,15 @@ toChars('hello') // → ['h', 'e', 'l', 'l', 'o']
       '`str.split("")` splits at every character boundary.',
     ],
     tags: ['String', 'String.prototype.split', 'beginner'],
+    usageExample: {
+      code: `'a,b,c'.split(',')    // → ['a', 'b', 'c']
+'hello'.split('')     // → ['h', 'e', 'l', 'l', 'o']
+'hi'.split()          // → ['hi']`,
+      explanation: {
+        en: "Use split() to divide a string into an array of substrings at each occurrence of the separator.",
+        es: "Usa split() para dividir una cadena en un array de subcadenas en cada ocurrencia del separador.",
+      },
+    },
   },
   {
     slug: 'string-split-no-separator',
@@ -170,5 +206,14 @@ wrapInArray('hello') // → ['hello']
       '`str.split()` with no argument returns `[str]` — the whole string as a single element.',
     ],
     tags: ['String', 'String.prototype.split', 'beginner'],
+    usageExample: {
+      code: `'a,b,c'.split(',')    // → ['a', 'b', 'c']
+'hello'.split('')     // → ['h', 'e', 'l', 'l', 'o']
+'hi'.split()          // → ['hi']`,
+      explanation: {
+        en: "Use split() to divide a string into an array of substrings at each occurrence of the separator.",
+        es: "Usa split() para dividir una cadena en un array de subcadenas en cada ocurrencia del separador.",
+      },
+    },
   },
 ]

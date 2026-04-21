@@ -55,5 +55,14 @@ expect(arr[1]).toBe(-3);`
     ],
     hints: ['Use Atomics.add(typedArray, index, value)'],
     tags: [],
+    usageExample: {
+      code: `const i32 = new Int32Array(new SharedArrayBuffer(4))
+Atomics.add(i32, 0, 5)
+Atomics.load(i32, 0)  // → 5`,
+      explanation: {
+        en: "Atomics.add() atomically adds a value to an element, returning the old value.",
+        es: "Atomics.add() suma atómicamente un valor a un elemento, devolviendo el valor anterior.",
+      },
+    },
   },
 ];

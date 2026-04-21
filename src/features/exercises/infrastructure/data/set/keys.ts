@@ -20,6 +20,16 @@ export const setKeysExercises: Exercise[] = [
     ],
     hints: ['For Set, keys() is identical to values() — both return the values'],
     tags: ['Set', 'keys', 'alias'],
+    usageExample: {
+      code: `const s = new Set([1, 2, 3])
+for (const k of s.keys()) {
+  console.log(k) // 1, 2, 3
+}`,
+      explanation: {
+        en: 'Use Set.keys() to iterate over the values of a set (identical to values()).',
+        es: 'Usa Set.keys() para iterar sobre los valores del conjunto (idéntico a values()).',
+      },
+    },
   },
   {
     slug: 'set-keys-2',
@@ -40,6 +50,16 @@ export const setKeysExercises: Exercise[] = [
     ],
     hints: ['keys() for Set yields the same values as values()'],
     tags: ['Set', 'keys', 'array'],
+    usageExample: {
+      code: `const s = new Set([1, 2, 3])
+for (const k of s.keys()) {
+  console.log(k) // 1, 2, 3
+}`,
+      explanation: {
+        en: 'Use Set.keys() to iterate over the values of a set (identical to values()).',
+        es: 'Usa Set.keys() para iterar sobre los valores del conjunto (idéntico a values()).',
+      },
+    },
   },
   {
     slug: 'set-keys-3',
@@ -60,6 +80,16 @@ export const setKeysExercises: Exercise[] = [
     ],
     hints: ['keys() for Set iterates in insertion order, with duplicates removed'],
     tags: ['Set', 'keys', 'order'],
+    usageExample: {
+      code: `const s = new Set([1, 2, 3])
+for (const k of s.keys()) {
+  console.log(k) // 1, 2, 3
+}`,
+      explanation: {
+        en: 'Use Set.keys() to iterate over the values of a set (identical to values()).',
+        es: 'Usa Set.keys() para iterar sobre los valores del conjunto (idéntico a values()).',
+      },
+    },
   },
   {
     slug: 'set-keys-4',
@@ -80,6 +110,16 @@ export const setKeysExercises: Exercise[] = [
     ],
     hints: ['An empty Set has no keys to iterate'],
     tags: ['Set', 'keys', 'empty'],
+    usageExample: {
+      code: `const s = new Set([1, 2, 3])
+for (const k of s.keys()) {
+  console.log(k) // 1, 2, 3
+}`,
+      explanation: {
+        en: 'Use Set.keys() to iterate over the values of a set (identical to values()).',
+        es: 'Usa Set.keys() para iterar sobre los valores del conjunto (idéntico a values()).',
+      },
+    },
   },
   {
     slug: 'set-keys-5',
@@ -100,5 +140,15 @@ export const setKeysExercises: Exercise[] = [
     ],
     hints: ['keys() returns a SetIterator — an iterable iterator'],
     tags: ['Set', 'keys', 'type'],
+    usageExample: {
+      code: `const s = new Set([1, 2, 3])
+for (const k of s.keys()) {
+  console.log(k) // 1, 2, 3
+}`,
+      explanation: {
+        en: 'Use Set.keys() to iterate over the values of a set (identical to values()).',
+        es: 'Usa Set.keys() para iterar sobre los valores del conjunto (idéntico a values()).',
+      },
+    },
   },
 ]

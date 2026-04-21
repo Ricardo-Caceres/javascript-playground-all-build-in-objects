@@ -20,6 +20,14 @@ export const dateToISOStringExercises: Exercise[] = [
     ],
     hints: ['toISOString() always returns a UTC-based ISO 8601 string ending with "Z"'],
     tags: ['Date', 'toISOString', 'instance-method', 'epoch'],
+    usageExample: {
+      code: `const d = new Date('2024-01-15T00:00:00.000Z')
+d.toISOString()  // → '2024-01-15T00:00:00.000Z'`,
+      explanation: {
+        en: 'Use toISOString() to serialize a Date as a UTC ISO 8601 string in the format YYYY-MM-DDTHH:mm:ss.sssZ.',
+        es: 'Usa toISOString() para serializar un Date como cadena ISO 8601 en UTC con el formato YYYY-MM-DDTHH:mm:ss.sssZ.',
+      },
+    },
   },
   {
     slug: 'date-toisostring-2',
@@ -40,6 +48,14 @@ export const dateToISOStringExercises: Exercise[] = [
     ],
     hints: ['The "T" separator is part of the ISO 8601 standard format'],
     tags: ['Date', 'toISOString', 'instance-method'],
+    usageExample: {
+      code: `const d = new Date('2024-01-15T00:00:00.000Z')
+d.toISOString()  // → '2024-01-15T00:00:00.000Z'`,
+      explanation: {
+        en: 'Use toISOString() to serialize a Date as a UTC ISO 8601 string in the format YYYY-MM-DDTHH:mm:ss.sssZ.',
+        es: 'Usa toISOString() para serializar un Date como cadena ISO 8601 en UTC con el formato YYYY-MM-DDTHH:mm:ss.sssZ.',
+      },
+    },
   },
   {
     slug: 'date-toisostring-3',
@@ -60,6 +76,14 @@ export const dateToISOStringExercises: Exercise[] = [
     ],
     hints: ['"Z" in an ISO string means UTC (Zulu time)'],
     tags: ['Date', 'toISOString', 'instance-method', 'UTC'],
+    usageExample: {
+      code: `const d = new Date('2024-01-15T00:00:00.000Z')
+d.toISOString()  // → '2024-01-15T00:00:00.000Z'`,
+      explanation: {
+        en: 'Use toISOString() to serialize a Date as a UTC ISO 8601 string in the format YYYY-MM-DDTHH:mm:ss.sssZ.',
+        es: 'Usa toISOString() para serializar un Date como cadena ISO 8601 en UTC con el formato YYYY-MM-DDTHH:mm:ss.sssZ.',
+      },
+    },
   },
   {
     slug: 'date-toisostring-4',
@@ -80,6 +104,14 @@ export const dateToISOStringExercises: Exercise[] = [
     ],
     hints: ['Format: YYYY-MM-DDTHH:mm:ss.mmmZ — exactly 24 characters'],
     tags: ['Date', 'toISOString', 'instance-method', 'length'],
+    usageExample: {
+      code: `const d = new Date('2024-01-15T00:00:00.000Z')
+d.toISOString()  // → '2024-01-15T00:00:00.000Z'`,
+      explanation: {
+        en: 'Use toISOString() to serialize a Date as a UTC ISO 8601 string in the format YYYY-MM-DDTHH:mm:ss.sssZ.',
+        es: 'Usa toISOString() para serializar un Date como cadena ISO 8601 en UTC con el formato YYYY-MM-DDTHH:mm:ss.sssZ.',
+      },
+    },
   },
   {
     slug: 'date-toisostring-5',
@@ -100,5 +132,13 @@ export const dateToISOStringExercises: Exercise[] = [
     ],
     hints: ['toISOString() is lossless — the round-trip through a UTC string preserves all information'],
     tags: ['Date', 'toISOString', 'instance-method'],
+    usageExample: {
+      code: `const d = new Date('2024-01-15T00:00:00.000Z')
+d.toISOString()  // → '2024-01-15T00:00:00.000Z'`,
+      explanation: {
+        en: 'Use toISOString() to serialize a Date as a UTC ISO 8601 string in the format YYYY-MM-DDTHH:mm:ss.sssZ.',
+        es: 'Usa toISOString() para serializar un Date como cadena ISO 8601 en UTC con el formato YYYY-MM-DDTHH:mm:ss.sssZ.',
+      },
+    },
   },
 ]

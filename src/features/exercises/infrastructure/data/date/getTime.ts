@@ -20,6 +20,15 @@ export const dateGetTimeExercises: Exercise[] = [
     ],
     hints: ['new Date(0) creates the Unix epoch; its getTime() is exactly 0'],
     tags: ['Date', 'getTime', 'instance-method', 'epoch'],
+    usageExample: {
+      code: `const d = new Date('2024-01-15T00:00:00.000Z')
+d.getTime()  // → 1705276800000
+new Date(0).getTime()  // → 0`,
+      explanation: {
+        en: 'Use getTime() to get the number of milliseconds elapsed since the Unix epoch (Jan 1, 1970 UTC).',
+        es: 'Usa getTime() para obtener el número de milisegundos transcurridos desde el epoch Unix (1 ene 1970 UTC).',
+      },
+    },
   },
   {
     slug: 'date-gettime-2',
@@ -40,6 +49,15 @@ export const dateGetTimeExercises: Exercise[] = [
     ],
     hints: ['Any ISO string date after 1970 gives a positive getTime() result'],
     tags: ['Date', 'getTime', 'instance-method'],
+    usageExample: {
+      code: `const d = new Date('2024-01-15T00:00:00.000Z')
+d.getTime()  // → 1705276800000
+new Date(0).getTime()  // → 0`,
+      explanation: {
+        en: 'Use getTime() to get the number of milliseconds elapsed since the Unix epoch (Jan 1, 1970 UTC).',
+        es: 'Usa getTime() para obtener el número de milisegundos transcurridos desde el epoch Unix (1 ene 1970 UTC).',
+      },
+    },
   },
   {
     slug: 'date-gettime-3',
@@ -60,6 +78,15 @@ export const dateGetTimeExercises: Exercise[] = [
     ],
     hints: ['getTime() returns a number primitive — the timestamp in milliseconds'],
     tags: ['Date', 'getTime', 'instance-method', 'typeof'],
+    usageExample: {
+      code: `const d = new Date('2024-01-15T00:00:00.000Z')
+d.getTime()  // → 1705276800000
+new Date(0).getTime()  // → 0`,
+      explanation: {
+        en: 'Use getTime() to get the number of milliseconds elapsed since the Unix epoch (Jan 1, 1970 UTC).',
+        es: 'Usa getTime() para obtener el número de milisegundos transcurridos desde el epoch Unix (1 ene 1970 UTC).',
+      },
+    },
   },
   {
     slug: 'date-gettime-4',
@@ -80,6 +107,15 @@ export const dateGetTimeExercises: Exercise[] = [
     ],
     hints: ['getTime() lets you compare dates numerically — the same instant always yields the same ms value'],
     tags: ['Date', 'getTime', 'instance-method', 'comparison'],
+    usageExample: {
+      code: `const d = new Date('2024-01-15T00:00:00.000Z')
+d.getTime()  // → 1705276800000
+new Date(0).getTime()  // → 0`,
+      explanation: {
+        en: 'Use getTime() to get the number of milliseconds elapsed since the Unix epoch (Jan 1, 1970 UTC).',
+        es: 'Usa getTime() para obtener el número de milisegundos transcurridos desde el epoch Unix (1 ene 1970 UTC).',
+      },
+    },
   },
   {
     slug: 'date-gettime-5',
@@ -100,5 +136,14 @@ export const dateGetTimeExercises: Exercise[] = [
     ],
     hints: ['Subtracting or comparing getTime() values is the standard way to order or diff two dates'],
     tags: ['Date', 'getTime', 'instance-method', 'comparison'],
+    usageExample: {
+      code: `const d = new Date('2024-01-15T00:00:00.000Z')
+d.getTime()  // → 1705276800000
+new Date(0).getTime()  // → 0`,
+      explanation: {
+        en: 'Use getTime() to get the number of milliseconds elapsed since the Unix epoch (Jan 1, 1970 UTC).',
+        es: 'Usa getTime() para obtener el número de milisegundos transcurridos desde el epoch Unix (1 ene 1970 UTC).',
+      },
+    },
   },
 ]

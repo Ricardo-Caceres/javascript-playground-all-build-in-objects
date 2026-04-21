@@ -36,6 +36,15 @@ checkWellFormed('hello') // → true
       'Normal strings that do not contain lone surrogates are always well-formed.',
     ],
     tags: ['String', 'String.prototype.isWellFormed', 'ES2024', 'intermediate'],
+    usageExample: {
+      code: `'hello'.isWellFormed()      // → true
+'😀'.isWellFormed()         // → true
+'\uD800'.isWellFormed()     // → false`,
+      explanation: {
+        en: "Use isWellFormed() to check if a string contains no lone surrogate code units (ES2024).",
+        es: "Usa isWellFormed() para verificar si una cadena no contiene unidades de código sustituto solitarias (ES2024).",
+      },
+    },
   },
   {
     slug: 'string-is-well-formed-lone-surrogate',
@@ -70,6 +79,15 @@ hasLoneSurrogate() // → true  (it is NOT well-formed)
       'A lone surrogate (without its pair) makes a string not well-formed.',
     ],
     tags: ['String', 'String.prototype.isWellFormed', 'surrogate', 'intermediate'],
+    usageExample: {
+      code: `'hello'.isWellFormed()      // → true
+'😀'.isWellFormed()         // → true
+'\uD800'.isWellFormed()     // → false`,
+      explanation: {
+        en: "Use isWellFormed() to check if a string contains no lone surrogate code units (ES2024).",
+        es: "Usa isWellFormed() para verificar si una cadena no contiene unidades de código sustituto solitarias (ES2024).",
+      },
+    },
   },
   {
     slug: 'string-is-well-formed-emoji',
@@ -100,6 +118,15 @@ An emoji like '😀' is stored as a valid surrogate pair, so it IS well-formed.
       'Emoji are encoded as proper surrogate pairs, so they pass the well-formedness check.',
     ],
     tags: ['String', 'String.prototype.isWellFormed', 'emoji', 'beginner'],
+    usageExample: {
+      code: `'hello'.isWellFormed()      // → true
+'😀'.isWellFormed()         // → true
+'\uD800'.isWellFormed()     // → false`,
+      explanation: {
+        en: "Use isWellFormed() to check if a string contains no lone surrogate code units (ES2024).",
+        es: "Usa isWellFormed() para verificar si una cadena no contiene unidades de código sustituto solitarias (ES2024).",
+      },
+    },
   },
   {
     slug: 'string-is-well-formed-empty',
@@ -130,6 +157,15 @@ An empty string has no code units, so it cannot contain lone surrogates. It is w
       'An empty string trivially satisfies the well-formedness condition.',
     ],
     tags: ['String', 'String.prototype.isWellFormed', 'empty string', 'beginner'],
+    usageExample: {
+      code: `'hello'.isWellFormed()      // → true
+'😀'.isWellFormed()         // → true
+'\uD800'.isWellFormed()     // → false`,
+      explanation: {
+        en: "Use isWellFormed() to check if a string contains no lone surrogate code units (ES2024).",
+        es: "Usa isWellFormed() para verificar si una cadena no contiene unidades de código sustituto solitarias (ES2024).",
+      },
+    },
   },
   {
     slug: 'string-is-well-formed-mixed',
@@ -164,5 +200,14 @@ mixedSurrogateWellFormed() // → false
       'A single lone surrogate anywhere in the string makes it not well-formed.',
     ],
     tags: ['String', 'String.prototype.isWellFormed', 'surrogate', 'intermediate'],
+    usageExample: {
+      code: `'hello'.isWellFormed()      // → true
+'😀'.isWellFormed()         // → true
+'\uD800'.isWellFormed()     // → false`,
+      explanation: {
+        en: "Use isWellFormed() to check if a string contains no lone surrogate code units (ES2024).",
+        es: "Usa isWellFormed() para verificar si una cadena no contiene unidades de código sustituto solitarias (ES2024).",
+      },
+    },
   },
 ]

@@ -20,6 +20,14 @@ export const dateGetUTCDateExercises: Exercise[] = [
     ],
     hints: ['getUTCDate() is the UTC equivalent of getDate()'],
     tags: ['Date', 'getUTCDate', 'instance-method', 'UTC'],
+    usageExample: {
+      code: `const d = new Date('2024-06-15T12:00:00.000Z')
+d.getUTCDate()  // → 15`,
+      explanation: {
+        en: 'Use getUTCDate() to retrieve the day of the month (1–31) in UTC, unaffected by the local timezone.',
+        es: 'Usa getUTCDate() para obtener el día del mes (1–31) en UTC, sin verse afectado por la zona horaria local.',
+      },
+    },
   },
   {
     slug: 'date-getutcdate-2',
@@ -40,6 +48,14 @@ export const dateGetUTCDateExercises: Exercise[] = [
     ],
     hints: ['Days are 1-indexed for both getDate() and getUTCDate()'],
     tags: ['Date', 'getUTCDate', 'instance-method', 'UTC'],
+    usageExample: {
+      code: `const d = new Date('2024-06-15T12:00:00.000Z')
+d.getUTCDate()  // → 15`,
+      explanation: {
+        en: 'Use getUTCDate() to retrieve the day of the month (1–31) in UTC, unaffected by the local timezone.',
+        es: 'Usa getUTCDate() para obtener el día del mes (1–31) en UTC, sin verse afectado por la zona horaria local.',
+      },
+    },
   },
   {
     slug: 'date-getutcdate-3',
@@ -60,6 +76,14 @@ export const dateGetUTCDateExercises: Exercise[] = [
     ],
     hints: ['Day-of-month values are always in [1, 31]'],
     tags: ['Date', 'getUTCDate', 'instance-method', 'UTC', 'range'],
+    usageExample: {
+      code: `const d = new Date('2024-06-15T12:00:00.000Z')
+d.getUTCDate()  // → 15`,
+      explanation: {
+        en: 'Use getUTCDate() to retrieve the day of the month (1–31) in UTC, unaffected by the local timezone.',
+        es: 'Usa getUTCDate() para obtener el día del mes (1–31) en UTC, sin verse afectado por la zona horaria local.',
+      },
+    },
   },
   {
     slug: 'date-getutcdate-4',
@@ -80,6 +104,14 @@ export const dateGetUTCDateExercises: Exercise[] = [
     ],
     hints: ['getUTCDate() always returns a number primitive'],
     tags: ['Date', 'getUTCDate', 'instance-method', 'typeof'],
+    usageExample: {
+      code: `const d = new Date('2024-06-15T12:00:00.000Z')
+d.getUTCDate()  // → 15`,
+      explanation: {
+        en: 'Use getUTCDate() to retrieve the day of the month (1–31) in UTC, unaffected by the local timezone.',
+        es: 'Usa getUTCDate() para obtener el día del mes (1–31) en UTC, sin verse afectado por la zona horaria local.',
+      },
+    },
   },
   {
     slug: 'date-getutcdate-5',
@@ -100,5 +132,13 @@ export const dateGetUTCDateExercises: Exercise[] = [
     ],
     hints: ['The epoch is Jan 1, 1970 UTC — day 1 of month 0 of year 1970'],
     tags: ['Date', 'getUTCDate', 'instance-method', 'UTC', 'epoch'],
+    usageExample: {
+      code: `const d = new Date('2024-06-15T12:00:00.000Z')
+d.getUTCDate()  // → 15`,
+      explanation: {
+        en: 'Use getUTCDate() to retrieve the day of the month (1–31) in UTC, unaffected by the local timezone.',
+        es: 'Usa getUTCDate() para obtener el día del mes (1–31) en UTC, sin verse afectado por la zona horaria local.',
+      },
+    },
   },
 ]

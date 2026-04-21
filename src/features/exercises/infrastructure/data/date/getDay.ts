@@ -20,6 +20,15 @@ export const dateGetDayExercises: Exercise[] = [
     ],
     hints: ['Jan 1, 2024 was a Monday. getDay() returns 1 for Monday (0=Sun, 1=Mon, …, 6=Sat)'],
     tags: ['Date', 'getDay', 'instance-method', 'Monday'],
+    usageExample: {
+      code: `const d = new Date(2024, 0, 15)  // Monday
+d.getDay()  // → 1
+// 0=Sun, 1=Mon, …, 6=Sat`,
+      explanation: {
+        en: 'Use getDay() to retrieve the day of the week (0 = Sunday through 6 = Saturday) in local time.',
+        es: 'Usa getDay() para obtener el día de la semana (0 = domingo hasta 6 = sábado) en hora local.',
+      },
+    },
   },
   {
     slug: 'date-getday-2',
@@ -40,6 +49,15 @@ export const dateGetDayExercises: Exercise[] = [
     ],
     hints: ['Sunday = 0, Monday = 1, …, Saturday = 6 in the getDay() system'],
     tags: ['Date', 'getDay', 'instance-method', 'Sunday'],
+    usageExample: {
+      code: `const d = new Date(2024, 0, 15)  // Monday
+d.getDay()  // → 1
+// 0=Sun, 1=Mon, …, 6=Sat`,
+      explanation: {
+        en: 'Use getDay() to retrieve the day of the week (0 = Sunday through 6 = Saturday) in local time.',
+        es: 'Usa getDay() para obtener el día de la semana (0 = domingo hasta 6 = sábado) en hora local.',
+      },
+    },
   },
   {
     slug: 'date-getday-3',
@@ -60,6 +78,15 @@ export const dateGetDayExercises: Exercise[] = [
     ],
     hints: ['Saturday is the last day of the week in JS (index 6)'],
     tags: ['Date', 'getDay', 'instance-method', 'Saturday'],
+    usageExample: {
+      code: `const d = new Date(2024, 0, 15)  // Monday
+d.getDay()  // → 1
+// 0=Sun, 1=Mon, …, 6=Sat`,
+      explanation: {
+        en: 'Use getDay() to retrieve the day of the week (0 = Sunday through 6 = Saturday) in local time.',
+        es: 'Usa getDay() para obtener el día de la semana (0 = domingo hasta 6 = sábado) en hora local.',
+      },
+    },
   },
   {
     slug: 'date-getday-4',
@@ -80,6 +107,15 @@ export const dateGetDayExercises: Exercise[] = [
     ],
     hints: ['Days of week run Sunday(0) through Saturday(6) — 7 values total'],
     tags: ['Date', 'getDay', 'instance-method', 'range'],
+    usageExample: {
+      code: `const d = new Date(2024, 0, 15)  // Monday
+d.getDay()  // → 1
+// 0=Sun, 1=Mon, …, 6=Sat`,
+      explanation: {
+        en: 'Use getDay() to retrieve the day of the week (0 = Sunday through 6 = Saturday) in local time.',
+        es: 'Usa getDay() para obtener el día de la semana (0 = domingo hasta 6 = sábado) en hora local.',
+      },
+    },
   },
   {
     slug: 'date-getday-5',
@@ -100,5 +136,14 @@ export const dateGetDayExercises: Exercise[] = [
     ],
     hints: ['getDay() always returns a number — specifically an integer in [0, 6]'],
     tags: ['Date', 'getDay', 'instance-method', 'typeof'],
+    usageExample: {
+      code: `const d = new Date(2024, 0, 15)  // Monday
+d.getDay()  // → 1
+// 0=Sun, 1=Mon, …, 6=Sat`,
+      explanation: {
+        en: 'Use getDay() to retrieve the day of the week (0 = Sunday through 6 = Saturday) in local time.',
+        es: 'Usa getDay() para obtener el día de la semana (0 = domingo hasta 6 = sábado) en hora local.',
+      },
+    },
   },
 ]

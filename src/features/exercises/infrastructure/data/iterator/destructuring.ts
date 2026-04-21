@@ -19,6 +19,16 @@ export const iteratorDestructuringExercises: Exercise[] = [
       { description: 'typeof b is number', assertion: 'expect(typeof b).toBe("number")' }
     ],
     tags: [],
+    usageExample: {
+      code: `const [a, b, c] = [1, 2, 3]
+console.log(a, b, c) // → 1 2 3
+const [head, ...tail] = [10, 20, 30]
+console.log(head, tail) // → 10 [20, 30]`,
+      explanation: {
+        en: 'Destructuring uses the iterator protocol to unpack values from an iterable into distinct variables.',
+        es: 'La desestructuración usa el protocolo iterador para desempacar valores de un iterable en variables distintas.',
+      },
+    },
   },
   {
     slug: 'iterator-destructuring-rest',
@@ -38,6 +48,16 @@ export const iteratorDestructuringExercises: Exercise[] = [
       { description: 'typeof first is number', assertion: 'expect(typeof first).toBe("number")' }
     ],
     tags: [],
+    usageExample: {
+      code: `const [a, b, c] = [1, 2, 3]
+console.log(a, b, c) // → 1 2 3
+const [head, ...tail] = [10, 20, 30]
+console.log(head, tail) // → 10 [20, 30]`,
+      explanation: {
+        en: 'Destructuring uses the iterator protocol to unpack values from an iterable into distinct variables.',
+        es: 'La desestructuración usa el protocolo iterador para desempacar valores de un iterable en variables distintas.',
+      },
+    },
   },
   {
     slug: 'iterator-destructuring-skip',
@@ -57,6 +77,16 @@ export const iteratorDestructuringExercises: Exercise[] = [
       { description: 'typeof [x, , z] is object', assertion: 'expect(typeof [x,,z]).toBe("object")' }
     ],
     tags: [],
+    usageExample: {
+      code: `const [a, b, c] = [1, 2, 3]
+console.log(a, b, c) // → 1 2 3
+const [head, ...tail] = [10, 20, 30]
+console.log(head, tail) // → 10 [20, 30]`,
+      explanation: {
+        en: 'Destructuring uses the iterator protocol to unpack values from an iterable into distinct variables.',
+        es: 'La desestructuración usa el protocolo iterador para desempacar valores de un iterable en variables distintas.',
+      },
+    },
   },
   {
     slug: 'iterator-destructuring-generator',
@@ -76,6 +106,16 @@ export const iteratorDestructuringExercises: Exercise[] = [
       { description: 'typeof [p, q] is object', assertion: 'expect(typeof [p,q]).toBe("object")' }
     ],
     tags: [],
+    usageExample: {
+      code: `const [a, b, c] = [1, 2, 3]
+console.log(a, b, c) // → 1 2 3
+const [head, ...tail] = [10, 20, 30]
+console.log(head, tail) // → 10 [20, 30]`,
+      explanation: {
+        en: 'Destructuring uses the iterator protocol to unpack values from an iterable into distinct variables.',
+        es: 'La desestructuración usa el protocolo iterador para desempacar valores de un iterable en variables distintas.',
+      },
+    },
   },
   {
     slug: 'iterator-destructuring-string',

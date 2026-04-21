@@ -19,6 +19,14 @@ export const textEncoderConstructorExercises: Exercise[] = [
     ],
     hints: ['TextEncoder only supports UTF-8.'],
     tags: ['TextEncoder', 'constructor', 'encoding'],
+    usageExample: {
+      code: `const enc = new TextEncoder()
+enc.encoding  // → 'utf-8'`,
+      explanation: {
+        en: "TextEncoder always uses UTF-8 encoding to convert strings to bytes.",
+        es: "TextEncoder siempre usa codificación UTF-8 para convertir cadenas en bytes.",
+      },
+    },
   },
   {
     slug: 'textencoder-constructor-2',
@@ -38,6 +46,13 @@ export const textEncoderConstructorExercises: Exercise[] = [
     ],
     hints: ['TextEncoder is a constructor function.'],
     tags: ['TextEncoder', 'constructor', 'instanceof'],
+    usageExample: {
+      code: `new TextEncoder() instanceof TextEncoder  // → true`,
+      explanation: {
+        en: "TextEncoder instances can be checked with instanceof.",
+        es: "Las instancias de TextEncoder se pueden verificar con instanceof.",
+      },
+    },
   },
   {
     slug: 'textencoder-constructor-3',
@@ -57,6 +72,14 @@ export const textEncoderConstructorExercises: Exercise[] = [
     ],
     hints: ["Encoding an empty string produces an empty byte array."],
     tags: ['TextEncoder', 'constructor', 'encode', 'Uint8Array'],
+    usageExample: {
+      code: `const enc = new TextEncoder()
+enc.encode('A')  // → Uint8Array [65]`,
+      explanation: {
+        en: "encode() converts a string into a Uint8Array of UTF-8 bytes.",
+        es: "encode() convierte una cadena en un Uint8Array de bytes UTF-8.",
+      },
+    },
   },
   {
     slug: 'textencoder-constructor-4',
@@ -76,6 +99,14 @@ export const textEncoderConstructorExercises: Exercise[] = [
     ],
     hints: ['ASCII characters are single bytes in UTF-8.'],
     tags: ['TextEncoder', 'constructor', 'encode', 'ASCII'],
+    usageExample: {
+      code: `const enc = new TextEncoder()
+typeof enc  // → 'object'`,
+      explanation: {
+        en: "TextEncoder is a constructor that produces objects, not a plain function.",
+        es: "TextEncoder es un constructor que produce objetos, no una función simple.",
+      },
+    },
   },
   {
     slug: 'textencoder-constructor-5',
@@ -95,5 +126,12 @@ export const textEncoderConstructorExercises: Exercise[] = [
     ],
     hints: ['U+20AC (€) is encoded as 3 bytes in UTF-8: 0xE2, 0x82, 0xAC.'],
     tags: ['TextEncoder', 'constructor', 'encode', 'multi-byte', 'UTF-8'],
+    usageExample: {
+      code: `new TextEncoder().encoding === 'utf-8'  // → true`,
+      explanation: {
+        en: "All TextEncoder instances use UTF-8; it is the only supported encoding.",
+        es: "Todas las instancias de TextEncoder usan UTF-8; es la única codificación admitida.",
+      },
+    },
   },
 ]

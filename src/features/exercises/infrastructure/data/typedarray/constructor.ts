@@ -39,6 +39,14 @@ export const typedArrayConstructorExercises: Exercise[] = [
     ],
     hints: ['Use new Int32Array(length)'],
     tags: [],
+    usageExample: {
+      code: `const arr = new Int32Array(4);
+// Int32Array [0, 0, 0, 0]`,
+      explanation: {
+        en: "Pass a length to create a typed array filled with zeros.",
+        es: "Pasa una longitud para crear un array tipado relleno de ceros.",
+      },
+    },
   },
   {
     slug: 'typedarray-constructor-from-array',
@@ -78,6 +86,14 @@ export const typedArrayConstructorExercises: Exercise[] = [
     ],
     hints: ['Use new Uint8Array(array)'],
     tags: [],
+    usageExample: {
+      code: `const arr = new Uint8Array([10, 20, 30]);
+arr[0]; // 10`,
+      explanation: {
+        en: "Pass a regular array to create a TypedArray with those values.",
+        es: "Pasa un array normal para crear un TypedArray con esos valores.",
+      },
+    },
   },
   {
     slug: 'typedarray-constructor-from-arraybuffer',
@@ -117,6 +133,15 @@ export const typedArrayConstructorExercises: Exercise[] = [
     ],
     hints: ['Use new Float64Array(buffer)', 'Each Float64 element uses 8 bytes'],
     tags: [],
+    usageExample: {
+      code: `const buffer = new ArrayBuffer(8);
+const view = new Float64Array(buffer);
+view[0] = 3.14;`,
+      explanation: {
+        en: "Create a TypedArray from an ArrayBuffer to share raw memory.",
+        es: "Crea un TypedArray desde un ArrayBuffer para compartir memoria cruda.",
+      },
+    },
   },
   {
     slug: 'typedarray-constructor-from-typedarray',
@@ -156,6 +181,15 @@ export const typedArrayConstructorExercises: Exercise[] = [
     ],
     hints: ['Use new Int16Array(typedArray)', 'Values are copied and converted'],
     tags: [],
+    usageExample: {
+      code: `const original = new Int16Array([1, 2, 3]);
+const copy = new Int16Array(original);
+// copy: Int16Array [1, 2, 3]`,
+      explanation: {
+        en: "Pass another TypedArray to copy its values into a new typed array.",
+        es: "Pasa otro TypedArray para copiar sus valores en un nuevo array tipado.",
+      },
+    },
   },
   {
     slug: 'typedarray-bytes-per-element',
@@ -195,5 +229,14 @@ export const typedArrayConstructorExercises: Exercise[] = [
     ],
     hints: ['BYTES_PER_ELEMENT is a static property on each TypedArray constructor'],
     tags: [],
+    usageExample: {
+      code: `Int32Array.BYTES_PER_ELEMENT; // 4
+Uint8Array.BYTES_PER_ELEMENT; // 1
+Float64Array.BYTES_PER_ELEMENT; // 8`,
+      explanation: {
+        en: "BYTES_PER_ELEMENT tells you how many bytes each element uses in memory.",
+        es: "BYTES_PER_ELEMENT indica cuántos bytes usa cada elemento en memoria.",
+      },
+    },
   },
 ]

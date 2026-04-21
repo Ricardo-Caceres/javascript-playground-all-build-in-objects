@@ -39,6 +39,14 @@ export const typedArrayOfExercises: Exercise[] = [
     ],
     hints: ['Use Int32Array.of(1, 2, 3)'],
     tags: [],
+    usageExample: {
+      code: `const arr = Int32Array.of(1, 2, 3);
+// Int32Array [1, 2, 3]`,
+      explanation: {
+        en: "TypedArray.of() creates a typed array from a variable number of arguments.",
+        es: "TypedArray.of() crea un array tipado a partir de un número variable de argumentos.",
+      },
+    },
   },
   {
     slug: 'typedarray-of-floats',
@@ -78,6 +86,14 @@ export const typedArrayOfExercises: Exercise[] = [
     ],
     hints: ['Use Float32Array.of(1.1, 2.2, 3.3)', 'Float32 has limited precision vs Float64'],
     tags: [],
+    usageExample: {
+      code: `const arr = Float32Array.of(1.5, 2.5, 3.5);
+// Float32Array [1.5, 2.5, 3.5]`,
+      explanation: {
+        en: "Use Float32Array.of() to create a single-precision float array from values.",
+        es: "Usa Float32Array.of() para crear un array de floats de precisión simple a partir de valores.",
+      },
+    },
   },
   {
     slug: 'typedarray-of-uint8-range',
@@ -117,6 +133,14 @@ export const typedArrayOfExercises: Exercise[] = [
     ],
     hints: ['Uint8Array stores values 0–255'],
     tags: [],
+    usageExample: {
+      code: `const bytes = Uint8Array.of(0, 127, 255);
+// Uint8Array [0, 127, 255]`,
+      explanation: {
+        en: "Uint8Array.of() clamps values to 0-255 (unsigned byte range).",
+        es: "Uint8Array.of() limita los valores al rango 0-255 (rango de byte sin signo).",
+      },
+    },
   },
   {
     slug: 'typedarray-of-int8-signed',
@@ -156,6 +180,14 @@ export const typedArrayOfExercises: Exercise[] = [
     ],
     hints: ['Int8Array range is -128 to 127'],
     tags: [],
+    usageExample: {
+      code: `const signed = Int8Array.of(-128, 0, 127);
+// Int8Array [-128, 0, 127]`,
+      explanation: {
+        en: "Int8Array.of() accepts signed byte values in the range -128 to 127.",
+        es: "Int8Array.of() acepta valores de byte con signo en el rango -128 a 127.",
+      },
+    },
   },
   {
     slug: 'typedarray-of-bigint',
@@ -195,5 +227,13 @@ export const typedArrayOfExercises: Exercise[] = [
     ],
     hints: ['Use BigInt64Array.of(value)', 'BigInt literals use the n suffix: 42n'],
     tags: [],
+    usageExample: {
+      code: `const big = BigInt64Array.of(1n, 2n, 100n);
+// BigInt64Array [1n, 2n, 100n]`,
+      explanation: {
+        en: "BigInt64Array.of() creates a 64-bit integer typed array from BigInt literals.",
+        es: "BigInt64Array.of() crea un array tipado de enteros de 64 bits a partir de literales BigInt.",
+      },
+    },
   },
 ]

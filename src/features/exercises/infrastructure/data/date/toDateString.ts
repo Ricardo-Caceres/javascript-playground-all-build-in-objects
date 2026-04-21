@@ -20,6 +20,14 @@ export const dateToDateStringExercises: Exercise[] = [
     ],
     hints: ['toDateString() is locale-independent but engine-defined — test for type and content, not exact format'],
     tags: ['Date', 'toDateString', 'instance-method'],
+    usageExample: {
+      code: `const d = new Date(2024, 0, 15)
+d.toDateString()  // → 'Mon Jan 15 2024'`,
+      explanation: {
+        en: 'Use toDateString() to get a human-readable string of the date portion of a Date object in local time.',
+        es: 'Usa toDateString() para obtener una cadena legible de la parte de fecha de un objeto Date en hora local.',
+      },
+    },
   },
   {
     slug: 'date-todatestring-2',
@@ -40,6 +48,14 @@ export const dateToDateStringExercises: Exercise[] = [
     ],
     hints: ['The year is always present in the output of toDateString()'],
     tags: ['Date', 'toDateString', 'instance-method'],
+    usageExample: {
+      code: `const d = new Date(2024, 0, 15)
+d.toDateString()  // → 'Mon Jan 15 2024'`,
+      explanation: {
+        en: 'Use toDateString() to get a human-readable string of the date portion of a Date object in local time.',
+        es: 'Usa toDateString() para obtener una cadena legible de la parte de fecha de un objeto Date en hora local.',
+      },
+    },
   },
   {
     slug: 'date-todatestring-3',
@@ -60,6 +76,14 @@ export const dateToDateStringExercises: Exercise[] = [
     ],
     hints: ['The day-of-month is always part of the toDateString() output'],
     tags: ['Date', 'toDateString', 'instance-method'],
+    usageExample: {
+      code: `const d = new Date(2024, 0, 15)
+d.toDateString()  // → 'Mon Jan 15 2024'`,
+      explanation: {
+        en: 'Use toDateString() to get a human-readable string of the date portion of a Date object in local time.',
+        es: 'Usa toDateString() para obtener una cadena legible de la parte de fecha de un objeto Date en hora local.',
+      },
+    },
   },
   {
     slug: 'date-todatestring-4',
@@ -80,6 +104,14 @@ export const dateToDateStringExercises: Exercise[] = [
     ],
     hints: ['toDateString() always returns a meaningful non-empty string for a valid Date'],
     tags: ['Date', 'toDateString', 'instance-method', 'length'],
+    usageExample: {
+      code: `const d = new Date(2024, 0, 15)
+d.toDateString()  // → 'Mon Jan 15 2024'`,
+      explanation: {
+        en: 'Use toDateString() to get a human-readable string of the date portion of a Date object in local time.',
+        es: 'Usa toDateString() para obtener una cadena legible de la parte de fecha de un objeto Date en hora local.',
+      },
+    },
   },
   {
     slug: 'date-todatestring-5',
@@ -100,5 +132,13 @@ export const dateToDateStringExercises: Exercise[] = [
     ],
     hints: ['Any non-empty string is truthy; toDateString() always returns a non-empty string'],
     tags: ['Date', 'toDateString', 'instance-method', 'truthy'],
+    usageExample: {
+      code: `const d = new Date(2024, 0, 15)
+d.toDateString()  // → 'Mon Jan 15 2024'`,
+      explanation: {
+        en: 'Use toDateString() to get a human-readable string of the date portion of a Date object in local time.',
+        es: 'Usa toDateString() para obtener una cadena legible de la parte de fecha de un objeto Date en hora local.',
+      },
+    },
   },
 ]

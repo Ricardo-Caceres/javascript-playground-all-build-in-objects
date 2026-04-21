@@ -20,6 +20,15 @@ export const regexpTestExercises: Exercise[] = [
     ],
     hints: ['test() searches for a match and returns true or false'],
     tags: ['RegExp', 'test', 'method'],
+    usageExample: {
+      code: `const re = /\\d+/
+re.test('abc123') // → true
+re.test('abc')    // → false`,
+      explanation: {
+        en: 'Use RegExp.test() to check whether a string matches the regular expression pattern.',
+        es: 'Usa RegExp.test() para verificar si una cadena coincide con el patrón de la expresión regular.',
+      },
+    },
   },
   {
     slug: 'regexp-test-2',
@@ -40,6 +49,15 @@ export const regexpTestExercises: Exercise[] = [
     ],
     hints: ['The ^ and $ anchors require the entire string to match'],
     tags: ['RegExp', 'test', 'anchors'],
+    usageExample: {
+      code: `const re = /\\d+/
+re.test('abc123') // → true
+re.test('abc')    // → false`,
+      explanation: {
+        en: 'Use RegExp.test() to check whether a string matches the regular expression pattern.',
+        es: 'Usa RegExp.test() para verificar si una cadena coincide con el patrón de la expresión regular.',
+      },
+    },
   },
   {
     slug: 'regexp-test-3',
@@ -60,6 +78,15 @@ export const regexpTestExercises: Exercise[] = [
     ],
     hints: ['The i flag enables case-insensitive matching'],
     tags: ['RegExp', 'test', 'ignoreCase'],
+    usageExample: {
+      code: `const re = /\\d+/
+re.test('abc123') // → true
+re.test('abc')    // → false`,
+      explanation: {
+        en: 'Use RegExp.test() to check whether a string matches the regular expression pattern.',
+        es: 'Usa RegExp.test() para verificar si una cadena coincide con el patrón de la expresión regular.',
+      },
+    },
   },
   {
     slug: 'regexp-test-4',
@@ -80,6 +107,15 @@ export const regexpTestExercises: Exercise[] = [
     ],
     hints: ['/^$/ matches exactly an empty string — ^ is start, $ is end'],
     tags: ['RegExp', 'test', 'empty'],
+    usageExample: {
+      code: `const re = /\\d+/
+re.test('abc123') // → true
+re.test('abc')    // → false`,
+      explanation: {
+        en: 'Use RegExp.test() to check whether a string matches the regular expression pattern.',
+        es: 'Usa RegExp.test() para verificar si una cadena coincide con el patrón de la expresión regular.',
+      },
+    },
   },
   {
     slug: 'regexp-test-5',
@@ -100,5 +136,14 @@ export const regexpTestExercises: Exercise[] = [
     ],
     hints: ['test() always returns a strict boolean true or false'],
     tags: ['RegExp', 'test', 'boolean'],
+    usageExample: {
+      code: `const re = /\\d+/
+re.test('abc123') // → true
+re.test('abc')    // → false`,
+      explanation: {
+        en: 'Use RegExp.test() to check whether a string matches the regular expression pattern.',
+        es: 'Usa RegExp.test() para verificar si una cadena coincide con el patrón de la expresión regular.',
+      },
+    },
   },
 ]

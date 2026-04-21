@@ -35,6 +35,14 @@ getRawPath() // → 'C:\\Users\\name'
       'In `String.raw`, a single `\\` in the template source is preserved as `\\` in the output.',
     ],
     tags: ['String', 'String.raw', 'tagged template', 'backslash', 'beginner'],
+    usageExample: {
+      code: `String.raw\`Hello\nWorld\`   // → 'Hello\\nWorld'
+String.raw\`C:\\Users\\me\`    // → 'C:\\Users\\me'`,
+      explanation: {
+        en: "Use String.raw as a tagged template to get the raw string form where backslash escapes are not processed.",
+        es: "Usa String.raw como plantilla etiquetada para obtener la forma cruda de una cadena donde las secuencias de escape no se procesan.",
+      },
+    },
   },
   {
     slug: 'string-raw-no-newline',
@@ -71,6 +79,14 @@ rawNewline() // → '\\n'  (2 chars: backslash + n)
       'The backslash character has char code 92.',
     ],
     tags: ['String', 'String.raw', 'escape sequences', 'beginner'],
+    usageExample: {
+      code: `String.raw\`Hello\nWorld\`   // → 'Hello\\nWorld'
+String.raw\`C:\\Users\\me\`    // → 'C:\\Users\\me'`,
+      explanation: {
+        en: "Use String.raw as a tagged template to get the raw string form where backslash escapes are not processed.",
+        es: "Usa String.raw como plantilla etiquetada para obtener la forma cruda de una cadena donde las secuencias de escape no se procesan.",
+      },
+    },
   },
   {
     slug: 'string-raw-interpolation-still-works',
@@ -106,6 +122,14 @@ rawWithName('Alice') // → 'Hello, Alice!\\n'
       '`${name}` still expands normally in `String.raw` — only escape sequences like `\\n` are left raw.',
     ],
     tags: ['String', 'String.raw', 'interpolation', 'intermediate'],
+    usageExample: {
+      code: `String.raw\`Hello\nWorld\`   // → 'Hello\\nWorld'
+String.raw\`C:\\Users\\me\`    // → 'C:\\Users\\me'`,
+      explanation: {
+        en: "Use String.raw as a tagged template to get the raw string form where backslash escapes are not processed.",
+        es: "Usa String.raw como plantilla etiquetada para obtener la forma cruda de una cadena donde las secuencias de escape no se procesan.",
+      },
+    },
   },
   {
     slug: 'string-raw-vs-regular',
@@ -142,6 +166,14 @@ regularHasTab() // → true
       'Tab char code is 9. Backslash char code is 92.',
     ],
     tags: ['String', 'String.raw', 'template literal', 'tab', 'intermediate'],
+    usageExample: {
+      code: `String.raw\`Hello\nWorld\`   // → 'Hello\\nWorld'
+String.raw\`C:\\Users\\me\`    // → 'C:\\Users\\me'`,
+      explanation: {
+        en: "Use String.raw as a tagged template to get the raw string form where backslash escapes are not processed.",
+        es: "Usa String.raw como plantilla etiquetada para obtener la forma cruda de una cadena donde las secuencias de escape no se procesan.",
+      },
+    },
   },
   {
     slug: 'string-raw-unicode-escape',
@@ -177,5 +209,13 @@ rawUnicode() // → '\\u0041'  (6 chars)
       '`String.raw\\`\\u0041\\`` → the 6-char string `\\u0041`, not `A`.',
     ],
     tags: ['String', 'String.raw', 'unicode escape', 'intermediate'],
+    usageExample: {
+      code: `String.raw\`Hello\nWorld\`   // → 'Hello\\nWorld'
+String.raw\`C:\\Users\\me\`    // → 'C:\\Users\\me'`,
+      explanation: {
+        en: "Use String.raw as a tagged template to get the raw string form where backslash escapes are not processed.",
+        es: "Usa String.raw como plantilla etiquetada para obtener la forma cruda de una cadena donde las secuencias de escape no se procesan.",
+      },
+    },
   },
 ]

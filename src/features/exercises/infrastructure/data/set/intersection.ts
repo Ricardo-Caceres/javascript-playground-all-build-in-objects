@@ -20,6 +20,16 @@ export const setIntersectionExercises: Exercise[] = [
     ],
     hints: ['intersection() returns elements that exist in both Sets'],
     tags: ['Set', 'intersection', 'ES2025'],
+    usageExample: {
+      code: `const a = new Set([1, 2, 3])
+const b = new Set([2, 3, 4])
+const common = a.intersection(b)
+console.log([...common]) // → [2, 3]`,
+      explanation: {
+        en: 'Use Set.intersection() to get the values present in both sets.',
+        es: 'Usa Set.intersection() para obtener los valores presentes en ambos conjuntos.',
+      },
+    },
   },
   {
     slug: 'set-intersection-2',
@@ -40,6 +50,16 @@ export const setIntersectionExercises: Exercise[] = [
     ],
     hints: ['intersection size can range from 0 to min(size_A, size_B)'],
     tags: ['Set', 'intersection', 'size'],
+    usageExample: {
+      code: `const a = new Set([1, 2, 3])
+const b = new Set([2, 3, 4])
+const common = a.intersection(b)
+console.log([...common]) // → [2, 3]`,
+      explanation: {
+        en: 'Use Set.intersection() to get the values present in both sets.',
+        es: 'Usa Set.intersection() para obtener los valores presentes en ambos conjuntos.',
+      },
+    },
   },
   {
     slug: 'set-intersection-3',
@@ -60,6 +80,16 @@ export const setIntersectionExercises: Exercise[] = [
     ],
     hints: ['Disjoint Sets share no elements, so their intersection is empty'],
     tags: ['Set', 'intersection', 'disjoint'],
+    usageExample: {
+      code: `const a = new Set([1, 2, 3])
+const b = new Set([2, 3, 4])
+const common = a.intersection(b)
+console.log([...common]) // → [2, 3]`,
+      explanation: {
+        en: 'Use Set.intersection() to get the values present in both sets.',
+        es: 'Usa Set.intersection() para obtener los valores presentes en ambos conjuntos.',
+      },
+    },
   },
   {
     slug: 'set-intersection-4',
@@ -80,6 +110,16 @@ export const setIntersectionExercises: Exercise[] = [
     ],
     hints: ['intersection() returns a new Set; originals are not modified'],
     tags: ['Set', 'intersection', 'immutable'],
+    usageExample: {
+      code: `const a = new Set([1, 2, 3])
+const b = new Set([2, 3, 4])
+const common = a.intersection(b)
+console.log([...common]) // → [2, 3]`,
+      explanation: {
+        en: 'Use Set.intersection() to get the values present in both sets.',
+        es: 'Usa Set.intersection() para obtener los valores presentes en ambos conjuntos.',
+      },
+    },
   },
   {
     slug: 'set-intersection-5',
@@ -100,5 +140,15 @@ export const setIntersectionExercises: Exercise[] = [
     ],
     hints: ['intersection returns only the elements shared between both Sets'],
     tags: ['Set', 'intersection', 'single'],
+    usageExample: {
+      code: `const a = new Set([1, 2, 3])
+const b = new Set([2, 3, 4])
+const common = a.intersection(b)
+console.log([...common]) // → [2, 3]`,
+      explanation: {
+        en: 'Use Set.intersection() to get the values present in both sets.',
+        es: 'Usa Set.intersection() para obtener los valores presentes en ambos conjuntos.',
+      },
+    },
   },
 ]

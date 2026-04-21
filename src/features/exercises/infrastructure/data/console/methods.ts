@@ -19,6 +19,15 @@ export const consoleMethodsExercises: Exercise[] = [
     ],
     hints: ['console.log is a method on the global console object'],
     tags: ['console', 'log', 'instance-method'],
+    usageExample: {
+      code: `console.log('Hello')    // → Hello
+console.warn('Warn!')   // → ⚠ Warn!
+console.error('Err!')  // → ✖ Err!`,
+      explanation: {
+        en: "console provides multiple logging methods: log, warn, error, info, and debug.",
+        es: "console proporciona múltiples métodos de registro: log, warn, error, info y debug.",
+      },
+    },
   },
   {
     slug: 'console-methods-2',
@@ -38,6 +47,14 @@ export const consoleMethodsExercises: Exercise[] = [
     ],
     hints: ['console.error outputs to stderr in Node.js and the error level in browsers'],
     tags: ['console', 'error', 'instance-method'],
+    usageExample: {
+      code: `console.table([{ name: 'Ana', age: 30 }])
+// displays a formatted table`,
+      explanation: {
+        en: "console.table() renders arrays of objects as a formatted table for easy inspection.",
+        es: "console.table() muestra arreglos de objetos como una tabla formateada para fácil inspección.",
+      },
+    },
   },
   {
     slug: 'console-methods-3',
@@ -57,6 +74,15 @@ export const consoleMethodsExercises: Exercise[] = [
     ],
     hints: ['console.warn outputs warning-level messages'],
     tags: ['console', 'warn', 'instance-method'],
+    usageExample: {
+      code: `console.group('Details')
+console.log('item 1')
+console.groupEnd()`,
+      explanation: {
+        en: "console.group() and groupEnd() let you nest related log messages visually.",
+        es: "console.group() y groupEnd() te permiten anidar visualmente mensajes de registro relacionados.",
+      },
+    },
   },
   {
     slug: 'console-methods-4',
@@ -76,6 +102,15 @@ export const consoleMethodsExercises: Exercise[] = [
     ],
     hints: ['console.info is often an alias for console.log'],
     tags: ['console', 'info', 'instance-method'],
+    usageExample: {
+      code: `console.time('loop')
+for (let i = 0; i < 1e6; i++) {}
+console.timeEnd('loop')  // → loop: 5.2ms`,
+      explanation: {
+        en: "console.time() and timeEnd() measure how long a block of code takes to run.",
+        es: "console.time() y timeEnd() miden cuánto tarda en ejecutarse un bloque de código.",
+      },
+    },
   },
   {
     slug: 'console-methods-5',
@@ -95,5 +130,13 @@ export const consoleMethodsExercises: Exercise[] = [
     ],
     hints: ['console.log is designed for side effects (printing), not for returning values'],
     tags: ['console', 'log', 'return-value', 'instance-method'],
+    usageExample: {
+      code: `console.count('click')  // → click: 1
+console.count('click')  // → click: 2`,
+      explanation: {
+        en: "console.count() tracks how many times a labeled event has been logged.",
+        es: "console.count() rastrea cuántas veces se ha registrado un evento etiquetado.",
+      },
+    },
   },
 ]

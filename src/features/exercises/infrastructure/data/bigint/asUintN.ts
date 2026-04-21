@@ -20,6 +20,13 @@ export const bigintAsUintNExercises: Exercise[] = [
     ],
     hints: ['Unsigned 8-bit max is 255; 256 wraps to 0.'],
     tags: ['bigint', 'asUintN', 'static-method'],
+    usageExample: {
+      code: `BigInt.asUintN(8, 256n)  // → 0n (wraps as unsigned 8-bit)`,
+      explanation: {
+        en: "BigInt.asUintN() wraps a BigInt to fit within an unsigned N-bit integer.",
+        es: "BigInt.asUintN() ajusta un BigInt para que quepa en un entero sin signo de N bits.",
+      },
+    },
   },
   {
     slug: 'bigint-asUintN-2',
@@ -40,6 +47,13 @@ export const bigintAsUintNExercises: Exercise[] = [
     ],
     hints: ['255 is the maximum 8-bit unsigned value; no wrapping.'],
     tags: ['bigint', 'asUintN', 'static-method'],
+    usageExample: {
+      code: `BigInt.asUintN(8, 255n)  // → 255n`,
+      explanation: {
+        en: "If the value fits in N bits unsigned, it is returned unchanged.",
+        es: "Si el valor cabe en N bits sin signo, se devuelve sin cambios.",
+      },
+    },
   },
   {
     slug: 'bigint-asUintN-3',
@@ -60,6 +74,13 @@ export const bigintAsUintNExercises: Exercise[] = [
     ],
     hints: ['Unsigned 4-bit range is 0..15; 16 wraps to 0.'],
     tags: ['bigint', 'asUintN', 'static-method'],
+    usageExample: {
+      code: `BigInt.asUintN(4, 16n)  // → 0n`,
+      explanation: {
+        en: "16n exceeds 4-bit unsigned range (0-15) so it wraps to 0.",
+        es: "16n supera el rango sin signo de 4 bits (0-15), por lo que se envuelve a 0.",
+      },
+    },
   },
   {
     slug: 'bigint-asUintN-4',
@@ -80,6 +101,13 @@ export const bigintAsUintNExercises: Exercise[] = [
     ],
     hints: ['asUintN always returns a bigint.'],
     tags: ['bigint', 'asUintN', 'typeof'],
+    usageExample: {
+      code: `BigInt.asUintN(32, 2n ** 32n)  // → 0n`,
+      explanation: {
+        en: "Use asUintN(32, ...) to simulate unsigned 32-bit integer wrap-around.",
+        es: "Usa asUintN(32, ...) para simular el desbordamiento de entero sin signo de 32 bits.",
+      },
+    },
   },
   {
     slug: 'bigint-asUintN-5',
@@ -100,5 +128,12 @@ export const bigintAsUintNExercises: Exercise[] = [
     ],
     hints: ['257 mod 256 = 1.'],
     tags: ['bigint', 'asUintN', 'static-method'],
+    usageExample: {
+      code: `BigInt.asUintN(1, 3n)  // → 1n`,
+      explanation: {
+        en: "A 1-bit unsigned integer can only represent 0 or 1.",
+        es: "Un entero sin signo de 1 bit solo puede representar 0 o 1.",
+      },
+    },
   },
 ]

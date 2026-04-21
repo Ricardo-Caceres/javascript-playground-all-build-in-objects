@@ -20,6 +20,15 @@ export const mapHasExercises: Exercise[] = [
     ],
     hints: ['has() returns true if the Map contains the key'],
     tags: ['Map', 'has', 'method'],
+    usageExample: {
+      code: `const m = new Map([['a', 1]])
+m.has('a')   // → true
+m.has('z')   // → false`,
+      explanation: {
+        en: 'Use Map.has() to check whether a key exists in the map.',
+        es: 'Usa Map.has() para verificar si una clave existe en el mapa.',
+      },
+    },
   },
   {
     slug: 'map-has-2',
@@ -40,6 +49,15 @@ export const mapHasExercises: Exercise[] = [
     ],
     hints: ['has() returns false (not undefined) for missing keys'],
     tags: ['Map', 'has', 'missing'],
+    usageExample: {
+      code: `const m = new Map([['a', 1]])
+m.has('a')   // → true
+m.has('z')   // → false`,
+      explanation: {
+        en: 'Use Map.has() to check whether a key exists in the map.',
+        es: 'Usa Map.has() para verificar si una clave existe en el mapa.',
+      },
+    },
   },
   {
     slug: 'map-has-3',
@@ -60,6 +78,15 @@ export const mapHasExercises: Exercise[] = [
     ],
     hints: ['delete() removes the key; subsequent has() returns false'],
     tags: ['Map', 'has', 'delete'],
+    usageExample: {
+      code: `const m = new Map([['a', 1]])
+m.has('a')   // → true
+m.has('z')   // → false`,
+      explanation: {
+        en: 'Use Map.has() to check whether a key exists in the map.',
+        es: 'Usa Map.has() para verificar si una clave existe en el mapa.',
+      },
+    },
   },
   {
     slug: 'map-has-4',
@@ -80,6 +107,15 @@ export const mapHasExercises: Exercise[] = [
     ],
     hints: ['Map uses SameValueZero; NaN equals NaN, objects compared by reference'],
     tags: ['Map', 'has', 'objectKey'],
+    usageExample: {
+      code: `const m = new Map([['a', 1]])
+m.has('a')   // → true
+m.has('z')   // → false`,
+      explanation: {
+        en: 'Use Map.has() to check whether a key exists in the map.',
+        es: 'Usa Map.has() para verificar si una clave existe en el mapa.',
+      },
+    },
   },
   {
     slug: 'map-has-5',
@@ -100,5 +136,14 @@ export const mapHasExercises: Exercise[] = [
     ],
     hints: ['has() checks for key existence, not value truthiness'],
     tags: ['Map', 'has', 'set'],
+    usageExample: {
+      code: `const m = new Map([['a', 1]])
+m.has('a')   // → true
+m.has('z')   // → false`,
+      explanation: {
+        en: 'Use Map.has() to check whether a key exists in the map.',
+        es: 'Usa Map.has() para verificar si una clave existe en el mapa.',
+      },
+    },
   },
 ]

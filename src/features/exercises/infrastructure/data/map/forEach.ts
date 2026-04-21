@@ -20,6 +20,15 @@ export const mapForEachExercises: Exercise[] = [
     ],
     hints: ['forEach callback signature is (value, key, map)'],
     tags: ['Map', 'forEach', 'method'],
+    usageExample: {
+      code: `const m = new Map([['a', 1], ['b', 2]])
+m.forEach((val, key) => console.log(key, val))
+// 'a' 1, then 'b' 2`,
+      explanation: {
+        en: 'Use Map.forEach() to execute a callback for each key-value pair in the map.',
+        es: 'Usa Map.forEach() para ejecutar un callback por cada par clave-valor del mapa.',
+      },
+    },
   },
   {
     slug: 'map-foreach-2',
@@ -40,6 +49,15 @@ export const mapForEachExercises: Exercise[] = [
     ],
     hints: ['forEach callback: first arg is value, second is key'],
     tags: ['Map', 'forEach', 'keys'],
+    usageExample: {
+      code: `const m = new Map([['a', 1], ['b', 2]])
+m.forEach((val, key) => console.log(key, val))
+// 'a' 1, then 'b' 2`,
+      explanation: {
+        en: 'Use Map.forEach() to execute a callback for each key-value pair in the map.',
+        es: 'Usa Map.forEach() para ejecutar un callback por cada par clave-valor del mapa.',
+      },
+    },
   },
   {
     slug: 'map-foreach-3',
@@ -60,6 +78,15 @@ export const mapForEachExercises: Exercise[] = [
     ],
     hints: ['The third argument lets you reference the Map inside the callback'],
     tags: ['Map', 'forEach', 'thirdArg'],
+    usageExample: {
+      code: `const m = new Map([['a', 1], ['b', 2]])
+m.forEach((val, key) => console.log(key, val))
+// 'a' 1, then 'b' 2`,
+      explanation: {
+        en: 'Use Map.forEach() to execute a callback for each key-value pair in the map.',
+        es: 'Usa Map.forEach() para ejecutar un callback por cada par clave-valor del mapa.',
+      },
+    },
   },
   {
     slug: 'map-foreach-4',
@@ -80,6 +107,15 @@ export const mapForEachExercises: Exercise[] = [
     ],
     hints: ['forEach on an empty Map is a no-op'],
     tags: ['Map', 'forEach', 'empty'],
+    usageExample: {
+      code: `const m = new Map([['a', 1], ['b', 2]])
+m.forEach((val, key) => console.log(key, val))
+// 'a' 1, then 'b' 2`,
+      explanation: {
+        en: 'Use Map.forEach() to execute a callback for each key-value pair in the map.',
+        es: 'Usa Map.forEach() para ejecutar un callback por cada par clave-valor del mapa.',
+      },
+    },
   },
   {
     slug: 'map-foreach-5',
@@ -100,5 +136,14 @@ export const mapForEachExercises: Exercise[] = [
     ],
     hints: ['forEach visits entries in the order they were inserted'],
     tags: ['Map', 'forEach', 'order'],
+    usageExample: {
+      code: `const m = new Map([['a', 1], ['b', 2]])
+m.forEach((val, key) => console.log(key, val))
+// 'a' 1, then 'b' 2`,
+      explanation: {
+        en: 'Use Map.forEach() to execute a callback for each key-value pair in the map.',
+        es: 'Usa Map.forEach() para ejecutar un callback por cada par clave-valor del mapa.',
+      },
+    },
   },
 ]

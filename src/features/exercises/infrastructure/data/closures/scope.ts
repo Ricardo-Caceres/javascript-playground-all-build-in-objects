@@ -42,6 +42,19 @@ fns[0]()`,
     ],
     hints: ['Each iteration of a let-based loop creates a new binding', 'Closure captures the binding, not just the value', 'This is different from var which would have shared scope'],
     tags: ['closures', 'scope', 'loop-scope', 'let', 'block-scope'],
+    usageExample: {
+      code: `const fns = []
+for (let i = 0; i < 3; i++) {
+  fns.push(() => i)
+}
+fns[0]()  // → 0
+fns[1]()  // → 1
+fns[2]()  // → 2`,
+      explanation: {
+        en: 'Using let in a for-loop creates a new block-scoped binding per iteration, so each closure captures its own independent copy of i.',
+        es: 'Usar let en un bucle for crea un nuevo enlace de ámbito de bloque por iteración, por lo que cada closure captura su propia copia independiente de i.',
+      },
+    },
   },
   {
     slug: 'closures-scope-2',
@@ -79,6 +92,18 @@ result`,
     ],
     hints: ['IIFE is a function definition wrapped in parentheses followed by ()', 'The function executes immediately and returns a value', 'Useful for creating private scopes'],
     tags: ['closures', 'scope', 'IIFE', 'immediately-invoked', 'pattern'],
+    usageExample: {
+      code: `const result = (function() {
+  const secret = 42
+  return secret
+})()
+result  // → 42
+// secret is not accessible outside the IIFE`,
+      explanation: {
+        en: 'An IIFE runs immediately and creates its own scope, so inner variables are private and the computed result is exposed only through the return value.',
+        es: 'Un IIFE se ejecuta de inmediato y crea su propio ámbito, por lo que las variables internas son privadas y el resultado calculado se expone solo a través del valor de retorno.',
+      },
+    },
   },
   {
     slug: 'closures-scope-3',
@@ -113,6 +138,16 @@ getX()`,
     ],
     hints: ['const creates a read-only binding', 'Closures can still access const variables', 'The closure captures the binding, not the value'],
     tags: ['closures', 'scope', 'const', 'variable-capture'],
+    usageExample: {
+      code: `const PI = 3.14159
+const circleArea = r => PI * r * r
+circleArea(5)   // → 78.53975
+circleArea(10)  // → 314.159`,
+      explanation: {
+        en: 'Arrow functions close over const variables in the surrounding scope, making constants immediately available without passing them as arguments.',
+        es: 'Las funciones flecha cierran sobre variables const en el ámbito circundante, haciendo que las constantes estén disponibles sin pasarlas como argumentos.',
+      },
+    },
   },
   {
     slug: 'closures-scope-4',
@@ -156,6 +191,16 @@ outer(1)(2)(3)`,
     ],
     hints: ['Each function returns another function', 'Inner functions have access to all outer scopes', 'This pattern enables partial application'],
     tags: ['closures', 'scope', 'nested-closures', 'currying'],
+    usageExample: {
+      code: `const outer = (a) => (b) => (c) => a + b + c
+const step1 = outer(10)
+const step2 = step1(5)
+step2(3)  // → 18`,
+      explanation: {
+        en: 'Each nesting level creates a new closure that accumulates captured variables from all outer scopes, enabling composable step-by-step function application.',
+        es: 'Cada nivel de anidamiento crea un nuevo closure que acumula variables capturadas de todos los ámbitos externos, permitiendo la aplicación de funciones paso a paso de forma componible.',
+      },
+    },
   },
   {
     slug: 'closures-scope-5',
@@ -192,5 +237,16 @@ incrementCount()`,
     ],
     hints: ['Closures capture references, not copies', 'Objects are mutable, so changes after closure creation are visible', 'This is different from primitive values which are immutable'],
     tags: ['closures', 'scope', 'object-reference', 'mutation', 'reference-semantics'],
+    usageExample: {
+      code: `const obj = { count: 0 }
+const inc = () => ++obj.count
+inc()       // → 1
+obj.count = 10
+inc()       // → 11`,
+      explanation: {
+        en: 'Closures capture object references rather than copies, so any mutation to the object is immediately reflected when the closure is later invoked.',
+        es: 'Los closures capturan referencias a objetos en lugar de copias, por lo que cualquier mutación al objeto se refleja inmediatamente cuando el closure se invoca posteriormente.',
+      },
+    },
   },
 ]

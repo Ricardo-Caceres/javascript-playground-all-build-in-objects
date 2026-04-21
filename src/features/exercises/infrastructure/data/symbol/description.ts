@@ -20,6 +20,14 @@ export const symbolDescriptionExercises: Exercise[] = [
     ],
     hints: ['Access .description directly on any symbol.'],
     tags: ['symbol', 'description', 'instance-property'],
+    usageExample: {
+      code: `const s = Symbol('hello')
+s.description   // → 'hello'`,
+      explanation: {
+        en: 'The .description property returns the string passed when creating the symbol.',
+        es: 'La propiedad .description devuelve la cadena pasada al crear el símbolo.',
+      },
+    },
   },
   {
     slug: 'symbol-description-2',
@@ -40,6 +48,14 @@ export const symbolDescriptionExercises: Exercise[] = [
     ],
     hints: ['No argument means no description — it will be undefined.'],
     tags: ['symbol', 'description', 'undefined'],
+    usageExample: {
+      code: `const s = Symbol()
+s.description   // → undefined`,
+      explanation: {
+        en: 'Calling Symbol() without an argument leaves .description as undefined.',
+        es: 'Llamar Symbol() sin argumento deja .description como undefined.',
+      },
+    },
   },
   {
     slug: 'symbol-description-3',
@@ -60,6 +76,15 @@ export const symbolDescriptionExercises: Exercise[] = [
     ],
     hints: ["Empty string '' is a valid description — it is not the same as undefined."],
     tags: ['symbol', 'description', 'empty-string'],
+    usageExample: {
+      code: `const s = Symbol('')
+s.description            // → ''
+s.description === undefined  // → false`,
+      explanation: {
+        en: 'An empty string is a valid description — distinct from having no description at all.',
+        es: 'Una cadena vacía es una descripción válida, distinta de no tener descripción.',
+      },
+    },
   },
   {
     slug: 'symbol-description-4',
@@ -80,6 +105,14 @@ export const symbolDescriptionExercises: Exercise[] = [
     ],
     hints: ['For Symbol.for(), description and key are the same string.'],
     tags: ['symbol', 'description', 'Symbol.for'],
+    usageExample: {
+      code: `const s = Symbol.for('global')
+s.description   // → 'global'`,
+      explanation: {
+        en: 'For Symbol.for(key), the .description equals the registration key.',
+        es: 'Para Symbol.for(clave), la .description es igual a la clave de registro.',
+      },
+    },
   },
   {
     slug: 'symbol-description-5',
@@ -100,5 +133,13 @@ export const symbolDescriptionExercises: Exercise[] = [
     ],
     hints: ['The description property is always a string when present.'],
     tags: ['symbol', 'description', 'typeof'],
+    usageExample: {
+      code: `const s = Symbol('x')
+typeof s.description   // → 'string'`,
+      explanation: {
+        en: 'When present, .description is always of type \'string\'.',
+        es: 'Cuando existe, .description es siempre de tipo \'string\'.',
+      },
+    },
   },
 ]

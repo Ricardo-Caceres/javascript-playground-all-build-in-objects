@@ -20,6 +20,15 @@ export const dateGetHoursExercises: Exercise[] = [
     ],
     hints: ['The 4th argument to the Date constructor is hours (0–23)'],
     tags: ['Date', 'getHours', 'instance-method'],
+    usageExample: {
+      code: `const d = new Date(2024, 0, 15, 14, 30)
+d.getHours()  // → 14
+// returns 0–23`,
+      explanation: {
+        en: 'Use getHours() to retrieve the hour (0–23) of a Date object in local time.',
+        es: 'Usa getHours() para obtener la hora (0–23) de un objeto Date en hora local.',
+      },
+    },
   },
   {
     slug: 'date-gethours-2',
@@ -40,6 +49,15 @@ export const dateGetHoursExercises: Exercise[] = [
     ],
     hints: ['Hour 0 is midnight (the very start of the day)'],
     tags: ['Date', 'getHours', 'instance-method', 'midnight'],
+    usageExample: {
+      code: `const d = new Date(2024, 0, 15, 14, 30)
+d.getHours()  // → 14
+// returns 0–23`,
+      explanation: {
+        en: 'Use getHours() to retrieve the hour (0–23) of a Date object in local time.',
+        es: 'Usa getHours() para obtener la hora (0–23) de un objeto Date en hora local.',
+      },
+    },
   },
   {
     slug: 'date-gethours-3',
@@ -60,6 +78,15 @@ export const dateGetHoursExercises: Exercise[] = [
     ],
     hints: ['Hours use a 24-hour format: 0–23. Hour 23 is 11 PM'],
     tags: ['Date', 'getHours', 'instance-method'],
+    usageExample: {
+      code: `const d = new Date(2024, 0, 15, 14, 30)
+d.getHours()  // → 14
+// returns 0–23`,
+      explanation: {
+        en: 'Use getHours() to retrieve the hour (0–23) of a Date object in local time.',
+        es: 'Usa getHours() para obtener la hora (0–23) de un objeto Date en hora local.',
+      },
+    },
   },
   {
     slug: 'date-gethours-4',
@@ -80,6 +107,15 @@ export const dateGetHoursExercises: Exercise[] = [
     ],
     hints: ['getHours() always returns a number in [0, 23]'],
     tags: ['Date', 'getHours', 'instance-method', 'typeof'],
+    usageExample: {
+      code: `const d = new Date(2024, 0, 15, 14, 30)
+d.getHours()  // → 14
+// returns 0–23`,
+      explanation: {
+        en: 'Use getHours() to retrieve the hour (0–23) of a Date object in local time.',
+        es: 'Usa getHours() para obtener la hora (0–23) de un objeto Date en hora local.',
+      },
+    },
   },
   {
     slug: 'date-gethours-5',
@@ -100,5 +136,14 @@ export const dateGetHoursExercises: Exercise[] = [
     ],
     hints: ['getHours() values can be compared directly since they are plain numbers'],
     tags: ['Date', 'getHours', 'instance-method', 'comparison'],
+    usageExample: {
+      code: `const d = new Date(2024, 0, 15, 14, 30)
+d.getHours()  // → 14
+// returns 0–23`,
+      explanation: {
+        en: 'Use getHours() to retrieve the hour (0–23) of a Date object in local time.',
+        es: 'Usa getHours() para obtener la hora (0–23) de un objeto Date en hora local.',
+      },
+    },
   },
 ]

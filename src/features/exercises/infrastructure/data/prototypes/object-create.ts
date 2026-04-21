@@ -47,6 +47,15 @@ const result = obj.double()`,
     ],
     hints: ['Object.create(proto) sets up the prototype chain', 'Properties added after creation are own properties'],
     tags: ['prototypes', 'Object.create', 'static-methods', 'inheritance'],
+    usageExample: {
+      code: `const proto = { greet() { return 'hello'; } };
+const obj = Object.create(proto);
+obj.greet(); // 'hello'`,
+      explanation: {
+        en: "Object.create() creates an object with a specified prototype for inherited methods.",
+        es: "Object.create() crea un objeto con un prototipo especificado para métodos heredados.",
+      },
+    },
   },
   {
     slug: 'prototypes-create-2',
@@ -84,6 +93,14 @@ obj.x = 42`,
     ],
     hints: ['null-prototype objects are useful for storing arbitrary properties without inherited methods', 'They do not have access to Object.prototype methods'],
     tags: ['prototypes', 'Object.create', 'null-prototype', 'edge-cases'],
+    usageExample: {
+      code: `const obj = Object.create(null);
+Object.getPrototypeOf(obj); // null`,
+      explanation: {
+        en: "Pass null to create an object with no prototype — useful for pure dictionaries.",
+        es: "Pasa null para crear un objeto sin prototipo, útil para diccionarios puros.",
+      },
+    },
   },
   {
     slug: 'prototypes-create-3',
@@ -137,6 +154,16 @@ const yValue = obj.y`,
     ],
     hints: ['Descriptors specify value, writable, enumerable, and configurable', 'writable:false prevents assignment', 'enumerable:false hides from for...in loops'],
     tags: ['prototypes', 'Object.create', 'descriptors', 'property-control'],
+    usageExample: {
+      code: `const obj = Object.create({}, {
+  x: { value: 10, writable: false, enumerable: true, configurable: false }
+});
+obj.x; // 10`,
+      explanation: {
+        en: "The second argument accepts property descriptors for fine-grained control.",
+        es: "El segundo argumento acepta descriptores de propiedades para control detallado.",
+      },
+    },
   },
   {
     slug: 'prototypes-create-4',
@@ -182,6 +209,16 @@ level3.think = function() { return 'I think' }`,
     ],
     hints: ['Each Object.create() call adds a new level to the chain', 'Properties can be overridden at any level', 'The entire chain is searched for property access'],
     tags: ['prototypes', 'Object.create', 'inheritance', 'multi-level'],
+    usageExample: {
+      code: `const proto = { type: 'vehicle' };
+const car = Object.create(proto);
+car.brand = 'Toyota';
+car.type; // 'vehicle' (inherited)`,
+      explanation: {
+        en: "Objects inherit properties from their prototype without copying them.",
+        es: "Los objetos heredan propiedades de su prototipo sin copiarlas.",
+      },
+    },
   },
   {
     slug: 'prototypes-create-5',
@@ -247,5 +284,15 @@ const id = obj.id`,
     ],
     hints: ['Combine prototypes with descriptors for fine control', 'Use enumerable:false for private properties', 'writable:false creates immutable values'],
     tags: ['prototypes', 'Object.create', 'advanced-patterns', 'descriptors'],
+    usageExample: {
+      code: `const base = { hello() { return 'hi'; } };
+const child = Object.create(base);
+const grandchild = Object.create(child);
+grandchild.hello(); // 'hi'`,
+      explanation: {
+        en: "Prototype chains can extend multiple levels deep via repeated Object.create.",
+        es: "Las cadenas de prototipo pueden extenderse múltiples niveles mediante Object.create repetido.",
+      },
+    },
   },
 ]

@@ -20,6 +20,15 @@ export const mapGetExercises: Exercise[] = [
     ],
     hints: ['get() returns the value for the given key, or undefined if the key does not exist'],
     tags: ['Map', 'get', 'method'],
+    usageExample: {
+      code: `const m = new Map([['name', 'Alice']])
+m.get('name')    // → 'Alice'
+m.get('missing') // → undefined`,
+      explanation: {
+        en: 'Use Map.get() to retrieve the value associated with a key.',
+        es: 'Usa Map.get() para obtener el valor asociado a una clave.',
+      },
+    },
   },
   {
     slug: 'map-get-2',
@@ -40,6 +49,15 @@ export const mapGetExercises: Exercise[] = [
     ],
     hints: ['get() returns undefined for keys that do not exist in the Map'],
     tags: ['Map', 'get', 'undefined'],
+    usageExample: {
+      code: `const m = new Map([['name', 'Alice']])
+m.get('name')    // → 'Alice'
+m.get('missing') // → undefined`,
+      explanation: {
+        en: 'Use Map.get() to retrieve the value associated with a key.',
+        es: 'Usa Map.get() para obtener el valor asociado a una clave.',
+      },
+    },
   },
   {
     slug: 'map-get-3',
@@ -60,6 +78,15 @@ export const mapGetExercises: Exercise[] = [
     ],
     hints: ['set() with an existing key updates the value; get() always returns the latest value'],
     tags: ['Map', 'get', 'overwrite'],
+    usageExample: {
+      code: `const m = new Map([['name', 'Alice']])
+m.get('name')    // → 'Alice'
+m.get('missing') // → undefined`,
+      explanation: {
+        en: 'Use Map.get() to retrieve the value associated with a key.',
+        es: 'Usa Map.get() para obtener el valor asociado a una clave.',
+      },
+    },
   },
   {
     slug: 'map-get-4',
@@ -80,6 +107,15 @@ export const mapGetExercises: Exercise[] = [
     ],
     hints: ['Maps use SameValueZero comparison — objects are compared by reference'],
     tags: ['Map', 'get', 'objectKey', 'reference'],
+    usageExample: {
+      code: `const m = new Map([['name', 'Alice']])
+m.get('name')    // → 'Alice'
+m.get('missing') // → undefined`,
+      explanation: {
+        en: 'Use Map.get() to retrieve the value associated with a key.',
+        es: 'Usa Map.get() para obtener el valor asociado a una clave.',
+      },
+    },
   },
   {
     slug: 'map-get-5',
@@ -100,5 +136,14 @@ export const mapGetExercises: Exercise[] = [
     ],
     hints: ['get() looks up by key in O(1) time regardless of Map size'],
     tags: ['Map', 'get', 'multiEntry'],
+    usageExample: {
+      code: `const m = new Map([['name', 'Alice']])
+m.get('name')    // → 'Alice'
+m.get('missing') // → undefined`,
+      explanation: {
+        en: 'Use Map.get() to retrieve the value associated with a key.',
+        es: 'Usa Map.get() para obtener el valor asociado a una clave.',
+      },
+    },
   },
 ]

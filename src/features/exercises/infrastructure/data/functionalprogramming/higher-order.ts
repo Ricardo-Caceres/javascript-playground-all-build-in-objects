@@ -28,6 +28,18 @@ Higher-order functions accept other functions as arguments or return functions.
     ],
     hints: ['Use reduce to build new array', 'Spread operator can add elements to accumulator', 'fn is applied to each element'],
     tags: ['functional', 'higher-order', 'map', 'reduce'],
+    usageExample: {
+      code: `function myMap(arr, fn) {
+  const result = [];
+  for (const item of arr) result.push(fn(item));
+  return result;
+}
+myMap([1, 2, 3], x => x * 2); // [2, 4, 6]`,
+      explanation: {
+        en: "A higher-order function takes another function as an argument to customize behavior.",
+        es: "Una función de orden superior toma otra función como argumento para personalizar el comportamiento.",
+      },
+    },
   },
   {
     slug: 'fp-higher-2',
@@ -55,6 +67,18 @@ Create a custom filter function that keeps only elements matching a predicate.
     ],
     hints: ['Use reduce with conditional logic', 'Include x if predicate(x) is true', 'Otherwise keep accumulator unchanged'],
     tags: ['functional', 'higher-order', 'filter', 'predicate'],
+    usageExample: {
+      code: `function myFilter(arr, predicate) {
+  const result = [];
+  for (const item of arr) if (predicate(item)) result.push(item);
+  return result;
+}
+myFilter([1, 2, 3, 4], x => x % 2 === 0); // [2, 4]`,
+      explanation: {
+        en: "A custom filter passes only items for which the predicate returns true.",
+        es: "Un filtro personalizado pasa solo los elementos para los que el predicado devuelve true.",
+      },
+    },
   },
   {
     slug: 'fp-higher-3',
@@ -88,6 +112,18 @@ const result = myReduce([1, 2, 3], sum, 0)`,
     ],
     hints: ['myReduce is a wrapper around Array.prototype.reduce', 'Pass fn and initial to reduce', 'Reduce accumulates values into a single result'],
     tags: ['functional', 'higher-order', 'reduce', 'accumulation'],
+    usageExample: {
+      code: `function myReduce(arr, fn, init) {
+  let acc = init;
+  for (const item of arr) acc = fn(acc, item);
+  return acc;
+}
+myReduce([1, 2, 3, 4], (sum, x) => sum + x, 0); // 10`,
+      explanation: {
+        en: "Reduce accumulates a result by applying a combining function to each element.",
+        es: "Reduce acumula un resultado aplicando una función combinadora a cada elemento.",
+      },
+    },
   },
   {
     slug: 'fp-higher-4',
@@ -121,6 +157,17 @@ const triple = multiplierFactory(3)`,
     ],
     hints: ['Factory returns a function', 'The returned function closes over factor', 'Each call to factory creates a new function'],
     tags: ['functional', 'higher-order', 'factory', 'closure'],
+    usageExample: {
+      code: `function multiplier(factor) {
+  return x => x * factor;
+}
+const double = multiplier(2);
+double(5); // 10`,
+      explanation: {
+        en: "A function factory returns a specialized function — a classic higher-order pattern.",
+        es: "Una fábrica de funciones devuelve una función especializada — un patrón de orden superior clásico.",
+      },
+    },
   },
   {
     slug: 'fp-higher-5',
@@ -153,5 +200,16 @@ Use map, filter, and reduce together to solve complex transformations.
     ],
     hints: ['Chain filter, map, and reduce', 'Filter for x % 2 === 0', 'Map to x * x', 'Reduce with addition and initial 0'],
     tags: ['functional', 'higher-order', 'composition', 'advanced'],
+    usageExample: {
+      code: `const result = [1, 2, 3, 4, 5]
+  .filter(x => x % 2 === 0)
+  .map(x => x * 10)
+  .reduce((sum, x) => sum + x, 0);
+// 60`,
+      explanation: {
+        en: "Compose map, filter, and reduce in a chain to build expressive data pipelines.",
+        es: "Combina map, filter y reduce en cadena para construir pipelines de datos expresivos.",
+      },
+    },
   },
 ]

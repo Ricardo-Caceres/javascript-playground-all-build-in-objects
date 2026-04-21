@@ -35,6 +35,15 @@ zeroPad(42, 4) // → '0042'
       'Convert to string first: `String(n).padStart(width, "0")`.',
     ],
     tags: ['String', 'String.prototype.padStart', 'zero-padding', 'beginner'],
+    usageExample: {
+      code: `'5'.padStart(3, '0')       // → '005'
+'hi'.padStart(5, '-')     // → '---hi'
+'hello'.padStart(3)       // → 'hello'`,
+      explanation: {
+        en: "Use padStart() to pad the beginning of a string with a fill character until it reaches the target length.",
+        es: "Usa padStart() para rellenar el inicio de una cadena con un carácter hasta alcanzar la longitud objetivo.",
+      },
+    },
   },
   {
     slug: 'string-pad-start-custom-fill',
@@ -69,6 +78,15 @@ padStars('hi', 5) // → '***hi'
       '`str.padStart(len, "*")` fills with asterisks on the left.',
     ],
     tags: ['String', 'String.prototype.padStart', 'custom fill', 'beginner'],
+    usageExample: {
+      code: `'5'.padStart(3, '0')       // → '005'
+'hi'.padStart(5, '-')     // → '---hi'
+'hello'.padStart(3)       // → 'hello'`,
+      explanation: {
+        en: "Use padStart() to pad the beginning of a string with a fill character until it reaches the target length.",
+        es: "Usa padStart() para rellenar el inicio de una cadena con un carácter hasta alcanzar la longitud objetivo.",
+      },
+    },
   },
   {
     slug: 'string-pad-start-no-padding',
@@ -104,6 +122,15 @@ padToFive('hello!')  // → 'hello!'  (unchanged)
       'If the string is already 5 or more chars, `.padStart(5)` is a no-op.',
     ],
     tags: ['String', 'String.prototype.padStart', 'beginner'],
+    usageExample: {
+      code: `'5'.padStart(3, '0')       // → '005'
+'hi'.padStart(5, '-')     // → '---hi'
+'hello'.padStart(3)       // → 'hello'`,
+      explanation: {
+        en: "Use padStart() to pad the beginning of a string with a fill character until it reaches the target length.",
+        es: "Usa padStart() para rellenar el inicio de una cadena con un carácter hasta alcanzar la longitud objetivo.",
+      },
+    },
   },
   {
     slug: 'string-pad-start-space-padding',
@@ -138,6 +165,15 @@ rightAlign('42', 6) // → '    42'
       '`.padStart()` without a fill string uses space characters.',
     ],
     tags: ['String', 'String.prototype.padStart', 'right-align', 'beginner'],
+    usageExample: {
+      code: `'5'.padStart(3, '0')       // → '005'
+'hi'.padStart(5, '-')     // → '---hi'
+'hello'.padStart(3)       // → 'hello'`,
+      explanation: {
+        en: "Use padStart() to pad the beginning of a string with a fill character until it reaches the target length.",
+        es: "Usa padStart() para rellenar el inicio de una cadena con un carácter hasta alcanzar la longitud objetivo.",
+      },
+    },
   },
   {
     slug: 'string-pad-start-fixed-width',
@@ -173,5 +209,14 @@ formatTime(12, 0) // → '12:00'
       'Use `String(h).padStart(2, "0")` for hours and the same for minutes.',
     ],
     tags: ['String', 'String.prototype.padStart', 'formatting', 'intermediate'],
+    usageExample: {
+      code: `'5'.padStart(3, '0')       // → '005'
+'hi'.padStart(5, '-')     // → '---hi'
+'hello'.padStart(3)       // → 'hello'`,
+      explanation: {
+        en: "Use padStart() to pad the beginning of a string with a fill character until it reaches the target length.",
+        es: "Usa padStart() para rellenar el inicio de una cadena con un carácter hasta alcanzar la longitud objetivo.",
+      },
+    },
   },
 ]

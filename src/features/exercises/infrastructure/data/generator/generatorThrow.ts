@@ -19,6 +19,19 @@ export const generatorThrowExercises: Exercise[] = [
       { description: 'typeof it.return is function', assertion: 'expect(typeof it.return).toBe("function")' }
     ],
     tags: [],
+    usageExample: {
+      code: `function* gen() {
+  try { yield 1 }
+  catch (e) { console.log(e.message) } // → 'oops'
+}
+const it = gen()
+it.next()
+it.throw(new Error('oops'))`,
+      explanation: {
+        en: 'generator.throw() resumes the generator by throwing an error at the yield point, which can be caught inside the generator.',
+        es: 'generator.throw() reanuda el generador lanzando un error en el punto yield, que puede capturarse dentro del generador.',
+      },
+    },
   },
   {
     slug: 'generator-throw-catch',
@@ -38,6 +51,19 @@ export const generatorThrowExercises: Exercise[] = [
       { description: 'typeof it.return is function', assertion: 'expect(typeof it.return).toBe("function")' }
     ],
     tags: [],
+    usageExample: {
+      code: `function* gen() {
+  try { yield 1 }
+  catch (e) { console.log(e.message) } // → 'oops'
+}
+const it = gen()
+it.next()
+it.throw(new Error('oops'))`,
+      explanation: {
+        en: 'generator.throw() resumes the generator by throwing an error at the yield point, which can be caught inside the generator.',
+        es: 'generator.throw() reanuda el generador lanzando un error en el punto yield, que puede capturarse dentro del generador.',
+      },
+    },
   },
   {
     slug: 'generator-throw-typeof',
@@ -57,6 +83,19 @@ export const generatorThrowExercises: Exercise[] = [
       { description: 'typeof throw is not number', assertion: 'expect(result !== "number").toBe(true)' }
     ],
     tags: [],
+    usageExample: {
+      code: `function* gen() {
+  try { yield 1 }
+  catch (e) { console.log(e.message) } // → 'oops'
+}
+const it = gen()
+it.next()
+it.throw(new Error('oops'))`,
+      explanation: {
+        en: 'generator.throw() resumes the generator by throwing an error at the yield point, which can be caught inside the generator.',
+        es: 'generator.throw() reanuda el generador lanzando un error en el punto yield, que puede capturarse dentro del generador.',
+      },
+    },
   },
   {
     slug: 'generator-throw-string',
@@ -76,6 +115,19 @@ export const generatorThrowExercises: Exercise[] = [
       { description: 'typeof it.return is function', assertion: 'expect(typeof it.return).toBe("function")' }
     ],
     tags: [],
+    usageExample: {
+      code: `function* gen() {
+  try { yield 1 }
+  catch (e) { console.log(e.message) } // → 'oops'
+}
+const it = gen()
+it.next()
+it.throw(new Error('oops'))`,
+      explanation: {
+        en: 'generator.throw() resumes the generator by throwing an error at the yield point, which can be caught inside the generator.',
+        es: 'generator.throw() reanuda el generador lanzando un error en el punto yield, que puede capturarse dentro del generador.',
+      },
+    },
   },
   {
     slug: 'generator-throw-catch-yield',

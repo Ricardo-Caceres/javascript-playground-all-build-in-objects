@@ -20,6 +20,14 @@ export const bigintValueOfExercises: Exercise[] = [
     ],
     hints: ['valueOf() returns the primitive value of the BigInt wrapper.'],
     tags: ['bigint', 'valueOf', 'instance-method'],
+    usageExample: {
+      code: `const b = Object(42n)
+b.valueOf()  // → 42n`,
+      explanation: {
+        en: "valueOf() returns the underlying primitive BigInt from a BigInt wrapper object.",
+        es: "valueOf() devuelve el BigInt primitivo subyacente de un objeto BigInt envolvente.",
+      },
+    },
   },
   {
     slug: 'bigint-valueOf-2',
@@ -40,6 +48,13 @@ export const bigintValueOfExercises: Exercise[] = [
     ],
     hints: ['valueOf() preserves the BigInt type.'],
     tags: ['bigint', 'valueOf', 'typeof'],
+    usageExample: {
+      code: `42n.valueOf()  // → 42n`,
+      explanation: {
+        en: "Calling valueOf() on a BigInt primitive returns itself.",
+        es: "Llamar a valueOf() en un BigInt primitivo devuelve el mismo valor.",
+      },
+    },
   },
   {
     slug: 'bigint-valueOf-3',
@@ -60,6 +75,13 @@ export const bigintValueOfExercises: Exercise[] = [
     ],
     hints: ['Zero is falsy even as a BigInt.'],
     tags: ['bigint', 'valueOf', 'zero'],
+    usageExample: {
+      code: `Object(0n).valueOf()  // → 0n`,
+      explanation: {
+        en: "valueOf() on a BigInt wrapper around 0n returns the primitive 0n.",
+        es: "valueOf() en un envoltorio BigInt de 0n devuelve el primitivo 0n.",
+      },
+    },
   },
   {
     slug: 'bigint-valueOf-4',
@@ -80,6 +102,13 @@ export const bigintValueOfExercises: Exercise[] = [
     ],
     hints: ['Both produce the same BigInt primitive.'],
     tags: ['bigint', 'valueOf', 'equality'],
+    usageExample: {
+      code: `Object(-1n).valueOf() === -1n  // → true`,
+      explanation: {
+        en: "valueOf() returns the exact BigInt primitive, preserving negative values.",
+        es: "valueOf() devuelve el BigInt primitivo exacto, preservando los valores negativos.",
+      },
+    },
   },
   {
     slug: 'bigint-valueOf-5',
@@ -100,5 +129,12 @@ export const bigintValueOfExercises: Exercise[] = [
     ],
     hints: ['Negative BigInts are preserved by valueOf().'],
     tags: ['bigint', 'valueOf', 'negative'],
+    usageExample: {
+      code: `Object(100n).valueOf() + 1n  // → 101n`,
+      explanation: {
+        en: "Use valueOf() to unwrap a BigInt object so you can perform arithmetic.",
+        es: "Usa valueOf() para desenvolver un objeto BigInt y poder realizar aritmética.",
+      },
+    },
   },
 ]

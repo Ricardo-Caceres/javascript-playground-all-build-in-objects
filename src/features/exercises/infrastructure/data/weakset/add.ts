@@ -20,6 +20,16 @@ export const weakSetAddExercises: Exercise[] = [
     ],
     hints: ['add() inserts the object; has() confirms it.'],
     tags: ['weakset', 'add', 'instance-method'],
+    usageExample: {
+      code: `const ws = new WeakSet()
+const obj = {}
+ws.add(obj)
+ws.has(obj)  // → true`,
+      explanation: {
+        en: "add() inserts an object into the WeakSet.",
+        es: "add() inserta un objeto en el WeakSet.",
+      },
+    },
   },
   {
     slug: 'weakset-add-2',
@@ -40,6 +50,16 @@ export const weakSetAddExercises: Exercise[] = [
     ],
     hints: ['Like Set.add(), WeakSet.add() returns the set itself.'],
     tags: ['weakset', 'add', 'chaining'],
+    usageExample: {
+      code: `const ws = new WeakSet()
+const o = {}
+ws.add(o).add(o)
+ws.has(o)  // → true (no duplicates)`,
+      explanation: {
+        en: "Adding the same object twice has no effect; WeakSet stores unique references.",
+        es: "Agregar el mismo objeto dos veces no tiene efecto; WeakSet almacena referencias únicas.",
+      },
+    },
   },
   {
     slug: 'weakset-add-3',
@@ -60,6 +80,16 @@ export const weakSetAddExercises: Exercise[] = [
     ],
     hints: ['WeakSet only stores each reference once.'],
     tags: ['weakset', 'add', 'duplicates'],
+    usageExample: {
+      code: `const ws = new WeakSet()
+const o = {}
+const result = ws.add(o)
+result === ws  // → true`,
+      explanation: {
+        en: "add() returns the WeakSet itself for chaining.",
+        es: "add() devuelve el propio WeakSet para encadenamiento.",
+      },
+    },
   },
   {
     slug: 'weakset-add-4',
@@ -80,6 +110,15 @@ export const weakSetAddExercises: Exercise[] = [
     ],
     hints: ['Each object reference is stored independently.'],
     tags: ['weakset', 'add', 'multiple'],
+    usageExample: {
+      code: `const ws = new WeakSet()
+const a = {}, b = {}
+ws.add(a).add(b)`,
+      explanation: {
+        en: "Chain add() calls to insert multiple objects.",
+        es: "Encadena llamadas a add() para insertar múltiples objetos.",
+      },
+    },
   },
   {
     slug: 'weakset-add-5',
@@ -100,5 +139,15 @@ export const weakSetAddExercises: Exercise[] = [
     ],
     hints: ['add() returns the WeakSet, enabling method chaining.'],
     tags: ['weakset', 'add', 'chaining'],
+    usageExample: {
+      code: `const ws = new WeakSet()
+const fn = () => {}
+ws.add(fn)
+ws.has(fn)  // → true`,
+      explanation: {
+        en: "Functions are objects and can be stored in a WeakSet.",
+        es: "Las funciones son objetos y pueden almacenarse en un WeakSet.",
+      },
+    },
   },
 ]

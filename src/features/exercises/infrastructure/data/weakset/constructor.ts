@@ -19,6 +19,14 @@ export const weakSetConstructorExercises: Exercise[] = [
     ],
     hints: ['WeakSet is a constructor — instances pass instanceof WeakSet.'],
     tags: ['weakset', 'constructor', 'instanceof'],
+    usageExample: {
+      code: `const ws = new WeakSet()
+ws instanceof WeakSet  // → true`,
+      explanation: {
+        en: "WeakSet stores a collection of objects with no duplicate entries.",
+        es: "WeakSet almacena una colección de objetos sin entradas duplicadas.",
+      },
+    },
   },
   {
     slug: 'weakset-constructor-2',
@@ -38,6 +46,15 @@ export const weakSetConstructorExercises: Exercise[] = [
     ],
     hints: ['All WeakSet instances are objects.'],
     tags: ['weakset', 'constructor', 'typeof'],
+    usageExample: {
+      code: `const obj = {}
+const ws = new WeakSet([obj])
+ws.has(obj)  // → true`,
+      explanation: {
+        en: "Initialize a WeakSet with an iterable of objects.",
+        es: "Inicializa un WeakSet con un iterable de objetos.",
+      },
+    },
   },
   {
     slug: 'weakset-constructor-3',
@@ -57,6 +74,14 @@ export const weakSetConstructorExercises: Exercise[] = [
     ],
     hints: ['Only objects can be added to WeakSet.'],
     tags: ['weakset', 'constructor', 'add', 'has'],
+    usageExample: {
+      code: `const ws = new WeakSet()
+typeof ws  // → 'object'`,
+      explanation: {
+        en: "WeakSet instances are objects with no size property or iteration.",
+        es: "Las instancias de WeakSet son objetos sin propiedad size ni iteración.",
+      },
+    },
   },
   {
     slug: 'weakset-constructor-4',
@@ -76,6 +101,13 @@ export const weakSetConstructorExercises: Exercise[] = [
     ],
     hints: ['Pass an iterable of objects to the constructor.'],
     tags: ['weakset', 'constructor', 'iterable'],
+    usageExample: {
+      code: `new WeakSet() instanceof Object  // → true`,
+      explanation: {
+        en: "WeakSet inherits from Object like all JavaScript objects.",
+        es: "WeakSet hereda de Object como todos los objetos de JavaScript.",
+      },
+    },
   },
   {
     slug: 'weakset-constructor-5',
@@ -95,5 +127,12 @@ export const weakSetConstructorExercises: Exercise[] = [
     ],
     hints: ['Only objects are valid WeakSet values.'],
     tags: ['weakset', 'constructor', 'error'],
+    usageExample: {
+      code: `new WeakSet() === new WeakSet()  // → false`,
+      explanation: {
+        en: "Each WeakSet() call produces a unique new instance.",
+        es: "Cada llamada a WeakSet() produce una nueva instancia única.",
+      },
+    },
   },
 ]

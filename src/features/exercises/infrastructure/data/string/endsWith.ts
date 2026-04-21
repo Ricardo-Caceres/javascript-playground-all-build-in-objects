@@ -35,6 +35,16 @@ endsWithPeriod('Hello!')  // → false
       '`.endsWith()` only checks the very end of the string.',
     ],
     tags: ['String', 'String.prototype.endsWith', 'beginner'],
+    usageExample: {
+      code: `const str = 'Hello, World!'
+str.endsWith('!')        // → true
+str.endsWith('World')    // → false
+str.endsWith('World', 12) // → true`,
+      explanation: {
+        en: "Use endsWith() to check if a string ends with a specific suffix, with an optional end position.",
+        es: "Usa endsWith() para verificar si una cadena termina con un sufijo específico, con una posición final opcional.",
+      },
+    },
   },
   {
     slug: 'string-ends-with-no-match',
@@ -68,6 +78,16 @@ hasExtension('photo.png', '.jpg') // → false
       'Include the dot in the extension string for a precise match.',
     ],
     tags: ['String', 'String.prototype.endsWith', 'beginner'],
+    usageExample: {
+      code: `const str = 'Hello, World!'
+str.endsWith('!')        // → true
+str.endsWith('World')    // → false
+str.endsWith('World', 12) // → true`,
+      explanation: {
+        en: "Use endsWith() to check if a string ends with a specific suffix, with an optional end position.",
+        es: "Usa endsWith() para verificar si una cadena termina con un sufijo específico, con una posición final opcional.",
+      },
+    },
   },
   {
     slug: 'string-ends-with-case-sensitive',
@@ -103,6 +123,16 @@ endsWithO('hellO') // → false
       '`.endsWith()` performs a case-sensitive comparison.',
     ],
     tags: ['String', 'String.prototype.endsWith', 'case-sensitive', 'beginner'],
+    usageExample: {
+      code: `const str = 'Hello, World!'
+str.endsWith('!')        // → true
+str.endsWith('World')    // → false
+str.endsWith('World', 12) // → true`,
+      explanation: {
+        en: "Use endsWith() to check if a string ends with a specific suffix, with an optional end position.",
+        es: "Usa endsWith() para verificar si una cadena termina con un sufijo específico, con una posición final opcional.",
+      },
+    },
   },
   {
     slug: 'string-ends-with-end-position',
@@ -137,6 +167,16 @@ The optional second argument \`endPosition\` treats the string as if it only goe
       '`str.endsWith(search, endPos)` considers only `str.slice(0, endPos)`.',
     ],
     tags: ['String', 'String.prototype.endsWith', 'endPosition', 'intermediate'],
+    usageExample: {
+      code: `const str = 'Hello, World!'
+str.endsWith('!')        // → true
+str.endsWith('World')    // → false
+str.endsWith('World', 12) // → true`,
+      explanation: {
+        en: "Use endsWith() to check if a string ends with a specific suffix, with an optional end position.",
+        es: "Usa endsWith() para verificar si una cadena termina con un sufijo específico, con una posición final opcional.",
+      },
+    },
   },
   {
     slug: 'string-ends-with-empty-suffix',
@@ -172,5 +212,15 @@ endsWithEmpty('')          // → true
       'The empty string is a suffix of every string.',
     ],
     tags: ['String', 'String.prototype.endsWith', 'empty string', 'beginner'],
+    usageExample: {
+      code: `const str = 'Hello, World!'
+str.endsWith('!')        // → true
+str.endsWith('World')    // → false
+str.endsWith('World', 12) // → true`,
+      explanation: {
+        en: "Use endsWith() to check if a string ends with a specific suffix, with an optional end position.",
+        es: "Usa endsWith() para verificar si una cadena termina con un sufijo específico, con una posición final opcional.",
+      },
+    },
   },
 ]

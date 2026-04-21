@@ -35,6 +35,15 @@ findDigitIndex('hello')   // → -1
       '`str.search(/\\d/)` returns the index of the first digit character.',
     ],
     tags: ['String', 'String.prototype.search', 'regex', 'beginner'],
+    usageExample: {
+      code: `'hello world'.search(/world/)   // → 6
+'hello'.search(/\d/)           // → -1
+'abc123'.search(/[0-9]/)       // → 3`,
+      explanation: {
+        en: "Use search() to find the index of the first regex match in a string, returning -1 if not found.",
+        es: "Usa search() para encontrar el índice de la primera coincidencia de una expresión regular, devolviendo -1 si no se encuentra.",
+      },
+    },
   },
   {
     slug: 'string-search-not-found',
@@ -70,6 +79,15 @@ hasUpperCase('hello') // → false
       '`str.search(/[A-Z]/)` returns `-1` if no uppercase letter is found.',
     ],
     tags: ['String', 'String.prototype.search', 'beginner'],
+    usageExample: {
+      code: `'hello world'.search(/world/)   // → 6
+'hello'.search(/\d/)           // → -1
+'abc123'.search(/[0-9]/)       // → 3`,
+      explanation: {
+        en: "Use search() to find the index of the first regex match in a string, returning -1 if not found.",
+        es: "Usa search() para encontrar el índice de la primera coincidencia de una expresión regular, devolviendo -1 si no se encuentra.",
+      },
+    },
   },
   {
     slug: 'string-search-case-insensitive',
@@ -105,6 +123,15 @@ findWordIndex('Hello World', 'HELLO') // → 0
       'Use `new RegExp(word, "i")` to build a case-insensitive regex dynamically.',
     ],
     tags: ['String', 'String.prototype.search', 'case-insensitive', 'intermediate'],
+    usageExample: {
+      code: `'hello world'.search(/world/)   // → 6
+'hello'.search(/\d/)           // → -1
+'abc123'.search(/[0-9]/)       // → 3`,
+      explanation: {
+        en: "Use search() to find the index of the first regex match in a string, returning -1 if not found.",
+        es: "Usa search() para encontrar el índice de la primera coincidencia de una expresión regular, devolviendo -1 si no se encuentra.",
+      },
+    },
   },
   {
     slug: 'string-search-vs-indexof',
@@ -140,6 +167,15 @@ firstLetterIndex('hello')  // → 0
       '`str.search(/[a-zA-Z]/)` behaves like `str.indexOf` for literals but supports patterns.',
     ],
     tags: ['String', 'String.prototype.search', 'beginner'],
+    usageExample: {
+      code: `'hello world'.search(/world/)   // → 6
+'hello'.search(/\d/)           // → -1
+'abc123'.search(/[0-9]/)       // → 3`,
+      explanation: {
+        en: "Use search() to find the index of the first regex match in a string, returning -1 if not found.",
+        es: "Usa search() para encontrar el índice de la primera coincidencia de una expresión regular, devolviendo -1 si no se encuentra.",
+      },
+    },
   },
   {
     slug: 'string-search-position-digit',
@@ -175,5 +211,14 @@ digitPosition('no digits') // → -1
       '`/[0-9]/` is equivalent to `/\\d/` for matching digit characters.',
     ],
     tags: ['String', 'String.prototype.search', 'beginner'],
+    usageExample: {
+      code: `'hello world'.search(/world/)   // → 6
+'hello'.search(/\d/)           // → -1
+'abc123'.search(/[0-9]/)       // → 3`,
+      explanation: {
+        en: "Use search() to find the index of the first regex match in a string, returning -1 if not found.",
+        es: "Usa search() para encontrar el índice de la primera coincidencia de una expresión regular, devolviendo -1 si no se encuentra.",
+      },
+    },
   },
 ]

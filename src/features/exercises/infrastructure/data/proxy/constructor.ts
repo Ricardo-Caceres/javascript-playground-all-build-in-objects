@@ -30,6 +30,18 @@ A \`Proxy\` wraps an object and intercepts operations. A proxy of an object is s
       'A `Proxy` forwards operations to the target, so it inherits the target\'s prototype chain.',
     ],
     tags: ['Proxy', 'constructor', 'instanceof', 'beginner'],
+    usageExample: {
+      code: `const target = { value: 42 }
+const p = new Proxy(target, {
+  get: (t, k) => k in t ? t[k] : 'default'
+})
+console.log(p.value)   // → 42
+console.log(p.missing) // → 'default'`,
+      explanation: {
+        en: 'new Proxy(target, handler) creates a proxy that intercepts operations on the target object using trap methods in the handler.',
+        es: 'new Proxy(target, handler) crea un proxy que intercepta operaciones sobre el objeto objetivo usando métodos trampa en el handler.',
+      },
+    },
   },
   {
     slug: 'proxy-constructor-typeof-object',
@@ -60,6 +72,18 @@ A \`Proxy\` wraps an object and intercepts operations. A proxy of an object is s
       '`typeof` on a proxy of an object returns `\'object\'`.',
     ],
     tags: ['Proxy', 'typeof', 'beginner'],
+    usageExample: {
+      code: `const target = { value: 42 }
+const p = new Proxy(target, {
+  get: (t, k) => k in t ? t[k] : 'default'
+})
+console.log(p.value)   // → 42
+console.log(p.missing) // → 'default'`,
+      explanation: {
+        en: 'new Proxy(target, handler) creates a proxy that intercepts operations on the target object using trap methods in the handler.',
+        es: 'new Proxy(target, handler) crea un proxy que intercepta operaciones sobre el objeto objetivo usando métodos trampa en el handler.',
+      },
+    },
   },
   {
     slug: 'proxy-constructor-transparent',
@@ -90,6 +114,18 @@ A \`Proxy\` with an empty handler \`{}\` transparently forwards all operations t
       'An empty handler `{}` means no traps — all operations pass through to the target.',
     ],
     tags: ['Proxy', 'constructor', 'transparent', 'beginner'],
+    usageExample: {
+      code: `const target = { value: 42 }
+const p = new Proxy(target, {
+  get: (t, k) => k in t ? t[k] : 'default'
+})
+console.log(p.value)   // → 42
+console.log(p.missing) // → 'default'`,
+      explanation: {
+        en: 'new Proxy(target, handler) creates a proxy that intercepts operations on the target object using trap methods in the handler.',
+        es: 'new Proxy(target, handler) crea un proxy que intercepta operaciones sobre el objeto objetivo usando métodos trampa en el handler.',
+      },
+    },
   },
   {
     slug: 'proxy-constructor-get-trap-constant',
@@ -122,6 +158,18 @@ When a \`get\` trap always returns \`42\`, any property access on the proxy retu
       'The `get(target, key)` trap intercepts all property reads.',
     ],
     tags: ['Proxy', 'constructor', 'get trap', 'intermediate'],
+    usageExample: {
+      code: `const target = { value: 42 }
+const p = new Proxy(target, {
+  get: (t, k) => k in t ? t[k] : 'default'
+})
+console.log(p.value)   // → 42
+console.log(p.missing) // → 'default'`,
+      explanation: {
+        en: 'new Proxy(target, handler) creates a proxy that intercepts operations on the target object using trap methods in the handler.',
+        es: 'new Proxy(target, handler) crea un proxy que intercepta operaciones sobre el objeto objetivo usando métodos trampa en el handler.',
+      },
+    },
   },
   {
     slug: 'proxy-constructor-null-target-throws',
@@ -163,5 +211,17 @@ The \`Proxy\` constructor throws a \`TypeError\` when the target is \`null\`.
       'The first argument to `Proxy` must be a non-null object or function.',
     ],
     tags: ['Proxy', 'constructor', 'TypeError', 'intermediate'],
+    usageExample: {
+      code: `const target = { value: 42 }
+const p = new Proxy(target, {
+  get: (t, k) => k in t ? t[k] : 'default'
+})
+console.log(p.value)   // → 42
+console.log(p.missing) // → 'default'`,
+      explanation: {
+        en: 'new Proxy(target, handler) creates a proxy that intercepts operations on the target object using trap methods in the handler.',
+        es: 'new Proxy(target, handler) crea un proxy que intercepta operaciones sobre el objeto objetivo usando métodos trampa en el handler.',
+      },
+    },
   },
 ]

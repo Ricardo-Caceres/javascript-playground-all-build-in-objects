@@ -39,6 +39,14 @@ export const intlNumberFormatExercises: Exercise[] = [
     ],
     hints: ['Use new Intl.NumberFormat(locale)'],
     tags: [],
+    usageExample: {
+      code: `const nf = new Intl.NumberFormat('en-US');
+// Creates a number formatter for en-US locale`,
+      explanation: {
+        en: "Intl.NumberFormat creates a locale-aware number formatter.",
+        es: "Intl.NumberFormat crea un formateador de números que respeta las reglas del idioma.",
+      },
+    },
   },
   {
     slug: 'intl-numberformat-format',
@@ -78,6 +86,14 @@ export const intlNumberFormatExercises: Exercise[] = [
     ],
     hints: ['Use .format(number)'],
     tags: [],
+    usageExample: {
+      code: `new Intl.NumberFormat('de-DE').format(1234567.89);
+// '1.234.567,89' (German format)`,
+      explanation: {
+        en: "format() converts a number to a locale-specific string with proper separators.",
+        es: "format() convierte un número en una cadena con separadores del idioma correspondiente.",
+      },
+    },
   },
   {
     slug: 'intl-numberformat-currency',
@@ -117,6 +133,14 @@ export const intlNumberFormatExercises: Exercise[] = [
     ],
     hints: ['Use style: "currency" and currency: "USD"'],
     tags: [],
+    usageExample: {
+      code: `new Intl.NumberFormat('en-US', { style: 'currency', currency: 'USD' }).format(1234.5);
+// '$1,234.50'`,
+      explanation: {
+        en: "Use the currency style to format monetary values with the correct symbol.",
+        es: "Usa el estilo currency para formatear valores monetarios con el símbolo correcto.",
+      },
+    },
   },
   {
     slug: 'intl-numberformat-formatToParts',
@@ -156,6 +180,14 @@ export const intlNumberFormatExercises: Exercise[] = [
     ],
     hints: ['Use .formatToParts(number)'],
     tags: [],
+    usageExample: {
+      code: `const parts = new Intl.NumberFormat('en-US').formatToParts(1234.5);
+// [{type:'integer',value:'1'},{type:'group',value:','}, ...]`,
+      explanation: {
+        en: "formatToParts() returns the formatted number as labeled token segments.",
+        es: "formatToParts() devuelve el número formateado como segmentos de tokens etiquetados.",
+      },
+    },
   },
   {
     slug: 'intl-numberformat-resolvedOptions',
@@ -195,5 +227,13 @@ export const intlNumberFormatExercises: Exercise[] = [
     ],
     hints: ['Use .resolvedOptions()'],
     tags: [],
+    usageExample: {
+      code: `const opts = new Intl.NumberFormat('en-US', { maximumFractionDigits: 2 }).resolvedOptions();
+// { locale: 'en-US', maximumFractionDigits: 2, ... }`,
+      explanation: {
+        en: "resolvedOptions() returns the resolved locale and formatting options.",
+        es: "resolvedOptions() devuelve el idioma resuelto y las opciones de formato.",
+      },
+    },
   },
 ];

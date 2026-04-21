@@ -19,6 +19,16 @@ export const dateConstructorExercises: Exercise[] = [
     ],
     hints: ['Passing 0 to the Date constructor gives the Unix epoch (Jan 1 1970 UTC)'],
     tags: ['Date', 'constructor', 'epoch'],
+    usageExample: {
+      code: `const d1 = new Date()
+const d2 = new Date('2024-01-15')
+const d3 = new Date(2024, 0, 15)  // → Jan 15 2024
+d3 instanceof Date  // → true`,
+      explanation: {
+        en: 'Use new Date() to create a Date object from the current time, a timestamp, a date string, or explicit year/month/day arguments.',
+        es: 'Usa new Date() para crear un objeto Date a partir de la hora actual, un timestamp, una cadena de fecha o argumentos explícitos de año/mes/día.',
+      },
+    },
   },
   {
     slug: 'date-constructor-2',
@@ -38,6 +48,16 @@ export const dateConstructorExercises: Exercise[] = [
     ],
     hints: ['ISO 8601 date strings like "YYYY-MM-DD" are reliably parsed by new Date()'],
     tags: ['Date', 'constructor', 'string'],
+    usageExample: {
+      code: `const d1 = new Date()
+const d2 = new Date('2024-01-15')
+const d3 = new Date(2024, 0, 15)  // → Jan 15 2024
+d3 instanceof Date  // → true`,
+      explanation: {
+        en: 'Use new Date() to create a Date object from the current time, a timestamp, a date string, or explicit year/month/day arguments.',
+        es: 'Usa new Date() para crear un objeto Date a partir de la hora actual, un timestamp, una cadena de fecha o argumentos explícitos de año/mes/día.',
+      },
+    },
   },
   {
     slug: 'date-constructor-3',
@@ -57,6 +77,16 @@ export const dateConstructorExercises: Exercise[] = [
     ],
     hints: ['Month index starts at 0: January=0, February=1, …, December=11'],
     tags: ['Date', 'constructor', 'month', '0-indexed'],
+    usageExample: {
+      code: `const d1 = new Date()
+const d2 = new Date('2024-01-15')
+const d3 = new Date(2024, 0, 15)  // → Jan 15 2024
+d3 instanceof Date  // → true`,
+      explanation: {
+        en: 'Use new Date() to create a Date object from the current time, a timestamp, a date string, or explicit year/month/day arguments.',
+        es: 'Usa new Date() para crear un objeto Date a partir de la hora actual, un timestamp, una cadena de fecha o argumentos explícitos de año/mes/día.',
+      },
+    },
   },
   {
     slug: 'date-constructor-4',
@@ -76,6 +106,16 @@ export const dateConstructorExercises: Exercise[] = [
     ],
     hints: ['Unlike primitives, Date instances have typeof === "object"'],
     tags: ['Date', 'constructor', 'typeof'],
+    usageExample: {
+      code: `const d1 = new Date()
+const d2 = new Date('2024-01-15')
+const d3 = new Date(2024, 0, 15)  // → Jan 15 2024
+d3 instanceof Date  // → true`,
+      explanation: {
+        en: 'Use new Date() to create a Date object from the current time, a timestamp, a date string, or explicit year/month/day arguments.',
+        es: 'Usa new Date() para crear un objeto Date a partir de la hora actual, un timestamp, una cadena de fecha o argumentos explícitos de año/mes/día.',
+      },
+    },
   },
   {
     slug: 'date-constructor-5',
@@ -95,5 +135,15 @@ export const dateConstructorExercises: Exercise[] = [
     ],
     hints: ['The 7-arg constructor is new Date(year, monthIndex, day, hours, minutes, seconds, ms)'],
     tags: ['Date', 'constructor', 'time-components'],
+    usageExample: {
+      code: `const d1 = new Date()
+const d2 = new Date('2024-01-15')
+const d3 = new Date(2024, 0, 15)  // → Jan 15 2024
+d3 instanceof Date  // → true`,
+      explanation: {
+        en: 'Use new Date() to create a Date object from the current time, a timestamp, a date string, or explicit year/month/day arguments.',
+        es: 'Usa new Date() para crear un objeto Date a partir de la hora actual, un timestamp, una cadena de fecha o argumentos explícitos de año/mes/día.',
+      },
+    },
   },
 ]

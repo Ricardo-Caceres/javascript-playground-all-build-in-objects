@@ -19,6 +19,17 @@ export const referenceErrorExercises: Exercise[] = [
     ],
     hints: ['Use new ReferenceError(message) to create a ReferenceError instance.'],
     tags: ['referenceerror', 'constructor', 'instanceof'],
+    usageExample: {
+      code: `try {
+  console.log(undeclaredVar)
+} catch (e) {
+  e instanceof ReferenceError  // → true
+}`,
+      explanation: {
+        en: "ReferenceError is thrown when you try to access a variable that has not been declared.",
+        es: "ReferenceError se lanza cuando intentas acceder a una variable que no ha sido declarada.",
+      },
+    },
   },
   {
     slug: 'referenceerror-constructor-2',
@@ -38,6 +49,13 @@ export const referenceErrorExercises: Exercise[] = [
     ],
     hints: ['ReferenceError inherits from Error in the prototype chain.'],
     tags: ['referenceerror', 'constructor', 'instanceof', 'error'],
+    usageExample: {
+      code: `new ReferenceError('x is not defined').message  // → 'x is not defined'`,
+      explanation: {
+        en: "You can create a ReferenceError manually to signal missing variable access.",
+        es: "Puedes crear un ReferenceError manualmente para señalar el acceso a una variable faltante.",
+      },
+    },
   },
   {
     slug: 'referenceerror-constructor-3',
@@ -57,6 +75,13 @@ export const referenceErrorExercises: Exercise[] = [
     ],
     hints: ['The message is stored in the .message property.'],
     tags: ['referenceerror', 'constructor', 'message'],
+    usageExample: {
+      code: `new ReferenceError('oops').name  // → 'ReferenceError'`,
+      explanation: {
+        en: "The name property of a ReferenceError is always 'ReferenceError'.",
+        es: "La propiedad name de un ReferenceError siempre es 'ReferenceError'.",
+      },
+    },
   },
   {
     slug: 'referenceerror-constructor-4',
@@ -76,6 +101,13 @@ export const referenceErrorExercises: Exercise[] = [
     ],
     hints: ['Error subtypes have a .name property matching their constructor name.'],
     tags: ['referenceerror', 'constructor', 'name'],
+    usageExample: {
+      code: `new ReferenceError() instanceof Error  // → true`,
+      explanation: {
+        en: "ReferenceError is a subtype of Error and inherits all standard error properties.",
+        es: "ReferenceError es un subtipo de Error y hereda todas las propiedades estándar de error.",
+      },
+    },
   },
   {
     slug: 'referenceerror-constructor-5',
@@ -107,5 +139,17 @@ export const referenceErrorExercises: Exercise[] = [
     ],
     hints: ['Use throw new ReferenceError(message) to manually throw a ReferenceError.'],
     tags: ['referenceerror', 'constructor', 'throw', 'catch'],
+    usageExample: {
+      code: `try {
+  null.property
+} catch (e) {
+  // this is a TypeError, not ReferenceError
+  e instanceof TypeError  // → true
+}`,
+      explanation: {
+        en: "Distinguish ReferenceError (undeclared variable) from TypeError (wrong type operation).",
+        es: "Distingue ReferenceError (variable no declarada) de TypeError (operación de tipo incorrecto).",
+      },
+    },
   },
 ]

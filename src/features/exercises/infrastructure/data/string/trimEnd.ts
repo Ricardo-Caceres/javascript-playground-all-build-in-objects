@@ -34,6 +34,15 @@ trimRight('hello   ') // → 'hello'
       '`trimEnd()` only removes whitespace at the end of the string.',
     ],
     tags: ['String', 'String.prototype.trimEnd', 'beginner'],
+    usageExample: {
+      code: `'  hello  '.trimEnd()   // → '  hello'
+'text   '.trimEnd()    // → 'text'
+'hi'.trimEnd()         // → 'hi'`,
+      explanation: {
+        en: "Use trimEnd() to remove only trailing whitespace from the end of a string, leaving leading whitespace intact.",
+        es: "Usa trimEnd() para eliminar solo los espacios en blanco al final de una cadena, dejando intactos los del inicio.",
+      },
+    },
   },
   {
     slug: 'string-trim-end-leading-preserved',
@@ -68,6 +77,15 @@ trimEndOnly('  hello  ') // → '  hello'
       '`trimEnd()` is asymmetric — it only affects the right side of the string.',
     ],
     tags: ['String', 'String.prototype.trimEnd', 'beginner'],
+    usageExample: {
+      code: `'  hello  '.trimEnd()   // → '  hello'
+'text   '.trimEnd()    // → 'text'
+'hi'.trimEnd()         // → 'hi'`,
+      explanation: {
+        en: "Use trimEnd() to remove only trailing whitespace from the end of a string, leaving leading whitespace intact.",
+        es: "Usa trimEnd() para eliminar solo los espacios en blanco al final de una cadena, dejando intactos los del inicio.",
+      },
+    },
   },
   {
     slug: 'string-trim-end-both-only-leading-preserved',
@@ -102,6 +120,15 @@ keepLeading('   hello   ') // → '   hello'
       'Compare `trim()` (both ends) vs `trimEnd()` (right end only) vs `trimStart()` (left end only).',
     ],
     tags: ['String', 'String.prototype.trimEnd', 'beginner'],
+    usageExample: {
+      code: `'  hello  '.trimEnd()   // → '  hello'
+'text   '.trimEnd()    // → 'text'
+'hi'.trimEnd()         // → 'hi'`,
+      explanation: {
+        en: "Use trimEnd() to remove only trailing whitespace from the end of a string, leaving leading whitespace intact.",
+        es: "Usa trimEnd() para eliminar solo los espacios en blanco al final de una cadena, dejando intactos los del inicio.",
+      },
+    },
   },
   {
     slug: 'string-trim-end-no-whitespace',
@@ -136,6 +163,15 @@ verifyTrimEnd('hello') // → 'hello'
       '`trimEnd()` is a no-op when there is no trailing whitespace.',
     ],
     tags: ['String', 'String.prototype.trimEnd', 'beginner'],
+    usageExample: {
+      code: `'  hello  '.trimEnd()   // → '  hello'
+'text   '.trimEnd()    // → 'text'
+'hi'.trimEnd()         // → 'hi'`,
+      explanation: {
+        en: "Use trimEnd() to remove only trailing whitespace from the end of a string, leaving leading whitespace intact.",
+        es: "Usa trimEnd() para eliminar solo los espacios en blanco al final de una cadena, dejando intactos los del inicio.",
+      },
+    },
   },
   {
     slug: 'string-trim-end-trailing-newline',
@@ -170,5 +206,14 @@ stripNewline('hello\\n') // → 'hello'
       '`trimEnd()` removes all trailing whitespace characters, including `\\n`, `\\t`, and `\\r`.',
     ],
     tags: ['String', 'String.prototype.trimEnd', 'whitespace', 'beginner'],
+    usageExample: {
+      code: `'  hello  '.trimEnd()   // → '  hello'
+'text   '.trimEnd()    // → 'text'
+'hi'.trimEnd()         // → 'hi'`,
+      explanation: {
+        en: "Use trimEnd() to remove only trailing whitespace from the end of a string, leaving leading whitespace intact.",
+        es: "Usa trimEnd() para eliminar solo los espacios en blanco al final de una cadena, dejando intactos los del inicio.",
+      },
+    },
   },
 ]

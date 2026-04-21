@@ -43,6 +43,19 @@ const greeting = dog.greet()`,
     ],
     hints: ['extends creates a subclass relationship', 'Child class inherits all parent methods', 'instanceof returns true for parent class'],
     tags: ['inheritance', 'extends', 'subclass', 'class-hierarchy'],
+    usageExample: {
+      code: `class Animal {
+  constructor(name) { this.name = name; }
+}
+class Dog extends Animal {
+  bark() { return 'woof'; }
+}
+new Dog('Rex').bark(); // 'woof'`,
+      explanation: {
+        en: "extends creates a child class that inherits all of the parent's methods.",
+        es: "extends crea una clase hija que hereda todos los métodos del padre.",
+      },
+    },
   },
   {
     slug: 'prototypes-inherit-2',
@@ -96,6 +109,21 @@ const breed = dog.breed`,
     ],
     hints: ['super() must be called before using this in subclass constructor', 'Arguments passed to super() go to parent constructor', 'Parent properties are initialized through super()'],
     tags: ['inheritance', 'super', 'constructor', 'initialization'],
+    usageExample: {
+      code: `class Animal {
+  constructor(name) { this.name = name; }
+}
+class Dog extends Animal {
+  constructor(name, breed) {
+    super(name);
+    this.breed = breed;
+  }
+}`,
+      explanation: {
+        en: "Call super() first in the child constructor to initialize the parent's state.",
+        es: "Llama a super() primero en el constructor hijo para inicializar el estado del padre.",
+      },
+    },
   },
   {
     slug: 'prototypes-inherit-3',
@@ -151,6 +179,15 @@ const animalSound = animal.speak()`,
     ],
     hints: ['Override by defining the method in the subclass', 'The subclass version shadows the parent version', 'Parent method is not affected'],
     tags: ['inheritance', 'override', 'polymorphism', 'methods'],
+    usageExample: {
+      code: `class Animal { speak() { return 'generic sound'; } }
+class Cat extends Animal { speak() { return 'meow'; } }
+new Cat().speak(); // 'meow'`,
+      explanation: {
+        en: "Override a parent method in the child class to change its behavior.",
+        es: "Sobreescribe un método del padre en la clase hija para cambiar su comportamiento.",
+      },
+    },
   },
   {
     slug: 'prototypes-inherit-4',
@@ -200,6 +237,17 @@ const greeting = dog.greet()`,
     ],
     hints: ['super.methodName() calls the parent version', 'Useful for extending rather than replacing behavior', 'super preserves the this context'],
     tags: ['inheritance', 'super', 'method-calling', 'polymorphism'],
+    usageExample: {
+      code: `class Animal { greet() { return 'Hello from animal'; } }
+class Dog extends Animal {
+  greet() { return super.greet() + ' and dog'; }
+}
+new Dog().greet(); // 'Hello from animal and dog'`,
+      explanation: {
+        en: "super.method() calls the parent's version of an overridden method.",
+        es: "super.method() llama a la versión del padre de un método sobreescrito.",
+      },
+    },
   },
   {
     slug: 'prototypes-inherit-5',
@@ -289,5 +337,16 @@ const description = dog.describe()`,
     ],
     hints: ['super() calls parent constructor and must pass appropriate arguments', 'super.method() walks up the chain', 'instanceof works through entire hierarchy', 'Each class adds its own layer of functionality'],
     tags: ['inheritance', 'multi-level', 'complex-hierarchy', 'instanceof'],
+    usageExample: {
+      code: `class A { a() { return 'A'; } }
+class B extends A { b() { return 'B'; } }
+class C extends B { c() { return 'C'; } }
+const obj = new C();
+obj.a(); obj.b(); obj.c(); // all work`,
+      explanation: {
+        en: "Deep inheritance chains give the child class access to all ancestor methods.",
+        es: "Las cadenas de herencia profundas dan a la clase hija acceso a todos los métodos ancestros.",
+      },
+    },
   },
 ]

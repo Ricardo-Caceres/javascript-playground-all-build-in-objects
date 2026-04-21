@@ -20,6 +20,16 @@ export const mapSizeExercises: Exercise[] = [
     ],
     hints: ['An empty Map has size 0'],
     tags: ['Map', 'size', 'property'],
+    usageExample: {
+      code: `const m = new Map([['a', 1], ['b', 2]])
+console.log(m.size)   // → 2
+m.set('c', 3)
+console.log(m.size)   // → 3`,
+      explanation: {
+        en: 'Read Map.size to get the number of key-value pairs in the map.',
+        es: 'Lee Map.size para obtener el número de pares clave-valor en el mapa.',
+      },
+    },
   },
   {
     slug: 'map-size-2',
@@ -40,6 +50,16 @@ export const mapSizeExercises: Exercise[] = [
     ],
     hints: ['Each unique key added with set() increases size by 1'],
     tags: ['Map', 'size', 'set'],
+    usageExample: {
+      code: `const m = new Map([['a', 1], ['b', 2]])
+console.log(m.size)   // → 2
+m.set('c', 3)
+console.log(m.size)   // → 3`,
+      explanation: {
+        en: 'Read Map.size to get the number of key-value pairs in the map.',
+        es: 'Lee Map.size para obtener el número de pares clave-valor en el mapa.',
+      },
+    },
   },
   {
     slug: 'map-size-3',
@@ -60,6 +80,16 @@ export const mapSizeExercises: Exercise[] = [
     ],
     hints: ['Setting the same key twice keeps size at 1'],
     tags: ['Map', 'size', 'duplicate'],
+    usageExample: {
+      code: `const m = new Map([['a', 1], ['b', 2]])
+console.log(m.size)   // → 2
+m.set('c', 3)
+console.log(m.size)   // → 3`,
+      explanation: {
+        en: 'Read Map.size to get the number of key-value pairs in the map.',
+        es: 'Lee Map.size para obtener el número de pares clave-valor en el mapa.',
+      },
+    },
   },
   {
     slug: 'map-size-4',
@@ -80,6 +110,16 @@ export const mapSizeExercises: Exercise[] = [
     ],
     hints: ['delete() removes the key and decreases the size by 1'],
     tags: ['Map', 'size', 'delete'],
+    usageExample: {
+      code: `const m = new Map([['a', 1], ['b', 2]])
+console.log(m.size)   // → 2
+m.set('c', 3)
+console.log(m.size)   // → 3`,
+      explanation: {
+        en: 'Read Map.size to get the number of key-value pairs in the map.',
+        es: 'Lee Map.size para obtener el número de pares clave-valor en el mapa.',
+      },
+    },
   },
   {
     slug: 'map-size-5',
@@ -100,5 +140,15 @@ export const mapSizeExercises: Exercise[] = [
     ],
     hints: ['size is always a non-negative integer'],
     tags: ['Map', 'size', 'typeof'],
+    usageExample: {
+      code: `const m = new Map([['a', 1], ['b', 2]])
+console.log(m.size)   // → 2
+m.set('c', 3)
+console.log(m.size)   // → 3`,
+      explanation: {
+        en: 'Read Map.size to get the number of key-value pairs in the map.',
+        es: 'Lee Map.size para obtener el número de pares clave-valor en el mapa.',
+      },
+    },
   },
 ]

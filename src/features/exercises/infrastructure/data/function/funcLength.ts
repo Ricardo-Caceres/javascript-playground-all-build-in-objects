@@ -32,6 +32,14 @@ The \`length\` property of a function returns the number of formal parameters it
       '`fn.length` counts only the positional parameters before any defaults or rest.',
     ],
     tags: ['Function', 'length', 'beginner'],
+    usageExample: {
+      code: `function fn(a, b, c) {}
+fn.length  // → 3`,
+      explanation: {
+        en: "Function.length returns the number of declared parameters.",
+        es: "Function.length devuelve el número de parámetros declarados.",
+      },
+    },
   },
   {
     slug: 'function-length-zero-params',
@@ -64,6 +72,14 @@ A function with no parameters has a \`length\` of \`0\`.
       'A function with no declared parameters has `length` of `0`.',
     ],
     tags: ['Function', 'length', 'beginner'],
+    usageExample: {
+      code: `function fn(a, b = 1) {}
+fn.length  // → 1 (default params not counted)`,
+      explanation: {
+        en: "Parameters with default values are not counted in Function.length.",
+        es: "Los parámetros con valores por defecto no se cuentan en Function.length.",
+      },
+    },
   },
   {
     slug: 'function-length-default-params',
@@ -96,6 +112,14 @@ Parameters with default values are **not** counted in \`fn.length\`. Only the pa
       'Parameters with defaults do not count towards `fn.length`.',
     ],
     tags: ['Function', 'length', 'default params', 'intermediate'],
+    usageExample: {
+      code: `function fn(...args) {}
+fn.length  // → 0 (rest params not counted)`,
+      explanation: {
+        en: "Rest parameters are not included in Function.length.",
+        es: "Los parámetros rest no se incluyen en Function.length.",
+      },
+    },
   },
   {
     slug: 'function-length-rest-params',
@@ -128,6 +152,14 @@ Rest parameters (\`...args\`) are never counted in \`fn.length\`. A function wit
       'Rest parameters (`...args`) are excluded from `fn.length`.',
     ],
     tags: ['Function', 'length', 'rest params', 'intermediate'],
+    usageExample: {
+      code: `const arrow = (a, b) => a + b
+arrow.length  // → 2`,
+      explanation: {
+        en: "Arrow functions also have a length property reflecting their parameter count.",
+        es: "Las funciones flecha también tienen una propiedad length que refleja su conteo de parámetros.",
+      },
+    },
   },
   {
     slug: 'function-length-typeof',
@@ -158,5 +190,13 @@ Rest parameters (\`...args\`) are never counted in \`fn.length\`. A function wit
       '`fn.length` is always a non-negative integer — a `number`.',
     ],
     tags: ['Function', 'length', 'typeof', 'beginner'],
+    usageExample: {
+      code: `function fn(a, b, c, d = 0) {}
+fn.length  // → 3`,
+      explanation: {
+        en: "Only parameters before the first default are counted in length.",
+        es: "Solo los parámetros antes del primer valor por defecto se cuentan en length.",
+      },
+    },
   },
 ]

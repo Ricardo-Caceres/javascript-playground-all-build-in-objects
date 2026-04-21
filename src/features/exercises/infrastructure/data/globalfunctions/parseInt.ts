@@ -20,6 +20,14 @@ export const globalParseIntExercises: Exercise[] = [
     ],
     hints: ['parseInt converts a string to an integer.'],
     tags: ['globalfunctions', 'parseInt', 'number'],
+    usageExample: {
+      code: `parseInt('42')         // → 42
+typeof parseInt('42')  // → 'number'`,
+      explanation: {
+        en: 'parseInt() parses a string and returns the first integer it finds.',
+        es: 'parseInt() analiza una cadena y devuelve el primer entero que encuentra.',
+      },
+    },
   },
   {
     slug: 'global-parseint-2',
@@ -40,6 +48,14 @@ export const globalParseIntExercises: Exercise[] = [
     ],
     hints: ["The second argument to parseInt is the radix (base). Base 2 means binary."],
     tags: ['globalfunctions', 'parseInt', 'radix', 'binary'],
+    usageExample: {
+      code: `parseInt('10', 2)    // → 2   (binary 10 = decimal 2)
+parseInt('1010', 2)  // → 10`,
+      explanation: {
+        en: 'The second argument is the radix — parseInt(\'10\', 2) treats the string as binary.',
+        es: 'El segundo argumento es la base: parseInt(\'10\', 2) trata la cadena como binario.',
+      },
+    },
   },
   {
     slug: 'global-parseint-3',
@@ -60,6 +76,14 @@ export const globalParseIntExercises: Exercise[] = [
     ],
     hints: ["Base 16 is hexadecimal. 'ff' in hex equals 255 in decimal."],
     tags: ['globalfunctions', 'parseInt', 'radix', 'hex'],
+    usageExample: {
+      code: `parseInt('ff', 16)   // → 255
+parseInt('FF', 16)   // → 255  (case-insensitive)`,
+      explanation: {
+        en: 'parseInt(\'ff\', 16) parses hexadecimal — ff equals 255 in decimal.',
+        es: 'parseInt(\'ff\', 16) analiza hexadecimal; ff equivale a 255 en decimal.',
+      },
+    },
   },
   {
     slug: 'global-parseint-4',
@@ -80,6 +104,14 @@ export const globalParseIntExercises: Exercise[] = [
     ],
     hints: ['parseInt stops parsing at the decimal point.'],
     tags: ['globalfunctions', 'parseInt', 'truncate'],
+    usageExample: {
+      code: `parseInt('3.14')   // → 3
+parseInt('3.99')   // → 3  (truncates, does not round)`,
+      explanation: {
+        en: 'parseInt() stops at the decimal point, truncating (not rounding) the fractional part.',
+        es: 'parseInt() se detiene en el punto decimal, truncando (no redondeando) la parte fraccionaria.',
+      },
+    },
   },
   {
     slug: 'global-parseint-5',
@@ -100,5 +132,13 @@ export const globalParseIntExercises: Exercise[] = [
     ],
     hints: ['NaN is returned when a string cannot be converted to a number.'],
     tags: ['globalfunctions', 'parseInt', 'NaN'],
+    usageExample: {
+      code: `parseInt('abc')          // → NaN
+isNaN(parseInt('abc'))   // → true`,
+      explanation: {
+        en: 'parseInt() returns NaN when the string does not start with a parseable integer.',
+        es: 'parseInt() devuelve NaN cuando la cadena no comienza con un entero analizable.',
+      },
+    },
   },
 ]

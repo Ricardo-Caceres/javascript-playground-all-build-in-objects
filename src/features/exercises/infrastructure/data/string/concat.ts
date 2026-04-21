@@ -34,6 +34,15 @@ joinTwo('Hello', ' World') // → 'Hello World'
       '`.concat()` returns a new string without mutating the original.',
     ],
     tags: ['String', 'String.prototype.concat', 'beginner'],
+    usageExample: {
+      code: `const str = 'Hello'
+str.concat(', ', 'World', '!')   // → 'Hello, World!'
+''.concat('a', 'b', 'c')          // → 'abc'`,
+      explanation: {
+        en: "Use concat() to join two or more strings together, returning a new string without modifying the originals.",
+        es: "Usa concat() para unir dos o más cadenas, devolviendo una nueva sin modificar las originales.",
+      },
+    },
   },
   {
     slug: 'string-concat-multiple',
@@ -68,6 +77,15 @@ joinAll(['Hello', ', ', 'World', '!']) // → 'Hello, World!'
       'Spread the array: `"".concat(...parts)`.',
     ],
     tags: ['String', 'String.prototype.concat', 'spread', 'beginner'],
+    usageExample: {
+      code: `const str = 'Hello'
+str.concat(', ', 'World', '!')   // → 'Hello, World!'
+''.concat('a', 'b', 'c')          // → 'abc'`,
+      explanation: {
+        en: "Use concat() to join two or more strings together, returning a new string without modifying the originals.",
+        es: "Usa concat() para unir dos o más cadenas, devolviendo una nueva sin modificar las originales.",
+      },
+    },
   },
   {
     slug: 'string-concat-with-number',
@@ -102,6 +120,15 @@ appendNumber('score: ', 42) // → 'score: 42'
       'Convert `n` to string first with `String(n)`, then concat.',
     ],
     tags: ['String', 'String.prototype.concat', 'coercion', 'beginner'],
+    usageExample: {
+      code: `const str = 'Hello'
+str.concat(', ', 'World', '!')   // → 'Hello, World!'
+''.concat('a', 'b', 'c')          // → 'abc'`,
+      explanation: {
+        en: "Use concat() to join two or more strings together, returning a new string without modifying the originals.",
+        es: "Usa concat() para unir dos o más cadenas, devolviendo una nueva sin modificar las originales.",
+      },
+    },
   },
   {
     slug: 'string-concat-empty',
@@ -136,6 +163,15 @@ withEmpty('hello') // → 'hello'
       'Concatenating with `""` is a no-op — the result equals the original string.',
     ],
     tags: ['String', 'String.prototype.concat', 'empty string', 'beginner'],
+    usageExample: {
+      code: `const str = 'Hello'
+str.concat(', ', 'World', '!')   // → 'Hello, World!'
+''.concat('a', 'b', 'c')          // → 'abc'`,
+      explanation: {
+        en: "Use concat() to join two or more strings together, returning a new string without modifying the originals.",
+        es: "Usa concat() para unir dos o más cadenas, devolviendo una nueva sin modificar las originales.",
+      },
+    },
   },
   {
     slug: 'string-concat-returns-new',
@@ -172,5 +208,14 @@ concatAndCheck('foo', 'bar') // → { result: 'foobar', originalUnchanged: true 
       'Strings are immutable in JavaScript. `.concat()` always returns a new value.',
     ],
     tags: ['String', 'String.prototype.concat', 'immutability', 'intermediate'],
+    usageExample: {
+      code: `const str = 'Hello'
+str.concat(', ', 'World', '!')   // → 'Hello, World!'
+''.concat('a', 'b', 'c')          // → 'abc'`,
+      explanation: {
+        en: "Use concat() to join two or more strings together, returning a new string without modifying the originals.",
+        es: "Usa concat() para unir dos o más cadenas, devolviendo una nueva sin modificar las originales.",
+      },
+    },
   },
 ]

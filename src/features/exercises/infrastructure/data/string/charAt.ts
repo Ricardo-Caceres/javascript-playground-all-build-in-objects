@@ -35,6 +35,16 @@ firstChar('world') // → 'w'
       '`str.charAt(0)` is equivalent to `str[0]` for most cases, but returns `""` instead of `undefined` for out-of-bounds.',
     ],
     tags: ['String', 'String.prototype.charAt', 'index', 'beginner'],
+    usageExample: {
+      code: `const str = 'Hello'
+str.charAt(0)    // → 'H'
+str.charAt(1)    // → 'e'
+str.charAt(99)   // → ''`,
+      explanation: {
+        en: "Use charAt() to get the character at a specific index, returning an empty string for out-of-bounds positions.",
+        es: "Usa charAt() para obtener el carácter en un índice específico, devolviendo una cadena vacía si está fuera de rango.",
+      },
+    },
   },
   {
     slug: 'string-char-at-last',
@@ -70,6 +80,16 @@ lastCharAt('abc')   // → 'c'
       'The last index is `str.length - 1`.',
     ],
     tags: ['String', 'String.prototype.charAt', 'index', 'beginner'],
+    usageExample: {
+      code: `const str = 'Hello'
+str.charAt(0)    // → 'H'
+str.charAt(1)    // → 'e'
+str.charAt(99)   // → ''`,
+      explanation: {
+        en: "Use charAt() to get the character at a specific index, returning an empty string for out-of-bounds positions.",
+        es: "Usa charAt() para obtener el carácter en un índice específico, devolviendo una cadena vacía si está fuera de rango.",
+      },
+    },
   },
   {
     slug: 'string-char-at-out-of-bounds',
@@ -105,6 +125,16 @@ isOutOfBounds('hi', 0)  // → false
       'Unlike `.at()`, `.charAt()` does NOT support negative indices — they are treated as 0 or out-of-bounds.',
     ],
     tags: ['String', 'String.prototype.charAt', 'out-of-bounds', 'beginner'],
+    usageExample: {
+      code: `const str = 'Hello'
+str.charAt(0)    // → 'H'
+str.charAt(1)    // → 'e'
+str.charAt(99)   // → ''`,
+      explanation: {
+        en: "Use charAt() to get the character at a specific index, returning an empty string for out-of-bounds positions.",
+        es: "Usa charAt() para obtener el carácter en un índice específico, devolviendo una cadena vacía si está fuera de rango.",
+      },
+    },
   },
   {
     slug: 'string-char-at-middle',
@@ -138,6 +168,16 @@ midChar('abc')   // → 'b'
       '`Math.floor(str.length / 2)` gives the middle index for any length.',
     ],
     tags: ['String', 'String.prototype.charAt', 'index', 'intermediate'],
+    usageExample: {
+      code: `const str = 'Hello'
+str.charAt(0)    // → 'H'
+str.charAt(1)    // → 'e'
+str.charAt(99)   // → ''`,
+      explanation: {
+        en: "Use charAt() to get the character at a specific index, returning an empty string for out-of-bounds positions.",
+        es: "Usa charAt() para obtener el carácter en un índice específico, devolviendo una cadena vacía si está fuera de rango.",
+      },
+    },
   },
   {
     slug: 'string-char-at-specific-position',
@@ -170,5 +210,15 @@ charAtPos('JavaScript', 4) // → 'S'
       '`str.charAt(pos)` is the classic way to get a character; `str[pos]` is the modern shorthand.',
     ],
     tags: ['String', 'String.prototype.charAt', 'index', 'beginner'],
+    usageExample: {
+      code: `const str = 'Hello'
+str.charAt(0)    // → 'H'
+str.charAt(1)    // → 'e'
+str.charAt(99)   // → ''`,
+      explanation: {
+        en: "Use charAt() to get the character at a specific index, returning an empty string for out-of-bounds positions.",
+        es: "Usa charAt() para obtener el carácter en un índice específico, devolviendo una cadena vacía si está fuera de rango.",
+      },
+    },
   },
 ]

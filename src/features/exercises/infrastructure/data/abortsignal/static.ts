@@ -19,6 +19,14 @@ export const abortSignalStaticExercises: Exercise[] = [
     ],
     hints: ['AbortSignal.abort() is a shorthand for creating a pre-aborted signal without needing an AbortController'],
     tags: ['AbortSignal', 'abort', 'static-method'],
+    usageExample: {
+      code: `const sig = AbortSignal.abort()
+sig.aborted  // → true`,
+      explanation: {
+        en: "AbortSignal.abort() creates a signal that is already in the aborted state.",
+        es: "AbortSignal.abort() crea una señal que ya está en estado abortado.",
+      },
+    },
   },
   {
     slug: 'abortsignal-static-2',
@@ -38,6 +46,14 @@ export const abortSignalStaticExercises: Exercise[] = [
     ],
     hints: ['Pass any value to AbortSignal.abort(reason) — it becomes the reason property of the returned signal'],
     tags: ['AbortSignal', 'abort', 'reason', 'static-method'],
+    usageExample: {
+      code: `const sig = AbortSignal.timeout(5000)
+// auto-aborts after 5 seconds`,
+      explanation: {
+        en: "AbortSignal.timeout(ms) creates a signal that automatically aborts after the given delay.",
+        es: "AbortSignal.timeout(ms) crea una señal que se aborta automáticamente después del retraso dado.",
+      },
+    },
   },
   {
     slug: 'abortsignal-static-3',
@@ -57,6 +73,14 @@ export const abortSignalStaticExercises: Exercise[] = [
     ],
     hints: ['AbortSignal.timeout() is available in Node.js 17.3+ and modern browsers'],
     tags: ['AbortSignal', 'timeout', 'static-method'],
+    usageExample: {
+      code: `const sig = AbortSignal.any([AbortSignal.abort(), new AbortController().signal])
+sig.aborted  // → true (because first is already aborted)`,
+      explanation: {
+        en: "AbortSignal.any() creates a signal that aborts when any of the given signals abort.",
+        es: "AbortSignal.any() crea una señal que se aborta cuando cualquiera de las señales dadas se aborta.",
+      },
+    },
   },
   {
     slug: 'abortsignal-static-4',
@@ -76,6 +100,13 @@ export const abortSignalStaticExercises: Exercise[] = [
     ],
     hints: ['timeout() schedules the abort in the future — it is not aborted at construction time'],
     tags: ['AbortSignal', 'timeout', 'static-method'],
+    usageExample: {
+      code: `AbortSignal.abort() instanceof AbortSignal  // → true`,
+      explanation: {
+        en: "Static factory methods return AbortSignal instances.",
+        es: "Los métodos de fábrica estáticos devuelven instancias de AbortSignal.",
+      },
+    },
   },
   {
     slug: 'abortsignal-static-5',
@@ -95,5 +126,13 @@ export const abortSignalStaticExercises: Exercise[] = [
     ],
     hints: ['Both AbortSignal.abort() and AbortSignal.timeout() return AbortSignal instances — they are factory methods'],
     tags: ['AbortSignal', 'abort', 'instanceof', 'static-method'],
+    usageExample: {
+      code: `const s = AbortSignal.abort('reason')
+s.reason  // → 'reason'`,
+      explanation: {
+        en: "Pass a reason to AbortSignal.abort() to provide context for the abort.",
+        es: "Pasa una razón a AbortSignal.abort() para proporcionar contexto del aborto.",
+      },
+    },
   },
 ]

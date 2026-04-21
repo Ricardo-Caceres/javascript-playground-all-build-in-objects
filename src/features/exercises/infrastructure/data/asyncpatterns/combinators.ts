@@ -19,6 +19,14 @@ export const asyncCombinatorsExercises: Exercise[] = [
     ],
     hints: ['Promise.all() always returns a Promise.', 'It waits for all input Promises to settle.'],
     tags: ['promise', 'all', 'combinator'],
+    usageExample: {
+      code: `const result = await Promise.all([Promise.resolve(1), Promise.resolve(2)]);
+// [1, 2]`,
+      explanation: {
+        en: "Promise.all() waits for all promises to resolve; rejects if any one fails.",
+        es: "Promise.all() espera que todas las promesas se resuelvan; rechaza si alguna falla.",
+      },
+    },
   },
   {
     slug: 'async-combinator-2',
@@ -38,6 +46,14 @@ export const asyncCombinatorsExercises: Exercise[] = [
     ],
     hints: ['Promise.allSettled() always returns a Promise.', 'It handles both resolved and rejected Promises.'],
     tags: ['promise', 'allSettled', 'combinator'],
+    usageExample: {
+      code: `const results = await Promise.allSettled([Promise.resolve(1), Promise.reject('err')]);
+// [{status:'fulfilled',value:1},{status:'rejected',reason:'err'}]`,
+      explanation: {
+        en: "Promise.allSettled() waits for all promises regardless of success or failure.",
+        es: "Promise.allSettled() espera todas las promesas sin importar si tienen éxito o fallan.",
+      },
+    },
   },
   {
     slug: 'async-combinator-3',
@@ -57,6 +73,14 @@ export const asyncCombinatorsExercises: Exercise[] = [
     ],
     hints: ['Promise.race() always returns a Promise.', 'It settles with the first Promise to settle.'],
     tags: ['promise', 'race', 'combinator'],
+    usageExample: {
+      code: `const first = await Promise.race([new Promise(r => setTimeout(() => r('slow'), 100)), Promise.resolve('fast')]);
+// 'fast'`,
+      explanation: {
+        en: "Promise.race() returns the result of the first promise that settles.",
+        es: "Promise.race() devuelve el resultado de la primera promesa que se establece.",
+      },
+    },
   },
   {
     slug: 'async-combinator-4',
@@ -76,6 +100,14 @@ export const asyncCombinatorsExercises: Exercise[] = [
     ],
     hints: ['Promise.any() always returns a Promise.', 'It resolves with the first fulfilled Promise.'],
     tags: ['promise', 'any', 'combinator'],
+    usageExample: {
+      code: `const first = await Promise.any([Promise.reject('no'), Promise.resolve('yes')]);
+// 'yes'`,
+      explanation: {
+        en: "Promise.any() resolves with the first fulfilled promise, ignoring rejections.",
+        es: "Promise.any() se resuelve con la primera promesa cumplida, ignorando los rechazos.",
+      },
+    },
   },
   {
     slug: 'async-combinator-5',
@@ -95,5 +127,13 @@ export const asyncCombinatorsExercises: Exercise[] = [
     ],
     hints: ['Promise.all([]) creates a Promise that resolves to an empty array.', 'The .then callback is queued as a microtask, not executed immediately.', 'Use this to understand the microtask queue.'],
     tags: ['promise', 'all', 'microtask', 'synchronous'],
+    usageExample: {
+      code: `const results = await Promise.all([]);
+// []`,
+      explanation: {
+        en: "Promise.all([]) resolves immediately with an empty array.",
+        es: "Promise.all([]) se resuelve inmediatamente con un array vacío.",
+      },
+    },
   },
 ]

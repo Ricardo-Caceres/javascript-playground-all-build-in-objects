@@ -34,6 +34,16 @@ export const reflectSetExercises: Exercise[] = [
       '`Reflect.set(target, key, value)` is a functional form of `target[key] = value`.',
     ],
     tags: ['Reflect', 'set', 'beginner'],
+    usageExample: {
+      code: `const obj = {}
+Reflect.set(obj, 'name', 'Alice')
+console.log(obj.name) // → 'Alice'
+// Equivalent to: obj['name'] = 'Alice'`,
+      explanation: {
+        en: 'Reflect.set() assigns a value to a property on an object, returning true on success.',
+        es: 'Reflect.set() asigna un valor a una propiedad de un objeto, devolviendo true en caso de éxito.',
+      },
+    },
   },
   {
     slug: 'reflect-set-returns-true',
@@ -64,6 +74,16 @@ export const reflectSetExercises: Exercise[] = [
       '`Reflect.set` returns a boolean indicating success.',
     ],
     tags: ['Reflect', 'set', 'beginner'],
+    usageExample: {
+      code: `const obj = {}
+Reflect.set(obj, 'name', 'Alice')
+console.log(obj.name) // → 'Alice'
+// Equivalent to: obj['name'] = 'Alice'`,
+      explanation: {
+        en: 'Reflect.set() assigns a value to a property on an object, returning true on success.',
+        es: 'Reflect.set() asigna un valor a una propiedad de un objeto, devolviendo true en caso de éxito.',
+      },
+    },
   },
   {
     slug: 'reflect-set-array',
@@ -98,6 +118,16 @@ export const reflectSetExercises: Exercise[] = [
       'Use a numeric index to set array elements with `Reflect.set`.',
     ],
     tags: ['Reflect', 'set', 'array', 'beginner'],
+    usageExample: {
+      code: `const obj = {}
+Reflect.set(obj, 'name', 'Alice')
+console.log(obj.name) // → 'Alice'
+// Equivalent to: obj['name'] = 'Alice'`,
+      explanation: {
+        en: 'Reflect.set() assigns a value to a property on an object, returning true on success.',
+        es: 'Reflect.set() asigna un valor a una propiedad de un objeto, devolviendo true en caso de éxito.',
+      },
+    },
   },
   {
     slug: 'reflect-set-typeof',
@@ -128,6 +158,16 @@ export const reflectSetExercises: Exercise[] = [
       '`Reflect` methods are all plain functions.',
     ],
     tags: ['Reflect', 'set', 'typeof', 'beginner'],
+    usageExample: {
+      code: `const obj = {}
+Reflect.set(obj, 'name', 'Alice')
+console.log(obj.name) // → 'Alice'
+// Equivalent to: obj['name'] = 'Alice'`,
+      explanation: {
+        en: 'Reflect.set() assigns a value to a property on an object, returning true on success.',
+        es: 'Reflect.set() asigna un valor a una propiedad de un objeto, devolviendo true en caso de éxito.',
+      },
+    },
   },
   {
     slug: 'reflect-set-update-existing',
@@ -162,5 +202,15 @@ export const reflectSetExercises: Exercise[] = [
       '`Reflect.set` overwrites existing property values just like regular assignment.',
     ],
     tags: ['Reflect', 'set', 'beginner'],
+    usageExample: {
+      code: `const obj = {}
+Reflect.set(obj, 'name', 'Alice')
+console.log(obj.name) // → 'Alice'
+// Equivalent to: obj['name'] = 'Alice'`,
+      explanation: {
+        en: 'Reflect.set() assigns a value to a property on an object, returning true on success.',
+        es: 'Reflect.set() asigna un valor a una propiedad de un objeto, devolviendo true en caso de éxito.',
+      },
+    },
   },
 ]

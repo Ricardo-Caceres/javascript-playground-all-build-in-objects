@@ -35,6 +35,16 @@ findLast('hello', 'l')    // → 3
       '`.lastIndexOf()` scans from right to left and returns the last match.',
     ],
     tags: ['String', 'String.prototype.lastIndexOf', 'beginner'],
+    usageExample: {
+      code: `const str = 'abcabc'
+str.lastIndexOf('a')    // → 3
+str.lastIndexOf('z')    // → -1
+str.lastIndexOf('b', 3) // → 1`,
+      explanation: {
+        en: "Use lastIndexOf() to find the index of the last occurrence of a substring, searching from right to left.",
+        es: "Usa lastIndexOf() para encontrar el índice de la última ocurrencia de una subcadena, buscando de derecha a izquierda.",
+      },
+    },
   },
   {
     slug: 'string-last-index-of-not-found',
@@ -68,6 +78,16 @@ notPresent('hello', 'ell') // → false
       '`.lastIndexOf()` returns `-1` when not found, just like `.indexOf()`.',
     ],
     tags: ['String', 'String.prototype.lastIndexOf', 'beginner'],
+    usageExample: {
+      code: `const str = 'abcabc'
+str.lastIndexOf('a')    // → 3
+str.lastIndexOf('z')    // → -1
+str.lastIndexOf('b', 3) // → 1`,
+      explanation: {
+        en: "Use lastIndexOf() to find the index of the last occurrence of a substring, searching from right to left.",
+        es: "Usa lastIndexOf() para encontrar el índice de la última ocurrencia de una subcadena, buscando de derecha a izquierda.",
+      },
+    },
   },
   {
     slug: 'string-last-index-of-from-index',
@@ -103,6 +123,16 @@ lastBefore('abcabc', 'a', 2) // → 0
       '`str.lastIndexOf(sub, fromIndex)` searches backward starting from `fromIndex`.',
     ],
     tags: ['String', 'String.prototype.lastIndexOf', 'fromIndex', 'intermediate'],
+    usageExample: {
+      code: `const str = 'abcabc'
+str.lastIndexOf('a')    // → 3
+str.lastIndexOf('z')    // → -1
+str.lastIndexOf('b', 3) // → 1`,
+      explanation: {
+        en: "Use lastIndexOf() to find the index of the last occurrence of a substring, searching from right to left.",
+        es: "Usa lastIndexOf() para encontrar el índice de la última ocurrencia de una subcadena, buscando de derecha a izquierda.",
+      },
+    },
   },
   {
     slug: 'string-last-index-of-multiple-occurrences',
@@ -137,6 +167,16 @@ lastOccurrence('abracadabra', 'a') // → 10
       '`.lastIndexOf()` scans from the end, so it finds the rightmost match.',
     ],
     tags: ['String', 'String.prototype.lastIndexOf', 'beginner'],
+    usageExample: {
+      code: `const str = 'abcabc'
+str.lastIndexOf('a')    // → 3
+str.lastIndexOf('z')    // → -1
+str.lastIndexOf('b', 3) // → 1`,
+      explanation: {
+        en: "Use lastIndexOf() to find the index of the last occurrence of a substring, searching from right to left.",
+        es: "Usa lastIndexOf() para encontrar el índice de la última ocurrencia de una subcadena, buscando de derecha a izquierda.",
+      },
+    },
   },
   {
     slug: 'string-last-index-of-case-sensitive',
@@ -171,5 +211,15 @@ lastIndexIgnoreCase('Hello World Hello', 'hello') // → 12
       'Convert both to lowercase before calling `.lastIndexOf()`.',
     ],
     tags: ['String', 'String.prototype.lastIndexOf', 'case-insensitive', 'intermediate'],
+    usageExample: {
+      code: `const str = 'abcabc'
+str.lastIndexOf('a')    // → 3
+str.lastIndexOf('z')    // → -1
+str.lastIndexOf('b', 3) // → 1`,
+      explanation: {
+        en: "Use lastIndexOf() to find the index of the last occurrence of a substring, searching from right to left.",
+        es: "Usa lastIndexOf() para encontrar el índice de la última ocurrencia de una subcadena, buscando de derecha a izquierda.",
+      },
+    },
   },
 ]

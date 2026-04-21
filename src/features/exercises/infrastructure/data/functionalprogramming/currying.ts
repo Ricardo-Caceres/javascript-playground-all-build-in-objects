@@ -25,6 +25,14 @@ Currying is a technique of translating a function that takes multiple arguments 
     ],
     hints: ['Use arrow functions for concise syntax', 'Return a function that takes b from the outer function', 'Each level of nesting handles one parameter'],
     tags: ['functional', 'currying', 'partial-application'],
+    usageExample: {
+      code: `const add = a => b => a + b;
+add(2)(3); // 5`,
+      explanation: {
+        en: "Currying converts a multi-argument function into a chain of single-argument functions.",
+        es: "Currying convierte una función de múltiples argumentos en una cadena de funciones de un solo argumento.",
+      },
+    },
   },
   {
     slug: 'fp-curry-2',
@@ -60,6 +68,17 @@ const triple = (x) => multiply(3)(x)`,
     ],
     hints: ['Use the curried multiply function with fixed first argument', 'Pass the specialized multiplier (2 or 3)', 'Partial application reduces function complexity'],
     tags: ['functional', 'currying', 'partial-application', 'specialization'],
+    usageExample: {
+      code: `const multiply = a => b => a * b;
+const double = multiply(2);
+const triple = multiply(3);
+double(5); // 10
+triple(5); // 15`,
+      explanation: {
+        en: "Partial application creates specialized functions by pre-filling one argument.",
+        es: "La aplicación parcial crea funciones especializadas prefijando un argumento.",
+      },
+    },
   },
   {
     slug: 'fp-curry-3',
@@ -87,6 +106,18 @@ Write a utility function that automatically curries any 2-argument function.
     ],
     hints: ['The curry function returns a function', 'That function returns another function', 'The innermost function calls the original with both arguments'],
     tags: ['functional', 'currying', 'higher-order', 'utility'],
+    usageExample: {
+      code: `function curry(fn) {
+  return function curried(...args) {
+    if (args.length >= fn.length) return fn(...args);
+    return (...more) => curried(...args, ...more);
+  };
+}`,
+      explanation: {
+        en: "A generic curry() utility auto-curries any function based on its argument count.",
+        es: "Una utilidad curry() genérica aplica curry automáticamente a cualquier función según su número de argumentos.",
+      },
+    },
   },
   {
     slug: 'fp-curry-4',
@@ -124,6 +155,15 @@ const cube = (x) => power(3)(x)`,
     ],
     hints: ['Use Math.pow for exponentiation', 'power(2) creates a square function', 'power(3) creates a cube function'],
     tags: ['functional', 'currying', 'partial-application', 'math'],
+    usageExample: {
+      code: `const log = level => msg => '[' + level + '] ' + msg;
+const warn = log('WARN');
+warn('Low memory'); // '[WARN] Low memory'`,
+      explanation: {
+        en: "Curried loggers let you partially apply the log level for reuse throughout the codebase.",
+        es: "Los loggers con curry permiten aplicar parcialmente el nivel de log para reutilizarlo.",
+      },
+    },
   },
   {
     slug: 'fp-curry-5',
@@ -149,5 +189,14 @@ Currying can be extended to functions with more than 2 arguments.
     ],
     hints: ['Each parameter level returns a function', 'Three parameters means three nested arrow functions', 'The innermost function performs the addition'],
     tags: ['functional', 'currying', 'advanced', 'multi-arg'],
+    usageExample: {
+      code: `const add = a => b => a + b;
+const add10 = add(10);
+[1, 2, 3].map(add10); // [11, 12, 13]`,
+      explanation: {
+        en: "Partially applied functions work directly as callbacks in array methods.",
+        es: "Las funciones aplicadas parcialmente funcionan directamente como callbacks en métodos de array.",
+      },
+    },
   },
 ]

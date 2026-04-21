@@ -35,6 +35,15 @@ upper('world') // → 'WORLD'
       '`toUpperCase()` converts every lowercase letter to its uppercase equivalent.',
     ],
     tags: ['String', 'String.prototype.toUpperCase', 'beginner'],
+    usageExample: {
+      code: `'hello world'.toUpperCase()   // → 'HELLO WORLD'
+'abc'.toUpperCase()           // → 'ABC'
+'xyz123'.toUpperCase()        // → 'XYZ123'`,
+      explanation: {
+        en: "Use toUpperCase() to convert all alphabetical characters in a string to uppercase.",
+        es: "Usa toUpperCase() para convertir todos los caracteres alfabéticos de una cadena a mayúsculas.",
+      },
+    },
   },
   {
     slug: 'string-to-upper-case-mixed',
@@ -69,6 +78,15 @@ shout('HeLLo WoRLd') // → 'HELLO WORLD'
       '`toUpperCase()` affects all lowercase letters, regardless of their position.',
     ],
     tags: ['String', 'String.prototype.toUpperCase', 'beginner'],
+    usageExample: {
+      code: `'hello world'.toUpperCase()   // → 'HELLO WORLD'
+'abc'.toUpperCase()           // → 'ABC'
+'xyz123'.toUpperCase()        // → 'XYZ123'`,
+      explanation: {
+        en: "Use toUpperCase() to convert all alphabetical characters in a string to uppercase.",
+        es: "Usa toUpperCase() para convertir todos los caracteres alfabéticos de una cadena a mayúsculas.",
+      },
+    },
   },
   {
     slug: 'string-to-upper-case-already-upper',
@@ -103,6 +121,15 @@ ensureUppercase('HELLO') // → 'HELLO'
       '`toUpperCase()` is safe to call on already-uppercase strings.',
     ],
     tags: ['String', 'String.prototype.toUpperCase', 'beginner'],
+    usageExample: {
+      code: `'hello world'.toUpperCase()   // → 'HELLO WORLD'
+'abc'.toUpperCase()           // → 'ABC'
+'xyz123'.toUpperCase()        // → 'XYZ123'`,
+      explanation: {
+        en: "Use toUpperCase() to convert all alphabetical characters in a string to uppercase.",
+        es: "Usa toUpperCase() para convertir todos los caracteres alfabéticos de una cadena a mayúsculas.",
+      },
+    },
   },
   {
     slug: 'string-to-upper-case-numbers',
@@ -137,6 +164,15 @@ upperAlpha('abc 123!') // → 'ABC 123!'
       'Only letter characters are converted; numbers, symbols, and spaces are left as-is.',
     ],
     tags: ['String', 'String.prototype.toUpperCase', 'beginner'],
+    usageExample: {
+      code: `'hello world'.toUpperCase()   // → 'HELLO WORLD'
+'abc'.toUpperCase()           // → 'ABC'
+'xyz123'.toUpperCase()        // → 'XYZ123'`,
+      explanation: {
+        en: "Use toUpperCase() to convert all alphabetical characters in a string to uppercase.",
+        es: "Usa toUpperCase() para convertir todos los caracteres alfabéticos de una cadena a mayúsculas.",
+      },
+    },
   },
   {
     slug: 'string-to-upper-case-empty',
@@ -172,5 +208,14 @@ safeUpper('hi') // → 'HI'
       '`"".toUpperCase()` returns `""`.',
     ],
     tags: ['String', 'String.prototype.toUpperCase', 'beginner'],
+    usageExample: {
+      code: `'hello world'.toUpperCase()   // → 'HELLO WORLD'
+'abc'.toUpperCase()           // → 'ABC'
+'xyz123'.toUpperCase()        // → 'XYZ123'`,
+      explanation: {
+        en: "Use toUpperCase() to convert all alphabetical characters in a string to uppercase.",
+        es: "Usa toUpperCase() para convertir todos los caracteres alfabéticos de una cadena a mayúsculas.",
+      },
+    },
   },
 ]

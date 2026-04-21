@@ -19,6 +19,14 @@ export const booleanConstructorExercises: Exercise[] = [
     ],
     hints: ['All non-zero numbers coerce to true.'],
     tags: ['boolean', 'constructor', 'truthy'],
+    usageExample: {
+      code: `Boolean(1)   // → true
+Boolean(0)   // → false`,
+      explanation: {
+        en: "Boolean() converts any value to its boolean equivalent using JS truthy/falsy rules.",
+        es: "Boolean() convierte cualquier valor a su equivalente booleano usando las reglas truthy/falsy de JS.",
+      },
+    },
   },
   {
     slug: 'boolean-constructor-2',
@@ -38,6 +46,15 @@ export const booleanConstructorExercises: Exercise[] = [
     ],
     hints: ['0, -0, and NaN are all falsy.'],
     tags: ['boolean', 'constructor', 'falsy'],
+    usageExample: {
+      code: `Boolean(0)   // → false
+Boolean(-0)  // → false
+Boolean(NaN) // → false`,
+      explanation: {
+        en: "Zero, -0, and NaN are all falsy values that convert to false.",
+        es: "Cero, -0 y NaN son valores falsy que se convierten a false.",
+      },
+    },
   },
   {
     slug: 'boolean-constructor-3',
@@ -57,6 +74,14 @@ export const booleanConstructorExercises: Exercise[] = [
     ],
     hints: ['Empty string is one of the six falsy values in JavaScript.'],
     tags: ['boolean', 'constructor', 'falsy', 'string'],
+    usageExample: {
+      code: `Boolean('')    // → false
+Boolean('hi')  // → true`,
+      explanation: {
+        en: "An empty string is falsy; any non-empty string is truthy.",
+        es: "Una cadena vacía es falsy; cualquier cadena no vacía es truthy.",
+      },
+    },
   },
   {
     slug: 'boolean-constructor-4',
@@ -76,6 +101,14 @@ export const booleanConstructorExercises: Exercise[] = [
     ],
     hints: ["Any non-empty string is truthy — even '0' or 'false'."],
     tags: ['boolean', 'constructor', 'truthy', 'string'],
+    usageExample: {
+      code: `Boolean('hello')  // → true
+Boolean('0')     // → true`,
+      explanation: {
+        en: "Any non-empty string—even '0' or 'false'—is truthy.",
+        es: "Cualquier cadena no vacía, incluso '0' o 'false', es truthy.",
+      },
+    },
   },
   {
     slug: 'boolean-constructor-5',
@@ -95,5 +128,14 @@ export const booleanConstructorExercises: Exercise[] = [
     ],
     hints: ['null is one of the six falsy values; objects (even empty ones) are truthy.'],
     tags: ['boolean', 'constructor', 'falsy', 'null'],
+    usageExample: {
+      code: `Boolean(null)      // → false
+Boolean(undefined) // → false
+Boolean({})        // → true`,
+      explanation: {
+        en: "null and undefined are falsy; objects (even empty ones) are always truthy.",
+        es: "null y undefined son falsy; los objetos (incluso vacíos) siempre son truthy.",
+      },
+    },
   },
 ]

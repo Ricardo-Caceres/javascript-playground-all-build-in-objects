@@ -20,6 +20,15 @@ export const weakRefDerefExercises: Exercise[] = [
     ],
     hints: ['deref() returns the object that was passed to the WeakRef constructor.'],
     tags: ['weakref', 'deref', 'instance-method'],
+    usageExample: {
+      code: `let obj = { x: 1 }
+const ref = new WeakRef(obj)
+ref.deref()?.x  // → 1`,
+      explanation: {
+        en: "deref() returns the referenced object, or undefined if it has been garbage collected.",
+        es: "deref() devuelve el objeto referenciado, o undefined si ha sido recolectado por el GC.",
+      },
+    },
   },
   {
     slug: 'weakref-deref-2',
@@ -40,6 +49,15 @@ export const weakRefDerefExercises: Exercise[] = [
     ],
     hints: ['Use type casting if TypeScript complains about the return type of deref.'],
     tags: ['weakref', 'deref', 'property'],
+    usageExample: {
+      code: `const ref = new WeakRef({ v: 42 })
+const val = ref.deref()
+val?.v  // → 42`,
+      explanation: {
+        en: "Always use optional chaining with deref() in case the object was collected.",
+        es: "Siempre usa encadenamiento opcional con deref() en caso de que el objeto haya sido recolectado.",
+      },
+    },
   },
   {
     slug: 'weakref-deref-3',
@@ -60,6 +78,15 @@ export const weakRefDerefExercises: Exercise[] = [
     ],
     hints: ['deref() returns the referenced object which has typeof "object".'],
     tags: ['weakref', 'deref', 'typeof'],
+    usageExample: {
+      code: `const ref = new WeakRef({})
+const obj = ref.deref()
+if (obj) { /* safe to use */ }`,
+      explanation: {
+        en: "Check the result of deref() before using it to avoid null-reference errors.",
+        es: "Verifica el resultado de deref() antes de usarlo para evitar errores de referencia nula.",
+      },
+    },
   },
   {
     slug: 'weakref-deref-4',
@@ -80,6 +107,14 @@ export const weakRefDerefExercises: Exercise[] = [
     ],
     hints: ['Arrays are objects so they can be held in a WeakRef.'],
     tags: ['weakref', 'deref', 'array'],
+    usageExample: {
+      code: `const cache = new WeakRef(computeExpensiveResult())
+const result = cache.deref() ?? recompute()`,
+      explanation: {
+        en: "Use deref() with nullish coalescing to fall back to recomputation if the object was GC'd.",
+        es: "Usa deref() con fusión nula para recalcular si el objeto fue recolectado por el GC.",
+      },
+    },
   },
   {
     slug: 'weakref-deref-5',
@@ -100,5 +135,13 @@ export const weakRefDerefExercises: Exercise[] = [
     ],
     hints: ['Methods on built-in constructors live on the prototype.'],
     tags: ['weakref', 'deref', 'prototype'],
+    usageExample: {
+      code: `const ref = new WeakRef({ id: 1 })
+ref.deref() !== undefined  // → true (still alive)`,
+      explanation: {
+        en: "If deref() returns a value, the object is still alive at that moment.",
+        es: "Si deref() devuelve un valor, el objeto todavía está vivo en ese momento.",
+      },
+    },
   },
 ]

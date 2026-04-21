@@ -20,6 +20,16 @@ export const setSizeExercises: Exercise[] = [
     ],
     hints: ['An empty Set has size 0'],
     tags: ['Set', 'size', 'property'],
+    usageExample: {
+      code: `const s = new Set([1, 2, 3])
+console.log(s.size)   // → 3
+s.add(4)
+console.log(s.size)   // → 4`,
+      explanation: {
+        en: 'Read Set.size to get the number of unique values in the set.',
+        es: 'Lee Set.size para obtener el número de valores únicos en el conjunto.',
+      },
+    },
   },
   {
     slug: 'set-size-2',
@@ -40,6 +50,16 @@ export const setSizeExercises: Exercise[] = [
     ],
     hints: ['Each unique value added increases size by 1'],
     tags: ['Set', 'size', 'add'],
+    usageExample: {
+      code: `const s = new Set([1, 2, 3])
+console.log(s.size)   // → 3
+s.add(4)
+console.log(s.size)   // → 4`,
+      explanation: {
+        en: 'Read Set.size to get the number of unique values in the set.',
+        es: 'Lee Set.size para obtener el número de valores únicos en el conjunto.',
+      },
+    },
   },
   {
     slug: 'set-size-3',
@@ -60,6 +80,16 @@ export const setSizeExercises: Exercise[] = [
     ],
     hints: ['Sets only store unique values; adding a duplicate is a no-op'],
     tags: ['Set', 'size', 'deduplication'],
+    usageExample: {
+      code: `const s = new Set([1, 2, 3])
+console.log(s.size)   // → 3
+s.add(4)
+console.log(s.size)   // → 4`,
+      explanation: {
+        en: 'Read Set.size to get the number of unique values in the set.',
+        es: 'Lee Set.size para obtener el número de valores únicos en el conjunto.',
+      },
+    },
   },
   {
     slug: 'set-size-4',
@@ -80,6 +110,16 @@ export const setSizeExercises: Exercise[] = [
     ],
     hints: ['delete() removes the value and decreases size by 1'],
     tags: ['Set', 'size', 'delete'],
+    usageExample: {
+      code: `const s = new Set([1, 2, 3])
+console.log(s.size)   // → 3
+s.add(4)
+console.log(s.size)   // → 4`,
+      explanation: {
+        en: 'Read Set.size to get the number of unique values in the set.',
+        es: 'Lee Set.size para obtener el número de valores únicos en el conjunto.',
+      },
+    },
   },
   {
     slug: 'set-size-5',
@@ -100,5 +140,15 @@ export const setSizeExercises: Exercise[] = [
     ],
     hints: ['size is always a non-negative integer'],
     tags: ['Set', 'size', 'typeof'],
+    usageExample: {
+      code: `const s = new Set([1, 2, 3])
+console.log(s.size)   // → 3
+s.add(4)
+console.log(s.size)   // → 4`,
+      explanation: {
+        en: 'Read Set.size to get the number of unique values in the set.',
+        es: 'Lee Set.size para obtener el número de valores únicos en el conjunto.',
+      },
+    },
   },
 ]

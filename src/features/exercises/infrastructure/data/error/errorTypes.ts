@@ -19,6 +19,14 @@ export const errorTypesExercises: Exercise[] = [
     ],
     hints: ['All built-in error types extend the base Error class.'],
     tags: ['error', 'TypeError', 'instanceof'],
+    usageExample: {
+      code: `new TypeError('bad arg')    // wrong type
+new RangeError('out of bounds') // out of range`,
+      explanation: {
+        en: "JavaScript has several built-in Error subtypes for different error categories.",
+        es: "JavaScript tiene varios subtipos de Error incorporados para diferentes categorías de error.",
+      },
+    },
   },
   {
     slug: 'error-types-2',
@@ -38,6 +46,14 @@ export const errorTypesExercises: Exercise[] = [
     ],
     hints: ['RangeError is thrown when a value is not in the allowed range.'],
     tags: ['error', 'RangeError', 'instanceof'],
+    usageExample: {
+      code: `new SyntaxError('invalid syntax')
+new ReferenceError('x is not defined')`,
+      explanation: {
+        en: "SyntaxError and ReferenceError are specialized errors thrown by the JS engine.",
+        es: "SyntaxError y ReferenceError son errores especializados lanzados por el motor de JS.",
+      },
+    },
   },
   {
     slug: 'error-types-3',
@@ -57,6 +73,14 @@ export const errorTypesExercises: Exercise[] = [
     ],
     hints: ['Wrap the property access in an arrow function for toThrow().'],
     tags: ['error', 'TypeError', 'null', 'toThrow'],
+    usageExample: {
+      code: `new URIError('malformed URI')
+new EvalError('eval() misuse')`,
+      explanation: {
+        en: "URIError and EvalError are rarely encountered but are standard Error subtypes.",
+        es: "URIError y EvalError rara vez se encuentran pero son subtipos de Error estándar.",
+      },
+    },
   },
   {
     slug: 'error-types-4',
@@ -76,6 +100,15 @@ export const errorTypesExercises: Exercise[] = [
     ],
     hints: ['Array() with a negative length argument throws a RangeError.'],
     tags: ['error', 'RangeError', 'Array', 'toThrow'],
+    usageExample: {
+      code: `class NetworkError extends Error {
+  constructor(msg) { super(msg); this.name = 'NetworkError' }
+}`,
+      explanation: {
+        en: "Extend Error to create application-specific error types with custom names.",
+        es: "Extiende Error para crear tipos de error específicos de la aplicación con nombres personalizados.",
+      },
+    },
   },
   {
     slug: 'error-types-5',
@@ -95,5 +128,15 @@ export const errorTypesExercises: Exercise[] = [
     ],
     hints: ['EvalError extends Error like all other built-in error types.'],
     tags: ['error', 'EvalError', 'name'],
+    usageExample: {
+      code: `try { null.x } catch(e) {
+  e instanceof TypeError  // → true
+  e instanceof Error     // → true
+}`,
+      explanation: {
+        en: "All built-in error subtypes inherit from Error, so instanceof Error is always true.",
+        es: "Todos los subtipos de error incorporados heredan de Error, por lo que instanceof Error siempre es true.",
+      },
+    },
   },
 ]

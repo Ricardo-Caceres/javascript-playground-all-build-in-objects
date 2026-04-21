@@ -35,6 +35,16 @@ startsWithHello('world hello') // → false
       '`str.startsWith(searchString)` returns `true` when `str` begins with `searchString`.',
     ],
     tags: ['String', 'String.prototype.startsWith', 'beginner'],
+    usageExample: {
+      code: `const str = 'Hello, World!'
+str.startsWith('Hello')         // → true
+str.startsWith('World')         // → false
+str.startsWith('World', 7)      // → true`,
+      explanation: {
+        en: "Use startsWith() to check if a string begins with a specific prefix, with an optional start position.",
+        es: "Usa startsWith() para verificar si una cadena comienza con un prefijo específico, con una posición de inicio opcional.",
+      },
+    },
   },
   {
     slug: 'string-starts-with-no-match',
@@ -70,6 +80,16 @@ doesNotStartWithA('cherry') // → true
       '`startsWith` is case-sensitive, so `"a"` and `"A"` are different.',
     ],
     tags: ['String', 'String.prototype.startsWith', 'beginner'],
+    usageExample: {
+      code: `const str = 'Hello, World!'
+str.startsWith('Hello')         // → true
+str.startsWith('World')         // → false
+str.startsWith('World', 7)      // → true`,
+      explanation: {
+        en: "Use startsWith() to check if a string begins with a specific prefix, with an optional start position.",
+        es: "Usa startsWith() para verificar si una cadena comienza con un prefijo específico, con una posición de inicio opcional.",
+      },
+    },
   },
   {
     slug: 'string-starts-with-case-sensitive',
@@ -105,6 +125,16 @@ startsWithExact('Hello', 'Hello') // → true
       '`startsWith` performs a case-sensitive comparison.',
     ],
     tags: ['String', 'String.prototype.startsWith', 'case-sensitive', 'beginner'],
+    usageExample: {
+      code: `const str = 'Hello, World!'
+str.startsWith('Hello')         // → true
+str.startsWith('World')         // → false
+str.startsWith('World', 7)      // → true`,
+      explanation: {
+        en: "Use startsWith() to check if a string begins with a specific prefix, with an optional start position.",
+        es: "Usa startsWith() para verificar si una cadena comienza con un prefijo específico, con una posición de inicio opcional.",
+      },
+    },
   },
   {
     slug: 'string-starts-with-position',
@@ -140,6 +170,16 @@ startsAtPos('hello world', 'hello', 6) // → false
       'The second argument shifts the starting position of the search.',
     ],
     tags: ['String', 'String.prototype.startsWith', 'position', 'intermediate'],
+    usageExample: {
+      code: `const str = 'Hello, World!'
+str.startsWith('Hello')         // → true
+str.startsWith('World')         // → false
+str.startsWith('World', 7)      // → true`,
+      explanation: {
+        en: "Use startsWith() to check if a string begins with a specific prefix, with an optional start position.",
+        es: "Usa startsWith() para verificar si una cadena comienza con un prefijo específico, con una posición de inicio opcional.",
+      },
+    },
   },
   {
     slug: 'string-starts-with-empty',
@@ -175,5 +215,15 @@ alwaysTrue('')         // → true
       'The empty string `""` is a prefix of every string.',
     ],
     tags: ['String', 'String.prototype.startsWith', 'beginner'],
+    usageExample: {
+      code: `const str = 'Hello, World!'
+str.startsWith('Hello')         // → true
+str.startsWith('World')         // → false
+str.startsWith('World', 7)      // → true`,
+      explanation: {
+        en: "Use startsWith() to check if a string begins with a specific prefix, with an optional start position.",
+        es: "Usa startsWith() para verificar si una cadena comienza con un prefijo específico, con una posición de inicio opcional.",
+      },
+    },
   },
 ]

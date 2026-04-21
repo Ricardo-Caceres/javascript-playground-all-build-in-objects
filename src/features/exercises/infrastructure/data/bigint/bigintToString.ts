@@ -20,6 +20,14 @@ export const bigintToStringExercises: Exercise[] = [
     ],
     hints: ['toString() with no argument defaults to base 10.'],
     tags: ['bigint', 'toString', 'instance-method'],
+    usageExample: {
+      code: `42n.toString()     // → '42'
+42n.toString(2)   // → '101010' (binary)`,
+      explanation: {
+        en: "toString() converts a BigInt to a string, optionally in a given base (radix).",
+        es: "toString() convierte un BigInt a cadena, opcionalmente en una base dada (radix).",
+      },
+    },
   },
   {
     slug: 'bigint-toString-2',
@@ -40,6 +48,13 @@ export const bigintToStringExercises: Exercise[] = [
     ],
     hints: ['Pass 16 as the radix for hexadecimal output.'],
     tags: ['bigint', 'toString', 'radix'],
+    usageExample: {
+      code: `255n.toString(16)  // → 'ff' (hexadecimal)`,
+      explanation: {
+        en: "Use toString(16) to get the hexadecimal representation of a BigInt.",
+        es: "Usa toString(16) para obtener la representación hexadecimal de un BigInt.",
+      },
+    },
   },
   {
     slug: 'bigint-toString-3',
@@ -60,6 +75,13 @@ export const bigintToStringExercises: Exercise[] = [
     ],
     hints: ['Pass 2 as the radix for binary output.'],
     tags: ['bigint', 'toString', 'binary'],
+    usageExample: {
+      code: `0n.toString()  // → '0'`,
+      explanation: {
+        en: "toString() on 0n returns the string '0'.",
+        es: "toString() sobre 0n devuelve la cadena '0'.",
+      },
+    },
   },
   {
     slug: 'bigint-toString-4',
@@ -80,6 +102,13 @@ export const bigintToStringExercises: Exercise[] = [
     ],
     hints: ['toString() always returns a string.'],
     tags: ['bigint', 'toString', 'typeof'],
+    usageExample: {
+      code: `(-42n).toString()  // → '-42'`,
+      explanation: {
+        en: "toString() preserves the negative sign for negative BigInt values.",
+        es: "toString() conserva el signo negativo para valores BigInt negativos.",
+      },
+    },
   },
   {
     slug: 'bigint-toString-5',
@@ -100,5 +129,12 @@ export const bigintToStringExercises: Exercise[] = [
     ],
     hints: ['Zero in any base is always "0".'],
     tags: ['bigint', 'toString', 'zero'],
+    usageExample: {
+      code: `1000n.toString(10)  // → '1000'`,
+      explanation: {
+        en: "Passing 10 as the radix to toString() gives the standard decimal representation.",
+        es: "Pasar 10 como radix a toString() da la representación decimal estándar.",
+      },
+    },
   },
 ]

@@ -27,6 +27,14 @@ A pure function always returns the same output for the same input and has no sid
     ],
     hints: ['Pure functions have no side effects', 'Same input always gives same output', 'No external state manipulation'],
     tags: ['functional', 'pure', 'add', 'basic'],
+    usageExample: {
+      code: `function add(a, b) { return a + b; }
+add(2, 3); // always 5 — no side effects`,
+      explanation: {
+        en: "A pure function always returns the same output for the same input and has no side effects.",
+        es: "Una función pura siempre devuelve la misma salida para la misma entrada y no tiene efectos secundarios.",
+      },
+    },
   },
   {
     slug: 'fp-pure-2',
@@ -54,6 +62,15 @@ Create a pure function that doubles a number without modifying any external stat
     ],
     hints: ['Use multiplication operator', 'Pure functions are predictable', 'No side effects allowed'],
     tags: ['functional', 'pure', 'multiply', 'deterministic'],
+    usageExample: {
+      code: `function double(n) { return n * 2; }
+double(5); // 10
+double(5); // 10 — deterministic`,
+      explanation: {
+        en: "Pure functions are deterministic — calling them again with the same args gives the same result.",
+        es: "Las funciones puras son deterministas — llamarlas de nuevo con los mismos args da el mismo resultado.",
+      },
+    },
   },
   {
     slug: 'fp-pure-3',
@@ -82,6 +99,16 @@ Learn to identify pure functions by checking whether they modify their inputs or
     ],
     hints: ['Use .map() to create a new array', 'Never modify the input array', 'Pure functions should not have side effects'],
     tags: ['functional', 'pure', 'array', 'immutable'],
+    usageExample: {
+      code: `// Pure: returns new array
+const pureAdd = (arr, item) => [...arr, item];
+// Impure: mutates original
+const impureAdd = (arr, item) => { arr.push(item); };`,
+      explanation: {
+        en: "Pure functions avoid mutating arguments — return new values instead.",
+        es: "Las funciones puras evitan mutar argumentos — devuelven nuevos valores en su lugar.",
+      },
+    },
   },
   {
     slug: 'fp-pure-4',
@@ -109,6 +136,15 @@ A hallmark of pure functions is referential transparency: you can replace a func
     ],
     hints: ['Pure functions have no randomness', 'No reliance on external state', 'Outputs are completely predictable'],
     tags: ['functional', 'pure', 'referential-transparency', 'deterministic'],
+    usageExample: {
+      code: `function square(n) { return n * n; }
+const result = square(4); // 16
+// Anywhere you see square(4), you can replace it with 16`,
+      explanation: {
+        en: "Referential transparency means you can replace a call with its return value everywhere.",
+        es: "La transparencia referencial significa que puedes reemplazar una llamada con su valor de retorno.",
+      },
+    },
   },
   {
     slug: 'fp-pure-5',
@@ -152,5 +188,15 @@ function addThenDouble(a, b) {
     ],
     hints: ['Call add() first with both arguments', 'Pass the result of add() to double()', 'Composition of pure functions is also pure'],
     tags: ['functional', 'pure', 'composition', 'advanced'],
+    usageExample: {
+      code: `const add = a => b => a + b;
+const double = x => x * 2;
+const addThenDouble = x => double(add(0)(x));
+addThenDouble(5); // 10`,
+      explanation: {
+        en: "Pure functions compose cleanly because they're self-contained with no hidden state.",
+        es: "Las funciones puras se componen limpiamente porque son autocontenidas sin estado oculto.",
+      },
+    },
   },
 ]

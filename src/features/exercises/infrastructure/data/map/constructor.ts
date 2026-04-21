@@ -19,6 +19,15 @@ export const mapConstructorExercises: Exercise[] = [
     ],
     hints: ['new Map() with no arguments creates an empty Map'],
     tags: ['Map', 'constructor'],
+    usageExample: {
+      code: `const m1 = new Map()
+const m2 = new Map([['x', 1], ['y', 2]])
+console.log(m2.size) // → 2`,
+      explanation: {
+        en: 'Use the Map constructor to create a new map, optionally passing an array of entries.',
+        es: 'Usa el constructor Map para crear un mapa nuevo, opcionalmente pasando un array de entradas.',
+      },
+    },
   },
   {
     slug: 'map-constructor-2',
@@ -38,6 +47,15 @@ export const mapConstructorExercises: Exercise[] = [
     ],
     hints: ['Pass an array of [key, value] pairs to initialize the Map'],
     tags: ['Map', 'constructor', 'iterable'],
+    usageExample: {
+      code: `const m1 = new Map()
+const m2 = new Map([['x', 1], ['y', 2]])
+console.log(m2.size) // → 2`,
+      explanation: {
+        en: 'Use the Map constructor to create a new map, optionally passing an array of entries.',
+        es: 'Usa el constructor Map para crear un mapa nuevo, opcionalmente pasando un array de entradas.',
+      },
+    },
   },
   {
     slug: 'map-constructor-3',
@@ -57,6 +75,15 @@ export const mapConstructorExercises: Exercise[] = [
     ],
     hints: ['Values are immediately available via get() after construction'],
     tags: ['Map', 'constructor', 'get'],
+    usageExample: {
+      code: `const m1 = new Map()
+const m2 = new Map([['x', 1], ['y', 2]])
+console.log(m2.size) // → 2`,
+      explanation: {
+        en: 'Use the Map constructor to create a new map, optionally passing an array of entries.',
+        es: 'Usa el constructor Map para crear un mapa nuevo, opcionalmente pasando un array de entradas.',
+      },
+    },
   },
   {
     slug: 'map-constructor-4',
@@ -76,6 +103,15 @@ export const mapConstructorExercises: Exercise[] = [
     ],
     hints: ['Map instances are objects'],
     tags: ['Map', 'constructor', 'typeof'],
+    usageExample: {
+      code: `const m1 = new Map()
+const m2 = new Map([['x', 1], ['y', 2]])
+console.log(m2.size) // → 2`,
+      explanation: {
+        en: 'Use the Map constructor to create a new map, optionally passing an array of entries.',
+        es: 'Usa el constructor Map para crear un mapa nuevo, opcionalmente pasando un array de entradas.',
+      },
+    },
   },
   {
     slug: 'map-constructor-5',
@@ -95,5 +131,14 @@ export const mapConstructorExercises: Exercise[] = [
     ],
     hints: ['Unlike plain objects, Map guarantees insertion order for all key types'],
     tags: ['Map', 'constructor', 'order'],
+    usageExample: {
+      code: `const m1 = new Map()
+const m2 = new Map([['x', 1], ['y', 2]])
+console.log(m2.size) // → 2`,
+      explanation: {
+        en: 'Use the Map constructor to create a new map, optionally passing an array of entries.',
+        es: 'Usa el constructor Map para crear un mapa nuevo, opcionalmente pasando un array de entradas.',
+      },
+    },
   },
 ]

@@ -19,6 +19,14 @@ export const fileConstructorExercises: Exercise[] = [
     ],
     hints: ['The second argument to the File constructor is the filename.'],
     tags: ['File', 'constructor', 'name'],
+    usageExample: {
+      code: `const f = new File(['hello'], 'greeting.txt', { type: 'text/plain' })
+f.name  // → 'greeting.txt'`,
+      explanation: {
+        en: "File() creates a File object with content, a name, and an optional MIME type.",
+        es: "File() crea un objeto File con contenido, un nombre y un tipo MIME opcional.",
+      },
+    },
   },
   {
     slug: 'file-constructor-2',
@@ -38,6 +46,14 @@ export const fileConstructorExercises: Exercise[] = [
     ],
     hints: ['File inherits size from Blob.'],
     tags: ['File', 'constructor', 'size'],
+    usageExample: {
+      code: `const f = new File(['data'], 'file.json', { type: 'application/json' })
+f.type  // → 'application/json'`,
+      explanation: {
+        en: "Set the type option to specify the MIME type of the file.",
+        es: "Establece la opción type para especificar el tipo MIME del archivo.",
+      },
+    },
   },
   {
     slug: 'file-constructor-3',
@@ -57,6 +73,14 @@ export const fileConstructorExercises: Exercise[] = [
     ],
     hints: ['File accepts the same options as Blob, including type.'],
     tags: ['File', 'constructor', 'type', 'MIME'],
+    usageExample: {
+      code: `const f = new File(['hi'], 'test.txt')
+f.size  // → 2`,
+      explanation: {
+        en: "size returns the number of bytes in the file content.",
+        es: "size devuelve el número de bytes en el contenido del archivo.",
+      },
+    },
   },
   {
     slug: 'file-constructor-4',
@@ -76,6 +100,14 @@ export const fileConstructorExercises: Exercise[] = [
     ],
     hints: ['File inherits size, type, and slice from Blob.'],
     tags: ['File', 'constructor', 'instanceof', 'Blob', 'inheritance'],
+    usageExample: {
+      code: `const f = new File([''], 'empty.txt')
+f instanceof Blob  // → true`,
+      explanation: {
+        en: "File extends Blob and inherits all Blob methods like text() and arrayBuffer().",
+        es: "File extiende Blob y hereda todos los métodos de Blob como text() y arrayBuffer().",
+      },
+    },
   },
   {
     slug: 'file-constructor-5',
@@ -95,5 +127,13 @@ export const fileConstructorExercises: Exercise[] = [
     ],
     hints: ['File is its own class and also a subclass of Blob.'],
     tags: ['File', 'constructor', 'instanceof'],
+    usageExample: {
+      code: `const f = new File(['content'], 'doc.txt', { lastModified: Date.now() })
+f.lastModified  // → current timestamp`,
+      explanation: {
+        en: "lastModified stores when the file was last modified as a Unix timestamp.",
+        es: "lastModified almacena cuándo se modificó el archivo por última vez como timestamp Unix.",
+      },
+    },
   },
 ]

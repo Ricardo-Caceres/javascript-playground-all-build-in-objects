@@ -40,6 +40,18 @@ The \`deleteProperty\` trap intercepts the \`delete\` operator. Use it to observ
       'The `deleteProperty(target, key)` trap is called when `delete proxy.key` is executed.',
     ],
     tags: ['Proxy', 'deleteProperty trap', 'intermediate'],
+    usageExample: {
+      code: `const log = []
+const p = new Proxy({}, {
+  deleteProperty: (t, k) => { log.push(k); return true }
+})
+delete p.foo
+console.log(log) // → ['foo']`,
+      explanation: {
+        en: 'The deleteProperty trap intercepts delete operations, allowing custom logic when a property is deleted from a proxy.',
+        es: 'La trampa deleteProperty intercepta operaciones delete, permitiendo lógica personalizada cuando se elimina una propiedad de un proxy.',
+      },
+    },
   },
   {
     slug: 'proxy-delete-passthrough',
@@ -74,6 +86,18 @@ Without a \`deleteProperty\` trap, \`delete\` forwards to the target and actuall
       'Without a trap, `delete proxy.key` delegates to the target object.',
     ],
     tags: ['Proxy', 'deleteProperty trap', 'passthrough', 'beginner'],
+    usageExample: {
+      code: `const log = []
+const p = new Proxy({}, {
+  deleteProperty: (t, k) => { log.push(k); return true }
+})
+delete p.foo
+console.log(log) // → ['foo']`,
+      explanation: {
+        en: 'The deleteProperty trap intercepts delete operations, allowing custom logic when a property is deleted from a proxy.',
+        es: 'La trampa deleteProperty intercepta operaciones delete, permitiendo lógica personalizada cuando se elimina una propiedad de un proxy.',
+      },
+    },
   },
   {
     slug: 'proxy-delete-return-false',
@@ -106,6 +130,18 @@ When the \`deleteProperty\` trap returns \`false\`, the \`delete\` expression ev
       'Returning `false` from `deleteProperty` prevents deletion and makes `delete` evaluate to `false`.',
     ],
     tags: ['Proxy', 'deleteProperty trap', 'intermediate'],
+    usageExample: {
+      code: `const log = []
+const p = new Proxy({}, {
+  deleteProperty: (t, k) => { log.push(k); return true }
+})
+delete p.foo
+console.log(log) // → ['foo']`,
+      explanation: {
+        en: 'The deleteProperty trap intercepts delete operations, allowing custom logic when a property is deleted from a proxy.',
+        es: 'La trampa deleteProperty intercepta operaciones delete, permitiendo lógica personalizada cuando se elimina una propiedad de un proxy.',
+      },
+    },
   },
   {
     slug: 'proxy-delete-removes-from-target',
@@ -140,6 +176,18 @@ After a passthrough \`delete\`, the property no longer exists on the proxy (or i
       'A passthrough `delete` removes the key from the target, so `in` returns `false`.',
     ],
     tags: ['Proxy', 'deleteProperty trap', 'beginner'],
+    usageExample: {
+      code: `const log = []
+const p = new Proxy({}, {
+  deleteProperty: (t, k) => { log.push(k); return true }
+})
+delete p.foo
+console.log(log) // → ['foo']`,
+      explanation: {
+        en: 'The deleteProperty trap intercepts delete operations, allowing custom logic when a property is deleted from a proxy.',
+        es: 'La trampa deleteProperty intercepta operaciones delete, permitiendo lógica personalizada cuando se elimina una propiedad de un proxy.',
+      },
+    },
   },
   {
     slug: 'proxy-typeof-function',
@@ -169,5 +217,17 @@ After a passthrough \`delete\`, the property no longer exists on the proxy (or i
       '`Proxy` is a built-in constructor function.',
     ],
     tags: ['Proxy', 'typeof', 'beginner'],
+    usageExample: {
+      code: `const log = []
+const p = new Proxy({}, {
+  deleteProperty: (t, k) => { log.push(k); return true }
+})
+delete p.foo
+console.log(log) // → ['foo']`,
+      explanation: {
+        en: 'The deleteProperty trap intercepts delete operations, allowing custom logic when a property is deleted from a proxy.',
+        es: 'La trampa deleteProperty intercepta operaciones delete, permitiendo lógica personalizada cuando se elimina una propiedad de un proxy.',
+      },
+    },
   },
 ]

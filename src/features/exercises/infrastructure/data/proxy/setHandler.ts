@@ -48,6 +48,18 @@ The \`set\` trap intercepts property assignments. Use it to observe or transform
       'The `set` trap receives `(target, key, value, receiver)`. Return `true` to indicate success.',
     ],
     tags: ['Proxy', 'set trap', 'intermediate'],
+    usageExample: {
+      code: `const log = []
+const p = new Proxy({}, {
+  set: (t, k, v) => { log.push(String(k) + '=' + v); t[k] = v; return true }
+})
+p.x = 10
+console.log(log) // → ["x=10"]`,
+      explanation: {
+        en: 'The set trap intercepts property assignments on a proxy, letting you validate or observe writes before they reach the target.',
+        es: 'La trampa set intercepta asignaciones de propiedades en un proxy, permitiendo validar u observar escrituras antes de que lleguen al objetivo.',
+      },
+    },
   },
   {
     slug: 'proxy-set-double-value',
@@ -86,6 +98,18 @@ Use the \`set\` trap to store a transformed version of the value.
       'Store `v * 2` in `target[key]` inside the `set` trap.',
     ],
     tags: ['Proxy', 'set trap', 'intermediate'],
+    usageExample: {
+      code: `const log = []
+const p = new Proxy({}, {
+  set: (t, k, v) => { log.push(String(k) + '=' + v); t[k] = v; return true }
+})
+p.x = 10
+console.log(log) // → ["x=10"]`,
+      explanation: {
+        en: 'The set trap intercepts property assignments on a proxy, letting you validate or observe writes before they reach the target.',
+        es: 'La trampa set intercepta asignaciones de propiedades en un proxy, permitiendo validar u observar escrituras antes de que lleguen al objetivo.',
+      },
+    },
   },
   {
     slug: 'proxy-set-passthrough',
@@ -120,6 +144,18 @@ Without a \`set\` trap the proxy forwards assignments directly to the target.
       'Without a `set` trap, writes go directly to the target object.',
     ],
     tags: ['Proxy', 'set trap', 'passthrough', 'beginner'],
+    usageExample: {
+      code: `const log = []
+const p = new Proxy({}, {
+  set: (t, k, v) => { log.push(String(k) + '=' + v); t[k] = v; return true }
+})
+p.x = 10
+console.log(log) // → ["x=10"]`,
+      explanation: {
+        en: 'The set trap intercepts property assignments on a proxy, letting you validate or observe writes before they reach the target.',
+        es: 'La trampa set intercepta asignaciones de propiedades en un proxy, permitiendo validar u observar escrituras antes de que lleguen al objetivo.',
+      },
+    },
   },
   {
     slug: 'proxy-set-trap-no-store',
@@ -154,6 +190,18 @@ A \`set\` trap can return \`true\` (indicating success) without actually writing
       'Returning `true` from `set` signals success but the trap controls whether the value is actually stored.',
     ],
     tags: ['Proxy', 'set trap', 'advanced'],
+    usageExample: {
+      code: `const log = []
+const p = new Proxy({}, {
+  set: (t, k, v) => { log.push(String(k) + '=' + v); t[k] = v; return true }
+})
+p.x = 10
+console.log(log) // → ["x=10"]`,
+      explanation: {
+        en: 'The set trap intercepts property assignments on a proxy, letting you validate or observe writes before they reach the target.',
+        es: 'La trampa set intercepta asignaciones de propiedades en un proxy, permitiendo validar u observar escrituras antes de que lleguen al objetivo.',
+      },
+    },
   },
   {
     slug: 'proxy-set-constructor-typeof',
@@ -184,5 +232,17 @@ A proxy of a plain object forwards the \`constructor\` property lookup to the ta
       'Without a `get` trap, `.constructor` resolves on the target\'s prototype chain.',
     ],
     tags: ['Proxy', 'constructor', 'typeof', 'beginner'],
+    usageExample: {
+      code: `const log = []
+const p = new Proxy({}, {
+  set: (t, k, v) => { log.push(String(k) + '=' + v); t[k] = v; return true }
+})
+p.x = 10
+console.log(log) // → ["x=10"]`,
+      explanation: {
+        en: 'The set trap intercepts property assignments on a proxy, letting you validate or observe writes before they reach the target.',
+        es: 'La trampa set intercepta asignaciones de propiedades en un proxy, permitiendo validar u observar escrituras antes de que lleguen al objetivo.',
+      },
+    },
   },
 ]

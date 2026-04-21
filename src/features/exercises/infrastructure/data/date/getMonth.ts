@@ -20,6 +20,15 @@ export const dateGetMonthExercises: Exercise[] = [
     ],
     hints: ['Month indexing starts at 0: January=0, February=1, …, December=11'],
     tags: ['Date', 'getMonth', 'instance-method', '0-indexed'],
+    usageExample: {
+      code: `const d = new Date(2024, 5, 15)  // June
+d.getMonth()  // → 5
+// 0=Jan, 11=Dec`,
+      explanation: {
+        en: 'Use getMonth() to retrieve the zero-indexed month (0 = January through 11 = December) of a Date in local time.',
+        es: 'Usa getMonth() para obtener el mes con índice cero (0 = enero hasta 11 = diciembre) de un Date en hora local.',
+      },
+    },
   },
   {
     slug: 'date-getmonth-2',
@@ -40,6 +49,15 @@ export const dateGetMonthExercises: Exercise[] = [
     ],
     hints: ['December is the 12th month, but its 0-indexed value is 11'],
     tags: ['Date', 'getMonth', 'instance-method', 'December'],
+    usageExample: {
+      code: `const d = new Date(2024, 5, 15)  // June
+d.getMonth()  // → 5
+// 0=Jan, 11=Dec`,
+      explanation: {
+        en: 'Use getMonth() to retrieve the zero-indexed month (0 = January through 11 = December) of a Date in local time.',
+        es: 'Usa getMonth() para obtener el mes con índice cero (0 = enero hasta 11 = diciembre) de un Date en hora local.',
+      },
+    },
   },
   {
     slug: 'date-getmonth-3',
@@ -60,6 +78,15 @@ export const dateGetMonthExercises: Exercise[] = [
     ],
     hints: ['June is the 6th calendar month, so its 0-indexed value is 5'],
     tags: ['Date', 'getMonth', 'instance-method', 'June'],
+    usageExample: {
+      code: `const d = new Date(2024, 5, 15)  // June
+d.getMonth()  // → 5
+// 0=Jan, 11=Dec`,
+      explanation: {
+        en: 'Use getMonth() to retrieve the zero-indexed month (0 = January through 11 = December) of a Date in local time.',
+        es: 'Usa getMonth() para obtener el mes con índice cero (0 = enero hasta 11 = diciembre) de un Date en hora local.',
+      },
+    },
   },
   {
     slug: 'date-getmonth-4',
@@ -80,6 +107,15 @@ export const dateGetMonthExercises: Exercise[] = [
     ],
     hints: ['getMonth() always returns an integer in [0, 11]'],
     tags: ['Date', 'getMonth', 'instance-method', 'integer'],
+    usageExample: {
+      code: `const d = new Date(2024, 5, 15)  // June
+d.getMonth()  // → 5
+// 0=Jan, 11=Dec`,
+      explanation: {
+        en: 'Use getMonth() to retrieve the zero-indexed month (0 = January through 11 = December) of a Date in local time.',
+        es: 'Usa getMonth() para obtener el mes con índice cero (0 = enero hasta 11 = diciembre) de un Date en hora local.',
+      },
+    },
   },
   {
     slug: 'date-getmonth-5',
@@ -100,5 +136,14 @@ export const dateGetMonthExercises: Exercise[] = [
     ],
     hints: ['Months range from 0 (Jan) to 11 (Dec) — a span of 11 indices covering 12 months'],
     tags: ['Date', 'getMonth', 'instance-method', 'range'],
+    usageExample: {
+      code: `const d = new Date(2024, 5, 15)  // June
+d.getMonth()  // → 5
+// 0=Jan, 11=Dec`,
+      explanation: {
+        en: 'Use getMonth() to retrieve the zero-indexed month (0 = January through 11 = December) of a Date in local time.',
+        es: 'Usa getMonth() para obtener el mes con índice cero (0 = enero hasta 11 = diciembre) de un Date en hora local.',
+      },
+    },
   },
 ]

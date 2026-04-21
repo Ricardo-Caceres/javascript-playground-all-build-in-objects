@@ -35,6 +35,16 @@ findFirst('hello', 'xyz')         // → -1
       '`.indexOf()` returns the zero-based index of the first match, or -1.',
     ],
     tags: ['String', 'String.prototype.indexOf', 'beginner'],
+    usageExample: {
+      code: `const str = 'hello world'
+str.indexOf('world')    // → 6
+str.indexOf('xyz')      // → -1
+str.indexOf('l')        // → 2`,
+      explanation: {
+        en: "Use indexOf() to find the index of the first occurrence of a substring, returning -1 if not found.",
+        es: "Usa indexOf() para encontrar el índice de la primera ocurrencia de una subcadena, devolviendo -1 si no se encuentra.",
+      },
+    },
   },
   {
     slug: 'string-index-of-not-found',
@@ -68,6 +78,16 @@ contains('hello', 'xyz') // → false
       '`indexOf() !== -1` is the classic pre-ES6 way to check if a substring exists.',
     ],
     tags: ['String', 'String.prototype.indexOf', 'beginner'],
+    usageExample: {
+      code: `const str = 'hello world'
+str.indexOf('world')    // → 6
+str.indexOf('xyz')      // → -1
+str.indexOf('l')        // → 2`,
+      explanation: {
+        en: "Use indexOf() to find the index of the first occurrence of a substring, returning -1 if not found.",
+        es: "Usa indexOf() para encontrar el índice de la primera ocurrencia de una subcadena, devolviendo -1 si no se encuentra.",
+      },
+    },
   },
   {
     slug: 'string-index-of-from-index',
@@ -102,6 +122,16 @@ findAfter('hello hello', 'hello', 1) // → 6
       '`str.indexOf(sub, from)` starts scanning at index `from`.',
     ],
     tags: ['String', 'String.prototype.indexOf', 'fromIndex', 'intermediate'],
+    usageExample: {
+      code: `const str = 'hello world'
+str.indexOf('world')    // → 6
+str.indexOf('xyz')      // → -1
+str.indexOf('l')        // → 2`,
+      explanation: {
+        en: "Use indexOf() to find the index of the first occurrence of a substring, returning -1 if not found.",
+        es: "Usa indexOf() para encontrar el índice de la primera ocurrencia de una subcadena, devolviendo -1 si no se encuentra.",
+      },
+    },
   },
   {
     slug: 'string-index-of-first-occurrence',
@@ -136,6 +166,16 @@ firstOccurrence('abacaba', 'a') // → 0
       '`.indexOf()` stops at the first match and does not continue.',
     ],
     tags: ['String', 'String.prototype.indexOf', 'beginner'],
+    usageExample: {
+      code: `const str = 'hello world'
+str.indexOf('world')    // → 6
+str.indexOf('xyz')      // → -1
+str.indexOf('l')        // → 2`,
+      explanation: {
+        en: "Use indexOf() to find the index of the first occurrence of a substring, returning -1 if not found.",
+        es: "Usa indexOf() para encontrar el índice de la primera ocurrencia de una subcadena, devolviendo -1 si no se encuentra.",
+      },
+    },
   },
   {
     slug: 'string-index-of-empty-always-zero',
@@ -171,5 +211,15 @@ emptyIndex('')       // → 0
       'The empty string is found at position 0 in every string.',
     ],
     tags: ['String', 'String.prototype.indexOf', 'empty string', 'beginner'],
+    usageExample: {
+      code: `const str = 'hello world'
+str.indexOf('world')    // → 6
+str.indexOf('xyz')      // → -1
+str.indexOf('l')        // → 2`,
+      explanation: {
+        en: "Use indexOf() to find the index of the first occurrence of a substring, returning -1 if not found.",
+        es: "Usa indexOf() para encontrar el índice de la primera ocurrencia de una subcadena, devolviendo -1 si no se encuentra.",
+      },
+    },
   },
 ]

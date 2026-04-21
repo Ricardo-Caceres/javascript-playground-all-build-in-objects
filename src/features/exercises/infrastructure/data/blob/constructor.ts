@@ -19,6 +19,14 @@ export const blobConstructorExercises: Exercise[] = [
     ],
     hints: ['Blob.size reflects the number of UTF-8 bytes.'],
     tags: ['Blob', 'constructor', 'size'],
+    usageExample: {
+      code: `const b = new Blob(['Hello, World!'])
+b.size  // → 13`,
+      explanation: {
+        en: "Blob() creates an immutable file-like object from an array of strings or buffers.",
+        es: "Blob() crea un objeto inmutable similar a un archivo a partir de un arreglo de cadenas o búferes.",
+      },
+    },
   },
   {
     slug: 'blob-constructor-2',
@@ -38,6 +46,14 @@ export const blobConstructorExercises: Exercise[] = [
     ],
     hints: ['The type option sets the MIME type, it does not affect size.'],
     tags: ['Blob', 'constructor', 'type', 'MIME'],
+    usageExample: {
+      code: `const b = new Blob(['data'], { type: 'text/plain' })
+b.type  // → 'text/plain'`,
+      explanation: {
+        en: "Pass a type option to set the MIME type of the Blob.",
+        es: "Pasa una opción type para establecer el tipo MIME del Blob.",
+      },
+    },
   },
   {
     slug: 'blob-constructor-3',
@@ -57,6 +73,14 @@ export const blobConstructorExercises: Exercise[] = [
     ],
     hints: ['An empty parts array produces a zero-byte Blob.'],
     tags: ['Blob', 'constructor', 'size', 'empty'],
+    usageExample: {
+      code: `const b = new Blob([JSON.stringify({ x: 1 })], { type: 'application/json' })
+b.size  // → 7`,
+      explanation: {
+        en: "Use Blob to package serialized data with a MIME type for upload or download.",
+        es: "Usa Blob para empaquetar datos serializados con un tipo MIME para carga o descarga.",
+      },
+    },
   },
   {
     slug: 'blob-constructor-4',
@@ -76,6 +100,13 @@ export const blobConstructorExercises: Exercise[] = [
     ],
     hints: ['Blob parts are concatenated in order.'],
     tags: ['Blob', 'constructor', 'size', 'multi-part'],
+    usageExample: {
+      code: `new Blob() instanceof Blob  // → true`,
+      explanation: {
+        en: "Blob instances can be verified with instanceof.",
+        es: "Las instancias de Blob se pueden verificar con instanceof.",
+      },
+    },
   },
   {
     slug: 'blob-constructor-5',
@@ -95,5 +126,14 @@ export const blobConstructorExercises: Exercise[] = [
     ],
     hints: ['Blob stores UTF-8 bytes; € is 3 bytes.'],
     tags: ['Blob', 'constructor', 'size', 'UTF-8', 'multi-byte'],
+    usageExample: {
+      code: `const ab = new ArrayBuffer(4)
+const b = new Blob([ab])
+b.size  // → 4`,
+      explanation: {
+        en: "Blob can be constructed from ArrayBuffers as well as strings.",
+        es: "Blob puede construirse a partir de ArrayBuffers además de cadenas.",
+      },
+    },
   },
 ]

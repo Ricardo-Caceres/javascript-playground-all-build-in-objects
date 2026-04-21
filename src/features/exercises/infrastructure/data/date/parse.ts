@@ -20,6 +20,14 @@ export const dateParsExercises: Exercise[] = [
     ],
     hints: ['The Unix epoch is midnight Jan 1, 1970 UTC — its timestamp is exactly 0'],
     tags: ['Date', 'parse', 'static-method', 'epoch'],
+    usageExample: {
+      code: `Date.parse('2024-01-15T00:00:00.000Z')  // → 1705276800000
+Date.parse('invalid')  // → NaN`,
+      explanation: {
+        en: 'Use Date.parse() to convert a date string into a millisecond timestamp, or detect invalid strings by checking for NaN.',
+        es: 'Usa Date.parse() para convertir una cadena de fecha en un timestamp de milisegundos, o detectar cadenas inválidas comprobando NaN.',
+      },
+    },
   },
   {
     slug: 'date-parse-2',
@@ -40,6 +48,14 @@ export const dateParsExercises: Exercise[] = [
     ],
     hints: ['All dates after 1970 produce a positive timestamp in milliseconds'],
     tags: ['Date', 'parse', 'static-method'],
+    usageExample: {
+      code: `Date.parse('2024-01-15T00:00:00.000Z')  // → 1705276800000
+Date.parse('invalid')  // → NaN`,
+      explanation: {
+        en: 'Use Date.parse() to convert a date string into a millisecond timestamp, or detect invalid strings by checking for NaN.',
+        es: 'Usa Date.parse() para convertir una cadena de fecha en un timestamp de milisegundos, o detectar cadenas inválidas comprobando NaN.',
+      },
+    },
   },
   {
     slug: 'date-parse-3',
@@ -60,6 +76,14 @@ export const dateParsExercises: Exercise[] = [
     ],
     hints: ['Both valid and invalid parse results are of type "number" (NaN is typeof "number" too)'],
     tags: ['Date', 'parse', 'static-method', 'typeof'],
+    usageExample: {
+      code: `Date.parse('2024-01-15T00:00:00.000Z')  // → 1705276800000
+Date.parse('invalid')  // → NaN`,
+      explanation: {
+        en: 'Use Date.parse() to convert a date string into a millisecond timestamp, or detect invalid strings by checking for NaN.',
+        es: 'Usa Date.parse() para convertir una cadena de fecha en un timestamp de milisegundos, o detectar cadenas inválidas comprobando NaN.',
+      },
+    },
   },
   {
     slug: 'date-parse-4',
@@ -80,6 +104,14 @@ export const dateParsExercises: Exercise[] = [
     ],
     hints: ['Use Number.isNaN() rather than isNaN() for accurate NaN detection'],
     tags: ['Date', 'parse', 'static-method', 'NaN'],
+    usageExample: {
+      code: `Date.parse('2024-01-15T00:00:00.000Z')  // → 1705276800000
+Date.parse('invalid')  // → NaN`,
+      explanation: {
+        en: 'Use Date.parse() to convert a date string into a millisecond timestamp, or detect invalid strings by checking for NaN.',
+        es: 'Usa Date.parse() para convertir una cadena de fecha en un timestamp de milisegundos, o detectar cadenas inválidas comprobando NaN.',
+      },
+    },
   },
   {
     slug: 'date-parse-5',
@@ -100,5 +132,13 @@ export const dateParsExercises: Exercise[] = [
     ],
     hints: ['Without a timezone suffix, date strings may be parsed as local time — use Z suffix for UTC'],
     tags: ['Date', 'parse', 'static-method', 'epoch'],
+    usageExample: {
+      code: `Date.parse('2024-01-15T00:00:00.000Z')  // → 1705276800000
+Date.parse('invalid')  // → NaN`,
+      explanation: {
+        en: 'Use Date.parse() to convert a date string into a millisecond timestamp, or detect invalid strings by checking for NaN.',
+        es: 'Usa Date.parse() para convertir una cadena de fecha en un timestamp de milisegundos, o detectar cadenas inválidas comprobando NaN.',
+      },
+    },
   },
 ]

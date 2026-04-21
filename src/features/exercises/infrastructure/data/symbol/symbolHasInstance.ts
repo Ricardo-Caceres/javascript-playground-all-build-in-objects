@@ -20,6 +20,13 @@ export const symbolHasInstanceExercises: Exercise[] = [
     ],
     hints: ['Symbol.hasInstance is a well-known symbol on the Symbol constructor.'],
     tags: ['symbol', 'Symbol.hasInstance', 'well-known'],
+    usageExample: {
+      code: `typeof Symbol.hasInstance   // → 'symbol'`,
+      explanation: {
+        en: 'Symbol.hasInstance is a well-known symbol that customises the instanceof operator.',
+        es: 'Symbol.hasInstance es un símbolo conocido que personaliza el operador instanceof.',
+      },
+    },
   },
   {
     slug: 'symbol-hasinstance-2',
@@ -40,6 +47,18 @@ export const symbolHasInstanceExercises: Exercise[] = [
     ],
     hints: ['Define a static [Symbol.hasInstance] method on your class.'],
     tags: ['symbol', 'Symbol.hasInstance', 'instanceof', 'class'],
+    usageExample: {
+      code: `class EvenNumber {
+  static [Symbol.hasInstance](n: unknown) {
+    return typeof n === 'number' && n % 2 === 0
+  }
+}
+2 instanceof EvenNumber   // → true`,
+      explanation: {
+        en: 'Define static [Symbol.hasInstance] on a class to override how instanceof checks membership.',
+        es: 'Define static [Symbol.hasInstance] en una clase para personalizar cómo instanceof comprueba pertenencia.',
+      },
+    },
   },
   {
     slug: 'symbol-hasinstance-3',
@@ -60,6 +79,14 @@ export const symbolHasInstanceExercises: Exercise[] = [
     ],
     hints: ['Well-known symbols are always of type "symbol".'],
     tags: ['symbol', 'Symbol.hasInstance', 'typeof'],
+    usageExample: {
+      code: `typeof Symbol.hasInstance          // → 'symbol'
+Symbol.hasInstance === Symbol.hasInstance  // → true`,
+      explanation: {
+        en: 'Symbol.hasInstance is always type \'symbol\' with a stable reference.',
+        es: 'Symbol.hasInstance es siempre de tipo \'symbol\' con referencia estable.',
+      },
+    },
   },
   {
     slug: 'symbol-hasinstance-4',
@@ -80,6 +107,13 @@ export const symbolHasInstanceExercises: Exercise[] = [
     ],
     hints: ['Well-known symbols are not registered in the global string-keyed registry.'],
     tags: ['symbol', 'Symbol.hasInstance', 'well-known', 'uniqueness'],
+    usageExample: {
+      code: `Symbol.keyFor(Symbol.hasInstance)  // → undefined`,
+      explanation: {
+        en: 'Well-known symbols are not registered in the global string-keyed registry.',
+        es: 'Los símbolos conocidos no están en el registro global de cadenas.',
+      },
+    },
   },
   {
     slug: 'symbol-hasinstance-5',
@@ -100,5 +134,13 @@ export const symbolHasInstanceExercises: Exercise[] = [
     ],
     hints: ['instanceof uses Symbol.hasInstance internally on the right-hand side.'],
     tags: ['symbol', 'Symbol.hasInstance', 'instanceof'],
+    usageExample: {
+      code: `[] instanceof Array     // → true
+({}) instanceof Object  // → true`,
+      explanation: {
+        en: 'The standard instanceof operator uses Symbol.hasInstance internally on the right-hand operand.',
+        es: 'El operador instanceof estándar usa Symbol.hasInstance internamente en el operando derecho.',
+      },
+    },
   },
 ]

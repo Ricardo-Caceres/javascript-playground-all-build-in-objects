@@ -35,6 +35,15 @@ charFromCodePoint(9731) // → '☃'
       '`String.fromCodePoint` accepts the same values as `String.fromCharCode` for BMP characters.',
     ],
     tags: ['String', 'String.fromCodePoint', 'Unicode', 'beginner'],
+    usageExample: {
+      code: `String.fromCodePoint(65)       // → 'A'
+String.fromCodePoint(9731)     // → '☃'
+String.fromCodePoint(128512)   // → '😀'`,
+      explanation: {
+        en: "Use String.fromCodePoint() to create a string from Unicode code point values, including characters outside the BMP.",
+        es: "Usa String.fromCodePoint() para crear una cadena a partir de puntos de código Unicode, incluyendo caracteres fuera del BMP.",
+      },
+    },
   },
   {
     slug: 'string-from-code-point-emoji',
@@ -70,6 +79,15 @@ getEmoji() // → '😀'
       '`String.fromCodePoint(128512)` automatically generates the correct surrogate pair.',
     ],
     tags: ['String', 'String.fromCodePoint', 'emoji', 'surrogate pair', 'intermediate'],
+    usageExample: {
+      code: `String.fromCodePoint(65)       // → 'A'
+String.fromCodePoint(9731)     // → '☃'
+String.fromCodePoint(128512)   // → '😀'`,
+      explanation: {
+        en: "Use String.fromCodePoint() to create a string from Unicode code point values, including characters outside the BMP.",
+        es: "Usa String.fromCodePoint() para crear una cadena a partir de puntos de código Unicode, incluyendo caracteres fuera del BMP.",
+      },
+    },
   },
   {
     slug: 'string-from-code-point-multiple',
@@ -104,6 +122,15 @@ buildFromCodePoints([72, 105]) // → 'Hi'
       'Spread the array: `String.fromCodePoint(...points)`.',
     ],
     tags: ['String', 'String.fromCodePoint', 'spread', 'beginner'],
+    usageExample: {
+      code: `String.fromCodePoint(65)       // → 'A'
+String.fromCodePoint(9731)     // → '☃'
+String.fromCodePoint(128512)   // → '😀'`,
+      explanation: {
+        en: "Use String.fromCodePoint() to create a string from Unicode code point values, including characters outside the BMP.",
+        es: "Usa String.fromCodePoint() para crear una cadena a partir de puntos de código Unicode, incluyendo caracteres fuera del BMP.",
+      },
+    },
   },
   {
     slug: 'string-from-code-point-vs-char-code',
@@ -138,6 +165,15 @@ sameResult(65)  // → true
       'For code points ≤ 65535 both methods agree; above that they diverge.',
     ],
     tags: ['String', 'String.fromCodePoint', 'String.fromCharCode', 'intermediate'],
+    usageExample: {
+      code: `String.fromCodePoint(65)       // → 'A'
+String.fromCodePoint(9731)     // → '☃'
+String.fromCodePoint(128512)   // → '😀'`,
+      explanation: {
+        en: "Use String.fromCodePoint() to create a string from Unicode code point values, including characters outside the BMP.",
+        es: "Usa String.fromCodePoint() para crear una cadena a partir de puntos de código Unicode, incluyendo caracteres fuera del BMP.",
+      },
+    },
   },
   {
     slug: 'string-from-code-point-string-length',
@@ -173,5 +209,14 @@ emojiLength(128512) // → 2
       'JavaScript `.length` counts UTF-16 code units, not code points.',
     ],
     tags: ['String', 'String.fromCodePoint', 'length', 'surrogate pair', 'intermediate'],
+    usageExample: {
+      code: `String.fromCodePoint(65)       // → 'A'
+String.fromCodePoint(9731)     // → '☃'
+String.fromCodePoint(128512)   // → '😀'`,
+      explanation: {
+        en: "Use String.fromCodePoint() to create a string from Unicode code point values, including characters outside the BMP.",
+        es: "Usa String.fromCodePoint() para crear una cadena a partir de puntos de código Unicode, incluyendo caracteres fuera del BMP.",
+      },
+    },
   },
 ]

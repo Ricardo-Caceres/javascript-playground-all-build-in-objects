@@ -19,6 +19,15 @@ export const setConstructorExercises: Exercise[] = [
     ],
     hints: ['new Set() with no arguments creates an empty Set'],
     tags: ['Set', 'constructor'],
+    usageExample: {
+      code: `const s1 = new Set()          // empty
+const s2 = new Set([1, 2, 3]) // from array
+console.log(s2.size) // → 3`,
+      explanation: {
+        en: 'Use the Set constructor to create a new set, optionally passing an iterable.',
+        es: 'Usa el constructor Set para crear un conjunto nuevo, opcionalmente pasando un iterable.',
+      },
+    },
   },
   {
     slug: 'set-constructor-2',
@@ -38,6 +47,15 @@ export const setConstructorExercises: Exercise[] = [
     ],
     hints: ['Pass an iterable (like an array) to initialize the Set'],
     tags: ['Set', 'constructor', 'array'],
+    usageExample: {
+      code: `const s1 = new Set()          // empty
+const s2 = new Set([1, 2, 3]) // from array
+console.log(s2.size) // → 3`,
+      explanation: {
+        en: 'Use the Set constructor to create a new set, optionally passing an iterable.',
+        es: 'Usa el constructor Set para crear un conjunto nuevo, opcionalmente pasando un iterable.',
+      },
+    },
   },
   {
     slug: 'set-constructor-3',
@@ -57,6 +75,15 @@ export const setConstructorExercises: Exercise[] = [
     ],
     hints: ['Sets store only unique values — duplicates are silently ignored'],
     tags: ['Set', 'constructor', 'deduplication'],
+    usageExample: {
+      code: `const s1 = new Set()          // empty
+const s2 = new Set([1, 2, 3]) // from array
+console.log(s2.size) // → 3`,
+      explanation: {
+        en: 'Use the Set constructor to create a new set, optionally passing an iterable.',
+        es: 'Usa el constructor Set para crear un conjunto nuevo, opcionalmente pasando un iterable.',
+      },
+    },
   },
   {
     slug: 'set-constructor-4',
@@ -76,6 +103,15 @@ export const setConstructorExercises: Exercise[] = [
     ],
     hints: ['Set instances are objects'],
     tags: ['Set', 'constructor', 'typeof'],
+    usageExample: {
+      code: `const s1 = new Set()          // empty
+const s2 = new Set([1, 2, 3]) // from array
+console.log(s2.size) // → 3`,
+      explanation: {
+        en: 'Use the Set constructor to create a new set, optionally passing an iterable.',
+        es: 'Usa el constructor Set para crear un conjunto nuevo, opcionalmente pasando un iterable.',
+      },
+    },
   },
   {
     slug: 'set-constructor-5',
@@ -95,5 +131,14 @@ export const setConstructorExercises: Exercise[] = [
     ],
     hints: ["Strings are iterables — 'hello' has chars h,e,l,l,o but 'l' is deduped, giving 4 unique chars"],
     tags: ['Set', 'constructor', 'string'],
+    usageExample: {
+      code: `const s1 = new Set()          // empty
+const s2 = new Set([1, 2, 3]) // from array
+console.log(s2.size) // → 3`,
+      explanation: {
+        en: 'Use the Set constructor to create a new set, optionally passing an iterable.',
+        es: 'Usa el constructor Set para crear un conjunto nuevo, opcionalmente pasando un iterable.',
+      },
+    },
   },
 ]

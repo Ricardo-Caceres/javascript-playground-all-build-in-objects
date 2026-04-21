@@ -34,6 +34,15 @@ localeLower('HELLO') // → 'hello'
       'For ASCII strings, `toLocaleLowerCase()` behaves identically to `toLowerCase()`.',
     ],
     tags: ['String', 'String.prototype.toLocaleLowerCase', 'beginner'],
+    usageExample: {
+      code: `'HELLO'.toLocaleLowerCase()   // → 'hello'
+'WORLD'.toLocaleLowerCase()   // → 'world'
+'ABC123'.toLocaleLowerCase()  // → 'abc123'`,
+      explanation: {
+        en: "Use toLocaleLowerCase() to convert a string to lowercase using the locale-specific rules of the host environment.",
+        es: "Usa toLocaleLowerCase() para convertir una cadena a minúsculas usando las reglas específicas del locale del sistema.",
+      },
+    },
   },
   {
     slug: 'string-to-locale-lower-case-mixed',
@@ -68,6 +77,15 @@ normalizeLower('HeLLo WoRLd') // → 'hello world'
       'Every uppercase ASCII letter is converted to its lowercase equivalent.',
     ],
     tags: ['String', 'String.prototype.toLocaleLowerCase', 'beginner'],
+    usageExample: {
+      code: `'HELLO'.toLocaleLowerCase()   // → 'hello'
+'WORLD'.toLocaleLowerCase()   // → 'world'
+'ABC123'.toLocaleLowerCase()  // → 'abc123'`,
+      explanation: {
+        en: "Use toLocaleLowerCase() to convert a string to lowercase using the locale-specific rules of the host environment.",
+        es: "Usa toLocaleLowerCase() para convertir una cadena a minúsculas usando las reglas específicas del locale del sistema.",
+      },
+    },
   },
   {
     slug: 'string-to-locale-lower-case-already-lower',
@@ -102,6 +120,15 @@ ensureLower('hello') // → 'hello'
       'Calling `toLocaleLowerCase()` on a lowercase string is a no-op.',
     ],
     tags: ['String', 'String.prototype.toLocaleLowerCase', 'beginner'],
+    usageExample: {
+      code: `'HELLO'.toLocaleLowerCase()   // → 'hello'
+'WORLD'.toLocaleLowerCase()   // → 'world'
+'ABC123'.toLocaleLowerCase()  // → 'abc123'`,
+      explanation: {
+        en: "Use toLocaleLowerCase() to convert a string to lowercase using the locale-specific rules of the host environment.",
+        es: "Usa toLocaleLowerCase() para convertir una cadena a minúsculas usando las reglas específicas del locale del sistema.",
+      },
+    },
   },
   {
     slug: 'string-to-locale-lower-case-numbers',
@@ -136,6 +163,15 @@ lowerLettersOnly('ABC123') // → 'abc123'
       'Numbers and punctuation have no concept of case and are returned unchanged.',
     ],
     tags: ['String', 'String.prototype.toLocaleLowerCase', 'beginner'],
+    usageExample: {
+      code: `'HELLO'.toLocaleLowerCase()   // → 'hello'
+'WORLD'.toLocaleLowerCase()   // → 'world'
+'ABC123'.toLocaleLowerCase()  // → 'abc123'`,
+      explanation: {
+        en: "Use toLocaleLowerCase() to convert a string to lowercase using the locale-specific rules of the host environment.",
+        es: "Usa toLocaleLowerCase() para convertir una cadena a minúsculas usando las reglas específicas del locale del sistema.",
+      },
+    },
   },
   {
     slug: 'string-to-locale-lower-case-empty',
@@ -171,5 +207,14 @@ safeLocaleLower('HI') // → 'hi'
       '`"".toLocaleLowerCase()` returns `""`.',
     ],
     tags: ['String', 'String.prototype.toLocaleLowerCase', 'beginner'],
+    usageExample: {
+      code: `'HELLO'.toLocaleLowerCase()   // → 'hello'
+'WORLD'.toLocaleLowerCase()   // → 'world'
+'ABC123'.toLocaleLowerCase()  // → 'abc123'`,
+      explanation: {
+        en: "Use toLocaleLowerCase() to convert a string to lowercase using the locale-specific rules of the host environment.",
+        es: "Usa toLocaleLowerCase() para convertir una cadena a minúsculas usando las reglas específicas del locale del sistema.",
+      },
+    },
   },
 ]

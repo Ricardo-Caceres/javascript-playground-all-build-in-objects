@@ -39,6 +39,14 @@ export const intlDateTimeFormatExercises: Exercise[] = [
     ],
     hints: ['Use new Intl.DateTimeFormat(locale)'],
     tags: [],
+    usageExample: {
+      code: `const dtf = new Intl.DateTimeFormat('en-US');
+// Creates a date formatter for the en-US locale`,
+      explanation: {
+        en: "Intl.DateTimeFormat creates a locale-aware date/time formatter.",
+        es: "Intl.DateTimeFormat crea un formateador de fechas que respeta las reglas del idioma.",
+      },
+    },
   },
   {
     slug: 'intl-datetimeformat-format',
@@ -78,6 +86,15 @@ export const intlDateTimeFormatExercises: Exercise[] = [
     ],
     hints: ['Use .format(date)'],
     tags: [],
+    usageExample: {
+      code: `const date = new Date('2024-01-15');
+new Intl.DateTimeFormat('en-US').format(date);
+// '1/15/2024'`,
+      explanation: {
+        en: "format() converts a Date object into a locale-appropriate string.",
+        es: "format() convierte un objeto Date en una cadena con formato del idioma.",
+      },
+    },
   },
   {
     slug: 'intl-datetimeformat-formatToParts',
@@ -117,6 +134,14 @@ export const intlDateTimeFormatExercises: Exercise[] = [
     ],
     hints: ['Use .formatToParts(date)'],
     tags: [],
+    usageExample: {
+      code: `const parts = new Intl.DateTimeFormat('en-US').formatToParts(new Date());
+// [{type:'month',value:'1'}, {type:'literal',value:'/'}, ...]`,
+      explanation: {
+        en: "formatToParts() breaks the formatted date into labeled parts for custom rendering.",
+        es: "formatToParts() divide la fecha formateada en partes etiquetadas para renderizado personalizado.",
+      },
+    },
   },
   {
     slug: 'intl-datetimeformat-supportedLocalesOf',
@@ -156,6 +181,14 @@ export const intlDateTimeFormatExercises: Exercise[] = [
     ],
     hints: ['Use Intl.DateTimeFormat.supportedLocalesOf(locales)'],
     tags: [],
+    usageExample: {
+      code: `const supported = Intl.DateTimeFormat.supportedLocalesOf(['en', 'de', 'xx']);
+// ['en', 'de']`,
+      explanation: {
+        en: "supportedLocalesOf() returns locales that can be formatted without fallback.",
+        es: "supportedLocalesOf() devuelve los idiomas que se pueden formatear sin alternativa.",
+      },
+    },
   },
   {
     slug: 'intl-datetimeformat-resolvedOptions',
@@ -195,5 +228,13 @@ export const intlDateTimeFormatExercises: Exercise[] = [
     ],
     hints: ['Use .resolvedOptions()'],
     tags: [],
+    usageExample: {
+      code: `const opts = new Intl.DateTimeFormat('en-US', { year: 'numeric', month: 'long' }).resolvedOptions();
+// { locale: 'en-US', year: 'numeric', month: 'long', ... }`,
+      explanation: {
+        en: "resolvedOptions() reveals the exact options and locale the formatter is using.",
+        es: "resolvedOptions() revela las opciones exactas y el idioma que usa el formateador.",
+      },
+    },
   },
 ];

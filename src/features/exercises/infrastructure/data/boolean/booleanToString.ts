@@ -20,6 +20,14 @@ export const booleanToStringExercises: Exercise[] = [
     ],
     hints: ['Boolean.toString() returns the string representation of the boolean.'],
     tags: ['boolean', 'toString', 'instance-method'],
+    usageExample: {
+      code: `true.toString()   // → 'true'
+false.toString()  // → 'false'`,
+      explanation: {
+        en: "toString() converts a boolean to the string 'true' or 'false'.",
+        es: "toString() convierte un booleano a la cadena 'true' o 'false'.",
+      },
+    },
   },
   {
     slug: 'boolean-tostring-2',
@@ -40,6 +48,14 @@ export const booleanToStringExercises: Exercise[] = [
     ],
     hints: ["false.toString() returns 'false' as a string."],
     tags: ['boolean', 'toString', 'instance-method'],
+    usageExample: {
+      code: `const b = false
+b.toString()  // → 'false'`,
+      explanation: {
+        en: "Use toString() when you need a text representation of a boolean value.",
+        es: "Usa toString() cuando necesitas una representación de texto de un valor booleano.",
+      },
+    },
   },
   {
     slug: 'boolean-tostring-3',
@@ -60,6 +76,13 @@ export const booleanToStringExercises: Exercise[] = [
     ],
     hints: ['toString() always returns a string.'],
     tags: ['boolean', 'toString', 'typeof'],
+    usageExample: {
+      code: `true.toString()  // → 'true'`,
+      explanation: {
+        en: "true.toString() always returns the string 'true'.",
+        es: "true.toString() siempre devuelve la cadena 'true'.",
+      },
+    },
   },
   {
     slug: 'boolean-tostring-4',
@@ -80,6 +103,13 @@ export const booleanToStringExercises: Exercise[] = [
     ],
     hints: ['Convert to boolean first, then call toString().'],
     tags: ['boolean', 'toString', 'coercion'],
+    usageExample: {
+      code: `false.toString()  // → 'false'`,
+      explanation: {
+        en: "false.toString() always returns the string 'false'.",
+        es: "false.toString() siempre devuelve la cadena 'false'.",
+      },
+    },
   },
   {
     slug: 'boolean-tostring-5',
@@ -100,5 +130,13 @@ export const booleanToStringExercises: Exercise[] = [
     ],
     hints: ['Falsy values coerce to false, which stringifies to "false".'],
     tags: ['boolean', 'toString', 'falsy', 'coercion'],
+    usageExample: {
+      code: `const flag = true
+\`Value is: \${flag.toString()}\`  // → 'Value is: true'`,
+      explanation: {
+        en: "toString() is useful for embedding boolean values in template literals.",
+        es: "toString() es útil para insertar valores booleanos en template literals.",
+      },
+    },
   },
 ]

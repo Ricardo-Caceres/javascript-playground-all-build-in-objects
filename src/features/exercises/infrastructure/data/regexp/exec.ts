@@ -20,6 +20,16 @@ export const regexpExecExercises: Exercise[] = [
     ],
     hints: ['exec() returns null if no match, or an array where [0] is the full match'],
     tags: ['RegExp', 'exec', 'match'],
+    usageExample: {
+      code: `const re = /(\\d+)/
+const match = re.exec('Price: 42')
+console.log(match[0]) // → '42'
+console.log(match[1]) // → '42'`,
+      explanation: {
+        en: 'Use RegExp.exec() to search for a match and return detailed match information.',
+        es: 'Usa RegExp.exec() para buscar una coincidencia y obtener información detallada del resultado.',
+      },
+    },
   },
   {
     slug: 'regexp-exec-2',
@@ -40,6 +50,16 @@ export const regexpExecExercises: Exercise[] = [
     ],
     hints: ['exec() returns null (not false or undefined) when there is no match'],
     tags: ['RegExp', 'exec', 'null'],
+    usageExample: {
+      code: `const re = /(\\d+)/
+const match = re.exec('Price: 42')
+console.log(match[0]) // → '42'
+console.log(match[1]) // → '42'`,
+      explanation: {
+        en: 'Use RegExp.exec() to search for a match and return detailed match information.',
+        es: 'Usa RegExp.exec() para buscar una coincidencia y obtener información detallada del resultado.',
+      },
+    },
   },
   {
     slug: 'regexp-exec-3',
@@ -60,6 +80,16 @@ export const regexpExecExercises: Exercise[] = [
     ],
     hints: ['Capture groups in () are available at indices 1, 2, ... in the result array'],
     tags: ['RegExp', 'exec', 'groups'],
+    usageExample: {
+      code: `const re = /(\\d+)/
+const match = re.exec('Price: 42')
+console.log(match[0]) // → '42'
+console.log(match[1]) // → '42'`,
+      explanation: {
+        en: 'Use RegExp.exec() to search for a match and return detailed match information.',
+        es: 'Usa RegExp.exec() para buscar una coincidencia y obtener información detallada del resultado.',
+      },
+    },
   },
   {
     slug: 'regexp-exec-4',
@@ -80,6 +110,16 @@ export const regexpExecExercises: Exercise[] = [
     ],
     hints: ['result[0] is always the full matched substring, not just a captured group'],
     tags: ['RegExp', 'exec', 'fullMatch'],
+    usageExample: {
+      code: `const re = /(\\d+)/
+const match = re.exec('Price: 42')
+console.log(match[0]) // → '42'
+console.log(match[1]) // → '42'`,
+      explanation: {
+        en: 'Use RegExp.exec() to search for a match and return detailed match information.',
+        es: 'Usa RegExp.exec() para buscar una coincidencia y obtener información detallada del resultado.',
+      },
+    },
   },
   {
     slug: 'regexp-exec-5',
@@ -100,5 +140,15 @@ export const regexpExecExercises: Exercise[] = [
     ],
     hints: ['The index property tells you where in the string the match was found'],
     tags: ['RegExp', 'exec', 'index'],
+    usageExample: {
+      code: `const re = /(\\d+)/
+const match = re.exec('Price: 42')
+console.log(match[0]) // → '42'
+console.log(match[1]) // → '42'`,
+      explanation: {
+        en: 'Use RegExp.exec() to search for a match and return detailed match information.',
+        es: 'Usa RegExp.exec() para buscar una coincidencia y obtener información detallada del resultado.',
+      },
+    },
   },
 ]

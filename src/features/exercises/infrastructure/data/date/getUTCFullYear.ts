@@ -20,6 +20,14 @@ export const dateGetUTCFullYearExercises: Exercise[] = [
     ],
     hints: ['Always use UTC variants when working with ISO date strings ending in "Z"'],
     tags: ['Date', 'getUTCFullYear', 'instance-method', 'UTC'],
+    usageExample: {
+      code: `const d = new Date('2024-01-15T00:00:00.000Z')
+d.getUTCFullYear()  // → 2024`,
+      explanation: {
+        en: 'Use getUTCFullYear() to retrieve the four-digit UTC year of a Date, regardless of local timezone.',
+        es: 'Usa getUTCFullYear() para obtener el año UTC de cuatro dígitos de un Date, independientemente de la zona horaria local.',
+      },
+    },
   },
   {
     slug: 'date-getutcfullyear-2',
@@ -40,6 +48,14 @@ export const dateGetUTCFullYearExercises: Exercise[] = [
     ],
     hints: ['The UTC year of the epoch is reliably 1970 in every timezone'],
     tags: ['Date', 'getUTCFullYear', 'instance-method', 'UTC', 'epoch'],
+    usageExample: {
+      code: `const d = new Date('2024-01-15T00:00:00.000Z')
+d.getUTCFullYear()  // → 2024`,
+      explanation: {
+        en: 'Use getUTCFullYear() to retrieve the four-digit UTC year of a Date, regardless of local timezone.',
+        es: 'Usa getUTCFullYear() para obtener el año UTC de cuatro dígitos de un Date, independientemente de la zona horaria local.',
+      },
+    },
   },
   {
     slug: 'date-getutcfullyear-3',
@@ -60,6 +76,14 @@ export const dateGetUTCFullYearExercises: Exercise[] = [
     ],
     hints: ['getUTCFullYear() always returns a number primitive'],
     tags: ['Date', 'getUTCFullYear', 'instance-method', 'typeof'],
+    usageExample: {
+      code: `const d = new Date('2024-01-15T00:00:00.000Z')
+d.getUTCFullYear()  // → 2024`,
+      explanation: {
+        en: 'Use getUTCFullYear() to retrieve the four-digit UTC year of a Date, regardless of local timezone.',
+        es: 'Usa getUTCFullYear() para obtener el año UTC de cuatro dígitos de un Date, independientemente de la zona horaria local.',
+      },
+    },
   },
   {
     slug: 'date-getutcfullyear-4',
@@ -80,6 +104,14 @@ export const dateGetUTCFullYearExercises: Exercise[] = [
     ],
     hints: ['Date.UTC() creates a timestamp for a UTC date; getUTCFullYear() reads it back accurately'],
     tags: ['Date', 'getUTCFullYear', 'instance-method', 'UTC'],
+    usageExample: {
+      code: `const d = new Date('2024-01-15T00:00:00.000Z')
+d.getUTCFullYear()  // → 2024`,
+      explanation: {
+        en: 'Use getUTCFullYear() to retrieve the four-digit UTC year of a Date, regardless of local timezone.',
+        es: 'Usa getUTCFullYear() para obtener el año UTC de cuatro dígitos de un Date, independientemente de la zona horaria local.',
+      },
+    },
   },
   {
     slug: 'date-getutcfullyear-5',
@@ -100,5 +132,13 @@ export const dateGetUTCFullYearExercises: Exercise[] = [
     ],
     hints: ['getUTCFullYear() returns an integer that can be compared directly'],
     tags: ['Date', 'getUTCFullYear', 'instance-method', 'comparison'],
+    usageExample: {
+      code: `const d = new Date('2024-01-15T00:00:00.000Z')
+d.getUTCFullYear()  // → 2024`,
+      explanation: {
+        en: 'Use getUTCFullYear() to retrieve the four-digit UTC year of a Date, regardless of local timezone.',
+        es: 'Usa getUTCFullYear() para obtener el año UTC de cuatro dígitos de un Date, independientemente de la zona horaria local.',
+      },
+    },
   },
 ]

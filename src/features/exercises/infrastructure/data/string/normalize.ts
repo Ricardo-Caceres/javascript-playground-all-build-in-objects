@@ -38,6 +38,15 @@ toNFC('\\u0065\\u0301') // → '\\u00e9'  (é precomposed)
       '`\\u00e9` is precomposed é. `\\u0065\\u0301` is e followed by a combining acute accent.',
     ],
     tags: ['String', 'String.prototype.normalize', 'NFC', 'Unicode', 'intermediate'],
+    usageExample: {
+      code: `const e1 = '\u00e9'           // é precomposed
+const e2 = '\u0065\u0301'    // e + combining accent
+e2.normalize('NFC') === e1    // → true`,
+      explanation: {
+        en: "Use normalize() to convert a string to a Unicode normal form, useful for comparing visually identical strings.",
+        es: "Usa normalize() para convertir una cadena a una forma normal Unicode, útil para comparar cadenas visualmente idénticas.",
+      },
+    },
   },
   {
     slug: 'string-normalize-nfd',
@@ -70,6 +79,15 @@ toNFC('\\u0065\\u0301') // → '\\u00e9'  (é precomposed)
       'NFD splits precomposed characters into their base character + combining diacritic marks.',
     ],
     tags: ['String', 'String.prototype.normalize', 'NFD', 'Unicode', 'intermediate'],
+    usageExample: {
+      code: `const e1 = '\u00e9'           // é precomposed
+const e2 = '\u0065\u0301'    // e + combining accent
+e2.normalize('NFC') === e1    // → true`,
+      explanation: {
+        en: "Use normalize() to convert a string to a Unicode normal form, useful for comparing visually identical strings.",
+        es: "Usa normalize() para convertir una cadena a una forma normal Unicode, útil para comparar cadenas visualmente idénticas.",
+      },
+    },
   },
   {
     slug: 'string-normalize-nfkc',
@@ -102,6 +120,15 @@ For example, the full-width digit \`'\\uFF10'\` (０) normalizes to \`'0'\` unde
       'NFKC converts compatibility variants (full-width, superscripts, etc.) to their ASCII equivalents.',
     ],
     tags: ['String', 'String.prototype.normalize', 'NFKC', 'Unicode', 'advanced'],
+    usageExample: {
+      code: `const e1 = '\u00e9'           // é precomposed
+const e2 = '\u0065\u0301'    // e + combining accent
+e2.normalize('NFC') === e1    // → true`,
+      explanation: {
+        en: "Use normalize() to convert a string to a Unicode normal form, useful for comparing visually identical strings.",
+        es: "Usa normalize() para convertir una cadena a una forma normal Unicode, útil para comparar cadenas visualmente idénticas.",
+      },
+    },
   },
   {
     slug: 'string-normalize-nfkd',
@@ -132,6 +159,15 @@ For example, the full-width digit \`'\\uFF10'\` (０) normalizes to \`'0'\` unde
       'NFKD = NFKC but without the final composition step.',
     ],
     tags: ['String', 'String.prototype.normalize', 'NFKD', 'Unicode', 'advanced'],
+    usageExample: {
+      code: `const e1 = '\u00e9'           // é precomposed
+const e2 = '\u0065\u0301'    // e + combining accent
+e2.normalize('NFC') === e1    // → true`,
+      explanation: {
+        en: "Use normalize() to convert a string to a Unicode normal form, useful for comparing visually identical strings.",
+        es: "Usa normalize() para convertir una cadena a una forma normal Unicode, útil para comparar cadenas visualmente idénticas.",
+      },
+    },
   },
   {
     slug: 'string-normalize-compare',
@@ -166,5 +202,14 @@ normalizedEqual('\\u00e9', '\\u0065\\u0301') // → true (same visual, different
       'Without normalization, `"\\u00e9" !== "\\u0065\\u0301"` even though they look the same.',
     ],
     tags: ['String', 'String.prototype.normalize', 'NFC', 'comparison', 'intermediate'],
+    usageExample: {
+      code: `const e1 = '\u00e9'           // é precomposed
+const e2 = '\u0065\u0301'    // e + combining accent
+e2.normalize('NFC') === e1    // → true`,
+      explanation: {
+        en: "Use normalize() to convert a string to a Unicode normal form, useful for comparing visually identical strings.",
+        es: "Usa normalize() para convertir una cadena a una forma normal Unicode, útil para comparar cadenas visualmente idénticas.",
+      },
+    },
   },
 ]

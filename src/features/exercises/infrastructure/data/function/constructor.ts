@@ -31,6 +31,14 @@ The \`Function\` constructor creates a new \`Function\` object. The result of \`
       '`typeof` a function always returns `\'function\'`.',
     ],
     tags: ['Function', 'constructor', 'typeof', 'beginner'],
+    usageExample: {
+      code: `const fn = new Function('a', 'b', 'return a + b')
+fn(2, 3)  // → 5`,
+      explanation: {
+        en: "Function() creates a new function from a string of code at runtime.",
+        es: "Function() crea una nueva función a partir de una cadena de código en tiempo de ejecución.",
+      },
+    },
   },
   {
     slug: 'function-constructor-dynamic',
@@ -62,6 +70,14 @@ You can pass parameter names and a body string to \`new Function()\` to create a
       'The last argument is always the function body as a string.',
     ],
     tags: ['Function', 'constructor', 'dynamic', 'beginner'],
+    usageExample: {
+      code: `const square = new Function('n', 'return n * n')
+square(5)  // → 25`,
+      explanation: {
+        en: "Use new Function() when you need to generate functions dynamically from strings.",
+        es: "Usa new Function() cuando necesitas generar funciones dinámicamente a partir de cadenas.",
+      },
+    },
   },
   {
     slug: 'function-constructor-instanceof',
@@ -93,6 +109,13 @@ Functions created with \`new Function()\` are instances of \`Function\`. This me
       'All functions are instances of `Function`.',
     ],
     tags: ['Function', 'constructor', 'instanceof', 'beginner'],
+    usageExample: {
+      code: `new Function('return 42')()  // → 42`,
+      explanation: {
+        en: "Immediately invoke a Function-constructed function with an extra () pair.",
+        es: "Invoca inmediatamente una función construida con Function con un par extra de ().",
+      },
+    },
   },
   {
     slug: 'function-constructor-typeof-function',
@@ -122,6 +145,13 @@ Functions created with \`new Function()\` are instances of \`Function\`. This me
       '`Function` is itself a function — it is its own constructor.',
     ],
     tags: ['Function', 'typeof', 'beginner'],
+    usageExample: {
+      code: `typeof new Function()  // → 'function'`,
+      explanation: {
+        en: "Functions created with new Function() are regular functions with typeof 'function'.",
+        es: "Las funciones creadas con new Function() son funciones regulares con typeof 'function'.",
+      },
+    },
   },
   {
     slug: 'function-constructor-body-string',
@@ -153,5 +183,12 @@ Pass a single body string to \`new Function()\` to create a zero-argument functi
       'Call it immediately with `()` to execute it.',
     ],
     tags: ['Function', 'constructor', 'beginner'],
+    usageExample: {
+      code: `new Function('x', 'return x * 2') instanceof Function  // → true`,
+      explanation: {
+        en: "Dynamically created functions are instances of Function just like regular functions.",
+        es: "Las funciones creadas dinámicamente son instancias de Function igual que las funciones normales.",
+      },
+    },
   },
 ]

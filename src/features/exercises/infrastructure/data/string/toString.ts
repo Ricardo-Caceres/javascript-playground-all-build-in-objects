@@ -34,6 +34,15 @@ stringValue('hello') // → 'hello'
       'For primitive strings, `toString()` simply returns the string itself.',
     ],
     tags: ['String', 'String.prototype.toString', 'beginner'],
+    usageExample: {
+      code: `const str = 'Hello'
+str.toString()              // → 'Hello'
+new String('hi').toString()  // → 'hi'`,
+      explanation: {
+        en: "Use toString() to return the primitive string value of a string or String object.",
+        es: "Usa toString() para obtener el valor de cadena primitivo de una cadena o un objeto String.",
+      },
+    },
   },
   {
     slug: 'string-to-string-object-vs-primitive',
@@ -69,6 +78,15 @@ getPrimitive(new String('hello')) // → 'hello'
       '`.toString()` unwraps the object back to a primitive string.',
     ],
     tags: ['String', 'String.prototype.toString', 'intermediate'],
+    usageExample: {
+      code: `const str = 'Hello'
+str.toString()              // → 'Hello'
+new String('hi').toString()  // → 'hi'`,
+      explanation: {
+        en: "Use toString() to return the primitive string value of a string or String object.",
+        es: "Usa toString() para obtener el valor de cadena primitivo de una cadena o un objeto String.",
+      },
+    },
   },
   {
     slug: 'string-to-string-same-as-valueof',
@@ -103,6 +121,15 @@ toStringEqualsValueOf('hello') // → true
       'For strings, `toString()` and `valueOf()` both return the primitive string.',
     ],
     tags: ['String', 'String.prototype.toString', 'beginner'],
+    usageExample: {
+      code: `const str = 'Hello'
+str.toString()              // → 'Hello'
+new String('hi').toString()  // → 'hi'`,
+      explanation: {
+        en: "Use toString() to return the primitive string value of a string or String object.",
+        es: "Usa toString() para obtener el valor de cadena primitivo de una cadena o un objeto String.",
+      },
+    },
   },
   {
     slug: 'string-to-string-template-literal',
@@ -137,6 +164,15 @@ wrapInGreeting('World') // → 'Hello, World!'
       'Template literals automatically call `.toString()` on embedded values.',
     ],
     tags: ['String', 'String.prototype.toString', 'beginner'],
+    usageExample: {
+      code: `const str = 'Hello'
+str.toString()              // → 'Hello'
+new String('hi').toString()  // → 'hi'`,
+      explanation: {
+        en: "Use toString() to return the primitive string value of a string or String object.",
+        es: "Usa toString() para obtener el valor de cadena primitivo de una cadena o un objeto String.",
+      },
+    },
   },
   {
     slug: 'string-to-string-explicit-call',
@@ -171,5 +207,14 @@ explicitToString('42') // → 'string'
       '`typeof str.toString()` is always `"string"` for string primitives.',
     ],
     tags: ['String', 'String.prototype.toString', 'beginner'],
+    usageExample: {
+      code: `const str = 'Hello'
+str.toString()              // → 'Hello'
+new String('hi').toString()  // → 'hi'`,
+      explanation: {
+        en: "Use toString() to return the primitive string value of a string or String object.",
+        es: "Usa toString() para obtener el valor de cadena primitivo de una cadena o un objeto String.",
+      },
+    },
   },
 ]

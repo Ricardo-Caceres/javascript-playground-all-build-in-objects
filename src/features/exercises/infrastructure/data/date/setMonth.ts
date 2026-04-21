@@ -20,6 +20,15 @@ export const dateSetMonthExercises: Exercise[] = [
     ],
     hints: ['setMonth() uses the same 0-indexed system as the Date constructor — 5 = June'],
     tags: ['Date', 'setMonth', 'instance-method', 'mutation'],
+    usageExample: {
+      code: `const d = new Date(2024, 0, 15)
+d.setMonth(5)
+d.getMonth()  // → 5 (June)`,
+      explanation: {
+        en: 'Use setMonth() to mutate the month (0-indexed) of a Date object in place and get back the updated timestamp.',
+        es: 'Usa setMonth() para mutar el mes (con índice cero) de un objeto Date en su lugar y obtener el timestamp actualizado.',
+      },
+    },
   },
   {
     slug: 'date-setmonth-2',
@@ -40,6 +49,15 @@ export const dateSetMonthExercises: Exercise[] = [
     ],
     hints: ['All setter methods return the new timestamp in ms'],
     tags: ['Date', 'setMonth', 'instance-method', 'return-value'],
+    usageExample: {
+      code: `const d = new Date(2024, 0, 15)
+d.setMonth(5)
+d.getMonth()  // → 5 (June)`,
+      explanation: {
+        en: 'Use setMonth() to mutate the month (0-indexed) of a Date object in place and get back the updated timestamp.',
+        es: 'Usa setMonth() para mutar el mes (con índice cero) de un objeto Date en su lugar y obtener el timestamp actualizado.',
+      },
+    },
   },
   {
     slug: 'date-setmonth-3',
@@ -60,6 +78,15 @@ export const dateSetMonthExercises: Exercise[] = [
     ],
     hints: ['setMonth() changes the Date object in place — it mutates, not creates'],
     tags: ['Date', 'setMonth', 'instance-method', 'mutation'],
+    usageExample: {
+      code: `const d = new Date(2024, 0, 15)
+d.setMonth(5)
+d.getMonth()  // → 5 (June)`,
+      explanation: {
+        en: 'Use setMonth() to mutate the month (0-indexed) of a Date object in place and get back the updated timestamp.',
+        es: 'Usa setMonth() para mutar el mes (con índice cero) de un objeto Date en su lugar y obtener el timestamp actualizado.',
+      },
+    },
   },
   {
     slug: 'date-setmonth-4',
@@ -80,6 +107,15 @@ export const dateSetMonthExercises: Exercise[] = [
     ],
     hints: ['Month 0 is January — you can reset to January with setMonth(0)'],
     tags: ['Date', 'setMonth', 'instance-method', 'January'],
+    usageExample: {
+      code: `const d = new Date(2024, 0, 15)
+d.setMonth(5)
+d.getMonth()  // → 5 (June)`,
+      explanation: {
+        en: 'Use setMonth() to mutate the month (0-indexed) of a Date object in place and get back the updated timestamp.',
+        es: 'Usa setMonth() para mutar el mes (con índice cero) de un objeto Date en su lugar y obtener el timestamp actualizado.',
+      },
+    },
   },
   {
     slug: 'date-setmonth-5',
@@ -100,5 +136,14 @@ export const dateSetMonthExercises: Exercise[] = [
     ],
     hints: ['December = month index 11, the last valid month value'],
     tags: ['Date', 'setMonth', 'instance-method', 'December'],
+    usageExample: {
+      code: `const d = new Date(2024, 0, 15)
+d.setMonth(5)
+d.getMonth()  // → 5 (June)`,
+      explanation: {
+        en: 'Use setMonth() to mutate the month (0-indexed) of a Date object in place and get back the updated timestamp.',
+        es: 'Usa setMonth() para mutar el mes (con índice cero) de un objeto Date en su lugar y obtener el timestamp actualizado.',
+      },
+    },
   },
 ]

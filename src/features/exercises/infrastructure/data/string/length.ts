@@ -35,6 +35,15 @@ strLen('hi')    // → 2
       '`str.length` is a property, not a method — no parentheses needed.',
     ],
     tags: ['String', 'String.prototype.length', 'beginner'],
+    usageExample: {
+      code: `'hello'.length    // → 5
+''.length         // → 0
+'😀'.length       // → 2`,
+      explanation: {
+        en: "The length property returns the number of UTF-16 code units in the string.",
+        es: "La propiedad length devuelve el número de unidades de código UTF-16 en la cadena.",
+      },
+    },
   },
   {
     slug: 'string-length-empty',
@@ -70,6 +79,15 @@ isEmpty('hello') // → false
       '`"".length === 0` is always `true`.',
     ],
     tags: ['String', 'String.prototype.length', 'beginner'],
+    usageExample: {
+      code: `'hello'.length    // → 5
+''.length         // → 0
+'😀'.length       // → 2`,
+      explanation: {
+        en: "The length property returns the number of UTF-16 code units in the string.",
+        es: "La propiedad length devuelve el número de unidades de código UTF-16 en la cadena.",
+      },
+    },
   },
   {
     slug: 'string-length-emoji',
@@ -105,6 +123,15 @@ emojiLength() // → 2
       '`"😀".length === 2` even though it looks like a single character.',
     ],
     tags: ['String', 'String.prototype.length', 'emoji', 'unicode', 'intermediate'],
+    usageExample: {
+      code: `'hello'.length    // → 5
+''.length         // → 0
+'😀'.length       // → 2`,
+      explanation: {
+        en: "The length property returns the number of UTF-16 code units in the string.",
+        es: "La propiedad length devuelve el número de unidades de código UTF-16 en la cadena.",
+      },
+    },
   },
   {
     slug: 'string-length-spaces-count',
@@ -139,6 +166,15 @@ lengthWithSpaces('hello world') // → 11
       'Every character — including whitespace — contributes 1 to `.length`.',
     ],
     tags: ['String', 'String.prototype.length', 'beginner'],
+    usageExample: {
+      code: `'hello'.length    // → 5
+''.length         // → 0
+'😀'.length       // → 2`,
+      explanation: {
+        en: "The length property returns the number of UTF-16 code units in the string.",
+        es: "La propiedad length devuelve el número de unidades de código UTF-16 en la cadena.",
+      },
+    },
   },
   {
     slug: 'string-length-unicode-surrogate',
@@ -175,5 +211,14 @@ surrogateLength() // → 2
       '`"𠮷".length === 2` even though it is a single Unicode character.',
     ],
     tags: ['String', 'String.prototype.length', 'unicode', 'surrogate', 'advanced'],
+    usageExample: {
+      code: `'hello'.length    // → 5
+''.length         // → 0
+'😀'.length       // → 2`,
+      explanation: {
+        en: "The length property returns the number of UTF-16 code units in the string.",
+        es: "La propiedad length devuelve el número de unidades de código UTF-16 en la cadena.",
+      },
+    },
   },
 ]

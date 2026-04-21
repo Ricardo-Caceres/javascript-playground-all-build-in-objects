@@ -20,6 +20,15 @@ export const dateSetFullYearExercises: Exercise[] = [
     ],
     hints: ['setFullYear() mutates the Date object in place — it does not create a new Date'],
     tags: ['Date', 'setFullYear', 'instance-method', 'mutation'],
+    usageExample: {
+      code: `const d = new Date(2024, 0, 15)
+d.setFullYear(2030)
+d.getFullYear()  // → 2030`,
+      explanation: {
+        en: 'Use setFullYear() to mutate the year of a Date object in place; the month and day remain unchanged.',
+        es: 'Usa setFullYear() para mutar el año de un objeto Date en su lugar; el mes y el día permanecen sin cambios.',
+      },
+    },
   },
   {
     slug: 'date-setfullyear-2',
@@ -40,6 +49,15 @@ export const dateSetFullYearExercises: Exercise[] = [
     ],
     hints: ['setFullYear() returns the new numeric timestamp — useful for chaining arithmetic'],
     tags: ['Date', 'setFullYear', 'instance-method', 'return-value'],
+    usageExample: {
+      code: `const d = new Date(2024, 0, 15)
+d.setFullYear(2030)
+d.getFullYear()  // → 2030`,
+      explanation: {
+        en: 'Use setFullYear() to mutate the year of a Date object in place; the month and day remain unchanged.',
+        es: 'Usa setFullYear() para mutar el año de un objeto Date en su lugar; el mes y el día permanecen sin cambios.',
+      },
+    },
   },
   {
     slug: 'date-setfullyear-3',
@@ -60,6 +78,15 @@ export const dateSetFullYearExercises: Exercise[] = [
     ],
     hints: ['setFullYear() modifies the Date in place — check with getFullYear() after calling it'],
     tags: ['Date', 'setFullYear', 'instance-method', 'mutation'],
+    usageExample: {
+      code: `const d = new Date(2024, 0, 15)
+d.setFullYear(2030)
+d.getFullYear()  // → 2030`,
+      explanation: {
+        en: 'Use setFullYear() to mutate the year of a Date object in place; the month and day remain unchanged.',
+        es: 'Usa setFullYear() para mutar el año de un objeto Date en su lugar; el mes y el día permanecen sin cambios.',
+      },
+    },
   },
   {
     slug: 'date-setfullyear-4',
@@ -80,6 +107,15 @@ export const dateSetFullYearExercises: Exercise[] = [
     ],
     hints: ['setFullYear() accepts any integer year, including historical dates'],
     tags: ['Date', 'setFullYear', 'instance-method'],
+    usageExample: {
+      code: `const d = new Date(2024, 0, 15)
+d.setFullYear(2030)
+d.getFullYear()  // → 2030`,
+      explanation: {
+        en: 'Use setFullYear() to mutate the year of a Date object in place; the month and day remain unchanged.',
+        es: 'Usa setFullYear() para mutar el año de un objeto Date en su lugar; el mes y el día permanecen sin cambios.',
+      },
+    },
   },
   {
     slug: 'date-setfullyear-5',
@@ -100,5 +136,14 @@ export const dateSetFullYearExercises: Exercise[] = [
     ],
     hints: ['After setFullYear(), you can verify the mutation with getFullYear()'],
     tags: ['Date', 'setFullYear', 'instance-method', 'chaining'],
+    usageExample: {
+      code: `const d = new Date(2024, 0, 15)
+d.setFullYear(2030)
+d.getFullYear()  // → 2030`,
+      explanation: {
+        en: 'Use setFullYear() to mutate the year of a Date object in place; the month and day remain unchanged.',
+        es: 'Usa setFullYear() para mutar el año de un objeto Date en su lugar; el mes y el día permanecen sin cambios.',
+      },
+    },
   },
 ]

@@ -20,6 +20,16 @@ export const mapEntriesExercises: Exercise[] = [
     ],
     hints: ['Each entry is a [key, value] array pair'],
     tags: ['Map', 'entries', 'iterator'],
+    usageExample: {
+      code: `const m = new Map([['a', 1], ['b', 2]])
+for (const [key, val] of m.entries()) {
+  console.log(key, val) // 'a' 1, then 'b' 2
+}`,
+      explanation: {
+        en: 'Use Map.entries() to iterate over [key, value] pairs in insertion order.',
+        es: 'Usa Map.entries() para iterar pares [clave, valor] en orden de inserción.',
+      },
+    },
   },
   {
     slug: 'map-entries-2',
@@ -40,6 +50,16 @@ export const mapEntriesExercises: Exercise[] = [
     ],
     hints: ['entries() yields [key, value] pairs — 2-element arrays'],
     tags: ['Map', 'entries', 'structure'],
+    usageExample: {
+      code: `const m = new Map([['a', 1], ['b', 2]])
+for (const [key, val] of m.entries()) {
+  console.log(key, val) // 'a' 1, then 'b' 2
+}`,
+      explanation: {
+        en: 'Use Map.entries() to iterate over [key, value] pairs in insertion order.',
+        es: 'Usa Map.entries() para iterar pares [clave, valor] en orden de inserción.',
+      },
+    },
   },
   {
     slug: 'map-entries-3',
@@ -60,6 +80,16 @@ export const mapEntriesExercises: Exercise[] = [
     ],
     hints: ['entries() respects insertion order, same as keys() and values()'],
     tags: ['Map', 'entries', 'order'],
+    usageExample: {
+      code: `const m = new Map([['a', 1], ['b', 2]])
+for (const [key, val] of m.entries()) {
+  console.log(key, val) // 'a' 1, then 'b' 2
+}`,
+      explanation: {
+        en: 'Use Map.entries() to iterate over [key, value] pairs in insertion order.',
+        es: 'Usa Map.entries() para iterar pares [clave, valor] en orden de inserción.',
+      },
+    },
   },
   {
     slug: 'map-entries-4',
@@ -80,6 +110,16 @@ export const mapEntriesExercises: Exercise[] = [
     ],
     hints: ['An empty Map has no entries to iterate'],
     tags: ['Map', 'entries', 'empty'],
+    usageExample: {
+      code: `const m = new Map([['a', 1], ['b', 2]])
+for (const [key, val] of m.entries()) {
+  console.log(key, val) // 'a' 1, then 'b' 2
+}`,
+      explanation: {
+        en: 'Use Map.entries() to iterate over [key, value] pairs in insertion order.',
+        es: 'Usa Map.entries() para iterar pares [clave, valor] en orden de inserción.',
+      },
+    },
   },
   {
     slug: 'map-entries-5',
@@ -100,5 +140,15 @@ export const mapEntriesExercises: Exercise[] = [
     ],
     hints: ['Map is iterable by default and yields the same as entries()'],
     tags: ['Map', 'entries', 'destructuring'],
+    usageExample: {
+      code: `const m = new Map([['a', 1], ['b', 2]])
+for (const [key, val] of m.entries()) {
+  console.log(key, val) // 'a' 1, then 'b' 2
+}`,
+      explanation: {
+        en: 'Use Map.entries() to iterate over [key, value] pairs in insertion order.',
+        es: 'Usa Map.entries() para iterar pares [clave, valor] en orden de inserción.',
+      },
+    },
   },
 ]

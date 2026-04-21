@@ -35,6 +35,16 @@ getChar('hello', 1) // → 'e'
       '`str.at(0)` is equivalent to `str[0]` for non-negative indices.',
     ],
     tags: ['String', 'String.prototype.at', 'index', 'beginner'],
+    usageExample: {
+      code: `const str = 'Hello'
+str.at(0)    // → 'H'
+str.at(-1)   // → 'o'
+str.at(1)    // → 'e'`,
+      explanation: {
+        en: "Use at() to access a character by index, supporting negative indices to count from the end.",
+        es: "Usa at() para acceder a un carácter por índice, admitiendo índices negativos para contar desde el final.",
+      },
+    },
   },
   {
     slug: 'string-at-negative',
@@ -70,6 +80,16 @@ lastChar('abc')   // → 'c'
       '`.at(-1)` is equivalent to `str[str.length - 1]` but much cleaner.',
     ],
     tags: ['String', 'String.prototype.at', 'negative index', 'beginner'],
+    usageExample: {
+      code: `const str = 'Hello'
+str.at(0)    // → 'H'
+str.at(-1)   // → 'o'
+str.at(1)    // → 'e'`,
+      explanation: {
+        en: "Use at() to access a character by index, supporting negative indices to count from the end.",
+        es: "Usa at() para acceder a un carácter por índice, admitiendo índices negativos para contar desde el final.",
+      },
+    },
   },
   {
     slug: 'string-at-second-to-last',
@@ -105,6 +125,16 @@ secondToLast('abc')   // → 'b'
       '`.at(-2)` counts 2 from the end.',
     ],
     tags: ['String', 'String.prototype.at', 'negative index', 'beginner'],
+    usageExample: {
+      code: `const str = 'Hello'
+str.at(0)    // → 'H'
+str.at(-1)   // → 'o'
+str.at(1)    // → 'e'`,
+      explanation: {
+        en: "Use at() to access a character by index, supporting negative indices to count from the end.",
+        es: "Usa at() para acceder a un carácter por índice, admitiendo índices negativos para contar desde el final.",
+      },
+    },
   },
   {
     slug: 'string-at-middle',
@@ -138,6 +168,16 @@ middleChar('abc')   // → 'b'
       'For a string of length `n`, the middle index is `Math.floor(n / 2)`.',
     ],
     tags: ['String', 'String.prototype.at', 'index', 'intermediate'],
+    usageExample: {
+      code: `const str = 'Hello'
+str.at(0)    // → 'H'
+str.at(-1)   // → 'o'
+str.at(1)    // → 'e'`,
+      explanation: {
+        en: "Use at() to access a character by index, supporting negative indices to count from the end.",
+        es: "Usa at() para acceder a un carácter por índice, admitiendo índices negativos para contar desde el final.",
+      },
+    },
   },
   {
     slug: 'string-at-out-of-bounds',
@@ -173,5 +213,15 @@ safeAt('hi', 99) // → '?'
       'Use the nullish coalescing operator `??` to provide a fallback.',
     ],
     tags: ['String', 'String.prototype.at', 'nullish coalescing', 'intermediate'],
+    usageExample: {
+      code: `const str = 'Hello'
+str.at(0)    // → 'H'
+str.at(-1)   // → 'o'
+str.at(1)    // → 'e'`,
+      explanation: {
+        en: "Use at() to access a character by index, supporting negative indices to count from the end.",
+        es: "Usa at() para acceder a un carácter por índice, admitiendo índices negativos para contar desde el final.",
+      },
+    },
   },
 ]

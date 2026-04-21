@@ -19,6 +19,14 @@ export const consoleAssertExercises: Exercise[] = [
     ],
     hints: ['console.assert is a debugging tool that does not throw errors'],
     tags: ['console', 'assert', 'instance-method'],
+    usageExample: {
+      code: `console.assert(1 === 1, 'Math works')   // no output
+console.assert(1 === 2, 'This fails')   // → Assertion failed: This fails`,
+      explanation: {
+        en: "console.assert() logs an error message only when the condition is falsy.",
+        es: "console.assert() registra un mensaje de error solo cuando la condición es falsy.",
+      },
+    },
   },
   {
     slug: 'console-assert-2',
@@ -38,6 +46,14 @@ export const consoleAssertExercises: Exercise[] = [
     ],
     hints: ['console.assert does not throw — it only conditionally logs'],
     tags: ['console', 'assert', 'instance-method'],
+    usageExample: {
+      code: `const x = 5
+console.assert(x > 0, 'x must be positive')  // no output`,
+      explanation: {
+        en: "Use console.assert() to add lightweight runtime checks during development.",
+        es: "Usa console.assert() para agregar verificaciones ligeras en tiempo de ejecución durante el desarrollo.",
+      },
+    },
   },
   {
     slug: 'console-assert-3',
@@ -57,6 +73,13 @@ export const consoleAssertExercises: Exercise[] = [
     ],
     hints: ['console.assert does not throw exceptions — it only logs messages'],
     tags: ['console', 'assert', 'instance-method'],
+    usageExample: {
+      code: `console.assert(false, 'Always fails')  // → Assertion failed: Always fails`,
+      explanation: {
+        en: "Passing false as the condition always triggers the assertion message.",
+        es: "Pasar false como condición siempre dispara el mensaje de aserción.",
+      },
+    },
   },
   {
     slug: 'console-assert-4',
@@ -76,6 +99,14 @@ export const consoleAssertExercises: Exercise[] = [
     ],
     hints: ['console.count tracks invocation count by label'],
     tags: ['console', 'count', 'instance-method'],
+    usageExample: {
+      code: `const arr = [1, 2, 3]
+console.assert(arr.length > 0, 'Array is empty')`,
+      explanation: {
+        en: "console.assert() is handy for verifying array state without throwing.",
+        es: "console.assert() es útil para verificar el estado de un arreglo sin lanzar excepciones.",
+      },
+    },
   },
   {
     slug: 'console-assert-5',
@@ -95,5 +126,15 @@ export const consoleAssertExercises: Exercise[] = [
     ],
     hints: ['console.table is useful for visualizing structured data like arrays and objects'],
     tags: ['console', 'table', 'instance-method'],
+    usageExample: {
+      code: `function divide(a, b) {
+  console.assert(b !== 0, 'Divisor cannot be zero')
+  return a / b
+}`,
+      explanation: {
+        en: "Embed console.assert() in functions to catch invalid arguments early.",
+        es: "Incorpora console.assert() en funciones para detectar argumentos inválidos temprano.",
+      },
+    },
   },
 ]

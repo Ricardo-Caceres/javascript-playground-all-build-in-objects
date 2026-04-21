@@ -59,5 +59,15 @@ expect(result).toBe(123);`
     ],
     hints: ['Use Atomics.load(typedArray, index)'],
     tags: [],
+    usageExample: {
+      code: `const sab = new SharedArrayBuffer(4)
+const i32 = new Int32Array(sab)
+i32[0] = 42
+Atomics.load(i32, 0)  // → 42`,
+      explanation: {
+        en: "Atomics.load() reads a value atomically, preventing data races in multi-threaded code.",
+        es: "Atomics.load() lee un valor atómicamente, previniendo condiciones de carrera en código multihilo.",
+      },
+    },
   },
 ];

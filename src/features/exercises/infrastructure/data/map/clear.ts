@@ -20,6 +20,15 @@ export const mapClearExercises: Exercise[] = [
     ],
     hints: ['clear() removes every entry, setting size to 0'],
     tags: ['Map', 'clear', 'method'],
+    usageExample: {
+      code: `const m = new Map([['a', 1], ['b', 2]])
+m.clear()
+console.log(m.size) // → 0`,
+      explanation: {
+        en: 'Use Map.clear() to remove all key-value pairs from the map.',
+        es: 'Usa Map.clear() para eliminar todos los pares clave-valor del mapa.',
+      },
+    },
   },
   {
     slug: 'map-clear-2',
@@ -40,6 +49,15 @@ export const mapClearExercises: Exercise[] = [
     ],
     hints: ['clear() returns undefined — it modifies the Map in place'],
     tags: ['Map', 'clear', 'undefined'],
+    usageExample: {
+      code: `const m = new Map([['a', 1], ['b', 2]])
+m.clear()
+console.log(m.size) // → 0`,
+      explanation: {
+        en: 'Use Map.clear() to remove all key-value pairs from the map.',
+        es: 'Usa Map.clear() para eliminar todos los pares clave-valor del mapa.',
+      },
+    },
   },
   {
     slug: 'map-clear-3',
@@ -60,6 +78,15 @@ export const mapClearExercises: Exercise[] = [
     ],
     hints: ['After clear(), the Map is completely empty'],
     tags: ['Map', 'clear', 'has'],
+    usageExample: {
+      code: `const m = new Map([['a', 1], ['b', 2]])
+m.clear()
+console.log(m.size) // → 0`,
+      explanation: {
+        en: 'Use Map.clear() to remove all key-value pairs from the map.',
+        es: 'Usa Map.clear() para eliminar todos los pares clave-valor del mapa.',
+      },
+    },
   },
   {
     slug: 'map-clear-4',
@@ -80,6 +107,15 @@ export const mapClearExercises: Exercise[] = [
     ],
     hints: ['clear() is safe to call on an empty Map'],
     tags: ['Map', 'clear', 'empty'],
+    usageExample: {
+      code: `const m = new Map([['a', 1], ['b', 2]])
+m.clear()
+console.log(m.size) // → 0`,
+      explanation: {
+        en: 'Use Map.clear() to remove all key-value pairs from the map.',
+        es: 'Usa Map.clear() para eliminar todos los pares clave-valor del mapa.',
+      },
+    },
   },
   {
     slug: 'map-clear-5',
@@ -100,5 +136,14 @@ export const mapClearExercises: Exercise[] = [
     ],
     hints: ['clear() always resets the Map to an empty state'],
     tags: ['Map', 'clear', 'size'],
+    usageExample: {
+      code: `const m = new Map([['a', 1], ['b', 2]])
+m.clear()
+console.log(m.size) // → 0`,
+      explanation: {
+        en: 'Use Map.clear() to remove all key-value pairs from the map.',
+        es: 'Usa Map.clear() para eliminar todos los pares clave-valor del mapa.',
+      },
+    },
   },
 ]

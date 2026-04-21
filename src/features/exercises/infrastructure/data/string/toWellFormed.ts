@@ -34,6 +34,15 @@ ensureWellFormed('hello') // → 'hello'
       'Strings without lone surrogates are returned as-is.',
     ],
     tags: ['String', 'String.prototype.toWellFormed', 'ES2024', 'intermediate'],
+    usageExample: {
+      code: `'hello'.toWellFormed()      // → 'hello'
+'😀'.toWellFormed()         // → '😀'
+'\uD800'.toWellFormed()     // → '\uFFFD'`,
+      explanation: {
+        en: "Use toWellFormed() to replace lone surrogate code units with the Unicode replacement character U+FFFD (ES2024).",
+        es: "Usa toWellFormed() para reemplazar las unidades de código sustituto solitarias con el carácter de reemplazo Unicode U+FFFD (ES2024).",
+      },
+    },
   },
   {
     slug: 'string-to-well-formed-lone-surrogate',
@@ -69,6 +78,15 @@ fixLoneSurrogate() // → '\uFFFD'
       '`toWellFormed()` replaces it with `\\uFFFD` (the Unicode replacement character).',
     ],
     tags: ['String', 'String.prototype.toWellFormed', 'surrogate', 'ES2024', 'intermediate'],
+    usageExample: {
+      code: `'hello'.toWellFormed()      // → 'hello'
+'😀'.toWellFormed()         // → '😀'
+'\uD800'.toWellFormed()     // → '\uFFFD'`,
+      explanation: {
+        en: "Use toWellFormed() to replace lone surrogate code units with the Unicode replacement character U+FFFD (ES2024).",
+        es: "Usa toWellFormed() para reemplazar las unidades de código sustituto solitarias con el carácter de reemplazo Unicode U+FFFD (ES2024).",
+      },
+    },
   },
   {
     slug: 'string-to-well-formed-emoji',
@@ -103,6 +121,15 @@ wellFormedEmoji() // → '😀'
       'Emoji like 😀 use a valid high–low surrogate pair, so `toWellFormed()` leaves them unchanged.',
     ],
     tags: ['String', 'String.prototype.toWellFormed', 'emoji', 'ES2024', 'intermediate'],
+    usageExample: {
+      code: `'hello'.toWellFormed()      // → 'hello'
+'😀'.toWellFormed()         // → '😀'
+'\uD800'.toWellFormed()     // → '\uFFFD'`,
+      explanation: {
+        en: "Use toWellFormed() to replace lone surrogate code units with the Unicode replacement character U+FFFD (ES2024).",
+        es: "Usa toWellFormed() para reemplazar las unidades de código sustituto solitarias con el carácter de reemplazo Unicode U+FFFD (ES2024).",
+      },
+    },
   },
   {
     slug: 'string-to-well-formed-empty',
@@ -137,6 +164,15 @@ wellFormedEmpty() // → ''
       '`"".toWellFormed()` returns `""` since there are no characters to process.',
     ],
     tags: ['String', 'String.prototype.toWellFormed', 'ES2024', 'beginner'],
+    usageExample: {
+      code: `'hello'.toWellFormed()      // → 'hello'
+'😀'.toWellFormed()         // → '😀'
+'\uD800'.toWellFormed()     // → '\uFFFD'`,
+      explanation: {
+        en: "Use toWellFormed() to replace lone surrogate code units with the Unicode replacement character U+FFFD (ES2024).",
+        es: "Usa toWellFormed() para reemplazar las unidades de código sustituto solitarias con el carácter de reemplazo Unicode U+FFFD (ES2024).",
+      },
+    },
   },
   {
     slug: 'string-to-well-formed-mixed',
@@ -171,5 +207,14 @@ fixMixed() // → 'ab\uFFFDcd'
       'Only the lone surrogate is replaced — all other characters remain intact.',
     ],
     tags: ['String', 'String.prototype.toWellFormed', 'surrogate', 'ES2024', 'intermediate'],
+    usageExample: {
+      code: `'hello'.toWellFormed()      // → 'hello'
+'😀'.toWellFormed()         // → '😀'
+'\uD800'.toWellFormed()     // → '\uFFFD'`,
+      explanation: {
+        en: "Use toWellFormed() to replace lone surrogate code units with the Unicode replacement character U+FFFD (ES2024).",
+        es: "Usa toWellFormed() para reemplazar las unidades de código sustituto solitarias con el carácter de reemplazo Unicode U+FFFD (ES2024).",
+      },
+    },
   },
 ]

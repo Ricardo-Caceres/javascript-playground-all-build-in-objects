@@ -23,6 +23,15 @@ e.defaultPrevented`,
     ],
     hints: ['preventDefault() only works when cancelable is true'],
     tags: ['Event', 'instance-method', 'preventDefault'],
+    usageExample: {
+      code: `const e = new Event('click', { cancelable: true })
+e.preventDefault()
+e.defaultPrevented  // → true`,
+      explanation: {
+        en: "preventDefault() tells the browser not to perform the event's default action.",
+        es: "preventDefault() le dice al navegador que no realice la acción predeterminada del evento.",
+      },
+    },
   },
   {
     slug: 'event-methods-2',
@@ -46,6 +55,14 @@ e.defaultPrevented`,
     ],
     hints: ['cancelable: false (the default) means preventDefault() is silently ignored'],
     tags: ['Event', 'instance-method', 'preventDefault', 'cancelable'],
+    usageExample: {
+      code: `const e = new Event('click', { bubbles: true, cancelable: true })
+e.stopPropagation()  // prevents bubbling to parent elements`,
+      explanation: {
+        en: "stopPropagation() prevents the event from bubbling up to ancestor elements.",
+        es: "stopPropagation() evita que el evento haga burbuja hacia los elementos ancestros.",
+      },
+    },
   },
   {
     slug: 'event-methods-3',
@@ -65,6 +82,14 @@ e.defaultPrevented`,
     ],
     hints: ['stopPropagation stops bubbling but does not prevent other listeners on the same element'],
     tags: ['Event', 'instance-method', 'stopPropagation'],
+    usageExample: {
+      code: `const e = new Event('x')
+e.stopImmediatePropagation()  // stops all remaining listeners on the same target`,
+      explanation: {
+        en: "stopImmediatePropagation() prevents other listeners on the same element from running.",
+        es: "stopImmediatePropagation() evita que otros oyentes del mismo elemento se ejecuten.",
+      },
+    },
   },
   {
     slug: 'event-methods-4',
@@ -84,6 +109,14 @@ e.defaultPrevented`,
     ],
     hints: ['stopImmediatePropagation is stronger than stopPropagation — it also prevents other listeners on the current node'],
     tags: ['Event', 'instance-method', 'stopImmediatePropagation'],
+    usageExample: {
+      code: `const e = new Event('x')
+e.composedPath()  // → [] (not dispatched yet)`,
+      explanation: {
+        en: "composedPath() returns the path of elements the event will traverse.",
+        es: "composedPath() devuelve la ruta de elementos que recorrerá el evento.",
+      },
+    },
   },
   {
     slug: 'event-methods-5',
@@ -107,5 +140,15 @@ e.type`,
     ],
     hints: ['stopPropagation is a no-op when called outside of an active dispatch cycle'],
     tags: ['Event', 'instance-method', 'stopPropagation'],
+    usageExample: {
+      code: `const et = new EventTarget()
+const e = new Event('go')
+const dispatched = et.dispatchEvent(e)
+dispatched  // → true (not prevented)`,
+      explanation: {
+        en: "dispatchEvent() returns false if the event was cancelled, true otherwise.",
+        es: "dispatchEvent() devuelve false si el evento fue cancelado, true en caso contrario.",
+      },
+    },
   },
 ]

@@ -20,6 +20,15 @@ export const regexpConstructorExercises: Exercise[] = [
     ],
     hints: ['RegExp literals are written between forward slashes'],
     tags: ['RegExp', 'constructor', 'literal'],
+    usageExample: {
+      code: `const re1 = /hello/i
+const re2 = new RegExp('hello', 'i')
+re1.test('Hello world') // → true`,
+      explanation: {
+        en: 'Use the RegExp constructor or literal syntax to create a regular expression.',
+        es: 'Usa el constructor RegExp o la sintaxis literal para crear una expresión regular.',
+      },
+    },
   },
   {
     slug: 'regexp-constructor-2',
@@ -39,6 +48,15 @@ export const regexpConstructorExercises: Exercise[] = [
     ],
     hints: ['new RegExp(str) is equivalent to a literal when you need dynamic patterns'],
     tags: ['RegExp', 'constructor', 'new'],
+    usageExample: {
+      code: `const re1 = /hello/i
+const re2 = new RegExp('hello', 'i')
+re1.test('Hello world') // → true`,
+      explanation: {
+        en: 'Use the RegExp constructor or literal syntax to create a regular expression.',
+        es: 'Usa el constructor RegExp o la sintaxis literal para crear una expresión regular.',
+      },
+    },
   },
   {
     slug: 'regexp-constructor-3',
@@ -58,6 +76,15 @@ export const regexpConstructorExercises: Exercise[] = [
     ],
     hints: ['Add the i flag after the closing slash: /pattern/i'],
     tags: ['RegExp', 'constructor', 'flags', 'ignoreCase'],
+    usageExample: {
+      code: `const re1 = /hello/i
+const re2 = new RegExp('hello', 'i')
+re1.test('Hello world') // → true`,
+      explanation: {
+        en: 'Use the RegExp constructor or literal syntax to create a regular expression.',
+        es: 'Usa el constructor RegExp o la sintaxis literal para crear una expresión regular.',
+      },
+    },
   },
   {
     slug: 'regexp-constructor-4',
@@ -77,6 +104,15 @@ export const regexpConstructorExercises: Exercise[] = [
     ],
     hints: ['RegExp objects are objects, so typeof returns "object"'],
     tags: ['RegExp', 'constructor', 'typeof'],
+    usageExample: {
+      code: `const re1 = /hello/i
+const re2 = new RegExp('hello', 'i')
+re1.test('Hello world') // → true`,
+      explanation: {
+        en: 'Use the RegExp constructor or literal syntax to create a regular expression.',
+        es: 'Usa el constructor RegExp o la sintaxis literal para crear una expresión regular.',
+      },
+    },
   },
   {
     slug: 'regexp-constructor-5',
@@ -96,5 +132,14 @@ export const regexpConstructorExercises: Exercise[] = [
     ],
     hints: ['In a string passed to new RegExp, backslashes must be doubled: \\\\d'],
     tags: ['RegExp', 'constructor', 'digits', 'anchors'],
+    usageExample: {
+      code: `const re1 = /hello/i
+const re2 = new RegExp('hello', 'i')
+re1.test('Hello world') // → true`,
+      explanation: {
+        en: 'Use the RegExp constructor or literal syntax to create a regular expression.',
+        es: 'Usa el constructor RegExp o la sintaxis literal para crear una expresión regular.',
+      },
+    },
   },
 ]

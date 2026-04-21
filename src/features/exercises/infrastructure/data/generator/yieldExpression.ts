@@ -19,6 +19,19 @@ export const generatorYieldExercises: Exercise[] = [
       { description: 'typeof count is function', assertion: 'expect(typeof count).toBe("function")' }
     ],
     tags: [],
+    usageExample: {
+      code: `function* gen() {
+  const x = yield 'ready?'
+  yield x * 2
+}
+const it = gen()
+it.next()       // → { value: 'ready?', done: false }
+it.next(5)      // → { value: 10, done: false }`,
+      explanation: {
+        en: 'The yield expression pauses the generator and optionally receives a value passed to the next next() call.',
+        es: 'La expresión yield pausa el generador y opcionalmente recibe un valor pasado en la siguiente llamada a next().',
+      },
+    },
   },
   {
     slug: 'generator-yield-star',
@@ -38,6 +51,19 @@ export const generatorYieldExercises: Exercise[] = [
       { description: 'typeof gen is function', assertion: 'expect(typeof gen).toBe("function")' }
     ],
     tags: [],
+    usageExample: {
+      code: `function* gen() {
+  const x = yield 'ready?'
+  yield x * 2
+}
+const it = gen()
+it.next()       // → { value: 'ready?', done: false }
+it.next(5)      // → { value: 10, done: false }`,
+      explanation: {
+        en: 'The yield expression pauses the generator and optionally receives a value passed to the next next() call.',
+        es: 'La expresión yield pausa el generador y opcionalmente recibe un valor pasado en la siguiente llamada a next().',
+      },
+    },
   },
   {
     slug: 'generator-yield-range',
@@ -57,6 +83,19 @@ export const generatorYieldExercises: Exercise[] = [
       { description: 'typeof range is function', assertion: 'expect(typeof range).toBe("function")' }
     ],
     tags: [],
+    usageExample: {
+      code: `function* gen() {
+  const x = yield 'ready?'
+  yield x * 2
+}
+const it = gen()
+it.next()       // → { value: 'ready?', done: false }
+it.next(5)      // → { value: 10, done: false }`,
+      explanation: {
+        en: 'The yield expression pauses the generator and optionally receives a value passed to the next next() call.',
+        es: 'La expresión yield pausa el generador y opcionalmente recibe un valor pasado en la siguiente llamada a next().',
+      },
+    },
   },
   {
     slug: 'generator-yield-forof',
@@ -76,6 +115,19 @@ export const generatorYieldExercises: Exercise[] = [
       { description: 'typeof gen is function', assertion: 'expect(typeof gen).toBe("function")' }
     ],
     tags: [],
+    usageExample: {
+      code: `function* gen() {
+  const x = yield 'ready?'
+  yield x * 2
+}
+const it = gen()
+it.next()       // → { value: 'ready?', done: false }
+it.next(5)      // → { value: 10, done: false }`,
+      explanation: {
+        en: 'The yield expression pauses the generator and optionally receives a value passed to the next next() call.',
+        es: 'La expresión yield pausa el generador y opcionalmente recibe un valor pasado en la siguiente llamada a next().',
+      },
+    },
   },
   {
     slug: 'generator-yield-length',

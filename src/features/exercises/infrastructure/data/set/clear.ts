@@ -20,6 +20,15 @@ export const setClearExercises: Exercise[] = [
     ],
     hints: ['clear() removes every value, setting size to 0'],
     tags: ['Set', 'clear', 'method'],
+    usageExample: {
+      code: `const s = new Set([1, 2, 3])
+s.clear()
+console.log(s.size) // → 0`,
+      explanation: {
+        en: 'Use Set.clear() to remove all values from the set.',
+        es: 'Usa Set.clear() para eliminar todos los valores del conjunto.',
+      },
+    },
   },
   {
     slug: 'set-clear-2',
@@ -40,6 +49,15 @@ export const setClearExercises: Exercise[] = [
     ],
     hints: ['clear() returns undefined — it modifies the Set in place'],
     tags: ['Set', 'clear', 'undefined'],
+    usageExample: {
+      code: `const s = new Set([1, 2, 3])
+s.clear()
+console.log(s.size) // → 0`,
+      explanation: {
+        en: 'Use Set.clear() to remove all values from the set.',
+        es: 'Usa Set.clear() para eliminar todos los valores del conjunto.',
+      },
+    },
   },
   {
     slug: 'set-clear-3',
@@ -60,6 +78,15 @@ export const setClearExercises: Exercise[] = [
     ],
     hints: ['After clear(), the Set is completely empty'],
     tags: ['Set', 'clear', 'has'],
+    usageExample: {
+      code: `const s = new Set([1, 2, 3])
+s.clear()
+console.log(s.size) // → 0`,
+      explanation: {
+        en: 'Use Set.clear() to remove all values from the set.',
+        es: 'Usa Set.clear() para eliminar todos los valores del conjunto.',
+      },
+    },
   },
   {
     slug: 'set-clear-4',
@@ -80,6 +107,15 @@ export const setClearExercises: Exercise[] = [
     ],
     hints: ['clear() always resets the Set to empty state'],
     tags: ['Set', 'clear', 'size'],
+    usageExample: {
+      code: `const s = new Set([1, 2, 3])
+s.clear()
+console.log(s.size) // → 0`,
+      explanation: {
+        en: 'Use Set.clear() to remove all values from the set.',
+        es: 'Usa Set.clear() para eliminar todos los valores del conjunto.',
+      },
+    },
   },
   {
     slug: 'set-clear-5',
@@ -100,5 +136,14 @@ export const setClearExercises: Exercise[] = [
     ],
     hints: ['clear() is safe to call on an empty Set'],
     tags: ['Set', 'clear', 'empty'],
+    usageExample: {
+      code: `const s = new Set([1, 2, 3])
+s.clear()
+console.log(s.size) // → 0`,
+      explanation: {
+        en: 'Use Set.clear() to remove all values from the set.',
+        es: 'Usa Set.clear() para eliminar todos los valores del conjunto.',
+      },
+    },
   },
 ]

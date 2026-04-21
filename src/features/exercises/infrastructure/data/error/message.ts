@@ -20,6 +20,14 @@ export const errorMessageExercises: Exercise[] = [
     ],
     hints: ['Access .message directly on the error instance.'],
     tags: ['error', 'message', 'instance-property'],
+    usageExample: {
+      code: `const err = new Error('Connection failed')
+err.message  // → 'Connection failed'`,
+      explanation: {
+        en: "The message property stores the human-readable description passed to the Error constructor.",
+        es: "La propiedad message almacena la descripción legible pasada al constructor de Error.",
+      },
+    },
   },
   {
     slug: 'error-message-2',
@@ -40,6 +48,13 @@ export const errorMessageExercises: Exercise[] = [
     ],
     hints: ['TypeError is a subclass of Error and inherits .message.'],
     tags: ['error', 'message', 'TypeError'],
+    usageExample: {
+      code: `new Error('').message  // → ''`,
+      explanation: {
+        en: "An empty string message is valid; the message property will be an empty string.",
+        es: "Un message de cadena vacía es válido; la propiedad message será una cadena vacía.",
+      },
+    },
   },
   {
     slug: 'error-message-3',
@@ -60,6 +75,13 @@ export const errorMessageExercises: Exercise[] = [
     ],
     hints: ['Without a message, the .message property defaults to an empty string.'],
     tags: ['error', 'message', 'empty'],
+    usageExample: {
+      code: `new Error().message  // → ''`,
+      explanation: {
+        en: "Omitting the message argument results in an empty string message.",
+        es: "Omitir el argumento message da como resultado un message de cadena vacía.",
+      },
+    },
   },
   {
     slug: 'error-message-4',
@@ -80,6 +102,15 @@ export const errorMessageExercises: Exercise[] = [
     ],
     hints: ['The message property is always a string.'],
     tags: ['error', 'message', 'typeof'],
+    usageExample: {
+      code: `const err = new Error('msg')
+err.message = 'updated'
+err.message  // → 'updated'`,
+      explanation: {
+        en: "The message property is writable and can be changed after creation.",
+        es: "La propiedad message es escribible y se puede cambiar después de la creación.",
+      },
+    },
   },
   {
     slug: 'error-message-5',
@@ -100,5 +131,16 @@ export const errorMessageExercises: Exercise[] = [
     ],
     hints: ['RangeError is a subclass of Error.'],
     tags: ['error', 'message', 'RangeError'],
+    usageExample: {
+      code: `try {
+  throw new Error('timeout')
+} catch (e) {
+  console.log(e.message)  // → 'timeout'
+}`,
+      explanation: {
+        en: "Access e.message inside catch blocks to display or log the error description.",
+        es: "Accede a e.message dentro de bloques catch para mostrar o registrar la descripción del error.",
+      },
+    },
   },
 ]

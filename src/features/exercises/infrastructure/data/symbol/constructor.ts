@@ -19,6 +19,14 @@ export const symbolConstructorExercises: Exercise[] = [
     ],
     hints: ['Use the typeof operator to check the type of a Symbol.'],
     tags: ['symbol', 'typeof', 'constructor'],
+    usageExample: {
+      code: `const sym = Symbol('id')
+typeof sym   // → 'symbol'`,
+      explanation: {
+        en: 'Symbol() creates a primitive whose typeof is always \'symbol\'.',
+        es: 'Symbol() crea un primitivo cuyo typeof es siempre \'symbol\'.',
+      },
+    },
   },
   {
     slug: 'symbol-constructor-2',
@@ -38,6 +46,15 @@ export const symbolConstructorExercises: Exercise[] = [
     ],
     hints: ['Each Symbol() call produces a fresh, unique value.'],
     tags: ['symbol', 'uniqueness', 'constructor'],
+    usageExample: {
+      code: `const a = Symbol('x')
+const b = Symbol('x')
+a === b   // → false`,
+      explanation: {
+        en: 'Every Symbol() call returns a new unique value — even with the same description.',
+        es: 'Cada llamada a Symbol() devuelve un valor único, aunque la descripción sea igual.',
+      },
+    },
   },
   {
     slug: 'symbol-constructor-3',
@@ -58,6 +75,14 @@ export const symbolConstructorExercises: Exercise[] = [
     ],
     hints: ['Access `.description` on any Symbol.'],
     tags: ['symbol', 'description', 'constructor'],
+    usageExample: {
+      code: `const sym = Symbol('hello')
+sym.description   // → 'hello'`,
+      explanation: {
+        en: 'The string passed to Symbol() becomes its read-only .description property.',
+        es: 'La cadena pasada a Symbol() se convierte en su propiedad .description de solo lectura.',
+      },
+    },
   },
   {
     slug: 'symbol-constructor-4',
@@ -77,6 +102,14 @@ export const symbolConstructorExercises: Exercise[] = [
     ],
     hints: ['Calling Symbol() with no argument leaves description as undefined.'],
     tags: ['symbol', 'description', 'undefined', 'constructor'],
+    usageExample: {
+      code: `const sym = Symbol()
+sym.description   // → undefined`,
+      explanation: {
+        en: 'Without an argument, Symbol().description is undefined, not an empty string.',
+        es: 'Sin argumento, Symbol().description es undefined, no una cadena vacía.',
+      },
+    },
   },
   {
     slug: 'symbol-constructor-5',
@@ -96,5 +129,17 @@ export const symbolConstructorExercises: Exercise[] = [
     ],
     hints: ['Wrap the `new Symbol()` call in an arrow function for toThrow().'],
     tags: ['symbol', 'constructor', 'TypeError', 'new'],
+    usageExample: {
+      code: `Symbol('ok')   // works fine
+try {
+  new Symbol()  // TypeError!
+} catch (e) {
+  console.log(e instanceof TypeError)  // → true
+}`,
+      explanation: {
+        en: 'Symbol is a primitive factory — calling it with new throws a TypeError.',
+        es: 'Symbol es una función primitiva; llamarla con new lanza un TypeError.',
+      },
+    },
   },
 ]

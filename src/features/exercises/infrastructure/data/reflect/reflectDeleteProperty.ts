@@ -34,6 +34,16 @@ export const reflectDeletePropertyExercises: Exercise[] = [
       '`Reflect.deleteProperty(target, key)` is equivalent to `delete target[key]`.',
     ],
     tags: ['Reflect', 'deleteProperty', 'beginner'],
+    usageExample: {
+      code: `const obj = { a: 1, b: 2 }
+Reflect.deleteProperty(obj, 'a')
+console.log(obj)              // → { b: 2 }
+console.log('a' in obj)       // → false`,
+      explanation: {
+        en: 'Reflect.deleteProperty() deletes a property from an object, returning true on success, just like the delete operator.',
+        es: 'Reflect.deleteProperty() elimina una propiedad de un objeto, devolviendo true en caso de éxito, igual que el operador delete.',
+      },
+    },
   },
   {
     slug: 'reflect-delete-property-returns-true',
@@ -64,6 +74,16 @@ export const reflectDeletePropertyExercises: Exercise[] = [
       '`Reflect.deleteProperty` returns `true` for successful deletions.',
     ],
     tags: ['Reflect', 'deleteProperty', 'beginner'],
+    usageExample: {
+      code: `const obj = { a: 1, b: 2 }
+Reflect.deleteProperty(obj, 'a')
+console.log(obj)              // → { b: 2 }
+console.log('a' in obj)       // → false`,
+      explanation: {
+        en: 'Reflect.deleteProperty() deletes a property from an object, returning true on success, just like the delete operator.',
+        es: 'Reflect.deleteProperty() elimina una propiedad de un objeto, devolviendo true en caso de éxito, igual que el operador delete.',
+      },
+    },
   },
   {
     slug: 'reflect-delete-property-nonexistent',
@@ -94,6 +114,16 @@ Deleting a nonexistent key is not an error — it just returns \`true\`.
       'Deleting a key that doesn\'t exist is a no-op that returns `true`.',
     ],
     tags: ['Reflect', 'deleteProperty', 'beginner'],
+    usageExample: {
+      code: `const obj = { a: 1, b: 2 }
+Reflect.deleteProperty(obj, 'a')
+console.log(obj)              // → { b: 2 }
+console.log('a' in obj)       // → false`,
+      explanation: {
+        en: 'Reflect.deleteProperty() deletes a property from an object, returning true on success, just like the delete operator.',
+        es: 'Reflect.deleteProperty() elimina una propiedad de un objeto, devolviendo true en caso de éxito, igual que el operador delete.',
+      },
+    },
   },
   {
     slug: 'reflect-delete-property-typeof',
@@ -124,6 +154,16 @@ Deleting a nonexistent key is not an error — it just returns \`true\`.
       'All `Reflect` methods are functions.',
     ],
     tags: ['Reflect', 'deleteProperty', 'typeof', 'beginner'],
+    usageExample: {
+      code: `const obj = { a: 1, b: 2 }
+Reflect.deleteProperty(obj, 'a')
+console.log(obj)              // → { b: 2 }
+console.log('a' in obj)       // → false`,
+      explanation: {
+        en: 'Reflect.deleteProperty() deletes a property from an object, returning true on success, just like the delete operator.',
+        es: 'Reflect.deleteProperty() elimina una propiedad de un objeto, devolviendo true en caso de éxito, igual que el operador delete.',
+      },
+    },
   },
   {
     slug: 'reflect-delete-property-removes-key',
@@ -158,5 +198,15 @@ After deletion, the key is gone from the object — \`'a' in o\` returns \`false
       'After `Reflect.deleteProperty`, the key is fully removed from the object.',
     ],
     tags: ['Reflect', 'deleteProperty', 'beginner'],
+    usageExample: {
+      code: `const obj = { a: 1, b: 2 }
+Reflect.deleteProperty(obj, 'a')
+console.log(obj)              // → { b: 2 }
+console.log('a' in obj)       // → false`,
+      explanation: {
+        en: 'Reflect.deleteProperty() deletes a property from an object, returning true on success, just like the delete operator.',
+        es: 'Reflect.deleteProperty() elimina una propiedad de un objeto, devolviendo true en caso de éxito, igual que el operador delete.',
+      },
+    },
   },
 ]

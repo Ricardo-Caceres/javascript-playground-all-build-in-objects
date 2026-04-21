@@ -20,6 +20,15 @@ export const regexpIgnoreCaseExercises: Exercise[] = [
     ],
     hints: ['The i flag enables case-insensitive matching'],
     tags: ['RegExp', 'ignoreCase', 'property'],
+    usageExample: {
+      code: `const re = /hello/i
+console.log(re.ignoreCase) // → true
+'HELLO'.match(re) // matches`,
+      explanation: {
+        en: "Read RegExp.ignoreCase to check whether the 'i' flag is set on the regular expression.",
+        es: "Lee RegExp.ignoreCase para verificar si la bandera 'i' está activada en la expresión regular.",
+      },
+    },
   },
   {
     slug: 'regexp-ignorecase-2',
@@ -40,6 +49,15 @@ export const regexpIgnoreCaseExercises: Exercise[] = [
     ],
     hints: ['Without the i flag, case-sensitive matching is used by default'],
     tags: ['RegExp', 'ignoreCase', 'property'],
+    usageExample: {
+      code: `const re = /hello/i
+console.log(re.ignoreCase) // → true
+'HELLO'.match(re) // matches`,
+      explanation: {
+        en: "Read RegExp.ignoreCase to check whether the 'i' flag is set on the regular expression.",
+        es: "Lee RegExp.ignoreCase para verificar si la bandera 'i' está activada en la expresión regular.",
+      },
+    },
   },
   {
     slug: 'regexp-ignorecase-3',
@@ -60,6 +78,15 @@ export const regexpIgnoreCaseExercises: Exercise[] = [
     ],
     hints: ['ignoreCase checks only for the i flag'],
     tags: ['RegExp', 'ignoreCase', 'flags'],
+    usageExample: {
+      code: `const re = /hello/i
+console.log(re.ignoreCase) // → true
+'HELLO'.match(re) // matches`,
+      explanation: {
+        en: "Read RegExp.ignoreCase to check whether the 'i' flag is set on the regular expression.",
+        es: "Lee RegExp.ignoreCase para verificar si la bandera 'i' está activada en la expresión regular.",
+      },
+    },
   },
   {
     slug: 'regexp-ignorecase-4',
@@ -80,6 +107,15 @@ export const regexpIgnoreCaseExercises: Exercise[] = [
     ],
     hints: ['ignoreCase is always a boolean value'],
     tags: ['RegExp', 'ignoreCase', 'typeof'],
+    usageExample: {
+      code: `const re = /hello/i
+console.log(re.ignoreCase) // → true
+'HELLO'.match(re) // matches`,
+      explanation: {
+        en: "Read RegExp.ignoreCase to check whether the 'i' flag is set on the regular expression.",
+        es: "Lee RegExp.ignoreCase para verificar si la bandera 'i' está activada en la expresión regular.",
+      },
+    },
   },
   {
     slug: 'regexp-ignorecase-5',
@@ -100,5 +136,14 @@ export const regexpIgnoreCaseExercises: Exercise[] = [
     ],
     hints: ['ignoreCase returns a strict boolean, not just a truthy/falsy value'],
     tags: ['RegExp', 'ignoreCase', 'boolean'],
+    usageExample: {
+      code: `const re = /hello/i
+console.log(re.ignoreCase) // → true
+'HELLO'.match(re) // matches`,
+      explanation: {
+        en: "Read RegExp.ignoreCase to check whether the 'i' flag is set on the regular expression.",
+        es: "Lee RegExp.ignoreCase para verificar si la bandera 'i' está activada en la expresión regular.",
+      },
+    },
   },
 ]

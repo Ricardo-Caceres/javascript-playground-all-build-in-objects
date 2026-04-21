@@ -20,6 +20,15 @@ export const dateGetMillisecondsExercises: Exercise[] = [
     ],
     hints: ['The 7th argument to the Date constructor is milliseconds (0–999)'],
     tags: ['Date', 'getMilliseconds', 'instance-method'],
+    usageExample: {
+      code: `const d = new Date(2024, 0, 15, 12, 30, 45, 750)
+d.getMilliseconds()  // → 750
+// returns 0–999`,
+      explanation: {
+        en: 'Use getMilliseconds() to retrieve the milliseconds component (0–999) of a Date object in local time.',
+        es: 'Usa getMilliseconds() para obtener el componente de milisegundos (0–999) de un objeto Date en hora local.',
+      },
+    },
   },
   {
     slug: 'date-getmilliseconds-2',
@@ -40,6 +49,15 @@ export const dateGetMillisecondsExercises: Exercise[] = [
     ],
     hints: ['0 ms means exactly at the start of a second'],
     tags: ['Date', 'getMilliseconds', 'instance-method'],
+    usageExample: {
+      code: `const d = new Date(2024, 0, 15, 12, 30, 45, 750)
+d.getMilliseconds()  // → 750
+// returns 0–999`,
+      explanation: {
+        en: 'Use getMilliseconds() to retrieve the milliseconds component (0–999) of a Date object in local time.',
+        es: 'Usa getMilliseconds() para obtener el componente de milisegundos (0–999) de un objeto Date en hora local.',
+      },
+    },
   },
   {
     slug: 'date-getmilliseconds-3',
@@ -60,6 +78,15 @@ export const dateGetMillisecondsExercises: Exercise[] = [
     ],
     hints: ['Milliseconds range from 0 to 999; 1000 would roll over to the next second'],
     tags: ['Date', 'getMilliseconds', 'instance-method'],
+    usageExample: {
+      code: `const d = new Date(2024, 0, 15, 12, 30, 45, 750)
+d.getMilliseconds()  // → 750
+// returns 0–999`,
+      explanation: {
+        en: 'Use getMilliseconds() to retrieve the milliseconds component (0–999) of a Date object in local time.',
+        es: 'Usa getMilliseconds() para obtener el componente de milisegundos (0–999) de un objeto Date en hora local.',
+      },
+    },
   },
   {
     slug: 'date-getmilliseconds-4',
@@ -80,6 +107,15 @@ export const dateGetMillisecondsExercises: Exercise[] = [
     ],
     hints: ['getMilliseconds() always returns a number'],
     tags: ['Date', 'getMilliseconds', 'instance-method', 'typeof'],
+    usageExample: {
+      code: `const d = new Date(2024, 0, 15, 12, 30, 45, 750)
+d.getMilliseconds()  // → 750
+// returns 0–999`,
+      explanation: {
+        en: 'Use getMilliseconds() to retrieve the milliseconds component (0–999) of a Date object in local time.',
+        es: 'Usa getMilliseconds() para obtener el componente de milisegundos (0–999) de un objeto Date en hora local.',
+      },
+    },
   },
   {
     slug: 'date-getmilliseconds-5',
@@ -100,5 +136,14 @@ export const dateGetMillisecondsExercises: Exercise[] = [
     ],
     hints: ['The 7th constructor arg is milliseconds; it independently stores the sub-second component'],
     tags: ['Date', 'getMilliseconds', 'instance-method'],
+    usageExample: {
+      code: `const d = new Date(2024, 0, 15, 12, 30, 45, 750)
+d.getMilliseconds()  // → 750
+// returns 0–999`,
+      explanation: {
+        en: 'Use getMilliseconds() to retrieve the milliseconds component (0–999) of a Date object in local time.',
+        es: 'Usa getMilliseconds() para obtener el componente de milisegundos (0–999) de un objeto Date en hora local.',
+      },
+    },
   },
 ]

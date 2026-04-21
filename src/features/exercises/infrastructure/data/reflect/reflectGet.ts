@@ -30,6 +30,15 @@ export const reflectGetExercises: Exercise[] = [
       '`Reflect.get(target, key)` is equivalent to `target[key]`.',
     ],
     tags: ['Reflect', 'get', 'beginner'],
+    usageExample: {
+      code: `const obj = { name: 'Alice', age: 30 }
+const name = Reflect.get(obj, 'name')
+console.log(name) // → 'Alice'`,
+      explanation: {
+        en: 'Reflect.get() retrieves the value of a property on an object, equivalent to obj[key].',
+        es: 'Reflect.get() obtiene el valor de una propiedad en un objeto, equivalente a obj[key].',
+      },
+    },
   },
   {
     slug: 'reflect-get-array-index',
@@ -60,6 +69,15 @@ export const reflectGetExercises: Exercise[] = [
       '`Reflect.get` works on any object including arrays.',
     ],
     tags: ['Reflect', 'get', 'array', 'beginner'],
+    usageExample: {
+      code: `const obj = { name: 'Alice', age: 30 }
+const name = Reflect.get(obj, 'name')
+console.log(name) // → 'Alice'`,
+      explanation: {
+        en: 'Reflect.get() retrieves the value of a property on an object, equivalent to obj[key].',
+        es: 'Reflect.get() obtiene el valor de una propiedad en un objeto, equivalente a obj[key].',
+      },
+    },
   },
   {
     slug: 'reflect-get-missing-key',
@@ -90,6 +108,15 @@ Reading a non-existent key with \`Reflect.get()\` returns \`undefined\`, just li
       'Missing keys always return `undefined` in JavaScript.',
     ],
     tags: ['Reflect', 'get', 'undefined', 'beginner'],
+    usageExample: {
+      code: `const obj = { name: 'Alice', age: 30 }
+const name = Reflect.get(obj, 'name')
+console.log(name) // → 'Alice'`,
+      explanation: {
+        en: 'Reflect.get() retrieves the value of a property on an object, equivalent to obj[key].',
+        es: 'Reflect.get() obtiene el valor de una propiedad en un objeto, equivalente a obj[key].',
+      },
+    },
   },
   {
     slug: 'reflect-get-typeof',
@@ -120,6 +147,15 @@ Reading a non-existent key with \`Reflect.get()\` returns \`undefined\`, just li
       '`Reflect` methods are all functions.',
     ],
     tags: ['Reflect', 'get', 'typeof', 'beginner'],
+    usageExample: {
+      code: `const obj = { name: 'Alice', age: 30 }
+const name = Reflect.get(obj, 'name')
+console.log(name) // → 'Alice'`,
+      explanation: {
+        en: 'Reflect.get() retrieves the value of a property on an object, equivalent to obj[key].',
+        es: 'Reflect.get() obtiene el valor de una propiedad en un objeto, equivalente a obj[key].',
+      },
+    },
   },
   {
     slug: 'reflect-get-string-value',
@@ -150,5 +186,14 @@ Reading a non-existent key with \`Reflect.get()\` returns \`undefined\`, just li
       '`Reflect.get` is just a functional form of the property access operator.',
     ],
     tags: ['Reflect', 'get', 'beginner'],
+    usageExample: {
+      code: `const obj = { name: 'Alice', age: 30 }
+const name = Reflect.get(obj, 'name')
+console.log(name) // → 'Alice'`,
+      explanation: {
+        en: 'Reflect.get() retrieves the value of a property on an object, equivalent to obj[key].',
+        es: 'Reflect.get() obtiene el valor de una propiedad en un objeto, equivalente a obj[key].',
+      },
+    },
   },
 ]

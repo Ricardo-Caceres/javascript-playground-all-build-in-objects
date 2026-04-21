@@ -19,6 +19,14 @@ export const sharedArrayBufferExercises: Exercise[] = [
     ],
     hints: ['new SharedArrayBuffer(byteLength) allocates a fixed-size shared memory buffer.'],
     tags: ['sharedarraybuffer', 'constructor', 'instanceof'],
+    usageExample: {
+      code: `const sab = new SharedArrayBuffer(16)
+sab.byteLength  // → 16`,
+      explanation: {
+        en: "SharedArrayBuffer creates a fixed-size binary buffer that can be shared between workers.",
+        es: "SharedArrayBuffer crea un búfer binario de tamaño fijo que puede compartirse entre workers.",
+      },
+    },
   },
   {
     slug: 'sharedarraybuffer-constructor-2',
@@ -38,6 +46,16 @@ export const sharedArrayBufferExercises: Exercise[] = [
     ],
     hints: ['The byteLength property returns the size of the buffer in bytes.'],
     tags: ['sharedarraybuffer', 'constructor', 'bytelength'],
+    usageExample: {
+      code: `const sab = new SharedArrayBuffer(4)
+const view = new Int32Array(sab)
+view[0] = 42
+view[0]  // → 42`,
+      explanation: {
+        en: "Wrap a SharedArrayBuffer in a typed array to read and write its contents.",
+        es: "Envuelve un SharedArrayBuffer en un arreglo tipado para leer y escribir su contenido.",
+      },
+    },
   },
   {
     slug: 'sharedarraybuffer-constructor-3',
@@ -57,6 +75,14 @@ export const sharedArrayBufferExercises: Exercise[] = [
     ],
     hints: ['Int32Array uses 4 bytes per element, so a 16-byte buffer holds 4 elements.'],
     tags: ['sharedarraybuffer', 'constructor', 'int32array', 'typedarray'],
+    usageExample: {
+      code: `const sab = new SharedArrayBuffer(8)
+sab instanceof SharedArrayBuffer  // → true`,
+      explanation: {
+        en: "SharedArrayBuffer instances can be checked with instanceof.",
+        es: "Las instancias de SharedArrayBuffer se pueden verificar con instanceof.",
+      },
+    },
   },
   {
     slug: 'sharedarraybuffer-constructor-4',
@@ -76,6 +102,14 @@ export const sharedArrayBufferExercises: Exercise[] = [
     ],
     hints: ['slice() works like Array.slice() but for bytes — the result is a new SharedArrayBuffer.'],
     tags: ['sharedarraybuffer', 'constructor', 'slice'],
+    usageExample: {
+      code: `const sab = new SharedArrayBuffer(0)
+sab.byteLength  // → 0`,
+      explanation: {
+        en: "A SharedArrayBuffer can have a byte length of 0.",
+        es: "Un SharedArrayBuffer puede tener un byteLength de 0.",
+      },
+    },
   },
   {
     slug: 'sharedarraybuffer-constructor-5',
@@ -95,5 +129,14 @@ export const sharedArrayBufferExercises: Exercise[] = [
     ],
     hints: ['ArrayBuffer.isView() returns true for any typed array or DataView, not for the buffer itself.'],
     tags: ['sharedarraybuffer', 'constructor', 'isview', 'arraybuffer'],
+    usageExample: {
+      code: `const sab = new SharedArrayBuffer(4)
+Atomics.store(new Int32Array(sab), 0, 99)
+Atomics.load(new Int32Array(sab), 0)  // → 99`,
+      explanation: {
+        en: "Use Atomics with SharedArrayBuffer for thread-safe read/write operations.",
+        es: "Usa Atomics con SharedArrayBuffer para operaciones de lectura/escritura seguras entre hilos.",
+      },
+    },
   },
 ]

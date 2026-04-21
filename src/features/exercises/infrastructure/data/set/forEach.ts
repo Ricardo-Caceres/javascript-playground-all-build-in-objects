@@ -20,6 +20,15 @@ export const setForEachExercises: Exercise[] = [
     ],
     hints: ['forEach callback for Set receives (value, value, set)'],
     tags: ['Set', 'forEach', 'method'],
+    usageExample: {
+      code: `const s = new Set([1, 2, 3])
+s.forEach(val => console.log(val))
+// 1, 2, 3`,
+      explanation: {
+        en: 'Use Set.forEach() to execute a callback for each value in the set.',
+        es: 'Usa Set.forEach() para ejecutar un callback por cada valor del conjunto.',
+      },
+    },
   },
   {
     slug: 'set-foreach-2',
@@ -40,6 +49,15 @@ export const setForEachExercises: Exercise[] = [
     ],
     hints: ['Set.forEach callback: (value, value, set) — first two args are both the value'],
     tags: ['Set', 'forEach', 'bothArgs'],
+    usageExample: {
+      code: `const s = new Set([1, 2, 3])
+s.forEach(val => console.log(val))
+// 1, 2, 3`,
+      explanation: {
+        en: 'Use Set.forEach() to execute a callback for each value in the set.',
+        es: 'Usa Set.forEach() para ejecutar un callback por cada valor del conjunto.',
+      },
+    },
   },
   {
     slug: 'set-foreach-3',
@@ -60,6 +78,15 @@ export const setForEachExercises: Exercise[] = [
     ],
     hints: ['Third argument lets you reference the Set inside the callback'],
     tags: ['Set', 'forEach', 'thirdArg'],
+    usageExample: {
+      code: `const s = new Set([1, 2, 3])
+s.forEach(val => console.log(val))
+// 1, 2, 3`,
+      explanation: {
+        en: 'Use Set.forEach() to execute a callback for each value in the set.',
+        es: 'Usa Set.forEach() para ejecutar un callback por cada valor del conjunto.',
+      },
+    },
   },
   {
     slug: 'set-foreach-4',
@@ -80,6 +107,15 @@ export const setForEachExercises: Exercise[] = [
     ],
     hints: ['forEach on an empty Set is a no-op'],
     tags: ['Set', 'forEach', 'empty'],
+    usageExample: {
+      code: `const s = new Set([1, 2, 3])
+s.forEach(val => console.log(val))
+// 1, 2, 3`,
+      explanation: {
+        en: 'Use Set.forEach() to execute a callback for each value in the set.',
+        es: 'Usa Set.forEach() para ejecutar un callback por cada valor del conjunto.',
+      },
+    },
   },
   {
     slug: 'set-foreach-5',
@@ -100,5 +136,14 @@ export const setForEachExercises: Exercise[] = [
     ],
     hints: ['forEach visits values in insertion order, each unique value exactly once'],
     tags: ['Set', 'forEach', 'order'],
+    usageExample: {
+      code: `const s = new Set([1, 2, 3])
+s.forEach(val => console.log(val))
+// 1, 2, 3`,
+      explanation: {
+        en: 'Use Set.forEach() to execute a callback for each value in the set.',
+        es: 'Usa Set.forEach() para ejecutar un callback por cada valor del conjunto.',
+      },
+    },
   },
 ]

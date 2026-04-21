@@ -20,6 +20,15 @@ export const dateGetMinutesExercises: Exercise[] = [
     ],
     hints: ['The 5th argument to the Date constructor is minutes (0–59)'],
     tags: ['Date', 'getMinutes', 'instance-method'],
+    usageExample: {
+      code: `const d = new Date(2024, 0, 15, 12, 30)
+d.getMinutes()  // → 30
+// returns 0–59`,
+      explanation: {
+        en: 'Use getMinutes() to retrieve the minutes component (0–59) of a Date object in local time.',
+        es: 'Usa getMinutes() para obtener el componente de minutos (0–59) de un objeto Date en hora local.',
+      },
+    },
   },
   {
     slug: 'date-getminutes-2',
@@ -40,6 +49,15 @@ export const dateGetMinutesExercises: Exercise[] = [
     ],
     hints: ['0 minutes means exactly on the hour'],
     tags: ['Date', 'getMinutes', 'instance-method'],
+    usageExample: {
+      code: `const d = new Date(2024, 0, 15, 12, 30)
+d.getMinutes()  // → 30
+// returns 0–59`,
+      explanation: {
+        en: 'Use getMinutes() to retrieve the minutes component (0–59) of a Date object in local time.',
+        es: 'Usa getMinutes() para obtener el componente de minutos (0–59) de un objeto Date en hora local.',
+      },
+    },
   },
   {
     slug: 'date-getminutes-3',
@@ -60,6 +78,15 @@ export const dateGetMinutesExercises: Exercise[] = [
     ],
     hints: ['Minutes range from 0 to 59; 60 would roll over to the next hour'],
     tags: ['Date', 'getMinutes', 'instance-method'],
+    usageExample: {
+      code: `const d = new Date(2024, 0, 15, 12, 30)
+d.getMinutes()  // → 30
+// returns 0–59`,
+      explanation: {
+        en: 'Use getMinutes() to retrieve the minutes component (0–59) of a Date object in local time.',
+        es: 'Usa getMinutes() para obtener el componente de minutos (0–59) de un objeto Date en hora local.',
+      },
+    },
   },
   {
     slug: 'date-getminutes-4',
@@ -80,6 +107,15 @@ export const dateGetMinutesExercises: Exercise[] = [
     ],
     hints: ['getMinutes() always returns a number'],
     tags: ['Date', 'getMinutes', 'instance-method', 'typeof'],
+    usageExample: {
+      code: `const d = new Date(2024, 0, 15, 12, 30)
+d.getMinutes()  // → 30
+// returns 0–59`,
+      explanation: {
+        en: 'Use getMinutes() to retrieve the minutes component (0–59) of a Date object in local time.',
+        es: 'Usa getMinutes() para obtener el componente de minutos (0–59) de un objeto Date en hora local.',
+      },
+    },
   },
   {
     slug: 'date-getminutes-5',
@@ -100,5 +136,14 @@ export const dateGetMinutesExercises: Exercise[] = [
     ],
     hints: ['All time components are set by the 7-arg constructor'],
     tags: ['Date', 'getMinutes', 'instance-method'],
+    usageExample: {
+      code: `const d = new Date(2024, 0, 15, 12, 30)
+d.getMinutes()  // → 30
+// returns 0–59`,
+      explanation: {
+        en: 'Use getMinutes() to retrieve the minutes component (0–59) of a Date object in local time.',
+        es: 'Usa getMinutes() para obtener el componente de minutos (0–59) de un objeto Date en hora local.',
+      },
+    },
   },
 ]

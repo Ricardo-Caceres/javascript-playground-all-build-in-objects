@@ -20,6 +20,16 @@ export const setIsDisjointFromExercises: Exercise[] = [
     ],
     hints: ['isDisjointFrom returns true when the Sets share no elements'],
     tags: ['Set', 'isDisjointFrom', 'ES2025'],
+    usageExample: {
+      code: `const a = new Set([1, 2])
+const b = new Set([3, 4])
+a.isDisjointFrom(b)   // → true
+a.isDisjointFrom(new Set([2, 5])) // → false`,
+      explanation: {
+        en: 'Use Set.isDisjointFrom() to check whether two sets share no elements.',
+        es: 'Usa Set.isDisjointFrom() para verificar si dos conjuntos no comparten ningún elemento.',
+      },
+    },
   },
   {
     slug: 'set-isdisjointfrom-2',
@@ -40,6 +50,16 @@ export const setIsDisjointFromExercises: Exercise[] = [
     ],
     hints: ['isDisjointFrom returns false if any element is shared between A and B'],
     tags: ['Set', 'isDisjointFrom', 'nonDisjoint'],
+    usageExample: {
+      code: `const a = new Set([1, 2])
+const b = new Set([3, 4])
+a.isDisjointFrom(b)   // → true
+a.isDisjointFrom(new Set([2, 5])) // → false`,
+      explanation: {
+        en: 'Use Set.isDisjointFrom() to check whether two sets share no elements.',
+        es: 'Usa Set.isDisjointFrom() para verificar si dos conjuntos no comparten ningún elemento.',
+      },
+    },
   },
   {
     slug: 'set-isdisjointfrom-3',
@@ -60,6 +80,16 @@ export const setIsDisjointFromExercises: Exercise[] = [
     ],
     hints: ['The empty Set has no elements to share, so it is always disjoint'],
     tags: ['Set', 'isDisjointFrom', 'empty'],
+    usageExample: {
+      code: `const a = new Set([1, 2])
+const b = new Set([3, 4])
+a.isDisjointFrom(b)   // → true
+a.isDisjointFrom(new Set([2, 5])) // → false`,
+      explanation: {
+        en: 'Use Set.isDisjointFrom() to check whether two sets share no elements.',
+        es: 'Usa Set.isDisjointFrom() para verificar si dos conjuntos no comparten ningún elemento.',
+      },
+    },
   },
   {
     slug: 'set-isdisjointfrom-4',
@@ -80,6 +110,16 @@ export const setIsDisjointFromExercises: Exercise[] = [
     ],
     hints: ['Any shared element makes the Sets non-disjoint'],
     tags: ['Set', 'isDisjointFrom', 'overlap'],
+    usageExample: {
+      code: `const a = new Set([1, 2])
+const b = new Set([3, 4])
+a.isDisjointFrom(b)   // → true
+a.isDisjointFrom(new Set([2, 5])) // → false`,
+      explanation: {
+        en: 'Use Set.isDisjointFrom() to check whether two sets share no elements.',
+        es: 'Usa Set.isDisjointFrom() para verificar si dos conjuntos no comparten ningún elemento.',
+      },
+    },
   },
   {
     slug: 'set-isdisjointfrom-5',
@@ -100,5 +140,15 @@ export const setIsDisjointFromExercises: Exercise[] = [
     ],
     hints: ['Non-empty identical Sets share all their elements, so they are not disjoint'],
     tags: ['Set', 'isDisjointFrom', 'identical'],
+    usageExample: {
+      code: `const a = new Set([1, 2])
+const b = new Set([3, 4])
+a.isDisjointFrom(b)   // → true
+a.isDisjointFrom(new Set([2, 5])) // → false`,
+      explanation: {
+        en: 'Use Set.isDisjointFrom() to check whether two sets share no elements.',
+        es: 'Usa Set.isDisjointFrom() para verificar si dos conjuntos no comparten ningún elemento.',
+      },
+    },
   },
 ]

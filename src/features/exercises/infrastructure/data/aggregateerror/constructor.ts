@@ -19,6 +19,14 @@ export const aggregateErrorExercises: Exercise[] = [
     ],
     hints: ['AggregateError takes an iterable of errors as its first argument.'],
     tags: ['aggregateerror', 'constructor', 'instanceof'],
+    usageExample: {
+      code: `const err = new AggregateError([new Error('a'), new Error('b')], 'Two errors')
+err.errors.length  // → 2`,
+      explanation: {
+        en: "AggregateError wraps multiple errors into a single error object.",
+        es: "AggregateError envuelve múltiples errores en un único objeto de error.",
+      },
+    },
   },
   {
     slug: 'aggregateerror-constructor-2',
@@ -38,6 +46,14 @@ export const aggregateErrorExercises: Exercise[] = [
     ],
     hints: ['AggregateError inherits from Error in the prototype chain.'],
     tags: ['aggregateerror', 'constructor', 'instanceof', 'error'],
+    usageExample: {
+      code: `Promise.any([Promise.reject(new Error('e1')), Promise.reject(new Error('e2'))])
+  .catch(e => e instanceof AggregateError)  // → true`,
+      explanation: {
+        en: "Promise.any() rejects with an AggregateError when all promises reject.",
+        es: "Promise.any() rechaza con un AggregateError cuando todas las promesas son rechazadas.",
+      },
+    },
   },
   {
     slug: 'aggregateerror-constructor-3',
@@ -57,6 +73,13 @@ export const aggregateErrorExercises: Exercise[] = [
     ],
     hints: ['The second argument to AggregateError is the message string.'],
     tags: ['aggregateerror', 'constructor', 'message'],
+    usageExample: {
+      code: `new AggregateError([new Error('x')], 'msg').message  // → 'msg'`,
+      explanation: {
+        en: "The message property holds the overall description of the aggregate error.",
+        es: "La propiedad message contiene la descripción general del error agregado.",
+      },
+    },
   },
   {
     slug: 'aggregateerror-constructor-4',
@@ -76,6 +99,13 @@ export const aggregateErrorExercises: Exercise[] = [
     ],
     hints: ['Error subtypes have a .name property matching their constructor name.'],
     tags: ['aggregateerror', 'constructor', 'name'],
+    usageExample: {
+      code: `new AggregateError([]).name  // → 'AggregateError'`,
+      explanation: {
+        en: "The name property of an AggregateError is always 'AggregateError'.",
+        es: "La propiedad name de un AggregateError siempre es 'AggregateError'.",
+      },
+    },
   },
   {
     slug: 'aggregateerror-constructor-5',
@@ -95,5 +125,12 @@ export const aggregateErrorExercises: Exercise[] = [
     ],
     hints: ['The .errors property is an array of all errors passed to the AggregateError constructor.'],
     tags: ['aggregateerror', 'constructor', 'errors'],
+    usageExample: {
+      code: `new AggregateError([]) instanceof Error  // → true`,
+      explanation: {
+        en: "AggregateError extends Error and inherits all standard error properties.",
+        es: "AggregateError extiende Error y hereda todas las propiedades estándar de error.",
+      },
+    },
   },
 ]

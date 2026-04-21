@@ -20,6 +20,16 @@ export const promiseRejectExercises: Exercise[] = [
     ],
     hints: ['Promise.reject is a static method — a function on the Promise object.'],
     tags: ['promise', 'reject', 'typeof'],
+    usageExample: {
+      code: `Promise.reject(new Error('failed'))
+  .catch(err => {
+    console.log(err.message) // → 'failed'
+  })`,
+      explanation: {
+        en: 'Promise.reject() creates an already-rejected promise with the given reason.',
+        es: 'Promise.reject() crea una promesa ya rechazada con el motivo dado.',
+      },
+    },
   },
   {
     slug: 'promise-reject-2',
@@ -40,6 +50,16 @@ export const promiseRejectExercises: Exercise[] = [
     ],
     hints: ['Static methods on built-ins are Function instances.'],
     tags: ['promise', 'reject', 'instanceof'],
+    usageExample: {
+      code: `Promise.reject(new Error('failed'))
+  .catch(err => {
+    console.log(err.message) // → 'failed'
+  })`,
+      explanation: {
+        en: 'Promise.reject() creates an already-rejected promise with the given reason.',
+        es: 'Promise.reject() crea una promesa ya rechazada con el motivo dado.',
+      },
+    },
   },
   {
     slug: 'promise-reject-3',
@@ -60,6 +80,16 @@ export const promiseRejectExercises: Exercise[] = [
     ],
     hints: ['reject is a static method available on the Promise constructor.'],
     tags: ['promise', 'reject', 'property'],
+    usageExample: {
+      code: `Promise.reject(new Error('failed'))
+  .catch(err => {
+    console.log(err.message) // → 'failed'
+  })`,
+      explanation: {
+        en: 'Promise.reject() creates an already-rejected promise with the given reason.',
+        es: 'Promise.reject() crea una promesa ya rechazada con el motivo dado.',
+      },
+    },
   },
   {
     slug: 'promise-reject-4',
@@ -80,6 +110,16 @@ export const promiseRejectExercises: Exercise[] = [
     ],
     hints: ['Both static methods are functions.'],
     tags: ['promise', 'reject', 'typeof'],
+    usageExample: {
+      code: `Promise.reject(new Error('failed'))
+  .catch(err => {
+    console.log(err.message) // → 'failed'
+  })`,
+      explanation: {
+        en: 'Promise.reject() creates an already-rejected promise with the given reason.',
+        es: 'Promise.reject() crea una promesa ya rechazada con el motivo dado.',
+      },
+    },
   },
   {
     slug: 'promise-reject-5',
@@ -100,5 +140,15 @@ export const promiseRejectExercises: Exercise[] = [
     ],
     hints: ['Promise.reject is always defined as a built-in static method.'],
     tags: ['promise', 'reject', 'defined'],
+    usageExample: {
+      code: `Promise.reject(new Error('failed'))
+  .catch(err => {
+    console.log(err.message) // → 'failed'
+  })`,
+      explanation: {
+        en: 'Promise.reject() creates an already-rejected promise with the given reason.',
+        es: 'Promise.reject() crea una promesa ya rechazada con el motivo dado.',
+      },
+    },
   },
 ]

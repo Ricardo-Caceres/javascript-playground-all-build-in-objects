@@ -20,6 +20,14 @@ export const dateGetDateExercises: Exercise[] = [
     ],
     hints: ['getDate() returns the day of the month — NOT the day of the week (that is getDay())'],
     tags: ['Date', 'getDate', 'instance-method'],
+    usageExample: {
+      code: `const d = new Date(2024, 0, 15)
+d.getDate()  // → 15`,
+      explanation: {
+        en: 'Use getDate() to retrieve the day of the month (1–31) in local time from a Date object.',
+        es: 'Usa getDate() para obtener el día del mes (1–31) en hora local de un objeto Date.',
+      },
+    },
   },
   {
     slug: 'date-getdate-2',
@@ -40,6 +48,14 @@ export const dateGetDateExercises: Exercise[] = [
     ],
     hints: ['Day-of-month indexing starts at 1, unlike months which start at 0'],
     tags: ['Date', 'getDate', 'instance-method', 'first-day'],
+    usageExample: {
+      code: `const d = new Date(2024, 0, 15)
+d.getDate()  // → 15`,
+      explanation: {
+        en: 'Use getDate() to retrieve the day of the month (1–31) in local time from a Date object.',
+        es: 'Usa getDate() para obtener el día del mes (1–31) en hora local de un objeto Date.',
+      },
+    },
   },
   {
     slug: 'date-getdate-3',
@@ -60,6 +76,14 @@ export const dateGetDateExercises: Exercise[] = [
     ],
     hints: ['January has 31 days; getDate() ranges from 1 to the last day of the month'],
     tags: ['Date', 'getDate', 'instance-method'],
+    usageExample: {
+      code: `const d = new Date(2024, 0, 15)
+d.getDate()  // → 15`,
+      explanation: {
+        en: 'Use getDate() to retrieve the day of the month (1–31) in local time from a Date object.',
+        es: 'Usa getDate() para obtener el día del mes (1–31) en hora local de un objeto Date.',
+      },
+    },
   },
   {
     slug: 'date-getdate-4',
@@ -80,6 +104,14 @@ export const dateGetDateExercises: Exercise[] = [
     ],
     hints: ['getDate() returns an integer between 1 and 31'],
     tags: ['Date', 'getDate', 'instance-method', 'typeof'],
+    usageExample: {
+      code: `const d = new Date(2024, 0, 15)
+d.getDate()  // → 15`,
+      explanation: {
+        en: 'Use getDate() to retrieve the day of the month (1–31) in local time from a Date object.',
+        es: 'Usa getDate() para obtener el día del mes (1–31) en hora local de un objeto Date.',
+      },
+    },
   },
   {
     slug: 'date-getdate-5',
@@ -100,5 +132,13 @@ export const dateGetDateExercises: Exercise[] = [
     ],
     hints: ['The third argument to the Date constructor is the day-of-month (1-indexed)'],
     tags: ['Date', 'getDate', 'instance-method'],
+    usageExample: {
+      code: `const d = new Date(2024, 0, 15)
+d.getDate()  // → 15`,
+      explanation: {
+        en: 'Use getDate() to retrieve the day of the month (1–31) in local time from a Date object.',
+        es: 'Usa getDate() para obtener el día del mes (1–31) en hora local de un objeto Date.',
+      },
+    },
   },
 ]

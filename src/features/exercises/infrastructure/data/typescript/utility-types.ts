@@ -32,6 +32,16 @@ mergePartial({ a: 1, b: 2 }, { b: 99 })  // → { a: 1, b: 99 }
     ],
     hints: ['Spread operators: { ...base, ...patch } — the patch overwrites base fields.'],
     tags: ['TypeScript', 'utility-type', 'Partial', 'beginner'],
+    usageExample: {
+      code: `function mergePartial<T extends object>(base: T, patch: Partial<T>): T {
+  return { ...base, ...patch }
+}
+mergePartial({ a: 1, b: 2 }, { b: 99 })   // → { a: 1, b: 99 }`,
+      explanation: {
+        en: 'Partial<T> makes all properties optional, enabling partial update patterns without type errors.',
+        es: 'Partial<T> hace opcionales todas las propiedades, habilitando patrones de actualización parcial.',
+      },
+    },
   },
   {
     slug: 'ts-utility-2',
@@ -65,6 +75,14 @@ pickKeys({ a: 1, b: 2, c: 3 }, ['a', 'c'])  // → { a: 1, c: 3 }
     ],
     hints: ['Loop through keys and copy each to a new object.'],
     tags: ['TypeScript', 'utility-type', 'Pick', 'intermediate'],
+    usageExample: {
+      code: `type Preview = Pick<{ id: number; name: string; bio: string }, 'id' | 'name'>
+// Preview = { id: number; name: string }`,
+      explanation: {
+        en: 'Pick<T, K> constructs a new type with only the specified subset of properties from T.',
+        es: 'Pick<T, K> construye un nuevo tipo con solo el subconjunto especificado de propiedades de T.',
+      },
+    },
   },
   {
     slug: 'ts-utility-3',
@@ -98,6 +116,14 @@ omitKeys({ a: 1, b: 2, c: 3 }, ['b'])  // → { a: 1, c: 3 }
     ],
     hints: ['Copy the object, then delete the unwanted keys.'],
     tags: ['TypeScript', 'utility-type', 'Omit', 'intermediate'],
+    usageExample: {
+      code: `type WithoutId = Omit<{ id: number; name: string; age: number }, 'id'>
+// WithoutId = { name: string; age: number }`,
+      explanation: {
+        en: 'Omit<T, K> removes the listed keys from a type, leaving all other properties intact.',
+        es: 'Omit<T, K> elimina las claves indicadas de un tipo, dejando todas las demás propiedades intactas.',
+      },
+    },
   },
   {
     slug: 'ts-utility-4',
@@ -130,6 +156,15 @@ ro.x  // → 1  (but writing would throw in strict mode)
     ],
     hints: ['Object.freeze prevents property mutation at runtime.'],
     tags: ['TypeScript', 'utility-type', 'Readonly', 'beginner'],
+    usageExample: {
+      code: `type Config = Readonly<{ host: string; port: number }>
+const c: Config = { host: 'localhost', port: 3000 }
+// c.host = 'other'  → Error: cannot assign to read-only property`,
+      explanation: {
+        en: 'Readonly<T> makes every property of T immutable at the TypeScript type level.',
+        es: 'Readonly<T> hace inmutable cada propiedad de T a nivel del sistema de tipos de TypeScript.',
+      },
+    },
   },
   {
     slug: 'ts-utility-5',
@@ -163,6 +198,14 @@ buildRecord(['a', 'b', 'c'], 0)  // → { a: 0, b: 0, c: 0 }
     ],
     hints: ['Loop through keys and assign the same value to each.'],
     tags: ['TypeScript', 'utility-type', 'Record', 'beginner'],
+    usageExample: {
+      code: `type Scores = Record<string, number>
+const scores: Scores = { alice: 95, bob: 87 }`,
+      explanation: {
+        en: 'Record<K, V> constructs an object type whose keys are K and whose values are all V.',
+        es: 'Record<K, V> construye un tipo objeto cuyas claves son K y cuyos valores son todos V.',
+      },
+    },
   },
   {
     slug: 'ts-utility-6',
@@ -198,6 +241,14 @@ requireAll({ a: 1, b: undefined }) // throws
     ],
     hints: ['Check each property for undefined and throw with a descriptive message.'],
     tags: ['TypeScript', 'utility-type', 'Required', 'intermediate'],
+    usageExample: {
+      code: `type Config = Required<{ host?: string; port?: number }>
+// Config = { host: string; port: number }  (no more optional)`,
+      explanation: {
+        en: 'Required<T> removes optional markers from all properties, making them all mandatory.',
+        es: 'Required<T> elimina los marcadores opcionales de todas las propiedades, haciéndolas todas obligatorias.',
+      },
+    },
   },
   {
     slug: 'ts-utility-7',
@@ -231,6 +282,14 @@ getNonNull(null)  // throws
     ],
     hints: ['Check for both null and undefined explicitly.'],
     tags: ['TypeScript', 'utility-type', 'NonNullable', 'beginner'],
+    usageExample: {
+      code: `type Id = NonNullable<string | null | undefined>
+// Id = string`,
+      explanation: {
+        en: 'NonNullable<T> removes null and undefined from a union type, leaving only concrete values.',
+        es: 'NonNullable<T> elimina null y undefined de un tipo unión, dejando solo valores concretos.',
+      },
+    },
   },
   {
     slug: 'ts-utility-8',
@@ -262,6 +321,15 @@ getKeys({ a: 1, b: 2, c: 3 })  // → ['a', 'b', 'c']
     ],
     hints: ['Object.keys returns string[] — cast it to (keyof T)[].'],
     tags: ['TypeScript', 'utility-type', 'keyof', 'beginner'],
+    usageExample: {
+      code: `interface User { name: string; age: number }
+type UserKey = keyof User   // → 'name' | 'age'
+function getField(u: User, k: UserKey) { return u[k] }`,
+      explanation: {
+        en: 'keyof produces a union of an object type\'s property names, enabling type-safe property access.',
+        es: 'keyof produce una unión de los nombres de propiedades de un tipo, habilitando acceso con tipo seguro.',
+      },
+    },
   },
   {
     slug: 'ts-utility-9',
@@ -293,6 +361,15 @@ getValues({ a: 1, b: 2, c: 3 })  // → [1, 2, 3]
     ],
     hints: ['Object.values is the runtime equivalent.'],
     tags: ['TypeScript', 'utility-type', 'values', 'beginner'],
+    usageExample: {
+      code: `function makeUser() { return { name: 'Alice', age: 30 } }
+type User = ReturnType<typeof makeUser>
+// User = { name: string; age: number }`,
+      explanation: {
+        en: 'ReturnType<T> extracts the return type of a function type, enabling DRY type inference.',
+        es: 'ReturnType<T> extrae el tipo de retorno de un tipo función, habilitando inferencia de tipos DRY.',
+      },
+    },
   },
   {
     slug: 'ts-utility-10',
@@ -333,6 +410,13 @@ transformRecord({ a: 1, b: 2 }, (k, v) => \`\${k}=\${v}\`)
     ],
     hints: ['Access both key and value in the transform function.'],
     tags: ['TypeScript', 'utility-type', 'record', 'intermediate'],
+    usageExample: {
+      code: `transformRecord({ a: 1, b: 2 }, v => v * 10)   // → { a: 10, b: 20 }`,
+      explanation: {
+        en: 'transformRecord maps values in a Record from one type to another while preserving all keys.',
+        es: 'transformRecord transforma los valores de un Record de un tipo a otro preservando todas las claves.',
+      },
+    },
   },
   {
     slug: 'ts-utility-11',
@@ -363,6 +447,16 @@ hasAllKeys<{a:number}>(obj, ['a'])  // → true if obj.a exists
     ],
     hints: ['Use the \`in\` operator to check key existence.'],
     tags: ['TypeScript', 'utility-type', 'type-guard', 'intermediate'],
+    usageExample: {
+      code: `type RequiredKeys<T> = {
+  [K in keyof T]-?: undefined extends T[K] ? never : K
+}[keyof T]
+// Extracts only the required (non-optional) keys from T`,
+      explanation: {
+        en: 'Mapped types with -? remove optionality, enabling you to compute which keys are required.',
+        es: 'Los tipos mapeados con -? eliminan la opcionalidad, permitiendo calcular qué claves son obligatorias.',
+      },
+    },
   },
   {
     slug: 'ts-utility-12',
@@ -392,6 +486,14 @@ fromEntries([['a', 1], ['b', 2]])  // → { a: 1, b: 2 }
     ],
     hints: ['Object.fromEntries handles this directly.'],
     tags: ['TypeScript', 'utility-type', 'entries', 'beginner'],
+    usageExample: {
+      code: `const entries: [string, number][] = [['a', 1], ['b', 2]]
+Object.fromEntries(entries)   // → { a: 1, b: 2 }`,
+      explanation: {
+        en: 'Object.fromEntries converts an array of [key, value] pairs into an object.',
+        es: 'Object.fromEntries convierte un array de pares [clave, valor] en un objeto.',
+      },
+    },
   },
   {
     slug: 'ts-utility-13',
@@ -432,6 +534,13 @@ deepMerge({ a: { x: 1 }, b: 2 }, { a: { y: 3 } })
     ],
     hints: ['Check if both values are objects before merging at that level.'],
     tags: ['TypeScript', 'utility-type', 'merge', 'advanced'],
+    usageExample: {
+      code: `deepMerge({ a: { x: 1 } }, { a: { y: 2 } })   // → { a: { x: 1, y: 2 } }`,
+      explanation: {
+        en: 'deepMerge recursively merges nested objects instead of overwriting nested properties.',
+        es: 'deepMerge fusiona recursivamente objetos anidados en lugar de sobrescribir propiedades anidadas.',
+      },
+    },
   },
   {
     slug: 'ts-utility-14',
@@ -462,6 +571,14 @@ pluck([{name:'Alice',age:30},{name:'Bob',age:25}], 'name')
     ],
     hints: ['map over the array extracting item[key].'],
     tags: ['TypeScript', 'utility-type', 'pluck', 'intermediate'],
+    usageExample: {
+      code: `pluck([{ name: 'Alice', age: 30 }, { name: 'Bob', age: 25 }], 'name')
+// → ['Alice', 'Bob']`,
+      explanation: {
+        en: 'pluck<T> extracts a single property from every object in an array, returning a typed array.',
+        es: 'pluck<T> extrae una propiedad de cada objeto de un array, devolviendo un array con tipo.',
+      },
+    },
   },
   {
     slug: 'ts-utility-15',
@@ -493,6 +610,13 @@ invertRecord({ a: 'x', b: 'y' })  // → { x: 'a', y: 'b' }
     ],
     hints: ['Object.entries gives [key, value] pairs you can swap.'],
     tags: ['TypeScript', 'utility-type', 'invert', 'intermediate'],
+    usageExample: {
+      code: `invertRecord({ a: '1', b: '2' })   // → { '1': 'a', '2': 'b' }`,
+      explanation: {
+        en: 'invertRecord swaps keys and values in an object, producing the inverse mapping.',
+        es: 'invertRecord intercambia claves y valores en un objeto, produciendo el mapeo inverso.',
+      },
+    },
   },
   {
     slug: 'ts-utility-16',
@@ -522,6 +646,13 @@ keyValuePairs({ a: 1, b: 'x' })  // → [['a', 1], ['b', 'x']]
     ],
     hints: ['Object.entries returns [key, value] pairs — just cast for TypeScript.'],
     tags: ['TypeScript', 'utility-type', 'entries', 'beginner'],
+    usageExample: {
+      code: `keyValuePairs({ a: 1, b: 2 })   // → [['a', 1], ['b', 2]]`,
+      explanation: {
+        en: 'keyValuePairs converts an object into an array of typed [key, value] tuples using Object.entries.',
+        es: 'keyValuePairs convierte un objeto en un array de tuplas [clave, valor] tipadas usando Object.entries.',
+      },
+    },
   },
   {
     slug: 'ts-utility-17',
@@ -551,6 +682,14 @@ withDefaults({ a: 1 }, { a: 10, b: 20 })  // → { a: 1, b: 20 }
     ],
     hints: ['Spread defaults first, then input — later spreads overwrite earlier ones.'],
     tags: ['TypeScript', 'utility-type', 'defaults', 'intermediate'],
+    usageExample: {
+      code: `withDefaults({ host: 'custom.com' }, { host: 'localhost', port: 3000 })
+// → { host: 'custom.com', port: 3000 }`,
+      explanation: {
+        en: 'withDefaults merges user options over defaults, filling in only properties that are not already set.',
+        es: 'withDefaults fusiona las opciones del usuario sobre los defaults, rellenando solo las no establecidas.',
+      },
+    },
   },
   {
     slug: 'ts-utility-18',
@@ -584,6 +723,14 @@ pickByPredicate({ a: 1, b: 2, c: 3 }, v => v > 1)  // → { b: 2, c: 3 }
     ],
     hints: ['Iterate object entries; push only those where pred returns true.'],
     tags: ['TypeScript', 'utility-type', 'predicate', 'intermediate'],
+    usageExample: {
+      code: `pickByPredicate({ a: 1, b: 0, c: 2 }, v => v > 0)
+// → { a: 1, c: 2 }`,
+      explanation: {
+        en: 'pickByPredicate returns a new object with only the entries whose values satisfy the predicate.',
+        es: 'pickByPredicate devuelve un nuevo objeto con solo las entradas cuyos valores satisfacen el predicado.',
+      },
+    },
   },
   {
     slug: 'ts-utility-19',
@@ -615,6 +762,14 @@ mapKeys({ a: 1, b: 2 }, k => k.toUpperCase())  // → { A: 1, B: 2 }
     ],
     hints: ['Iterate keys, transform each via fn, assign the value to the new key.'],
     tags: ['TypeScript', 'utility-type', 'mapKeys', 'intermediate'],
+    usageExample: {
+      code: `mapKeys({ firstName: 'Alice' }, k => k.toLowerCase())
+// → { firstname: 'Alice' }`,
+      explanation: {
+        en: 'mapKeys transforms each key in an object using a mapping function, preserving the values.',
+        es: 'mapKeys transforma cada clave de un objeto usando una función de mapeo, preservando los valores.',
+      },
+    },
   },
   {
     slug: 'ts-utility-20',
@@ -650,5 +805,13 @@ countBy(['a', 'b', 'aa', 'bb', 'aaa'], s => String(s.length))
     ],
     hints: ['Nullish coalescing (??) initializes missing counters to 0.'],
     tags: ['TypeScript', 'utility-type', 'countBy', 'intermediate'],
+    usageExample: {
+      code: `countBy(['apple', 'banana', 'avocado'], s => s[0])
+// → { a: 2, b: 1 }`,
+      explanation: {
+        en: 'countBy counts array elements by a derived key, producing a Record of occurrence counts.',
+        es: 'countBy cuenta los elementos de un array por una clave derivada, produciendo un Record de conteos.',
+      },
+    },
   },
 ]

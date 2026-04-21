@@ -20,6 +20,16 @@ export const mapDeleteExercises: Exercise[] = [
     ],
     hints: ['delete() returns true when the key existed and was removed'],
     tags: ['Map', 'delete', 'method'],
+    usageExample: {
+      code: `const m = new Map([['a', 1], ['b', 2]])
+m.delete('a')   // → true
+m.delete('z')   // → false
+console.log(m.size) // → 1`,
+      explanation: {
+        en: 'Use Map.delete() to remove a key; it returns true if the key existed.',
+        es: 'Usa Map.delete() para eliminar una clave; devuelve true si la clave existía.',
+      },
+    },
   },
   {
     slug: 'map-delete-2',
@@ -40,6 +50,16 @@ export const mapDeleteExercises: Exercise[] = [
     ],
     hints: ['delete() returns false (not undefined) when the key did not exist'],
     tags: ['Map', 'delete', 'missing'],
+    usageExample: {
+      code: `const m = new Map([['a', 1], ['b', 2]])
+m.delete('a')   // → true
+m.delete('z')   // → false
+console.log(m.size) // → 1`,
+      explanation: {
+        en: 'Use Map.delete() to remove a key; it returns true if the key existed.',
+        es: 'Usa Map.delete() para eliminar una clave; devuelve true si la clave existía.',
+      },
+    },
   },
   {
     slug: 'map-delete-3',
@@ -60,6 +80,16 @@ export const mapDeleteExercises: Exercise[] = [
     ],
     hints: ['Each successful delete() reduces size by 1'],
     tags: ['Map', 'delete', 'size'],
+    usageExample: {
+      code: `const m = new Map([['a', 1], ['b', 2]])
+m.delete('a')   // → true
+m.delete('z')   // → false
+console.log(m.size) // → 1`,
+      explanation: {
+        en: 'Use Map.delete() to remove a key; it returns true if the key existed.',
+        es: 'Usa Map.delete() para eliminar una clave; devuelve true si la clave existía.',
+      },
+    },
   },
   {
     slug: 'map-delete-4',
@@ -80,6 +110,16 @@ export const mapDeleteExercises: Exercise[] = [
     ],
     hints: ['After deleting a key, it is completely removed from the Map'],
     tags: ['Map', 'delete', 'get'],
+    usageExample: {
+      code: `const m = new Map([['a', 1], ['b', 2]])
+m.delete('a')   // → true
+m.delete('z')   // → false
+console.log(m.size) // → 1`,
+      explanation: {
+        en: 'Use Map.delete() to remove a key; it returns true if the key existed.',
+        es: 'Usa Map.delete() para eliminar una clave; devuelve true si la clave existía.',
+      },
+    },
   },
   {
     slug: 'map-delete-5',
@@ -100,5 +140,15 @@ export const mapDeleteExercises: Exercise[] = [
     ],
     hints: ['delete() is idempotent — deleting an already-deleted key returns false'],
     tags: ['Map', 'delete', 'idempotent'],
+    usageExample: {
+      code: `const m = new Map([['a', 1], ['b', 2]])
+m.delete('a')   // → true
+m.delete('z')   // → false
+console.log(m.size) // → 1`,
+      explanation: {
+        en: 'Use Map.delete() to remove a key; it returns true if the key existed.',
+        es: 'Usa Map.delete() para eliminar una clave; devuelve true si la clave existía.',
+      },
+    },
   },
 ]

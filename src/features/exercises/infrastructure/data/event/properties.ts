@@ -19,6 +19,15 @@ export const eventPropertiesExercises: Exercise[] = [
     ],
     hints: ['The type is always a lowercase string matching what you passed to the constructor'],
     tags: ['Event', 'instance-property', 'type'],
+    usageExample: {
+      code: `const e = new Event('click', { bubbles: true })
+e.type      // → 'click'
+e.bubbles   // → true`,
+      explanation: {
+        en: "type and bubbles are core Event properties describing the event kind and propagation.",
+        es: "type y bubbles son propiedades principales de Event que describen el tipo y propagación del evento.",
+      },
+    },
   },
   {
     slug: 'event-properties-2',
@@ -38,6 +47,14 @@ export const eventPropertiesExercises: Exercise[] = [
     ],
     hints: ['isTrusted is a read-only property — you cannot set it to true in user code'],
     tags: ['Event', 'instance-property', 'isTrusted'],
+    usageExample: {
+      code: `const e = new Event('x')
+e.defaultPrevented  // → false (before any preventDefault call)`,
+      explanation: {
+        en: "defaultPrevented is true if preventDefault() has been called on the event.",
+        es: "defaultPrevented es true si se ha llamado a preventDefault() en el evento.",
+      },
+    },
   },
   {
     slug: 'event-properties-3',
@@ -57,6 +74,15 @@ export const eventPropertiesExercises: Exercise[] = [
     ],
     hints: ['Call preventDefault() on the event to change defaultPrevented to true'],
     tags: ['Event', 'instance-property', 'defaultPrevented'],
+    usageExample: {
+      code: `const e = new Event('x', { cancelable: true })
+e.preventDefault()
+e.defaultPrevented  // → true`,
+      explanation: {
+        en: "Call preventDefault() on cancelable events to stop the default browser behavior.",
+        es: "Llama a preventDefault() en eventos cancelables para detener el comportamiento predeterminado del navegador.",
+      },
+    },
   },
   {
     slug: 'event-properties-4',
@@ -76,6 +102,14 @@ export const eventPropertiesExercises: Exercise[] = [
     ],
     hints: ['cancelable must be explicitly set to true — it does not default to true'],
     tags: ['Event', 'instance-property', 'cancelable'],
+    usageExample: {
+      code: `const e = new Event('x')
+e.isTrusted  // → false (created by script, not user)`,
+      explanation: {
+        en: "isTrusted is true for events dispatched by the browser, false for programmatic events.",
+        es: "isTrusted es true para eventos enviados por el navegador, false para eventos programáticos.",
+      },
+    },
   },
   {
     slug: 'event-properties-5',
@@ -95,5 +129,13 @@ export const eventPropertiesExercises: Exercise[] = [
     ],
     hints: ['Pass { composed: true } to allow the event to cross shadow DOM boundaries'],
     tags: ['Event', 'instance-property', 'composed'],
+    usageExample: {
+      code: `const e = new Event('x')
+typeof e.timeStamp  // → 'number'`,
+      explanation: {
+        en: "timeStamp gives the high-resolution time when the event was created.",
+        es: "timeStamp da el tiempo de alta resolución en que se creó el evento.",
+      },
+    },
   },
 ]

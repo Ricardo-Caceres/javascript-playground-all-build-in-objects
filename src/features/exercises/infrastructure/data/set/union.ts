@@ -20,6 +20,16 @@ export const setUnionExercises: Exercise[] = [
     ],
     hints: ['union() returns a new Set containing all elements from both Sets'],
     tags: ['Set', 'union', 'ES2025'],
+    usageExample: {
+      code: `const a = new Set([1, 2])
+const b = new Set([2, 3])
+const all = a.union(b)
+console.log([...all]) // → [1, 2, 3]`,
+      explanation: {
+        en: 'Use Set.union() to combine two sets into a new set containing all unique values.',
+        es: 'Usa Set.union() para combinar dos conjuntos en uno nuevo con todos los valores únicos.',
+      },
+    },
   },
   {
     slug: 'set-union-2',
@@ -40,6 +50,16 @@ export const setUnionExercises: Exercise[] = [
     ],
     hints: ['union() combines both Sets and deduplicates values'],
     tags: ['Set', 'union', 'elements'],
+    usageExample: {
+      code: `const a = new Set([1, 2])
+const b = new Set([2, 3])
+const all = a.union(b)
+console.log([...all]) // → [1, 2, 3]`,
+      explanation: {
+        en: 'Use Set.union() to combine two sets into a new set containing all unique values.',
+        es: 'Usa Set.union() para combinar dos conjuntos en uno nuevo con todos los valores únicos.',
+      },
+    },
   },
   {
     slug: 'set-union-3',
@@ -60,6 +80,16 @@ export const setUnionExercises: Exercise[] = [
     ],
     hints: ['For disjoint Sets, union size equals the sum of both sizes'],
     tags: ['Set', 'union', 'disjoint'],
+    usageExample: {
+      code: `const a = new Set([1, 2])
+const b = new Set([2, 3])
+const all = a.union(b)
+console.log([...all]) // → [1, 2, 3]`,
+      explanation: {
+        en: 'Use Set.union() to combine two sets into a new set containing all unique values.',
+        es: 'Usa Set.union() para combinar dos conjuntos en uno nuevo con todos los valores únicos.',
+      },
+    },
   },
   {
     slug: 'set-union-4',
@@ -80,6 +110,16 @@ export const setUnionExercises: Exercise[] = [
     ],
     hints: ['union() with an empty Set returns a new Set equal to the original'],
     tags: ['Set', 'union', 'empty'],
+    usageExample: {
+      code: `const a = new Set([1, 2])
+const b = new Set([2, 3])
+const all = a.union(b)
+console.log([...all]) // → [1, 2, 3]`,
+      explanation: {
+        en: 'Use Set.union() to combine two sets into a new set containing all unique values.',
+        es: 'Usa Set.union() para combinar dos conjuntos en uno nuevo con todos los valores únicos.',
+      },
+    },
   },
   {
     slug: 'set-union-5',
@@ -100,5 +140,15 @@ export const setUnionExercises: Exercise[] = [
     ],
     hints: ['union() returns a new Set; neither original is modified'],
     tags: ['Set', 'union', 'immutable'],
+    usageExample: {
+      code: `const a = new Set([1, 2])
+const b = new Set([2, 3])
+const all = a.union(b)
+console.log([...all]) // → [1, 2, 3]`,
+      explanation: {
+        en: 'Use Set.union() to combine two sets into a new set containing all unique values.',
+        es: 'Usa Set.union() para combinar dos conjuntos en uno nuevo con todos los valores únicos.',
+      },
+    },
   },
 ]

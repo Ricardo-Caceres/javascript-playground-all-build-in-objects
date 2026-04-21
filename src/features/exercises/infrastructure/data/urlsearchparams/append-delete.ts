@@ -19,6 +19,15 @@ export const urlSearchParamsAppendDeleteExercises: Exercise[] = [
     ],
     hints: ['Unlike set(), append() never removes existing values'],
     tags: ['URLSearchParams', 'instance-method', 'append'],
+    usageExample: {
+      code: `const p = new URLSearchParams('a=1')
+p.append('a', '2')
+p.getAll('a')  // → ['1', '2']`,
+      explanation: {
+        en: "append() adds a new value for a key without removing existing ones.",
+        es: "append() agrega un nuevo valor para una clave sin eliminar los existentes.",
+      },
+    },
   },
   {
     slug: 'urlsearchparams-append-delete-2',
@@ -38,6 +47,15 @@ export const urlSearchParamsAppendDeleteExercises: Exercise[] = [
     ],
     hints: ['append() always adds a new entry, even for duplicate keys'],
     tags: ['URLSearchParams', 'instance-method', 'append', 'size'],
+    usageExample: {
+      code: `const p = new URLSearchParams('a=1&b=2')
+p.delete('a')
+p.toString()  // → 'b=2'`,
+      explanation: {
+        en: "delete() removes all values for a given key from the parameters.",
+        es: "delete() elimina todos los valores de una clave dada de los parámetros.",
+      },
+    },
   },
   {
     slug: 'urlsearchparams-append-delete-3',
@@ -57,6 +75,15 @@ export const urlSearchParamsAppendDeleteExercises: Exercise[] = [
     ],
     hints: ['delete() removes ALL entries for the key, not just the first'],
     tags: ['URLSearchParams', 'instance-method', 'delete'],
+    usageExample: {
+      code: `const p = new URLSearchParams('a=1&a=2')
+p.delete('a', '1')
+p.getAll('a')  // → ['2']`,
+      explanation: {
+        en: "Pass a second argument to delete() to remove only a specific value.",
+        es: "Pasa un segundo argumento a delete() para eliminar solo un valor específico.",
+      },
+    },
   },
   {
     slug: 'urlsearchparams-append-delete-4',
@@ -76,6 +103,16 @@ export const urlSearchParamsAppendDeleteExercises: Exercise[] = [
     ],
     hints: ['delete() is always safe to call, even for keys that do not exist'],
     tags: ['URLSearchParams', 'instance-method', 'delete', 'no-op'],
+    usageExample: {
+      code: `const p = new URLSearchParams()
+p.append('tag', 'js')
+p.append('tag', 'ts')
+p.getAll('tag')  // → ['js', 'ts']`,
+      explanation: {
+        en: "Use append() repeatedly to build multi-value parameters.",
+        es: "Usa append() repetidamente para construir parámetros con múltiples valores.",
+      },
+    },
   },
   {
     slug: 'urlsearchparams-append-delete-5',
@@ -95,5 +132,13 @@ export const urlSearchParamsAppendDeleteExercises: Exercise[] = [
     ],
     hints: ['toString() does NOT include the leading ? character'],
     tags: ['URLSearchParams', 'instance-method', 'toString'],
+    usageExample: {
+      code: `const p = new URLSearchParams('x=1')
+p.delete('z')  // no-op if key doesn't exist`,
+      explanation: {
+        en: "delete() is safe to call even if the key does not exist.",
+        es: "delete() es seguro de llamar incluso si la clave no existe.",
+      },
+    },
   },
 ]

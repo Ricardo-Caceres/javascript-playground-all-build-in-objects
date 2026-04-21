@@ -19,6 +19,17 @@ export const syntaxErrorExercises: Exercise[] = [
     ],
     hints: ['Use new SyntaxError(message) to create a SyntaxError instance.'],
     tags: ['syntaxerror', 'constructor', 'instanceof'],
+    usageExample: {
+      code: `try {
+  eval('{')
+} catch (e) {
+  e instanceof SyntaxError  // → true
+}`,
+      explanation: {
+        en: "SyntaxError is thrown when code contains invalid JavaScript syntax.",
+        es: "SyntaxError se lanza cuando el código contiene sintaxis JavaScript inválida.",
+      },
+    },
   },
   {
     slug: 'syntaxerror-constructor-2',
@@ -38,6 +49,13 @@ export const syntaxErrorExercises: Exercise[] = [
     ],
     hints: ['SyntaxError inherits from Error in the prototype chain.'],
     tags: ['syntaxerror', 'constructor', 'instanceof', 'error'],
+    usageExample: {
+      code: `new SyntaxError('Invalid syntax').message  // → 'Invalid syntax'`,
+      explanation: {
+        en: "You can create a SyntaxError manually with a descriptive message.",
+        es: "Puedes crear un SyntaxError manualmente con un mensaje descriptivo.",
+      },
+    },
   },
   {
     slug: 'syntaxerror-constructor-3',
@@ -57,6 +75,13 @@ export const syntaxErrorExercises: Exercise[] = [
     ],
     hints: ['The message is stored in the .message property.'],
     tags: ['syntaxerror', 'constructor', 'message'],
+    usageExample: {
+      code: `new SyntaxError('bad').name  // → 'SyntaxError'`,
+      explanation: {
+        en: "The name property of a SyntaxError is always 'SyntaxError'.",
+        es: "La propiedad name de un SyntaxError siempre es 'SyntaxError'.",
+      },
+    },
   },
   {
     slug: 'syntaxerror-constructor-4',
@@ -76,6 +101,13 @@ export const syntaxErrorExercises: Exercise[] = [
     ],
     hints: ['Error subtypes have a .name property matching their constructor name.'],
     tags: ['syntaxerror', 'constructor', 'name'],
+    usageExample: {
+      code: `new SyntaxError() instanceof Error  // → true`,
+      explanation: {
+        en: "SyntaxError inherits from Error, so it has all standard error properties.",
+        es: "SyntaxError hereda de Error, por lo que tiene todas las propiedades estándar de error.",
+      },
+    },
   },
   {
     slug: 'syntaxerror-constructor-5',
@@ -107,5 +139,16 @@ export const syntaxErrorExercises: Exercise[] = [
     ],
     hints: ['JSON.parse throws a SyntaxError when given invalid JSON input.'],
     tags: ['syntaxerror', 'constructor', 'throw', 'catch', 'json'],
+    usageExample: {
+      code: `try {
+  JSON.parse('{bad}')
+} catch (e) {
+  e instanceof SyntaxError  // → true
+}`,
+      explanation: {
+        en: "JSON.parse() throws a SyntaxError when given invalid JSON.",
+        es: "JSON.parse() lanza un SyntaxError cuando recibe JSON inválido.",
+      },
+    },
   },
 ]

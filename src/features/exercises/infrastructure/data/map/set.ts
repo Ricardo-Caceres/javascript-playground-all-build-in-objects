@@ -20,6 +20,16 @@ export const mapSetExercises: Exercise[] = [
     ],
     hints: ['set() returns the Map itself, making chaining possible'],
     tags: ['Map', 'set', 'chaining'],
+    usageExample: {
+      code: `const m = new Map()
+m.set('a', 1)
+m.set('b', 2)
+console.log(m.size) // → 2`,
+      explanation: {
+        en: 'Use Map.set() to add or update a key-value pair; it returns the map itself.',
+        es: 'Usa Map.set() para agregar o actualizar un par clave-valor; devuelve el propio mapa.',
+      },
+    },
   },
   {
     slug: 'map-set-2',
@@ -40,6 +50,16 @@ export const mapSetExercises: Exercise[] = [
     ],
     hints: ['set() stores the value and get() retrieves it by key'],
     tags: ['Map', 'set', 'get'],
+    usageExample: {
+      code: `const m = new Map()
+m.set('a', 1)
+m.set('b', 2)
+console.log(m.size) // → 2`,
+      explanation: {
+        en: 'Use Map.set() to add or update a key-value pair; it returns the map itself.',
+        es: 'Usa Map.set() para agregar o actualizar un par clave-valor; devuelve el propio mapa.',
+      },
+    },
   },
   {
     slug: 'map-set-3',
@@ -60,6 +80,16 @@ export const mapSetExercises: Exercise[] = [
     ],
     hints: ['Setting an existing key updates the value; the size stays the same'],
     tags: ['Map', 'set', 'overwrite'],
+    usageExample: {
+      code: `const m = new Map()
+m.set('a', 1)
+m.set('b', 2)
+console.log(m.size) // → 2`,
+      explanation: {
+        en: 'Use Map.set() to add or update a key-value pair; it returns the map itself.',
+        es: 'Usa Map.set() para agregar o actualizar un par clave-valor; devuelve el propio mapa.',
+      },
+    },
   },
   {
     slug: 'map-set-4',
@@ -80,6 +110,16 @@ export const mapSetExercises: Exercise[] = [
     ],
     hints: ['Map uses reference equality for object keys, not deep equality'],
     tags: ['Map', 'set', 'objectKey'],
+    usageExample: {
+      code: `const m = new Map()
+m.set('a', 1)
+m.set('b', 2)
+console.log(m.size) // → 2`,
+      explanation: {
+        en: 'Use Map.set() to add or update a key-value pair; it returns the map itself.',
+        es: 'Usa Map.set() para agregar o actualizar un par clave-valor; devuelve el propio mapa.',
+      },
+    },
   },
   {
     slug: 'map-set-5',
@@ -100,5 +140,15 @@ export const mapSetExercises: Exercise[] = [
     ],
     hints: ['Each unique key added with set() increases size by exactly 1'],
     tags: ['Map', 'set', 'size'],
+    usageExample: {
+      code: `const m = new Map()
+m.set('a', 1)
+m.set('b', 2)
+console.log(m.size) // → 2`,
+      explanation: {
+        en: 'Use Map.set() to add or update a key-value pair; it returns the map itself.',
+        es: 'Usa Map.set() para agregar o actualizar un par clave-valor; devuelve el propio mapa.',
+      },
+    },
   },
 ]

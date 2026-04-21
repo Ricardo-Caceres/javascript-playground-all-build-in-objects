@@ -20,6 +20,17 @@ export const promiseAllExercises: Exercise[] = [
     ],
     hints: ['Promise.all() always returns a Promise, even with an empty array.'],
     tags: ['promise', 'all', 'instanceof'],
+    usageExample: {
+      code: `const p1 = Promise.resolve(1)
+const p2 = Promise.resolve(2)
+Promise.all([p1, p2]).then(values => {
+  console.log(values) // → [1, 2]
+})`,
+      explanation: {
+        en: 'Promise.all() waits for all promises to resolve and returns their values as an array.',
+        es: 'Promise.all() espera a que todas las promesas se resuelvan y devuelve sus valores en un arreglo.',
+      },
+    },
   },
   {
     slug: 'promise-all-2',
@@ -40,6 +51,17 @@ export const promiseAllExercises: Exercise[] = [
     ],
     hints: ['Promise instances are objects.'],
     tags: ['promise', 'all', 'typeof'],
+    usageExample: {
+      code: `const p1 = Promise.resolve(1)
+const p2 = Promise.resolve(2)
+Promise.all([p1, p2]).then(values => {
+  console.log(values) // → [1, 2]
+})`,
+      explanation: {
+        en: 'Promise.all() waits for all promises to resolve and returns their values as an array.',
+        es: 'Promise.all() espera a que todas las promesas se resuelvan y devuelve sus valores en un arreglo.',
+      },
+    },
   },
   {
     slug: 'promise-all-3',
@@ -60,6 +82,17 @@ export const promiseAllExercises: Exercise[] = [
     ],
     hints: ['Promise.all() wraps all results into a single Promise.'],
     tags: ['promise', 'all', 'resolve'],
+    usageExample: {
+      code: `const p1 = Promise.resolve(1)
+const p2 = Promise.resolve(2)
+Promise.all([p1, p2]).then(values => {
+  console.log(values) // → [1, 2]
+})`,
+      explanation: {
+        en: 'Promise.all() waits for all promises to resolve and returns their values as an array.',
+        es: 'Promise.all() espera a que todas las promesas se resuelvan y devuelve sus valores en un arreglo.',
+      },
+    },
   },
   {
     slug: 'promise-all-4',
@@ -80,6 +113,17 @@ export const promiseAllExercises: Exercise[] = [
     ],
     hints: ['Promise.all is a static method (function) on Promise.'],
     tags: ['promise', 'all', 'typeof'],
+    usageExample: {
+      code: `const p1 = Promise.resolve(1)
+const p2 = Promise.resolve(2)
+Promise.all([p1, p2]).then(values => {
+  console.log(values) // → [1, 2]
+})`,
+      explanation: {
+        en: 'Promise.all() waits for all promises to resolve and returns their values as an array.',
+        es: 'Promise.all() espera a que todas las promesas se resuelvan y devuelve sus valores en un arreglo.',
+      },
+    },
   },
   {
     slug: 'promise-all-5',
@@ -100,5 +144,16 @@ export const promiseAllExercises: Exercise[] = [
     ],
     hints: ['Promise.all accepts any iterable of values or Promises.'],
     tags: ['promise', 'all', 'iterable'],
+    usageExample: {
+      code: `const p1 = Promise.resolve(1)
+const p2 = Promise.resolve(2)
+Promise.all([p1, p2]).then(values => {
+  console.log(values) // → [1, 2]
+})`,
+      explanation: {
+        en: 'Promise.all() waits for all promises to resolve and returns their values as an array.',
+        es: 'Promise.all() espera a que todas las promesas se resuelvan y devuelve sus valores en un arreglo.',
+      },
+    },
   },
 ]

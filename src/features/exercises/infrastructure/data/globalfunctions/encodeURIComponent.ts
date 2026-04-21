@@ -20,6 +20,13 @@ export const globalEncodeURIComponentExercises: Exercise[] = [
     ],
     hints: ['encodeURIComponent encodes more characters than encodeURI, including & and =.'],
     tags: ['globalfunctions', 'encodeURIComponent', 'url'],
+    usageExample: {
+      code: `encodeURIComponent('hello world')   // → 'hello%20world'`,
+      explanation: {
+        en: 'encodeURIComponent() encodes all characters not in the unreserved set, including & and =.',
+        es: 'encodeURIComponent() codifica todos los caracteres fuera del conjunto sin reservas, incluidos & y =.',
+      },
+    },
   },
   {
     slug: 'global-encodeuricomponent-2',
@@ -40,6 +47,14 @@ export const globalEncodeURIComponentExercises: Exercise[] = [
     ],
     hints: ['Unlike encodeURI, encodeURIComponent encodes = (%3D) and & (%26).'],
     tags: ['globalfunctions', 'encodeURIComponent', 'url'],
+    usageExample: {
+      code: `encodeURIComponent('a=1&b=2')   // → 'a%3D1%26b%3D2'
+// = → %3D,  & → %26`,
+      explanation: {
+        en: 'Unlike encodeURI(), encodeURIComponent() also encodes & (%26) and = (%3D).',
+        es: 'A diferencia de encodeURI(), encodeURIComponent() también codifica & (%26) y = (%3D).',
+      },
+    },
   },
   {
     slug: 'global-encodeuricomponent-3',
@@ -60,6 +75,14 @@ export const globalEncodeURIComponentExercises: Exercise[] = [
     ],
     hints: ['? is encoded as %3F. This is useful when building query strings to embed in another URL.'],
     tags: ['globalfunctions', 'encodeURIComponent', 'url'],
+    usageExample: {
+      code: `encodeURIComponent('?key=value')   // → '%3Fkey%3Dvalue'
+// ? → %3F`,
+      explanation: {
+        en: 'encodeURIComponent() encodes ? (%3F), making it safe to embed query strings in URLs.',
+        es: 'encodeURIComponent() codifica ? (%3F), lo que permite incrustar cadenas de consulta de forma segura.',
+      },
+    },
   },
   {
     slug: 'global-encodeuricomponent-4',
@@ -80,6 +103,13 @@ export const globalEncodeURIComponentExercises: Exercise[] = [
     ],
     hints: ['encodeURIComponent always returns a string.'],
     tags: ['globalfunctions', 'encodeURIComponent', 'typeof'],
+    usageExample: {
+      code: `typeof encodeURIComponent('test')   // → 'string'`,
+      explanation: {
+        en: 'encodeURIComponent() always returns a string.',
+        es: 'encodeURIComponent() siempre devuelve una cadena.',
+      },
+    },
   },
   {
     slug: 'global-encodeuricomponent-5',
@@ -100,5 +130,13 @@ export const globalEncodeURIComponentExercises: Exercise[] = [
     ],
     hints: ['decodeURIComponent and encodeURIComponent are inverse operations.'],
     tags: ['globalfunctions', 'encodeURIComponent', 'decodeURIComponent', 'round-trip'],
+    usageExample: {
+      code: `const value = 'hello=world'
+decodeURIComponent(encodeURIComponent(value))   // → 'hello=world'`,
+      explanation: {
+        en: 'encodeURIComponent() and decodeURIComponent() are inverse operations.',
+        es: 'encodeURIComponent() y decodeURIComponent() son operaciones inversas.',
+      },
+    },
   },
 ]

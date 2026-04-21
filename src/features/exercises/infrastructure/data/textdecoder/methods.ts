@@ -19,6 +19,14 @@ export const textDecoderMethodsExercises: Exercise[] = [
     ],
     hints: ['TextEncoder and TextDecoder are inverse operations for valid UTF-8.'],
     tags: ['TextDecoder', 'decode', 'round-trip'],
+    usageExample: {
+      code: `const bytes = new Uint8Array([72, 101, 108, 108, 111])
+new TextDecoder().decode(bytes)  // → 'Hello'`,
+      explanation: {
+        en: "decode() converts a buffer of bytes into a JavaScript string.",
+        es: "decode() convierte un búfer de bytes en una cadena JavaScript.",
+      },
+    },
   },
   {
     slug: 'textdecoder-methods-2',
@@ -38,6 +46,14 @@ export const textDecoderMethodsExercises: Exercise[] = [
     ],
     hints: ['No bytes means no characters — the result is an empty string.'],
     tags: ['TextDecoder', 'decode', 'empty'],
+    usageExample: {
+      code: `const dec = new TextDecoder()
+dec.decode(new Uint8Array([]))  // → ''`,
+      explanation: {
+        en: "Decoding an empty buffer returns an empty string.",
+        es: "Decodificar un búfer vacío devuelve una cadena vacía.",
+      },
+    },
   },
   {
     slug: 'textdecoder-methods-3',
@@ -57,6 +73,15 @@ export const textDecoderMethodsExercises: Exercise[] = [
     ],
     hints: ['ASCII byte 72 corresponds to the character H.'],
     tags: ['TextDecoder', 'decode', 'ASCII'],
+    usageExample: {
+      code: `const enc = new TextEncoder()
+const buf = enc.encode('Hello')
+new TextDecoder().decode(buf)  // → 'Hello'`,
+      explanation: {
+        en: "Combine TextEncoder.encode() and TextDecoder.decode() to round-trip strings.",
+        es: "Combina TextEncoder.encode() y TextDecoder.decode() para hacer viajes de ida y vuelta con cadenas.",
+      },
+    },
   },
   {
     slug: 'textdecoder-methods-4',
@@ -76,6 +101,16 @@ export const textDecoderMethodsExercises: Exercise[] = [
     ],
     hints: ['€ is U+20AC. Despite 3 bytes, decode returns a single character.'],
     tags: ['TextDecoder', 'decode', 'multi-byte', 'UTF-8'],
+    usageExample: {
+      code: `const dec = new TextDecoder()
+const ab = new ArrayBuffer(3)
+new Uint8Array(ab).set([65, 66, 67])
+dec.decode(ab)  // → 'ABC'`,
+      explanation: {
+        en: "decode() can also accept an ArrayBuffer directly.",
+        es: "decode() también puede aceptar directamente un ArrayBuffer.",
+      },
+    },
   },
   {
     slug: 'textdecoder-methods-5',
@@ -95,5 +130,13 @@ export const textDecoderMethodsExercises: Exercise[] = [
     ],
     hints: ['For ASCII strings, the decoded length equals the original string length.'],
     tags: ['TextDecoder', 'decode', 'length'],
+    usageExample: {
+      code: `const dec = new TextDecoder('utf-8', { fatal: true })
+// throws on invalid UTF-8 sequences`,
+      explanation: {
+        en: "Pass { fatal: true } to make decode() throw on invalid byte sequences.",
+        es: "Pasa { fatal: true } para que decode() lance una excepción en secuencias de bytes inválidas.",
+      },
+    },
   },
 ]

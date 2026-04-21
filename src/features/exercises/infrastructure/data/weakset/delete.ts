@@ -20,6 +20,16 @@ export const weakSetDeleteExercises: Exercise[] = [
     ],
     hints: ['delete() returns true when the object existed in the set.'],
     tags: ['weakset', 'delete', 'instance-method'],
+    usageExample: {
+      code: `const ws = new WeakSet()
+const o = {}
+ws.add(o)
+ws.delete(o)  // → true`,
+      explanation: {
+        en: "delete() removes the object from the WeakSet and returns true if it was present.",
+        es: "delete() elimina el objeto del WeakSet y devuelve true si estaba presente.",
+      },
+    },
   },
   {
     slug: 'weakset-delete-2',
@@ -40,6 +50,15 @@ export const weakSetDeleteExercises: Exercise[] = [
     ],
     hints: ['delete() returns false when the object was not found.'],
     tags: ['weakset', 'delete', 'false'],
+    usageExample: {
+      code: `const ws = new WeakSet()
+const o = {}
+ws.delete(o)  // → false`,
+      explanation: {
+        en: "delete() returns false if the object was never in the WeakSet.",
+        es: "delete() devuelve false si el objeto nunca estuvo en el WeakSet.",
+      },
+    },
   },
   {
     slug: 'weakset-delete-3',
@@ -60,6 +79,17 @@ export const weakSetDeleteExercises: Exercise[] = [
     ],
     hints: ['delete() removes the object; has() reflects this change.'],
     tags: ['weakset', 'delete', 'has'],
+    usageExample: {
+      code: `const ws = new WeakSet()
+const o = {}
+ws.add(o)
+ws.delete(o)
+ws.has(o)  // → false`,
+      explanation: {
+        en: "After delete(), has() confirms the object is gone.",
+        es: "Después de delete(), has() confirma que el objeto ha desaparecido.",
+      },
+    },
   },
   {
     slug: 'weakset-delete-4',
@@ -80,6 +110,17 @@ export const weakSetDeleteExercises: Exercise[] = [
     ],
     hints: ['Each object is independently managed in the WeakSet.'],
     tags: ['weakset', 'delete', 'isolation'],
+    usageExample: {
+      code: `const ws = new WeakSet()
+const o = {}
+ws.add(o)
+const ok = ws.delete(o)
+ok  // → true`,
+      explanation: {
+        en: "The boolean return value tells you if the removal succeeded.",
+        es: "El valor de retorno booleano indica si la eliminación fue exitosa.",
+      },
+    },
   },
   {
     slug: 'weakset-delete-5',
@@ -100,5 +141,15 @@ export const weakSetDeleteExercises: Exercise[] = [
     ],
     hints: ['Once an object is deleted, subsequent deletes return false.'],
     tags: ['weakset', 'delete', 'double'],
+    usageExample: {
+      code: `const ws = new WeakSet()
+const a = {}, b = {}
+ws.add(a)
+ws.delete(b)  // → false (b was not added)`,
+      explanation: {
+        en: "Deleting an object that was never added returns false without throwing.",
+        es: "Eliminar un objeto que nunca se agregó devuelve false sin lanzar excepción.",
+      },
+    },
   },
 ]

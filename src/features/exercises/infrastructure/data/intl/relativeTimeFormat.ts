@@ -39,6 +39,14 @@ export const intlRelativeTimeFormatExercises: Exercise[] = [
     ],
     hints: ['Use new Intl.RelativeTimeFormat(locale)'],
     tags: [],
+    usageExample: {
+      code: `const rtf = new Intl.RelativeTimeFormat('en', { numeric: 'auto' });
+// Creates a relative-time formatter`,
+      explanation: {
+        en: "Intl.RelativeTimeFormat formats durations like '3 hours ago' or 'in 2 days'.",
+        es: "Intl.RelativeTimeFormat formatea duraciones como 'hace 3 horas' o 'en 2 días'.",
+      },
+    },
   },
   {
     slug: 'intl-relativetimeformat-format-negative',
@@ -78,6 +86,15 @@ export const intlRelativeTimeFormatExercises: Exercise[] = [
     ],
     hints: ['Use .format(-1, "day")'],
     tags: [],
+    usageExample: {
+      code: `const rtf = new Intl.RelativeTimeFormat('en', { numeric: 'auto' });
+rtf.format(-1, 'day'); // 'yesterday'
+rtf.format(-3, 'hour'); // '3 hours ago'`,
+      explanation: {
+        en: "Use negative values to express time in the past.",
+        es: "Usa valores negativos para expresar tiempo en el pasado.",
+      },
+    },
   },
   {
     slug: 'intl-relativetimeformat-format-positive',
@@ -117,6 +134,15 @@ export const intlRelativeTimeFormatExercises: Exercise[] = [
     ],
     hints: ['Use .format(3, "month")'],
     tags: [],
+    usageExample: {
+      code: `const rtf = new Intl.RelativeTimeFormat('en', { numeric: 'auto' });
+rtf.format(1, 'day'); // 'tomorrow'
+rtf.format(3, 'week'); // 'in 3 weeks'`,
+      explanation: {
+        en: "Use positive values to express time in the future.",
+        es: "Usa valores positivos para expresar tiempo en el futuro.",
+      },
+    },
   },
   {
     slug: 'intl-relativetimeformat-formatToParts',
@@ -156,6 +182,14 @@ export const intlRelativeTimeFormatExercises: Exercise[] = [
     ],
     hints: ['Use .formatToParts(1, "week")'],
     tags: [],
+    usageExample: {
+      code: `const parts = new Intl.RelativeTimeFormat('en').formatToParts(-3, 'day');
+// [{type:'integer',value:'3'},{type:'literal',value:' days ago'}]`,
+      explanation: {
+        en: "formatToParts() breaks the relative time string into typed segments.",
+        es: "formatToParts() divide la cadena de tiempo relativo en segmentos tipados.",
+      },
+    },
   },
   {
     slug: 'intl-relativetimeformat-resolvedOptions',
@@ -195,5 +229,13 @@ export const intlRelativeTimeFormatExercises: Exercise[] = [
     ],
     hints: ['Use .resolvedOptions()'],
     tags: [],
+    usageExample: {
+      code: `const opts = new Intl.RelativeTimeFormat('es').resolvedOptions();
+// { locale: 'es', style: 'long', numeric: 'always' }`,
+      explanation: {
+        en: "resolvedOptions() returns the locale and style options in use.",
+        es: "resolvedOptions() devuelve el idioma y las opciones de estilo en uso.",
+      },
+    },
   },
 ];

@@ -38,6 +38,13 @@ export const globalThisExercises: Exercise[] = [
     ],
     hints: ['globalThis always refers to the global object'],
     tags: [],
+    usageExample: {
+      code: `globalThis.setTimeout === setTimeout  // → true`,
+      explanation: {
+        en: "globalThis provides a consistent reference to the global object across environments.",
+        es: "globalThis proporciona una referencia consistente al objeto global en todos los entornos.",
+      },
+    },
   },
   {
     slug: 'globalthis-same-reference',
@@ -76,6 +83,13 @@ export const globalThisExercises: Exercise[] = [
     ],
     hints: ['globalThis is a single shared object reference'],
     tags: [],
+    usageExample: {
+      code: `globalThis.console.log('hello')  // works in any JS environment`,
+      explanation: {
+        en: "Use globalThis to access global APIs without relying on window or global.",
+        es: "Usa globalThis para acceder a APIs globales sin depender de window o global.",
+      },
+    },
   },
   {
     slug: 'globalthis-parseint',
@@ -114,6 +128,13 @@ export const globalThisExercises: Exercise[] = [
     ],
     hints: ['Global functions are accessible as properties of globalThis'],
     tags: [],
+    usageExample: {
+      code: `typeof globalThis  // → 'object'`,
+      explanation: {
+        en: "globalThis is always an object regardless of whether you're in Node.js or a browser.",
+        es: "globalThis siempre es un objeto sin importar si estás en Node.js o en un navegador.",
+      },
+    },
   },
   {
     slug: 'globalthis-isnan',
@@ -152,6 +173,14 @@ export const globalThisExercises: Exercise[] = [
     ],
     hints: ['isNaN is a property of globalThis'],
     tags: [],
+    usageExample: {
+      code: `globalThis.myVar = 42
+console.log(globalThis.myVar)  // → 42`,
+      explanation: {
+        en: "You can store values on globalThis to make them accessible from anywhere in the program.",
+        es: "Puedes almacenar valores en globalThis para hacerlos accesibles desde cualquier parte del programa.",
+      },
+    },
   },
   {
     slug: 'globalthis-math',
@@ -190,5 +219,12 @@ export const globalThisExercises: Exercise[] = [
     ],
     hints: ['Math is accessible as globalThis.Math'],
     tags: [],
+    usageExample: {
+      code: `Object.keys(globalThis).includes('Math')  // → true`,
+      explanation: {
+        en: "Standard built-ins like Math and JSON are properties of globalThis.",
+        es: "Los built-ins estándar como Math y JSON son propiedades de globalThis.",
+      },
+    },
   },
 ]

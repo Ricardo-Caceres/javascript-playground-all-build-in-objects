@@ -19,6 +19,14 @@ export const eventConstructorExercises: Exercise[] = [
     ],
     hints: ['The first argument to new Event() becomes the type property'],
     tags: ['Event', 'constructor', 'type'],
+    usageExample: {
+      code: `const e = new Event('click')
+e.type  // → 'click'`,
+      explanation: {
+        en: "Event() creates a new synthetic event with the specified type name.",
+        es: "Event() crea un nuevo evento sintético con el nombre de tipo especificado.",
+      },
+    },
   },
   {
     slug: 'event-constructor-2',
@@ -38,6 +46,14 @@ export const eventConstructorExercises: Exercise[] = [
     ],
     hints: ['Event is a global constructor available in both browser and Node.js (v18+)'],
     tags: ['Event', 'constructor', 'instanceof'],
+    usageExample: {
+      code: `const e = new Event('myEvent', { bubbles: true })
+e.bubbles  // → true`,
+      explanation: {
+        en: "Pass an options object to configure whether the event bubbles and is cancelable.",
+        es: "Pasa un objeto de opciones para configurar si el evento hace burbuja y es cancelable.",
+      },
+    },
   },
   {
     slug: 'event-constructor-3',
@@ -57,6 +73,14 @@ export const eventConstructorExercises: Exercise[] = [
     ],
     hints: ['To make an event bubble, pass { bubbles: true } as the second argument'],
     tags: ['Event', 'constructor', 'bubbles'],
+    usageExample: {
+      code: `const e = new Event('test', { cancelable: true })
+e.cancelable  // → true`,
+      explanation: {
+        en: "Set cancelable: true to allow listeners to call preventDefault().",
+        es: "Establece cancelable: true para permitir que los oyentes llamen a preventDefault().",
+      },
+    },
   },
   {
     slug: 'event-constructor-4',
@@ -76,6 +100,15 @@ export const eventConstructorExercises: Exercise[] = [
     ],
     hints: ['The second argument to new Event() is an EventInit dictionary'],
     tags: ['Event', 'constructor', 'bubbles'],
+    usageExample: {
+      code: `const target = new EventTarget()
+const e = new Event('ping')
+target.dispatchEvent(e)  // dispatches the event`,
+      explanation: {
+        en: "Use dispatchEvent() to fire a custom event on any EventTarget.",
+        es: "Usa dispatchEvent() para disparar un evento personalizado en cualquier EventTarget.",
+      },
+    },
   },
   {
     slug: 'event-constructor-5',
@@ -95,5 +128,12 @@ export const eventConstructorExercises: Exercise[] = [
     ],
     hints: ['Pass { cancelable: true } to allow preventDefault() to have an effect'],
     tags: ['Event', 'constructor', 'cancelable'],
+    usageExample: {
+      code: `new Event('x') instanceof Event  // → true`,
+      explanation: {
+        en: "Event instances can be verified with instanceof.",
+        es: "Las instancias de Event se pueden verificar con instanceof.",
+      },
+    },
   },
 ]

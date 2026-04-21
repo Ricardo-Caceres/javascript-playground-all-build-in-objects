@@ -56,5 +56,15 @@ expect(arr[0]).toBe(5);`
     ],
     hints: ['Use Atomics.compareExchange(typedArray, index, expected, replacement)'],
     tags: [],
+    usageExample: {
+      code: `const i32 = new Int32Array(new SharedArrayBuffer(4))
+Atomics.store(i32, 0, 5)
+Atomics.compareExchange(i32, 0, 5, 10)  // → 5 (old val)
+Atomics.load(i32, 0)  // → 10`,
+      explanation: {
+        en: "compareExchange() updates a value only if it currently equals the expected value.",
+        es: "compareExchange() actualiza un valor solo si actualmente es igual al valor esperado.",
+      },
+    },
   },
 ];

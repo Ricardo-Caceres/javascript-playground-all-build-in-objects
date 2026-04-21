@@ -19,6 +19,13 @@ export const typeErrorExercises: Exercise[] = [
     ],
     hints: ['Use new TypeError(message) to create a TypeError instance.'],
     tags: ['typeerror', 'constructor', 'instanceof'],
+    usageExample: {
+      code: `null.toString()  // throws TypeError: Cannot read properties of null`,
+      explanation: {
+        en: "TypeError is thrown when an operation is applied to a value of the wrong type.",
+        es: "TypeError se lanza cuando se aplica una operación a un valor de tipo incorrecto.",
+      },
+    },
   },
   {
     slug: 'typeerror-constructor-2',
@@ -38,6 +45,13 @@ export const typeErrorExercises: Exercise[] = [
     ],
     hints: ['TypeError inherits from Error in the prototype chain.'],
     tags: ['typeerror', 'constructor', 'instanceof', 'error'],
+    usageExample: {
+      code: `new TypeError('Not a function').message  // → 'Not a function'`,
+      explanation: {
+        en: "Create a TypeError manually to signal that the wrong type of argument was passed.",
+        es: "Crea un TypeError manualmente para señalar que se pasó un argumento del tipo incorrecto.",
+      },
+    },
   },
   {
     slug: 'typeerror-constructor-3',
@@ -57,6 +71,13 @@ export const typeErrorExercises: Exercise[] = [
     ],
     hints: ['The message is stored in the .message property.'],
     tags: ['typeerror', 'constructor', 'message'],
+    usageExample: {
+      code: `new TypeError('oops').name  // → 'TypeError'`,
+      explanation: {
+        en: "The name property of a TypeError is always 'TypeError'.",
+        es: "La propiedad name de un TypeError siempre es 'TypeError'.",
+      },
+    },
   },
   {
     slug: 'typeerror-constructor-4',
@@ -76,6 +97,13 @@ export const typeErrorExercises: Exercise[] = [
     ],
     hints: ['Error subtypes have a .name property matching their constructor name.'],
     tags: ['typeerror', 'constructor', 'name'],
+    usageExample: {
+      code: `new TypeError() instanceof Error  // → true`,
+      explanation: {
+        en: "TypeError is a subtype of Error and shares all standard error properties.",
+        es: "TypeError es un subtipo de Error y comparte todas las propiedades estándar de error.",
+      },
+    },
   },
   {
     slug: 'typeerror-constructor-5',
@@ -107,5 +135,12 @@ export const typeErrorExercises: Exercise[] = [
     ],
     hints: ['Accessing a property on null or undefined throws a TypeError.'],
     tags: ['typeerror', 'constructor', 'throw', 'catch'],
+    usageExample: {
+      code: `undefined()  // throws TypeError: undefined is not a function`,
+      explanation: {
+        en: "Calling something that is not a function throws a TypeError.",
+        es: "Llamar a algo que no es una función lanza un TypeError.",
+      },
+    },
   },
 ]

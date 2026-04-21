@@ -20,6 +20,13 @@ export const jsonStringifyExercises: Exercise[] = [
     ],
     hints: ['JSON.stringify serializes objects to JSON format with double-quoted keys.'],
     tags: ['json', 'stringify', 'object'],
+    usageExample: {
+      code: `JSON.stringify({ a: 1 })  // → '{"a":1}'`,
+      explanation: {
+        en: "JSON.stringify() converts a JavaScript value into a JSON string.",
+        es: "JSON.stringify() convierte un valor de JavaScript en una cadena JSON.",
+      },
+    },
   },
   {
     slug: 'json-stringify-2',
@@ -40,6 +47,13 @@ export const jsonStringifyExercises: Exercise[] = [
     ],
     hints: ['Arrays serialize to JSON array notation.'],
     tags: ['json', 'stringify', 'array'],
+    usageExample: {
+      code: `JSON.stringify([1, 2, 3])  // → '[1,2,3]'`,
+      explanation: {
+        en: "JSON.stringify() serializes arrays into their JSON string representation.",
+        es: "JSON.stringify() serializa arreglos en su representación JSON como cadena.",
+      },
+    },
   },
   {
     slug: 'json-stringify-3',
@@ -60,6 +74,13 @@ export const jsonStringifyExercises: Exercise[] = [
     ],
     hints: ['Strings are wrapped in double quotes in JSON output.'],
     tags: ['json', 'stringify', 'string'],
+    usageExample: {
+      code: `JSON.stringify({ a: 1 }, null, 2)  // pretty-prints with 2-space indent`,
+      explanation: {
+        en: "Pass a space argument to JSON.stringify() to produce human-readable output.",
+        es: "Pasa un argumento de espacio a JSON.stringify() para producir salida legible.",
+      },
+    },
   },
   {
     slug: 'json-stringify-4',
@@ -80,6 +101,14 @@ export const jsonStringifyExercises: Exercise[] = [
     ],
     hints: ['null serializes to the literal string "null".'],
     tags: ['json', 'stringify', 'null'],
+    usageExample: {
+      code: `JSON.stringify(null)      // → 'null'
+JSON.stringify(undefined) // → undefined`,
+      explanation: {
+        en: "JSON.stringify() returns 'null' for null but undefined for undefined.",
+        es: "JSON.stringify() devuelve 'null' para null pero undefined para undefined.",
+      },
+    },
   },
   {
     slug: 'json-stringify-5',
@@ -100,5 +129,12 @@ export const jsonStringifyExercises: Exercise[] = [
     ],
     hints: ['The third argument to JSON.stringify sets indentation.'],
     tags: ['json', 'stringify', 'pretty-print', 'space'],
+    usageExample: {
+      code: `JSON.stringify({ a: 1, b: undefined })  // → '{"a":1}'`,
+      explanation: {
+        en: "JSON.stringify() omits object properties with undefined values.",
+        es: "JSON.stringify() omite las propiedades de objeto con valores undefined.",
+      },
+    },
   },
 ]

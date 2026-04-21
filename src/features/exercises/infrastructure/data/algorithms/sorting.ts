@@ -50,6 +50,20 @@ bubbleSort([64, 34, 25, 12, 22]) // [12, 22, 25, 34, 64]
       'Swap adjacent elements if they are in wrong order using destructuring: `[a, b] = [b, a]`.',
     ],
     tags: ['sorting', 'bubble-sort', 'algorithm', 'nested-loops'],
+    usageExample: {
+      code: `function bubbleSort(arr) {
+  const a = [...arr];
+  for (let i = 0; i < a.length; i++)
+    for (let j = 0; j < a.length - i - 1; j++)
+      if (a[j] > a[j+1]) [a[j], a[j+1]] = [a[j+1], a[j]];
+  return a;
+}
+bubbleSort([5, 3, 1]); // [1, 3, 5]`,
+      explanation: {
+        en: "Bubble sort repeatedly swaps adjacent elements that are out of order — O(n^2).",
+        es: "Bubble sort intercambia repetidamente elementos adyacentes que están fuera de orden — O(n^2).",
+      },
+    },
   },
   {
     slug: 'algo-sort-2',
@@ -104,6 +118,21 @@ selectionSort([64, 25, 12, 22, 11]) // [11, 12, 22, 25, 64]
       'Swap the minimum element with the current position.',
     ],
     tags: ['sorting', 'selection-sort', 'algorithm', 'minimum-finding'],
+    usageExample: {
+      code: `function selectionSort(arr) {
+  const a = [...arr];
+  for (let i = 0; i < a.length; i++) {
+    let min = i;
+    for (let j = i+1; j < a.length; j++) if (a[j] < a[min]) min = j;
+    [a[i], a[min]] = [a[min], a[i]];
+  }
+  return a;
+}`,
+      explanation: {
+        en: "Selection sort finds the minimum of the unsorted portion and moves it to the front.",
+        es: "Selection sort encuentra el mínimo de la porción sin ordenar y lo mueve al frente.",
+      },
+    },
   },
   {
     slug: 'algo-sort-3',
@@ -156,6 +185,21 @@ insertionSort([64, 34, 25, 12, 22]) // [12, 22, 25, 34, 64]
       'Use a while loop to find the insertion point.',
     ],
     tags: ['sorting', 'insertion-sort', 'algorithm', 'linear-insertion'],
+    usageExample: {
+      code: `function insertionSort(arr) {
+  const a = [...arr];
+  for (let i = 1; i < a.length; i++) {
+    const key = a[i]; let j = i - 1;
+    while (j >= 0 && a[j] > key) { a[j+1] = a[j]; j--; }
+    a[j+1] = key;
+  }
+  return a;
+}`,
+      explanation: {
+        en: "Insertion sort builds the sorted array one element at a time by shifting larger values.",
+        es: "Insertion sort construye el array ordenado un elemento a la vez desplazando valores mayores.",
+      },
+    },
   },
   {
     slug: 'algo-sort-4',
@@ -217,6 +261,19 @@ mergeSort([64, 34, 25, 12, 22]) // [12, 22, 25, 34, 64]
       'Compare elements from both arrays and add the smaller one first.',
     ],
     tags: ['sorting', 'merge-sort', 'divide-and-conquer', 'recursion'],
+    usageExample: {
+      code: `function mergeSort(arr) {
+  if (arr.length <= 1) return arr;
+  const mid = Math.floor(arr.length / 2);
+  const left = mergeSort(arr.slice(0, mid));
+  const right = mergeSort(arr.slice(mid));
+  // merge left and right...
+}`,
+      explanation: {
+        en: "Merge sort divides the array recursively then merges sorted halves — O(n log n).",
+        es: "Merge sort divide el array recursivamente y fusiona las mitades ordenadas — O(n log n).",
+      },
+    },
   },
   {
     slug: 'algo-sort-5',
@@ -264,5 +321,18 @@ sortByProperty(people, 'age')
       'Return -1 if a should come before b, 1 if after, 0 if equal.',
     ],
     tags: ['sorting', 'comparator', 'custom-sort', 'stable-sort'],
+    usageExample: {
+      code: `function quickSort(arr) {
+  if (arr.length <= 1) return arr;
+  const pivot = arr[0];
+  const left = arr.slice(1).filter(x => x <= pivot);
+  const right = arr.slice(1).filter(x => x > pivot);
+  return [...quickSort(left), pivot, ...quickSort(right)];
+}`,
+      explanation: {
+        en: "Quick sort picks a pivot and partitions the array into smaller and larger elements.",
+        es: "Quick sort elige un pivote y divide el array en elementos menores y mayores.",
+      },
+    },
   },
 ]

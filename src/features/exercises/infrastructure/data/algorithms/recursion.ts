@@ -46,6 +46,16 @@ factorial(0) // 1
       'Use the ternary operator for conciseness.',
     ],
     tags: ['recursion', 'factorial', 'base-case', 'mathematical'],
+    usageExample: {
+      code: `function factorial(n) {
+  return n <= 1 ? 1 : n * factorial(n - 1);
+}
+factorial(5); // 120`,
+      explanation: {
+        en: "Factorial uses recursion: multiply n by factorial(n-1) until the base case n<=1.",
+        es: "El factorial usa recursión: multiplica n por factorial(n-1) hasta el caso base n<=1.",
+      },
+    },
   },
   {
     slug: 'algo-recursion-2',
@@ -94,6 +104,16 @@ fib(0) // 0
       'Note: This naive implementation is exponential in time complexity (O(2^n)). For large n, consider memoization.',
     ],
     tags: ['recursion', 'fibonacci', 'sequence', 'mathematical'],
+    usageExample: {
+      code: `function fib(n) {
+  return n <= 1 ? n : fib(n - 1) + fib(n - 2);
+}
+fib(6); // 8`,
+      explanation: {
+        en: "The Fibonacci sequence adds the two previous values; base cases are 0 and 1.",
+        es: "La secuencia Fibonacci suma los dos valores anteriores; los casos base son 0 y 1.",
+      },
+    },
   },
   {
     slug: 'algo-recursion-3',
@@ -136,6 +156,17 @@ flatten([1, [2, 3], 4]) // [1, 2, 3, 4]
       'If not, add it to the result using `concat()`.',
     ],
     tags: ['recursion', 'flatten', 'nested-array', 'reduce'],
+    usageExample: {
+      code: `function flatten(arr) {
+  return arr.reduce((acc, v) =>
+    acc.concat(Array.isArray(v) ? flatten(v) : v), []);
+}
+flatten([1, [2, [3]]]); // [1, 2, 3]`,
+      explanation: {
+        en: "Recursively flatten nested arrays by checking each element with Array.isArray.",
+        es: "Aplana arrays anidados recursivamente verificando cada elemento con Array.isArray.",
+      },
+    },
   },
   {
     slug: 'algo-recursion-4',
@@ -184,6 +215,16 @@ power(2, 10) // 1024
       'Use the ternary operator for conciseness.',
     ],
     tags: ['recursion', 'power', 'exponent', 'mathematical'],
+    usageExample: {
+      code: `function power(base, exp) {
+  return exp === 0 ? 1 : base * power(base, exp - 1);
+}
+power(2, 10); // 1024`,
+      explanation: {
+        en: "Compute exponentiation recursively: multiply base by itself exp times.",
+        es: "Calcula la exponenciación recursivamente: multiplica la base por sí misma exp veces.",
+      },
+    },
   },
   {
     slug: 'algo-recursion-5',
@@ -233,5 +274,16 @@ isPalindrome('hello') // false
       'Use `&&` to combine conditions: first check matches AND recursive check.',
     ],
     tags: ['recursion', 'palindrome', 'string-manipulation', 'logical-operators'],
+    usageExample: {
+      code: `function isPalindrome(s) {
+  if (s.length <= 1) return true;
+  return s[0] === s[s.length - 1] && isPalindrome(s.slice(1, -1));
+}
+isPalindrome('racecar'); // true`,
+      explanation: {
+        en: "Check palindromes recursively by comparing outer characters and moving inward.",
+        es: "Comprueba palíndromos recursivamente comparando caracteres externos y avanzando hacia adentro.",
+      },
+    },
   },
 ]

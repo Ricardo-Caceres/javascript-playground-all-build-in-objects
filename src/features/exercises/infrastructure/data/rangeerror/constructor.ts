@@ -19,6 +19,13 @@ export const rangeErrorExercises: Exercise[] = [
     ],
     hints: ['Use new RangeError(message) to create a RangeError instance.'],
     tags: ['rangeerror', 'constructor', 'instanceof'],
+    usageExample: {
+      code: `new Array(-1)  // throws RangeError: Invalid array length`,
+      explanation: {
+        en: "RangeError is thrown when a value is not within the allowed range.",
+        es: "RangeError se lanza cuando un valor no está dentro del rango permitido.",
+      },
+    },
   },
   {
     slug: 'rangeerror-constructor-2',
@@ -38,6 +45,13 @@ export const rangeErrorExercises: Exercise[] = [
     ],
     hints: ['RangeError inherits from Error in the prototype chain.'],
     tags: ['rangeerror', 'constructor', 'instanceof', 'error'],
+    usageExample: {
+      code: `new RangeError('Value out of range').message  // → 'Value out of range'`,
+      explanation: {
+        en: "You can create a RangeError manually to signal out-of-range values.",
+        es: "Puedes crear un RangeError manualmente para señalar valores fuera de rango.",
+      },
+    },
   },
   {
     slug: 'rangeerror-constructor-3',
@@ -57,6 +71,13 @@ export const rangeErrorExercises: Exercise[] = [
     ],
     hints: ['The message is stored in the .message property.'],
     tags: ['rangeerror', 'constructor', 'message'],
+    usageExample: {
+      code: `new RangeError('oops').name  // → 'RangeError'`,
+      explanation: {
+        en: "The name property of a RangeError is always 'RangeError'.",
+        es: "La propiedad name de un RangeError siempre es 'RangeError'.",
+      },
+    },
   },
   {
     slug: 'rangeerror-constructor-4',
@@ -76,6 +97,13 @@ export const rangeErrorExercises: Exercise[] = [
     ],
     hints: ['Error subtypes have a .name property matching their constructor name.'],
     tags: ['rangeerror', 'constructor', 'name'],
+    usageExample: {
+      code: `new RangeError() instanceof Error  // → true`,
+      explanation: {
+        en: "RangeError extends Error and has all standard error properties.",
+        es: "RangeError extiende Error y tiene todas las propiedades estándar de error.",
+      },
+    },
   },
   {
     slug: 'rangeerror-constructor-5',
@@ -107,5 +135,12 @@ export const rangeErrorExercises: Exercise[] = [
     ],
     hints: ['new Array(-1) throws a RangeError because -1 is not a valid array length.'],
     tags: ['rangeerror', 'constructor', 'throw', 'catch'],
+    usageExample: {
+      code: `(1.5).toFixed(200)  // throws RangeError: toFixed() digits argument must be between 0 and 100`,
+      explanation: {
+        en: "toFixed() throws a RangeError when the number of decimal places is out of range.",
+        es: "toFixed() lanza un RangeError cuando el número de decimales está fuera de rango.",
+      },
+    },
   },
 ]

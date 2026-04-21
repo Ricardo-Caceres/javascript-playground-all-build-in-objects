@@ -20,6 +20,13 @@ export const symbolToStringExercises: Exercise[] = [
     ],
     hints: ['The result is always "Symbol(" + description + ")".'],
     tags: ['symbol', 'toString', 'instance-method'],
+    usageExample: {
+      code: `Symbol('x').toString()   // → 'Symbol(x)'`,
+      explanation: {
+        en: 'Symbol.prototype.toString() returns a string in the format \'Symbol(description)\'.',
+        es: 'Symbol.prototype.toString() devuelve una cadena con el formato \'Symbol(descripción)\'.',
+      },
+    },
   },
   {
     slug: 'symbol-tostring-2',
@@ -40,6 +47,13 @@ export const symbolToStringExercises: Exercise[] = [
     ],
     hints: ['Without a description, the parentheses are empty.'],
     tags: ['symbol', 'toString', 'instance-method'],
+    usageExample: {
+      code: `Symbol().toString()   // → 'Symbol()'`,
+      explanation: {
+        en: 'A symbol without a description stringifies to \'Symbol()\' with empty parentheses.',
+        es: 'Un símbolo sin descripción se convierte en cadena como \'Symbol()\' con paréntesis vacíos.',
+      },
+    },
   },
   {
     slug: 'symbol-tostring-3',
@@ -60,6 +74,15 @@ export const symbolToStringExercises: Exercise[] = [
     ],
     hints: ['The description appears inside the parentheses.'],
     tags: ['symbol', 'toString', 'toContain'],
+    usageExample: {
+      code: `const s = Symbol('hello')
+s.toString()                      // → 'Symbol(hello)'
+s.toString().includes('hello')    // → true`,
+      explanation: {
+        en: 'The description text is always embedded inside the parentheses in the toString output.',
+        es: 'El texto de descripción siempre está entre paréntesis en el resultado de toString.',
+      },
+    },
   },
   {
     slug: 'symbol-tostring-4',
@@ -80,6 +103,14 @@ export const symbolToStringExercises: Exercise[] = [
     ],
     hints: ['toString() always produces a string.'],
     tags: ['symbol', 'toString', 'typeof'],
+    usageExample: {
+      code: `const s = Symbol('x')
+typeof s.toString()   // → 'string'`,
+      explanation: {
+        en: 'Symbol.prototype.toString() always returns a string primitive, not a symbol.',
+        es: 'Symbol.prototype.toString() siempre devuelve un primitivo string, no un símbolo.',
+      },
+    },
   },
   {
     slug: 'symbol-tostring-5',
@@ -100,5 +131,12 @@ export const symbolToStringExercises: Exercise[] = [
     ],
     hints: ['Global and local symbols use the same toString format.'],
     tags: ['symbol', 'toString', 'Symbol.for'],
+    usageExample: {
+      code: `Symbol.for('key').toString()   // → 'Symbol(key)'`,
+      explanation: {
+        en: 'Global symbols use the same \'Symbol(key)\' format as local symbols in toString.',
+        es: 'Los símbolos globales usan el mismo formato \'Symbol(clave)\' que los locales en toString.',
+      },
+    },
   },
 ]

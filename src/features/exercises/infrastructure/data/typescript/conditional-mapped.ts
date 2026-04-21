@@ -34,6 +34,15 @@ Object.isFrozen(obj.a)  // → true
     ],
     hints: ['Recurse into each value that is an object before freezing the parent.'],
     tags: ['TypeScript', 'advanced', 'freeze', 'recursion'],
+    usageExample: {
+      code: `const obj = deepFreeze({ a: { b: 1 } })
+Object.isFrozen(obj)     // → true
+Object.isFrozen(obj.a)   // → true`,
+      explanation: {
+        en: 'deepFreeze recursively calls Object.freeze on every nested object to prevent mutation.',
+        es: 'deepFreeze llama recursivamente a Object.freeze en cada objeto anidado para evitar mutaciones.',
+      },
+    },
   },
   {
     slug: 'ts-advanced-2',
@@ -63,6 +72,13 @@ filterNullish([1, null, 2, undefined, 3])  // → [1, 2, 3]
     ],
     hints: ['A type predicate (x): x is T allows TypeScript to narrow the return type.'],
     tags: ['TypeScript', 'advanced', 'filter', 'nullish', 'intermediate'],
+    usageExample: {
+      code: `filterNullish([1, null, 2, undefined, 3])   // → [1, 2, 3]`,
+      explanation: {
+        en: 'Using a type predicate filter removes null and undefined, narrowing the array element type.',
+        es: 'Usar un filtro con predicado de tipo elimina null y undefined, estrechando el tipo de los elementos.',
+      },
+    },
   },
   {
     slug: 'ts-advanced-3',
@@ -92,6 +108,13 @@ flatMap([1, 2, 3], x => [x, x * 2])  // → [1, 2, 2, 4, 3, 6]
     ],
     hints: ['Array.prototype.flatMap maps then flattens one level.'],
     tags: ['TypeScript', 'advanced', 'flatMap', 'intermediate'],
+    usageExample: {
+      code: `flatMap([1, 2, 3], x => [x, x * 2])   // → [1, 2, 2, 4, 3, 6]`,
+      explanation: {
+        en: 'flatMap<T, U> maps each element to an array then concatenates all results into one flat array.',
+        es: 'flatMap<T, U> mapea cada elemento a un array y luego concatena todos los resultados en uno plano.',
+      },
+    },
   },
   {
     slug: 'ts-advanced-4',
@@ -121,6 +144,13 @@ flattenDeep([1, [2, [3, [4]]]])  // → [1, 2, 3, 4]
     ],
     hints: ['Array.flat(Infinity) recursively flattens all levels.'],
     tags: ['TypeScript', 'advanced', 'flatten', 'recursion'],
+    usageExample: {
+      code: `flattenDeep([1, [2, [3, [4]]]])   // → [1, 2, 3, 4]`,
+      explanation: {
+        en: 'flattenDeep recursively flattens nested arrays to any depth into a single flat array.',
+        es: 'flattenDeep aplana recursivamente arrays anidados a cualquier profundidad en un array plano.',
+      },
+    },
   },
   {
     slug: 'ts-advanced-5',
@@ -152,6 +182,13 @@ mapObject({ a: 1, b: 2 }, (k, v) => v * 10)  // → { a: 10, b: 20 }
     ],
     hints: ['Both key and value are passed to fn — use both or either.'],
     tags: ['TypeScript', 'advanced', 'mapObject', 'intermediate'],
+    usageExample: {
+      code: `mapObject({ a: 1, b: 2 }, v => v * 10)   // → { a: 10, b: 20 }`,
+      explanation: {
+        en: 'mapObject transforms every value in an object using a mapping function, preserving the keys.',
+        es: 'mapObject transforma cada valor de un objeto con una función de mapeo, preservando las claves.',
+      },
+    },
   },
   {
     slug: 'ts-advanced-6',
@@ -187,6 +224,13 @@ invertObject({ a: '1', b: '1' })  // throws
     ],
     hints: ['Check the result object before assigning to detect duplicate values.'],
     tags: ['TypeScript', 'advanced', 'invert', 'intermediate'],
+    usageExample: {
+      code: `invertObject({ a: '1', b: '2' })   // → { '1': 'a', '2': 'b' }`,
+      explanation: {
+        en: 'invertObject swaps each key with its string value, creating the inverse mapping.',
+        es: 'invertObject intercambia cada clave con su valor string, creando el mapeo inverso.',
+      },
+    },
   },
   {
     slug: 'ts-advanced-7',
@@ -221,6 +265,14 @@ deepEqual({ a: 1 }, { a: 2 })                  // → false
     ],
     hints: ['Start with strict equality, then recurse into object keys.'],
     tags: ['TypeScript', 'advanced', 'deepEqual', 'recursion'],
+    usageExample: {
+      code: `deepEqual({ a: { b: 1 } }, { a: { b: 1 } })   // → true
+deepEqual({ a: 1 }, { a: 2 })              // → false`,
+      explanation: {
+        en: 'deepEqual recursively compares two values by structure, not by reference.',
+        es: 'deepEqual compara recursivamente dos valores por estructura, no por referencia.',
+      },
+    },
   },
   {
     slug: 'ts-advanced-8',
@@ -251,6 +303,14 @@ toCamelCase('foo-bar-baz')    // → 'fooBarBaz'
     ],
     hints: ['A regex replacing [-_] followed by a char, capitalizing that char, works cleanly.'],
     tags: ['TypeScript', 'advanced', 'string', 'camelCase', 'intermediate'],
+    usageExample: {
+      code: `toCamelCase('hello_world')   // → 'helloWorld'
+toCamelCase('foo_bar_baz')   // → 'fooBarBaz'`,
+      explanation: {
+        en: 'toCamelCase converts snake_case strings to camelCase by capitalizing letters after underscores.',
+        es: 'toCamelCase convierte cadenas snake_case a camelCase capitalizando las letras después de guiones bajos.',
+      },
+    },
   },
   {
     slug: 'ts-advanced-9',
@@ -281,6 +341,14 @@ toSnakeCase('fooBarBaz')    // → 'foo_bar_baz'
     ],
     hints: ['Replace each uppercase letter with _lowercase using a regex.'],
     tags: ['TypeScript', 'advanced', 'string', 'snakeCase', 'intermediate'],
+    usageExample: {
+      code: `toSnakeCase('helloWorld')   // → 'hello_world'
+toSnakeCase('fooBarBaz')    // → 'foo_bar_baz'`,
+      explanation: {
+        en: 'toSnakeCase converts camelCase strings to snake_case by inserting underscores before capitals.',
+        es: 'toSnakeCase convierte cadenas camelCase a snake_case insertando guiones bajos antes de mayúsculas.',
+      },
+    },
   },
   {
     slug: 'ts-advanced-10',
@@ -311,6 +379,13 @@ zipWith([1,2,3], [4,5,6], (a,b) => a + b)  // → [5, 7, 9]
     ],
     hints: ['Like zip, but apply fn to each pair instead of wrapping in a tuple.'],
     tags: ['TypeScript', 'advanced', 'zipWith', 'intermediate'],
+    usageExample: {
+      code: `zipWith([1, 2, 3], [4, 5, 6], (a, b) => a + b)   // → [5, 7, 9]`,
+      explanation: {
+        en: 'zipWith combines two arrays element-by-element using a provided combining function.',
+        es: 'zipWith combina dos arrays elemento a elemento usando una función combinadora proporcionada.',
+      },
+    },
   },
   {
     slug: 'ts-advanced-11',
@@ -342,6 +417,13 @@ splitEvery(2, [1,2,3,4,5])  // → [[1,2],[3,4],[5]]
     ],
     hints: ['Same as chunk with swapped argument order.'],
     tags: ['TypeScript', 'advanced', 'chunk', 'intermediate'],
+    usageExample: {
+      code: `splitEvery([1, 2, 3, 4, 5], 2)   // → [[1, 2], [3, 4], [5]]`,
+      explanation: {
+        en: 'splitEvery partitions an array into sub-arrays of a given size, with the last possibly shorter.',
+        es: 'splitEvery divide un array en sub-arrays del tamaño dado; el último puede ser más corto.',
+      },
+    },
   },
   {
     slug: 'ts-advanced-12',
@@ -372,6 +454,13 @@ transpose([[1,2,3],[4,5,6]])  // → [[1,4],[2,5],[3,6]]
     ],
     hints: ['Map over the columns index of the first row, then map each row to that column.'],
     tags: ['TypeScript', 'advanced', 'matrix', 'transpose'],
+    usageExample: {
+      code: `transpose([[1, 2], [3, 4], [5, 6]])   // → [[1, 3, 5], [2, 4, 6]]`,
+      explanation: {
+        en: 'transpose flips a matrix over its diagonal, converting rows to columns and vice versa.',
+        es: 'transpose voltea una matriz sobre su diagonal, convirtiendo filas en columnas y viceversa.',
+      },
+    },
   },
   {
     slug: 'ts-advanced-13',
@@ -402,6 +491,13 @@ cartesianProduct([1,2], ['a','b'])
     ],
     hints: ['flatMap on a, inner map on b, combine into [x, y] tuples.'],
     tags: ['TypeScript', 'advanced', 'cartesian', 'combinations'],
+    usageExample: {
+      code: `cartesianProduct(['a', 'b'], [1, 2])   // → [['a',1], ['a',2], ['b',1], ['b',2]]`,
+      explanation: {
+        en: 'cartesianProduct generates all ordered pairs combining one element from each array.',
+        es: 'cartesianProduct genera todos los pares ordenados combinando un elemento de cada array.',
+      },
+    },
   },
   {
     slug: 'ts-advanced-14',
@@ -438,6 +534,13 @@ interleave([1,2], ['a','b','c'])  // → [1,'a',2,'b','c']
     ],
     hints: ['Iterate up to max(a.length, b.length), push each element when it exists.'],
     tags: ['TypeScript', 'advanced', 'interleave', 'intermediate'],
+    usageExample: {
+      code: `interleave([1, 2, 3], [4, 5, 6])   // → [1, 4, 2, 5, 3, 6]`,
+      explanation: {
+        en: 'interleave alternates elements from two arrays into a single merged array.',
+        es: 'interleave alterna elementos de dos arrays en un único array fusionado.',
+      },
+    },
   },
   {
     slug: 'ts-advanced-15',
@@ -467,6 +570,13 @@ countOccurrences([1,2,3,2,1,2], 2)  // → 3
     ],
     hints: ['Filter by strict equality, then check the length.'],
     tags: ['TypeScript', 'advanced', 'count', 'beginner'],
+    usageExample: {
+      code: `countOccurrences([1, 2, 2, 3, 3, 3], 3)   // → 3`,
+      explanation: {
+        en: 'countOccurrences counts how many times a given value appears in an array.',
+        es: 'countOccurrences cuenta cuántas veces aparece un valor dado en un array.',
+      },
+    },
   },
   {
     slug: 'ts-advanced-16',
@@ -498,6 +608,13 @@ rotateLeft([1,2,3,4,5], 2)  // → [3,4,5,1,2]
     ],
     hints: ['Modulo n by length to handle over-rotation, then slice and spread.'],
     tags: ['TypeScript', 'advanced', 'rotate', 'intermediate'],
+    usageExample: {
+      code: `rotateLeft([1, 2, 3, 4, 5], 2)   // → [3, 4, 5, 1, 2]`,
+      explanation: {
+        en: 'rotateLeft shifts elements left by n positions, wrapping the removed elements to the end.',
+        es: 'rotateLeft desplaza los elementos n posiciones a la izquierda, llevando los eliminados al final.',
+      },
+    },
   },
   {
     slug: 'ts-advanced-17',
@@ -529,6 +646,13 @@ windowed([1,2,3,4,5], 3)  // → [[1,2,3],[2,3,4],[3,4,5]]
     ],
     hints: ['Iterate while i + size <= arr.length, slice from i to i+size.'],
     tags: ['TypeScript', 'advanced', 'windowed', 'intermediate'],
+    usageExample: {
+      code: `windowed([1, 2, 3, 4, 5], 3)   // → [[1,2,3], [2,3,4], [3,4,5]]`,
+      explanation: {
+        en: 'windowed returns all consecutive sub-arrays (windows) of the given size.',
+        es: 'windowed devuelve todos los sub-arrays consecutivos (ventanas) del tamaño dado.',
+      },
+    },
   },
   {
     slug: 'ts-advanced-18',
@@ -565,6 +689,16 @@ groupByMultiple([{a:1,b:'x'},{a:1,b:'y'},{a:2,b:'x'}], ['a','b'])
     ],
     hints: ['Join the values at each key with a separator to form the compound key.'],
     tags: ['TypeScript', 'advanced', 'groupBy', 'multi-key'],
+    usageExample: {
+      code: `groupByMultiple(
+  [{ type: 'a', color: 'red' }],
+  ['type', 'color']
+)`,
+      explanation: {
+        en: 'groupByMultiple creates nested groups by applying multiple discriminator keys sequentially.',
+        es: 'groupByMultiple crea grupos anidados aplicando múltiples claves discriminadoras secuencialmente.',
+      },
+    },
   },
   {
     slug: 'ts-advanced-19',
@@ -603,6 +737,16 @@ expensiveFn(5)  // → 10 (cached)
     ],
     hints: ['JSON.stringify(args) creates a cache key that handles multiple arguments.'],
     tags: ['TypeScript', 'advanced', 'memoize', 'cache'],
+    usageExample: {
+      code: `const memoFib = memoize((n: number): number =>
+  n <= 1 ? n : memoFib(n - 1) + memoFib(n - 2)
+)
+memoFib(10)   // → 55 (cached)`,
+      explanation: {
+        en: 'memoize wraps a function in a cache so repeated calls with the same argument skip recomputation.',
+        es: 'memoize envuelve una función en un caché para que las llamadas repetidas omitan el recálculo.',
+      },
+    },
   },
   {
     slug: 'ts-advanced-20',
@@ -633,5 +777,14 @@ add(3)(4)  // → 7
     ],
     hints: ['Simply return a => b => fn(a, b).'],
     tags: ['TypeScript', 'advanced', 'curry', 'functional'],
+    usageExample: {
+      code: `const add = curry((a: number, b: number) => a + b)
+add(1)(2)    // → 3
+add(1, 2)   // → 3`,
+      explanation: {
+        en: 'curry transforms a multi-argument function so arguments can be applied one at a time.',
+        es: 'curry transforma una función de múltiples argumentos para que puedan aplicarse de uno en uno.',
+      },
+    },
   },
 ]

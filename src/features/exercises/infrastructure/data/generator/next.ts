@@ -19,6 +19,17 @@ export const generatorNextExercises: Exercise[] = [
       { description: 'typeof it is object', assertion: 'expect(typeof it).toBe("object")' }
     ],
     tags: [],
+    usageExample: {
+      code: `function* gen() { yield 10; yield 20 }
+const it = gen()
+console.log(it.next()) // → { value: 10, done: false }
+console.log(it.next()) // → { value: 20, done: false }
+console.log(it.next()) // → { value: undefined, done: true }`,
+      explanation: {
+        en: 'generator.next() advances the generator to the next yield and returns an object with value and done properties.',
+        es: 'generator.next() avanza el generador al siguiente yield y devuelve un objeto con las propiedades value y done.',
+      },
+    },
   },
   {
     slug: 'generator-next-second',
@@ -38,6 +49,17 @@ export const generatorNextExercises: Exercise[] = [
       { description: 'done is true after third next()', assertion: 'const i2 = g(); i2.next(); i2.next(); expect(i2.next().done).toBe(true)' }
     ],
     tags: [],
+    usageExample: {
+      code: `function* gen() { yield 10; yield 20 }
+const it = gen()
+console.log(it.next()) // → { value: 10, done: false }
+console.log(it.next()) // → { value: 20, done: false }
+console.log(it.next()) // → { value: undefined, done: true }`,
+      explanation: {
+        en: 'generator.next() advances the generator to the next yield and returns an object with value and done properties.',
+        es: 'generator.next() avanza el generador al siguiente yield y devuelve un objeto con las propiedades value y done.',
+      },
+    },
   },
   {
     slug: 'generator-next-done',
@@ -57,6 +79,17 @@ export const generatorNextExercises: Exercise[] = [
       { description: 'typeof it.return is function', assertion: 'expect(typeof it.return).toBe("function")' }
     ],
     tags: [],
+    usageExample: {
+      code: `function* gen() { yield 10; yield 20 }
+const it = gen()
+console.log(it.next()) // → { value: 10, done: false }
+console.log(it.next()) // → { value: 20, done: false }
+console.log(it.next()) // → { value: undefined, done: true }`,
+      explanation: {
+        en: 'generator.next() advances the generator to the next yield and returns an object with value and done properties.',
+        es: 'generator.next() avanza el generador al siguiente yield y devuelve un objeto con las propiedades value y done.',
+      },
+    },
   },
   {
     slug: 'generator-next-return',
@@ -76,6 +109,17 @@ export const generatorNextExercises: Exercise[] = [
       { description: 'typeof it.next is function', assertion: 'expect(typeof it.next).toBe("function")' }
     ],
     tags: [],
+    usageExample: {
+      code: `function* gen() { yield 10; yield 20 }
+const it = gen()
+console.log(it.next()) // → { value: 10, done: false }
+console.log(it.next()) // → { value: 20, done: false }
+console.log(it.next()) // → { value: undefined, done: true }`,
+      explanation: {
+        en: 'generator.next() advances the generator to the next yield and returns an object with value and done properties.',
+        es: 'generator.next() avanza el generador al siguiente yield y devuelve un objeto con las propiedades value y done.',
+      },
+    },
   },
   {
     slug: 'generator-next-after-done',

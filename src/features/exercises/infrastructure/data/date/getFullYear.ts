@@ -20,6 +20,14 @@ export const dateGetFullYearExercises: Exercise[] = [
     ],
     hints: ['getFullYear() returns the 4-digit year in local time'],
     tags: ['Date', 'getFullYear', 'instance-method'],
+    usageExample: {
+      code: `const d = new Date(2024, 0, 15)
+d.getFullYear()  // → 2024`,
+      explanation: {
+        en: 'Use getFullYear() to retrieve the four-digit year of a Date object in local time.',
+        es: 'Usa getFullYear() para obtener el año de cuatro dígitos de un objeto Date en hora local.',
+      },
+    },
   },
   {
     slug: 'date-getfullyear-2',
@@ -40,6 +48,14 @@ export const dateGetFullYearExercises: Exercise[] = [
     ],
     hints: ['new Date(0) is the Unix epoch — January 1, 1970 UTC'],
     tags: ['Date', 'getFullYear', 'instance-method', 'epoch'],
+    usageExample: {
+      code: `const d = new Date(2024, 0, 15)
+d.getFullYear()  // → 2024`,
+      explanation: {
+        en: 'Use getFullYear() to retrieve the four-digit year of a Date object in local time.',
+        es: 'Usa getFullYear() para obtener el año de cuatro dígitos de un objeto Date en hora local.',
+      },
+    },
   },
   {
     slug: 'date-getfullyear-3',
@@ -60,6 +76,14 @@ export const dateGetFullYearExercises: Exercise[] = [
     ],
     hints: ['getFullYear() returns the full 4-digit year, safe for years 2000+'],
     tags: ['Date', 'getFullYear', 'instance-method'],
+    usageExample: {
+      code: `const d = new Date(2024, 0, 15)
+d.getFullYear()  // → 2024`,
+      explanation: {
+        en: 'Use getFullYear() to retrieve the four-digit year of a Date object in local time.',
+        es: 'Usa getFullYear() para obtener el año de cuatro dígitos de un objeto Date en hora local.',
+      },
+    },
   },
   {
     slug: 'date-getfullyear-4',
@@ -80,6 +104,14 @@ export const dateGetFullYearExercises: Exercise[] = [
     ],
     hints: ['getFullYear() returns a number primitive, not a string'],
     tags: ['Date', 'getFullYear', 'instance-method', 'typeof'],
+    usageExample: {
+      code: `const d = new Date(2024, 0, 15)
+d.getFullYear()  // → 2024`,
+      explanation: {
+        en: 'Use getFullYear() to retrieve the four-digit year of a Date object in local time.',
+        es: 'Usa getFullYear() para obtener el año de cuatro dígitos de un objeto Date en hora local.',
+      },
+    },
   },
   {
     slug: 'date-getfullyear-5',
@@ -100,5 +132,13 @@ export const dateGetFullYearExercises: Exercise[] = [
     ],
     hints: ['setFullYear() mutates the Date in place; getFullYear() then returns the updated year'],
     tags: ['Date', 'getFullYear', 'instance-method', 'setFullYear'],
+    usageExample: {
+      code: `const d = new Date(2024, 0, 15)
+d.getFullYear()  // → 2024`,
+      explanation: {
+        en: 'Use getFullYear() to retrieve the four-digit year of a Date object in local time.',
+        es: 'Usa getFullYear() para obtener el año de cuatro dígitos de un objeto Date en hora local.',
+      },
+    },
   },
 ]

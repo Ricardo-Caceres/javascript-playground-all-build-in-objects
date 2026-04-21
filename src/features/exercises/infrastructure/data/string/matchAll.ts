@@ -37,6 +37,16 @@ countMatches('aababc', /a/g) // → 3
       'The `g` flag is required for `matchAll`.',
     ],
     tags: ['String', 'String.prototype.matchAll', 'regex', 'global flag', 'intermediate'],
+    usageExample: {
+      code: `const str = 'a1 b2 c3'
+const matches = [...str.matchAll(/(\w)(\d)/g)]
+matches.length   // → 3
+matches[0][1]    // → 'a'`,
+      explanation: {
+        en: "Use matchAll() with the g flag to iterate over all regex matches and access capture groups in each result.",
+        es: "Usa matchAll() con la bandera g para iterar sobre todas las coincidencias y acceder a los grupos de captura en cada resultado.",
+      },
+    },
   },
   {
     slug: 'string-match-all-capture-groups',
@@ -71,6 +81,16 @@ extractNumbers('price: 42 and 100') // → [42, 100]
       'Each match result `m` has `m[1]` for the first capture group.',
     ],
     tags: ['String', 'String.prototype.matchAll', 'regex', 'capture groups', 'intermediate'],
+    usageExample: {
+      code: `const str = 'a1 b2 c3'
+const matches = [...str.matchAll(/(\w)(\d)/g)]
+matches.length   // → 3
+matches[0][1]    // → 'a'`,
+      explanation: {
+        en: "Use matchAll() with the g flag to iterate over all regex matches and access capture groups in each result.",
+        es: "Usa matchAll() con la bandera g para iterar sobre todas las coincidencias y acceder a los grupos de captura en cada resultado.",
+      },
+    },
   },
   {
     slug: 'string-match-all-named-groups',
@@ -109,6 +129,16 @@ extractKeyValues('a=1 b=2 c=3') // → [{ key: 'a', value: '1' }, ...]
       'Access named groups via `m.groups!.key` and `m.groups!.value`.',
     ],
     tags: ['String', 'String.prototype.matchAll', 'regex', 'named groups', 'advanced'],
+    usageExample: {
+      code: `const str = 'a1 b2 c3'
+const matches = [...str.matchAll(/(\w)(\d)/g)]
+matches.length   // → 3
+matches[0][1]    // → 'a'`,
+      explanation: {
+        en: "Use matchAll() with the g flag to iterate over all regex matches and access capture groups in each result.",
+        es: "Usa matchAll() con la bandera g para iterar sobre todas las coincidencias y acceder a los grupos de captura en cada resultado.",
+      },
+    },
   },
   {
     slug: 'string-match-all-empty-results',
@@ -144,6 +174,16 @@ noDigits('hi5')   // → false
       'If the spread array length is 0, there were no matches.',
     ],
     tags: ['String', 'String.prototype.matchAll', 'regex', 'beginner'],
+    usageExample: {
+      code: `const str = 'a1 b2 c3'
+const matches = [...str.matchAll(/(\w)(\d)/g)]
+matches.length   // → 3
+matches[0][1]    // → 'a'`,
+      explanation: {
+        en: "Use matchAll() with the g flag to iterate over all regex matches and access capture groups in each result.",
+        es: "Usa matchAll() con la bandera g para iterar sobre todas las coincidencias y acceder a los grupos de captura en cada resultado.",
+      },
+    },
   },
   {
     slug: 'string-match-all-index',
@@ -178,5 +218,15 @@ matchIndices('abacaba', 'a') // → [0, 2, 4, 6]
       'Each match result `m` has a numeric `m.index` property.',
     ],
     tags: ['String', 'String.prototype.matchAll', 'regex', 'index', 'intermediate'],
+    usageExample: {
+      code: `const str = 'a1 b2 c3'
+const matches = [...str.matchAll(/(\w)(\d)/g)]
+matches.length   // → 3
+matches[0][1]    // → 'a'`,
+      explanation: {
+        en: "Use matchAll() with the g flag to iterate over all regex matches and access capture groups in each result.",
+        es: "Usa matchAll() con la bandera g para iterar sobre todas las coincidencias y acceder a los grupos de captura en cada resultado.",
+      },
+    },
   },
 ]

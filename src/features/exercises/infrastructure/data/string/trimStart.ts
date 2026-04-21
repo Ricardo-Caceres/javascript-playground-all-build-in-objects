@@ -34,6 +34,15 @@ trimLeft('   hello') // → 'hello'
       '`trimStart()` only removes whitespace at the beginning of the string.',
     ],
     tags: ['String', 'String.prototype.trimStart', 'beginner'],
+    usageExample: {
+      code: `'  hello  '.trimStart()   // → 'hello  '
+'   text'.trimStart()    // → 'text'
+'hi'.trimStart()          // → 'hi'`,
+      explanation: {
+        en: "Use trimStart() to remove only leading whitespace from the beginning of a string, leaving trailing whitespace intact.",
+        es: "Usa trimStart() para eliminar solo los espacios en blanco al inicio de una cadena, dejando intactos los del final.",
+      },
+    },
   },
   {
     slug: 'string-trim-start-trailing-preserved',
@@ -68,6 +77,15 @@ trimStartOnly('  hello  ') // → 'hello  '
       '`trimStart()` is asymmetric — it only affects the left side of the string.',
     ],
     tags: ['String', 'String.prototype.trimStart', 'beginner'],
+    usageExample: {
+      code: `'  hello  '.trimStart()   // → 'hello  '
+'   text'.trimStart()    // → 'text'
+'hi'.trimStart()          // → 'hi'`,
+      explanation: {
+        en: "Use trimStart() to remove only leading whitespace from the beginning of a string, leaving trailing whitespace intact.",
+        es: "Usa trimStart() para eliminar solo los espacios en blanco al inicio de una cadena, dejando intactos los del final.",
+      },
+    },
   },
   {
     slug: 'string-trim-start-both-only-trailing-preserved',
@@ -102,6 +120,15 @@ keepTrailing('   hello   ') // → 'hello   '
       '`trimStart()` removes only the prefix whitespace, leaving the suffix intact.',
     ],
     tags: ['String', 'String.prototype.trimStart', 'beginner'],
+    usageExample: {
+      code: `'  hello  '.trimStart()   // → 'hello  '
+'   text'.trimStart()    // → 'text'
+'hi'.trimStart()          // → 'hi'`,
+      explanation: {
+        en: "Use trimStart() to remove only leading whitespace from the beginning of a string, leaving trailing whitespace intact.",
+        es: "Usa trimStart() para eliminar solo los espacios en blanco al inicio de una cadena, dejando intactos los del final.",
+      },
+    },
   },
   {
     slug: 'string-trim-start-no-whitespace',
@@ -136,6 +163,15 @@ verifyTrimStart('hello') // → 'hello'
       '`trimStart()` is a no-op when there is no leading whitespace.',
     ],
     tags: ['String', 'String.prototype.trimStart', 'beginner'],
+    usageExample: {
+      code: `'  hello  '.trimStart()   // → 'hello  '
+'   text'.trimStart()    // → 'text'
+'hi'.trimStart()          // → 'hi'`,
+      explanation: {
+        en: "Use trimStart() to remove only leading whitespace from the beginning of a string, leaving trailing whitespace intact.",
+        es: "Usa trimStart() para eliminar solo los espacios en blanco al inicio de una cadena, dejando intactos los del final.",
+      },
+    },
   },
   {
     slug: 'string-trim-start-leading-tab',
@@ -170,5 +206,14 @@ removeLeadingTab('\\thello') // → 'hello'
       '`trimStart()` removes all leading whitespace: spaces, tabs (`\\t`), and newlines (`\\n`).',
     ],
     tags: ['String', 'String.prototype.trimStart', 'whitespace', 'beginner'],
+    usageExample: {
+      code: `'  hello  '.trimStart()   // → 'hello  '
+'   text'.trimStart()    // → 'text'
+'hi'.trimStart()          // → 'hi'`,
+      explanation: {
+        en: "Use trimStart() to remove only leading whitespace from the beginning of a string, leaving trailing whitespace intact.",
+        es: "Usa trimStart() para eliminar solo los espacios en blanco al inicio de una cadena, dejando intactos los del final.",
+      },
+    },
   },
 ]

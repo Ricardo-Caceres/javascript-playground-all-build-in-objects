@@ -35,6 +35,16 @@ getCode('a', 0) // → 97
       'ASCII: A=65, Z=90, a=97, z=122, 0=48, 9=57, space=32.',
     ],
     tags: ['String', 'String.prototype.charCodeAt', 'ASCII', 'beginner'],
+    usageExample: {
+      code: `const str = 'ABC'
+str.charCodeAt(0)   // → 65
+str.charCodeAt(1)   // → 66
+str.charCodeAt(99)  // → NaN`,
+      explanation: {
+        en: "Use charCodeAt() to get the UTF-16 code unit value of the character at the given index.",
+        es: "Usa charCodeAt() para obtener el valor de unidad de código UTF-16 del carácter en el índice dado.",
+      },
+    },
   },
   {
     slug: 'string-char-code-at-nan',
@@ -70,6 +80,16 @@ codeOrNaN('hi', 0)  // → false (104)
       'Use `isNaN()` to check the return value.',
     ],
     tags: ['String', 'String.prototype.charCodeAt', 'NaN', 'beginner'],
+    usageExample: {
+      code: `const str = 'ABC'
+str.charCodeAt(0)   // → 65
+str.charCodeAt(1)   // → 66
+str.charCodeAt(99)  // → NaN`,
+      explanation: {
+        en: "Use charCodeAt() to get the UTF-16 code unit value of the character at the given index.",
+        es: "Usa charCodeAt() para obtener el valor de unidad de código UTF-16 del carácter en el índice dado.",
+      },
+    },
   },
   {
     slug: 'string-char-code-at-lowercase-check',
@@ -106,6 +126,16 @@ isLowercase('A') // → false
       'Lowercase codes: a=97, z=122.',
     ],
     tags: ['String', 'String.prototype.charCodeAt', 'ASCII', 'intermediate'],
+    usageExample: {
+      code: `const str = 'ABC'
+str.charCodeAt(0)   // → 65
+str.charCodeAt(1)   // → 66
+str.charCodeAt(99)  // → NaN`,
+      explanation: {
+        en: "Use charCodeAt() to get the UTF-16 code unit value of the character at the given index.",
+        es: "Usa charCodeAt() para obtener el valor de unidad de código UTF-16 del carácter en el índice dado.",
+      },
+    },
   },
   {
     slug: 'string-char-code-at-second-char',
@@ -139,6 +169,16 @@ secondCharCode('AB')    // → 66   ('B')
       '`str.charCodeAt(1)` is the code of the second character.',
     ],
     tags: ['String', 'String.prototype.charCodeAt', 'index', 'beginner'],
+    usageExample: {
+      code: `const str = 'ABC'
+str.charCodeAt(0)   // → 65
+str.charCodeAt(1)   // → 66
+str.charCodeAt(99)  // → NaN`,
+      explanation: {
+        en: "Use charCodeAt() to get the UTF-16 code unit value of the character at the given index.",
+        es: "Usa charCodeAt() para obtener el valor de unidad de código UTF-16 del carácter en el índice dado.",
+      },
+    },
   },
   {
     slug: 'string-char-code-at-digit-check',
@@ -175,5 +215,15 @@ isDigitChar('a') // → false
       'Digit char codes: 0=48, 9=57.',
     ],
     tags: ['String', 'String.prototype.charCodeAt', 'ASCII', 'intermediate'],
+    usageExample: {
+      code: `const str = 'ABC'
+str.charCodeAt(0)   // → 65
+str.charCodeAt(1)   // → 66
+str.charCodeAt(99)  // → NaN`,
+      explanation: {
+        en: "Use charCodeAt() to get the UTF-16 code unit value of the character at the given index.",
+        es: "Usa charCodeAt() para obtener el valor de unidad de código UTF-16 del carácter en el índice dado.",
+      },
+    },
   },
 ]

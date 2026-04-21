@@ -19,6 +19,14 @@ export const abortControllerConstructorExercises: Exercise[] = [
     ],
     hints: ['AbortController is a Web API available in browsers and Node.js 15+'],
     tags: ['AbortController', 'constructor'],
+    usageExample: {
+      code: `const ac = new AbortController()
+ac.signal.aborted  // → false`,
+      explanation: {
+        en: "AbortController lets you cancel fetch requests or other async operations.",
+        es: "AbortController te permite cancelar solicitudes fetch u otras operaciones asíncronas.",
+      },
+    },
   },
   {
     slug: 'abortcontroller-constructor-2',
@@ -38,6 +46,15 @@ export const abortControllerConstructorExercises: Exercise[] = [
     ],
     hints: ['Before calling abort(), the signal.aborted property is always false'],
     tags: ['AbortController', 'constructor', 'signal', 'aborted'],
+    usageExample: {
+      code: `const ac = new AbortController()
+ac.abort()
+ac.signal.aborted  // → true`,
+      explanation: {
+        en: "Call abort() to cancel the associated operation and set signal.aborted to true.",
+        es: "Llama a abort() para cancelar la operación asociada y establecer signal.aborted a true.",
+      },
+    },
   },
   {
     slug: 'abortcontroller-constructor-3',
@@ -57,6 +74,15 @@ export const abortControllerConstructorExercises: Exercise[] = [
     ],
     hints: ['AbortController.signal returns an AbortSignal instance that reflects the controller state'],
     tags: ['AbortController', 'constructor', 'AbortSignal', 'signal'],
+    usageExample: {
+      code: `const ac = new AbortController()
+fetch('/api', { signal: ac.signal })
+ac.abort()  // cancels the request`,
+      explanation: {
+        en: "Pass signal to fetch() to make the request cancellable.",
+        es: "Pasa signal a fetch() para hacer la solicitud cancelable.",
+      },
+    },
   },
   {
     slug: 'abortcontroller-constructor-4',
@@ -76,6 +102,14 @@ export const abortControllerConstructorExercises: Exercise[] = [
     ],
     hints: ['reason is set when abort(reason) is called; before that it is undefined'],
     tags: ['AbortController', 'constructor', 'signal', 'reason'],
+    usageExample: {
+      code: `const ac = new AbortController()
+ac instanceof AbortController  // → true`,
+      explanation: {
+        en: "AbortController instances can be verified with instanceof.",
+        es: "Las instancias de AbortController se pueden verificar con instanceof.",
+      },
+    },
   },
   {
     slug: 'abortcontroller-constructor-5',
@@ -95,5 +129,13 @@ export const abortControllerConstructorExercises: Exercise[] = [
     ],
     hints: ['typeof on any object (other than null) returns "object"'],
     tags: ['AbortController', 'constructor', 'signal', 'typeof'],
+    usageExample: {
+      code: `const ac = new AbortController()
+ac.signal instanceof AbortSignal  // → true`,
+      explanation: {
+        en: "The signal property is an AbortSignal that can be monitored for cancellation.",
+        es: "La propiedad signal es una AbortSignal que puede monitorearse para cancelación.",
+      },
+    },
   },
 ]

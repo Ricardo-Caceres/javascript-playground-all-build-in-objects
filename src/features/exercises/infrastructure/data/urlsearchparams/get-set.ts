@@ -19,6 +19,15 @@ export const urlSearchParamsGetSetExercises: Exercise[] = [
     ],
     hints: ['get() only returns the first value if a key appears multiple times'],
     tags: ['URLSearchParams', 'instance-method', 'get'],
+    usageExample: {
+      code: `const p = new URLSearchParams('a=1')
+p.get('a')   // → '1'
+p.get('z')   // → null`,
+      explanation: {
+        en: "get() retrieves the first value for a key, or null if the key doesn't exist.",
+        es: "get() recupera el primer valor de una clave, o null si la clave no existe.",
+      },
+    },
   },
   {
     slug: 'urlsearchparams-get-set-2',
@@ -38,6 +47,15 @@ export const urlSearchParamsGetSetExercises: Exercise[] = [
     ],
     hints: ['get() is case-sensitive — "Foo" and "foo" are different keys'],
     tags: ['URLSearchParams', 'instance-method', 'get', 'null'],
+    usageExample: {
+      code: `const p = new URLSearchParams()
+p.set('a', '1')
+p.get('a')  // → '1'`,
+      explanation: {
+        en: "set() adds a key-value pair, replacing any existing values for that key.",
+        es: "set() agrega un par clave-valor, reemplazando cualquier valor existente para esa clave.",
+      },
+    },
   },
   {
     slug: 'urlsearchparams-get-set-3',
@@ -57,6 +75,14 @@ export const urlSearchParamsGetSetExercises: Exercise[] = [
     ],
     hints: ['getAll always returns an array, even for missing keys (empty array)'],
     tags: ['URLSearchParams', 'instance-method', 'getAll'],
+    usageExample: {
+      code: `const p = new URLSearchParams('a=1&a=2')
+p.getAll('a')  // → ['1', '2']`,
+      explanation: {
+        en: "getAll() returns all values for a key as an array.",
+        es: "getAll() devuelve todos los valores de una clave como un arreglo.",
+      },
+    },
   },
   {
     slug: 'urlsearchparams-get-set-4',
@@ -76,6 +102,15 @@ export const urlSearchParamsGetSetExercises: Exercise[] = [
     ],
     hints: ['has() returns a boolean, unlike get() which returns the value or null'],
     tags: ['URLSearchParams', 'instance-method', 'has'],
+    usageExample: {
+      code: `const p = new URLSearchParams('a=1')
+p.has('a')  // → true
+p.has('z')  // → false`,
+      explanation: {
+        en: "has() checks whether a given key exists in the parameters.",
+        es: "has() verifica si una clave dada existe en los parámetros.",
+      },
+    },
   },
   {
     slug: 'urlsearchparams-get-set-5',
@@ -95,5 +130,14 @@ export const urlSearchParamsGetSetExercises: Exercise[] = [
     ],
     hints: ['getAll() always returns an array — use .length to check for presence instead of null checks'],
     tags: ['URLSearchParams', 'instance-method', 'getAll', 'fallback'],
+    usageExample: {
+      code: `const p = new URLSearchParams()
+p.set('q', 'hello world')
+p.toString()  // → 'q=hello+world'`,
+      explanation: {
+        en: "URLSearchParams automatically encodes special characters in values.",
+        es: "URLSearchParams codifica automáticamente los caracteres especiales en los valores.",
+      },
+    },
   },
 ]

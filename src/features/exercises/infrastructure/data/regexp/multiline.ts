@@ -20,6 +20,15 @@ export const regexpMultilineExercises: Exercise[] = [
     ],
     hints: ['The m flag makes ^ and $ match start/end of each line, not just the whole string'],
     tags: ['RegExp', 'multiline', 'property'],
+    usageExample: {
+      code: `const re = /^start/m
+console.log(re.multiline) // → true
+// ^ and $ match at line boundaries`,
+      explanation: {
+        en: "Read RegExp.multiline to check whether the 'm' flag is set on the regular expression.",
+        es: "Lee RegExp.multiline para verificar si la bandera 'm' está activada en la expresión regular.",
+      },
+    },
   },
   {
     slug: 'regexp-multiline-2',
@@ -40,6 +49,15 @@ export const regexpMultilineExercises: Exercise[] = [
     ],
     hints: ['Without the m flag, ^ and $ match only the start/end of the entire string'],
     tags: ['RegExp', 'multiline', 'property'],
+    usageExample: {
+      code: `const re = /^start/m
+console.log(re.multiline) // → true
+// ^ and $ match at line boundaries`,
+      explanation: {
+        en: "Read RegExp.multiline to check whether the 'm' flag is set on the regular expression.",
+        es: "Lee RegExp.multiline para verificar si la bandera 'm' está activada en la expresión regular.",
+      },
+    },
   },
   {
     slug: 'regexp-multiline-3',
@@ -60,6 +78,15 @@ export const regexpMultilineExercises: Exercise[] = [
     ],
     hints: ['multiline checks only for the m flag, regardless of other flags'],
     tags: ['RegExp', 'multiline', 'flags'],
+    usageExample: {
+      code: `const re = /^start/m
+console.log(re.multiline) // → true
+// ^ and $ match at line boundaries`,
+      explanation: {
+        en: "Read RegExp.multiline to check whether the 'm' flag is set on the regular expression.",
+        es: "Lee RegExp.multiline para verificar si la bandera 'm' está activada en la expresión regular.",
+      },
+    },
   },
   {
     slug: 'regexp-multiline-4',
@@ -80,6 +107,15 @@ export const regexpMultilineExercises: Exercise[] = [
     ],
     hints: ['multiline is always a boolean value'],
     tags: ['RegExp', 'multiline', 'typeof'],
+    usageExample: {
+      code: `const re = /^start/m
+console.log(re.multiline) // → true
+// ^ and $ match at line boundaries`,
+      explanation: {
+        en: "Read RegExp.multiline to check whether the 'm' flag is set on the regular expression.",
+        es: "Lee RegExp.multiline para verificar si la bandera 'm' está activada en la expresión regular.",
+      },
+    },
   },
   {
     slug: 'regexp-multiline-5',
@@ -100,5 +136,14 @@ export const regexpMultilineExercises: Exercise[] = [
     ],
     hints: ['multiline returns a strict boolean value'],
     tags: ['RegExp', 'multiline', 'boolean'],
+    usageExample: {
+      code: `const re = /^start/m
+console.log(re.multiline) // → true
+// ^ and $ match at line boundaries`,
+      explanation: {
+        en: "Read RegExp.multiline to check whether the 'm' flag is set on the regular expression.",
+        es: "Lee RegExp.multiline para verificar si la bandera 'm' está activada en la expresión regular.",
+      },
+    },
   },
 ]

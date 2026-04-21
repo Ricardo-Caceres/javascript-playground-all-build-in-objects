@@ -20,6 +20,16 @@ export const weakMapHasExercises: Exercise[] = [
     ],
     hints: ['has() checks key presence, not value truthiness.'],
     tags: ['weakmap', 'has', 'instance-method'],
+    usageExample: {
+      code: `const wm = new WeakMap()
+const k = {}
+wm.set(k, 1)
+wm.has(k)  // → true`,
+      explanation: {
+        en: "has() returns true if the given object key exists in the WeakMap.",
+        es: "has() devuelve true si la clave de objeto dada existe en el WeakMap.",
+      },
+    },
   },
   {
     slug: 'weakmap-has-2',
@@ -40,6 +50,15 @@ export const weakMapHasExercises: Exercise[] = [
     ],
     hints: ['Object identity (reference) determines key lookup, not content.'],
     tags: ['weakmap', 'has', 'missing'],
+    usageExample: {
+      code: `const wm = new WeakMap()
+const k = {}
+wm.has(k)  // → false`,
+      explanation: {
+        en: "has() returns false for keys that have never been added.",
+        es: "has() devuelve false para claves que nunca se han agregado.",
+      },
+    },
   },
   {
     slug: 'weakmap-has-3',
@@ -60,6 +79,17 @@ export const weakMapHasExercises: Exercise[] = [
     ],
     hints: ['delete() removes the key; has() reflects this.'],
     tags: ['weakmap', 'has', 'delete'],
+    usageExample: {
+      code: `const wm = new WeakMap()
+const k = {}
+wm.set(k, 1)
+wm.delete(k)
+wm.has(k)  // → false`,
+      explanation: {
+        en: "has() returns false after a key has been deleted.",
+        es: "has() devuelve false después de que se haya eliminado una clave.",
+      },
+    },
   },
   {
     slug: 'weakmap-has-4',
@@ -80,6 +110,16 @@ export const weakMapHasExercises: Exercise[] = [
     ],
     hints: ['has() tests key existence, regardless of the stored value.'],
     tags: ['weakmap', 'has', 'null'],
+    usageExample: {
+      code: `const wm = new WeakMap()
+const a = {}, b = {}
+wm.set(a, 1)
+wm.has(b)  // → false`,
+      explanation: {
+        en: "Different object references are distinct keys even with the same structure.",
+        es: "Las diferentes referencias de objeto son claves distintas aunque tengan la misma estructura.",
+      },
+    },
   },
   {
     slug: 'weakmap-has-5',
@@ -100,5 +140,15 @@ export const weakMapHasExercises: Exercise[] = [
     ],
     hints: ['WeakMap uses object identity (reference), not deep equality.'],
     tags: ['weakmap', 'has', 'identity'],
+    usageExample: {
+      code: `const wm = new WeakMap()
+const k = {}
+wm.set(k, undefined)
+wm.has(k)  // → true`,
+      explanation: {
+        en: "has() returns true even if the stored value is undefined.",
+        es: "has() devuelve true incluso si el valor almacenado es undefined.",
+      },
+    },
   },
 ]

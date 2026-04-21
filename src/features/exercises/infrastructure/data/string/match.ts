@@ -39,6 +39,14 @@ matchDigits('no digits') // → null
       'Access the matched text with `result[0]`.',
     ],
     tags: ['String', 'String.prototype.match', 'regex', 'intermediate'],
+    usageExample: {
+      code: `'test 123 foo'.match(/\d+/)    // → ['123', index: 5, ...]
+'test 1 and 2'.match(/\d+/g)  // → ['1', '2']`,
+      explanation: {
+        en: "Use match() to search a string against a regex and return the match results, or null if not found.",
+        es: "Usa match() para buscar en una cadena con una expresión regular y obtener los resultados de coincidencia, o null.",
+      },
+    },
   },
   {
     slug: 'string-match-global-flag',
@@ -74,6 +82,14 @@ allWords('hello world foo') // → ['hello', 'world', 'foo']
       'Use `?? []` to handle the null case when no matches are found.',
     ],
     tags: ['String', 'String.prototype.match', 'regex', 'global flag', 'intermediate'],
+    usageExample: {
+      code: `'test 123 foo'.match(/\d+/)    // → ['123', index: 5, ...]
+'test 1 and 2'.match(/\d+/g)  // → ['1', '2']`,
+      explanation: {
+        en: "Use match() to search a string against a regex and return the match results, or null if not found.",
+        es: "Usa match() para buscar en una cadena con una expresión regular y obtener los resultados de coincidencia, o null.",
+      },
+    },
   },
   {
     slug: 'string-match-null',
@@ -109,6 +125,14 @@ hasMatch('hello', /\\d+/)    // → false
       '`.match()` returns `null` when there is no match.',
     ],
     tags: ['String', 'String.prototype.match', 'regex', 'beginner'],
+    usageExample: {
+      code: `'test 123 foo'.match(/\d+/)    // → ['123', index: 5, ...]
+'test 1 and 2'.match(/\d+/g)  // → ['1', '2']`,
+      explanation: {
+        en: "Use match() to search a string against a regex and return the match results, or null if not found.",
+        es: "Usa match() para buscar en una cadena con una expresión regular y obtener los resultados de coincidencia, o null.",
+      },
+    },
   },
   {
     slug: 'string-match-capture-groups',
@@ -145,6 +169,14 @@ parseDate('2024-01-15') // → { year: 2024, month: 1, day: 15 }
       'Capture group values are at indices 1, 2, 3 in the result array.',
     ],
     tags: ['String', 'String.prototype.match', 'regex', 'capture groups', 'intermediate'],
+    usageExample: {
+      code: `'test 123 foo'.match(/\d+/)    // → ['123', index: 5, ...]
+'test 1 and 2'.match(/\d+/g)  // → ['1', '2']`,
+      explanation: {
+        en: "Use match() to search a string against a regex and return the match results, or null if not found.",
+        es: "Usa match() para buscar en una cadena con una expresión regular y obtener los resultados de coincidencia, o null.",
+      },
+    },
   },
   {
     slug: 'string-match-named-groups',
@@ -181,5 +213,13 @@ parseColor('rgb(255,128,0)') // → { r: 255, g: 128, b: 0 }
       'Named groups are in `result.groups` (may be undefined if no groups matched).',
     ],
     tags: ['String', 'String.prototype.match', 'regex', 'named groups', 'advanced'],
+    usageExample: {
+      code: `'test 123 foo'.match(/\d+/)    // → ['123', index: 5, ...]
+'test 1 and 2'.match(/\d+/g)  // → ['1', '2']`,
+      explanation: {
+        en: "Use match() to search a string against a regex and return the match results, or null if not found.",
+        es: "Usa match() para buscar en una cadena con una expresión regular y obtener los resultados de coincidencia, o null.",
+      },
+    },
   },
 ]

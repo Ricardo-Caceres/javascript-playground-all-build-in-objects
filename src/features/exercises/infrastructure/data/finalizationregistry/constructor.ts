@@ -19,6 +19,15 @@ export const finalizationRegistryConstructorExercises: Exercise[] = [
     ],
     hints: ['FinalizationRegistry accepts a callback function called when registered objects are GC\'d.'],
     tags: ['finalizationregistry', 'constructor', 'instanceof'],
+    usageExample: {
+      code: `const registry = new FinalizationRegistry(key => {
+  console.log(key, 'was GC-ed')
+})`,
+      explanation: {
+        en: "FinalizationRegistry calls a cleanup callback when a registered object is garbage collected.",
+        es: "FinalizationRegistry llama a un callback de limpieza cuando un objeto registrado es recolectado por el GC.",
+      },
+    },
   },
   {
     slug: 'finalizationregistry-constructor-2',
@@ -38,6 +47,14 @@ export const finalizationRegistryConstructorExercises: Exercise[] = [
     ],
     hints: ['All FinalizationRegistry instances are objects.'],
     tags: ['finalizationregistry', 'constructor', 'typeof'],
+    usageExample: {
+      code: `const reg = new FinalizationRegistry(k => cleanupCache(k))
+reg instanceof FinalizationRegistry  // → true`,
+      explanation: {
+        en: "FinalizationRegistry instances can be verified with instanceof.",
+        es: "Las instancias de FinalizationRegistry se pueden verificar con instanceof.",
+      },
+    },
   },
   {
     slug: 'finalizationregistry-constructor-3',
@@ -57,6 +74,14 @@ export const finalizationRegistryConstructorExercises: Exercise[] = [
     ],
     hints: ['Constructor functions have typeof "function".'],
     tags: ['finalizationregistry', 'constructor', 'typeof'],
+    usageExample: {
+      code: `const reg = new FinalizationRegistry(v => console.log('cleaned:', v))
+typeof reg  // → 'object'`,
+      explanation: {
+        en: "FinalizationRegistry is an object that holds weak references for finalization tracking.",
+        es: "FinalizationRegistry es un objeto que mantiene referencias débiles para el seguimiento de finalización.",
+      },
+    },
   },
   {
     slug: 'finalizationregistry-constructor-4',
@@ -76,6 +101,14 @@ export const finalizationRegistryConstructorExercises: Exercise[] = [
     ],
     hints: ['FinalizationRegistry instances have a register method to register objects for cleanup.'],
     tags: ['finalizationregistry', 'constructor', 'register'],
+    usageExample: {
+      code: `const reg = new FinalizationRegistry(k => {})
+// The callback is not guaranteed to run synchronously`,
+      explanation: {
+        en: "The cleanup callback may run after garbage collection, which is non-deterministic.",
+        es: "El callback de limpieza puede ejecutarse después de la recolección de basura, que es no determinista.",
+      },
+    },
   },
   {
     slug: 'finalizationregistry-constructor-5',
@@ -95,5 +128,13 @@ export const finalizationRegistryConstructorExercises: Exercise[] = [
     ],
     hints: ['FinalizationRegistry instances have an unregister method to cancel cleanup callbacks.'],
     tags: ['finalizationregistry', 'constructor', 'unregister'],
+    usageExample: {
+      code: `const reg = new FinalizationRegistry(k => console.log(k, 'freed'))
+// Use to release resources tied to object lifetimes`,
+      explanation: {
+        en: "Use FinalizationRegistry to release external resources when an object is no longer reachable.",
+        es: "Usa FinalizationRegistry para liberar recursos externos cuando un objeto ya no es alcanzable.",
+      },
+    },
   },
 ]

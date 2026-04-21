@@ -38,6 +38,15 @@ areEqual('abc', 'def') // → false
       '`.localeCompare()` returns `0` for equal strings.',
     ],
     tags: ['String', 'String.prototype.localeCompare', 'comparison', 'beginner'],
+    usageExample: {
+      code: `'apple'.localeCompare('banana')   // → negative
+'banana'.localeCompare('apple')   // → positive
+'abc'.localeCompare('abc')        // → 0`,
+      explanation: {
+        en: "Use localeCompare() to compare strings in a locale-aware way, returning negative, zero, or positive.",
+        es: "Usa localeCompare() para comparar cadenas de forma adaptada al idioma, devolviendo negativo, cero o positivo.",
+      },
+    },
   },
   {
     slug: 'string-locale-compare-less-than',
@@ -73,6 +82,15 @@ comesBefore('b', 'a') // → false
       'A negative return value means the first string sorts before the second.',
     ],
     tags: ['String', 'String.prototype.localeCompare', 'sorting', 'beginner'],
+    usageExample: {
+      code: `'apple'.localeCompare('banana')   // → negative
+'banana'.localeCompare('apple')   // → positive
+'abc'.localeCompare('abc')        // → 0`,
+      explanation: {
+        en: "Use localeCompare() to compare strings in a locale-aware way, returning negative, zero, or positive.",
+        es: "Usa localeCompare() para comparar cadenas de forma adaptada al idioma, devolviendo negativo, cero o positivo.",
+      },
+    },
   },
   {
     slug: 'string-locale-compare-greater-than',
@@ -108,6 +126,15 @@ comesAfter('a', 'b') // → false
       'A positive return value means the first string sorts after the second.',
     ],
     tags: ['String', 'String.prototype.localeCompare', 'sorting', 'beginner'],
+    usageExample: {
+      code: `'apple'.localeCompare('banana')   // → negative
+'banana'.localeCompare('apple')   // → positive
+'abc'.localeCompare('abc')        // → 0`,
+      explanation: {
+        en: "Use localeCompare() to compare strings in a locale-aware way, returning negative, zero, or positive.",
+        es: "Usa localeCompare() para comparar cadenas de forma adaptada al idioma, devolviendo negativo, cero o positivo.",
+      },
+    },
   },
   {
     slug: 'string-locale-compare-sort',
@@ -142,6 +169,15 @@ sortStrings(['banana', 'apple', 'cherry']) // → ['apple', 'banana', 'cherry']
       'Use `[...arr].sort((a, b) => a.localeCompare(b))` to avoid mutating the input.',
     ],
     tags: ['String', 'String.prototype.localeCompare', 'sort', 'intermediate'],
+    usageExample: {
+      code: `'apple'.localeCompare('banana')   // → negative
+'banana'.localeCompare('apple')   // → positive
+'abc'.localeCompare('abc')        // → 0`,
+      explanation: {
+        en: "Use localeCompare() to compare strings in a locale-aware way, returning negative, zero, or positive.",
+        es: "Usa localeCompare() para comparar cadenas de forma adaptada al idioma, devolviendo negativo, cero o positivo.",
+      },
+    },
   },
   {
     slug: 'string-locale-compare-sign',
@@ -181,5 +217,14 @@ compareSign('c', 'b') // → 1
       'Normalize with: `if (r < 0) return -1; if (r > 0) return 1; return 0`.',
     ],
     tags: ['String', 'String.prototype.localeCompare', 'comparison', 'intermediate'],
+    usageExample: {
+      code: `'apple'.localeCompare('banana')   // → negative
+'banana'.localeCompare('apple')   // → positive
+'abc'.localeCompare('abc')        // → 0`,
+      explanation: {
+        en: "Use localeCompare() to compare strings in a locale-aware way, returning negative, zero, or positive.",
+        es: "Usa localeCompare() para comparar cadenas de forma adaptada al idioma, devolviendo negativo, cero o positivo.",
+      },
+    },
   },
 ]

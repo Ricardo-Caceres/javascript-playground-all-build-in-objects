@@ -20,6 +20,17 @@ export const setAddExercises: Exercise[] = [
     ],
     hints: ['add() returns the Set itself, enabling method chaining'],
     tags: ['Set', 'add', 'chaining'],
+    usageExample: {
+      code: `const s = new Set()
+s.add(1)
+s.add(2)
+s.add(1)   // duplicate ignored
+console.log(s.size) // → 2`,
+      explanation: {
+        en: 'Use Set.add() to insert values; duplicates are silently ignored.',
+        es: 'Usa Set.add() para insertar valores; los duplicados se ignoran silenciosamente.',
+      },
+    },
   },
   {
     slug: 'set-add-2',
@@ -40,6 +51,17 @@ export const setAddExercises: Exercise[] = [
     ],
     hints: ['Adding a new unique value always increases size'],
     tags: ['Set', 'add', 'size'],
+    usageExample: {
+      code: `const s = new Set()
+s.add(1)
+s.add(2)
+s.add(1)   // duplicate ignored
+console.log(s.size) // → 2`,
+      explanation: {
+        en: 'Use Set.add() to insert values; duplicates are silently ignored.',
+        es: 'Usa Set.add() para insertar valores; los duplicados se ignoran silenciosamente.',
+      },
+    },
   },
   {
     slug: 'set-add-3',
@@ -60,6 +82,17 @@ export const setAddExercises: Exercise[] = [
     ],
     hints: ['Sets are unique — adding an existing value does nothing to size'],
     tags: ['Set', 'add', 'deduplication'],
+    usageExample: {
+      code: `const s = new Set()
+s.add(1)
+s.add(2)
+s.add(1)   // duplicate ignored
+console.log(s.size) // → 2`,
+      explanation: {
+        en: 'Use Set.add() to insert values; duplicates are silently ignored.',
+        es: 'Usa Set.add() para insertar valores; los duplicados se ignoran silenciosamente.',
+      },
+    },
   },
   {
     slug: 'set-add-4',
@@ -80,6 +113,17 @@ export const setAddExercises: Exercise[] = [
     ],
     hints: ['add() returns the Set, so you can chain: set.add(1).add(2).add(3)'],
     tags: ['Set', 'add', 'chaining'],
+    usageExample: {
+      code: `const s = new Set()
+s.add(1)
+s.add(2)
+s.add(1)   // duplicate ignored
+console.log(s.size) // → 2`,
+      explanation: {
+        en: 'Use Set.add() to insert values; duplicates are silently ignored.',
+        es: 'Usa Set.add() para insertar valores; los duplicados se ignoran silenciosamente.',
+      },
+    },
   },
   {
     slug: 'set-add-5',
@@ -100,5 +144,16 @@ export const setAddExercises: Exercise[] = [
     ],
     hints: ['Objects are compared by reference in Sets, not by structural equality'],
     tags: ['Set', 'add', 'object'],
+    usageExample: {
+      code: `const s = new Set()
+s.add(1)
+s.add(2)
+s.add(1)   // duplicate ignored
+console.log(s.size) // → 2`,
+      explanation: {
+        en: 'Use Set.add() to insert values; duplicates are silently ignored.',
+        es: 'Usa Set.add() para insertar valores; los duplicados se ignoran silenciosamente.',
+      },
+    },
   },
 ]

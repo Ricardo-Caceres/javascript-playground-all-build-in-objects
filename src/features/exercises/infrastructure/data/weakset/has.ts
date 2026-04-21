@@ -20,6 +20,16 @@ export const weakSetHasExercises: Exercise[] = [
     ],
     hints: ['has() returns a boolean indicating presence.'],
     tags: ['weakset', 'has', 'instance-method'],
+    usageExample: {
+      code: `const ws = new WeakSet()
+const o = {}
+ws.add(o)
+ws.has(o)  // → true`,
+      explanation: {
+        en: "has() returns true if the object is in the WeakSet.",
+        es: "has() devuelve true si el objeto está en el WeakSet.",
+      },
+    },
   },
   {
     slug: 'weakset-has-2',
@@ -40,6 +50,15 @@ export const weakSetHasExercises: Exercise[] = [
     ],
     hints: ['Object identity (reference), not content, is used for lookup.'],
     tags: ['weakset', 'has', 'missing'],
+    usageExample: {
+      code: `const ws = new WeakSet()
+const o = {}
+ws.has(o)  // → false`,
+      explanation: {
+        en: "has() returns false for objects not added to the WeakSet.",
+        es: "has() devuelve false para objetos no agregados al WeakSet.",
+      },
+    },
   },
   {
     slug: 'weakset-has-3',
@@ -60,6 +79,17 @@ export const weakSetHasExercises: Exercise[] = [
     ],
     hints: ['delete() removes the object; has() reflects this.'],
     tags: ['weakset', 'has', 'delete'],
+    usageExample: {
+      code: `const ws = new WeakSet()
+const o = {}
+ws.add(o)
+ws.delete(o)
+ws.has(o)  // → false`,
+      explanation: {
+        en: "has() returns false after the object has been deleted.",
+        es: "has() devuelve false después de que el objeto haya sido eliminado.",
+      },
+    },
   },
   {
     slug: 'weakset-has-4',
@@ -80,6 +110,16 @@ export const weakSetHasExercises: Exercise[] = [
     ],
     hints: ['Two variables pointing to the same object share the same identity.'],
     tags: ['weakset', 'has', 'reference'],
+    usageExample: {
+      code: `const ws = new WeakSet()
+const a = {x:1}, b = {x:1}
+ws.add(a)
+ws.has(b)  // → false`,
+      explanation: {
+        en: "Different object references are distinct entries even if structurally equal.",
+        es: "Las diferentes referencias de objeto son entradas distintas aunque sean estructuralmente iguales.",
+      },
+    },
   },
   {
     slug: 'weakset-has-5',
@@ -100,5 +140,15 @@ export const weakSetHasExercises: Exercise[] = [
     ],
     hints: ['Objects passed to the WeakSet constructor are immediately present.'],
     tags: ['weakset', 'has', 'constructor'],
+    usageExample: {
+      code: `const ws = new WeakSet()
+const o = {}
+ws.add(o)
+ws.has(o)  // → true`,
+      explanation: {
+        en: "Use has() to guard operations that should only run once per object.",
+        es: "Usa has() para proteger operaciones que solo deben ejecutarse una vez por objeto.",
+      },
+    },
   },
 ]

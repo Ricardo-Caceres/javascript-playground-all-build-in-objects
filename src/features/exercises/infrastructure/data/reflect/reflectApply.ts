@@ -20,6 +20,15 @@ export const reflectApplyExercises: Exercise[] = [
     ],
     hints: ['Reflect.apply(fn, thisArg, args) is equivalent to fn.apply(thisArg, args).'],
     tags: ['Reflect', 'apply', 'Math', 'beginner'],
+    usageExample: {
+      code: `const result = Reflect.apply(Math.max, null, [1, 5, 3])
+console.log(result) // → 5
+// Equivalent to: Math.max.apply(null, [1, 5, 3])`,
+      explanation: {
+        en: 'Reflect.apply() calls a function with a given this value and arguments array, similar to Function.prototype.apply.',
+        es: 'Reflect.apply() llama a una función con un valor this y un arreglo de argumentos, similar a Function.prototype.apply.',
+      },
+    },
   },
   {
     slug: 'reflect-apply-string-includes',
@@ -40,6 +49,15 @@ export const reflectApplyExercises: Exercise[] = [
     ],
     hints: ['Pass the string as thisArg so that this inside includes refers to it.'],
     tags: ['Reflect', 'apply', 'String', 'intermediate'],
+    usageExample: {
+      code: `const result = Reflect.apply(Math.max, null, [1, 5, 3])
+console.log(result) // → 5
+// Equivalent to: Math.max.apply(null, [1, 5, 3])`,
+      explanation: {
+        en: 'Reflect.apply() calls a function with a given this value and arguments array, similar to Function.prototype.apply.',
+        es: 'Reflect.apply() llama a una función con un valor this y un arreglo de argumentos, similar a Function.prototype.apply.',
+      },
+    },
   },
   {
     slug: 'reflect-apply-array-push',
@@ -60,6 +78,15 @@ export const reflectApplyExercises: Exercise[] = [
     ],
     hints: ['Array.prototype.push returns the new .length after inserting elements.'],
     tags: ['Reflect', 'apply', 'Array', 'intermediate'],
+    usageExample: {
+      code: `const result = Reflect.apply(Math.max, null, [1, 5, 3])
+console.log(result) // → 5
+// Equivalent to: Math.max.apply(null, [1, 5, 3])`,
+      explanation: {
+        en: 'Reflect.apply() calls a function with a given this value and arguments array, similar to Function.prototype.apply.',
+        es: 'Reflect.apply() llama a una función con un valor this y un arreglo de argumentos, similar a Function.prototype.apply.',
+      },
+    },
   },
   {
     slug: 'reflect-apply-typeof',
@@ -80,6 +107,15 @@ export const reflectApplyExercises: Exercise[] = [
     ],
     hints: ['All Reflect methods are functions.'],
     tags: ['Reflect', 'apply', 'typeof', 'beginner'],
+    usageExample: {
+      code: `const result = Reflect.apply(Math.max, null, [1, 5, 3])
+console.log(result) // → 5
+// Equivalent to: Math.max.apply(null, [1, 5, 3])`,
+      explanation: {
+        en: 'Reflect.apply() calls a function with a given this value and arguments array, similar to Function.prototype.apply.',
+        es: 'Reflect.apply() llama a una función con un valor this y un arreglo de argumentos, similar a Function.prototype.apply.',
+      },
+    },
   },
   {
     slug: 'reflect-apply-arrow-add',
@@ -100,5 +136,14 @@ export const reflectApplyExercises: Exercise[] = [
     ],
     hints: ['Reflect.apply can call any function, including arrow functions.'],
     tags: ['Reflect', 'apply', 'arrow function', 'beginner'],
+    usageExample: {
+      code: `const result = Reflect.apply(Math.max, null, [1, 5, 3])
+console.log(result) // → 5
+// Equivalent to: Math.max.apply(null, [1, 5, 3])`,
+      explanation: {
+        en: 'Reflect.apply() calls a function with a given this value and arguments array, similar to Function.prototype.apply.',
+        es: 'Reflect.apply() llama a una función con un valor this y un arreglo de argumentos, similar a Function.prototype.apply.',
+      },
+    },
   },
 ]

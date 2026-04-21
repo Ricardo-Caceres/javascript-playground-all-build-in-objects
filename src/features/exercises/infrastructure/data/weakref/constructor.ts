@@ -19,6 +19,15 @@ export const weakRefConstructorExercises: Exercise[] = [
     ],
     hints: ['WeakRef is a constructor that creates a weak reference to an object.'],
     tags: ['weakref', 'constructor', 'instanceof'],
+    usageExample: {
+      code: `let obj = { data: 42 }
+const ref = new WeakRef(obj)
+ref.deref().data  // → 42`,
+      explanation: {
+        en: "WeakRef holds a weak reference to an object that does not prevent garbage collection.",
+        es: "WeakRef mantiene una referencia débil a un objeto que no impide la recolección de basura.",
+      },
+    },
   },
   {
     slug: 'weakref-constructor-2',
@@ -38,6 +47,15 @@ export const weakRefConstructorExercises: Exercise[] = [
     ],
     hints: ['All WeakRef instances are objects.'],
     tags: ['weakref', 'constructor', 'typeof'],
+    usageExample: {
+      code: `const target = {}
+const ref = new WeakRef(target)
+ref.deref() === target  // → true`,
+      explanation: {
+        en: "deref() returns the original target object if it has not been garbage collected.",
+        es: "deref() devuelve el objeto objetivo original si no ha sido recolectado por el GC.",
+      },
+    },
   },
   {
     slug: 'weakref-constructor-3',
@@ -57,6 +75,14 @@ export const weakRefConstructorExercises: Exercise[] = [
     ],
     hints: ['deref() returns the referenced object if it has not been garbage collected.'],
     tags: ['weakref', 'constructor', 'deref'],
+    usageExample: {
+      code: `const ref = new WeakRef({})
+ref instanceof WeakRef  // → true`,
+      explanation: {
+        en: "WeakRef instances can be checked with instanceof.",
+        es: "Las instancias de WeakRef se pueden verificar con instanceof.",
+      },
+    },
   },
   {
     slug: 'weakref-constructor-4',
@@ -76,6 +102,15 @@ export const weakRefConstructorExercises: Exercise[] = [
     ],
     hints: ['The dereferenced object has all original properties intact.'],
     tags: ['weakref', 'constructor', 'deref', 'property'],
+    usageExample: {
+      code: `const obj = { name: 'test' }
+const ref = new WeakRef(obj)
+obj.name  // → 'test'`,
+      explanation: {
+        en: "Holding a WeakRef does not keep the object alive on its own.",
+        es: "Mantener un WeakRef no mantiene el objeto vivo por sí solo.",
+      },
+    },
   },
   {
     slug: 'weakref-constructor-5',
@@ -95,5 +130,13 @@ export const weakRefConstructorExercises: Exercise[] = [
     ],
     hints: ['WeakRef only accepts objects (including arrays and functions), not primitives like numbers or strings.'],
     tags: ['weakref', 'constructor', 'error'],
+    usageExample: {
+      code: `const ref = new WeakRef({})
+typeof ref  // → 'object'`,
+      explanation: {
+        en: "WeakRef is an object type used for memory-sensitive caching scenarios.",
+        es: "WeakRef es un tipo de objeto usado para escenarios de caché sensibles a la memoria.",
+      },
+    },
   },
 ]

@@ -20,6 +20,15 @@ export const dateToJSONExercises: Exercise[] = [
     ],
     hints: ['toJSON() calls toISOString() internally — they produce the same output for valid dates'],
     tags: ['Date', 'toJSON', 'instance-method', 'epoch'],
+    usageExample: {
+      code: `const d = new Date('2024-01-15T00:00:00.000Z')
+d.toJSON()  // → '2024-01-15T00:00:00.000Z'
+JSON.stringify({ date: d })  // uses toJSON()`,
+      explanation: {
+        en: 'Use toJSON() to get the ISO 8601 UTC string representation of a Date; it is called automatically by JSON.stringify.',
+        es: 'Usa toJSON() para obtener la representación UTC en cadena ISO 8601 de un Date; es llamado automáticamente por JSON.stringify.',
+      },
+    },
   },
   {
     slug: 'date-tojson-2',
@@ -40,6 +49,15 @@ export const dateToJSONExercises: Exercise[] = [
     ],
     hints: ['Under the hood, toJSON() delegates to toISOString()'],
     tags: ['Date', 'toJSON', 'instance-method', 'toISOString'],
+    usageExample: {
+      code: `const d = new Date('2024-01-15T00:00:00.000Z')
+d.toJSON()  // → '2024-01-15T00:00:00.000Z'
+JSON.stringify({ date: d })  // uses toJSON()`,
+      explanation: {
+        en: 'Use toJSON() to get the ISO 8601 UTC string representation of a Date; it is called automatically by JSON.stringify.',
+        es: 'Usa toJSON() para obtener la representación UTC en cadena ISO 8601 de un Date; es llamado automáticamente por JSON.stringify.',
+      },
+    },
   },
   {
     slug: 'date-tojson-3',
@@ -60,6 +78,15 @@ export const dateToJSONExercises: Exercise[] = [
     ],
     hints: ['toJSON() returns a string primitive — the same ISO format used for JSON serialisation'],
     tags: ['Date', 'toJSON', 'instance-method', 'typeof'],
+    usageExample: {
+      code: `const d = new Date('2024-01-15T00:00:00.000Z')
+d.toJSON()  // → '2024-01-15T00:00:00.000Z'
+JSON.stringify({ date: d })  // uses toJSON()`,
+      explanation: {
+        en: 'Use toJSON() to get the ISO 8601 UTC string representation of a Date; it is called automatically by JSON.stringify.',
+        es: 'Usa toJSON() para obtener la representación UTC en cadena ISO 8601 de un Date; es llamado automáticamente por JSON.stringify.',
+      },
+    },
   },
   {
     slug: 'date-tojson-4',
@@ -80,6 +107,15 @@ export const dateToJSONExercises: Exercise[] = [
     ],
     hints: ['"Z" means UTC/Zulu time — toJSON() always serializes in UTC'],
     tags: ['Date', 'toJSON', 'instance-method', 'UTC'],
+    usageExample: {
+      code: `const d = new Date('2024-01-15T00:00:00.000Z')
+d.toJSON()  // → '2024-01-15T00:00:00.000Z'
+JSON.stringify({ date: d })  // uses toJSON()`,
+      explanation: {
+        en: 'Use toJSON() to get the ISO 8601 UTC string representation of a Date; it is called automatically by JSON.stringify.',
+        es: 'Usa toJSON() para obtener la representación UTC en cadena ISO 8601 de un Date; es llamado automáticamente por JSON.stringify.',
+      },
+    },
   },
   {
     slug: 'date-tojson-5',
@@ -100,5 +136,14 @@ export const dateToJSONExercises: Exercise[] = [
     ],
     hints: ['toJSON() encodes the full ISO 8601 representation, year first'],
     tags: ['Date', 'toJSON', 'instance-method'],
+    usageExample: {
+      code: `const d = new Date('2024-01-15T00:00:00.000Z')
+d.toJSON()  // → '2024-01-15T00:00:00.000Z'
+JSON.stringify({ date: d })  // uses toJSON()`,
+      explanation: {
+        en: 'Use toJSON() to get the ISO 8601 UTC string representation of a Date; it is called automatically by JSON.stringify.',
+        es: 'Usa toJSON() para obtener la representación UTC en cadena ISO 8601 de un Date; es llamado automáticamente por JSON.stringify.',
+      },
+    },
   },
 ]

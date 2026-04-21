@@ -20,6 +20,15 @@ export const dateValueOfExercises: Exercise[] = [
     ],
     hints: ['valueOf() returns the numeric timestamp — just like getTime()'],
     tags: ['Date', 'valueOf', 'instance-method', 'epoch'],
+    usageExample: {
+      code: `const d = new Date('2024-01-15T00:00:00.000Z')
+d.valueOf()  // → 1705276800000
+d.valueOf() === d.getTime()  // → true`,
+      explanation: {
+        en: 'Use valueOf() to get the millisecond timestamp of a Date; it equals getTime() and is called automatically in arithmetic expressions.',
+        es: 'Usa valueOf() para obtener el timestamp en milisegundos de un Date; es igual a getTime() y se llama automáticamente en expresiones aritméticas.',
+      },
+    },
   },
   {
     slug: 'date-valueof-2',
@@ -40,6 +49,15 @@ export const dateValueOfExercises: Exercise[] = [
     ],
     hints: ['valueOf() is the JavaScript coercion hook — it is called whenever a Date is used as a number'],
     tags: ['Date', 'valueOf', 'instance-method', 'getTime'],
+    usageExample: {
+      code: `const d = new Date('2024-01-15T00:00:00.000Z')
+d.valueOf()  // → 1705276800000
+d.valueOf() === d.getTime()  // → true`,
+      explanation: {
+        en: 'Use valueOf() to get the millisecond timestamp of a Date; it equals getTime() and is called automatically in arithmetic expressions.',
+        es: 'Usa valueOf() para obtener el timestamp en milisegundos de un Date; es igual a getTime() y se llama automáticamente en expresiones aritméticas.',
+      },
+    },
   },
   {
     slug: 'date-valueof-3',
@@ -60,6 +78,15 @@ export const dateValueOfExercises: Exercise[] = [
     ],
     hints: ['valueOf() returns a number — the timestamp in ms since the epoch'],
     tags: ['Date', 'valueOf', 'instance-method', 'typeof'],
+    usageExample: {
+      code: `const d = new Date('2024-01-15T00:00:00.000Z')
+d.valueOf()  // → 1705276800000
+d.valueOf() === d.getTime()  // → true`,
+      explanation: {
+        en: 'Use valueOf() to get the millisecond timestamp of a Date; it equals getTime() and is called automatically in arithmetic expressions.',
+        es: 'Usa valueOf() para obtener el timestamp en milisegundos de un Date; es igual a getTime() y se llama automáticamente en expresiones aritméticas.',
+      },
+    },
   },
   {
     slug: 'date-valueof-4',
@@ -80,6 +107,15 @@ export const dateValueOfExercises: Exercise[] = [
     ],
     hints: ['Dates after 1970 have positive timestamps'],
     tags: ['Date', 'valueOf', 'instance-method'],
+    usageExample: {
+      code: `const d = new Date('2024-01-15T00:00:00.000Z')
+d.valueOf()  // → 1705276800000
+d.valueOf() === d.getTime()  // → true`,
+      explanation: {
+        en: 'Use valueOf() to get the millisecond timestamp of a Date; it equals getTime() and is called automatically in arithmetic expressions.',
+        es: 'Usa valueOf() para obtener el timestamp en milisegundos de un Date; es igual a getTime() y se llama automáticamente en expresiones aritméticas.',
+      },
+    },
   },
   {
     slug: 'date-valueof-5',
@@ -100,5 +136,14 @@ export const dateValueOfExercises: Exercise[] = [
     ],
     hints: ['Date subtraction implicitly calls valueOf() on both operands, yielding the ms difference'],
     tags: ['Date', 'valueOf', 'instance-method', 'arithmetic'],
+    usageExample: {
+      code: `const d = new Date('2024-01-15T00:00:00.000Z')
+d.valueOf()  // → 1705276800000
+d.valueOf() === d.getTime()  // → true`,
+      explanation: {
+        en: 'Use valueOf() to get the millisecond timestamp of a Date; it equals getTime() and is called automatically in arithmetic expressions.',
+        es: 'Usa valueOf() para obtener el timestamp en milisegundos de un Date; es igual a getTime() y se llama automáticamente en expresiones aritméticas.',
+      },
+    },
   },
 ]

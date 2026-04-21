@@ -20,6 +20,16 @@ export const reflectOwnKeysExercises: Exercise[] = [
     ],
     hints: ['Reflect.ownKeys returns all own keys including non-enumerable ones.'],
     tags: ['Reflect', 'ownKeys', 'beginner'],
+    usageExample: {
+      code: `const obj = { a: 1, b: 2 }
+const keys = Reflect.ownKeys(obj)
+console.log(keys) // → ['a', 'b']
+// Includes string keys, Symbol keys, and non-enumerable keys`,
+      explanation: {
+        en: 'Reflect.ownKeys() returns an array of all own property keys (strings and Symbols) of an object.',
+        es: 'Reflect.ownKeys() devuelve un arreglo con todas las claves propias (strings y Symbols) de un objeto.',
+      },
+    },
   },
   {
     slug: 'reflect-own-keys-array',
@@ -40,6 +50,16 @@ export const reflectOwnKeysExercises: Exercise[] = [
     ],
     hints: ["Array elements have string keys like '0', '1', etc."],
     tags: ['Reflect', 'ownKeys', 'array', 'beginner'],
+    usageExample: {
+      code: `const obj = { a: 1, b: 2 }
+const keys = Reflect.ownKeys(obj)
+console.log(keys) // → ['a', 'b']
+// Includes string keys, Symbol keys, and non-enumerable keys`,
+      explanation: {
+        en: 'Reflect.ownKeys() returns an array of all own property keys (strings and Symbols) of an object.',
+        es: 'Reflect.ownKeys() devuelve un arreglo con todas las claves propias (strings y Symbols) de un objeto.',
+      },
+    },
   },
   {
     slug: 'reflect-own-keys-typeof',
@@ -60,6 +80,16 @@ export const reflectOwnKeysExercises: Exercise[] = [
     ],
     hints: ['All Reflect methods are functions.'],
     tags: ['Reflect', 'ownKeys', 'typeof', 'beginner'],
+    usageExample: {
+      code: `const obj = { a: 1, b: 2 }
+const keys = Reflect.ownKeys(obj)
+console.log(keys) // → ['a', 'b']
+// Includes string keys, Symbol keys, and non-enumerable keys`,
+      explanation: {
+        en: 'Reflect.ownKeys() returns an array of all own property keys (strings and Symbols) of an object.',
+        es: 'Reflect.ownKeys() devuelve un arreglo con todas las claves propias (strings y Symbols) de un objeto.',
+      },
+    },
   },
   {
     slug: 'reflect-own-keys-empty',
@@ -80,6 +110,16 @@ export const reflectOwnKeysExercises: Exercise[] = [
     ],
     hints: ['Reflect.ownKeys returns only own keys, not prototype chain.'],
     tags: ['Reflect', 'ownKeys', 'beginner'],
+    usageExample: {
+      code: `const obj = { a: 1, b: 2 }
+const keys = Reflect.ownKeys(obj)
+console.log(keys) // → ['a', 'b']
+// Includes string keys, Symbol keys, and non-enumerable keys`,
+      explanation: {
+        en: 'Reflect.ownKeys() returns an array of all own property keys (strings and Symbols) of an object.',
+        es: 'Reflect.ownKeys() devuelve un arreglo con todas las claves propias (strings y Symbols) de un objeto.',
+      },
+    },
   },
   {
     slug: 'reflect-own-keys-three-keys',
@@ -100,5 +140,15 @@ export const reflectOwnKeysExercises: Exercise[] = [
     ],
     hints: ['.length on the result gives the count of own keys.'],
     tags: ['Reflect', 'ownKeys', 'beginner'],
+    usageExample: {
+      code: `const obj = { a: 1, b: 2 }
+const keys = Reflect.ownKeys(obj)
+console.log(keys) // → ['a', 'b']
+// Includes string keys, Symbol keys, and non-enumerable keys`,
+      explanation: {
+        en: 'Reflect.ownKeys() returns an array of all own property keys (strings and Symbols) of an object.',
+        es: 'Reflect.ownKeys() devuelve un arreglo con todas las claves propias (strings y Symbols) de un objeto.',
+      },
+    },
   },
 ]

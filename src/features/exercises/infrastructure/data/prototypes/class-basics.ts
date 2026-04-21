@@ -45,6 +45,18 @@ const sound = dog.speak()`,
     ],
     hints: ['constructor is called when you use new', 'this refers to the instance being created', 'Methods are called on instances'],
     tags: ['class', 'constructor', 'methods', 'basics'],
+    usageExample: {
+      code: `class Animal {
+  constructor(name) { this.name = name; }
+  speak() { return this.name + ' makes a sound.'; }
+}
+const dog = new Animal('Rex');
+dog.speak(); // 'Rex makes a sound.'`,
+      explanation: {
+        en: "Classes group related state (properties) and behavior (methods) under one blueprint.",
+        es: "Las clases agrupan estado relacionado (propiedades) y comportamiento (métodos) bajo un blueprint.",
+      },
+    },
   },
   {
     slug: 'prototypes-class-2',
@@ -82,6 +94,16 @@ const isString = dog instanceof String`,
     ],
     hints: ['instanceof checks the prototype chain', 'It returns true for both direct and inherited classes'],
     tags: ['class', 'instanceof', 'type-checking', 'instance'],
+    usageExample: {
+      code: `class Animal {}
+const a = new Animal();
+a instanceof Animal; // true
+a instanceof Object; // true`,
+      explanation: {
+        en: "instanceof checks if an object was created by a class or its ancestors.",
+        es: "instanceof comprueba si un objeto fue creado por una clase o sus ancestros.",
+      },
+    },
   },
   {
     slug: 'prototypes-class-3',
@@ -133,6 +155,17 @@ const name = person.name`,
     ],
     hints: ['Use this.propertyName to set properties', 'Each instance gets its own copy of properties', 'Properties set in constructor are own properties'],
     tags: ['class', 'constructor', 'properties', 'instance-properties'],
+    usageExample: {
+      code: `class Point {
+  constructor(x, y) { this.x = x; this.y = y; }
+}
+const p = new Point(3, 4);
+p.x; // 3`,
+      explanation: {
+        en: "Properties assigned in the constructor are attached to every instance.",
+        es: "Las propiedades asignadas en el constructor se adjuntan a cada instancia.",
+      },
+    },
   },
   {
     slug: 'prototypes-class-4',
@@ -198,6 +231,20 @@ const c = temp.celsius`,
     ],
     hints: ['get keyword defines a property getter', 'set keyword defines a property setter', 'Use _ prefix convention for internal properties'],
     tags: ['class', 'getters', 'setters', 'properties'],
+    usageExample: {
+      code: `class Circle {
+  #r;
+  constructor(r) { this.#r = r; }
+  get radius() { return this.#r; }
+  set radius(v) { if (v > 0) this.#r = v; }
+}
+const c = new Circle(5);
+c.radius; // 5`,
+      explanation: {
+        en: "Getters and setters let you control how properties are read and written.",
+        es: "Los getters y setters te permiten controlar cómo se leen y escriben las propiedades.",
+      },
+    },
   },
   {
     slug: 'prototypes-class-5',
@@ -257,5 +304,15 @@ const result = Calculator.fromString('10 + 5')`,
     ],
     hints: ['Static methods use the static keyword', 'They are called on the class, not instances', 'this inside static method refers to the class'],
     tags: ['class', 'static-methods', 'utility', 'factory'],
+    usageExample: {
+      code: `class MathHelper {
+  static square(n) { return n * n; }
+}
+MathHelper.square(4); // 16`,
+      explanation: {
+        en: "Static methods belong to the class itself, not to any instance.",
+        es: "Los métodos estáticos pertenecen a la clase misma, no a ninguna instancia.",
+      },
+    },
   },
 ]

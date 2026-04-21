@@ -43,6 +43,19 @@ const db2 = Database.getInstance()`,
     ],
     hints: ['Use a static property to store the instance', 'Use the nullish coalescing operator (??)', 'getInstance should check if instance exists before creating'],
     tags: ['singleton', 'design-pattern', 'static-property', 'instance-caching'],
+    usageExample: {
+      code: `class DB {
+  static instance = null;
+  static getInstance() {
+    return DB.instance ?? (DB.instance = new DB());
+  }
+}
+DB.getInstance() === DB.getInstance(); // true`,
+      explanation: {
+        en: "Singleton ensures only one instance exists — getInstance always returns the same object.",
+        es: "Singleton garantiza que solo exista una instancia — getInstance siempre devuelve el mismo objeto.",
+      },
+    },
   },
   {
     slug: 'dp-singleton-2',
@@ -89,6 +102,20 @@ const log2 = Logger.getInstance()`,
     ],
     hints: ['Initialize the instance property to null', 'Check if instance exists, if not create it', 'Store initialization metadata in constructor'],
     tags: ['singleton', 'lazy-initialization', 'design-pattern', 'factory'],
+    usageExample: {
+      code: `class Logger {
+  static #inst = null;
+  createdAt = Date.now();
+  static getInstance() {
+    return Logger.#inst ?? (Logger.#inst = new Logger());
+  }
+}
+// Instance created only on first call`,
+      explanation: {
+        en: "Lazy initialization creates the instance only when first requested.",
+        es: "La inicialización perezosa crea la instancia solo cuando se solicita por primera vez.",
+      },
+    },
   },
   {
     slug: 'dp-singleton-3',
@@ -134,6 +161,19 @@ const config2 = Config.getInstance()`,
     ],
     hints: ['Use an IIFE to create a private scope', 'Store instance in a closure variable', 'Return an object with getInstance method'],
     tags: ['singleton', 'closure', 'iife', 'design-pattern', 'private-state'],
+    usageExample: {
+      code: `class Config {
+  #data = {};
+  static #instance;
+  set(k, v) { this.#data[k] = v; }
+  get(k) { return this.#data[k]; }
+  static getInstance() { return Config.#instance ?? (Config.#instance = new Config()); }
+}`,
+      explanation: {
+        en: "Singletons are ideal for shared configuration stores accessed throughout the app.",
+        es: "Los singletons son ideales para almacenar configuración compartida accesible en toda la app.",
+      },
+    },
   },
   {
     slug: 'dp-singleton-4',
@@ -183,6 +223,21 @@ const state2 = StateManager.getInstance()`,
     ],
     hints: ['Initialize data properties in constructor', 'All getInstance calls return the same instance', 'Modifications to the instance affect all references'],
     tags: ['singleton', 'state-management', 'design-pattern', 'shared-state'],
+    usageExample: {
+      code: `class Counter {
+  static #inst;
+  #count = 0;
+  increment() { this.#count++; }
+  value() { return this.#count; }
+  static getInstance() { return Counter.#inst ?? (Counter.#inst = new Counter()); }
+}
+Counter.getInstance().increment();
+Counter.getInstance().value(); // 1`,
+      explanation: {
+        en: "State accumulated through one reference is visible everywhere the singleton is used.",
+        es: "El estado acumulado mediante una referencia es visible en todas partes donde se usa el singleton.",
+      },
+    },
   },
   {
     slug: 'dp-singleton-5',
@@ -239,5 +294,18 @@ const cache = Cache.getInstance()`,
     ],
     hints: ['Each class needs its own static instance property', 'Each class needs its own getInstance method', 'Different classes are independent'],
     tags: ['singleton', 'design-pattern', 'independent-instances', 'multiple-singletons'],
+    usageExample: {
+      code: `class Pool {
+  static #inst;
+  #connections = [];
+  add(c) { this.#connections.push(c); }
+  size() { return this.#connections.length; }
+  static getInstance() { return Pool.#inst ?? (Pool.#inst = new Pool()); }
+}`,
+      explanation: {
+        en: "Resource pools (connections, workers) are a classic singleton use case.",
+        es: "Los grupos de recursos (conexiones, workers) son un caso de uso clásico del singleton.",
+      },
+    },
   },
 ]

@@ -44,6 +44,16 @@ export const typedArrayInstanceMethodsExercises: Exercise[] = [
     ],
     hints: ['arr.set(array) copies values starting at index 0'],
     tags: [],
+    usageExample: {
+      code: `const src = new Int32Array([1, 2, 3]);
+const dest = new Int32Array(5);
+dest.set(src, 1);
+// dest: [0, 1, 2, 3, 0]`,
+      explanation: {
+        en: "set() copies values from another array into the typed array at a given offset.",
+        es: "set() copia valores de otro array en el array tipado en un desplazamiento dado.",
+      },
+    },
   },
   {
     slug: 'typedarray-subarray-method',
@@ -83,6 +93,15 @@ export const typedArrayInstanceMethodsExercises: Exercise[] = [
     ],
     hints: ['subarray(start, end) returns a view, not a copy'],
     tags: [],
+    usageExample: {
+      code: `const arr = new Int32Array([1, 2, 3, 4, 5]);
+const sub = arr.subarray(1, 3);
+// Int32Array [2, 3] (same underlying buffer)`,
+      explanation: {
+        en: "subarray() returns a view of a portion without copying the underlying buffer.",
+        es: "subarray() devuelve una vista de una porción sin copiar el buffer subyacente.",
+      },
+    },
   },
   {
     slug: 'typedarray-fill-method',
@@ -122,6 +141,15 @@ export const typedArrayInstanceMethodsExercises: Exercise[] = [
     ],
     hints: ['new Int32Array(n).fill(value)'],
     tags: [],
+    usageExample: {
+      code: `const arr = new Uint8Array(5);
+arr.fill(7, 1, 4);
+// [0, 7, 7, 7, 0]`,
+      explanation: {
+        en: "fill() fills elements from start to end (exclusive) with a value.",
+        es: "fill() rellena elementos desde start hasta end (excluido) con un valor.",
+      },
+    },
   },
   {
     slug: 'typedarray-copywithin-method',
@@ -162,6 +190,15 @@ export const typedArrayInstanceMethodsExercises: Exercise[] = [
     ],
     hints: ['copyWithin(target, start) copies from start to target position'],
     tags: [],
+    usageExample: {
+      code: `const arr = new Int32Array([1, 2, 3, 4, 5]);
+arr.copyWithin(0, 3);
+// [4, 5, 3, 4, 5]`,
+      explanation: {
+        en: "copyWithin() copies elements within the array without changing its length.",
+        es: "copyWithin() copia elementos dentro del array sin cambiar su longitud.",
+      },
+    },
   },
   {
     slug: 'typedarray-reverse-method',
@@ -201,5 +238,14 @@ export const typedArrayInstanceMethodsExercises: Exercise[] = [
     ],
     hints: ['reverse() mutates and returns the array'],
     tags: [],
+    usageExample: {
+      code: `const arr = new Int32Array([1, 2, 3]);
+arr.reverse();
+// Int32Array [3, 2, 1]`,
+      explanation: {
+        en: "reverse() reverses the typed array in place and returns it.",
+        es: "reverse() invierte el array tipado en su lugar y lo devuelve.",
+      },
+    },
   },
 ]

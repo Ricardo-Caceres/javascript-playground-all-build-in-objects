@@ -20,6 +20,13 @@ export const symbolIteratorExercises: Exercise[] = [
     ],
     hints: ['Well-known symbols are properties on the Symbol constructor.'],
     tags: ['symbol', 'Symbol.iterator', 'well-known'],
+    usageExample: {
+      code: `typeof Symbol.iterator   // → 'symbol'`,
+      explanation: {
+        en: 'Symbol.iterator is a well-known symbol that makes objects iterable.',
+        es: 'Symbol.iterator es un símbolo conocido que hace que los objetos sean iterables.',
+      },
+    },
   },
   {
     slug: 'symbol-iterator-2',
@@ -40,6 +47,14 @@ export const symbolIteratorExercises: Exercise[] = [
     ],
     hints: ['Arrays implement the iterable protocol via Symbol.iterator.'],
     tags: ['symbol', 'Symbol.iterator', 'array', 'iterable'],
+    usageExample: {
+      code: `typeof [][Symbol.iterator]   // → 'function'
+[...([1, 2, 3])]             // → [1, 2, 3]`,
+      explanation: {
+        en: 'Arrays expose Symbol.iterator as a function that enables for...of and spread syntax.',
+        es: 'Los arrays exponen Symbol.iterator como función que habilita for...of y el spread.',
+      },
+    },
   },
   {
     slug: 'symbol-iterator-3',
@@ -60,6 +75,14 @@ export const symbolIteratorExercises: Exercise[] = [
     ],
     hints: ['Strings implement the iterable protocol, yielding individual characters.'],
     tags: ['symbol', 'Symbol.iterator', 'string', 'iterable'],
+    usageExample: {
+      code: `typeof ''[Symbol.iterator]   // → 'function'
+[...'abc']                   // → ['a', 'b', 'c']`,
+      explanation: {
+        en: 'Strings implement Symbol.iterator, allowing them to be spread into individual characters.',
+        es: 'Las cadenas implementan Symbol.iterator, permitiendo expandirlas en caracteres individuales.',
+      },
+    },
   },
   {
     slug: 'symbol-iterator-4',
@@ -80,6 +103,19 @@ export const symbolIteratorExercises: Exercise[] = [
     ],
     hints: ['Use a generator function as the Symbol.iterator method.'],
     tags: ['symbol', 'Symbol.iterator', 'generator', 'iterable'],
+    usageExample: {
+      code: `const range = {
+  [Symbol.iterator]: function*() {
+    yield 1
+    yield 2
+  }
+}
+[...range]   // → [1, 2]`,
+      explanation: {
+        en: 'Any object can become iterable by defining a [Symbol.iterator] generator method.',
+        es: 'Cualquier objeto puede volverse iterable definiendo un método generador [Symbol.iterator].',
+      },
+    },
   },
   {
     slug: 'symbol-iterator-5',
@@ -100,5 +136,12 @@ export const symbolIteratorExercises: Exercise[] = [
     ],
     hints: ['Well-known symbols like Symbol.iterator are not part of the global string-keyed registry.'],
     tags: ['symbol', 'Symbol.iterator', 'well-known', 'global-registry'],
+    usageExample: {
+      code: `Symbol.keyFor(Symbol.iterator)   // → undefined`,
+      explanation: {
+        en: 'Well-known symbols like Symbol.iterator exist outside the global string-keyed registry.',
+        es: 'Los símbolos conocidos como Symbol.iterator existen fuera del registro global de cadenas.',
+      },
+    },
   },
 ]

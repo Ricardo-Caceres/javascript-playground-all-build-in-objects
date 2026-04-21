@@ -20,6 +20,14 @@ export const globalParseFloatExercises: Exercise[] = [
     ],
     hints: ['parseFloat parses a string and returns a floating-point number.'],
     tags: ['globalfunctions', 'parseFloat', 'number'],
+    usageExample: {
+      code: `parseFloat('3.14')         // → 3.14
+typeof parseFloat('3.14')   // → 'number'`,
+      explanation: {
+        en: 'parseFloat() parses a string and returns the first floating-point number it finds.',
+        es: 'parseFloat() analiza una cadena y devuelve el primer número de punto flotante que encuentra.',
+      },
+    },
   },
   {
     slug: 'global-parsefloat-2',
@@ -40,6 +48,14 @@ export const globalParseFloatExercises: Exercise[] = [
     ],
     hints: ['parseFloat can also parse integer strings.'],
     tags: ['globalfunctions', 'parseFloat', 'number'],
+    usageExample: {
+      code: `parseFloat('42')    // → 42
+parseFloat('42.0')  // → 42`,
+      explanation: {
+        en: 'parseFloat() can also parse integer strings, returning them as number values.',
+        es: 'parseFloat() también puede analizar cadenas enteras, devolviéndolas como valores numéricos.',
+      },
+    },
   },
   {
     slug: 'global-parsefloat-3',
@@ -60,6 +76,14 @@ export const globalParseFloatExercises: Exercise[] = [
     ],
     hints: ['parseFloat stops parsing at the first character that is not a digit, sign, or decimal point.'],
     tags: ['globalfunctions', 'parseFloat', 'partial'],
+    usageExample: {
+      code: `parseFloat('3.14abc')   // → 3.14
+parseFloat('abc3.14')   // → NaN`,
+      explanation: {
+        en: 'parseFloat() stops at the first non-numeric character — leading non-digits yield NaN.',
+        es: 'parseFloat() se detiene en el primer carácter no numérico; si comienza con letras devuelve NaN.',
+      },
+    },
   },
   {
     slug: 'global-parsefloat-4',
@@ -80,6 +104,14 @@ export const globalParseFloatExercises: Exercise[] = [
     ],
     hints: ['NaN is returned when a string cannot be converted to a number.'],
     tags: ['globalfunctions', 'parseFloat', 'NaN'],
+    usageExample: {
+      code: `parseFloat('abc')          // → NaN
+isNaN(parseFloat('abc'))   // → true`,
+      explanation: {
+        en: 'parseFloat() returns NaN when the string cannot be converted to a number.',
+        es: 'parseFloat() devuelve NaN cuando la cadena no puede convertirse a número.',
+      },
+    },
   },
   {
     slug: 'global-parsefloat-5',
@@ -100,5 +132,13 @@ export const globalParseFloatExercises: Exercise[] = [
     ],
     hints: ['parseFloat always returns a number type.'],
     tags: ['globalfunctions', 'parseFloat', 'typeof'],
+    usageExample: {
+      code: `typeof parseFloat('1.5')   // → 'number'
+typeof parseFloat('xyz')   // → 'number'  (NaN has typeof 'number')`,
+      explanation: {
+        en: 'parseFloat() always returns a number type — even NaN has typeof \'number\'.',
+        es: 'parseFloat() siempre devuelve tipo number; incluso NaN tiene typeof \'number\'.',
+      },
+    },
   },
 ]

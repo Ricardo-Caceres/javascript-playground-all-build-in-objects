@@ -31,6 +31,22 @@ Memoization caches function results to avoid recomputation. This is useful for e
     ],
     hints: ['Create a cache object inside memoize', 'Check if value exists in cache', 'If not, compute and store result'],
     tags: ['functional', 'memoization', 'cache', 'performance'],
+    usageExample: {
+      code: `function memoize(fn) {
+  const cache = {};
+  return function(x) {
+    if (x in cache) return cache[x];
+    return (cache[x] = fn(x));
+  };
+}
+const memoSqrt = memoize(Math.sqrt);
+memoSqrt(25); // 5 (computed)
+memoSqrt(25); // 5 (cached)`,
+      explanation: {
+        en: "Memoization caches the result of a function call to avoid redundant computation.",
+        es: "La memoización almacena en caché el resultado de una llamada a función para evitar cómputo redundante.",
+      },
+    },
   },
   {
     slug: 'fp-memo-2',
@@ -68,6 +84,14 @@ const memoizedSquare = memoize((x) => x * x)`,
     ],
     hints: ['Cache stores results by input', 'Same input always returns cached value', 'Different inputs create separate cache entries'],
     tags: ['functional', 'memoization', 'cache', 'consistency'],
+    usageExample: {
+      code: `const memoFib = memoize(n => n <= 1 ? n : memoFib(n-1) + memoFib(n-2));
+memoFib(10); // 55 — cached sub-results speed this up`,
+      explanation: {
+        en: "Memoization dramatically speeds up recursive functions like Fibonacci.",
+        es: "La memoización acelera drásticamente las funciones recursivas como Fibonacci.",
+      },
+    },
   },
   {
     slug: 'fp-memo-3',
@@ -113,6 +137,16 @@ const tracked = memoize((x) => {
     ],
     hints: ['Track function calls with a counter', 'Memoized calls should not increment counter', 'Only first call with unique arg increments counter'],
     tags: ['functional', 'memoization', 'optimization', 'call-tracking'],
+    usageExample: {
+      code: `let computeCount = 0;
+const memoDouble = memoize(x => { computeCount++; return x * 2; });
+memoDouble(5); memoDouble(5);
+computeCount; // 1 — computed only once`,
+      explanation: {
+        en: "The underlying function is called only once per unique input — subsequent calls hit the cache.",
+        es: "La función subyacente se llama solo una vez por entrada única — las llamadas posteriores usan la caché.",
+      },
+    },
   },
   {
     slug: 'fp-memo-4',
@@ -158,6 +192,16 @@ const expensiveOp = memoize((x) => {
     ],
     hints: ['Cache miss occurs when x not in cache', 'Cache hit occurs when x already in cache', 'Only cache misses trigger function execution'],
     tags: ['functional', 'memoization', 'cache', 'optimization'],
+    usageExample: {
+      code: `const memo = memoize(fn);
+memo(42); // miss — computed and cached
+memo(99); // miss — computed and cached
+memo(42); // hit — returned from cache`,
+      explanation: {
+        en: "A cache miss means the input is new; the function runs and stores the result.",
+        es: "Un cache miss significa que la entrada es nueva; la función se ejecuta y almacena el resultado.",
+      },
+    },
   },
   {
     slug: 'fp-memo-5',
@@ -217,5 +261,15 @@ memoizedFn(2)`,
     ],
     hints: ['Cache stores separate entry for each unique input', 'Multiple keys do not interfere', 'Each cache hit avoids recomputation'],
     tags: ['functional', 'memoization', 'cache', 'multi-key', 'advanced'],
+    usageExample: {
+      code: `const memo = memoize(fn);
+memo('a'); memo('b'); memo('c');
+memo('a'); memo('b'); memo('c');
+// fn called exactly 3 times total`,
+      explanation: {
+        en: "Each distinct key is computed once — no matter how many times you call with it.",
+        es: "Cada clave distinta se computa una vez, sin importar cuántas veces se llame con ella.",
+      },
+    },
   },
 ]

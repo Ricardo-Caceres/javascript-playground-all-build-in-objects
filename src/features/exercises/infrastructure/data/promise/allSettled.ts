@@ -20,6 +20,18 @@ export const promiseAllSettledExercises: Exercise[] = [
     ],
     hints: ['Promise.allSettled() always returns a Promise.'],
     tags: ['promise', 'allSettled', 'instanceof'],
+    usageExample: {
+      code: `const p1 = Promise.resolve(1)
+const p2 = Promise.reject('error')
+Promise.allSettled([p1, p2]).then(results => {
+  console.log(results[0]) // → { status: 'fulfilled', value: 1 }
+  console.log(results[1]) // → { status: 'rejected', reason: 'error' }
+})`,
+      explanation: {
+        en: 'Promise.allSettled() waits for all promises and returns an array of result objects, regardless of whether they fulfilled or rejected.',
+        es: 'Promise.allSettled() espera todas las promesas y devuelve un arreglo de objetos de resultado, sin importar si se resolvieron o rechazaron.',
+      },
+    },
   },
   {
     slug: 'promise-allSettled-2',
@@ -40,6 +52,18 @@ export const promiseAllSettledExercises: Exercise[] = [
     ],
     hints: ['Promise.allSettled() returns a Promise object.'],
     tags: ['promise', 'allSettled', 'typeof'],
+    usageExample: {
+      code: `const p1 = Promise.resolve(1)
+const p2 = Promise.reject('error')
+Promise.allSettled([p1, p2]).then(results => {
+  console.log(results[0]) // → { status: 'fulfilled', value: 1 }
+  console.log(results[1]) // → { status: 'rejected', reason: 'error' }
+})`,
+      explanation: {
+        en: 'Promise.allSettled() waits for all promises and returns an array of result objects, regardless of whether they fulfilled or rejected.',
+        es: 'Promise.allSettled() espera todas las promesas y devuelve un arreglo de objetos de resultado, sin importar si se resolvieron o rechazaron.',
+      },
+    },
   },
   {
     slug: 'promise-allSettled-3',
@@ -60,6 +84,18 @@ export const promiseAllSettledExercises: Exercise[] = [
     ],
     hints: ['Promise.allSettled is a static method (function).'],
     tags: ['promise', 'allSettled', 'typeof'],
+    usageExample: {
+      code: `const p1 = Promise.resolve(1)
+const p2 = Promise.reject('error')
+Promise.allSettled([p1, p2]).then(results => {
+  console.log(results[0]) // → { status: 'fulfilled', value: 1 }
+  console.log(results[1]) // → { status: 'rejected', reason: 'error' }
+})`,
+      explanation: {
+        en: 'Promise.allSettled() waits for all promises and returns an array of result objects, regardless of whether they fulfilled or rejected.',
+        es: 'Promise.allSettled() espera todas las promesas y devuelve un arreglo de objetos de resultado, sin importar si se resolvieron o rechazaron.',
+      },
+    },
   },
   {
     slug: 'promise-allSettled-4',
@@ -80,6 +116,18 @@ export const promiseAllSettledExercises: Exercise[] = [
     ],
     hints: ['allSettled waits for all and returns a Promise.'],
     tags: ['promise', 'allSettled', 'resolve'],
+    usageExample: {
+      code: `const p1 = Promise.resolve(1)
+const p2 = Promise.reject('error')
+Promise.allSettled([p1, p2]).then(results => {
+  console.log(results[0]) // → { status: 'fulfilled', value: 1 }
+  console.log(results[1]) // → { status: 'rejected', reason: 'error' }
+})`,
+      explanation: {
+        en: 'Promise.allSettled() waits for all promises and returns an array of result objects, regardless of whether they fulfilled or rejected.',
+        es: 'Promise.allSettled() espera todas las promesas y devuelve un arreglo de objetos de resultado, sin importar si se resolvieron o rechazaron.',
+      },
+    },
   },
   {
     slug: 'promise-allSettled-5',
@@ -100,5 +148,17 @@ export const promiseAllSettledExercises: Exercise[] = [
     ],
     hints: ['Static methods are Function instances.'],
     tags: ['promise', 'allSettled', 'instanceof'],
+    usageExample: {
+      code: `const p1 = Promise.resolve(1)
+const p2 = Promise.reject('error')
+Promise.allSettled([p1, p2]).then(results => {
+  console.log(results[0]) // → { status: 'fulfilled', value: 1 }
+  console.log(results[1]) // → { status: 'rejected', reason: 'error' }
+})`,
+      explanation: {
+        en: 'Promise.allSettled() waits for all promises and returns an array of result objects, regardless of whether they fulfilled or rejected.',
+        es: 'Promise.allSettled() espera todas las promesas y devuelve un arreglo de objetos de resultado, sin importar si se resolvieron o rechazaron.',
+      },
+    },
   },
 ]

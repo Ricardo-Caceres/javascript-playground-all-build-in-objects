@@ -20,6 +20,15 @@ crypto.getRandomValues(a) === a`,
     ],
     hints: ['getRandomValues mutates the input array and also returns it'],
     tags: ['crypto', 'getRandomValues', 'static-method'],
+    usageExample: {
+      code: `const arr = new Uint8Array(4)
+crypto.getRandomValues(arr)
+arr  // → Uint8Array with random bytes`,
+      explanation: {
+        en: "crypto.getRandomValues() fills a typed array with cryptographically secure random bytes.",
+        es: "crypto.getRandomValues() llena un arreglo tipado con bytes aleatorios criptográficamente seguros.",
+      },
+    },
   },
   {
     slug: 'crypto-random-2',
@@ -39,6 +48,15 @@ crypto.getRandomValues(a) === a`,
     ],
     hints: ['getRandomValues fills the array in place without changing its length'],
     tags: ['crypto', 'getRandomValues', 'static-method'],
+    usageExample: {
+      code: `const rand = new Uint32Array(1)
+crypto.getRandomValues(rand)
+rand[0]  // → a random 32-bit integer`,
+      explanation: {
+        en: "Use Uint32Array to get a random unsigned 32-bit integer.",
+        es: "Usa Uint32Array para obtener un entero de 32 bits sin signo aleatorio.",
+      },
+    },
   },
   {
     slug: 'crypto-random-3',
@@ -58,6 +76,14 @@ crypto.getRandomValues(a) === a`,
     ],
     hints: ['Typed array elements are automatically numbers'],
     tags: ['crypto', 'getRandomValues', 'static-method'],
+    usageExample: {
+      code: `const key = crypto.getRandomValues(new Uint8Array(32))
+// 256 random bits for cryptographic use`,
+      explanation: {
+        en: "Generate 32 random bytes (256 bits) as a cryptographic key or seed.",
+        es: "Genera 32 bytes aleatorios (256 bits) como clave criptográfica o semilla.",
+      },
+    },
   },
   {
     slug: 'crypto-random-4',
@@ -78,6 +104,14 @@ v >= 0 && v <= 255`,
     ],
     hints: ['Uint8Array holds 8-bit unsigned integers, so values are 0-255'],
     tags: ['crypto', 'getRandomValues', 'static-method'],
+    usageExample: {
+      code: `const n = crypto.getRandomValues(new Uint8Array(1))[0]
+n >= 0 && n <= 255  // → true`,
+      explanation: {
+        en: "Each random byte is in the range 0-255.",
+        es: "Cada byte aleatorio está en el rango 0-255.",
+      },
+    },
   },
   {
     slug: 'crypto-random-5',
@@ -97,5 +131,15 @@ v >= 0 && v <= 255`,
     ],
     hints: ['getRandomValues supports multiple typed array constructors'],
     tags: ['crypto', 'getRandomValues', 'static-method'],
+    usageExample: {
+      code: `// Secure random integer in [0, max):
+function secureRandom(max) {
+  return crypto.getRandomValues(new Uint32Array(1))[0] % max
+}`,
+      explanation: {
+        en: "Combine getRandomValues() with modulo to get a random integer in a range.",
+        es: "Combina getRandomValues() con módulo para obtener un entero aleatorio en un rango.",
+      },
+    },
   },
 ]

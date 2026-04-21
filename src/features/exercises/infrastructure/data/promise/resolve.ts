@@ -20,6 +20,14 @@ export const promiseResolveExercises: Exercise[] = [
     ],
     hints: ['Promise.resolve() always returns a Promise instance.'],
     tags: ['promise', 'resolve', 'instanceof'],
+    usageExample: {
+      code: `const p = Promise.resolve(42)
+p.then(v => console.log(v)) // → 42`,
+      explanation: {
+        en: 'Promise.resolve() creates an already-resolved promise with the given value.',
+        es: 'Promise.resolve() crea una promesa ya resuelta con el valor dado.',
+      },
+    },
   },
   {
     slug: 'promise-resolve-2',
@@ -40,6 +48,14 @@ export const promiseResolveExercises: Exercise[] = [
     ],
     hints: ['Promise instances have typeof === "object".'],
     tags: ['promise', 'resolve', 'typeof'],
+    usageExample: {
+      code: `const p = Promise.resolve(42)
+p.then(v => console.log(v)) // → 42`,
+      explanation: {
+        en: 'Promise.resolve() creates an already-resolved promise with the given value.',
+        es: 'Promise.resolve() crea una promesa ya resuelta con el valor dado.',
+      },
+    },
   },
   {
     slug: 'promise-resolve-3',
@@ -60,6 +76,14 @@ export const promiseResolveExercises: Exercise[] = [
     ],
     hints: ['Wrapping a Promise in Promise.resolve returns the same Promise.'],
     tags: ['promise', 'resolve', 'nested'],
+    usageExample: {
+      code: `const p = Promise.resolve(42)
+p.then(v => console.log(v)) // → 42`,
+      explanation: {
+        en: 'Promise.resolve() creates an already-resolved promise with the given value.',
+        es: 'Promise.resolve() crea una promesa ya resuelta con el valor dado.',
+      },
+    },
   },
   {
     slug: 'promise-resolve-4',
@@ -80,6 +104,14 @@ export const promiseResolveExercises: Exercise[] = [
     ],
     hints: ['Any value can be wrapped in Promise.resolve.'],
     tags: ['promise', 'resolve', 'null'],
+    usageExample: {
+      code: `const p = Promise.resolve(42)
+p.then(v => console.log(v)) // → 42`,
+      explanation: {
+        en: 'Promise.resolve() creates an already-resolved promise with the given value.',
+        es: 'Promise.resolve() crea una promesa ya resuelta con el valor dado.',
+      },
+    },
   },
   {
     slug: 'promise-resolve-5',
@@ -100,5 +132,13 @@ export const promiseResolveExercises: Exercise[] = [
     ],
     hints: ['Promise.resolve() with no argument works too.'],
     tags: ['promise', 'resolve', 'undefined'],
+    usageExample: {
+      code: `const p = Promise.resolve(42)
+p.then(v => console.log(v)) // → 42`,
+      explanation: {
+        en: 'Promise.resolve() creates an already-resolved promise with the given value.',
+        es: 'Promise.resolve() crea una promesa ya resuelta con el valor dado.',
+      },
+    },
   },
 ]

@@ -34,6 +34,16 @@ extractSub('abcdef') // → 'bcd'
       '`str.substring(1, 4)` returns characters at indices 1, 2, and 3.',
     ],
     tags: ['String', 'String.prototype.substring', 'beginner'],
+    usageExample: {
+      code: `const str = 'Hello, World!'
+str.substring(7, 12)   // → 'World'
+str.substring(5, 2)    // → 'llo' (args swapped)
+str.substring(7)       // → 'World!'`,
+      explanation: {
+        en: "Use substring() to extract characters between two indices, automatically swapping them if start is greater than end.",
+        es: "Usa substring() para extraer caracteres entre dos índices, intercambiándolos automáticamente si el inicio es mayor que el fin.",
+      },
+    },
   },
   {
     slug: 'string-substring-start-equals-end',
@@ -68,6 +78,16 @@ emptySubstring('hello', 2) // → ''
       'When start and end are equal, there are no characters to extract.',
     ],
     tags: ['String', 'String.prototype.substring', 'beginner'],
+    usageExample: {
+      code: `const str = 'Hello, World!'
+str.substring(7, 12)   // → 'World'
+str.substring(5, 2)    // → 'llo' (args swapped)
+str.substring(7)       // → 'World!'`,
+      explanation: {
+        en: "Use substring() to extract characters between two indices, automatically swapping them if start is greater than end.",
+        es: "Usa substring() para extraer caracteres entre dos índices, intercambiándolos automáticamente si el inicio es mayor que el fin.",
+      },
+    },
   },
   {
     slug: 'string-substring-start-greater-end',
@@ -102,6 +122,16 @@ substringSwap('abcdefgh') // → 'cde'  (same as substring(2, 5))
       '`str.substring(a, b)` treats the arguments as `substring(min(a,b), max(a,b))`.',
     ],
     tags: ['String', 'String.prototype.substring', 'intermediate'],
+    usageExample: {
+      code: `const str = 'Hello, World!'
+str.substring(7, 12)   // → 'World'
+str.substring(5, 2)    // → 'llo' (args swapped)
+str.substring(7)       // → 'World!'`,
+      explanation: {
+        en: "Use substring() to extract characters between two indices, automatically swapping them if start is greater than end.",
+        es: "Usa substring() para extraer caracteres entre dos índices, intercambiándolos automáticamente si el inicio es mayor que el fin.",
+      },
+    },
   },
   {
     slug: 'string-substring-omit-end',
@@ -136,6 +166,16 @@ fromStart('hello world', 6) // → 'world'
       '`str.substring(n)` is equivalent to `str.substring(n, str.length)`.',
     ],
     tags: ['String', 'String.prototype.substring', 'beginner'],
+    usageExample: {
+      code: `const str = 'Hello, World!'
+str.substring(7, 12)   // → 'World'
+str.substring(5, 2)    // → 'llo' (args swapped)
+str.substring(7)       // → 'World!'`,
+      explanation: {
+        en: "Use substring() to extract characters between two indices, automatically swapping them if start is greater than end.",
+        es: "Usa substring() para extraer caracteres entre dos índices, intercambiándolos automáticamente si el inicio es mayor que el fin.",
+      },
+    },
   },
   {
     slug: 'string-substring-first-n',
@@ -171,5 +211,15 @@ firstN('abcdef', 4) // → 'abcd'
       '`str.substring(0, n)` is a common pattern for truncating strings.',
     ],
     tags: ['String', 'String.prototype.substring', 'beginner'],
+    usageExample: {
+      code: `const str = 'Hello, World!'
+str.substring(7, 12)   // → 'World'
+str.substring(5, 2)    // → 'llo' (args swapped)
+str.substring(7)       // → 'World!'`,
+      explanation: {
+        en: "Use substring() to extract characters between two indices, automatically swapping them if start is greater than end.",
+        es: "Usa substring() para extraer caracteres entre dos índices, intercambiándolos automáticamente si el inicio es mayor que el fin.",
+      },
+    },
   },
 ]

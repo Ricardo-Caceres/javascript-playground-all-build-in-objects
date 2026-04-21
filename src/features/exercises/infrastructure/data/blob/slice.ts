@@ -19,6 +19,15 @@ export const blobSliceExercises: Exercise[] = [
     ],
     hints: ['slice(start, end) — the end index is exclusive.'],
     tags: ['Blob', 'slice', 'instance-method'],
+    usageExample: {
+      code: `const b = new Blob(['Hello World'])
+const part = b.slice(0, 5)
+await part.text()  // → 'Hello'`,
+      explanation: {
+        en: "slice() returns a new Blob containing a portion of the original Blob's data.",
+        es: "slice() devuelve un nuevo Blob que contiene una parte de los datos del Blob original.",
+      },
+    },
   },
   {
     slug: 'blob-slice-2',
@@ -38,6 +47,14 @@ export const blobSliceExercises: Exercise[] = [
     ],
     hints: ['Blob.slice always returns a new Blob object.'],
     tags: ['Blob', 'slice', 'instance-method', 'instanceof'],
+    usageExample: {
+      code: `const b = new Blob(['ABCDEF'])
+b.slice(2, 4).size  // → 2`,
+      explanation: {
+        en: "The slice is a copy; modifying one Blob does not affect the other.",
+        es: "El slice es una copia; modificar un Blob no afecta al otro.",
+      },
+    },
   },
   {
     slug: 'blob-slice-3',
@@ -57,6 +74,14 @@ export const blobSliceExercises: Exercise[] = [
     ],
     hints: ['The third argument to slice sets the MIME type of the resulting Blob.'],
     tags: ['Blob', 'slice', 'instance-method', 'type', 'contentType'],
+    usageExample: {
+      code: `const b = new Blob(['hello'])
+b.slice(-3).text().then(t => t)  // → 'llo'`,
+      explanation: {
+        en: "Negative indices count from the end of the Blob.",
+        es: "Los índices negativos cuentan desde el final del Blob.",
+      },
+    },
   },
   {
     slug: 'blob-slice-4',
@@ -76,6 +101,15 @@ export const blobSliceExercises: Exercise[] = [
     ],
     hints: ['Omitting the end argument slices to the end of the Blob.'],
     tags: ['Blob', 'slice', 'instance-method', 'offset'],
+    usageExample: {
+      code: `const b = new Blob(['data'], { type: 'text/plain' })
+const s = b.slice(0, 2, 'text/html')
+s.type  // → 'text/html'`,
+      explanation: {
+        en: "Pass a MIME type as the third argument to change the type of the sliced Blob.",
+        es: "Pasa un tipo MIME como tercer argumento para cambiar el tipo del Blob resultante.",
+      },
+    },
   },
   {
     slug: 'blob-slice-5',
@@ -95,5 +129,13 @@ export const blobSliceExercises: Exercise[] = [
     ],
     hints: ['When start === end, there are zero bytes in the range.'],
     tags: ['Blob', 'slice', 'instance-method', 'empty'],
+    usageExample: {
+      code: `const b = new Blob(['Hello'])
+b.slice(0).size === b.size  // → true`,
+      explanation: {
+        en: "slice(0) creates a full copy of the Blob.",
+        es: "slice(0) crea una copia completa del Blob.",
+      },
+    },
   },
 ]

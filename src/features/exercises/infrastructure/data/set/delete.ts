@@ -20,6 +20,16 @@ export const setDeleteExercises: Exercise[] = [
     ],
     hints: ['delete() returns true when the value existed and was removed'],
     tags: ['Set', 'delete', 'method'],
+    usageExample: {
+      code: `const s = new Set([1, 2, 3])
+s.delete(2)   // → true
+s.delete(99)  // → false
+console.log(s.size) // → 2`,
+      explanation: {
+        en: 'Use Set.delete() to remove a value; it returns true if the value existed.',
+        es: 'Usa Set.delete() para eliminar un valor; devuelve true si el valor existía.',
+      },
+    },
   },
   {
     slug: 'set-delete-2',
@@ -40,6 +50,16 @@ export const setDeleteExercises: Exercise[] = [
     ],
     hints: ['delete() returns false (not undefined) when the value did not exist'],
     tags: ['Set', 'delete', 'missing'],
+    usageExample: {
+      code: `const s = new Set([1, 2, 3])
+s.delete(2)   // → true
+s.delete(99)  // → false
+console.log(s.size) // → 2`,
+      explanation: {
+        en: 'Use Set.delete() to remove a value; it returns true if the value existed.',
+        es: 'Usa Set.delete() para eliminar un valor; devuelve true si el valor existía.',
+      },
+    },
   },
   {
     slug: 'set-delete-3',
@@ -60,6 +80,16 @@ export const setDeleteExercises: Exercise[] = [
     ],
     hints: ['Each successful delete() reduces size by 1'],
     tags: ['Set', 'delete', 'size'],
+    usageExample: {
+      code: `const s = new Set([1, 2, 3])
+s.delete(2)   // → true
+s.delete(99)  // → false
+console.log(s.size) // → 2`,
+      explanation: {
+        en: 'Use Set.delete() to remove a value; it returns true if the value existed.',
+        es: 'Usa Set.delete() para eliminar un valor; devuelve true si el valor existía.',
+      },
+    },
   },
   {
     slug: 'set-delete-4',
@@ -80,6 +110,16 @@ export const setDeleteExercises: Exercise[] = [
     ],
     hints: ['delete() fully removes the value from the Set'],
     tags: ['Set', 'delete', 'has'],
+    usageExample: {
+      code: `const s = new Set([1, 2, 3])
+s.delete(2)   // → true
+s.delete(99)  // → false
+console.log(s.size) // → 2`,
+      explanation: {
+        en: 'Use Set.delete() to remove a value; it returns true if the value existed.',
+        es: 'Usa Set.delete() para eliminar un valor; devuelve true si el valor existía.',
+      },
+    },
   },
   {
     slug: 'set-delete-5',
@@ -100,5 +140,15 @@ export const setDeleteExercises: Exercise[] = [
     ],
     hints: ['delete() is idempotent — deleting an already-deleted value returns false'],
     tags: ['Set', 'delete', 'idempotent'],
+    usageExample: {
+      code: `const s = new Set([1, 2, 3])
+s.delete(2)   // → true
+s.delete(99)  // → false
+console.log(s.size) // → 2`,
+      explanation: {
+        en: 'Use Set.delete() to remove a value; it returns true if the value existed.',
+        es: 'Usa Set.delete() para eliminar un valor; devuelve true si el valor existía.',
+      },
+    },
   },
 ]

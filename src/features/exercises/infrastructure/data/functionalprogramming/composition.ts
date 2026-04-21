@@ -33,6 +33,15 @@ function composed(x) {
     ],
     hints: ['Call the first function, pass its result to the second', 'Composition reads right-to-left (innermost first)', 'Order of function application matters'],
     tags: ['functional', 'composition', 'function-chaining'],
+    usageExample: {
+      code: `const add1 = x => x + 1;
+const double = x => x * 2;
+const result = double(add1(3)); // 8`,
+      explanation: {
+        en: "Function composition chains functions so the output of one feeds into the next.",
+        es: "La composición de funciones encadena funciones para que la salida de una alimente a la siguiente.",
+      },
+    },
   },
   {
     slug: 'fp-compose-2',
@@ -68,6 +77,15 @@ const piped = pipe(add1, double)`,
     ],
     hints: ['Use reduce to chain function applications', 'Start with initial value x', 'Each result becomes input to next function'],
     tags: ['functional', 'composition', 'pipe', 'left-to-right'],
+    usageExample: {
+      code: `const pipe = (...fns) => x => fns.reduce((v, f) => f(v), x);
+const process = pipe(x => x + 1, x => x * 2, x => x + 1);
+process(3); // (3+1)*2+1 = 9`,
+      explanation: {
+        en: "pipe() applies functions left-to-right — the natural reading order.",
+        es: "pipe() aplica funciones de izquierda a derecha — el orden de lectura natural.",
+      },
+    },
   },
   {
     slug: 'fp-compose-3',
@@ -103,6 +121,17 @@ const composed = compose(double, add1)`,
     ],
     hints: ['Use reduceRight to reverse order', 'reduceRight processes from right to left', 'Same as mathematical function composition'],
     tags: ['functional', 'composition', 'compose', 'right-to-left'],
+    usageExample: {
+      code: `const compose = (...fns) => x => fns.reduceRight((v, f) => f(v), x);
+const double = x => x * 2;
+const add1 = x => x + 1;
+const process = compose(add1, double);
+process(3); // double runs first: 3*2+1 = 7`,
+      explanation: {
+        en: "compose() applies functions right-to-left — mathematical composition order.",
+        es: "compose() aplica funciones de derecha a izquierda — orden de composición matemática.",
+      },
+    },
   },
   {
     slug: 'fp-compose-4',
@@ -142,6 +171,17 @@ const pipeline = pipe(add2, square, subtract10)`,
     ],
     hints: ['Add 2, then square, then subtract 10', 'Order is left-to-right', 'Each output becomes the next input'],
     tags: ['functional', 'composition', 'pipe', 'multi-function'],
+    usageExample: {
+      code: `const pipe = (...fns) => x => fns.reduce((v, f) => f(v), x);
+const trim = s => s.trim();
+const toLower = s => s.toLowerCase();
+const process = pipe(trim, toLower);
+process('  Hello  '); // 'hello'`,
+      explanation: {
+        en: "Pipe functions to build a clean data-transformation pipeline.",
+        es: "Encadena funciones para construir un pipeline de transformación de datos limpio.",
+      },
+    },
   },
   {
     slug: 'fp-compose-5',
@@ -195,5 +235,14 @@ const piped = pipe(add5, double)`,
     ],
     hints: ['compose(f, g) reads right-to-left: apply g first, then f', 'pipe(g, f) reads left-to-right: apply g first, then f', 'They are mirrors of each other'],
     tags: ['functional', 'composition', 'pipe', 'compose', 'equivalence'],
+    usageExample: {
+      code: `const compose = (...fns) => x => fns.reduceRight((v, f) => f(v), x);
+const pipe = (...fns) => x => fns.reduce((v, f) => f(v), x);
+// compose(g, h)(x) === pipe(h, g)(x)`,
+      explanation: {
+        en: "compose(g, h) and pipe(h, g) produce the same result — they differ only in order.",
+        es: "compose(g, h) y pipe(h, g) producen el mismo resultado — solo difieren en el orden.",
+      },
+    },
   },
 ]

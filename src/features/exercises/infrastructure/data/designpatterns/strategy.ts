@@ -47,6 +47,17 @@ sorter.sort([3, 1, 2])`,
     ],
     hints: ['Store strategy in constructor', 'Use the strategy function in sort', 'Use slice to avoid mutating original array'],
     tags: ['strategy', 'design-pattern', 'sorting', 'algorithm-selection'],
+    usageExample: {
+      code: `function sorter(data, strategy) {
+  return [...data].sort(strategy);
+}
+const asc = (a, b) => a - b;
+sorter([3, 1, 2], asc); // [1, 2, 3]`,
+      explanation: {
+        en: "The Strategy pattern swaps algorithms at runtime by passing them as parameters.",
+        es: "El patrón Strategy intercambia algoritmos en tiempo de ejecución pasándolos como parámetros.",
+      },
+    },
   },
   {
     slug: 'dp-strategy-2',
@@ -99,6 +110,14 @@ const desc = new Sorter(descending)`,
     ],
     hints: ['Create two different strategies', 'Pass different strategies to Sorter instances', 'Same Sorter class works with both'],
     tags: ['strategy', 'design-pattern', 'sorting', 'polymorphism'],
+    usageExample: {
+      code: `const desc = (a, b) => b - a;
+sorter([3, 1, 2], desc); // [3, 2, 1]`,
+      explanation: {
+        en: "Pass a descending comparator to change sorting behavior without changing the sorter.",
+        es: "Pasa un comparador descendente para cambiar el comportamiento sin cambiar el sorter.",
+      },
+    },
   },
   {
     slug: 'dp-strategy-3',
@@ -151,6 +170,16 @@ sorter.sort([3, 1, 2])`,
     ],
     hints: ['Initialize strategy to null or undefined', 'Add setStrategy method', 'Update this.strategy in setStrategy', 'Use current strategy in sort'],
     tags: ['strategy', 'runtime-swap', 'design-pattern', 'flexibility'],
+    usageExample: {
+      code: `let strategy = (a, b) => a - b;
+function sort(arr) { return [...arr].sort(strategy); }
+// change strategy at runtime:
+strategy = (a, b) => b - a;`,
+      explanation: {
+        en: "Swap the strategy variable at runtime to change behavior without modifying calling code.",
+        es: "Intercambia la variable de estrategia en tiempo de ejecución sin modificar el código llamador.",
+      },
+    },
   },
   {
     slug: 'dp-strategy-4',
@@ -211,6 +240,16 @@ sorter.sort(users)`,
     ],
     hints: ['Access properties within strategy function', 'Use a, b to compare objects', 'Return difference or comparison result'],
     tags: ['strategy', 'object-sorting', 'comparator', 'design-pattern'],
+    usageExample: {
+      code: `const byName = (a, b) => a.name.localeCompare(b.name);
+const byAge = (a, b) => a.age - b.age;
+const users = [{ name: 'Bob', age: 30 }, { name: 'Alice', age: 25 }];
+users.sort(byName); // Alice first`,
+      explanation: {
+        en: "Custom comparator strategies let you sort objects by any property.",
+        es: "Las estrategias de comparador personalizadas permiten ordenar objetos por cualquier propiedad.",
+      },
+    },
   },
   {
     slug: 'dp-strategy-5',
@@ -263,5 +302,14 @@ const s2 = new Sorter(descending)`,
     ],
     hints: ['Each Sorter instance stores its own strategy', 'Different strategies produce different results', 'Instances are independent'],
     tags: ['strategy', 'multiple-instances', 'design-pattern', 'independence'],
+    usageExample: {
+      code: `const stratA = { sort: arr => [...arr].sort() };
+const stratB = { sort: arr => [...arr].sort((a, b) => b - a) };
+[stratA, stratB].forEach(s => console.log(s.sort([3, 1, 2])));`,
+      explanation: {
+        en: "Bundle strategies as objects with a common interface for clean interchangeability.",
+        es: "Empaqueta estrategias como objetos con una interfaz común para intercambiabilidad limpia.",
+      },
+    },
   },
 ]

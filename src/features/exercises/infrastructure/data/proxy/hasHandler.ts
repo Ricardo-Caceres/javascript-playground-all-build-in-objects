@@ -32,6 +32,17 @@ The \`has\` trap intercepts the \`in\` operator. When it always returns \`true\`
       'The `has` trap intercepts the `in` operator: `key in proxy`.',
     ],
     tags: ['Proxy', 'has trap', 'in operator', 'intermediate'],
+    usageExample: {
+      code: `const p = new Proxy({}, {
+  has: (target, key) => key.startsWith('a')
+})
+console.log('apple' in p)  // → true
+console.log('banana' in p) // → false`,
+      explanation: {
+        en: 'The has trap intercepts the in operator, allowing you to control which property names are considered present on a proxy.',
+        es: 'La trampa has intercepta el operador in, permitiendo controlar qué nombres de propiedad se consideran presentes en un proxy.',
+      },
+    },
   },
   {
     slug: 'proxy-has-passthrough-existing',
@@ -64,6 +75,17 @@ Without a \`has\` trap, the \`in\` operator checks the target directly.
       'Without a `has` trap, `in` checks the real target.',
     ],
     tags: ['Proxy', 'has trap', 'passthrough', 'beginner'],
+    usageExample: {
+      code: `const p = new Proxy({}, {
+  has: (target, key) => key.startsWith('a')
+})
+console.log('apple' in p)  // → true
+console.log('banana' in p) // → false`,
+      explanation: {
+        en: 'The has trap intercepts the in operator, allowing you to control which property names are considered present on a proxy.',
+        es: 'La trampa has intercepta el operador in, permitiendo controlar qué nombres de propiedad se consideran presentes en un proxy.',
+      },
+    },
   },
   {
     slug: 'proxy-has-always-false',
@@ -96,6 +118,17 @@ When the \`has\` trap always returns \`false\`, no key ever appears present — 
       'The `has` trap can lie — returning `false` even if the target has the property.',
     ],
     tags: ['Proxy', 'has trap', 'intermediate'],
+    usageExample: {
+      code: `const p = new Proxy({}, {
+  has: (target, key) => key.startsWith('a')
+})
+console.log('apple' in p)  // → true
+console.log('banana' in p) // → false`,
+      explanation: {
+        en: 'The has trap intercepts the in operator, allowing you to control which property names are considered present on a proxy.',
+        es: 'La trampa has intercepta el operador in, permitiendo controlar qué nombres de propiedad se consideran presentes en un proxy.',
+      },
+    },
   },
   {
     slug: 'proxy-has-conditional-x',
@@ -128,6 +161,17 @@ The \`has\` trap receives \`(target, key)\`. You can conditionally return \`true
       'Use `k === \'x\'` to allow only the key `\'x\'` through the trap.',
     ],
     tags: ['Proxy', 'has trap', 'intermediate'],
+    usageExample: {
+      code: `const p = new Proxy({}, {
+  has: (target, key) => key.startsWith('a')
+})
+console.log('apple' in p)  // → true
+console.log('banana' in p) // → false`,
+      explanation: {
+        en: 'The has trap intercepts the in operator, allowing you to control which property names are considered present on a proxy.',
+        es: 'La trampa has intercepta el operador in, permitiendo controlar qué nombres de propiedad se consideran presentes en un proxy.',
+      },
+    },
   },
   {
     slug: 'proxy-has-conditional-y-absent',
@@ -160,5 +204,16 @@ When the \`has\` trap only returns \`true\` for \`'x'\`, the key \`'y'\` is not 
       'When the condition is false, `has` returns `false` for that key.',
     ],
     tags: ['Proxy', 'has trap', 'intermediate'],
+    usageExample: {
+      code: `const p = new Proxy({}, {
+  has: (target, key) => key.startsWith('a')
+})
+console.log('apple' in p)  // → true
+console.log('banana' in p) // → false`,
+      explanation: {
+        en: 'The has trap intercepts the in operator, allowing you to control which property names are considered present on a proxy.',
+        es: 'La trampa has intercepta el operador in, permitiendo controlar qué nombres de propiedad se consideran presentes en un proxy.',
+      },
+    },
   },
 ]

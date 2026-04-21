@@ -20,6 +20,16 @@ export const setDifferenceExercises: Exercise[] = [
     ],
     hints: ['A.difference(B) = A - B — elements in A that are not in B'],
     tags: ['Set', 'difference', 'ES2025'],
+    usageExample: {
+      code: `const a = new Set([1, 2, 3, 4])
+const b = new Set([3, 4, 5])
+const diff = a.difference(b)
+console.log([...diff]) // → [1, 2]`,
+      explanation: {
+        en: 'Use Set.difference() to get elements in the first set that are not in the second.',
+        es: 'Usa Set.difference() para obtener los elementos del primer conjunto que no están en el segundo.',
+      },
+    },
   },
   {
     slug: 'set-difference-2',
@@ -40,6 +50,16 @@ export const setDifferenceExercises: Exercise[] = [
     ],
     hints: ['difference size = size of A minus the count of elements in both A and B'],
     tags: ['Set', 'difference', 'size'],
+    usageExample: {
+      code: `const a = new Set([1, 2, 3, 4])
+const b = new Set([3, 4, 5])
+const diff = a.difference(b)
+console.log([...diff]) // → [1, 2]`,
+      explanation: {
+        en: 'Use Set.difference() to get elements in the first set that are not in the second.',
+        es: 'Usa Set.difference() para obtener los elementos del primer conjunto que no están en el segundo.',
+      },
+    },
   },
   {
     slug: 'set-difference-3',
@@ -60,6 +80,16 @@ export const setDifferenceExercises: Exercise[] = [
     ],
     hints: ['When all elements of A are in B, the difference is an empty Set'],
     tags: ['Set', 'difference', 'empty'],
+    usageExample: {
+      code: `const a = new Set([1, 2, 3, 4])
+const b = new Set([3, 4, 5])
+const diff = a.difference(b)
+console.log([...diff]) // → [1, 2]`,
+      explanation: {
+        en: 'Use Set.difference() to get elements in the first set that are not in the second.',
+        es: 'Usa Set.difference() para obtener los elementos del primer conjunto que no están en el segundo.',
+      },
+    },
   },
   {
     slug: 'set-difference-4',
@@ -80,6 +110,16 @@ export const setDifferenceExercises: Exercise[] = [
     ],
     hints: ['A - ∅ = A; removing nothing leaves everything'],
     tags: ['Set', 'difference', 'emptyB'],
+    usageExample: {
+      code: `const a = new Set([1, 2, 3, 4])
+const b = new Set([3, 4, 5])
+const diff = a.difference(b)
+console.log([...diff]) // → [1, 2]`,
+      explanation: {
+        en: 'Use Set.difference() to get elements in the first set that are not in the second.',
+        es: 'Usa Set.difference() para obtener los elementos del primer conjunto que no están en el segundo.',
+      },
+    },
   },
   {
     slug: 'set-difference-5',
@@ -100,5 +140,15 @@ export const setDifferenceExercises: Exercise[] = [
     ],
     hints: ['difference() returns a new Set; neither original is modified'],
     tags: ['Set', 'difference', 'immutable'],
+    usageExample: {
+      code: `const a = new Set([1, 2, 3, 4])
+const b = new Set([3, 4, 5])
+const diff = a.difference(b)
+console.log([...diff]) // → [1, 2]`,
+      explanation: {
+        en: 'Use Set.difference() to get elements in the first set that are not in the second.',
+        es: 'Usa Set.difference() para obtener los elementos del primer conjunto que no están en el segundo.',
+      },
+    },
   },
 ]
