@@ -88,7 +88,7 @@ export function SearchModal({ open, onClose }: Props) {
         <ul className="max-h-80 overflow-y-auto py-2">
           {results.length === 0 && query.trim() ? (
             <li className="px-4 py-3 text-sm text-zinc-500">
-              No exercises found for "{query.trim()}"
+              {t('noResults', { query: query.trim() })}
             </li>
           ) : (
             results.map((ex, i) => (

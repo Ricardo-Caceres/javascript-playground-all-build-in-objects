@@ -23,7 +23,8 @@
   },
   "search": {
     "placeholder": "Buscar ejercicios...",
-    "objectsPlaceholder": "Buscar objetos…"
+    "objectsPlaceholder": "Buscar objetos…",
+    "noResults": "No se encontraron ejercicios para \"{query}\""
   },
   "home": {
     "title": "Práctica JavaScript",

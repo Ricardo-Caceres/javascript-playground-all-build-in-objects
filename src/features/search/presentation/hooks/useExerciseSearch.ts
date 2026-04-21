@@ -12,7 +12,8 @@ export function useExerciseSearch(query: string): Exercise[] {
       .filter(
         (ex) =>
           ex.title.toLowerCase().includes(q) ||
-          ex.builtIn.toLowerCase().includes(q),
+          ex.builtIn.toLowerCase().includes(q) ||
+          ex.description.toLowerCase().includes(q),
       )
       .slice(0, MAX_RESULTS)
   }, [query])
