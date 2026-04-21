@@ -20,6 +20,15 @@ export const mathPowExercises: Exercise[] = [
     ],
     hints: ['2^10 = 1024, commonly known as 1 kilobyte in computing'],
     tags: ['Math', 'pow', 'static-method'],
+    usageExample: {
+      code: `// Raise base to an exponent
+Math.pow(2, 8)    // → 256
+Math.pow(4, 0.5)  // → 2`,
+      explanation: {
+        en: 'Use Math.pow(base, exp) to compute exponential values; in modern JS the ** operator is preferred.',
+        es: 'Usa Math.pow(base, exp) para calcular valores exponenciales; en JS moderno se prefiere el operador **.',
+      },
+    },
   },
   {
     slug: 'math-pow-2',
@@ -40,6 +49,15 @@ export const mathPowExercises: Exercise[] = [
     ],
     hints: ['3^3 = 3 × 3 × 3 = 27'],
     tags: ['Math', 'pow', 'static-method'],
+    usageExample: {
+      code: `// Raise base to an exponent
+Math.pow(2, 8)    // → 256
+Math.pow(4, 0.5)  // → 2`,
+      explanation: {
+        en: 'Use Math.pow(base, exp) to compute exponential values; in modern JS the ** operator is preferred.',
+        es: 'Usa Math.pow(base, exp) para calcular valores exponenciales; en JS moderno se prefiere el operador **.',
+      },
+    },
   },
   {
     slug: 'math-pow-3',
@@ -60,6 +78,15 @@ export const mathPowExercises: Exercise[] = [
     ],
     hints: ['x^0.5 = sqrt(x); Math.pow(4, 0.5) = Math.sqrt(4) = 2'],
     tags: ['Math', 'pow', 'static-method'],
+    usageExample: {
+      code: `// Raise base to an exponent
+Math.pow(2, 8)    // → 256
+Math.pow(4, 0.5)  // → 2`,
+      explanation: {
+        en: 'Use Math.pow(base, exp) to compute exponential values; in modern JS the ** operator is preferred.',
+        es: 'Usa Math.pow(base, exp) para calcular valores exponenciales; en JS moderno se prefiere el operador **.',
+      },
+    },
   },
   {
     slug: 'math-pow-4',
@@ -80,6 +107,15 @@ export const mathPowExercises: Exercise[] = [
     ],
     hints: ['x^(-1) = 1/x; Math.pow(2, -1) = 1/2 = 0.5'],
     tags: ['Math', 'pow', 'static-method'],
+    usageExample: {
+      code: `// Raise base to an exponent
+Math.pow(2, 8)    // → 256
+Math.pow(4, 0.5)  // → 2`,
+      explanation: {
+        en: 'Use Math.pow(base, exp) to compute exponential values; in modern JS the ** operator is preferred.',
+        es: 'Usa Math.pow(base, exp) para calcular valores exponenciales; en JS moderno se prefiere el operador **.',
+      },
+    },
   },
   {
     slug: 'math-pow-5',
@@ -100,5 +136,14 @@ export const mathPowExercises: Exercise[] = [
     ],
     hints: ['0^0 = 1 by convention in JavaScript (and most programming languages)'],
     tags: ['Math', 'pow', 'static-method'],
+    usageExample: {
+      code: `// Raise base to an exponent
+Math.pow(2, 8)    // → 256
+Math.pow(4, 0.5)  // → 2`,
+      explanation: {
+        en: 'Use Math.pow(base, exp) to compute exponential values; in modern JS the ** operator is preferred.',
+        es: 'Usa Math.pow(base, exp) para calcular valores exponenciales; en JS moderno se prefiere el operador **.',
+      },
+    },
   },
 ]

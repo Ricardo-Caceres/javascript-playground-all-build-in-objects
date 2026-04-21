@@ -26,6 +26,16 @@ export const isSafeIntegerExercises: Exercise[] = [
     ],
     hints: ['Normal integers well within JavaScript\'s range are all safe.'],
     tags: ['Number', 'isSafeInteger', 'static-method', 'beginner'],
+    usageExample: {
+      code: `// Check if an integer is safely representable
+Number.isSafeInteger(42)                // → true
+Number.isSafeInteger(9007199254740991)  // → true  (MAX_SAFE_INTEGER)
+Number.isSafeInteger(9007199254740992)  // → false`,
+      explanation: {
+        en: 'Use Number.isSafeInteger() to verify that an integer can be precisely represented in JavaScript without floating-point rounding.',
+        es: 'Usa Number.isSafeInteger() para verificar que un entero puede representarse con precisión en JavaScript sin redondeo de punto flotante.',
+      },
+    },
   },
   {
     slug: 'number-is-safe-integer-2',
@@ -46,6 +56,16 @@ export const isSafeIntegerExercises: Exercise[] = [
     ],
     hints: ['`MAX_SAFE_INTEGER` is exactly at the safe boundary.'],
     tags: ['Number', 'isSafeInteger', 'MAX_SAFE_INTEGER', 'beginner'],
+    usageExample: {
+      code: `// Check if an integer is safely representable
+Number.isSafeInteger(42)                // → true
+Number.isSafeInteger(9007199254740991)  // → true  (MAX_SAFE_INTEGER)
+Number.isSafeInteger(9007199254740992)  // → false`,
+      explanation: {
+        en: 'Use Number.isSafeInteger() to verify that an integer can be precisely represented in JavaScript without floating-point rounding.',
+        es: 'Usa Number.isSafeInteger() para verificar que un entero puede representarse con precisión en JavaScript sin redondeo de punto flotante.',
+      },
+    },
   },
   {
     slug: 'number-is-safe-integer-3',
@@ -66,6 +86,16 @@ export const isSafeIntegerExercises: Exercise[] = [
     ],
     hints: ['One step beyond `MAX_SAFE_INTEGER` is no longer safe.'],
     tags: ['Number', 'isSafeInteger', 'MAX_SAFE_INTEGER', 'intermediate'],
+    usageExample: {
+      code: `// Check if an integer is safely representable
+Number.isSafeInteger(42)                // → true
+Number.isSafeInteger(9007199254740991)  // → true  (MAX_SAFE_INTEGER)
+Number.isSafeInteger(9007199254740992)  // → false`,
+      explanation: {
+        en: 'Use Number.isSafeInteger() to verify that an integer can be precisely represented in JavaScript without floating-point rounding.',
+        es: 'Usa Number.isSafeInteger() para verificar que un entero puede representarse con precisión en JavaScript sin redondeo de punto flotante.',
+      },
+    },
   },
   {
     slug: 'number-is-safe-integer-4',
@@ -88,6 +118,16 @@ export const isSafeIntegerExercises: Exercise[] = [
     ],
     hints: ['`3.0` has no fractional part and equals `3`, so it is a safe integer.'],
     tags: ['Number', 'isSafeInteger', 'float', 'beginner'],
+    usageExample: {
+      code: `// Check if an integer is safely representable
+Number.isSafeInteger(42)                // → true
+Number.isSafeInteger(9007199254740991)  // → true  (MAX_SAFE_INTEGER)
+Number.isSafeInteger(9007199254740992)  // → false`,
+      explanation: {
+        en: 'Use Number.isSafeInteger() to verify that an integer can be precisely represented in JavaScript without floating-point rounding.',
+        es: 'Usa Number.isSafeInteger() para verificar que un entero puede representarse con precisión en JavaScript sin redondeo de punto flotante.',
+      },
+    },
   },
   {
     slug: 'number-is-safe-integer-5',
@@ -108,5 +148,15 @@ export const isSafeIntegerExercises: Exercise[] = [
     ],
     hints: ['`isSafeInteger` requires an exact integer value — no fractional parts allowed.'],
     tags: ['Number', 'isSafeInteger', 'float', 'beginner'],
+    usageExample: {
+      code: `// Check if an integer is safely representable
+Number.isSafeInteger(42)                // → true
+Number.isSafeInteger(9007199254740991)  // → true  (MAX_SAFE_INTEGER)
+Number.isSafeInteger(9007199254740992)  // → false`,
+      explanation: {
+        en: 'Use Number.isSafeInteger() to verify that an integer can be precisely represented in JavaScript without floating-point rounding.',
+        es: 'Usa Number.isSafeInteger() para verificar que un entero puede representarse con precisión en JavaScript sin redondeo de punto flotante.',
+      },
+    },
   },
 ]

@@ -20,6 +20,15 @@ export const mathCosExercises: Exercise[] = [
     ],
     hints: ['cos(0°) = 1 by definition', 'The cosine of 0 radians is exactly 1'],
     tags: ['Math', 'cos', 'static-method', 'trigonometry'],
+    usageExample: {
+      code: `// Cosine of an angle in radians
+Math.cos(0)          // → 1
+Math.cos(Math.PI)    // → -1`,
+      explanation: {
+        en: 'Use Math.cos() to compute the cosine of an angle (in radians) for trigonometry and graphics.',
+        es: 'Usa Math.cos() para calcular el coseno de un ángulo (en radianes) en trigonometría y gráficos.',
+      },
+    },
   },
   {
     slug: 'math-cos-2',
@@ -40,6 +49,15 @@ export const mathCosExercises: Exercise[] = [
     ],
     hints: ['cos(180°) = -1', 'Floating-point imprecision is common with irrational inputs like π'],
     tags: ['Math', 'cos', 'static-method', 'trigonometry'],
+    usageExample: {
+      code: `// Cosine of an angle in radians
+Math.cos(0)          // → 1
+Math.cos(Math.PI)    // → -1`,
+      explanation: {
+        en: 'Use Math.cos() to compute the cosine of an angle (in radians) for trigonometry and graphics.',
+        es: 'Usa Math.cos() para calcular el coseno de un ángulo (en radianes) en trigonometría y gráficos.',
+      },
+    },
   },
   {
     slug: 'math-cos-3',
@@ -60,6 +78,15 @@ export const mathCosExercises: Exercise[] = [
     ],
     hints: ['cos(90°) = 0, but JavaScript uses floating-point which introduces tiny errors', 'Use tolerance checks instead of exact equality for trigonometric results'],
     tags: ['Math', 'cos', 'static-method', 'trigonometry', 'floating-point'],
+    usageExample: {
+      code: `// Cosine of an angle in radians
+Math.cos(0)          // → 1
+Math.cos(Math.PI)    // → -1`,
+      explanation: {
+        en: 'Use Math.cos() to compute the cosine of an angle (in radians) for trigonometry and graphics.',
+        es: 'Usa Math.cos() para calcular el coseno de un ángulo (en radianes) en trigonometría y gráficos.',
+      },
+    },
   },
   {
     slug: 'math-cos-4',
@@ -80,6 +107,15 @@ export const mathCosExercises: Exercise[] = [
     ],
     hints: ['All Math methods return a number primitive', 'Cosine is defined for all real inputs'],
     tags: ['Math', 'cos', 'static-method', 'trigonometry'],
+    usageExample: {
+      code: `// Cosine of an angle in radians
+Math.cos(0)          // → 1
+Math.cos(Math.PI)    // → -1`,
+      explanation: {
+        en: 'Use Math.cos() to compute the cosine of an angle (in radians) for trigonometry and graphics.',
+        es: 'Usa Math.cos() para calcular el coseno de un ángulo (en radianes) en trigonometría y gráficos.',
+      },
+    },
   },
   {
     slug: 'math-cos-5',
@@ -100,5 +136,14 @@ export const mathCosExercises: Exercise[] = [
     ],
     hints: ['cos(60°) = 0.5 is an exact ratio', 'π/3 radians = 60 degrees'],
     tags: ['Math', 'cos', 'static-method', 'trigonometry'],
+    usageExample: {
+      code: `// Cosine of an angle in radians
+Math.cos(0)          // → 1
+Math.cos(Math.PI)    // → -1`,
+      explanation: {
+        en: 'Use Math.cos() to compute the cosine of an angle (in radians) for trigonometry and graphics.',
+        es: 'Usa Math.cos() para calcular el coseno de un ángulo (en radianes) en trigonometría y gráficos.',
+      },
+    },
   },
 ]

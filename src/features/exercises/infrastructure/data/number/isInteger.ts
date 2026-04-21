@@ -26,6 +26,16 @@ export const isIntegerExercises: Exercise[] = [
     ],
     hints: ['Integers have no fractional part.'],
     tags: ['Number', 'isInteger', 'static-method', 'beginner'],
+    usageExample: {
+      code: `// Check if a value is an integer
+Number.isInteger(42)    // → true
+Number.isInteger(42.5)  // → false
+Number.isInteger('42')  // → false`,
+      explanation: {
+        en: 'Use Number.isInteger() to verify that a value is a whole number, without type coercion.',
+        es: 'Usa Number.isInteger() para verificar que un valor es un número entero, sin coerción de tipos.',
+      },
+    },
   },
   {
     slug: 'number-is-integer-2',
@@ -48,6 +58,16 @@ export const isIntegerExercises: Exercise[] = [
     ],
     hints: ['In JavaScript, `4.0 === 4` — they are the same value.'],
     tags: ['Number', 'isInteger', 'float', 'beginner'],
+    usageExample: {
+      code: `// Check if a value is an integer
+Number.isInteger(42)    // → true
+Number.isInteger(42.5)  // → false
+Number.isInteger('42')  // → false`,
+      explanation: {
+        en: 'Use Number.isInteger() to verify that a value is a whole number, without type coercion.',
+        es: 'Usa Number.isInteger() para verificar que un valor es un número entero, sin coerción de tipos.',
+      },
+    },
   },
   {
     slug: 'number-is-integer-3',
@@ -68,6 +88,16 @@ export const isIntegerExercises: Exercise[] = [
     ],
     hints: ['Any number with a non-zero fractional part is not an integer.'],
     tags: ['Number', 'isInteger', 'float', 'beginner'],
+    usageExample: {
+      code: `// Check if a value is an integer
+Number.isInteger(42)    // → true
+Number.isInteger(42.5)  // → false
+Number.isInteger('42')  // → false`,
+      explanation: {
+        en: 'Use Number.isInteger() to verify that a value is a whole number, without type coercion.',
+        es: 'Usa Number.isInteger() para verificar que un valor es un número entero, sin coerción de tipos.',
+      },
+    },
   },
   {
     slug: 'number-is-integer-4',
@@ -90,6 +120,16 @@ export const isIntegerExercises: Exercise[] = [
     ],
     hints: ['`isInteger` requires the value to be both finite and have no fractional part.'],
     tags: ['Number', 'isInteger', 'Infinity', 'beginner'],
+    usageExample: {
+      code: `// Check if a value is an integer
+Number.isInteger(42)    // → true
+Number.isInteger(42.5)  // → false
+Number.isInteger('42')  // → false`,
+      explanation: {
+        en: 'Use Number.isInteger() to verify that a value is a whole number, without type coercion.',
+        es: 'Usa Number.isInteger() para verificar que un valor es un número entero, sin coerción de tipos.',
+      },
+    },
   },
   {
     slug: 'number-is-integer-5',
@@ -112,5 +152,15 @@ Unlike some JS checks, \`Number.isInteger()\` does not coerce strings.`,
     ],
     hints: ['`Number.isInteger` only accepts actual number types — no string coercion.'],
     tags: ['Number', 'isInteger', 'coercion', 'beginner'],
+    usageExample: {
+      code: `// Check if a value is an integer
+Number.isInteger(42)    // → true
+Number.isInteger(42.5)  // → false
+Number.isInteger('42')  // → false`,
+      explanation: {
+        en: 'Use Number.isInteger() to verify that a value is a whole number, without type coercion.',
+        es: 'Usa Number.isInteger() para verificar que un valor es un número entero, sin coerción de tipos.',
+      },
+    },
   },
 ]

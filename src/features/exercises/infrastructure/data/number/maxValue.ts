@@ -23,6 +23,15 @@ const max = Number.MAX_VALUE`,
     ],
     hints: ['`MAX_VALUE` is the largest finite number; going beyond it gives `Infinity`.'],
     tags: ['Number', 'MAX_VALUE', 'static-property', 'beginner'],
+    usageExample: {
+      code: `// Largest finite positive number
+Number.MAX_VALUE        // → 1.7976931348623157e+308
+Number.MAX_VALUE * 2    // → Infinity`,
+      explanation: {
+        en: 'Use Number.MAX_VALUE to check against the largest representable floating-point value before performing operations that could overflow to Infinity.',
+        es: 'Usa Number.MAX_VALUE para comparar con el mayor valor de punto flotante representable antes de realizar operaciones que podrían desbordarse a Infinity.',
+      },
+    },
   },
   {
     slug: 'number-max-value-2',
@@ -46,6 +55,15 @@ const overflow = Number.MAX_VALUE * 2`,
     ],
     hints: ['Exceeding `MAX_VALUE` through multiplication overflows to `Infinity`.'],
     tags: ['Number', 'MAX_VALUE', 'overflow', 'Infinity', 'intermediate'],
+    usageExample: {
+      code: `// Largest finite positive number
+Number.MAX_VALUE        // → 1.7976931348623157e+308
+Number.MAX_VALUE * 2    // → Infinity`,
+      explanation: {
+        en: 'Use Number.MAX_VALUE to check against the largest representable floating-point value before performing operations that could overflow to Infinity.',
+        es: 'Usa Number.MAX_VALUE para comparar con el mayor valor de punto flotante representable antes de realizar operaciones que podrían desbordarse a Infinity.',
+      },
+    },
   },
   {
     slug: 'number-max-value-3',
@@ -68,6 +86,15 @@ Confirm \`Number.MAX_VALUE\` is a finite number.`,
     ],
     hints: ['`MAX_VALUE` is a plain `number`, and it is finite.'],
     tags: ['Number', 'MAX_VALUE', 'type', 'beginner'],
+    usageExample: {
+      code: `// Largest finite positive number
+Number.MAX_VALUE        // → 1.7976931348623157e+308
+Number.MAX_VALUE * 2    // → Infinity`,
+      explanation: {
+        en: 'Use Number.MAX_VALUE to check against the largest representable floating-point value before performing operations that could overflow to Infinity.',
+        es: 'Usa Number.MAX_VALUE para comparar con el mayor valor de punto flotante representable antes de realizar operaciones que podrían desbordarse a Infinity.',
+      },
+    },
   },
   {
     slug: 'number-max-value-4',
@@ -90,6 +117,15 @@ Confirm \`Number.MAX_VALUE\` is a finite number.`,
     ],
     hints: ['`MAX_VALUE` is finite — only `Infinity`, `-Infinity`, and `NaN` fail `isFinite`.'],
     tags: ['Number', 'MAX_VALUE', 'isFinite', 'beginner'],
+    usageExample: {
+      code: `// Largest finite positive number
+Number.MAX_VALUE        // → 1.7976931348623157e+308
+Number.MAX_VALUE * 2    // → Infinity`,
+      explanation: {
+        en: 'Use Number.MAX_VALUE to check against the largest representable floating-point value before performing operations that could overflow to Infinity.',
+        es: 'Usa Number.MAX_VALUE para comparar con el mayor valor de punto flotante representable antes de realizar operaciones que podrían desbordarse a Infinity.',
+      },
+    },
   },
   {
     slug: 'number-max-value-5',
@@ -116,5 +152,14 @@ Explore what happens when arithmetic results exceed \`Number.MAX_VALUE\`.`,
     ],
     hints: ['Any number greater than `MAX_VALUE` in JS is `Infinity`.'],
     tags: ['Number', 'MAX_VALUE', 'overflow', 'intermediate'],
+    usageExample: {
+      code: `// Largest finite positive number
+Number.MAX_VALUE        // → 1.7976931348623157e+308
+Number.MAX_VALUE * 2    // → Infinity`,
+      explanation: {
+        en: 'Use Number.MAX_VALUE to check against the largest representable floating-point value before performing operations that could overflow to Infinity.',
+        es: 'Usa Number.MAX_VALUE para comparar con el mayor valor de punto flotante representable antes de realizar operaciones que podrían desbordarse a Infinity.',
+      },
+    },
   },
 ]

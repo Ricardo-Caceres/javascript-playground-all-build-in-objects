@@ -30,6 +30,15 @@ export const toExponentialExercises: Exercise[] = [
     ],
     hints: ['`toExponential()` always returns a string in scientific notation.'],
     tags: ['Number', 'toExponential', 'instance-method', 'intermediate'],
+    usageExample: {
+      code: `// Format number in exponential notation
+(12345).toExponential(2)    // → '1.23e+4'
+(0.00123).toExponential(1)  // → '1.2e-3'`,
+      explanation: {
+        en: 'Use toExponential() to express a number in scientific notation, useful when displaying very large or very small values.',
+        es: 'Usa toExponential() para expresar un número en notación científica, útil al mostrar valores muy grandes o muy pequeños.',
+      },
+    },
   },
   {
     slug: 'number-to-exponential-2',
@@ -56,6 +65,15 @@ Specify the number of digits after the decimal point in the mantissa.
     ],
     hints: ['The argument controls how many decimal digits appear in the mantissa.'],
     tags: ['Number', 'toExponential', 'fractionDigits', 'intermediate'],
+    usageExample: {
+      code: `// Format number in exponential notation
+(12345).toExponential(2)    // → '1.23e+4'
+(0.00123).toExponential(1)  // → '1.2e-3'`,
+      explanation: {
+        en: 'Use toExponential() to express a number in scientific notation, useful when displaying very large or very small values.',
+        es: 'Usa toExponential() para expresar un número en notación científica, útil al mostrar valores muy grandes o muy pequeños.',
+      },
+    },
   },
   {
     slug: 'number-to-exponential-3',
@@ -78,6 +96,15 @@ Specify the number of digits after the decimal point in the mantissa.
     ],
     hints: ['`toExponential` pads with trailing zeros when needed.'],
     tags: ['Number', 'toExponential', 'padding', 'intermediate'],
+    usageExample: {
+      code: `// Format number in exponential notation
+(12345).toExponential(2)    // → '1.23e+4'
+(0.00123).toExponential(1)  // → '1.2e-3'`,
+      explanation: {
+        en: 'Use toExponential() to express a number in scientific notation, useful when displaying very large or very small values.',
+        es: 'Usa toExponential() para expresar un número en notación científica, útil al mostrar valores muy grandes o muy pequeños.',
+      },
+    },
   },
   {
     slug: 'number-to-exponential-4',
@@ -100,6 +127,15 @@ Specify the number of digits after the decimal point in the mantissa.
     ],
     hints: ['`toExponential` rounds the mantissa to the specified number of digits.'],
     tags: ['Number', 'toExponential', 'large-number', 'intermediate'],
+    usageExample: {
+      code: `// Format number in exponential notation
+(12345).toExponential(2)    // → '1.23e+4'
+(0.00123).toExponential(1)  // → '1.2e-3'`,
+      explanation: {
+        en: 'Use toExponential() to express a number in scientific notation, useful when displaying very large or very small values.',
+        es: 'Usa toExponential() para expresar un número en notación científica, útil al mostrar valores muy grandes o muy pequeños.',
+      },
+    },
   },
   {
     slug: 'number-to-exponential-5',
@@ -124,5 +160,14 @@ const t = typeof result`,
     ],
     hints: ['All `toXxx()` number methods return strings, not numbers.'],
     tags: ['Number', 'toExponential', 'return-type', 'beginner'],
+    usageExample: {
+      code: `// Format number in exponential notation
+(12345).toExponential(2)    // → '1.23e+4'
+(0.00123).toExponential(1)  // → '1.2e-3'`,
+      explanation: {
+        en: 'Use toExponential() to express a number in scientific notation, useful when displaying very large or very small values.',
+        es: 'Usa toExponential() para expresar un número en notación científica, útil al mostrar valores muy grandes o muy pequeños.',
+      },
+    },
   },
 ]

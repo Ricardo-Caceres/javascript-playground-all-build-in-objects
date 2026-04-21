@@ -41,6 +41,15 @@ function mapReturnsSubclass(): boolean {
       'By default, subclasses return instances of themselves from `.map()` — no extra code needed.',
     ],
     tags: ['Array', 'Symbol.species', 'subclass', 'advanced'],
+    usageExample: {
+      code: `class MyArr extends Array {}
+const a = new MyArr(1, 2, 3)
+a.map(x => x * 2) instanceof MyArr  // → true`,
+      explanation: {
+        en: 'Array[Symbol.species] controls which constructor methods like map() use for the return type.',
+        es: 'Array[Symbol.species] controla qué constructor usan métodos como map() para el tipo de retorno.',
+      },
+    },
   },
   {
     slug: 'array-species-subclass-filter',
@@ -82,6 +91,15 @@ function filterReturnsSubclass(): boolean {
       'Extending `Array` is enough — no need to override `Symbol.species` for the default behaviour.',
     ],
     tags: ['Array', 'Symbol.species', 'subclass', 'filter', 'advanced'],
+    usageExample: {
+      code: `class MyArr extends Array {}
+const a = new MyArr(1, 2, 3, 4)
+a.filter(x => x > 2) instanceof MyArr  // → true`,
+      explanation: {
+        en: 'filter() on a subclass of Array returns an instance of that subclass via Symbol.species.',
+        es: 'filter() en una subclase de Array devuelve una instancia de esa subclase mediante Symbol.species.',
+      },
+    },
   },
   {
     slug: 'array-species-override-species',
@@ -129,6 +147,17 @@ function mapReturnsPlainArray(): boolean {
       'After this override, `.map()` calls `new Array(...)` instead of `new PlainResultArray(...)`.',
     ],
     tags: ['Array', 'Symbol.species', 'override', 'advanced'],
+    usageExample: {
+      code: `class MyArr extends Array {
+  static get [Symbol.species]() { return Array }
+}
+const a = new MyArr(1, 2, 3)
+a.map(x => x) instanceof Array  // → true (not MyArr)`,
+      explanation: {
+        en: 'Override Symbol.species to make derived methods return a plain Array instead of the subclass.',
+        es: 'Sobreescribe Symbol.species para que los métodos derivados devuelvan un Array simple en lugar de la subclase.',
+      },
+    },
   },
   {
     slug: 'array-species-concat',
@@ -170,6 +199,16 @@ function concatReturnsSubclass(): boolean {
       'No override is needed — subclasses inherit this behaviour automatically.',
     ],
     tags: ['Array', 'Symbol.species', 'subclass', 'concat', 'advanced'],
+    usageExample: {
+      code: `class MyArr extends Array {}
+const a = new MyArr(1, 2)
+const b = a.concat([3, 4])
+b instanceof MyArr  // → true`,
+      explanation: {
+        en: 'concat() also respects Symbol.species when called on an Array subclass instance.',
+        es: 'concat() también respeta Symbol.species cuando se llama en una instancia de subclase de Array.',
+      },
+    },
   },
   {
     slug: 'array-species-check-instance',
@@ -210,5 +249,15 @@ function checkSubclassIsArray(): boolean {
       'You can use both `Array.isArray` and `instanceof` to understand subclass arrays.',
     ],
     tags: ['Array', 'Symbol.species', 'isArray', 'subclass', 'advanced'],
+    usageExample: {
+      code: `class MyArr extends Array {}
+const a = new MyArr(1, 2, 3)
+console.log(a instanceof MyArr)   // → true
+console.log(a instanceof Array)   // → true`,
+      explanation: {
+        en: 'Subclasses of Array are instances of both the subclass and Array due to prototype chain.',
+        es: 'Las subclases de Array son instancias tanto de la subclase como de Array gracias a la cadena de prototipos.',
+      },
+    },
   },
 ]

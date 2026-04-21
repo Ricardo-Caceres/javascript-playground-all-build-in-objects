@@ -43,6 +43,17 @@ export const setPrototypeOfExercises: Exercise[] = [
     ],
     hints: ['setPrototypeOf modifies the prototype chain at runtime'],
     tags: ['Object', 'setPrototypeOf', 'prototype', 'static-method'],
+    usageExample: {
+      code: `// Set the prototype of an object
+const animal = { breathe() { return true } }
+const dog = {}
+Object.setPrototypeOf(dog, animal)
+dog.breathe()   // → true`,
+      explanation: {
+        en: "Use Object.setPrototypeOf() to dynamically change an object's prototype, though creating objects with the correct prototype upfront is preferred.",
+        es: "Usa Object.setPrototypeOf() para cambiar dinámicamente el prototipo de un objeto, aunque es preferible crear objetos con el prototipo correcto desde el inicio.",
+      },
+    },
   },
   {
     slug: 'object-setPrototypeOf-2',
@@ -87,6 +98,17 @@ Setting the prototype to \`null\` creates an object with no prototype chain — 
     ],
     hints: ['null prototype objects are useful as pure hash maps with no inherited methods'],
     tags: ['Object', 'setPrototypeOf', 'prototype', 'null', 'static-method'],
+    usageExample: {
+      code: `// Set the prototype of an object
+const animal = { breathe() { return true } }
+const dog = {}
+Object.setPrototypeOf(dog, animal)
+dog.breathe()   // → true`,
+      explanation: {
+        en: "Use Object.setPrototypeOf() to dynamically change an object's prototype, though creating objects with the correct prototype upfront is preferred.",
+        es: "Usa Object.setPrototypeOf() para cambiar dinámicamente el prototipo de un objeto, aunque es preferible crear objetos con el prototipo correcto desde el inicio.",
+      },
+    },
   },
   {
     slug: 'object-setPrototypeOf-3',
@@ -131,6 +153,17 @@ After calling \`Object.setPrototypeOf()\`, use \`Object.getPrototypeOf()\` to co
     ],
     hints: ['Use getPrototypeOf to verify the prototype was set correctly'],
     tags: ['Object', 'setPrototypeOf', 'getPrototypeOf', 'prototype', 'static-method'],
+    usageExample: {
+      code: `// Set the prototype of an object
+const animal = { breathe() { return true } }
+const dog = {}
+Object.setPrototypeOf(dog, animal)
+dog.breathe()   // → true`,
+      explanation: {
+        en: "Use Object.setPrototypeOf() to dynamically change an object's prototype, though creating objects with the correct prototype upfront is preferred.",
+        es: "Usa Object.setPrototypeOf() para cambiar dinámicamente el prototipo de un objeto, aunque es preferible crear objetos con el prototipo correcto desde el inicio.",
+      },
+    },
   },
   {
     slug: 'object-setPrototypeOf-4',
@@ -177,6 +210,17 @@ After calling \`Object.setPrototypeOf()\`, use \`Object.getPrototypeOf()\` to co
     ],
     hints: ['setPrototypeOf enables dynamic prototype chain manipulation'],
     tags: ['Object', 'setPrototypeOf', 'prototype', 'inheritance', 'static-method'],
+    usageExample: {
+      code: `// Set the prototype of an object
+const animal = { breathe() { return true } }
+const dog = {}
+Object.setPrototypeOf(dog, animal)
+dog.breathe()   // → true`,
+      explanation: {
+        en: "Use Object.setPrototypeOf() to dynamically change an object's prototype, though creating objects with the correct prototype upfront is preferred.",
+        es: "Usa Object.setPrototypeOf() para cambiar dinámicamente el prototipo de un objeto, aunque es preferible crear objetos con el prototipo correcto desde el inicio.",
+      },
+    },
   },
   {
     slug: 'object-setPrototypeOf-5',
@@ -221,5 +265,16 @@ After calling \`Object.setPrototypeOf()\`, use \`Object.getPrototypeOf()\` to co
     ],
     hints: ['setPrototypeOf returns the object for convenient chaining'],
     tags: ['Object', 'setPrototypeOf', 'prototype', 'static-method'],
+    usageExample: {
+      code: `// Set the prototype of an object
+const animal = { breathe() { return true } }
+const dog = {}
+Object.setPrototypeOf(dog, animal)
+dog.breathe()   // → true`,
+      explanation: {
+        en: "Use Object.setPrototypeOf() to dynamically change an object's prototype, though creating objects with the correct prototype upfront is preferred.",
+        es: "Usa Object.setPrototypeOf() para cambiar dinámicamente el prototipo de un objeto, aunque es preferible crear objetos con el prototipo correcto desde el inicio.",
+      },
+    },
   },
 ]

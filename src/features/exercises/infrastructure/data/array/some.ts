@@ -36,6 +36,14 @@ hasNegative([1, 2, 3])   // → false
       '`some()` on an empty array always returns `false` — there are no elements to match.',
     ],
     tags: ['Array', 'Array.prototype.some', 'predicate', 'beginner'],
+    usageExample: {
+      code: `const nums = [1, 3, 5, 8]
+nums.some(n => n % 2 === 0)  // → true  (8 is even)`,
+      explanation: {
+        en: 'Use some() to check whether at least one element satisfies a condition.',
+        es: 'Usa some() para comprobar si al menos un elemento satisface una condición.',
+      },
+    },
   },
   {
     slug: 'array-some-string',
@@ -72,6 +80,14 @@ hasLong(['hi', 'hey'], 5)          // → false
       '`some()` stops as soon as the first matching string is found.',
     ],
     tags: ['Array', 'Array.prototype.some', 'string', 'beginner'],
+    usageExample: {
+      code: `const words = ['cat', 'dog', 'elephant']
+words.some(w => w.length > 5)  // → true ('elephant')`,
+      explanation: {
+        en: 'Use some() to check whether any string in an array meets a length or pattern condition.',
+        es: 'Usa some() para comprobar si alguna cadena en un array cumple una condición de longitud o patrón.',
+      },
+    },
   },
   {
     slug: 'array-some-empty',
@@ -107,6 +123,14 @@ someEmpty() // → false
       'Contrast this with `[].every(predicate)`, which returns `true` (vacuously true).',
     ],
     tags: ['Array', 'Array.prototype.some', 'empty', 'beginner'],
+    usageExample: {
+      code: `const empty = []
+empty.some(x => x > 0)  // → false  (no elements to satisfy)`,
+      explanation: {
+        en: 'some() returns false for empty arrays since there are no elements to satisfy the condition.',
+        es: 'some() devuelve false para arrays vacíos ya que no hay elementos que satisfagan la condición.',
+      },
+    },
   },
   {
     slug: 'array-some-object',
@@ -143,6 +167,14 @@ hasAdmin([{role: 'user'}, {role: 'mod'}])   // → false
       'Strict equality (`===`) is important — `\'administrator\'` is not `\'admin\'`.',
     ],
     tags: ['Array', 'Array.prototype.some', 'objects', 'intermediate'],
+    usageExample: {
+      code: `const users = [{active:false}, {active:true}, {active:false}]
+users.some(u => u.active)  // → true`,
+      explanation: {
+        en: 'Use some() to test whether any object in an array has a particular property value.',
+        es: 'Usa some() para verificar si algún objeto en un array tiene un valor de propiedad particular.',
+      },
+    },
   },
   {
     slug: 'array-some-early-exit',
@@ -179,5 +211,14 @@ containsDuplicate([1, 2, 3])    // → false
       'This is O(n²) — for large arrays, a `Set` approach is more performant.',
     ],
     tags: ['Array', 'Array.prototype.some', 'indexOf', 'duplicate', 'intermediate'],
+    usageExample: {
+      code: `const arr = [1, 2, 3, 4, 5]
+arr.some(n => { console.log(n); return n === 3 })
+// logs 1, 2, 3 — stops early`,
+      explanation: {
+        en: 'some() short-circuits as soon as a truthy result is found, saving unnecessary iterations.',
+        es: 'some() cortocircuita tan pronto como encuentra un resultado verdadero, ahorrando iteraciones innecesarias.',
+      },
+    },
   },
 ]

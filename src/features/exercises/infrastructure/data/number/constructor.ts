@@ -32,6 +32,17 @@ strToNum('3.14')  // → 3.14
     ],
     hints: ['`Number(str)` parses numeric strings directly.'],
     tags: ['Number', 'constructor', 'coercion', 'beginner'],
+    usageExample: {
+      code: `// Convert a value to a number
+Number('42')    // → 42
+Number(true)    // → 1
+Number(false)   // → 0
+Number('')      // → 0`,
+      explanation: {
+        en: 'Use the Number() function to explicitly convert a value to a numeric type, which is more predictable than implicit coercion.',
+        es: 'Usa la función Number() para convertir explícitamente un valor a tipo numérico, lo cual es más predecible que la coerción implícita.',
+      },
+    },
   },
   {
     slug: 'number-constructor-boolean-1',
@@ -59,6 +70,17 @@ strToNum('3.14')  // → 3.14
     ],
     hints: ['JavaScript treats `true` as 1 and `false` as 0.'],
     tags: ['Number', 'constructor', 'boolean', 'beginner'],
+    usageExample: {
+      code: `// Convert a value to a number
+Number('42')    // → 42
+Number(true)    // → 1
+Number(false)   // → 0
+Number('')      // → 0`,
+      explanation: {
+        en: 'Use the Number() function to explicitly convert a value to a numeric type, which is more predictable than implicit coercion.',
+        es: 'Usa la función Number() para convertir explícitamente un valor a tipo numérico, lo cual es más predecible que la coerción implícita.',
+      },
+    },
   },
   {
     slug: 'number-constructor-null-1',
@@ -83,6 +105,17 @@ const result = Number(null)`,
     ],
     hints: ['`null` is coerced to `0`, unlike `undefined` which gives `NaN`.'],
     tags: ['Number', 'constructor', 'null', 'beginner'],
+    usageExample: {
+      code: `// Convert a value to a number
+Number('42')    // → 42
+Number(true)    // → 1
+Number(false)   // → 0
+Number('')      // → 0`,
+      explanation: {
+        en: 'Use the Number() function to explicitly convert a value to a numeric type, which is more predictable than implicit coercion.',
+        es: 'Usa la función Number() para convertir explícitamente un valor a tipo numérico, lo cual es más predecible que la coerción implícita.',
+      },
+    },
   },
   {
     slug: 'number-constructor-undefined-nan-1',
@@ -107,6 +140,17 @@ const result = Number(undefined)`,
     ],
     hints: ['`undefined` coerces to `NaN`, while `null` coerces to `0`.'],
     tags: ['Number', 'constructor', 'undefined', 'NaN', 'beginner'],
+    usageExample: {
+      code: `// Convert a value to a number
+Number('42')    // → 42
+Number(true)    // → 1
+Number(false)   // → 0
+Number('')      // → 0`,
+      explanation: {
+        en: 'Use the Number() function to explicitly convert a value to a numeric type, which is more predictable than implicit coercion.',
+        es: 'Usa la función Number() para convertir explícitamente un valor a tipo numérico, lo cual es más predecible que la coerción implícita.',
+      },
+    },
   },
   {
     slug: 'number-constructor-object-vs-primitive-1',
@@ -137,5 +181,16 @@ const obj = new Number(5)`,
     ],
     hints: ['`new Number()` wraps a number in an object box — rarely needed in practice.'],
     tags: ['Number', 'constructor', 'object', 'primitive', 'intermediate'],
+    usageExample: {
+      code: `// Convert a value to a number
+Number('42')    // → 42
+Number(true)    // → 1
+Number(false)   // → 0
+Number('')      // → 0`,
+      explanation: {
+        en: 'Use the Number() function to explicitly convert a value to a numeric type, which is more predictable than implicit coercion.',
+        es: 'Usa la función Number() para convertir explícitamente un valor a tipo numérico, lo cual es más predecible que la coerción implícita.',
+      },
+    },
   },
 ]

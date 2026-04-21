@@ -23,6 +23,15 @@ export const mathEExercises: Exercise[] = [
       'Its value is approximately 2.718281828459045.',
     ],
     tags: ['Math', 'E', 'static-property', 'beginner'],
+    usageExample: {
+      code: `// Euler's number — base of natural logarithms
+Math.E          // → 2.7182818284...
+Math.log(Math.E) // → 1`,
+      explanation: {
+        en: "Use Math.E when you need Euler's number — the base of natural logarithm calculations.",
+        es: 'Usa Math.E como número de Euler cuando necesites la base para cálculos de logaritmo natural.',
+      },
+    },
   },
   {
     slug: 'math-e-2',
@@ -46,6 +55,15 @@ export const mathEExercises: Exercise[] = [
       'Math.exp(1) should be identical to Math.E.',
     ],
     tags: ['Math', 'E', 'exp', 'static-property', 'beginner'],
+    usageExample: {
+      code: `// Euler's number — base of natural logarithms
+Math.E          // → 2.7182818284...
+Math.log(Math.E) // → 1`,
+      explanation: {
+        en: "Use Math.E when you need Euler's number — the base of natural logarithm calculations.",
+        es: 'Usa Math.E como número de Euler cuando necesites la base para cálculos de logaritmo natural.',
+      },
+    },
   },
   {
     slug: 'math-e-3',
@@ -69,6 +87,15 @@ export const mathEExercises: Exercise[] = [
       'Both Math.exp(2) and Math.E * Math.E give the same result.',
     ],
     tags: ['Math', 'E', 'exp', 'static-property', 'intermediate'],
+    usageExample: {
+      code: `// Euler's number — base of natural logarithms
+Math.E          // → 2.7182818284...
+Math.log(Math.E) // → 1`,
+      explanation: {
+        en: "Use Math.E when you need Euler's number — the base of natural logarithm calculations.",
+        es: 'Usa Math.E como número de Euler cuando necesites la base para cálculos de logaritmo natural.',
+      },
+    },
   },
   {
     slug: 'math-e-4',
@@ -92,6 +119,15 @@ export const mathEExercises: Exercise[] = [
       'ln(e) = 1 is the defining identity.',
     ],
     tags: ['Math', 'E', 'log', 'static-property', 'intermediate'],
+    usageExample: {
+      code: `// Euler's number — base of natural logarithms
+Math.E          // → 2.7182818284...
+Math.log(Math.E) // → 1`,
+      explanation: {
+        en: "Use Math.E when you need Euler's number — the base of natural logarithm calculations.",
+        es: 'Usa Math.E como número de Euler cuando necesites la base para cálculos de logaritmo natural.',
+      },
+    },
   },
   {
     slug: 'math-e-5',
@@ -115,5 +151,14 @@ export const mathEExercises: Exercise[] = [
       'e^(-1) = 1/e ≈ 0.368.',
     ],
     tags: ['Math', 'E', 'pow', 'static-property', 'advanced'],
+    usageExample: {
+      code: `// Euler's number — base of natural logarithms
+Math.E          // → 2.7182818284...
+Math.log(Math.E) // → 1`,
+      explanation: {
+        en: "Use Math.E when you need Euler's number — the base of natural logarithm calculations.",
+        es: 'Usa Math.E como número de Euler cuando necesites la base para cálculos de logaritmo natural.',
+      },
+    },
   },
 ]

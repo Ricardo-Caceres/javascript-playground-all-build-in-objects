@@ -20,6 +20,15 @@ export const mathClz32Exercises: Exercise[] = [
     ],
     hints: ['1 in binary is a single 1 bit with 31 leading zeros in 32-bit representation', 'clz32 stands for "count leading zeros (32-bit)"'],
     tags: ['Math', 'clz32', 'static-method', 'bitwise'],
+    usageExample: {
+      code: `// Count leading zero bits in a 32-bit integer
+Math.clz32(1)   // → 31
+Math.clz32(4)   // → 29`,
+      explanation: {
+        en: 'Use Math.clz32() to count leading zero bits of a 32-bit integer, useful in low-level bitwise optimizations.',
+        es: 'Usa Math.clz32() para contar los bits cero iniciales de un entero de 32 bits, útil en optimizaciones bit a bit.',
+      },
+    },
   },
   {
     slug: 'math-clz32-2',
@@ -40,6 +49,15 @@ export const mathClz32Exercises: Exercise[] = [
     ],
     hints: ['Each power of 2 reduces the leading zero count by 1', 'clz32(2) = clz32(1) - 1 = 30'],
     tags: ['Math', 'clz32', 'static-method', 'bitwise'],
+    usageExample: {
+      code: `// Count leading zero bits in a 32-bit integer
+Math.clz32(1)   // → 31
+Math.clz32(4)   // → 29`,
+      explanation: {
+        en: 'Use Math.clz32() to count leading zero bits of a 32-bit integer, useful in low-level bitwise optimizations.',
+        es: 'Usa Math.clz32() para contar los bits cero iniciales de un entero de 32 bits, útil en optimizaciones bit a bit.',
+      },
+    },
   },
   {
     slug: 'math-clz32-3',
@@ -60,6 +78,15 @@ export const mathClz32Exercises: Exercise[] = [
     ],
     hints: ['1000 in binary is 1111101000 (10 bits)', '32 - 10 = 22 leading zeros'],
     tags: ['Math', 'clz32', 'static-method', 'bitwise'],
+    usageExample: {
+      code: `// Count leading zero bits in a 32-bit integer
+Math.clz32(1)   // → 31
+Math.clz32(4)   // → 29`,
+      explanation: {
+        en: 'Use Math.clz32() to count leading zero bits of a 32-bit integer, useful in low-level bitwise optimizations.',
+        es: 'Usa Math.clz32() para contar los bits cero iniciales de un entero de 32 bits, útil en optimizaciones bit a bit.',
+      },
+    },
   },
   {
     slug: 'math-clz32-4',
@@ -80,6 +107,15 @@ export const mathClz32Exercises: Exercise[] = [
     ],
     hints: ['All 32 bits of 0 are zero', 'This is the maximum possible return value of clz32'],
     tags: ['Math', 'clz32', 'static-method', 'bitwise'],
+    usageExample: {
+      code: `// Count leading zero bits in a 32-bit integer
+Math.clz32(1)   // → 31
+Math.clz32(4)   // → 29`,
+      explanation: {
+        en: 'Use Math.clz32() to count leading zero bits of a 32-bit integer, useful in low-level bitwise optimizations.',
+        es: 'Usa Math.clz32() para contar los bits cero iniciales de un entero de 32 bits, útil en optimizaciones bit a bit.',
+      },
+    },
   },
   {
     slug: 'math-clz32-5',
@@ -100,5 +136,14 @@ export const mathClz32Exercises: Exercise[] = [
     ],
     hints: ['-1 in two\'s complement 32-bit is 0xFFFFFFFF — all bits set to 1', 'No leading zeros means clz32 returns 0'],
     tags: ['Math', 'clz32', 'static-method', 'bitwise', 'two\'s complement'],
+    usageExample: {
+      code: `// Count leading zero bits in a 32-bit integer
+Math.clz32(1)   // → 31
+Math.clz32(4)   // → 29`,
+      explanation: {
+        en: 'Use Math.clz32() to count leading zero bits of a 32-bit integer, useful in low-level bitwise optimizations.',
+        es: 'Usa Math.clz32() para contar los bits cero iniciales de un entero de 32 bits, útil en optimizaciones bit a bit.',
+      },
+    },
   },
 ]

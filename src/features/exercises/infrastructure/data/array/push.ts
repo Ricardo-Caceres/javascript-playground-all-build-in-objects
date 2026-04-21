@@ -23,6 +23,15 @@ export const pushExercises: Exercise[] = [
       'You can directly return the result of `arr.push(val)`.',
     ],
     tags: ['array', 'push', 'mutation', 'length'],
+    usageExample: {
+      code: `const arr = [1, 2]
+arr.push(3)  // returns 3 (new length)
+arr  // → [1, 2, 3]`,
+      explanation: {
+        en: 'Use push() to add one element to the end of an array and get the new length.',
+        es: 'Usa push() para agregar un elemento al final de un array y obtener la nueva longitud.',
+      },
+    },
   },
   {
     slug: 'array-push-multiple',
@@ -46,6 +55,15 @@ export const pushExercises: Exercise[] = [
       'Rest parameters (`...vals`) collect all extra arguments into an array.',
     ],
     tags: ['array', 'push', 'spread', 'rest-parameters'],
+    usageExample: {
+      code: `const arr = [1]
+arr.push(2, 3, 4)  // returns 4
+arr  // → [1, 2, 3, 4]`,
+      explanation: {
+        en: 'Pass multiple arguments to push() to append several elements in one call.',
+        es: 'Pasa múltiples argumentos a push() para agregar varios elementos en una sola llamada.',
+      },
+    },
   },
   {
     slug: 'array-push-returns-length',
@@ -69,6 +87,15 @@ export const pushExercises: Exercise[] = [
       'After pushing one element to a 2-element array, the new length is 3.',
     ],
     tags: ['array', 'push', 'return-value', 'length'],
+    usageExample: {
+      code: `const arr = ['a', 'b']
+const newLength = arr.push('c')  // → 3
+arr  // → ['a', 'b', 'c']`,
+      explanation: {
+        en: 'push() returns the new length of the array, which you can use without a separate length check.',
+        es: 'push() devuelve la nueva longitud del array, que puedes usar sin una comprobación de longitud separada.',
+      },
+    },
   },
   {
     slug: 'array-push-build-array',
@@ -93,6 +120,15 @@ export const pushExercises: Exercise[] = [
       'Call `result.push(i)` on each iteration.',
     ],
     tags: ['array', 'push', 'loop', 'build'],
+    usageExample: {
+      code: `const result = []
+for (let i = 1; i <= 3; i++) result.push(i)
+result  // → [1, 2, 3]`,
+      explanation: {
+        en: 'Use push() inside a loop to progressively build an array one element at a time.',
+        es: 'Usa push() dentro de un bucle para construir progresivamente un array elemento a elemento.',
+      },
+    },
   },
   {
     slug: 'array-push-collect',
@@ -117,5 +153,14 @@ export const pushExercises: Exercise[] = [
       'Call `result.push(n)` inside the `if` block.',
     ],
     tags: ['array', 'push', 'forEach', 'filter-pattern', 'even'],
+    usageExample: {
+      code: `const evens = []
+[1,2,3,4,5].forEach(n => { if (n%2===0) evens.push(n) })
+evens  // → [2, 4]`,
+      explanation: {
+        en: 'Use push() to collect matching elements into a result array during iteration.',
+        es: 'Usa push() para recopilar elementos coincidentes en un array de resultados durante la iteración.',
+      },
+    },
   },
 ]

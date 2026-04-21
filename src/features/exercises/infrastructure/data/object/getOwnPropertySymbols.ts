@@ -35,6 +35,16 @@ getSymbolKeys({ [s]: 1 }) // → [s]
       '`Object.getOwnPropertySymbols` is the Symbol counterpart of `Object.getOwnPropertyNames`.',
     ],
     tags: ['Object', 'Object.getOwnPropertySymbols', 'symbol', 'intermediate'],
+    usageExample: {
+      code: `// Get all Symbol-keyed properties
+const sym = Symbol('id')
+const obj = { [sym]: 1, name: 'Alice' }
+Object.getOwnPropertySymbols(obj)   // → [Symbol(id)]`,
+      explanation: {
+        en: 'Use Object.getOwnPropertySymbols() to retrieve all symbol-keyed own properties, which are invisible to Object.keys().',
+        es: 'Usa Object.getOwnPropertySymbols() para obtener todas las propiedades con clave simbólica, que son invisibles para Object.keys().',
+      },
+    },
   },
   {
     slug: 'object-get-own-prop-symbols-empty',
@@ -70,6 +80,16 @@ hasSymbols({ [Symbol('x')]: 1 })        // → true
       'Check `Object.getOwnPropertySymbols(obj).length > 0`.',
     ],
     tags: ['Object', 'Object.getOwnPropertySymbols', 'symbol', 'beginner'],
+    usageExample: {
+      code: `// Get all Symbol-keyed properties
+const sym = Symbol('id')
+const obj = { [sym]: 1, name: 'Alice' }
+Object.getOwnPropertySymbols(obj)   // → [Symbol(id)]`,
+      explanation: {
+        en: 'Use Object.getOwnPropertySymbols() to retrieve all symbol-keyed own properties, which are invisible to Object.keys().',
+        es: 'Usa Object.getOwnPropertySymbols() para obtener todas las propiedades con clave simbólica, que son invisibles para Object.keys().',
+      },
+    },
   },
   {
     slug: 'object-get-own-prop-symbols-keys-miss',
@@ -105,6 +125,16 @@ onlyStringKeyCount({ a: 1, [s]: 2 }) // → 1 (symbol not counted)
       '`Object.keys` only sees string-keyed enumerable properties. Use `Object.getOwnPropertySymbols` for Symbol keys.',
     ],
     tags: ['Object', 'Object.getOwnPropertySymbols', 'Object.keys', 'beginner'],
+    usageExample: {
+      code: `// Get all Symbol-keyed properties
+const sym = Symbol('id')
+const obj = { [sym]: 1, name: 'Alice' }
+Object.getOwnPropertySymbols(obj)   // → [Symbol(id)]`,
+      explanation: {
+        en: 'Use Object.getOwnPropertySymbols() to retrieve all symbol-keyed own properties, which are invisible to Object.keys().',
+        es: 'Usa Object.getOwnPropertySymbols() para obtener todas las propiedades con clave simbólica, que son invisibles para Object.keys().',
+      },
+    },
   },
   {
     slug: 'object-get-own-prop-symbols-create',
@@ -141,6 +171,16 @@ uniqueSymbols() // → false (each Symbol() call is unique)
       '`Symbol()` always creates a brand-new unique value, even with the same description string.',
     ],
     tags: ['Object', 'Object.getOwnPropertySymbols', 'symbol', 'beginner'],
+    usageExample: {
+      code: `// Get all Symbol-keyed properties
+const sym = Symbol('id')
+const obj = { [sym]: 1, name: 'Alice' }
+Object.getOwnPropertySymbols(obj)   // → [Symbol(id)]`,
+      explanation: {
+        en: 'Use Object.getOwnPropertySymbols() to retrieve all symbol-keyed own properties, which are invisible to Object.keys().',
+        es: 'Usa Object.getOwnPropertySymbols() para obtener todas las propiedades con clave simbólica, que son invisibles para Object.keys().',
+      },
+    },
   },
   {
     slug: 'object-get-own-prop-symbols-multiple',
@@ -176,5 +216,15 @@ countSymbols({ [s1]: 1, [s2]: 2 }) // → 2
       '`Object.getOwnPropertySymbols(obj).length` gives the count of Symbol properties.',
     ],
     tags: ['Object', 'Object.getOwnPropertySymbols', 'symbol', 'beginner'],
+    usageExample: {
+      code: `// Get all Symbol-keyed properties
+const sym = Symbol('id')
+const obj = { [sym]: 1, name: 'Alice' }
+Object.getOwnPropertySymbols(obj)   // → [Symbol(id)]`,
+      explanation: {
+        en: 'Use Object.getOwnPropertySymbols() to retrieve all symbol-keyed own properties, which are invisible to Object.keys().',
+        es: 'Usa Object.getOwnPropertySymbols() para obtener todas las propiedades con clave simbólica, que son invisibles para Object.keys().',
+      },
+    },
   },
 ]

@@ -20,6 +20,15 @@ export const mathAtanExercises: Exercise[] = [
     ],
     hints: ['tan(0) = 0, so atan(0) = 0', 'The range of atan is (-π/2, π/2)'],
     tags: ['Math', 'atan', 'static-method', 'trigonometry'],
+    usageExample: {
+      code: `// Inverse tangent — result in radians
+Math.atan(1)   // → 0.7853... (π/4)
+Math.atan(0)   // → 0`,
+      explanation: {
+        en: 'Use Math.atan() to find the angle (in radians) whose tangent equals a given value.',
+        es: 'Usa Math.atan() para encontrar el ángulo (en radianes) cuya tangente es un valor dado.',
+      },
+    },
   },
   {
     slug: 'math-atan-2',
@@ -40,6 +49,15 @@ export const mathAtanExercises: Exercise[] = [
     ],
     hints: ['tan(45°) = 1, so atan(1) = π/4 ≈ 0.7854', 'Math.PI / 4 ≈ 0.7854'],
     tags: ['Math', 'atan', 'static-method', 'trigonometry'],
+    usageExample: {
+      code: `// Inverse tangent — result in radians
+Math.atan(1)   // → 0.7853... (π/4)
+Math.atan(0)   // → 0`,
+      explanation: {
+        en: 'Use Math.atan() to find the angle (in radians) whose tangent equals a given value.',
+        es: 'Usa Math.atan() para encontrar el ángulo (en radianes) cuya tangente es un valor dado.',
+      },
+    },
   },
   {
     slug: 'math-atan-3',
@@ -60,6 +78,15 @@ export const mathAtanExercises: Exercise[] = [
     ],
     hints: ['atan is an odd function: atan(-x) = -atan(x)', 'tan(-45°) = -1, so atan(-1) = -π/4'],
     tags: ['Math', 'atan', 'static-method', 'trigonometry'],
+    usageExample: {
+      code: `// Inverse tangent — result in radians
+Math.atan(1)   // → 0.7853... (π/4)
+Math.atan(0)   // → 0`,
+      explanation: {
+        en: 'Use Math.atan() to find the angle (in radians) whose tangent equals a given value.',
+        es: 'Usa Math.atan() para encontrar el ángulo (en radianes) cuya tangente es un valor dado.',
+      },
+    },
   },
   {
     slug: 'math-atan-4',
@@ -80,6 +107,15 @@ export const mathAtanExercises: Exercise[] = [
     ],
     hints: ['Unlike asinh, atan(∞) is a finite value (π/2)', 'The range of atan is the open interval (-π/2, π/2)'],
     tags: ['Math', 'atan', 'static-method', 'trigonometry', 'Infinity'],
+    usageExample: {
+      code: `// Inverse tangent — result in radians
+Math.atan(1)   // → 0.7853... (π/4)
+Math.atan(0)   // → 0`,
+      explanation: {
+        en: 'Use Math.atan() to find the angle (in radians) whose tangent equals a given value.',
+        es: 'Usa Math.atan() para encontrar el ángulo (en radianes) cuya tangente es un valor dado.',
+      },
+    },
   },
   {
     slug: 'math-atan-5',
@@ -100,5 +136,14 @@ export const mathAtanExercises: Exercise[] = [
     ],
     hints: ['All Math methods return a number primitive', 'atan accepts any real number including ±Infinity'],
     tags: ['Math', 'atan', 'static-method', 'trigonometry'],
+    usageExample: {
+      code: `// Inverse tangent — result in radians
+Math.atan(1)   // → 0.7853... (π/4)
+Math.atan(0)   // → 0`,
+      explanation: {
+        en: 'Use Math.atan() to find the angle (in radians) whose tangent equals a given value.',
+        es: 'Usa Math.atan() para encontrar el ángulo (en radianes) cuya tangente es un valor dado.',
+      },
+    },
   },
 ]

@@ -23,6 +23,15 @@ export const toSortedExercises: Exercise[] = [
       'toSorted returns a new array — the original is not modified',
     ],
     tags: ['array', 'toSorted', 'immutable', 'sort'],
+    usageExample: {
+      code: `const nums = [3, 1, 4, 1, 5]
+nums.toSorted((a, b) => a - b)  // → [1, 1, 3, 4, 5]
+nums  // → [3, 1, 4, 1, 5]  (unchanged)`,
+      explanation: {
+        en: 'Use toSorted() to get a sorted copy of an array without mutating the original.',
+        es: 'Usa toSorted() para obtener una copia ordenada de un array sin mutar el original.',
+      },
+    },
   },
   {
     slug: 'array-to-sorted-no-mutation',
@@ -46,6 +55,16 @@ export const toSortedExercises: Exercise[] = [
       'You can ignore the return value of toSorted here',
     ],
     tags: ['array', 'toSorted', 'immutable', 'mutation'],
+    usageExample: {
+      code: `const original = ['c', 'a', 'b']
+const sorted = original.toSorted()
+original  // → ['c', 'a', 'b']  (unchanged)
+sorted    // → ['a', 'b', 'c']`,
+      explanation: {
+        en: 'toSorted() is the immutable counterpart of sort() — the original array is never changed.',
+        es: 'toSorted() es la contraparte inmutable de sort(); el array original nunca se modifica.',
+      },
+    },
   },
   {
     slug: 'array-to-sorted-strings',
@@ -69,6 +88,14 @@ export const toSortedExercises: Exercise[] = [
       'Lexicographic means character-by-character comparison, like a dictionary',
     ],
     tags: ['array', 'toSorted', 'strings', 'lexicographic'],
+    usageExample: {
+      code: `const words = ['cherry', 'apple', 'banana']
+words.toSorted()  // → ['apple', 'banana', 'cherry']`,
+      explanation: {
+        en: 'Call toSorted() without arguments to sort strings alphabetically into a new array.',
+        es: 'Llama a toSorted() sin argumentos para ordenar cadenas alfabéticamente en un nuevo array.',
+      },
+    },
   },
   {
     slug: 'array-to-sorted-custom',
@@ -92,6 +119,14 @@ export const toSortedExercises: Exercise[] = [
       'toSorted with a comparator works identically to sort with one, but returns a copy',
     ],
     tags: ['array', 'toSorted', 'comparator', 'strings'],
+    usageExample: {
+      code: `const nums = [5, 2, 8, 1]
+nums.toSorted((a, b) => b - a)  // → [8, 5, 2, 1]`,
+      explanation: {
+        en: 'Pass a comparator to toSorted() to control the sort order without mutating the original.',
+        es: 'Pasa un comparador a toSorted() para controlar el orden sin mutar el original.',
+      },
+    },
   },
   {
     slug: 'array-to-sorted-vs-sort',
@@ -115,5 +150,14 @@ export const toSortedExercises: Exercise[] = [
       'toSorted always allocates a new array, even if elements are identical',
     ],
     tags: ['array', 'toSorted', 'reference', 'immutable'],
+    usageExample: {
+      code: `const arr = [3, 1, 2]
+arr.sort((a,b)=>a-b)  // mutates arr → [1, 2, 3]
+const s = [3,1,2].toSorted((a,b)=>a-b)  // safe copy`,
+      explanation: {
+        en: 'Choose toSorted() over sort() when working in functional or immutable patterns.',
+        es: 'Elige toSorted() sobre sort() cuando trabajes en patrones funcionales o inmutables.',
+      },
+    },
   },
 ]

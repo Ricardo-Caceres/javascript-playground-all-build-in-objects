@@ -26,6 +26,16 @@ export const numberIsFiniteExercises: Exercise[] = [
     ],
     hints: ['Any regular number (including negatives and decimals) is finite.'],
     tags: ['Number', 'isFinite', 'static-method', 'beginner'],
+    usageExample: {
+      code: `// Check for finite numbers (no coercion)
+Number.isFinite(42)        // → true
+Number.isFinite(Infinity)  // → false
+Number.isFinite('42')      // → false`,
+      explanation: {
+        en: 'Use Number.isFinite() to safely check if a value is a finite number without coercing non-number types as the global isFinite() does.',
+        es: 'Usa Number.isFinite() para comprobar de forma segura si un valor es un número finito, sin coercionar tipos no numéricos como hace el global isFinite().',
+      },
+    },
   },
   {
     slug: 'number-is-finite-2',
@@ -48,6 +58,16 @@ export const numberIsFiniteExercises: Exercise[] = [
     ],
     hints: ['`Infinity` is not finite — it represents an unbounded value.'],
     tags: ['Number', 'isFinite', 'Infinity', 'beginner'],
+    usageExample: {
+      code: `// Check for finite numbers (no coercion)
+Number.isFinite(42)        // → true
+Number.isFinite(Infinity)  // → false
+Number.isFinite('42')      // → false`,
+      explanation: {
+        en: 'Use Number.isFinite() to safely check if a value is a finite number without coercing non-number types as the global isFinite() does.',
+        es: 'Usa Number.isFinite() para comprobar de forma segura si un valor es un número finito, sin coercionar tipos no numéricos como hace el global isFinite().',
+      },
+    },
   },
   {
     slug: 'number-is-finite-3',
@@ -68,6 +88,16 @@ export const numberIsFiniteExercises: Exercise[] = [
     ],
     hints: ['Both `Infinity` and `-Infinity` are not finite.'],
     tags: ['Number', 'isFinite', '-Infinity', 'beginner'],
+    usageExample: {
+      code: `// Check for finite numbers (no coercion)
+Number.isFinite(42)        // → true
+Number.isFinite(Infinity)  // → false
+Number.isFinite('42')      // → false`,
+      explanation: {
+        en: 'Use Number.isFinite() to safely check if a value is a finite number without coercing non-number types as the global isFinite() does.',
+        es: 'Usa Number.isFinite() para comprobar de forma segura si un valor es un número finito, sin coercionar tipos no numéricos como hace el global isFinite().',
+      },
+    },
   },
   {
     slug: 'number-is-finite-4',
@@ -88,6 +118,16 @@ export const numberIsFiniteExercises: Exercise[] = [
     ],
     hints: ['`NaN` is not finite — it is not a real number at all.'],
     tags: ['Number', 'isFinite', 'NaN', 'beginner'],
+    usageExample: {
+      code: `// Check for finite numbers (no coercion)
+Number.isFinite(42)        // → true
+Number.isFinite(Infinity)  // → false
+Number.isFinite('42')      // → false`,
+      explanation: {
+        en: 'Use Number.isFinite() to safely check if a value is a finite number without coercing non-number types as the global isFinite() does.',
+        es: 'Usa Number.isFinite() para comprobar de forma segura si un valor es un número finito, sin coercionar tipos no numéricos como hace el global isFinite().',
+      },
+    },
   },
   {
     slug: 'number-is-finite-5',
@@ -113,5 +153,15 @@ const global = isFinite('42')`,
     ],
     hints: ['`Number.isFinite` never coerces — only actual number types can be finite.'],
     tags: ['Number', 'isFinite', 'coercion', 'intermediate'],
+    usageExample: {
+      code: `// Check for finite numbers (no coercion)
+Number.isFinite(42)        // → true
+Number.isFinite(Infinity)  // → false
+Number.isFinite('42')      // → false`,
+      explanation: {
+        en: 'Use Number.isFinite() to safely check if a value is a finite number without coercing non-number types as the global isFinite() does.',
+        es: 'Usa Number.isFinite() para comprobar de forma segura si un valor es un número finito, sin coercionar tipos no numéricos como hace el global isFinite().',
+      },
+    },
   },
 ]

@@ -20,6 +20,15 @@ export const mathLogExercises: Exercise[] = [
     ],
     hints: ['ln(1) = 0 because e^0 = 1'],
     tags: ['Math', 'log', 'static-method'],
+    usageExample: {
+      code: `// Natural logarithm (base e)
+Math.log(1)        // → 0
+Math.log(Math.E)   // → 1`,
+      explanation: {
+        en: 'Use Math.log() to compute the natural logarithm of a positive number.',
+        es: 'Usa Math.log() para calcular el logaritmo natural de un número positivo.',
+      },
+    },
   },
   {
     slug: 'math-log-2',
@@ -40,6 +49,15 @@ export const mathLogExercises: Exercise[] = [
     ],
     hints: ['ln(e) = 1 by definition of the natural logarithm'],
     tags: ['Math', 'log', 'static-method'],
+    usageExample: {
+      code: `// Natural logarithm (base e)
+Math.log(1)        // → 0
+Math.log(Math.E)   // → 1`,
+      explanation: {
+        en: 'Use Math.log() to compute the natural logarithm of a positive number.',
+        es: 'Usa Math.log() para calcular el logaritmo natural de un número positivo.',
+      },
+    },
   },
   {
     slug: 'math-log-3',
@@ -60,6 +78,15 @@ export const mathLogExercises: Exercise[] = [
     ],
     hints: ['ln(e^2) = 2 by logarithm power rule'],
     tags: ['Math', 'log', 'static-method'],
+    usageExample: {
+      code: `// Natural logarithm (base e)
+Math.log(1)        // → 0
+Math.log(Math.E)   // → 1`,
+      explanation: {
+        en: 'Use Math.log() to compute the natural logarithm of a positive number.',
+        es: 'Usa Math.log() para calcular el logaritmo natural de un número positivo.',
+      },
+    },
   },
   {
     slug: 'math-log-4',
@@ -80,6 +107,15 @@ export const mathLogExercises: Exercise[] = [
     ],
     hints: ['The natural log approaches -∞ as x approaches 0 from the right'],
     tags: ['Math', 'log', 'static-method'],
+    usageExample: {
+      code: `// Natural logarithm (base e)
+Math.log(1)        // → 0
+Math.log(Math.E)   // → 1`,
+      explanation: {
+        en: 'Use Math.log() to compute the natural logarithm of a positive number.',
+        es: 'Usa Math.log() para calcular el logaritmo natural de un número positivo.',
+      },
+    },
   },
   {
     slug: 'math-log-5',
@@ -100,5 +136,14 @@ export const mathLogExercises: Exercise[] = [
     ],
     hints: ['Logarithm of a negative number is not defined in real numbers'],
     tags: ['Math', 'log', 'static-method'],
+    usageExample: {
+      code: `// Natural logarithm (base e)
+Math.log(1)        // → 0
+Math.log(Math.E)   // → 1`,
+      explanation: {
+        en: 'Use Math.log() to compute the natural logarithm of a positive number.',
+        es: 'Usa Math.log() para calcular el logaritmo natural de un número positivo.',
+      },
+    },
   },
 ]

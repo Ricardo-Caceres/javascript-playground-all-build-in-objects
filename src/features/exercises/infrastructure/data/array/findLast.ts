@@ -36,6 +36,14 @@ findLastEven([1, 3, 5])       // → undefined
       'Returns `undefined` (not `null`) when no match is found.',
     ],
     tags: ['Array', 'Array.prototype.findLast', 'beginner'],
+    usageExample: {
+      code: `const nums = [5, 12, 8, 130, 44]
+nums.findLast(n => n > 10)  // → 44  (last match)`,
+      explanation: {
+        en: 'Use findLast() to get the last element that satisfies a condition, searching from the end.',
+        es: 'Usa findLast() para obtener el último elemento que satisfaga una condición, buscando desde el final.',
+      },
+    },
   },
   {
     slug: 'array-find-last-object',
@@ -72,6 +80,14 @@ findLastActive([{name:'A',active:true},{name:'B',active:false},{name:'C',active:
       'The predicate is identical to what you would write for `find` — just the traversal direction differs.',
     ],
     tags: ['Array', 'Array.prototype.findLast', 'objects', 'intermediate'],
+    usageExample: {
+      code: `const logs = [{type:'err'}, {type:'info'}, {type:'err'}]
+logs.findLast(l => l.type === 'err')  // → {type:'err'} (last one)`,
+      explanation: {
+        en: 'Use findLast() to locate the most recent object in an array matching a property condition.',
+        es: 'Usa findLast() para localizar el objeto más reciente en un array que coincida con una condición.',
+      },
+    },
   },
   {
     slug: 'array-find-last-undefined',
@@ -108,6 +124,14 @@ findLastNegative([1, 2, 3])      // → undefined
       'When no element matches, `findLast()` returns `undefined`, just like `find()`.',
     ],
     tags: ['Array', 'Array.prototype.findLast', 'undefined', 'beginner'],
+    usageExample: {
+      code: `const arr = [1, 2, 3]
+arr.findLast(n => n > 10)  // → undefined  (no match)`,
+      explanation: {
+        en: 'findLast() returns undefined when no element satisfies the predicate.',
+        es: 'findLast() devuelve undefined cuando ningún elemento satisface el predicado.',
+      },
+    },
   },
   {
     slug: 'array-find-last-string',
@@ -144,6 +168,14 @@ findLastShort(['long string', 'another'], 3)     // → undefined
       '`findLast` scans from the end, so it returns the last qualifying string in order.',
     ],
     tags: ['Array', 'Array.prototype.findLast', 'string', 'intermediate'],
+    usageExample: {
+      code: `const words = ['cat', 'elephant', 'ant']
+words.findLast(w => w.length > 3)  // → 'elephant'`,
+      explanation: {
+        en: 'Use findLast() to find the last string in an array that meets a specific condition.',
+        es: 'Usa findLast() para encontrar la última cadena en un array que cumpla una condición específica.',
+      },
+    },
   },
   {
     slug: 'array-find-last-vs-find',
@@ -179,5 +211,14 @@ firstVsLast([1, 2, 3, 4, 5], n => n % 2 === 0) // → [2, 4]
       '`findLast()` returns the last match scanning right to left.',
     ],
     tags: ['Array', 'Array.prototype.findLast', 'find', 'compare', 'intermediate'],
+    usageExample: {
+      code: `const nums = [1, 3, 5, 2, 4]
+nums.find(n => n % 2 === 0)      // → 2  (first even)
+nums.findLast(n => n % 2 === 0)  // → 4  (last even)`,
+      explanation: {
+        en: 'Use findLast() instead of find() when you need the last matching element rather than the first.',
+        es: 'Usa findLast() en lugar de find() cuando necesites el último elemento que coincida, no el primero.',
+      },
+    },
   },
 ]

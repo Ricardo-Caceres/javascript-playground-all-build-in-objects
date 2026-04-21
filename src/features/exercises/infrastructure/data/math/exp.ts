@@ -20,6 +20,15 @@ export const mathExpExercises: Exercise[] = [
     ],
     hints: ['Any number raised to the power 0 equals 1', 'exp(0) = e⁰ = 1'],
     tags: ['Math', 'exp', 'static-method', 'exponential'],
+    usageExample: {
+      code: `// e raised to the power of x
+Math.exp(0)   // → 1
+Math.exp(1)   // → 2.7182... (Math.E)`,
+      explanation: {
+        en: "Use Math.exp(x) to raise e to the power x — the inverse of the natural logarithm.",
+        es: 'Usa Math.exp(x) para elevar el número de Euler a la potencia x, inversa del logaritmo natural.',
+      },
+    },
   },
   {
     slug: 'math-exp-2',
@@ -40,6 +49,15 @@ export const mathExpExercises: Exercise[] = [
     ],
     hints: ['e¹ = e = Math.E ≈ 2.71828...', 'Math.E is Euler\'s number'],
     tags: ['Math', 'exp', 'static-method', 'exponential'],
+    usageExample: {
+      code: `// e raised to the power of x
+Math.exp(0)   // → 1
+Math.exp(1)   // → 2.7182... (Math.E)`,
+      explanation: {
+        en: "Use Math.exp(x) to raise e to the power x — the inverse of the natural logarithm.",
+        es: 'Usa Math.exp(x) para elevar el número de Euler a la potencia x, inversa del logaritmo natural.',
+      },
+    },
   },
   {
     slug: 'math-exp-3',
@@ -60,6 +78,15 @@ export const mathExpExercises: Exercise[] = [
     ],
     hints: ['e² = e * e ≈ 7.389', 'Each unit increase in x multiplies the result by e'],
     tags: ['Math', 'exp', 'static-method', 'exponential'],
+    usageExample: {
+      code: `// e raised to the power of x
+Math.exp(0)   // → 1
+Math.exp(1)   // → 2.7182... (Math.E)`,
+      explanation: {
+        en: "Use Math.exp(x) to raise e to the power x — the inverse of the natural logarithm.",
+        es: 'Usa Math.exp(x) para elevar el número de Euler a la potencia x, inversa del logaritmo natural.',
+      },
+    },
   },
   {
     slug: 'math-exp-4',
@@ -80,6 +107,15 @@ export const mathExpExercises: Exercise[] = [
     ],
     hints: ['e⁻¹ = 1/e ≈ 0.368', 'Negative exponents produce values between 0 and 1'],
     tags: ['Math', 'exp', 'static-method', 'exponential'],
+    usageExample: {
+      code: `// e raised to the power of x
+Math.exp(0)   // → 1
+Math.exp(1)   // → 2.7182... (Math.E)`,
+      explanation: {
+        en: "Use Math.exp(x) to raise e to the power x — the inverse of the natural logarithm.",
+        es: 'Usa Math.exp(x) para elevar el número de Euler a la potencia x, inversa del logaritmo natural.',
+      },
+    },
   },
   {
     slug: 'math-exp-5',
@@ -100,5 +136,14 @@ export const mathExpExercises: Exercise[] = [
     ],
     hints: ['All Math methods return a number primitive', 'exp(100) is a very large but valid number'],
     tags: ['Math', 'exp', 'static-method', 'exponential'],
+    usageExample: {
+      code: `// e raised to the power of x
+Math.exp(0)   // → 1
+Math.exp(1)   // → 2.7182... (Math.E)`,
+      explanation: {
+        en: "Use Math.exp(x) to raise e to the power x — the inverse of the natural logarithm.",
+        es: 'Usa Math.exp(x) para elevar el número de Euler a la potencia x, inversa del logaritmo natural.',
+      },
+    },
   },
 ]

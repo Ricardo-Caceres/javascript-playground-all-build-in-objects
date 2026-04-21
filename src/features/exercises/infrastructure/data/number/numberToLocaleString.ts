@@ -22,6 +22,16 @@ export const numberToLocaleStringExercises: Exercise[] = [
     ],
     hints: ['`toLocaleString()` formats numbers according to locale conventions.'],
     tags: ['Number', 'toLocaleString', 'instance-method', 'beginner'],
+    usageExample: {
+      code: `// Format number for the user's locale
+const n = 1234567.89
+n.toLocaleString()          // → '1,234,567.89' (en-US)
+n.toLocaleString('de-DE')   // → '1.234.567,89'`,
+      explanation: {
+        en: 'Use toLocaleString() to format a number as a locale-appropriate string, such as adding thousands separators or currency symbols.',
+        es: 'Usa toLocaleString() para formatear un número como cadena apropiada para la localización, como separadores de miles o símbolos de moneda.',
+      },
+    },
   },
   {
     slug: 'number-to-locale-string-2',
@@ -44,6 +54,16 @@ export const numberToLocaleStringExercises: Exercise[] = [
     ],
     hints: ['The string representation of zero will always contain `\'0\'`.'],
     tags: ['Number', 'toLocaleString', 'zero', 'beginner'],
+    usageExample: {
+      code: `// Format number for the user's locale
+const n = 1234567.89
+n.toLocaleString()          // → '1,234,567.89' (en-US)
+n.toLocaleString('de-DE')   // → '1.234.567,89'`,
+      explanation: {
+        en: 'Use toLocaleString() to format a number as a locale-appropriate string, such as adding thousands separators or currency symbols.',
+        es: 'Usa toLocaleString() para formatear un número como cadena apropiada para la localización, como separadores de miles o símbolos de moneda.',
+      },
+    },
   },
   {
     slug: 'number-to-locale-string-3',
@@ -66,6 +86,16 @@ With the \`'en-US'\` locale, \`(1000).toLocaleString('en-US')\` returns a string
     ],
     hints: ['`\'en-US\'` typically formats thousands with commas: `\'1,000\'`.'],
     tags: ['Number', 'toLocaleString', 'locale', 'intermediate'],
+    usageExample: {
+      code: `// Format number for the user's locale
+const n = 1234567.89
+n.toLocaleString()          // → '1,234,567.89' (en-US)
+n.toLocaleString('de-DE')   // → '1.234.567,89'`,
+      explanation: {
+        en: 'Use toLocaleString() to format a number as a locale-appropriate string, such as adding thousands separators or currency symbols.',
+        es: 'Usa toLocaleString() para formatear un número como cadena apropiada para la localización, como separadores de miles o símbolos de moneda.',
+      },
+    },
   },
   {
     slug: 'number-to-locale-string-4',
@@ -92,6 +122,16 @@ const c = (0.5).toLocaleString()`,
     ],
     hints: ['`toLocaleString()` always returns a non-empty string.'],
     tags: ['Number', 'toLocaleString', 'truthy', 'beginner'],
+    usageExample: {
+      code: `// Format number for the user's locale
+const n = 1234567.89
+n.toLocaleString()          // → '1,234,567.89' (en-US)
+n.toLocaleString('de-DE')   // → '1.234.567,89'`,
+      explanation: {
+        en: 'Use toLocaleString() to format a number as a locale-appropriate string, such as adding thousands separators or currency symbols.',
+        es: 'Usa toLocaleString() para formatear un número como cadena apropiada para la localización, como separadores de miles o símbolos de moneda.',
+      },
+    },
   },
   {
     slug: 'number-to-locale-string-5',
@@ -114,5 +154,15 @@ const c = (0.5).toLocaleString()`,
     ],
     hints: ['The formatted string always contains the leading digits of the number.'],
     tags: ['Number', 'toLocaleString', 'decimal', 'beginner'],
+    usageExample: {
+      code: `// Format number for the user's locale
+const n = 1234567.89
+n.toLocaleString()          // → '1,234,567.89' (en-US)
+n.toLocaleString('de-DE')   // → '1.234.567,89'`,
+      explanation: {
+        en: 'Use toLocaleString() to format a number as a locale-appropriate string, such as adding thousands separators or currency symbols.',
+        es: 'Usa toLocaleString() para formatear un número como cadena apropiada para la localización, como separadores de miles o símbolos de moneda.',
+      },
+    },
   },
 ]

@@ -20,6 +20,15 @@ export const mathTanExercises: Exercise[] = [
     ],
     hints: ['tan(0) = sin(0)/cos(0) = 0/1 = 0'],
     tags: ['Math', 'tan', 'static-method'],
+    usageExample: {
+      code: `// Tangent of an angle in radians
+Math.tan(0)            // → 0
+Math.tan(Math.PI / 4)  // → 1`,
+      explanation: {
+        en: 'Use Math.tan() to compute the tangent of an angle in radians for trigonometry and slope calculations.',
+        es: 'Usa Math.tan() para calcular la tangente de un ángulo en radianes, útil en trigonometría y cálculos de pendiente.',
+      },
+    },
   },
   {
     slug: 'math-tan-2',
@@ -40,6 +49,15 @@ export const mathTanExercises: Exercise[] = [
     ],
     hints: ['tan(π/4) = 1 — at 45 degrees, the slope of the unit circle tangent line is 1'],
     tags: ['Math', 'tan', 'static-method'],
+    usageExample: {
+      code: `// Tangent of an angle in radians
+Math.tan(0)            // → 0
+Math.tan(Math.PI / 4)  // → 1`,
+      explanation: {
+        en: 'Use Math.tan() to compute the tangent of an angle in radians for trigonometry and slope calculations.',
+        es: 'Usa Math.tan() para calcular la tangente de un ángulo en radianes, útil en trigonometría y cálculos de pendiente.',
+      },
+    },
   },
   {
     slug: 'math-tan-3',
@@ -60,6 +78,15 @@ export const mathTanExercises: Exercise[] = [
     ],
     hints: ['tan is an odd function: tan(-x) = -tan(x), so tan(-π/4) = -1'],
     tags: ['Math', 'tan', 'static-method'],
+    usageExample: {
+      code: `// Tangent of an angle in radians
+Math.tan(0)            // → 0
+Math.tan(Math.PI / 4)  // → 1`,
+      explanation: {
+        en: 'Use Math.tan() to compute the tangent of an angle in radians for trigonometry and slope calculations.',
+        es: 'Usa Math.tan() para calcular la tangente de un ángulo en radianes, útil en trigonometría y cálculos de pendiente.',
+      },
+    },
   },
   {
     slug: 'math-tan-4',
@@ -80,6 +107,15 @@ export const mathTanExercises: Exercise[] = [
     ],
     hints: ['Math.tan always returns a number primitive'],
     tags: ['Math', 'tan', 'static-method'],
+    usageExample: {
+      code: `// Tangent of an angle in radians
+Math.tan(0)            // → 0
+Math.tan(Math.PI / 4)  // → 1`,
+      explanation: {
+        en: 'Use Math.tan() to compute the tangent of an angle in radians for trigonometry and slope calculations.',
+        es: 'Usa Math.tan() para calcular la tangente de un ángulo en radianes, útil en trigonometría y cálculos de pendiente.',
+      },
+    },
   },
   {
     slug: 'math-tan-5',
@@ -100,5 +136,14 @@ export const mathTanExercises: Exercise[] = [
     ],
     hints: ['tan(π) = 0 mathematically; floating-point gives a tiny near-zero value due to π approximation'],
     tags: ['Math', 'tan', 'static-method'],
+    usageExample: {
+      code: `// Tangent of an angle in radians
+Math.tan(0)            // → 0
+Math.tan(Math.PI / 4)  // → 1`,
+      explanation: {
+        en: 'Use Math.tan() to compute the tangent of an angle in radians for trigonometry and slope calculations.',
+        es: 'Usa Math.tan() para calcular la tangente de un ángulo en radianes, útil en trigonometría y cálculos de pendiente.',
+      },
+    },
   },
 ]

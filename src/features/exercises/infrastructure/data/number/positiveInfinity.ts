@@ -22,6 +22,15 @@ export const positiveInfinityExercises: Exercise[] = [
     ],
     hints: ['`POSITIVE_INFINITY` is equivalent to the global `Infinity`.'],
     tags: ['Number', 'POSITIVE_INFINITY', 'static-property', 'beginner'],
+    usageExample: {
+      code: `// Represents positive infinity
+Number.POSITIVE_INFINITY          // → Infinity
+1 / 0 === Number.POSITIVE_INFINITY   // → true`,
+      explanation: {
+        en: 'Use Number.POSITIVE_INFINITY to represent or compare against positive infinity, such as when a computation overflows.',
+        es: 'Usa Number.POSITIVE_INFINITY para representar o comparar con el infinito positivo, por ejemplo cuando un cálculo se desborda hacia arriba.',
+      },
+    },
   },
   {
     slug: 'number-positive-infinity-2',
@@ -44,6 +53,15 @@ export const positiveInfinityExercises: Exercise[] = [
     ],
     hints: ['`Infinity` is beyond the representable float range — it is not a finite number.'],
     tags: ['Number', 'POSITIVE_INFINITY', 'MAX_VALUE', 'beginner'],
+    usageExample: {
+      code: `// Represents positive infinity
+Number.POSITIVE_INFINITY          // → Infinity
+1 / 0 === Number.POSITIVE_INFINITY   // → true`,
+      explanation: {
+        en: 'Use Number.POSITIVE_INFINITY to represent or compare against positive infinity, such as when a computation overflows.',
+        es: 'Usa Number.POSITIVE_INFINITY para representar o comparar con el infinito positivo, por ejemplo cuando un cálculo se desborda hacia arriba.',
+      },
+    },
   },
   {
     slug: 'number-positive-infinity-3',
@@ -66,6 +84,15 @@ Dividing any positive number by \`0\` produces \`Infinity\`.`,
     ],
     hints: ['In JavaScript, dividing a positive number by 0 gives `Infinity`.'],
     tags: ['Number', 'POSITIVE_INFINITY', 'division', 'beginner'],
+    usageExample: {
+      code: `// Represents positive infinity
+Number.POSITIVE_INFINITY          // → Infinity
+1 / 0 === Number.POSITIVE_INFINITY   // → true`,
+      explanation: {
+        en: 'Use Number.POSITIVE_INFINITY to represent or compare against positive infinity, such as when a computation overflows.',
+        es: 'Usa Number.POSITIVE_INFINITY para representar o comparar con el infinito positivo, por ejemplo cuando un cálculo se desborda hacia arriba.',
+      },
+    },
   },
   {
     slug: 'number-positive-infinity-4',
@@ -86,6 +113,15 @@ Dividing any positive number by \`0\` produces \`Infinity\`.`,
     ],
     hints: ['`Infinity` is not finite — only real numbers pass `isFinite`.'],
     tags: ['Number', 'POSITIVE_INFINITY', 'isFinite', 'beginner'],
+    usageExample: {
+      code: `// Represents positive infinity
+Number.POSITIVE_INFINITY          // → Infinity
+1 / 0 === Number.POSITIVE_INFINITY   // → true`,
+      explanation: {
+        en: 'Use Number.POSITIVE_INFINITY to represent or compare against positive infinity, such as when a computation overflows.',
+        es: 'Usa Number.POSITIVE_INFINITY para representar o comparar con el infinito positivo, por ejemplo cuando un cálculo se desborda hacia arriba.',
+      },
+    },
   },
   {
     slug: 'number-positive-infinity-5',
@@ -106,5 +142,14 @@ Dividing any positive number by \`0\` produces \`Infinity\`.`,
     ],
     hints: ['Infinities have `typeof === "number"`.'],
     tags: ['Number', 'POSITIVE_INFINITY', 'typeof', 'beginner'],
+    usageExample: {
+      code: `// Represents positive infinity
+Number.POSITIVE_INFINITY          // → Infinity
+1 / 0 === Number.POSITIVE_INFINITY   // → true`,
+      explanation: {
+        en: 'Use Number.POSITIVE_INFINITY to represent or compare against positive infinity, such as when a computation overflows.',
+        es: 'Usa Number.POSITIVE_INFINITY para representar o comparar con el infinito positivo, por ejemplo cuando un cálculo se desborda hacia arriba.',
+      },
+    },
   },
 ]

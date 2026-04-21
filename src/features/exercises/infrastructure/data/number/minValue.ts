@@ -23,6 +23,15 @@ const min = Number.MIN_VALUE`,
     ],
     hints: ['`MIN_VALUE` is the closest positive value to zero — not the most negative number.'],
     tags: ['Number', 'MIN_VALUE', 'static-property', 'beginner'],
+    usageExample: {
+      code: `// Smallest positive nonzero number
+Number.MIN_VALUE        // → 5e-324
+Number.MIN_VALUE > 0    // → true`,
+      explanation: {
+        en: 'Use Number.MIN_VALUE to access the smallest positive number JavaScript can represent, not the most negative number.',
+        es: 'Usa Number.MIN_VALUE para acceder al número positivo más pequeño que JavaScript puede representar, no el más negativo.',
+      },
+    },
   },
   {
     slug: 'number-min-value-2',
@@ -45,6 +54,15 @@ const min = Number.MIN_VALUE`,
     ],
     hints: ['`MIN_VALUE / 2` rounds down to 0 because there is no smaller positive float.'],
     tags: ['Number', 'MIN_VALUE', 'zero', 'beginner'],
+    usageExample: {
+      code: `// Smallest positive nonzero number
+Number.MIN_VALUE        // → 5e-324
+Number.MIN_VALUE > 0    // → true`,
+      explanation: {
+        en: 'Use Number.MIN_VALUE to access the smallest positive number JavaScript can represent, not the most negative number.',
+        es: 'Usa Number.MIN_VALUE para acceder al número positivo más pequeño que JavaScript puede representar, no el más negativo.',
+      },
+    },
   },
   {
     slug: 'number-min-value-3',
@@ -65,6 +83,15 @@ const min = Number.MIN_VALUE`,
     ],
     hints: ['`MIN_VALUE` is a plain `number` constant.'],
     tags: ['Number', 'MIN_VALUE', 'type', 'beginner'],
+    usageExample: {
+      code: `// Smallest positive nonzero number
+Number.MIN_VALUE        // → 5e-324
+Number.MIN_VALUE > 0    // → true`,
+      explanation: {
+        en: 'Use Number.MIN_VALUE to access the smallest positive number JavaScript can represent, not the most negative number.',
+        es: 'Usa Number.MIN_VALUE para acceder al número positivo más pequeño que JavaScript puede representar, no el más negativo.',
+      },
+    },
   },
   {
     slug: 'number-min-value-4',
@@ -88,6 +115,15 @@ const smaller = 5e-325`,
     ],
     hints: ['Attempting to represent a smaller positive float than `MIN_VALUE` results in `0`.'],
     tags: ['Number', 'MIN_VALUE', 'precision', 'intermediate'],
+    usageExample: {
+      code: `// Smallest positive nonzero number
+Number.MIN_VALUE        // → 5e-324
+Number.MIN_VALUE > 0    // → true`,
+      explanation: {
+        en: 'Use Number.MIN_VALUE to access the smallest positive number JavaScript can represent, not the most negative number.',
+        es: 'Usa Number.MIN_VALUE para acceder al número positivo más pequeño que JavaScript puede representar, no el más negativo.',
+      },
+    },
   },
   {
     slug: 'number-min-value-5',
@@ -110,5 +146,14 @@ Dividing \`Number.MIN_VALUE\` by 2 produces \`0\` (underflow).`,
     ],
     hints: ['Going below `MIN_VALUE` underflows to `0` — the opposite of overflowing to `Infinity`.'],
     tags: ['Number', 'MIN_VALUE', 'underflow', 'intermediate'],
+    usageExample: {
+      code: `// Smallest positive nonzero number
+Number.MIN_VALUE        // → 5e-324
+Number.MIN_VALUE > 0    // → true`,
+      explanation: {
+        en: 'Use Number.MIN_VALUE to access the smallest positive number JavaScript can represent, not the most negative number.',
+        es: 'Usa Number.MIN_VALUE para acceder al número positivo más pequeño que JavaScript puede representar, no el más negativo.',
+      },
+    },
   },
 ]

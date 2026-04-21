@@ -38,6 +38,15 @@ sumArray([])            // → 0
       '`forEach` does not return anything useful — the side effect is the mutation of `sum`.',
     ],
     tags: ['Array', 'Array.prototype.forEach', 'accumulate', 'beginner'],
+    usageExample: {
+      code: `let total = 0
+[10, 20, 30].forEach(n => { total += n })
+total  // → 60`,
+      explanation: {
+        en: 'Use forEach() to iterate over elements and accumulate a value in an outer variable.',
+        es: 'Usa forEach() para iterar sobre elementos y acumular un valor en una variable externa.',
+      },
+    },
   },
   {
     slug: 'array-foreach-collect',
@@ -76,6 +85,15 @@ collectStrings([])                         // → []
       'This pattern is equivalent to `items.map(item => item.label)`.',
     ],
     tags: ['Array', 'Array.prototype.forEach', 'collect', 'objects', 'beginner'],
+    usageExample: {
+      code: `const result = {}
+['a', 'b', 'c'].forEach((v, i) => { result[i] = v })
+// result → {0:'a', 1:'b', 2:'c'}`,
+      explanation: {
+        en: 'Use forEach() to build an object or other data structure by iterating over array elements.',
+        es: 'Usa forEach() para construir un objeto u otra estructura de datos iterando sobre los elementos del array.',
+      },
+    },
   },
   {
     slug: 'array-foreach-side-effects',
@@ -113,6 +131,15 @@ multiplyInPlace(arr, 2)
       '`forEach` returns `undefined` — it is only useful for its side effects.',
     ],
     tags: ['Array', 'Array.prototype.forEach', 'mutation', 'in-place', 'intermediate'],
+    usageExample: {
+      code: `const log = []
+[1, 2, 3].forEach(n => log.push(n * 2))
+log  // → [2, 4, 6]`,
+      explanation: {
+        en: 'Use forEach() when you need side effects like pushing to another array or calling an API.',
+        es: 'Usa forEach() cuando necesites efectos secundarios como agregar a otro array o llamar a una API.',
+      },
+    },
   },
   {
     slug: 'array-foreach-void',
@@ -148,6 +175,14 @@ forEachReturns([1, 2, 3]) // → undefined
       'Use `map` if you need to collect results from each iteration.',
     ],
     tags: ['Array', 'Array.prototype.forEach', 'undefined', 'return-value', 'intermediate'],
+    usageExample: {
+      code: `const result = [1, 2, 3].forEach(n => n * 2)
+console.log(result)  // → undefined`,
+      explanation: {
+        en: 'forEach() always returns undefined — use map() instead if you need a new array.',
+        es: 'forEach() siempre devuelve undefined; usa map() si necesitas un nuevo array.',
+      },
+    },
   },
   {
     slug: 'array-foreach-vs-map',
@@ -185,5 +220,16 @@ mapWithForEach([1, 2, 3], n => n * 2) // → [2, 4, 6]
       'This is exactly what `map` does internally — but `map` is more concise and idiomatic.',
     ],
     tags: ['Array', 'Array.prototype.forEach', 'map', 'implement', 'intermediate'],
+    usageExample: {
+      code: `const nums = [1, 2, 3]
+// forEach — side effects only
+nums.forEach(n => console.log(n))
+// map — returns new array
+nums.map(n => n * 2)  // → [2, 4, 6]`,
+      explanation: {
+        en: 'Choose forEach() for side effects and map() when you need a transformed array.',
+        es: 'Elige forEach() para efectos secundarios y map() cuando necesites un array transformado.',
+      },
+    },
   },
 ]

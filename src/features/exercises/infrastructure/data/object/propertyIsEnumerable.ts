@@ -43,6 +43,17 @@ export const propertyIsEnumerableExercises: Exercise[] = [
     ],
     hints: ['propertyIsEnumerable checks both ownership AND enumerability'],
     tags: ['Object', 'propertyIsEnumerable', 'instance-method', 'enumerable'],
+    usageExample: {
+      code: `// Check if a property shows up in for...in loops
+const obj = { a: 1 }
+obj.propertyIsEnumerable('a')   // → true
+Object.defineProperty(obj, 'b', { value: 2, enumerable: false })
+obj.propertyIsEnumerable('b')   // → false`,
+      explanation: {
+        en: 'Use propertyIsEnumerable() to check whether a specific own property will appear during enumeration (e.g., for...in or Object.keys).',
+        es: 'Usa propertyIsEnumerable() para comprobar si una propiedad propia aparecerá durante la enumeración (por ejemplo, en for...in o Object.keys).',
+      },
+    },
   },
   {
     slug: 'object-propertyIsEnumerable-2',
@@ -86,6 +97,17 @@ export const propertyIsEnumerableExercises: Exercise[] = [
     ],
     hints: ['propertyIsEnumerable only considers own properties'],
     tags: ['Object', 'propertyIsEnumerable', 'instance-method', 'inherited'],
+    usageExample: {
+      code: `// Check if a property shows up in for...in loops
+const obj = { a: 1 }
+obj.propertyIsEnumerable('a')   // → true
+Object.defineProperty(obj, 'b', { value: 2, enumerable: false })
+obj.propertyIsEnumerable('b')   // → false`,
+      explanation: {
+        en: 'Use propertyIsEnumerable() to check whether a specific own property will appear during enumeration (e.g., for...in or Object.keys).',
+        es: 'Usa propertyIsEnumerable() para comprobar si una propiedad propia aparecerá durante la enumeración (por ejemplo, en for...in o Object.keys).',
+      },
+    },
   },
   {
     slug: 'object-propertyIsEnumerable-3',
@@ -130,6 +152,17 @@ Properties created with \`Object.defineProperty\` and \`enumerable: false\` will
     ],
     hints: ['defineProperty defaults enumerable to false if not specified'],
     tags: ['Object', 'propertyIsEnumerable', 'instance-method', 'defineProperty'],
+    usageExample: {
+      code: `// Check if a property shows up in for...in loops
+const obj = { a: 1 }
+obj.propertyIsEnumerable('a')   // → true
+Object.defineProperty(obj, 'b', { value: 2, enumerable: false })
+obj.propertyIsEnumerable('b')   // → false`,
+      explanation: {
+        en: 'Use propertyIsEnumerable() to check whether a specific own property will appear during enumeration (e.g., for...in or Object.keys).',
+        es: 'Usa propertyIsEnumerable() para comprobar si una propiedad propia aparecerá durante la enumeración (por ejemplo, en for...in o Object.keys).',
+      },
+    },
   },
   {
     slug: 'object-propertyIsEnumerable-4',
@@ -175,6 +208,17 @@ However, the \`length\` property of an array is NOT enumerable.
     ],
     hints: ['Array indices are strings in property lookup'],
     tags: ['Object', 'propertyIsEnumerable', 'instance-method', 'array'],
+    usageExample: {
+      code: `// Check if a property shows up in for...in loops
+const obj = { a: 1 }
+obj.propertyIsEnumerable('a')   // → true
+Object.defineProperty(obj, 'b', { value: 2, enumerable: false })
+obj.propertyIsEnumerable('b')   // → false`,
+      explanation: {
+        en: 'Use propertyIsEnumerable() to check whether a specific own property will appear during enumeration (e.g., for...in or Object.keys).',
+        es: 'Usa propertyIsEnumerable() para comprobar si una propiedad propia aparecerá durante la enumeración (por ejemplo, en for...in o Object.keys).',
+      },
+    },
   },
   {
     slug: 'object-propertyIsEnumerable-5',
@@ -219,5 +263,16 @@ You can change enumerability of an existing property with \`Object.definePropert
     ],
     hints: ['Enumerability can be toggled with defineProperty on configurable properties'],
     tags: ['Object', 'propertyIsEnumerable', 'instance-method', 'enumerable', 'defineProperty'],
+    usageExample: {
+      code: `// Check if a property shows up in for...in loops
+const obj = { a: 1 }
+obj.propertyIsEnumerable('a')   // → true
+Object.defineProperty(obj, 'b', { value: 2, enumerable: false })
+obj.propertyIsEnumerable('b')   // → false`,
+      explanation: {
+        en: 'Use propertyIsEnumerable() to check whether a specific own property will appear during enumeration (e.g., for...in or Object.keys).',
+        es: 'Usa propertyIsEnumerable() para comprobar si una propiedad propia aparecerá durante la enumeración (por ejemplo, en for...in o Object.keys).',
+      },
+    },
   },
 ]

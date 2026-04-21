@@ -36,6 +36,16 @@ NaN === NaN      // → false
       '`NaN` is the only value not equal to itself under `===`.',
     ],
     tags: ['Object', 'Object.is', 'NaN', 'beginner'],
+    usageExample: {
+      code: `// Strict identity that handles edge cases
+Object.is(NaN, NaN)   // → true  (unlike ===)
+Object.is(0, -0)      // → false (unlike ===)
+Object.is(1, 1)       // → true`,
+      explanation: {
+        en: 'Use Object.is() for strict value comparison that correctly handles NaN equality and distinguishes +0 from -0.',
+        es: 'Usa Object.is() para comparación estricta de valores que maneja correctamente la igualdad de NaN y distingue +0 de -0.',
+      },
+    },
   },
   {
     slug: 'object-is-zero',
@@ -70,6 +80,16 @@ zeroDiff()   // → false  (unlike 0 === -0 which is true)
       '`Object.is` distinguishes `+0` and `-0` whereas `===` treats them as equal.',
     ],
     tags: ['Object', 'Object.is', 'zero', 'beginner'],
+    usageExample: {
+      code: `// Strict identity that handles edge cases
+Object.is(NaN, NaN)   // → true  (unlike ===)
+Object.is(0, -0)      // → false (unlike ===)
+Object.is(1, 1)       // → true`,
+      explanation: {
+        en: 'Use Object.is() for strict value comparison that correctly handles NaN equality and distinguishes +0 from -0.',
+        es: 'Usa Object.is() para comparación estricta de valores que maneja correctamente la igualdad de NaN y distingue +0 de -0.',
+      },
+    },
   },
   {
     slug: 'object-is-same-value',
@@ -105,6 +125,16 @@ sameValue('x', 'x')  // → true
       'For most values, `Object.is` and `===` agree. The exceptions are `NaN` and `±0`.',
     ],
     tags: ['Object', 'Object.is', 'beginner'],
+    usageExample: {
+      code: `// Strict identity that handles edge cases
+Object.is(NaN, NaN)   // → true  (unlike ===)
+Object.is(0, -0)      // → false (unlike ===)
+Object.is(1, 1)       // → true`,
+      explanation: {
+        en: 'Use Object.is() for strict value comparison that correctly handles NaN equality and distinguishes +0 from -0.',
+        es: 'Usa Object.is() para comparación estricta de valores que maneja correctamente la igualdad de NaN y distingue +0 de -0.',
+      },
+    },
   },
   {
     slug: 'object-is-different-values',
@@ -140,6 +170,16 @@ differentValues(1, 1) // → false
       'Negate `Object.is(a, b)` to test for inequality.',
     ],
     tags: ['Object', 'Object.is', 'beginner'],
+    usageExample: {
+      code: `// Strict identity that handles edge cases
+Object.is(NaN, NaN)   // → true  (unlike ===)
+Object.is(0, -0)      // → false (unlike ===)
+Object.is(1, 1)       // → true`,
+      explanation: {
+        en: 'Use Object.is() for strict value comparison that correctly handles NaN equality and distinguishes +0 from -0.',
+        es: 'Usa Object.is() para comparación estricta de valores que maneja correctamente la igualdad de NaN y distingue +0 de -0.',
+      },
+    },
   },
   {
     slug: 'object-is-null-null',
@@ -177,5 +217,15 @@ Object.is(null, undefined) // → false (strict same-value)
       '`null == undefined` is true (loose), but `Object.is(null, undefined)` is false.',
     ],
     tags: ['Object', 'Object.is', 'null', 'beginner'],
+    usageExample: {
+      code: `// Strict identity that handles edge cases
+Object.is(NaN, NaN)   // → true  (unlike ===)
+Object.is(0, -0)      // → false (unlike ===)
+Object.is(1, 1)       // → true`,
+      explanation: {
+        en: 'Use Object.is() for strict value comparison that correctly handles NaN equality and distinguishes +0 from -0.',
+        es: 'Usa Object.is() para comparación estricta de valores que maneja correctamente la igualdad de NaN y distingue +0 de -0.',
+      },
+    },
   },
 ]

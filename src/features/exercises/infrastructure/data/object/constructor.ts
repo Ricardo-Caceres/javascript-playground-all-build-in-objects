@@ -35,6 +35,16 @@ createEmpty() // → {}
       'Each call creates a brand-new object instance.',
     ],
     tags: ['Object', 'Object constructor', 'beginner'],
+    usageExample: {
+      code: `// Wrap a value in an Object wrapper
+const obj = new Object(42)
+typeof obj   // → 'object'
+obj.valueOf()  // → 42`,
+      explanation: {
+        en: 'Use the Object constructor to explicitly wrap a primitive value in an object.',
+        es: 'Usa el constructor Object para envolver explícitamente un valor primitivo en un objeto.',
+      },
+    },
   },
   {
     slug: 'object-constructor-wrap-primitive',
@@ -71,6 +81,16 @@ typeof Object('hi')   // → 'object'
       'Boxed wrappers are rarely used directly, but this demonstrates the constructor behaviour.',
     ],
     tags: ['Object', 'Object constructor', 'wrapper', 'beginner'],
+    usageExample: {
+      code: `// Wrap a value in an Object wrapper
+const obj = new Object(42)
+typeof obj   // → 'object'
+obj.valueOf()  // → 42`,
+      explanation: {
+        en: 'Use the Object constructor to explicitly wrap a primitive value in an object.',
+        es: 'Usa el constructor Object para envolver explícitamente un valor primitivo en un objeto.',
+      },
+    },
   },
   {
     slug: 'object-constructor-null',
@@ -106,6 +126,16 @@ fromNull() // → {}
       'Both `null` and `undefined` produce an empty plain object when passed to `Object()`.',
     ],
     tags: ['Object', 'Object constructor', 'null', 'beginner'],
+    usageExample: {
+      code: `// Wrap a value in an Object wrapper
+const obj = new Object(42)
+typeof obj   // → 'object'
+obj.valueOf()  // → 42`,
+      explanation: {
+        en: 'Use the Object constructor to explicitly wrap a primitive value in an object.',
+        es: 'Usa el constructor Object para envolver explícitamente un valor primitivo en un objeto.',
+      },
+    },
   },
   {
     slug: 'object-constructor-undefined',
@@ -141,6 +171,16 @@ fromUndefined() // → {}
       'This is consistent with `Object(null)` — both nullish values produce `{}`.',
     ],
     tags: ['Object', 'Object constructor', 'undefined', 'beginner'],
+    usageExample: {
+      code: `// Wrap a value in an Object wrapper
+const obj = new Object(42)
+typeof obj   // → 'object'
+obj.valueOf()  // → 42`,
+      explanation: {
+        en: 'Use the Object constructor to explicitly wrap a primitive value in an object.',
+        es: 'Usa el constructor Object para envolver explícitamente un valor primitivo en un objeto.',
+      },
+    },
   },
   {
     slug: 'object-constructor-same-reference',
@@ -177,5 +217,15 @@ identityWrap(o) === o // → true
       'This is different from `Object.assign({}, obj)` which creates a shallow copy.',
     ],
     tags: ['Object', 'Object constructor', 'reference', 'intermediate'],
+    usageExample: {
+      code: `// Wrap a value in an Object wrapper
+const obj = new Object(42)
+typeof obj   // → 'object'
+obj.valueOf()  // → 42`,
+      explanation: {
+        en: 'Use the Object constructor to explicitly wrap a primitive value in an object.',
+        es: 'Usa el constructor Object para envolver explícitamente un valor primitivo en un objeto.',
+      },
+    },
   },
 ]

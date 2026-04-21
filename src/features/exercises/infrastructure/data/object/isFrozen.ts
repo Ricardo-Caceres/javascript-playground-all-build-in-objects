@@ -45,6 +45,17 @@ A plain object is **not** frozen by default.
     ],
     hints: ['Object.freeze() is the standard way to make an object frozen'],
     tags: ['Object', 'isFrozen', 'static-method', 'freeze'],
+    usageExample: {
+      code: `// Check if an object is frozen
+const obj = { a: 1 }
+Object.isFrozen(obj)    // → false
+Object.freeze(obj)
+Object.isFrozen(obj)    // → true`,
+      explanation: {
+        en: 'Use Object.isFrozen() to verify that an object is fully immutable (no additions, deletions, or value changes allowed).',
+        es: 'Usa Object.isFrozen() para verificar que un objeto es completamente inmutable (sin adiciones, eliminaciones ni cambios de valor).',
+      },
+    },
   },
   {
     slug: 'object-isFrozen-2',
@@ -89,6 +100,17 @@ After calling \`Object.freeze(obj)\`, the object becomes frozen: no new properti
     ],
     hints: ['freeze makes an object immutable (shallowly)'],
     tags: ['Object', 'isFrozen', 'freeze', 'static-method'],
+    usageExample: {
+      code: `// Check if an object is frozen
+const obj = { a: 1 }
+Object.isFrozen(obj)    // → false
+Object.freeze(obj)
+Object.isFrozen(obj)    // → true`,
+      explanation: {
+        en: 'Use Object.isFrozen() to verify that an object is fully immutable (no additions, deletions, or value changes allowed).',
+        es: 'Usa Object.isFrozen() para verificar que un objeto es completamente inmutable (sin adiciones, eliminaciones ni cambios de valor).',
+      },
+    },
   },
   {
     slug: 'object-isFrozen-3',
@@ -134,6 +156,17 @@ An empty object that has been made non-extensible is considered frozen, because 
     ],
     hints: ['An empty non-extensible object trivially satisfies all frozen conditions'],
     tags: ['Object', 'isFrozen', 'preventExtensions', 'static-method'],
+    usageExample: {
+      code: `// Check if an object is frozen
+const obj = { a: 1 }
+Object.isFrozen(obj)    // → false
+Object.freeze(obj)
+Object.isFrozen(obj)    // → true`,
+      explanation: {
+        en: 'Use Object.isFrozen() to verify that an object is fully immutable (no additions, deletions, or value changes allowed).',
+        es: 'Usa Object.isFrozen() para verificar que un objeto es completamente inmutable (sin adiciones, eliminaciones ni cambios de valor).',
+      },
+    },
   },
   {
     slug: 'object-isFrozen-4',
@@ -178,6 +211,17 @@ An empty object that has been made non-extensible is considered frozen, because 
     ],
     hints: ['seal is weaker than freeze — sealed objects can still be written to'],
     tags: ['Object', 'isFrozen', 'seal', 'static-method'],
+    usageExample: {
+      code: `// Check if an object is frozen
+const obj = { a: 1 }
+Object.isFrozen(obj)    // → false
+Object.freeze(obj)
+Object.isFrozen(obj)    // → true`,
+      explanation: {
+        en: 'Use Object.isFrozen() to verify that an object is fully immutable (no additions, deletions, or value changes allowed).',
+        es: 'Usa Object.isFrozen() para verificar que un objeto es completamente inmutable (sin adiciones, eliminaciones ni cambios de valor).',
+      },
+    },
   },
   {
     slug: 'object-isFrozen-5',
@@ -222,5 +266,16 @@ An empty object that has been made non-extensible is considered frozen, because 
     ],
     hints: ['Object.freeze is shallow — use recursive freeze for deep immutability'],
     tags: ['Object', 'isFrozen', 'deep-freeze', 'static-method'],
+    usageExample: {
+      code: `// Check if an object is frozen
+const obj = { a: 1 }
+Object.isFrozen(obj)    // → false
+Object.freeze(obj)
+Object.isFrozen(obj)    // → true`,
+      explanation: {
+        en: 'Use Object.isFrozen() to verify that an object is fully immutable (no additions, deletions, or value changes allowed).',
+        es: 'Usa Object.isFrozen() para verificar que un objeto es completamente inmutable (sin adiciones, eliminaciones ni cambios de valor).',
+      },
+    },
   },
 ]

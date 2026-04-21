@@ -43,6 +43,17 @@ export const objectValueOfExercises: Exercise[] = [
     ],
     hints: ['For plain objects, valueOf returns the object itself; subclasses override it to return primitives'],
     tags: ['Object', 'valueOf', 'instance-method'],
+    usageExample: {
+      code: `// Retrieve the primitive value of an object
+const n = new Number(42)
+n.valueOf()   // → 42
+const obj = { valueOf() { return 10 } }
+obj + 5       // → 15`,
+      explanation: {
+        en: 'Use valueOf() to retrieve the underlying primitive value of an object; JavaScript calls it automatically in numeric contexts.',
+        es: 'Usa valueOf() para obtener el valor primitivo subyacente de un objeto; JavaScript lo llama automáticamente en contextos numéricos.',
+      },
+    },
   },
   {
     slug: 'object-valueOf-2',
@@ -86,6 +97,17 @@ Number objects have a \`valueOf()\` that returns the wrapped primitive number va
     ],
     hints: ['Number.prototype.valueOf unwraps the wrapped number object to its primitive'],
     tags: ['Object', 'valueOf', 'instance-method', 'number'],
+    usageExample: {
+      code: `// Retrieve the primitive value of an object
+const n = new Number(42)
+n.valueOf()   // → 42
+const obj = { valueOf() { return 10 } }
+obj + 5       // → 15`,
+      explanation: {
+        en: 'Use valueOf() to retrieve the underlying primitive value of an object; JavaScript calls it automatically in numeric contexts.',
+        es: 'Usa valueOf() para obtener el valor primitivo subyacente de un objeto; JavaScript lo llama automáticamente en contextos numéricos.',
+      },
+    },
   },
   {
     slug: 'object-valueOf-3',
@@ -129,6 +151,17 @@ Boolean wrapper objects have a \`valueOf()\` that returns the wrapped primitive 
     ],
     hints: ['Boolean wrapper objects are always truthy; use valueOf to get the primitive'],
     tags: ['Object', 'valueOf', 'instance-method', 'boolean'],
+    usageExample: {
+      code: `// Retrieve the primitive value of an object
+const n = new Number(42)
+n.valueOf()   // → 42
+const obj = { valueOf() { return 10 } }
+obj + 5       // → 15`,
+      explanation: {
+        en: 'Use valueOf() to retrieve the underlying primitive value of an object; JavaScript calls it automatically in numeric contexts.',
+        es: 'Usa valueOf() para obtener el valor primitivo subyacente de un objeto; JavaScript lo llama automáticamente en contextos numéricos.',
+      },
+    },
   },
   {
     slug: 'object-valueOf-4',
@@ -175,6 +208,17 @@ You can override \`valueOf()\` in your own objects to control how they convert t
     ],
     hints: ['Override valueOf to control how an object converts to a primitive in arithmetic or comparisons'],
     tags: ['Object', 'valueOf', 'instance-method', 'override'],
+    usageExample: {
+      code: `// Retrieve the primitive value of an object
+const n = new Number(42)
+n.valueOf()   // → 42
+const obj = { valueOf() { return 10 } }
+obj + 5       // → 15`,
+      explanation: {
+        en: 'Use valueOf() to retrieve the underlying primitive value of an object; JavaScript calls it automatically in numeric contexts.',
+        es: 'Usa valueOf() para obtener el valor primitivo subyacente de un objeto; JavaScript lo llama automáticamente en contextos numéricos.',
+      },
+    },
   },
   {
     slug: 'object-valueOf-5',
@@ -221,5 +265,16 @@ When an object is used in arithmetic (like \`+\`, \`-\`, \`*\`), JavaScript auto
     ],
     hints: ['JavaScript uses valueOf for type coercion in arithmetic and comparison contexts'],
     tags: ['Object', 'valueOf', 'instance-method', 'coercion', 'arithmetic'],
+    usageExample: {
+      code: `// Retrieve the primitive value of an object
+const n = new Number(42)
+n.valueOf()   // → 42
+const obj = { valueOf() { return 10 } }
+obj + 5       // → 15`,
+      explanation: {
+        en: 'Use valueOf() to retrieve the underlying primitive value of an object; JavaScript calls it automatically in numeric contexts.',
+        es: 'Usa valueOf() para obtener el valor primitivo subyacente de un objeto; JavaScript lo llama automáticamente en contextos numéricos.',
+      },
+    },
   },
 ]

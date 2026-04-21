@@ -20,6 +20,15 @@ export const mathRandomExercises: Exercise[] = [
     ],
     hints: ['Math.random() always returns a number primitive'],
     tags: ['Math', 'random', 'static-method'],
+    usageExample: {
+      code: `// Pseudo-random float in [0, 1)
+Math.random()                        // → e.g. 0.7421...
+Math.floor(Math.random() * 6)        // → 0–5`,
+      explanation: {
+        en: 'Use Math.random() to generate a pseudo-random floating-point number between 0 (inclusive) and 1 (exclusive).',
+        es: 'Usa Math.random() para generar un número de punto flotante pseudoaleatorio entre 0 (incluido) y 1 (excluido).',
+      },
+    },
   },
   {
     slug: 'math-random-2',
@@ -40,6 +49,15 @@ export const mathRandomExercises: Exercise[] = [
     ],
     hints: ['The range of Math.random() is [0, 1) — inclusive of 0, exclusive of 1'],
     tags: ['Math', 'random', 'static-method'],
+    usageExample: {
+      code: `// Pseudo-random float in [0, 1)
+Math.random()                        // → e.g. 0.7421...
+Math.floor(Math.random() * 6)        // → 0–5`,
+      explanation: {
+        en: 'Use Math.random() to generate a pseudo-random floating-point number between 0 (inclusive) and 1 (exclusive).',
+        es: 'Usa Math.random() para generar un número de punto flotante pseudoaleatorio entre 0 (incluido) y 1 (excluido).',
+      },
+    },
   },
   {
     slug: 'math-random-3',
@@ -60,6 +78,15 @@ export const mathRandomExercises: Exercise[] = [
     ],
     hints: ['Math.random() never returns 1; the range is [0, 1)'],
     tags: ['Math', 'random', 'static-method'],
+    usageExample: {
+      code: `// Pseudo-random float in [0, 1)
+Math.random()                        // → e.g. 0.7421...
+Math.floor(Math.random() * 6)        // → 0–5`,
+      explanation: {
+        en: 'Use Math.random() to generate a pseudo-random floating-point number between 0 (inclusive) and 1 (exclusive).',
+        es: 'Usa Math.random() para generar un número de punto flotante pseudoaleatorio entre 0 (incluido) y 1 (excluido).',
+      },
+    },
   },
   {
     slug: 'math-random-4',
@@ -80,6 +107,15 @@ export const mathRandomExercises: Exercise[] = [
     ],
     hints: ['Math.random() consistently returns a number primitive'],
     tags: ['Math', 'random', 'static-method'],
+    usageExample: {
+      code: `// Pseudo-random float in [0, 1)
+Math.random()                        // → e.g. 0.7421...
+Math.floor(Math.random() * 6)        // → 0–5`,
+      explanation: {
+        en: 'Use Math.random() to generate a pseudo-random floating-point number between 0 (inclusive) and 1 (exclusive).',
+        es: 'Usa Math.random() para generar un número de punto flotante pseudoaleatorio entre 0 (incluido) y 1 (excluido).',
+      },
+    },
   },
   {
     slug: 'math-random-5',
@@ -100,5 +136,14 @@ export const mathRandomExercises: Exercise[] = [
     ],
     hints: ['Math.floor(Math.random() * N) produces integers from 0 to N-1'],
     tags: ['Math', 'random', 'static-method'],
+    usageExample: {
+      code: `// Pseudo-random float in [0, 1)
+Math.random()                        // → e.g. 0.7421...
+Math.floor(Math.random() * 6)        // → 0–5`,
+      explanation: {
+        en: 'Use Math.random() to generate a pseudo-random floating-point number between 0 (inclusive) and 1 (exclusive).',
+        es: 'Usa Math.random() para generar un número de punto flotante pseudoaleatorio entre 0 (incluido) y 1 (excluido).',
+      },
+    },
   },
 ]

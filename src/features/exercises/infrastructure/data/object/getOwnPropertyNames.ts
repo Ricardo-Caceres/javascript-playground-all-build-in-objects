@@ -34,6 +34,16 @@ getAllNames({ a: 1, b: 2 }) // → ['a', 'b']
       '`Object.getOwnPropertyNames` is like `Object.keys` but also includes non-enumerable properties.',
     ],
     tags: ['Object', 'Object.getOwnPropertyNames', 'beginner'],
+    usageExample: {
+      code: `// Get all own property names, including non-enumerable
+const obj = { a: 1 }
+Object.defineProperty(obj, 'hidden', { value: 2, enumerable: false })
+Object.getOwnPropertyNames(obj)   // → ['a', 'hidden']`,
+      explanation: {
+        en: 'Use Object.getOwnPropertyNames() to list all own properties including non-enumerable ones, unlike Object.keys().',
+        es: 'Usa Object.getOwnPropertyNames() para listar todas las propiedades propias, incluyendo las no enumerables, a diferencia de Object.keys().',
+      },
+    },
   },
   {
     slug: 'object-get-own-prop-names-vs-keys',
@@ -70,6 +80,16 @@ extraNames(obj) // → ['_h']
       'Filter `getOwnPropertyNames` result by removing items that also appear in `Object.keys`.',
     ],
     tags: ['Object', 'Object.getOwnPropertyNames', 'Object.keys', 'intermediate'],
+    usageExample: {
+      code: `// Get all own property names, including non-enumerable
+const obj = { a: 1 }
+Object.defineProperty(obj, 'hidden', { value: 2, enumerable: false })
+Object.getOwnPropertyNames(obj)   // → ['a', 'hidden']`,
+      explanation: {
+        en: 'Use Object.getOwnPropertyNames() to list all own properties including non-enumerable ones, unlike Object.keys().',
+        es: 'Usa Object.getOwnPropertyNames() para listar todas las propiedades propias, incluyendo las no enumerables, a diferencia de Object.keys().',
+      },
+    },
   },
   {
     slug: 'object-get-own-prop-names-empty',
@@ -105,6 +125,16 @@ isEmptyObject({ a: 1 })  // → false
       'Symbols are NOT returned by `getOwnPropertyNames` — use `getOwnPropertySymbols` for those.',
     ],
     tags: ['Object', 'Object.getOwnPropertyNames', 'beginner'],
+    usageExample: {
+      code: `// Get all own property names, including non-enumerable
+const obj = { a: 1 }
+Object.defineProperty(obj, 'hidden', { value: 2, enumerable: false })
+Object.getOwnPropertyNames(obj)   // → ['a', 'hidden']`,
+      explanation: {
+        en: 'Use Object.getOwnPropertyNames() to list all own properties including non-enumerable ones, unlike Object.keys().',
+        es: 'Usa Object.getOwnPropertyNames() para listar todas las propiedades propias, incluyendo las no enumerables, a diferencia de Object.keys().',
+      },
+    },
   },
   {
     slug: 'object-get-own-prop-names-array-like',
@@ -140,6 +170,16 @@ namesIncludeLength([1, 2, 3]) // → true
       'It appears in `getOwnPropertyNames` but not in `Object.keys`.',
     ],
     tags: ['Object', 'Object.getOwnPropertyNames', 'array', 'intermediate'],
+    usageExample: {
+      code: `// Get all own property names, including non-enumerable
+const obj = { a: 1 }
+Object.defineProperty(obj, 'hidden', { value: 2, enumerable: false })
+Object.getOwnPropertyNames(obj)   // → ['a', 'hidden']`,
+      explanation: {
+        en: 'Use Object.getOwnPropertyNames() to list all own properties including non-enumerable ones, unlike Object.keys().',
+        es: 'Usa Object.getOwnPropertyNames() para listar todas las propiedades propias, incluyendo las no enumerables, a diferencia de Object.keys().',
+      },
+    },
   },
   {
     slug: 'object-get-own-prop-names-no-inherited',
@@ -177,5 +217,15 @@ ownNamesOnly(obj) // → ['own']
       '`Object.getOwnPropertyNames` does not traverse the prototype chain.',
     ],
     tags: ['Object', 'Object.getOwnPropertyNames', 'prototype', 'beginner'],
+    usageExample: {
+      code: `// Get all own property names, including non-enumerable
+const obj = { a: 1 }
+Object.defineProperty(obj, 'hidden', { value: 2, enumerable: false })
+Object.getOwnPropertyNames(obj)   // → ['a', 'hidden']`,
+      explanation: {
+        en: 'Use Object.getOwnPropertyNames() to list all own properties including non-enumerable ones, unlike Object.keys().',
+        es: 'Usa Object.getOwnPropertyNames() para listar todas las propiedades propias, incluyendo las no enumerables, a diferencia de Object.keys().',
+      },
+    },
   },
 ]

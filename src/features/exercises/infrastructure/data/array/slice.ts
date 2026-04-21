@@ -36,6 +36,14 @@ getSlice([10, 20, 30], 0, 2)    // → [10, 20]
       'The original array is never mutated — `slice` always returns a new array.',
     ],
     tags: ['Array', 'Array.prototype.slice', 'beginner'],
+    usageExample: {
+      code: `const arr = [1, 2, 3, 4, 5]
+arr.slice(1, 4)  // → [2, 3, 4]  (indices 1, 2, 3)`,
+      explanation: {
+        en: 'Use slice(start, end) to extract a sub-array without modifying the original.',
+        es: 'Usa slice(inicio, fin) para extraer un sub-array sin modificar el original.',
+      },
+    },
   },
   {
     slug: 'array-slice-copy',
@@ -71,6 +79,15 @@ shallowCopy([1, 2, 3]) // → [1, 2, 3]  (new array reference)
       'The returned array is a new object — modifying it does not affect the original.',
     ],
     tags: ['Array', 'Array.prototype.slice', 'copy', 'beginner'],
+    usageExample: {
+      code: `const original = [1, 2, 3]
+const copy = original.slice()  // shallow copy
+copy !== original  // → true`,
+      explanation: {
+        en: 'Call slice() with no arguments to create a shallow copy of an array.',
+        es: 'Llama a slice() sin argumentos para crear una copia superficial de un array.',
+      },
+    },
   },
   {
     slug: 'array-slice-negative',
@@ -107,6 +124,14 @@ lastN([10, 20, 30], 1)    // → [30]
       'If `n === 0`, `slice(0)` returns the full array — but `-0` is treated as `0` by `slice`, returning the full array too. Handle edge cases as needed.',
     ],
     tags: ['Array', 'Array.prototype.slice', 'negative-index', 'intermediate'],
+    usageExample: {
+      code: `const arr = [1, 2, 3, 4, 5]
+arr.slice(-2)  // → [4, 5]  (last 2 elements)`,
+      explanation: {
+        en: 'Use a negative argument with slice() to extract elements counting from the end.',
+        es: 'Usa un argumento negativo con slice() para extraer elementos contando desde el final.',
+      },
+    },
   },
   {
     slug: 'array-slice-first-n',
@@ -143,6 +168,14 @@ firstN([10, 20], 1)         // → [10]
       'If `n` exceeds the array length, you get the full array — no out-of-bounds error.',
     ],
     tags: ['Array', 'Array.prototype.slice', 'beginner'],
+    usageExample: {
+      code: `const arr = [10, 20, 30, 40, 50]
+arr.slice(0, 3)  // → [10, 20, 30]`,
+      explanation: {
+        en: 'Use slice(0, n) to get the first n elements of an array as a new array.',
+        es: 'Usa slice(0, n) para obtener los primeros n elementos de un array como uno nuevo.',
+      },
+    },
   },
   {
     slug: 'array-slice-remove-first-last',
@@ -179,5 +212,14 @@ withoutFirstAndLast([10, 20, 30])     // → [20]
       'For arrays with fewer than 2 elements, this returns an empty array.',
     ],
     tags: ['Array', 'Array.prototype.slice', 'intermediate'],
+    usageExample: {
+      code: `const arr = [1, 2, 3, 4, 5]
+arr.slice(1)       // → [2, 3, 4, 5]  (remove first)
+arr.slice(0, -1)   // → [1, 2, 3, 4]  (remove last)`,
+      explanation: {
+        en: 'Use slice() to exclude the first or last element without mutating the array.',
+        es: 'Usa slice() para excluir el primer o último elemento sin mutar el array.',
+      },
+    },
   },
 ]

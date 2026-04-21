@@ -23,6 +23,15 @@ const max = Number.MAX_SAFE_INTEGER`,
     ],
     hints: ['`MAX_SAFE_INTEGER` is 2^53 - 1, the largest integer without precision loss.'],
     tags: ['Number', 'MAX_SAFE_INTEGER', 'static-property', 'beginner'],
+    usageExample: {
+      code: `// Largest safely representable integer
+Number.MAX_SAFE_INTEGER   // → 9007199254740991
+Number.MAX_SAFE_INTEGER + 1 === Number.MAX_SAFE_INTEGER + 2   // → true (unsafe!)`,
+      explanation: {
+        en: 'Use Number.MAX_SAFE_INTEGER as the upper bound when working with integers to avoid silent precision loss.',
+        es: 'Usa Number.MAX_SAFE_INTEGER como límite superior al trabajar con enteros para evitar pérdida silenciosa de precisión.',
+      },
+    },
   },
   {
     slug: 'number-max-safe-integer-2',
@@ -50,6 +59,15 @@ const max = Number.MAX_SAFE_INTEGER`,
     ],
     hints: ['Beyond `MAX_SAFE_INTEGER`, integers can no longer be represented exactly.'],
     tags: ['Number', 'MAX_SAFE_INTEGER', 'precision', 'intermediate'],
+    usageExample: {
+      code: `// Largest safely representable integer
+Number.MAX_SAFE_INTEGER   // → 9007199254740991
+Number.MAX_SAFE_INTEGER + 1 === Number.MAX_SAFE_INTEGER + 2   // → true (unsafe!)`,
+      explanation: {
+        en: 'Use Number.MAX_SAFE_INTEGER as the upper bound when working with integers to avoid silent precision loss.',
+        es: 'Usa Number.MAX_SAFE_INTEGER como límite superior al trabajar con enteros para evitar pérdida silenciosa de precisión.',
+      },
+    },
   },
   {
     slug: 'number-max-safe-integer-3',
@@ -73,6 +91,15 @@ const atBoundary = Number.isSafeInteger(Number.MAX_SAFE_INTEGER)`,
     ],
     hints: ['`isSafeInteger` returns `true` only for integers within the safe range.'],
     tags: ['Number', 'MAX_SAFE_INTEGER', 'isSafeInteger', 'beginner'],
+    usageExample: {
+      code: `// Largest safely representable integer
+Number.MAX_SAFE_INTEGER   // → 9007199254740991
+Number.MAX_SAFE_INTEGER + 1 === Number.MAX_SAFE_INTEGER + 2   // → true (unsafe!)`,
+      explanation: {
+        en: 'Use Number.MAX_SAFE_INTEGER as the upper bound when working with integers to avoid silent precision loss.',
+        es: 'Usa Number.MAX_SAFE_INTEGER como límite superior al trabajar con enteros para evitar pérdida silenciosa de precisión.',
+      },
+    },
   },
   {
     slug: 'number-max-safe-integer-4',
@@ -95,6 +122,15 @@ Verify the type of \`Number.MAX_SAFE_INTEGER\`.`,
     ],
     hints: ['`MAX_SAFE_INTEGER` is a regular `number` constant.'],
     tags: ['Number', 'MAX_SAFE_INTEGER', 'type', 'beginner'],
+    usageExample: {
+      code: `// Largest safely representable integer
+Number.MAX_SAFE_INTEGER   // → 9007199254740991
+Number.MAX_SAFE_INTEGER + 1 === Number.MAX_SAFE_INTEGER + 2   // → true (unsafe!)`,
+      explanation: {
+        en: 'Use Number.MAX_SAFE_INTEGER as the upper bound when working with integers to avoid silent precision loss.',
+        es: 'Usa Number.MAX_SAFE_INTEGER como límite superior al trabajar con enteros para evitar pérdida silenciosa de precisión.',
+      },
+    },
   },
   {
     slug: 'number-max-safe-integer-5',
@@ -121,5 +157,14 @@ You can use \`Number.MAX_SAFE_INTEGER\` to ensure loop counters stay in the safe
     ],
     hints: ['Comparing against `MAX_SAFE_INTEGER` ensures your integer arithmetic is safe.'],
     tags: ['Number', 'MAX_SAFE_INTEGER', 'bounds', 'intermediate'],
+    usageExample: {
+      code: `// Largest safely representable integer
+Number.MAX_SAFE_INTEGER   // → 9007199254740991
+Number.MAX_SAFE_INTEGER + 1 === Number.MAX_SAFE_INTEGER + 2   // → true (unsafe!)`,
+      explanation: {
+        en: 'Use Number.MAX_SAFE_INTEGER as the upper bound when working with integers to avoid silent precision loss.',
+        es: 'Usa Number.MAX_SAFE_INTEGER como límite superior al trabajar con enteros para evitar pérdida silenciosa de precisión.',
+      },
+    },
   },
 ]

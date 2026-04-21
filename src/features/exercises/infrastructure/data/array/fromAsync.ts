@@ -43,6 +43,16 @@ resolveAll([1, 2, 3]) // → [1, 2, 3]
       'The sync equivalent for already-resolved values is simply `Array.from(values)`.',
     ],
     tags: ['Array', 'Array.fromAsync', 'async', 'advanced'],
+    usageExample: {
+      code: `// Real usage (async context):
+const promises = [Promise.resolve(1), Promise.resolve(2)]
+const result = await Array.fromAsync(promises)
+// → [1, 2]`,
+      explanation: {
+        en: 'Use Array.fromAsync() to resolve an iterable of promises into a plain array.',
+        es: 'Usa Array.fromAsync() para resolver un iterable de promesas en un array plano.',
+      },
+    },
   },
   {
     slug: 'array-from-async-generator',
@@ -92,6 +102,15 @@ function collectFromGenerator(): number[] {
       '`Array.fromAsync` would be used if the generator were `async function*` and yielded promises.',
     ],
     tags: ['Array', 'Array.fromAsync', 'generator', 'iterable', 'advanced'],
+    usageExample: {
+      code: `async function* gen() { yield 1; yield 2; yield 3 }
+const arr = await Array.fromAsync(gen())
+// → [1, 2, 3]`,
+      explanation: {
+        en: 'Use Array.fromAsync() to collect all yielded values from an async generator into an array.',
+        es: 'Usa Array.fromAsync() para recopilar todos los valores producidos por un generador asíncrono en un array.',
+      },
+    },
   },
   {
     slug: 'array-from-async-map',
@@ -129,6 +148,15 @@ doubleAll([1, 2, 3]) // → [2, 4, 6]
       'The async version `Array.fromAsync(iterable, async x => ...)` awaits each mapped value.',
     ],
     tags: ['Array', 'Array.fromAsync', 'map', 'advanced'],
+    usageExample: {
+      code: `const nums = [1, 2, 3]
+const doubled = await Array.fromAsync(nums, async n => n * 2)
+// → [2, 4, 6]`,
+      explanation: {
+        en: 'Pass an async mapping function to Array.fromAsync() to transform each element as it resolves.',
+        es: 'Pasa una función de mapeo asíncrono a Array.fromAsync() para transformar cada elemento al resolverse.',
+      },
+    },
   },
   {
     slug: 'array-from-async-sync-iterable',
@@ -166,6 +194,15 @@ syncToArray(new Set([1, 2, 3])) // → [1, 2, 3]
       '`Array.from` and `Array.fromAsync` accept any iterable (arrays, Sets, Maps, generators, strings).',
     ],
     tags: ['Array', 'Array.fromAsync', 'Set', 'iterable', 'advanced'],
+    usageExample: {
+      code: `const set = new Set([10, 20, 30])
+const arr = await Array.fromAsync(set)
+// → [10, 20, 30]`,
+      explanation: {
+        en: 'Array.fromAsync() also works with synchronous iterables like Set or Map.',
+        es: 'Array.fromAsync() también funciona con iterables síncronos como Set o Map.',
+      },
+    },
   },
   {
     slug: 'array-from-async-error-handling',
@@ -210,5 +247,16 @@ safeCollect([1, 2, 3], true)  // → null
       'Returning `null` from the `catch` block is a common safe-fallback pattern.',
     ],
     tags: ['Array', 'Array.fromAsync', 'error-handling', 'advanced'],
+    usageExample: {
+      code: `try {
+  const arr = await Array.fromAsync([Promise.reject(new Error('oops'))])
+} catch (e) {
+  console.error(e.message)  // 'oops'
+}`,
+      explanation: {
+        en: 'Wrap Array.fromAsync() in try/catch to handle rejections from any promise in the iterable.',
+        es: 'Envuelve Array.fromAsync() en try/catch para manejar rechazos de cualquier promesa en el iterable.',
+      },
+    },
   },
 ]

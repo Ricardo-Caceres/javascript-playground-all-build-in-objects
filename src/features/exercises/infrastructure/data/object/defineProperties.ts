@@ -41,6 +41,18 @@ o.y // → 2
       'Include `writable:true, enumerable:true, configurable:true` to behave like normal properties.',
     ],
     tags: ['Object', 'Object.defineProperties', 'descriptor', 'beginner'],
+    usageExample: {
+      code: `// Define multiple property descriptors at once
+const obj = {}
+Object.defineProperties(obj, {
+  x: { value: 1, writable: true, enumerable: true },
+  y: { value: 2, writable: false, enumerable: true },
+})`,
+      explanation: {
+        en: 'Use Object.defineProperties() to define multiple properties with fine-grained descriptors in a single call.',
+        es: 'Usa Object.defineProperties() para definir múltiples propiedades con descriptores detallados en una sola llamada.',
+      },
+    },
   },
   {
     slug: 'object-define-properties-non-writable',
@@ -84,6 +96,18 @@ o.fixed           // → 99
       'In sloppy mode, assignment to a non-writable property silently fails.',
     ],
     tags: ['Object', 'Object.defineProperties', 'writable', 'intermediate'],
+    usageExample: {
+      code: `// Define multiple property descriptors at once
+const obj = {}
+Object.defineProperties(obj, {
+  x: { value: 1, writable: true, enumerable: true },
+  y: { value: 2, writable: false, enumerable: true },
+})`,
+      explanation: {
+        en: 'Use Object.defineProperties() to define multiple properties with fine-grained descriptors in a single call.',
+        es: 'Usa Object.defineProperties() para definir múltiples propiedades con descriptores detallados en una sola llamada.',
+      },
+    },
   },
   {
     slug: 'object-define-properties-non-enumerable',
@@ -125,6 +149,18 @@ o._internal              // → 'secret'
       '`Object.getOwnPropertyNames` reveals all own properties regardless of enumerability.',
     ],
     tags: ['Object', 'Object.defineProperties', 'enumerable', 'intermediate'],
+    usageExample: {
+      code: `// Define multiple property descriptors at once
+const obj = {}
+Object.defineProperties(obj, {
+  x: { value: 1, writable: true, enumerable: true },
+  y: { value: 2, writable: false, enumerable: true },
+})`,
+      explanation: {
+        en: 'Use Object.defineProperties() to define multiple properties with fine-grained descriptors in a single call.',
+        es: 'Usa Object.defineProperties() para definir múltiples propiedades con descriptores detallados en una sola llamada.',
+      },
+    },
   },
   {
     slug: 'object-define-properties-configurable-false',
@@ -165,6 +201,18 @@ o.locked         // → 42
       'Combine with `writable: false` for full immutability.',
     ],
     tags: ['Object', 'Object.defineProperties', 'configurable', 'advanced'],
+    usageExample: {
+      code: `// Define multiple property descriptors at once
+const obj = {}
+Object.defineProperties(obj, {
+  x: { value: 1, writable: true, enumerable: true },
+  y: { value: 2, writable: false, enumerable: true },
+})`,
+      explanation: {
+        en: 'Use Object.defineProperties() to define multiple properties with fine-grained descriptors in a single call.',
+        es: 'Usa Object.defineProperties() para definir múltiples propiedades con descriptores detallados en una sola llamada.',
+      },
+    },
   },
   {
     slug: 'object-define-properties-value-and-writable',
@@ -205,5 +253,17 @@ o.count += o.step  // → 1
       '`step` with `writable: false` acts as a constant.',
     ],
     tags: ['Object', 'Object.defineProperties', 'data descriptor', 'intermediate'],
+    usageExample: {
+      code: `// Define multiple property descriptors at once
+const obj = {}
+Object.defineProperties(obj, {
+  x: { value: 1, writable: true, enumerable: true },
+  y: { value: 2, writable: false, enumerable: true },
+})`,
+      explanation: {
+        en: 'Use Object.defineProperties() to define multiple properties with fine-grained descriptors in a single call.',
+        es: 'Usa Object.defineProperties() para definir múltiples propiedades con descriptores detallados en una sola llamada.',
+      },
+    },
   },
 ]

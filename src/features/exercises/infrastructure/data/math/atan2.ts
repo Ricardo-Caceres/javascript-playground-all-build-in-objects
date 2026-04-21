@@ -20,6 +20,15 @@ export const mathAtan2Exercises: Exercise[] = [
     ],
     hints: ['Note: argument order is (y, x), not (x, y)', 'The point (1, 0) is on the positive x-axis, so the angle is 0'],
     tags: ['Math', 'atan2', 'static-method', 'trigonometry'],
+    usageExample: {
+      code: `// Angle from positive x-axis to point (x, y)
+Math.atan2(1, 1)   // → 0.7853... (π/4)
+Math.atan2(0, 1)   // → 0`,
+      explanation: {
+        en: 'Use Math.atan2(y, x) to compute the angle of a point from the origin, correctly handling all quadrants.',
+        es: 'Usa Math.atan2(y, x) para calcular el ángulo de un punto desde el origen, manejando todos los cuadrantes correctamente.',
+      },
+    },
   },
   {
     slug: 'math-atan2-2',
@@ -40,6 +49,15 @@ export const mathAtan2Exercises: Exercise[] = [
     ],
     hints: ['The point (0, 1) is on the positive y-axis, giving angle 90° = π/2', 'atan2 handles the division-by-zero case that plain atan cannot'],
     tags: ['Math', 'atan2', 'static-method', 'trigonometry'],
+    usageExample: {
+      code: `// Angle from positive x-axis to point (x, y)
+Math.atan2(1, 1)   // → 0.7853... (π/4)
+Math.atan2(0, 1)   // → 0`,
+      explanation: {
+        en: 'Use Math.atan2(y, x) to compute the angle of a point from the origin, correctly handling all quadrants.',
+        es: 'Usa Math.atan2(y, x) para calcular el ángulo de un punto desde el origen, manejando todos los cuadrantes correctamente.',
+      },
+    },
   },
   {
     slug: 'math-atan2-3',
@@ -60,6 +78,15 @@ export const mathAtan2Exercises: Exercise[] = [
     ],
     hints: ['The point (1, 1) is at 45° from the x-axis', 'π/4 ≈ 0.7854'],
     tags: ['Math', 'atan2', 'static-method', 'trigonometry'],
+    usageExample: {
+      code: `// Angle from positive x-axis to point (x, y)
+Math.atan2(1, 1)   // → 0.7853... (π/4)
+Math.atan2(0, 1)   // → 0`,
+      explanation: {
+        en: 'Use Math.atan2(y, x) to compute the angle of a point from the origin, correctly handling all quadrants.',
+        es: 'Usa Math.atan2(y, x) para calcular el ángulo de un punto desde el origen, manejando todos los cuadrantes correctamente.',
+      },
+    },
   },
   {
     slug: 'math-atan2-4',
@@ -80,6 +107,15 @@ export const mathAtan2Exercises: Exercise[] = [
     ],
     hints: ['The point (-1, 0) is on the negative x-axis, giving angle 180° = π', 'atan2 correctly handles all four quadrants'],
     tags: ['Math', 'atan2', 'static-method', 'trigonometry'],
+    usageExample: {
+      code: `// Angle from positive x-axis to point (x, y)
+Math.atan2(1, 1)   // → 0.7853... (π/4)
+Math.atan2(0, 1)   // → 0`,
+      explanation: {
+        en: 'Use Math.atan2(y, x) to compute the angle of a point from the origin, correctly handling all quadrants.',
+        es: 'Usa Math.atan2(y, x) para calcular el ángulo de un punto desde el origen, manejando todos los cuadrantes correctamente.',
+      },
+    },
   },
   {
     slug: 'math-atan2-5',
@@ -100,5 +136,14 @@ export const mathAtan2Exercises: Exercise[] = [
     ],
     hints: ['The point (0, -1) is on the negative y-axis, giving -90° = -π/2', 'atan2 range is (-π, π]'],
     tags: ['Math', 'atan2', 'static-method', 'trigonometry'],
+    usageExample: {
+      code: `// Angle from positive x-axis to point (x, y)
+Math.atan2(1, 1)   // → 0.7853... (π/4)
+Math.atan2(0, 1)   // → 0`,
+      explanation: {
+        en: 'Use Math.atan2(y, x) to compute the angle of a point from the origin, correctly handling all quadrants.',
+        es: 'Usa Math.atan2(y, x) para calcular el ángulo de un punto desde el origen, manejando todos los cuadrantes correctamente.',
+      },
+    },
   },
 ]

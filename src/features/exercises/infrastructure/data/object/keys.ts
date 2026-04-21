@@ -43,6 +43,15 @@ export const objectKeysExercises: Exercise[] = [
     ],
     hints: ['Object.keys only returns own enumerable string-keyed properties'],
     tags: ['Object', 'keys', 'static-method', 'enumerable'],
+    usageExample: {
+      code: `// Get array of own enumerable property names
+const obj = { a: 1, b: 2, c: 3 }
+Object.keys(obj)   // → ['a', 'b', 'c']`,
+      explanation: {
+        en: "Use Object.keys() to get an array of an object's own enumerable property names for iteration or counting.",
+        es: "Usa Object.keys() para obtener un array con los nombres de las propiedades enumerables propias de un objeto, para iterarlas o contarlas.",
+      },
+    },
   },
   {
     slug: 'object-keys-2',
@@ -86,6 +95,15 @@ Unlike \`for...in\`, \`Object.keys()\` does not include inherited properties fro
     ],
     hints: ['Object.keys ignores the prototype chain'],
     tags: ['Object', 'keys', 'static-method', 'prototype'],
+    usageExample: {
+      code: `// Get array of own enumerable property names
+const obj = { a: 1, b: 2, c: 3 }
+Object.keys(obj)   // → ['a', 'b', 'c']`,
+      explanation: {
+        en: "Use Object.keys() to get an array of an object's own enumerable property names for iteration or counting.",
+        es: "Usa Object.keys() para obtener un array con los nombres de las propiedades enumerables propias de un objeto, para iterarlas o contarlas.",
+      },
+    },
   },
   {
     slug: 'object-keys-3',
@@ -129,6 +147,15 @@ Properties defined with \`Object.defineProperty\` and \`enumerable: false\` are 
     ],
     hints: ['Object.keys only shows enumerable properties'],
     tags: ['Object', 'keys', 'static-method', 'enumerable', 'defineProperty'],
+    usageExample: {
+      code: `// Get array of own enumerable property names
+const obj = { a: 1, b: 2, c: 3 }
+Object.keys(obj)   // → ['a', 'b', 'c']`,
+      explanation: {
+        en: "Use Object.keys() to get an array of an object's own enumerable property names for iteration or counting.",
+        es: "Usa Object.keys() para obtener un array con los nombres de las propiedades enumerables propias de un objeto, para iterarlas o contarlas.",
+      },
+    },
   },
   {
     slug: 'object-keys-4',
@@ -172,6 +199,15 @@ Properties defined with \`Object.defineProperty\` and \`enumerable: false\` are 
     ],
     hints: ['Array indices are strings in JavaScript'],
     tags: ['Object', 'keys', 'static-method', 'array'],
+    usageExample: {
+      code: `// Get array of own enumerable property names
+const obj = { a: 1, b: 2, c: 3 }
+Object.keys(obj)   // → ['a', 'b', 'c']`,
+      explanation: {
+        en: "Use Object.keys() to get an array of an object's own enumerable property names for iteration or counting.",
+        es: "Usa Object.keys() para obtener un array con los nombres de las propiedades enumerables propias de un objeto, para iterarlas o contarlas.",
+      },
+    },
   },
   {
     slug: 'object-keys-5',
@@ -215,5 +251,14 @@ Properties defined with \`Object.defineProperty\` and \`enumerable: false\` are 
     ],
     hints: ['Object.keys().length is idiomatic for counting object properties'],
     tags: ['Object', 'keys', 'static-method', 'iteration'],
+    usageExample: {
+      code: `// Get array of own enumerable property names
+const obj = { a: 1, b: 2, c: 3 }
+Object.keys(obj)   // → ['a', 'b', 'c']`,
+      explanation: {
+        en: "Use Object.keys() to get an array of an object's own enumerable property names for iteration or counting.",
+        es: "Usa Object.keys() para obtener un array con los nombres de las propiedades enumerables propias de un objeto, para iterarlas o contarlas.",
+      },
+    },
   },
 ]

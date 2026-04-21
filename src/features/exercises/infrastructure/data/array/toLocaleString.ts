@@ -23,6 +23,14 @@ export const toLocaleStringExercises: Exercise[] = [
       'The exact output depends on the runtime locale, so avoid testing the precise formatted value.',
     ],
     tags: ['array', 'toLocaleString', 'locale', 'string'],
+    usageExample: {
+      code: `const nums = [1000, 2000, 3000]
+nums.toLocaleString('en-US')  // → '1,000,2,000,3,000'`,
+      explanation: {
+        en: 'Use toLocaleString() to format array elements using locale-aware number or date formatting.',
+        es: 'Usa toLocaleString() para formatear elementos del array con formato de número o fecha según la configuración regional.',
+      },
+    },
   },
   {
     slug: 'array-to-locale-string-currency',
@@ -46,6 +54,15 @@ export const toLocaleStringExercises: Exercise[] = [
       'Pass `{ style: "currency", currency: "USD" }` as the second argument to `toLocaleString`.',
     ],
     tags: ['array', 'toLocaleString', 'currency', 'map', 'locale'],
+    usageExample: {
+      code: `const prices = [9.99, 24.50]
+prices.toLocaleString('en-US', {style:'currency', currency:'USD'})
+// → '$9.99,$24.50'`,
+      explanation: {
+        en: 'Pass locale and options to toLocaleString() to format numeric values as currency.',
+        es: 'Pasa configuración regional y opciones a toLocaleString() para formatear valores numéricos como moneda.',
+      },
+    },
   },
   {
     slug: 'array-to-locale-string-dates',
@@ -69,6 +86,15 @@ export const toLocaleStringExercises: Exercise[] = [
       'Each `Date` object has its own `toLocaleString()` that formats according to the runtime locale.',
     ],
     tags: ['array', 'toLocaleString', 'date', 'locale'],
+    usageExample: {
+      code: `const dates = [new Date('2024-01-01'), new Date('2024-06-15')]
+dates.toLocaleString('en-GB')
+// → '01/01/2024, 00:00:00,15/06/2024, 00:00:00'`,
+      explanation: {
+        en: 'Use toLocaleString() on arrays of Date objects to produce locale-formatted date strings.',
+        es: 'Usa toLocaleString() en arrays de objetos Date para producir cadenas de fecha con formato regional.',
+      },
+    },
   },
   {
     slug: 'array-to-locale-string-mixed',
@@ -92,6 +118,15 @@ export const toLocaleStringExercises: Exercise[] = [
       'Numbers use `Number.prototype.toLocaleString()` for locale-sensitive formatting.',
     ],
     tags: ['array', 'toLocaleString', 'mixed', 'locale'],
+    usageExample: {
+      code: `const mixed = [1, 'hello', new Date('2024-01-01')]
+mixed.toLocaleString('en-US')
+// each element is formatted individually`,
+      explanation: {
+        en: 'toLocaleString() calls toLocaleString() on each element individually, useful for mixed-type arrays.',
+        es: 'toLocaleString() llama a toLocaleString() en cada elemento individualmente, útil para arrays de tipos mixtos.',
+      },
+    },
   },
   {
     slug: 'array-to-locale-string-empty',
@@ -115,5 +150,13 @@ export const toLocaleStringExercises: Exercise[] = [
       'This mirrors the behavior of `[].toString()` and `[].join(",")`.',
     ],
     tags: ['array', 'toLocaleString', 'empty', 'edge-case'],
+    usageExample: {
+      code: `const arr = []
+arr.toLocaleString()  // → ''  (empty string)`,
+      explanation: {
+        en: 'toLocaleString() on an empty array returns an empty string.',
+        es: 'toLocaleString() en un array vacío devuelve una cadena vacía.',
+      },
+    },
   },
 ]

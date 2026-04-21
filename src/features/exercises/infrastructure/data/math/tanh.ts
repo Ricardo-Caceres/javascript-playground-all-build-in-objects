@@ -20,6 +20,15 @@ export const mathTanhExercises: Exercise[] = [
     ],
     hints: ['tanh(0) = sinh(0)/cosh(0) = 0/1 = 0'],
     tags: ['Math', 'tanh', 'static-method'],
+    usageExample: {
+      code: `// Hyperbolic tangent (output in (-1, 1))
+Math.tanh(0)   // → 0
+Math.tanh(1)   // → 0.7615...`,
+      explanation: {
+        en: 'Use Math.tanh() to compute the hyperbolic tangent, commonly used as an activation function in neural networks.',
+        es: 'Usa Math.tanh() para calcular la tangente hiperbólica, comúnmente usada como función de activación en redes neuronales.',
+      },
+    },
   },
   {
     slug: 'math-tanh-2',
@@ -40,6 +49,15 @@ export const mathTanhExercises: Exercise[] = [
     ],
     hints: ['tanh(1) = (e - 1/e) / (e + 1/e) ≈ 0.7616'],
     tags: ['Math', 'tanh', 'static-method'],
+    usageExample: {
+      code: `// Hyperbolic tangent (output in (-1, 1))
+Math.tanh(0)   // → 0
+Math.tanh(1)   // → 0.7615...`,
+      explanation: {
+        en: 'Use Math.tanh() to compute the hyperbolic tangent, commonly used as an activation function in neural networks.',
+        es: 'Usa Math.tanh() para calcular la tangente hiperbólica, comúnmente usada como función de activación en redes neuronales.',
+      },
+    },
   },
   {
     slug: 'math-tanh-3',
@@ -60,6 +78,15 @@ export const mathTanhExercises: Exercise[] = [
     ],
     hints: ['tanh is an odd function: tanh(-x) = -tanh(x)'],
     tags: ['Math', 'tanh', 'static-method'],
+    usageExample: {
+      code: `// Hyperbolic tangent (output in (-1, 1))
+Math.tanh(0)   // → 0
+Math.tanh(1)   // → 0.7615...`,
+      explanation: {
+        en: 'Use Math.tanh() to compute the hyperbolic tangent, commonly used as an activation function in neural networks.',
+        es: 'Usa Math.tanh() para calcular la tangente hiperbólica, comúnmente usada como función de activación en redes neuronales.',
+      },
+    },
   },
   {
     slug: 'math-tanh-4',
@@ -80,6 +107,15 @@ export const mathTanhExercises: Exercise[] = [
     ],
     hints: ['tanh has horizontal asymptotes at ±1; tanh(Infinity) = 1'],
     tags: ['Math', 'tanh', 'static-method'],
+    usageExample: {
+      code: `// Hyperbolic tangent (output in (-1, 1))
+Math.tanh(0)   // → 0
+Math.tanh(1)   // → 0.7615...`,
+      explanation: {
+        en: 'Use Math.tanh() to compute the hyperbolic tangent, commonly used as an activation function in neural networks.',
+        es: 'Usa Math.tanh() para calcular la tangente hiperbólica, comúnmente usada como función de activación en redes neuronales.',
+      },
+    },
   },
   {
     slug: 'math-tanh-5',
@@ -100,5 +136,14 @@ export const mathTanhExercises: Exercise[] = [
     ],
     hints: ['Math.tanh always returns a number primitive'],
     tags: ['Math', 'tanh', 'static-method'],
+    usageExample: {
+      code: `// Hyperbolic tangent (output in (-1, 1))
+Math.tanh(0)   // → 0
+Math.tanh(1)   // → 0.7615...`,
+      explanation: {
+        en: 'Use Math.tanh() to compute the hyperbolic tangent, commonly used as an activation function in neural networks.',
+        es: 'Usa Math.tanh() para calcular la tangente hiperbólica, comúnmente usada como función de activación en redes neuronales.',
+      },
+    },
   },
 ]

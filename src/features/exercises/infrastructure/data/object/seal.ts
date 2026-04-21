@@ -43,6 +43,17 @@ export const sealExercises: Exercise[] = [
     ],
     hints: ['seal prevents structural changes but allows value changes'],
     tags: ['Object', 'seal', 'static-method', 'sealed'],
+    usageExample: {
+      code: `// Prevent adding/removing properties but allow value changes
+const obj = Object.seal({ x: 1 })
+obj.x = 99     // allowed — value can change
+delete obj.x   // silently ignored
+obj.x          // → 99`,
+      explanation: {
+        en: 'Use Object.seal() to prevent adding or deleting properties on an object while still allowing existing values to be updated.',
+        es: 'Usa Object.seal() para evitar añadir o eliminar propiedades de un objeto, aunque los valores existentes sí puedan actualizarse.',
+      },
+    },
   },
   {
     slug: 'object-seal-2',
@@ -89,6 +100,17 @@ After sealing, you cannot delete properties from the object (in sloppy mode, the
     ],
     hints: ['In sloppy mode, delete on sealed objects silently fails'],
     tags: ['Object', 'seal', 'static-method', 'delete'],
+    usageExample: {
+      code: `// Prevent adding/removing properties but allow value changes
+const obj = Object.seal({ x: 1 })
+obj.x = 99     // allowed — value can change
+delete obj.x   // silently ignored
+obj.x          // → 99`,
+      explanation: {
+        en: 'Use Object.seal() to prevent adding or deleting properties on an object while still allowing existing values to be updated.',
+        es: 'Usa Object.seal() para evitar añadir o eliminar propiedades de un objeto, aunque los valores existentes sí puedan actualizarse.',
+      },
+    },
   },
   {
     slug: 'object-seal-3',
@@ -135,6 +157,17 @@ Unlike \`Object.freeze()\`, sealing does NOT make properties non-writable. You c
     ],
     hints: ['seal = non-extensible + non-configurable, but writable values still change'],
     tags: ['Object', 'seal', 'static-method', 'writable'],
+    usageExample: {
+      code: `// Prevent adding/removing properties but allow value changes
+const obj = Object.seal({ x: 1 })
+obj.x = 99     // allowed — value can change
+delete obj.x   // silently ignored
+obj.x          // → 99`,
+      explanation: {
+        en: 'Use Object.seal() to prevent adding or deleting properties on an object while still allowing existing values to be updated.',
+        es: 'Usa Object.seal() para evitar añadir o eliminar propiedades de un objeto, aunque los valores existentes sí puedan actualizarse.',
+      },
+    },
   },
   {
     slug: 'object-seal-4',
@@ -178,6 +211,17 @@ Use \`Object.isSealed(obj)\` to verify whether an object is sealed.
     ],
     hints: ['isSealed = non-extensible + all properties non-configurable'],
     tags: ['Object', 'seal', 'isSealed', 'static-method'],
+    usageExample: {
+      code: `// Prevent adding/removing properties but allow value changes
+const obj = Object.seal({ x: 1 })
+obj.x = 99     // allowed — value can change
+delete obj.x   // silently ignored
+obj.x          // → 99`,
+      explanation: {
+        en: 'Use Object.seal() to prevent adding or deleting properties on an object while still allowing existing values to be updated.',
+        es: 'Usa Object.seal() para evitar añadir o eliminar propiedades de un objeto, aunque los valores existentes sí puedan actualizarse.',
+      },
+    },
   },
   {
     slug: 'object-seal-5',
@@ -222,5 +266,16 @@ Use \`Object.isSealed(obj)\` to verify whether an object is sealed.
     ],
     hints: ['Object.seal, freeze, and preventExtensions all return the modified object'],
     tags: ['Object', 'seal', 'static-method', 'reference'],
+    usageExample: {
+      code: `// Prevent adding/removing properties but allow value changes
+const obj = Object.seal({ x: 1 })
+obj.x = 99     // allowed — value can change
+delete obj.x   // silently ignored
+obj.x          // → 99`,
+      explanation: {
+        en: 'Use Object.seal() to prevent adding or deleting properties on an object while still allowing existing values to be updated.',
+        es: 'Usa Object.seal() para evitar añadir o eliminar propiedades de un objeto, aunque los valores existentes sí puedan actualizarse.',
+      },
+    },
   },
 ]

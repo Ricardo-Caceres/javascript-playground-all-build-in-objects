@@ -20,6 +20,15 @@ export const mathCoshExercises: Exercise[] = [
     ],
     hints: ['cosh(x) = (eˣ + e⁻ˣ) / 2, and cosh(0) = (1 + 1) / 2 = 1', 'The minimum value of cosh is 1, achieved at x = 0'],
     tags: ['Math', 'cosh', 'static-method', 'hyperbolic'],
+    usageExample: {
+      code: `// Hyperbolic cosine
+Math.cosh(0)   // → 1
+Math.cosh(1)   // → 1.5430...`,
+      explanation: {
+        en: 'Use Math.cosh() to compute the hyperbolic cosine, commonly used in physics and engineering formulas.',
+        es: 'Usa Math.cosh() para calcular el coseno hiperbólico, comúnmente usado en fórmulas de física e ingeniería.',
+      },
+    },
   },
   {
     slug: 'math-cosh-2',
@@ -40,6 +49,15 @@ export const mathCoshExercises: Exercise[] = [
     ],
     hints: ['cosh(1) = (e + 1/e) / 2', 'cosh is always ≥ 1'],
     tags: ['Math', 'cosh', 'static-method', 'hyperbolic'],
+    usageExample: {
+      code: `// Hyperbolic cosine
+Math.cosh(0)   // → 1
+Math.cosh(1)   // → 1.5430...`,
+      explanation: {
+        en: 'Use Math.cosh() to compute the hyperbolic cosine, commonly used in physics and engineering formulas.',
+        es: 'Usa Math.cosh() para calcular el coseno hiperbólico, comúnmente usado en fórmulas de física e ingeniería.',
+      },
+    },
   },
   {
     slug: 'math-cosh-3',
@@ -60,6 +78,15 @@ export const mathCoshExercises: Exercise[] = [
     ],
     hints: ['cosh is an even function: cosh(-x) = cosh(x)', 'Contrast this with sinh, which is odd: sinh(-x) = -sinh(x)'],
     tags: ['Math', 'cosh', 'static-method', 'hyperbolic'],
+    usageExample: {
+      code: `// Hyperbolic cosine
+Math.cosh(0)   // → 1
+Math.cosh(1)   // → 1.5430...`,
+      explanation: {
+        en: 'Use Math.cosh() to compute the hyperbolic cosine, commonly used in physics and engineering formulas.',
+        es: 'Usa Math.cosh() para calcular el coseno hiperbólico, comúnmente usado en fórmulas de física e ingeniería.',
+      },
+    },
   },
   {
     slug: 'math-cosh-4',
@@ -80,6 +107,15 @@ export const mathCoshExercises: Exercise[] = [
     ],
     hints: ['cosh grows exponentially for large values', 'Math.cosh(100) ≈ 1.34e43'],
     tags: ['Math', 'cosh', 'static-method', 'hyperbolic', 'Infinity'],
+    usageExample: {
+      code: `// Hyperbolic cosine
+Math.cosh(0)   // → 1
+Math.cosh(1)   // → 1.5430...`,
+      explanation: {
+        en: 'Use Math.cosh() to compute the hyperbolic cosine, commonly used in physics and engineering formulas.',
+        es: 'Usa Math.cosh() para calcular el coseno hiperbólico, comúnmente usado en fórmulas de física e ingeniería.',
+      },
+    },
   },
   {
     slug: 'math-cosh-5',
@@ -100,5 +136,14 @@ export const mathCoshExercises: Exercise[] = [
     ],
     hints: ['All Math methods return a number primitive', 'cosh is defined for all real numbers and ±Infinity'],
     tags: ['Math', 'cosh', 'static-method', 'hyperbolic'],
+    usageExample: {
+      code: `// Hyperbolic cosine
+Math.cosh(0)   // → 1
+Math.cosh(1)   // → 1.5430...`,
+      explanation: {
+        en: 'Use Math.cosh() to compute the hyperbolic cosine, commonly used in physics and engineering formulas.',
+        es: 'Usa Math.cosh() para calcular el coseno hiperbólico, comúnmente usado en fórmulas de física e ingeniería.',
+      },
+    },
   },
 ]

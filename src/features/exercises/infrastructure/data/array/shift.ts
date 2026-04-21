@@ -23,6 +23,15 @@ export const shiftExercises: Exercise[] = [
       'You can directly `return arr.shift()`.',
     ],
     tags: ['array', 'shift', 'mutation', 'first-element'],
+    usageExample: {
+      code: `const arr = [10, 20, 30]
+const first = arr.shift()  // → 10
+arr  // → [20, 30]`,
+      explanation: {
+        en: 'Use shift() to remove and return the first element of an array.',
+        es: 'Usa shift() para eliminar y devolver el primer elemento de un array.',
+      },
+    },
   },
   {
     slug: 'array-shift-empty',
@@ -46,6 +55,14 @@ export const shiftExercises: Exercise[] = [
       'Use a type assertion `([] as number[])` to satisfy TypeScript.',
     ],
     tags: ['array', 'shift', 'empty', 'undefined', 'edge-case'],
+    usageExample: {
+      code: `const arr = []
+arr.shift()  // → undefined  (empty array)`,
+      explanation: {
+        en: 'shift() returns undefined when called on an empty array — handle this case if needed.',
+        es: 'shift() devuelve undefined al llamarse en un array vacío; maneja este caso si es necesario.',
+      },
+    },
   },
   {
     slug: 'array-shift-mutates',
@@ -69,6 +86,15 @@ export const shiftExercises: Exercise[] = [
       '`shift()` reduces the array length by 1 and shifts all remaining elements left.',
     ],
     tags: ['array', 'shift', 'mutation', 'reference'],
+    usageExample: {
+      code: `const arr = ['a', 'b', 'c']
+arr.shift()
+console.log(arr)  // → ['b', 'c']  (mutated!)`,
+      explanation: {
+        en: 'shift() mutates the original array and re-indexes all remaining elements.',
+        es: 'shift() muta el array original y vuelve a indexar todos los elementos restantes.',
+      },
+    },
   },
   {
     slug: 'array-shift-queue',
@@ -92,6 +118,16 @@ export const shiftExercises: Exercise[] = [
       'The returned value is the element that was at index 0.',
     ],
     tags: ['array', 'shift', 'queue', 'fifo', 'data-structure'],
+    usageExample: {
+      code: `const queue = []
+queue.push('first')
+queue.push('second')
+queue.shift()  // → 'first'  (FIFO)`,
+      explanation: {
+        en: 'Use push() and shift() together to implement a first-in, first-out (FIFO) queue.',
+        es: 'Usa push() y shift() juntos para implementar una cola FIFO (primero en entrar, primero en salir).',
+      },
+    },
   },
   {
     slug: 'array-shift-first-word',
@@ -115,5 +151,14 @@ export const shiftExercises: Exercise[] = [
       'Directly `return words.shift()` is the idiomatic approach.',
     ],
     tags: ['array', 'shift', 'first', 'consume', 'token'],
+    usageExample: {
+      code: `const words = ['hello', 'world', 'foo']
+const head = words.shift()  // → 'hello'
+words  // → ['world', 'foo']`,
+      explanation: {
+        en: 'Use shift() to consume the first element of a word or message queue.',
+        es: 'Usa shift() para consumir el primer elemento de una cola de palabras o mensajes.',
+      },
+    },
   },
 ]

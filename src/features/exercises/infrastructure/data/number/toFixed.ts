@@ -30,6 +30,16 @@ export const toFixedExercises: Exercise[] = [
     ],
     hints: ['`toFixed` rounds and pads the decimal portion to the specified number of digits.'],
     tags: ['Number', 'toFixed', 'instance-method', 'beginner'],
+    usageExample: {
+      code: `// Format number with fixed decimal places
+(3.14159).toFixed(2)   // → '3.14'
+(1.5).toFixed(0)       // → '2'
+(100).toFixed(2)       // → '100.00'`,
+      explanation: {
+        en: 'Use toFixed() to format a number as a string with a specific number of decimal places, commonly used for monetary values.',
+        es: 'Usa toFixed() para formatear un número como cadena con un número específico de decimales, comúnmente usado para valores monetarios.',
+      },
+    },
   },
   {
     slug: 'number-to-fixed-2',
@@ -52,6 +62,16 @@ export const toFixedExercises: Exercise[] = [
     ],
     hints: ['Some values (like `1.005`) are tricky due to floating-point representation; prefer values like `1.25`.'],
     tags: ['Number', 'toFixed', 'rounding', 'intermediate'],
+    usageExample: {
+      code: `// Format number with fixed decimal places
+(3.14159).toFixed(2)   // → '3.14'
+(1.5).toFixed(0)       // → '2'
+(100).toFixed(2)       // → '100.00'`,
+      explanation: {
+        en: 'Use toFixed() to format a number as a string with a specific number of decimal places, commonly used for monetary values.',
+        es: 'Usa toFixed() para formatear un número como cadena con un número específico de decimales, comúnmente usado para valores monetarios.',
+      },
+    },
   },
   {
     slug: 'number-to-fixed-3',
@@ -74,6 +94,16 @@ export const toFixedExercises: Exercise[] = [
     ],
     hints: ['`toFixed` always pads with zeros to reach the requested decimal count.'],
     tags: ['Number', 'toFixed', 'padding', 'beginner'],
+    usageExample: {
+      code: `// Format number with fixed decimal places
+(3.14159).toFixed(2)   // → '3.14'
+(1.5).toFixed(0)       // → '2'
+(100).toFixed(2)       // → '100.00'`,
+      explanation: {
+        en: 'Use toFixed() to format a number as a string with a specific number of decimal places, commonly used for monetary values.',
+        es: 'Usa toFixed() para formatear un número como cadena con un número específico de decimales, comúnmente usado para valores monetarios.',
+      },
+    },
   },
   {
     slug: 'number-to-fixed-4',
@@ -96,6 +126,16 @@ export const toFixedExercises: Exercise[] = [
     ],
     hints: ['`toFixed(0)` rounds to the nearest integer but still returns a string.'],
     tags: ['Number', 'toFixed', 'rounding', 'beginner'],
+    usageExample: {
+      code: `// Format number with fixed decimal places
+(3.14159).toFixed(2)   // → '3.14'
+(1.5).toFixed(0)       // → '2'
+(100).toFixed(2)       // → '100.00'`,
+      explanation: {
+        en: 'Use toFixed() to format a number as a string with a specific number of decimal places, commonly used for monetary values.',
+        es: 'Usa toFixed() para formatear un número como cadena con un número específico de decimales, comúnmente usado para valores monetarios.',
+      },
+    },
   },
   {
     slug: 'number-to-fixed-5',
@@ -120,5 +160,15 @@ const t = typeof result`,
     ],
     hints: ['`toFixed` returns a string; use `parseFloat` if you need the numeric value back.'],
     tags: ['Number', 'toFixed', 'return-type', 'beginner'],
+    usageExample: {
+      code: `// Format number with fixed decimal places
+(3.14159).toFixed(2)   // → '3.14'
+(1.5).toFixed(0)       // → '2'
+(100).toFixed(2)       // → '100.00'`,
+      explanation: {
+        en: 'Use toFixed() to format a number as a string with a specific number of decimal places, commonly used for monetary values.',
+        es: 'Usa toFixed() para formatear un número como cadena con un número específico de decimales, comúnmente usado para valores monetarios.',
+      },
+    },
   },
 ]

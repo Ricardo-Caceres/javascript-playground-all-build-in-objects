@@ -20,6 +20,15 @@ export const mathAtanhExercises: Exercise[] = [
     ],
     hints: ['tanh(0) = 0, so atanh(0) = 0', 'The domain of atanh is the open interval (-1, 1)'],
     tags: ['Math', 'atanh', 'static-method', 'hyperbolic'],
+    usageExample: {
+      code: `// Inverse hyperbolic tangent (input in (-1, 1))
+Math.atanh(0)    // → 0
+Math.atanh(0.5)  // → 0.5493...`,
+      explanation: {
+        en: 'Use Math.atanh() to compute the inverse hyperbolic tangent of a number strictly between -1 and 1.',
+        es: 'Usa Math.atanh() para calcular la tangente hiperbólica inversa de un número estrictamente entre -1 y 1.',
+      },
+    },
   },
   {
     slug: 'math-atanh-2',
@@ -40,6 +49,15 @@ export const mathAtanhExercises: Exercise[] = [
     ],
     hints: ['atanh(x) = (1/2) * ln((1+x)/(1-x))', 'Valid only for |x| < 1'],
     tags: ['Math', 'atanh', 'static-method', 'hyperbolic'],
+    usageExample: {
+      code: `// Inverse hyperbolic tangent (input in (-1, 1))
+Math.atanh(0)    // → 0
+Math.atanh(0.5)  // → 0.5493...`,
+      explanation: {
+        en: 'Use Math.atanh() to compute the inverse hyperbolic tangent of a number strictly between -1 and 1.',
+        es: 'Usa Math.atanh() para calcular la tangente hiperbólica inversa de un número estrictamente entre -1 y 1.',
+      },
+    },
   },
   {
     slug: 'math-atanh-3',
@@ -60,6 +78,15 @@ export const mathAtanhExercises: Exercise[] = [
     ],
     hints: ['atanh diverges to +∞ as x → 1⁻', 'The boundary x=1 is not in the domain'],
     tags: ['Math', 'atanh', 'static-method', 'hyperbolic', 'Infinity'],
+    usageExample: {
+      code: `// Inverse hyperbolic tangent (input in (-1, 1))
+Math.atanh(0)    // → 0
+Math.atanh(0.5)  // → 0.5493...`,
+      explanation: {
+        en: 'Use Math.atanh() to compute the inverse hyperbolic tangent of a number strictly between -1 and 1.',
+        es: 'Usa Math.atanh() para calcular la tangente hiperbólica inversa de un número estrictamente entre -1 y 1.',
+      },
+    },
   },
   {
     slug: 'math-atanh-4',
@@ -80,6 +107,15 @@ export const mathAtanhExercises: Exercise[] = [
     ],
     hints: ['atanh diverges to -∞ as x → -1⁺', 'atanh is an odd function: atanh(-x) = -atanh(x)'],
     tags: ['Math', 'atanh', 'static-method', 'hyperbolic', 'Infinity'],
+    usageExample: {
+      code: `// Inverse hyperbolic tangent (input in (-1, 1))
+Math.atanh(0)    // → 0
+Math.atanh(0.5)  // → 0.5493...`,
+      explanation: {
+        en: 'Use Math.atanh() to compute the inverse hyperbolic tangent of a number strictly between -1 and 1.',
+        es: 'Usa Math.atanh() para calcular la tangente hiperbólica inversa de un número estrictamente entre -1 y 1.',
+      },
+    },
   },
   {
     slug: 'math-atanh-5',
@@ -100,5 +136,14 @@ export const mathAtanhExercises: Exercise[] = [
     ],
     hints: ['The open domain of atanh is (-1, 1)', 'Both ±1 produce ±Infinity; values beyond produce NaN'],
     tags: ['Math', 'atanh', 'static-method', 'hyperbolic', 'NaN'],
+    usageExample: {
+      code: `// Inverse hyperbolic tangent (input in (-1, 1))
+Math.atanh(0)    // → 0
+Math.atanh(0.5)  // → 0.5493...`,
+      explanation: {
+        en: 'Use Math.atanh() to compute the inverse hyperbolic tangent of a number strictly between -1 and 1.',
+        es: 'Usa Math.atanh() para calcular la tangente hiperbólica inversa de un número estrictamente entre -1 y 1.',
+      },
+    },
   },
 ]

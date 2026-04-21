@@ -20,6 +20,15 @@ export const mathHypotExercises: Exercise[] = [
     ],
     hints: ['The 3-4-5 Pythagorean triple: sqrt(9 + 16) = sqrt(25) = 5'],
     tags: ['Math', 'hypot', 'static-method'],
+    usageExample: {
+      code: `// Euclidean distance / hypotenuse
+Math.hypot(3, 4)   // → 5
+Math.hypot(5, 12)  // → 13`,
+      explanation: {
+        en: 'Use Math.hypot() to calculate the hypotenuse of a right triangle or Euclidean distance between points.',
+        es: 'Usa Math.hypot() para calcular la hipotenusa de un triángulo rectángulo o la distancia euclidiana entre puntos.',
+      },
+    },
   },
   {
     slug: 'math-hypot-2',
@@ -40,6 +49,15 @@ export const mathHypotExercises: Exercise[] = [
     ],
     hints: ['The 5-12-13 Pythagorean triple: sqrt(25 + 144) = sqrt(169) = 13'],
     tags: ['Math', 'hypot', 'static-method'],
+    usageExample: {
+      code: `// Euclidean distance / hypotenuse
+Math.hypot(3, 4)   // → 5
+Math.hypot(5, 12)  // → 13`,
+      explanation: {
+        en: 'Use Math.hypot() to calculate the hypotenuse of a right triangle or Euclidean distance between points.',
+        es: 'Usa Math.hypot() para calcular la hipotenusa de un triángulo rectángulo o la distancia euclidiana entre puntos.',
+      },
+    },
   },
   {
     slug: 'math-hypot-3',
@@ -60,6 +78,15 @@ export const mathHypotExercises: Exercise[] = [
     ],
     hints: ['sqrt(0^2) = sqrt(0) = 0'],
     tags: ['Math', 'hypot', 'static-method'],
+    usageExample: {
+      code: `// Euclidean distance / hypotenuse
+Math.hypot(3, 4)   // → 5
+Math.hypot(5, 12)  // → 13`,
+      explanation: {
+        en: 'Use Math.hypot() to calculate the hypotenuse of a right triangle or Euclidean distance between points.',
+        es: 'Usa Math.hypot() para calcular la hipotenusa de un triángulo rectángulo o la distancia euclidiana entre puntos.',
+      },
+    },
   },
   {
     slug: 'math-hypot-4',
@@ -80,6 +107,15 @@ export const mathHypotExercises: Exercise[] = [
     ],
     hints: ['sqrt(1^2 + 1^2) = sqrt(2) = Math.SQRT2 ≈ 1.41421356...'],
     tags: ['Math', 'hypot', 'static-method'],
+    usageExample: {
+      code: `// Euclidean distance / hypotenuse
+Math.hypot(3, 4)   // → 5
+Math.hypot(5, 12)  // → 13`,
+      explanation: {
+        en: 'Use Math.hypot() to calculate the hypotenuse of a right triangle or Euclidean distance between points.',
+        es: 'Usa Math.hypot() para calcular la hipotenusa de un triángulo rectángulo o la distancia euclidiana entre puntos.',
+      },
+    },
   },
   {
     slug: 'math-hypot-5',
@@ -100,5 +136,14 @@ export const mathHypotExercises: Exercise[] = [
     ],
     hints: ['sqrt(sum of empty set) = sqrt(0) = 0 by convention'],
     tags: ['Math', 'hypot', 'static-method'],
+    usageExample: {
+      code: `// Euclidean distance / hypotenuse
+Math.hypot(3, 4)   // → 5
+Math.hypot(5, 12)  // → 13`,
+      explanation: {
+        en: 'Use Math.hypot() to calculate the hypotenuse of a right triangle or Euclidean distance between points.',
+        es: 'Usa Math.hypot() para calcular la hipotenusa de un triángulo rectángulo o la distancia euclidiana entre puntos.',
+      },
+    },
   },
 ]

@@ -20,6 +20,16 @@ export const mathSignExercises: Exercise[] = [
     ],
     hints: ['Math.sign returns 1 for any positive number'],
     tags: ['Math', 'sign', 'static-method'],
+    usageExample: {
+      code: `// Returns -1, 0, or 1 based on sign
+Math.sign(-5)   // → -1
+Math.sign(0)    // → 0
+Math.sign(3)    // → 1`,
+      explanation: {
+        en: 'Use Math.sign() to determine whether a number is positive, negative, or zero.',
+        es: 'Usa Math.sign() para determinar si un número es positivo, negativo o cero.',
+      },
+    },
   },
   {
     slug: 'math-sign-2',
@@ -40,6 +50,16 @@ export const mathSignExercises: Exercise[] = [
     ],
     hints: ['Math.sign returns -1 for any negative number'],
     tags: ['Math', 'sign', 'static-method'],
+    usageExample: {
+      code: `// Returns -1, 0, or 1 based on sign
+Math.sign(-5)   // → -1
+Math.sign(0)    // → 0
+Math.sign(3)    // → 1`,
+      explanation: {
+        en: 'Use Math.sign() to determine whether a number is positive, negative, or zero.',
+        es: 'Usa Math.sign() para determinar si un número es positivo, negativo o cero.',
+      },
+    },
   },
   {
     slug: 'math-sign-3',
@@ -60,6 +80,16 @@ export const mathSignExercises: Exercise[] = [
     ],
     hints: ['Math.sign(0) returns +0, which equals 0 with ==='],
     tags: ['Math', 'sign', 'static-method'],
+    usageExample: {
+      code: `// Returns -1, 0, or 1 based on sign
+Math.sign(-5)   // → -1
+Math.sign(0)    // → 0
+Math.sign(3)    // → 1`,
+      explanation: {
+        en: 'Use Math.sign() to determine whether a number is positive, negative, or zero.',
+        es: 'Usa Math.sign() para determinar si un número es positivo, negativo o cero.',
+      },
+    },
   },
   {
     slug: 'math-sign-4',
@@ -80,6 +110,16 @@ export const mathSignExercises: Exercise[] = [
     ],
     hints: ['JavaScript has -0 as a distinct value; use Object.is to differentiate it from +0'],
     tags: ['Math', 'sign', 'static-method'],
+    usageExample: {
+      code: `// Returns -1, 0, or 1 based on sign
+Math.sign(-5)   // → -1
+Math.sign(0)    // → 0
+Math.sign(3)    // → 1`,
+      explanation: {
+        en: 'Use Math.sign() to determine whether a number is positive, negative, or zero.',
+        es: 'Usa Math.sign() para determinar si un número es positivo, negativo o cero.',
+      },
+    },
   },
   {
     slug: 'math-sign-5',
@@ -100,5 +140,15 @@ export const mathSignExercises: Exercise[] = [
     ],
     hints: ['NaN propagates through Math.sign — NaN has no defined sign'],
     tags: ['Math', 'sign', 'static-method'],
+    usageExample: {
+      code: `// Returns -1, 0, or 1 based on sign
+Math.sign(-5)   // → -1
+Math.sign(0)    // → 0
+Math.sign(3)    // → 1`,
+      explanation: {
+        en: 'Use Math.sign() to determine whether a number is positive, negative, or zero.',
+        es: 'Usa Math.sign() para determinar si un número es positivo, negativo o cero.',
+      },
+    },
   },
 ]

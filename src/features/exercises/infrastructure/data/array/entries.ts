@@ -36,6 +36,16 @@ getEntries([])              // → []
       'Each yielded value is a `[index, element]` tuple.',
     ],
     tags: ['Array', 'Array.prototype.entries', 'iterator', 'beginner'],
+    usageExample: {
+      code: `const arr = ['a', 'b', 'c']
+const iter = arr.entries()
+iter.next().value  // → [0, 'a']
+iter.next().value  // → [1, 'b']`,
+      explanation: {
+        en: 'Use entries() to get an iterator of [index, value] pairs from an array.',
+        es: 'Usa entries() para obtener un iterador de pares [índice, valor] de un array.',
+      },
+    },
   },
   {
     slug: 'array-entries-index-value',
@@ -75,6 +85,16 @@ getIndexValuePairs(['a', 'b', 'c']) // → [[0, 'a'], [1, 'b'], [2, 'c']]
       'You can also use `Array.from(arr.entries())` for a one-liner.',
     ],
     tags: ['Array', 'Array.prototype.entries', 'for-of', 'intermediate'],
+    usageExample: {
+      code: `const fruits = ['apple', 'banana', 'cherry']
+for (const [i, v] of fruits.entries()) {
+  console.log(i, v)  // 0 apple, 1 banana, 2 cherry
+}`,
+      explanation: {
+        en: 'Use entries() with for-of destructuring to loop over both the index and value of each element.',
+        es: 'Usa entries() con desestructuración en for-of para iterar sobre el índice y el valor de cada elemento.',
+      },
+    },
   },
   {
     slug: 'array-entries-find-by-value',
@@ -114,6 +134,16 @@ findIndexOf(['a', 'b', 'c'], 'z') // → null
       'Return early as soon as the value matches to get the *first* occurrence.',
     ],
     tags: ['Array', 'Array.prototype.entries', 'search', 'intermediate'],
+    usageExample: {
+      code: `const arr = [10, 20, 30]
+for (const [i, v] of arr.entries()) {
+  if (v === 20) console.log('found at', i)  // found at 1
+}`,
+      explanation: {
+        en: 'Use entries() to find both the index and value when searching through an array.',
+        es: 'Usa entries() para encontrar tanto el índice como el valor al buscar en un array.',
+      },
+    },
   },
   {
     slug: 'array-entries-rebuild',
@@ -152,6 +182,15 @@ rebuildFromEntries([10, 20, 30]) // → [10, 20, 30]
       'In the `reduce` callback, destructure as `[, val]` to skip the index.',
     ],
     tags: ['Array', 'Array.prototype.entries', 'reduce', 'iterator', 'intermediate'],
+    usageExample: {
+      code: `const arr = ['x', 'y', 'z']
+const pairs = [...arr.entries()]
+pairs  // → [[0,'x'], [1,'y'], [2,'z']]`,
+      explanation: {
+        en: 'Spread entries() into an array to convert it to an array of [index, value] pairs.',
+        es: 'Extiende entries() a un array para convertirlo en un array de pares [índice, valor].',
+      },
+    },
   },
   {
     slug: 'array-entries-to-object',
@@ -191,5 +230,14 @@ arrayToObject(['a', 'b', 'c'], [1, 2, 3]) // → { a: 1, b: 2, c: 3 }
       'You can also use `Object.fromEntries(keys.map((k, i) => [k, vals[i]]))` for a one-liner.',
     ],
     tags: ['Array', 'Array.prototype.entries', 'object', 'advanced'],
+    usageExample: {
+      code: `const arr = ['a', 'b', 'c']
+const obj = Object.fromEntries(arr.entries())
+// → { 0: 'a', 1: 'b', 2: 'c' }`,
+      explanation: {
+        en: 'Pass entries() to Object.fromEntries() to convert an array into an indexed object.',
+        es: 'Pasa entries() a Object.fromEntries() para convertir un array en un objeto indexado.',
+      },
+    },
   },
 ]

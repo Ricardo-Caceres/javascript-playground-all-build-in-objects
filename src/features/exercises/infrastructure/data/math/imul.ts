@@ -20,6 +20,15 @@ export const mathImulExercises: Exercise[] = [
     ],
     hints: ['Math.imul performs 32-bit integer multiplication, same as * for small integers'],
     tags: ['Math', 'imul', 'static-method'],
+    usageExample: {
+      code: `// 32-bit integer multiplication (C-like overflow)
+Math.imul(3, 4)    // → 12
+Math.imul(-1, 8)   // → -8`,
+      explanation: {
+        en: 'Use Math.imul() for fast 32-bit integer multiplication with C-like overflow semantics, useful in hashing or WebAssembly.',
+        es: 'Usa Math.imul() para multiplicación de enteros de 32 bits rápida con desbordamiento tipo C, útil en hashing o WebAssembly.',
+      },
+    },
   },
   {
     slug: 'math-imul-2',
@@ -40,6 +49,15 @@ export const mathImulExercises: Exercise[] = [
     ],
     hints: ['Negative × negative = positive, even in 32-bit integer math'],
     tags: ['Math', 'imul', 'static-method'],
+    usageExample: {
+      code: `// 32-bit integer multiplication (C-like overflow)
+Math.imul(3, 4)    // → 12
+Math.imul(-1, 8)   // → -8`,
+      explanation: {
+        en: 'Use Math.imul() for fast 32-bit integer multiplication with C-like overflow semantics, useful in hashing or WebAssembly.',
+        es: 'Usa Math.imul() para multiplicación de enteros de 32 bits rápida con desbordamiento tipo C, útil en hashing o WebAssembly.',
+      },
+    },
   },
   {
     slug: 'math-imul-3',
@@ -60,6 +78,15 @@ export const mathImulExercises: Exercise[] = [
     ],
     hints: ['0xffffffff is -1 in two\'s complement 32-bit; -1 * 5 = -5'],
     tags: ['Math', 'imul', 'static-method'],
+    usageExample: {
+      code: `// 32-bit integer multiplication (C-like overflow)
+Math.imul(3, 4)    // → 12
+Math.imul(-1, 8)   // → -8`,
+      explanation: {
+        en: 'Use Math.imul() for fast 32-bit integer multiplication with C-like overflow semantics, useful in hashing or WebAssembly.',
+        es: 'Usa Math.imul() para multiplicación de enteros de 32 bits rápida con desbordamiento tipo C, útil en hashing o WebAssembly.',
+      },
+    },
   },
   {
     slug: 'math-imul-4',
@@ -80,6 +107,15 @@ export const mathImulExercises: Exercise[] = [
     ],
     hints: ['Anything multiplied by zero is zero'],
     tags: ['Math', 'imul', 'static-method'],
+    usageExample: {
+      code: `// 32-bit integer multiplication (C-like overflow)
+Math.imul(3, 4)    // → 12
+Math.imul(-1, 8)   // → -8`,
+      explanation: {
+        en: 'Use Math.imul() for fast 32-bit integer multiplication with C-like overflow semantics, useful in hashing or WebAssembly.',
+        es: 'Usa Math.imul() para multiplicación de enteros de 32 bits rápida con desbordamiento tipo C, útil en hashing o WebAssembly.',
+      },
+    },
   },
   {
     slug: 'math-imul-5',
@@ -100,5 +136,14 @@ export const mathImulExercises: Exercise[] = [
     ],
     hints: ['Math.imul always returns a JavaScript number primitive'],
     tags: ['Math', 'imul', 'static-method'],
+    usageExample: {
+      code: `// 32-bit integer multiplication (C-like overflow)
+Math.imul(3, 4)    // → 12
+Math.imul(-1, 8)   // → -8`,
+      explanation: {
+        en: 'Use Math.imul() for fast 32-bit integer multiplication with C-like overflow semantics, useful in hashing or WebAssembly.',
+        es: 'Usa Math.imul() para multiplicación de enteros de 32 bits rápida con desbordamiento tipo C, útil en hashing o WebAssembly.',
+      },
+    },
   },
 ]

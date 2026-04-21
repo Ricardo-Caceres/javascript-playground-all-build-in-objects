@@ -30,6 +30,16 @@ Number.parseInt('42')  // → 42
     ],
     hints: ['Always specify the radix to avoid ambiguity.'],
     tags: ['Number', 'parseInt', 'static-method', 'beginner'],
+    usageExample: {
+      code: `// Parse a string to an integer with optional base
+Number.parseInt('42px')       // → 42
+Number.parseInt('0xff', 16)   // → 255
+Number.parseInt('10', 2)      // → 2`,
+      explanation: {
+        en: 'Use Number.parseInt() to convert a string to an integer, optionally specifying a radix for binary, octal, or hexadecimal input.',
+        es: 'Usa Number.parseInt() para convertir una cadena a un entero, especificando opcionalmente una base para entrada binaria, octal o hexadecimal.',
+      },
+    },
   },
   {
     slug: 'number-parse-int-2',
@@ -56,6 +66,16 @@ Number.parseInt('0xff', 16)  // → 255
     ],
     hints: ['Hexadecimal uses base 16 with digits 0-9 and letters a-f.'],
     tags: ['Number', 'parseInt', 'hex', 'intermediate'],
+    usageExample: {
+      code: `// Parse a string to an integer with optional base
+Number.parseInt('42px')       // → 42
+Number.parseInt('0xff', 16)   // → 255
+Number.parseInt('10', 2)      // → 2`,
+      explanation: {
+        en: 'Use Number.parseInt() to convert a string to an integer, optionally specifying a radix for binary, octal, or hexadecimal input.',
+        es: 'Usa Number.parseInt() para convertir una cadena a un entero, especificando opcionalmente una base para entrada binaria, octal o hexadecimal.',
+      },
+    },
   },
   {
     slug: 'number-parse-int-3',
@@ -82,6 +102,16 @@ Number.parseInt('10', 2)  // → 2
     ],
     hints: ['Binary uses base 2 with only digits 0 and 1.'],
     tags: ['Number', 'parseInt', 'binary', 'intermediate'],
+    usageExample: {
+      code: `// Parse a string to an integer with optional base
+Number.parseInt('42px')       // → 42
+Number.parseInt('0xff', 16)   // → 255
+Number.parseInt('10', 2)      // → 2`,
+      explanation: {
+        en: 'Use Number.parseInt() to convert a string to an integer, optionally specifying a radix for binary, octal, or hexadecimal input.',
+        es: 'Usa Number.parseInt() para convertir una cadena a un entero, especificando opcionalmente una base para entrada binaria, octal o hexadecimal.',
+      },
+    },
   },
   {
     slug: 'number-parse-int-4',
@@ -102,6 +132,16 @@ Number.parseInt('10', 2)  // → 2
     ],
     hints: ['Leading whitespace is stripped before parsing.'],
     tags: ['Number', 'parseInt', 'whitespace', 'beginner'],
+    usageExample: {
+      code: `// Parse a string to an integer with optional base
+Number.parseInt('42px')       // → 42
+Number.parseInt('0xff', 16)   // → 255
+Number.parseInt('10', 2)      // → 2`,
+      explanation: {
+        en: 'Use Number.parseInt() to convert a string to an integer, optionally specifying a radix for binary, octal, or hexadecimal input.',
+        es: 'Usa Number.parseInt() para convertir una cadena a un entero, especificando opcionalmente una base para entrada binaria, octal o hexadecimal.',
+      },
+    },
   },
   {
     slug: 'number-parse-int-5',
@@ -124,5 +164,15 @@ When the string cannot be parsed as an integer, \`NaN\` is returned.`,
     ],
     hints: ['`parseInt` truncates at the decimal point and returns `NaN` for non-numeric leading characters.'],
     tags: ['Number', 'parseInt', 'NaN', 'beginner'],
+    usageExample: {
+      code: `// Parse a string to an integer with optional base
+Number.parseInt('42px')       // → 42
+Number.parseInt('0xff', 16)   // → 255
+Number.parseInt('10', 2)      // → 2`,
+      explanation: {
+        en: 'Use Number.parseInt() to convert a string to an integer, optionally specifying a radix for binary, octal, or hexadecimal input.',
+        es: 'Usa Number.parseInt() para convertir una cadena a un entero, especificando opcionalmente una base para entrada binaria, octal o hexadecimal.',
+      },
+    },
   },
 ]

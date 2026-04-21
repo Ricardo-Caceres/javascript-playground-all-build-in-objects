@@ -20,6 +20,15 @@ export const mathMaxExercises: Exercise[] = [
     ],
     hints: ['Math.max returns the largest of all provided arguments'],
     tags: ['Math', 'max', 'static-method'],
+    usageExample: {
+      code: `// Largest of the given numbers
+Math.max(1, 5, 3)   // → 5
+Math.max(-1, -5)    // → -1`,
+      explanation: {
+        en: 'Use Math.max() to find the largest value among a set of numbers, or to clamp a minimum bound.',
+        es: 'Usa Math.max() para encontrar el valor más grande entre un conjunto de números o para limitar un valor mínimo.',
+      },
+    },
   },
   {
     slug: 'math-max-2',
@@ -40,6 +49,15 @@ export const mathMaxExercises: Exercise[] = [
     ],
     hints: ['-1 is the largest (closest to zero) among -1, -5, -2'],
     tags: ['Math', 'max', 'static-method'],
+    usageExample: {
+      code: `// Largest of the given numbers
+Math.max(1, 5, 3)   // → 5
+Math.max(-1, -5)    // → -1`,
+      explanation: {
+        en: 'Use Math.max() to find the largest value among a set of numbers, or to clamp a minimum bound.',
+        es: 'Usa Math.max() para encontrar el valor más grande entre un conjunto de números o para limitar un valor mínimo.',
+      },
+    },
   },
   {
     slug: 'math-max-3',
@@ -60,6 +78,15 @@ export const mathMaxExercises: Exercise[] = [
     ],
     hints: ['The identity element for max is -Infinity (every number is ≥ -Infinity)'],
     tags: ['Math', 'max', 'static-method'],
+    usageExample: {
+      code: `// Largest of the given numbers
+Math.max(1, 5, 3)   // → 5
+Math.max(-1, -5)    // → -1`,
+      explanation: {
+        en: 'Use Math.max() to find the largest value among a set of numbers, or to clamp a minimum bound.',
+        es: 'Usa Math.max() para encontrar el valor más grande entre un conjunto de números o para limitar un valor mínimo.',
+      },
+    },
   },
   {
     slug: 'math-max-4',
@@ -80,6 +107,15 @@ export const mathMaxExercises: Exercise[] = [
     ],
     hints: ['Infinity is larger than any finite number'],
     tags: ['Math', 'max', 'static-method'],
+    usageExample: {
+      code: `// Largest of the given numbers
+Math.max(1, 5, 3)   // → 5
+Math.max(-1, -5)    // → -1`,
+      explanation: {
+        en: 'Use Math.max() to find the largest value among a set of numbers, or to clamp a minimum bound.',
+        es: 'Usa Math.max() para encontrar el valor más grande entre un conjunto de números o para limitar un valor mínimo.',
+      },
+    },
   },
   {
     slug: 'math-max-5',
@@ -100,5 +136,14 @@ export const mathMaxExercises: Exercise[] = [
     ],
     hints: ['Any comparison involving NaN produces NaN'],
     tags: ['Math', 'max', 'static-method'],
+    usageExample: {
+      code: `// Largest of the given numbers
+Math.max(1, 5, 3)   // → 5
+Math.max(-1, -5)    // → -1`,
+      explanation: {
+        en: 'Use Math.max() to find the largest value among a set of numbers, or to clamp a minimum bound.',
+        es: 'Usa Math.max() para encontrar el valor más grande entre un conjunto de números o para limitar un valor mínimo.',
+      },
+    },
   },
 ]

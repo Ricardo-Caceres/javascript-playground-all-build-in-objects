@@ -22,6 +22,15 @@ export const negativeInfinityExercises: Exercise[] = [
     ],
     hints: ['`NEGATIVE_INFINITY` is equivalent to the global `-Infinity`.'],
     tags: ['Number', 'NEGATIVE_INFINITY', 'static-property', 'beginner'],
+    usageExample: {
+      code: `// Represents negative infinity
+Number.NEGATIVE_INFINITY          // → -Infinity
+-1 / 0 === Number.NEGATIVE_INFINITY   // → true`,
+      explanation: {
+        en: 'Use Number.NEGATIVE_INFINITY to represent or compare against negative infinity, such as when a computation underflows.',
+        es: 'Usa Number.NEGATIVE_INFINITY para representar o comparar con el infinito negativo, por ejemplo cuando un cálculo desborda hacia abajo.',
+      },
+    },
   },
   {
     slug: 'number-negative-infinity-2',
@@ -44,6 +53,15 @@ export const negativeInfinityExercises: Exercise[] = [
     ],
     hints: ['`NEGATIVE_INFINITY` is less than every finite number, including the tiny positive `MIN_VALUE`.'],
     tags: ['Number', 'NEGATIVE_INFINITY', 'MIN_VALUE', 'beginner'],
+    usageExample: {
+      code: `// Represents negative infinity
+Number.NEGATIVE_INFINITY          // → -Infinity
+-1 / 0 === Number.NEGATIVE_INFINITY   // → true`,
+      explanation: {
+        en: 'Use Number.NEGATIVE_INFINITY to represent or compare against negative infinity, such as when a computation underflows.',
+        es: 'Usa Number.NEGATIVE_INFINITY para representar o comparar con el infinito negativo, por ejemplo cuando un cálculo desborda hacia abajo.',
+      },
+    },
   },
   {
     slug: 'number-negative-infinity-3',
@@ -66,6 +84,15 @@ Dividing \`-1\` by \`0\` produces \`-Infinity\`.`,
     ],
     hints: ['In JavaScript, dividing a negative number by 0 gives `-Infinity`.'],
     tags: ['Number', 'NEGATIVE_INFINITY', 'division', 'beginner'],
+    usageExample: {
+      code: `// Represents negative infinity
+Number.NEGATIVE_INFINITY          // → -Infinity
+-1 / 0 === Number.NEGATIVE_INFINITY   // → true`,
+      explanation: {
+        en: 'Use Number.NEGATIVE_INFINITY to represent or compare against negative infinity, such as when a computation underflows.',
+        es: 'Usa Number.NEGATIVE_INFINITY para representar o comparar con el infinito negativo, por ejemplo cuando un cálculo desborda hacia abajo.',
+      },
+    },
   },
   {
     slug: 'number-negative-infinity-4',
@@ -88,6 +115,15 @@ Dividing \`-1\` by \`0\` produces \`-Infinity\`.`,
     ],
     hints: ['Only `Infinity`, `-Infinity`, and `NaN` fail `Number.isFinite`.'],
     tags: ['Number', 'NEGATIVE_INFINITY', 'isFinite', 'beginner'],
+    usageExample: {
+      code: `// Represents negative infinity
+Number.NEGATIVE_INFINITY          // → -Infinity
+-1 / 0 === Number.NEGATIVE_INFINITY   // → true`,
+      explanation: {
+        en: 'Use Number.NEGATIVE_INFINITY to represent or compare against negative infinity, such as when a computation underflows.',
+        es: 'Usa Number.NEGATIVE_INFINITY para representar o comparar con el infinito negativo, por ejemplo cuando un cálculo desborda hacia abajo.',
+      },
+    },
   },
   {
     slug: 'number-negative-infinity-5',
@@ -108,5 +144,14 @@ Dividing \`-1\` by \`0\` produces \`-Infinity\`.`,
     ],
     hints: ['Infinities are `number` type, just like finite numbers.'],
     tags: ['Number', 'NEGATIVE_INFINITY', 'typeof', 'beginner'],
+    usageExample: {
+      code: `// Represents negative infinity
+Number.NEGATIVE_INFINITY          // → -Infinity
+-1 / 0 === Number.NEGATIVE_INFINITY   // → true`,
+      explanation: {
+        en: 'Use Number.NEGATIVE_INFINITY to represent or compare against negative infinity, such as when a computation underflows.',
+        es: 'Usa Number.NEGATIVE_INFINITY para representar o comparar con el infinito negativo, por ejemplo cuando un cálculo desborda hacia abajo.',
+      },
+    },
   },
 ]

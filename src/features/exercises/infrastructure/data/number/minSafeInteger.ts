@@ -22,6 +22,15 @@ export const minSafeIntegerExercises: Exercise[] = [
     ],
     hints: ['`MIN_SAFE_INTEGER` is the negative counterpart of `MAX_SAFE_INTEGER`.'],
     tags: ['Number', 'MIN_SAFE_INTEGER', 'static-property', 'beginner'],
+    usageExample: {
+      code: `// Most negative safely representable integer
+Number.MIN_SAFE_INTEGER   // → -9007199254740991
+Number.MIN_SAFE_INTEGER - 1 === Number.MIN_SAFE_INTEGER - 2   // → true (unsafe!)`,
+      explanation: {
+        en: 'Use Number.MIN_SAFE_INTEGER as the lower bound when working with negative integers to avoid silent precision loss.',
+        es: 'Usa Number.MIN_SAFE_INTEGER como límite inferior al trabajar con enteros negativos para evitar pérdida silenciosa de precisión.',
+      },
+    },
   },
   {
     slug: 'number-min-safe-integer-2',
@@ -44,6 +53,15 @@ export const minSafeIntegerExercises: Exercise[] = [
     ],
     hints: ['The safe integer range is symmetric around zero.'],
     tags: ['Number', 'MIN_SAFE_INTEGER', 'MAX_SAFE_INTEGER', 'beginner'],
+    usageExample: {
+      code: `// Most negative safely representable integer
+Number.MIN_SAFE_INTEGER   // → -9007199254740991
+Number.MIN_SAFE_INTEGER - 1 === Number.MIN_SAFE_INTEGER - 2   // → true (unsafe!)`,
+      explanation: {
+        en: 'Use Number.MIN_SAFE_INTEGER as the lower bound when working with negative integers to avoid silent precision loss.',
+        es: 'Usa Number.MIN_SAFE_INTEGER como límite inferior al trabajar con enteros negativos para evitar pérdida silenciosa de precisión.',
+      },
+    },
   },
   {
     slug: 'number-min-safe-integer-3',
@@ -66,6 +84,15 @@ Test \`Number.isSafeInteger\` at and around \`MIN_SAFE_INTEGER\`.`,
     ],
     hints: ['Safe integers span from `MIN_SAFE_INTEGER` to `MAX_SAFE_INTEGER` inclusive.'],
     tags: ['Number', 'MIN_SAFE_INTEGER', 'isSafeInteger', 'intermediate'],
+    usageExample: {
+      code: `// Most negative safely representable integer
+Number.MIN_SAFE_INTEGER   // → -9007199254740991
+Number.MIN_SAFE_INTEGER - 1 === Number.MIN_SAFE_INTEGER - 2   // → true (unsafe!)`,
+      explanation: {
+        en: 'Use Number.MIN_SAFE_INTEGER as the lower bound when working with negative integers to avoid silent precision loss.',
+        es: 'Usa Number.MIN_SAFE_INTEGER como límite inferior al trabajar con enteros negativos para evitar pérdida silenciosa de precisión.',
+      },
+    },
   },
   {
     slug: 'number-min-safe-integer-4',
@@ -86,6 +113,15 @@ Test \`Number.isSafeInteger\` at and around \`MIN_SAFE_INTEGER\`.`,
     ],
     hints: ['`MIN_SAFE_INTEGER` is a plain negative `number` constant.'],
     tags: ['Number', 'MIN_SAFE_INTEGER', 'type', 'beginner'],
+    usageExample: {
+      code: `// Most negative safely representable integer
+Number.MIN_SAFE_INTEGER   // → -9007199254740991
+Number.MIN_SAFE_INTEGER - 1 === Number.MIN_SAFE_INTEGER - 2   // → true (unsafe!)`,
+      explanation: {
+        en: 'Use Number.MIN_SAFE_INTEGER as the lower bound when working with negative integers to avoid silent precision loss.',
+        es: 'Usa Number.MIN_SAFE_INTEGER como límite inferior al trabajar con enteros negativos para evitar pérdida silenciosa de precisión.',
+      },
+    },
   },
   {
     slug: 'number-min-safe-integer-5',
@@ -109,5 +145,14 @@ const belowMin = Number.MIN_SAFE_INTEGER - 1`,
     ],
     hints: ['Precision loss is symmetric: it happens below `MIN_SAFE_INTEGER` just as it does above `MAX_SAFE_INTEGER`.'],
     tags: ['Number', 'MIN_SAFE_INTEGER', 'precision', 'intermediate'],
+    usageExample: {
+      code: `// Most negative safely representable integer
+Number.MIN_SAFE_INTEGER   // → -9007199254740991
+Number.MIN_SAFE_INTEGER - 1 === Number.MIN_SAFE_INTEGER - 2   // → true (unsafe!)`,
+      explanation: {
+        en: 'Use Number.MIN_SAFE_INTEGER as the lower bound when working with negative integers to avoid silent precision loss.',
+        es: 'Usa Number.MIN_SAFE_INTEGER como límite inferior al trabajar con enteros negativos para evitar pérdida silenciosa de precisión.',
+      },
+    },
   },
 ]

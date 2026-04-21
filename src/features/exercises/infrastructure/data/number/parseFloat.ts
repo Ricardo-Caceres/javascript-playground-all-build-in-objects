@@ -30,6 +30,16 @@ Number.parseFloat('3.14')  // → 3.14
     ],
     hints: ['`Number.parseFloat` is identical to the global `parseFloat`.'],
     tags: ['Number', 'parseFloat', 'static-method', 'beginner'],
+    usageExample: {
+      code: `// Parse a string to a floating-point number
+Number.parseFloat('3.14')      // → 3.14
+Number.parseFloat('3.14abc')   // → 3.14 (stops at first non-numeric)
+Number.parseFloat('abc')       // → NaN`,
+      explanation: {
+        en: 'Use Number.parseFloat() to convert a string to a decimal number, stopping at the first character that is not part of a valid number.',
+        es: 'Usa Number.parseFloat() para convertir una cadena a un número decimal, deteniéndose en el primer carácter que no forme parte de un número válido.',
+      },
+    },
   },
   {
     slug: 'number-parse-float-2',
@@ -56,6 +66,16 @@ Number.parseFloat('  2.5  ')  // → 2.5
     ],
     hints: ['Leading whitespace is stripped before parsing.'],
     tags: ['Number', 'parseFloat', 'whitespace', 'beginner'],
+    usageExample: {
+      code: `// Parse a string to a floating-point number
+Number.parseFloat('3.14')      // → 3.14
+Number.parseFloat('3.14abc')   // → 3.14 (stops at first non-numeric)
+Number.parseFloat('abc')       // → NaN`,
+      explanation: {
+        en: 'Use Number.parseFloat() to convert a string to a decimal number, stopping at the first character that is not part of a valid number.',
+        es: 'Usa Number.parseFloat() para convertir una cadena a un número decimal, deteniéndose en el primer carácter que no forme parte de un número válido.',
+      },
+    },
   },
   {
     slug: 'number-parse-float-3',
@@ -82,6 +102,16 @@ Number.parseFloat('123abc')  // → 123
     ],
     hints: ['Parsing stops at the first character that cannot be part of a float.'],
     tags: ['Number', 'parseFloat', 'partial-parse', 'intermediate'],
+    usageExample: {
+      code: `// Parse a string to a floating-point number
+Number.parseFloat('3.14')      // → 3.14
+Number.parseFloat('3.14abc')   // → 3.14 (stops at first non-numeric)
+Number.parseFloat('abc')       // → NaN`,
+      explanation: {
+        en: 'Use Number.parseFloat() to convert a string to a decimal number, stopping at the first character that is not part of a valid number.',
+        es: 'Usa Number.parseFloat() para convertir una cadena a un número decimal, deteniéndose en el primer carácter que no forme parte de un número válido.',
+      },
+    },
   },
   {
     slug: 'number-parse-float-4',
@@ -104,6 +134,16 @@ An empty string or a string with no parseable digits returns \`NaN\`.`,
     ],
     hints: ['When there are no leading numeric characters to parse, the result is `NaN`.'],
     tags: ['Number', 'parseFloat', 'NaN', 'beginner'],
+    usageExample: {
+      code: `// Parse a string to a floating-point number
+Number.parseFloat('3.14')      // → 3.14
+Number.parseFloat('3.14abc')   // → 3.14 (stops at first non-numeric)
+Number.parseFloat('abc')       // → NaN`,
+      explanation: {
+        en: 'Use Number.parseFloat() to convert a string to a decimal number, stopping at the first character that is not part of a valid number.',
+        es: 'Usa Number.parseFloat() para convertir una cadena a un número decimal, deteniéndose en el primer carácter que no forme parte de un número válido.',
+      },
+    },
   },
   {
     slug: 'number-parse-float-5',
@@ -126,5 +166,15 @@ An empty string or a string with no parseable digits returns \`NaN\`.`,
     ],
     hints: ['A second decimal point is not valid in a float literal, so parsing stops.'],
     tags: ['Number', 'parseFloat', 'decimal', 'intermediate'],
+    usageExample: {
+      code: `// Parse a string to a floating-point number
+Number.parseFloat('3.14')      // → 3.14
+Number.parseFloat('3.14abc')   // → 3.14 (stops at first non-numeric)
+Number.parseFloat('abc')       // → NaN`,
+      explanation: {
+        en: 'Use Number.parseFloat() to convert a string to a decimal number, stopping at the first character that is not part of a valid number.',
+        es: 'Usa Number.parseFloat() para convertir una cadena a un número decimal, deteniéndose en el primer carácter que no forme parte de un número válido.',
+      },
+    },
   },
 ]

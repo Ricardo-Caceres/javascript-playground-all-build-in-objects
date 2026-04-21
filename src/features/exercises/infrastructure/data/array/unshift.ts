@@ -23,6 +23,15 @@ export const unshiftExercises: Exercise[] = [
       'Return the result of arr.unshift(val) directly',
     ],
     tags: ['array', 'unshift', 'prepend', 'length'],
+    usageExample: {
+      code: `const arr = [2, 3, 4]
+arr.unshift(1)  // returns 4 (new length)
+arr  // → [1, 2, 3, 4]`,
+      explanation: {
+        en: 'Use unshift() to prepend one element to the beginning of an array.',
+        es: 'Usa unshift() para anteponer un elemento al inicio de un array.',
+      },
+    },
   },
   {
     slug: 'array-unshift-multiple',
@@ -46,6 +55,15 @@ export const unshiftExercises: Exercise[] = [
       'Elements are prepended in the order they appear in the argument list',
     ],
     tags: ['array', 'unshift', 'prepend', 'multiple', 'rest'],
+    usageExample: {
+      code: `const arr = [3, 4, 5]
+arr.unshift(1, 2)  // returns 5
+arr  // → [1, 2, 3, 4, 5]`,
+      explanation: {
+        en: 'Pass multiple arguments to unshift() to prepend several elements at once.',
+        es: 'Pasa múltiples argumentos a unshift() para anteponer varios elementos a la vez.',
+      },
+    },
   },
   {
     slug: 'array-unshift-returns-length',
@@ -69,6 +87,15 @@ export const unshiftExercises: Exercise[] = [
       'Unlike push, the return value is a number, not the array',
     ],
     tags: ['array', 'unshift', 'return-value', 'length'],
+    usageExample: {
+      code: `const arr = ['b']
+const len = arr.unshift('a')  // → 2 (new length)
+arr  // → ['a', 'b']`,
+      explanation: {
+        en: 'unshift() returns the new length of the array after insertion.',
+        es: 'unshift() devuelve la nueva longitud del array después de la inserción.',
+      },
+    },
   },
   {
     slug: 'array-unshift-mutates',
@@ -92,6 +119,15 @@ export const unshiftExercises: Exercise[] = [
       'After unshift, arr[0] is always the value you prepended',
     ],
     tags: ['array', 'unshift', 'mutation', 'first-element'],
+    usageExample: {
+      code: `const arr = ['b', 'c']
+arr.unshift('a')
+console.log(arr)  // → ['a', 'b', 'c']  (mutated)`,
+      explanation: {
+        en: 'unshift() mutates the original array — use toSpliced(0, 0, el) for an immutable alternative.',
+        es: 'unshift() muta el array original; usa toSpliced(0, 0, el) como alternativa inmutable.',
+      },
+    },
   },
   {
     slug: 'array-unshift-queue',
@@ -115,5 +151,14 @@ export const unshiftExercises: Exercise[] = [
       'unshift mutates in place, so you return the same array reference',
     ],
     tags: ['array', 'unshift', 'queue', 'data-structure'],
+    usageExample: {
+      code: `const queue = ['second', 'third']
+queue.unshift('first')
+queue.shift()  // → 'first'  (FIFO)`,
+      explanation: {
+        en: 'Use unshift() with shift() to manage a FIFO queue by adding to the front and removing from it.',
+        es: 'Usa unshift() con shift() para gestionar una cola FIFO agregando al frente y eliminando desde allí.',
+      },
+    },
   },
 ]

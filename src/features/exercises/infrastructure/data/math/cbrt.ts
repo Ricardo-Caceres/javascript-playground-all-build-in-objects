@@ -20,6 +20,15 @@ export const mathCbrtExercises: Exercise[] = [
     ],
     hints: ['3³ = 27, so cbrt(27) = 3', 'Math.cbrt() is the inverse of cubing a number'],
     tags: ['Math', 'cbrt', 'static-method'],
+    usageExample: {
+      code: `// Cube root — works with negatives too
+Math.cbrt(27)   // → 3
+Math.cbrt(-8)   // → -2`,
+      explanation: {
+        en: 'Use Math.cbrt() to find the cube root of any real number, including negative values.',
+        es: 'Usa Math.cbrt() para encontrar la raíz cúbica de cualquier número real, incluidos los negativos.',
+      },
+    },
   },
   {
     slug: 'math-cbrt-2',
@@ -40,6 +49,15 @@ export const mathCbrtExercises: Exercise[] = [
     ],
     hints: ['(-2)³ = -8, so cbrt(-8) = -2', 'Unlike Math.sqrt, Math.cbrt works with negative inputs'],
     tags: ['Math', 'cbrt', 'static-method'],
+    usageExample: {
+      code: `// Cube root — works with negatives too
+Math.cbrt(27)   // → 3
+Math.cbrt(-8)   // → -2`,
+      explanation: {
+        en: 'Use Math.cbrt() to find the cube root of any real number, including negative values.',
+        es: 'Usa Math.cbrt() para encontrar la raíz cúbica de cualquier número real, incluidos los negativos.',
+      },
+    },
   },
   {
     slug: 'math-cbrt-3',
@@ -60,6 +78,15 @@ export const mathCbrtExercises: Exercise[] = [
     ],
     hints: ['0³ = 0, so cbrt(0) = 0', 'The cube root function passes through the origin'],
     tags: ['Math', 'cbrt', 'static-method'],
+    usageExample: {
+      code: `// Cube root — works with negatives too
+Math.cbrt(27)   // → 3
+Math.cbrt(-8)   // → -2`,
+      explanation: {
+        en: 'Use Math.cbrt() to find the cube root of any real number, including negative values.',
+        es: 'Usa Math.cbrt() para encontrar la raíz cúbica de cualquier número real, incluidos los negativos.',
+      },
+    },
   },
   {
     slug: 'math-cbrt-4',
@@ -80,6 +107,15 @@ export const mathCbrtExercises: Exercise[] = [
     ],
     hints: ['1³ = 1, so cbrt(1) = 1', 'Like square root, the cube root of 1 is 1'],
     tags: ['Math', 'cbrt', 'static-method'],
+    usageExample: {
+      code: `// Cube root — works with negatives too
+Math.cbrt(27)   // → 3
+Math.cbrt(-8)   // → -2`,
+      explanation: {
+        en: 'Use Math.cbrt() to find the cube root of any real number, including negative values.',
+        es: 'Usa Math.cbrt() para encontrar la raíz cúbica de cualquier número real, incluidos los negativos.',
+      },
+    },
   },
   {
     slug: 'math-cbrt-5',
@@ -100,5 +136,14 @@ export const mathCbrtExercises: Exercise[] = [
     ],
     hints: ['5³ = 125, so cbrt(125) = 5', 'Perfect cubes always produce integer results'],
     tags: ['Math', 'cbrt', 'static-method'],
+    usageExample: {
+      code: `// Cube root — works with negatives too
+Math.cbrt(27)   // → 3
+Math.cbrt(-8)   // → -2`,
+      explanation: {
+        en: 'Use Math.cbrt() to find the cube root of any real number, including negative values.',
+        es: 'Usa Math.cbrt() para encontrar la raíz cúbica de cualquier número real, incluidos los negativos.',
+      },
+    },
   },
 ]

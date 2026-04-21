@@ -36,6 +36,14 @@ lastEvenIndex([1, 3, 5])       // → -1
       'Returns `-1` when no element satisfies the predicate.',
     ],
     tags: ['Array', 'Array.prototype.findLastIndex', 'index', 'beginner'],
+    usageExample: {
+      code: `const nums = [1, 3, 7, 2, 5]
+nums.findLastIndex(n => n % 2 !== 0)  // → 4  (index of last odd)`,
+      explanation: {
+        en: 'Use findLastIndex() to get the index of the last element satisfying a condition.',
+        es: 'Usa findLastIndex() para obtener el índice del último elemento que satisfaga una condición.',
+      },
+    },
   },
   {
     slug: 'array-find-last-index-object',
@@ -72,6 +80,14 @@ lastActiveIndex([{active:false}])                                           // �
       'The returned index can be used with `splice` or `slice` to operate on that element.',
     ],
     tags: ['Array', 'Array.prototype.findLastIndex', 'objects', 'intermediate'],
+    usageExample: {
+      code: `const items = [{ok:true},{ok:false},{ok:true}]
+items.findLastIndex(i => i.ok)  // → 2`,
+      explanation: {
+        en: 'Use findLastIndex() to find the position of the last object matching a property check.',
+        es: 'Usa findLastIndex() para encontrar la posición del último objeto que coincida con una propiedad.',
+      },
+    },
   },
   {
     slug: 'array-find-last-index-not-found',
@@ -108,6 +124,14 @@ lastNegativeIndex([1, 2, 3])      // → -1
       '`n < 0` is false for zero — use `n <= 0` to include zero.',
     ],
     tags: ['Array', 'Array.prototype.findLastIndex', 'not-found', 'beginner'],
+    usageExample: {
+      code: `const arr = [1, 2, 3]
+arr.findLastIndex(n => n > 10)  // → -1  (not found)`,
+      explanation: {
+        en: 'findLastIndex() returns -1 when no element satisfies the predicate.',
+        es: 'findLastIndex() devuelve -1 cuando ningún elemento satisface el predicado.',
+      },
+    },
   },
   {
     slug: 'array-find-last-index-string',
@@ -144,6 +168,14 @@ lastLongIndex(['a', 'b', 'c'], 3)                 // → -1
       '`findLastIndex` scans from the end and returns the last qualifying index.',
     ],
     tags: ['Array', 'Array.prototype.findLastIndex', 'string', 'intermediate'],
+    usageExample: {
+      code: `const words = ['hi', 'hello', 'hey']
+words.findLastIndex(w => w.startsWith('h'))  // → 2`,
+      explanation: {
+        en: 'Use findLastIndex() to find the last position of a string matching a pattern.',
+        es: 'Usa findLastIndex() para encontrar la última posición de una cadena que coincida con un patrón.',
+      },
+    },
   },
   {
     slug: 'array-find-last-index-use-case',
@@ -182,5 +214,13 @@ lastDuplicateIndex([1, 2, 3])       // → -1
       '`findLastIndex` scans from the end, so the first match it finds is the last duplicate in the array.',
     ],
     tags: ['Array', 'Array.prototype.findLastIndex', 'duplicates', 'advanced'],
+    usageExample: {
+      code: `const logs = ['ok', 'error', 'ok', 'error']
+logs.findLastIndex(l => l === 'error')  // → 3`,
+      explanation: {
+        en: 'Use findLastIndex() when you need the index of the most recent occurrence of a condition.',
+        es: 'Usa findLastIndex() cuando necesites el índice de la ocurrencia más reciente de una condición.',
+      },
+    },
   },
 ]

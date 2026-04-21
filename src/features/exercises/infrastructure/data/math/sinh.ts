@@ -20,6 +20,15 @@ export const mathSinhExercises: Exercise[] = [
     ],
     hints: ['sinh(0) = (e^0 - e^-0) / 2 = (1 - 1) / 2 = 0'],
     tags: ['Math', 'sinh', 'static-method'],
+    usageExample: {
+      code: `// Hyperbolic sine
+Math.sinh(0)   // → 0
+Math.sinh(1)   // → 1.1752...`,
+      explanation: {
+        en: 'Use Math.sinh() to compute the hyperbolic sine, commonly used in physics and engineering formulas.',
+        es: 'Usa Math.sinh() para calcular el seno hiperbólico, comúnmente usado en fórmulas de física e ingeniería.',
+      },
+    },
   },
   {
     slug: 'math-sinh-2',
@@ -40,6 +49,15 @@ export const mathSinhExercises: Exercise[] = [
     ],
     hints: ['sinh(1) = (e - 1/e) / 2 ≈ 1.1752'],
     tags: ['Math', 'sinh', 'static-method'],
+    usageExample: {
+      code: `// Hyperbolic sine
+Math.sinh(0)   // → 0
+Math.sinh(1)   // → 1.1752...`,
+      explanation: {
+        en: 'Use Math.sinh() to compute the hyperbolic sine, commonly used in physics and engineering formulas.',
+        es: 'Usa Math.sinh() para calcular el seno hiperbólico, comúnmente usado en fórmulas de física e ingeniería.',
+      },
+    },
   },
   {
     slug: 'math-sinh-3',
@@ -60,6 +78,15 @@ export const mathSinhExercises: Exercise[] = [
     ],
     hints: ['sinh is an odd function: sinh(-x) = -sinh(x)'],
     tags: ['Math', 'sinh', 'static-method'],
+    usageExample: {
+      code: `// Hyperbolic sine
+Math.sinh(0)   // → 0
+Math.sinh(1)   // → 1.1752...`,
+      explanation: {
+        en: 'Use Math.sinh() to compute the hyperbolic sine, commonly used in physics and engineering formulas.',
+        es: 'Usa Math.sinh() para calcular el seno hiperbólico, comúnmente usado en fórmulas de física e ingeniería.',
+      },
+    },
   },
   {
     slug: 'math-sinh-4',
@@ -80,6 +107,15 @@ export const mathSinhExercises: Exercise[] = [
     ],
     hints: ['sinh grows exponentially; sinh(Infinity) = Infinity'],
     tags: ['Math', 'sinh', 'static-method'],
+    usageExample: {
+      code: `// Hyperbolic sine
+Math.sinh(0)   // → 0
+Math.sinh(1)   // → 1.1752...`,
+      explanation: {
+        en: 'Use Math.sinh() to compute the hyperbolic sine, commonly used in physics and engineering formulas.',
+        es: 'Usa Math.sinh() para calcular el seno hiperbólico, comúnmente usado en fórmulas de física e ingeniería.',
+      },
+    },
   },
   {
     slug: 'math-sinh-5',
@@ -100,5 +136,14 @@ export const mathSinhExercises: Exercise[] = [
     ],
     hints: ['Math.sinh always returns a number primitive'],
     tags: ['Math', 'sinh', 'static-method'],
+    usageExample: {
+      code: `// Hyperbolic sine
+Math.sinh(0)   // → 0
+Math.sinh(1)   // → 1.1752...`,
+      explanation: {
+        en: 'Use Math.sinh() to compute the hyperbolic sine, commonly used in physics and engineering formulas.',
+        es: 'Usa Math.sinh() para calcular el seno hiperbólico, comúnmente usado en fórmulas de física e ingeniería.',
+      },
+    },
   },
 ]

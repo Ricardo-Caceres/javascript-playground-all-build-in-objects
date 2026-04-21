@@ -36,6 +36,14 @@ fillAll([1, 2, 3], 'x') // → ['x', 'x', 'x']
       'To avoid mutation, call `fill()` on `[...arr]` or `arr.slice()`.',
     ],
     tags: ['Array', 'Array.prototype.fill', 'mutation', 'beginner'],
+    usageExample: {
+      code: `const arr = [1, 2, 3, 4]
+arr.fill(0)  // → [0, 0, 0, 0]`,
+      explanation: {
+        en: 'Use fill() without indices to replace every element with a single value.',
+        es: 'Usa fill() sin índices para reemplazar cada elemento con un único valor.',
+      },
+    },
   },
   {
     slug: 'array-fill-from-index',
@@ -72,6 +80,15 @@ fillFrom([1, 2, 3], 9, 1)       // → [1, 9, 9]
       'Elements at indices 0 through `start - 1` are left untouched.',
     ],
     tags: ['Array', 'Array.prototype.fill', 'start-index', 'beginner'],
+    usageExample: {
+      code: `const arr = [1, 2, 3, 4, 5]
+arr.fill(9, 2)  // → [1, 2, 9, 9, 9]
+// fills from index 2 to the end`,
+      explanation: {
+        en: 'Pass a start index to fill() to replace only elements from that position onwards.',
+        es: 'Pasa un índice inicial a fill() para reemplazar solo los elementos desde esa posición en adelante.',
+      },
+    },
   },
   {
     slug: 'array-fill-range',
@@ -108,6 +125,15 @@ fillRange([1, 2, 3, 4, 5], 9, 2, 4) // → [1, 2, 9, 9, 5]
       'When `start === end`, no elements are filled.',
     ],
     tags: ['Array', 'Array.prototype.fill', 'range', 'intermediate'],
+    usageExample: {
+      code: `const arr = [1, 2, 3, 4, 5]
+arr.fill(7, 1, 4)  // → [1, 7, 7, 7, 5]
+// fills indices 1, 2, 3`,
+      explanation: {
+        en: 'Use fill(value, start, end) to replace elements within a specific index range.',
+        es: 'Usa fill(valor, inicio, fin) para reemplazar elementos dentro de un rango de índices específico.',
+      },
+    },
   },
   {
     slug: 'array-fill-zeros',
@@ -144,6 +170,14 @@ createMatrix(0) // → []
       '`.fill(0)` replaces every sparse slot with an actual `0` value.',
     ],
     tags: ['Array', 'Array.prototype.fill', 'initialization', 'intermediate'],
+    usageExample: {
+      code: `const zeros = new Array(5).fill(0)
+zeros  // → [0, 0, 0, 0, 0]`,
+      explanation: {
+        en: 'Combine new Array(n) with fill(0) to create a zero-initialized array of length n.',
+        es: 'Combina new Array(n) con fill(0) para crear un array inicializado a cero de longitud n.',
+      },
+    },
   },
   {
     slug: 'array-fill-negative',
@@ -180,5 +214,14 @@ fillLastTwo([10, 20], 99)       // → [99, 99]
       'For an array of length 5, `-2` maps to index `3` (i.e. `5 - 2`).',
     ],
     tags: ['Array', 'Array.prototype.fill', 'negative-index', 'intermediate'],
+    usageExample: {
+      code: `const arr = [1, 2, 3, 4, 5]
+arr.fill(0, -3)  // → [1, 2, 0, 0, 0]
+// fills the last 3 elements`,
+      explanation: {
+        en: 'Use a negative start index with fill() to fill elements counting from the end.',
+        es: 'Usa un índice inicial negativo con fill() para rellenar elementos contando desde el final.',
+      },
+    },
   },
 ]

@@ -36,6 +36,14 @@ firstEvenIndex([1, 3, 5])    // → -1
       'Returns `-1` when no element satisfies the predicate.',
     ],
     tags: ['Array', 'Array.prototype.findIndex', 'index', 'beginner'],
+    usageExample: {
+      code: `const nums = [5, 12, 8, 130]
+nums.findIndex(n => n > 10)  // → 1  (index of 12)`,
+      explanation: {
+        en: 'Use findIndex() to get the index of the first element that satisfies a condition.',
+        es: 'Usa findIndex() para obtener el índice del primer elemento que satisfaga una condición.',
+      },
+    },
   },
   {
     slug: 'array-find-index-object',
@@ -72,6 +80,14 @@ indexOfId([{id:1},{id:2}], 99)       // → -1
       'The returned index can be used to splice, update, or access the element.',
     ],
     tags: ['Array', 'Array.prototype.findIndex', 'objects', 'id-lookup', 'intermediate'],
+    usageExample: {
+      code: `const users = [{id:1}, {id:2}, {id:3}]
+users.findIndex(u => u.id === 2)  // → 1`,
+      explanation: {
+        en: 'Use findIndex() on an object array to find the position of a specific record.',
+        es: 'Usa findIndex() en un array de objetos para encontrar la posición de un registro específico.',
+      },
+    },
   },
   {
     slug: 'array-find-index-not-found',
@@ -108,6 +124,14 @@ findGtHundred([1, 2, 3])     // → -1
       '`> 100` excludes exactly 100; use `>= 100` to include it.',
     ],
     tags: ['Array', 'Array.prototype.findIndex', 'not-found', 'beginner'],
+    usageExample: {
+      code: `const arr = [1, 2, 3]
+arr.findIndex(n => n > 100)  // → -1  (not found)`,
+      explanation: {
+        en: 'findIndex() returns -1 when no element satisfies the predicate — always check for this.',
+        es: 'findIndex() devuelve -1 cuando ningún elemento satisface el predicado; siempre verifica este caso.',
+      },
+    },
   },
   {
     slug: 'array-find-index-string',
@@ -144,6 +168,14 @@ indexOfLong(['a', 'bb'], 5)              // → -1
       'The first qualifying index is returned, even if later strings are longer.',
     ],
     tags: ['Array', 'Array.prototype.findIndex', 'string', 'length', 'intermediate'],
+    usageExample: {
+      code: `const words = ['apple', 'banana', 'cherry']
+words.findIndex(w => w.startsWith('b'))  // → 1`,
+      explanation: {
+        en: 'Use findIndex() to locate the position of a string that matches a pattern.',
+        es: 'Usa findIndex() para localizar la posición de una cadena que coincida con un patrón.',
+      },
+    },
   },
   {
     slug: 'array-find-index-vs-indexof',
@@ -179,5 +211,14 @@ indexOfObject([{id:1,name:'A'},{id:2,name:'B'}], {id:2,name:'X'}) // → 1
       '`findIndex(o => o.id === target.id)` compares a primitive value instead.',
     ],
     tags: ['Array', 'Array.prototype.findIndex', 'objects', 'property', 'advanced'],
+    usageExample: {
+      code: `const arr = [1, 2, 3, 2]
+arr.indexOf(2)               // → 1  (exact match)
+arr.findIndex(n => n >= 2)   // → 1  (predicate match)`,
+      explanation: {
+        en: 'Use findIndex() over indexOf() when you need a condition, not just an equality check.',
+        es: 'Usa findIndex() en lugar de indexOf() cuando necesites una condición, no solo una igualdad.',
+      },
+    },
   },
 ]

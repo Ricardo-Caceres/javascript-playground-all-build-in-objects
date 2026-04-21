@@ -20,6 +20,15 @@ export const mathFroundExercises: Exercise[] = [
     ],
     hints: ['Math.fround converts to 32-bit float, losing precision compared to 64-bit'],
     tags: ['Math', 'fround', 'static-method'],
+    usageExample: {
+      code: `// Nearest 32-bit single-precision float
+Math.fround(1.337)   // → 1.3370000124...
+Math.fround(1.5)     // → 1.5`,
+      explanation: {
+        en: 'Use Math.fround() to convert a number to the nearest 32-bit float, useful when working with WebGL or typed arrays.',
+        es: 'Usa Math.fround() para convertir un número al flotante de 32 bits más cercano, útil con WebGL o arreglos tipados.',
+      },
+    },
   },
   {
     slug: 'math-fround-2',
@@ -40,6 +49,15 @@ export const mathFroundExercises: Exercise[] = [
     ],
     hints: ['Zero is represented exactly in all floating-point formats'],
     tags: ['Math', 'fround', 'static-method'],
+    usageExample: {
+      code: `// Nearest 32-bit single-precision float
+Math.fround(1.337)   // → 1.3370000124...
+Math.fround(1.5)     // → 1.5`,
+      explanation: {
+        en: 'Use Math.fround() to convert a number to the nearest 32-bit float, useful when working with WebGL or typed arrays.',
+        es: 'Usa Math.fround() para convertir un número al flotante de 32 bits más cercano, útil con WebGL o arreglos tipados.',
+      },
+    },
   },
   {
     slug: 'math-fround-3',
@@ -60,6 +78,15 @@ export const mathFroundExercises: Exercise[] = [
     ],
     hints: ['Integers that fit in 32-bit float are represented exactly'],
     tags: ['Math', 'fround', 'static-method'],
+    usageExample: {
+      code: `// Nearest 32-bit single-precision float
+Math.fround(1.337)   // → 1.3370000124...
+Math.fround(1.5)     // → 1.5`,
+      explanation: {
+        en: 'Use Math.fround() to convert a number to the nearest 32-bit float, useful when working with WebGL or typed arrays.',
+        es: 'Usa Math.fround() para convertir un número al flotante de 32 bits más cercano, útil con WebGL o arreglos tipados.',
+      },
+    },
   },
   {
     slug: 'math-fround-4',
@@ -80,6 +107,15 @@ export const mathFroundExercises: Exercise[] = [
     ],
     hints: ['Math.fround always returns a JavaScript number primitive'],
     tags: ['Math', 'fround', 'static-method'],
+    usageExample: {
+      code: `// Nearest 32-bit single-precision float
+Math.fround(1.337)   // → 1.3370000124...
+Math.fround(1.5)     // → 1.5`,
+      explanation: {
+        en: 'Use Math.fround() to convert a number to the nearest 32-bit float, useful when working with WebGL or typed arrays.',
+        es: 'Usa Math.fround() para convertir un número al flotante de 32 bits más cercano, útil con WebGL o arreglos tipados.',
+      },
+    },
   },
   {
     slug: 'math-fround-5',
@@ -100,5 +136,14 @@ export const mathFroundExercises: Exercise[] = [
     ],
     hints: ['1.5 = 1 + 1/2 is exactly representable in binary floating point'],
     tags: ['Math', 'fround', 'static-method'],
+    usageExample: {
+      code: `// Nearest 32-bit single-precision float
+Math.fround(1.337)   // → 1.3370000124...
+Math.fround(1.5)     // → 1.5`,
+      explanation: {
+        en: 'Use Math.fround() to convert a number to the nearest 32-bit float, useful when working with WebGL or typed arrays.',
+        es: 'Usa Math.fround() para convertir un número al flotante de 32 bits más cercano, útil con WebGL o arreglos tipados.',
+      },
+    },
   },
 ]

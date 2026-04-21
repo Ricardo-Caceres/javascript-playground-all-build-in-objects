@@ -20,6 +20,15 @@ export const mathAsinhExercises: Exercise[] = [
     ],
     hints: ['sinh(0) = 0, so asinh(0) = 0', 'asinh is defined for all real numbers'],
     tags: ['Math', 'asinh', 'static-method', 'hyperbolic'],
+    usageExample: {
+      code: `// Inverse hyperbolic sine (works for all reals)
+Math.asinh(0)   // → 0
+Math.asinh(1)   // → 0.8813...`,
+      explanation: {
+        en: 'Use Math.asinh() to compute the inverse hyperbolic sine of any real number.',
+        es: 'Usa Math.asinh() para calcular el seno hiperbólico inverso de cualquier número real.',
+      },
+    },
   },
   {
     slug: 'math-asinh-2',
@@ -40,6 +49,15 @@ export const mathAsinhExercises: Exercise[] = [
     ],
     hints: ['asinh(x) = ln(x + √(x²+1))', 'Unlike asin, asinh has no domain restriction'],
     tags: ['Math', 'asinh', 'static-method', 'hyperbolic'],
+    usageExample: {
+      code: `// Inverse hyperbolic sine (works for all reals)
+Math.asinh(0)   // → 0
+Math.asinh(1)   // → 0.8813...`,
+      explanation: {
+        en: 'Use Math.asinh() to compute the inverse hyperbolic sine of any real number.',
+        es: 'Usa Math.asinh() para calcular el seno hiperbólico inverso de cualquier número real.',
+      },
+    },
   },
   {
     slug: 'math-asinh-3',
@@ -60,6 +78,15 @@ export const mathAsinhExercises: Exercise[] = [
     ],
     hints: ['asinh is an odd function: asinh(-x) = -asinh(x)', 'This mirrors the behavior of sinh itself'],
     tags: ['Math', 'asinh', 'static-method', 'hyperbolic'],
+    usageExample: {
+      code: `// Inverse hyperbolic sine (works for all reals)
+Math.asinh(0)   // → 0
+Math.asinh(1)   // → 0.8813...`,
+      explanation: {
+        en: 'Use Math.asinh() to compute the inverse hyperbolic sine of any real number.',
+        es: 'Usa Math.asinh() para calcular el seno hiperbólico inverso de cualquier número real.',
+      },
+    },
   },
   {
     slug: 'math-asinh-4',
@@ -80,6 +107,15 @@ export const mathAsinhExercises: Exercise[] = [
     ],
     hints: ['All Math methods return a number primitive', 'asinh accepts any real number, including Infinity'],
     tags: ['Math', 'asinh', 'static-method', 'hyperbolic'],
+    usageExample: {
+      code: `// Inverse hyperbolic sine (works for all reals)
+Math.asinh(0)   // → 0
+Math.asinh(1)   // → 0.8813...`,
+      explanation: {
+        en: 'Use Math.asinh() to compute the inverse hyperbolic sine of any real number.',
+        es: 'Usa Math.asinh() para calcular el seno hiperbólico inverso de cualquier número real.',
+      },
+    },
   },
   {
     slug: 'math-asinh-5',
@@ -100,5 +136,14 @@ export const mathAsinhExercises: Exercise[] = [
     ],
     hints: ['asinh(-∞) = -∞ due to the odd-function property', 'asinh grows logarithmically for large values'],
     tags: ['Math', 'asinh', 'static-method', 'hyperbolic', 'Infinity'],
+    usageExample: {
+      code: `// Inverse hyperbolic sine (works for all reals)
+Math.asinh(0)   // → 0
+Math.asinh(1)   // → 0.8813...`,
+      explanation: {
+        en: 'Use Math.asinh() to compute the inverse hyperbolic sine of any real number.',
+        es: 'Usa Math.asinh() para calcular el seno hiperbólico inverso de cualquier número real.',
+      },
+    },
   },
 ]

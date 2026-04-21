@@ -36,6 +36,14 @@ flatOnce([[1], [2, 3]])         // → [1, 2, 3]
       'Nested arrays deeper than depth 1 are not unwrapped.',
     ],
     tags: ['Array', 'Array.prototype.flat', 'flatten', 'beginner'],
+    usageExample: {
+      code: `const arr = [1, [2, 3], [4, 5]]
+arr.flat()  // → [1, 2, 3, 4, 5]`,
+      explanation: {
+        en: 'Use flat() with no arguments to flatten one level of nested arrays.',
+        es: 'Usa flat() sin argumentos para aplanar un nivel de arrays anidados.',
+      },
+    },
   },
   {
     slug: 'array-flat-deep',
@@ -72,6 +80,14 @@ flatDeep([[[[1]]]])           // → [1]
       'This is equivalent to repeatedly calling `flat()` until the array stops changing.',
     ],
     tags: ['Array', 'Array.prototype.flat', 'flatten', 'depth', 'intermediate'],
+    usageExample: {
+      code: `const arr = [1, [2, [3, [4]]]]
+arr.flat(Infinity)  // → [1, 2, 3, 4]`,
+      explanation: {
+        en: 'Pass Infinity to flat() to fully flatten an arbitrarily deeply nested array.',
+        es: 'Pasa Infinity a flat() para aplanar completamente un array anidado de cualquier profundidad.',
+      },
+    },
   },
   {
     slug: 'array-flat-level-two',
@@ -108,6 +124,14 @@ flatTwo([[1], [[2, 3]]])    // → [1, 2, 3]
       'Depth 2 means: flatten once, then flatten the result once more.',
     ],
     tags: ['Array', 'Array.prototype.flat', 'depth', 'intermediate'],
+    usageExample: {
+      code: `const arr = [1, [2, [3, [4]]]]
+arr.flat(2)  // → [1, 2, 3, [4]]`,
+      explanation: {
+        en: 'Pass a depth number to flat() to control how many nesting levels are flattened.',
+        es: 'Pasa un número de profundidad a flat() para controlar cuántos niveles de anidamiento se aplanan.',
+      },
+    },
   },
   {
     slug: 'array-flat-remove-holes',
@@ -144,6 +168,14 @@ removeHoles([0, [1, 2], undefined])     // → [1, 2]
       '`.flat()` after filter ensures any nested arrays (not filtered) are also unwrapped.',
     ],
     tags: ['Array', 'Array.prototype.flat', 'filter', 'falsy', 'intermediate'],
+    usageExample: {
+      code: `const holey = [1, , 3, , 5]
+holey.flat()  // → [1, 3, 5]  (holes removed)`,
+      explanation: {
+        en: 'flat() removes empty slots from sparse arrays while flattening.',
+        es: 'flat() elimina los huecos de los arrays dispersos al aplanar.',
+      },
+    },
   },
   {
     slug: 'array-flat-custom-depth',
@@ -180,5 +212,14 @@ flatToDepth([1, [2, [3]]], 2) // → [1, 2, 3]
       'Depth `0` returns a shallow copy of the array without flattening.',
     ],
     tags: ['Array', 'Array.prototype.flat', 'depth', 'advanced'],
+    usageExample: {
+      code: `const arr = [[1, 2], [3, [4, 5]]]
+arr.flat(1)  // → [1, 2, 3, [4, 5]]
+arr.flat(2)  // → [1, 2, 3, 4, 5]`,
+      explanation: {
+        en: 'Tune the depth argument of flat() to precisely control how many nesting levels collapse.',
+        es: 'Ajusta el argumento de profundidad de flat() para controlar con precisión cuántos niveles de anidamiento colapsan.',
+      },
+    },
   },
 ]

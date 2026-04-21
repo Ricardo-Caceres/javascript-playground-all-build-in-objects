@@ -20,6 +20,15 @@ export const mathLog1pExercises: Exercise[] = [
     ],
     hints: ['log1p(0) = ln(1 + 0) = ln(1) = 0'],
     tags: ['Math', 'log1p', 'static-method'],
+    usageExample: {
+      code: `// Natural log of (1 + x), precise for small x
+Math.log1p(0)     // → 0
+Math.log1p(0.001) // → 0.0009995...`,
+      explanation: {
+        en: 'Use Math.log1p(x) instead of Math.log(1+x) for small x to avoid floating-point cancellation errors.',
+        es: 'Usa Math.log1p(x) en lugar de Math.log(1+x) para valores pequeños de x y evitar errores de cancelación flotante.',
+      },
+    },
   },
   {
     slug: 'math-log1p-2',
@@ -40,6 +49,15 @@ export const mathLog1pExercises: Exercise[] = [
     ],
     hints: ['log1p(e - 1) = ln(1 + e - 1) = ln(e) = 1'],
     tags: ['Math', 'log1p', 'static-method'],
+    usageExample: {
+      code: `// Natural log of (1 + x), precise for small x
+Math.log1p(0)     // → 0
+Math.log1p(0.001) // → 0.0009995...`,
+      explanation: {
+        en: 'Use Math.log1p(x) instead of Math.log(1+x) for small x to avoid floating-point cancellation errors.',
+        es: 'Usa Math.log1p(x) en lugar de Math.log(1+x) para valores pequeños de x y evitar errores de cancelación flotante.',
+      },
+    },
   },
   {
     slug: 'math-log1p-3',
@@ -60,6 +78,15 @@ export const mathLog1pExercises: Exercise[] = [
     ],
     hints: ['log1p(-1) = ln(1 + (-1)) = ln(0) = -Infinity'],
     tags: ['Math', 'log1p', 'static-method'],
+    usageExample: {
+      code: `// Natural log of (1 + x), precise for small x
+Math.log1p(0)     // → 0
+Math.log1p(0.001) // → 0.0009995...`,
+      explanation: {
+        en: 'Use Math.log1p(x) instead of Math.log(1+x) for small x to avoid floating-point cancellation errors.',
+        es: 'Usa Math.log1p(x) en lugar de Math.log(1+x) para valores pequeños de x y evitar errores de cancelación flotante.',
+      },
+    },
   },
   {
     slug: 'math-log1p-4',
@@ -80,6 +107,15 @@ export const mathLog1pExercises: Exercise[] = [
     ],
     hints: ['log1p(x) = ln(1+x) is undefined for x < -1 since ln requires positive argument'],
     tags: ['Math', 'log1p', 'static-method'],
+    usageExample: {
+      code: `// Natural log of (1 + x), precise for small x
+Math.log1p(0)     // → 0
+Math.log1p(0.001) // → 0.0009995...`,
+      explanation: {
+        en: 'Use Math.log1p(x) instead of Math.log(1+x) for small x to avoid floating-point cancellation errors.',
+        es: 'Usa Math.log1p(x) en lugar de Math.log(1+x) para valores pequeños de x y evitar errores de cancelación flotante.',
+      },
+    },
   },
   {
     slug: 'math-log1p-5',
@@ -100,5 +136,14 @@ export const mathLog1pExercises: Exercise[] = [
     ],
     hints: ['Math.log1p always returns a JavaScript number (including NaN and -Infinity)'],
     tags: ['Math', 'log1p', 'static-method'],
+    usageExample: {
+      code: `// Natural log of (1 + x), precise for small x
+Math.log1p(0)     // → 0
+Math.log1p(0.001) // → 0.0009995...`,
+      explanation: {
+        en: 'Use Math.log1p(x) instead of Math.log(1+x) for small x to avoid floating-point cancellation errors.',
+        es: 'Usa Math.log1p(x) en lugar de Math.log(1+x) para valores pequeños de x y evitar errores de cancelación flotante.',
+      },
+    },
   },
 ]

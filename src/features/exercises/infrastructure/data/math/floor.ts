@@ -20,6 +20,15 @@ export const mathFloorExercises: Exercise[] = [
     ],
     hints: ['floor always rounds toward -∞', 'Even 4.9999 floors down to 4'],
     tags: ['Math', 'floor', 'static-method', 'rounding'],
+    usageExample: {
+      code: `// Round down to the nearest integer
+Math.floor(4.9)   // → 4
+Math.floor(-4.1)  // → -5`,
+      explanation: {
+        en: 'Use Math.floor() when you need to round a number down to the nearest whole integer.',
+        es: 'Usa Math.floor() cuando necesites redondear un número hacia abajo al entero más cercano.',
+      },
+    },
   },
   {
     slug: 'math-floor-2',
@@ -40,6 +49,15 @@ export const mathFloorExercises: Exercise[] = [
     ],
     hints: ['floor always rounds toward -∞, which for negatives means away from zero', 'Compare with Math.ceil(-4.1) = -4'],
     tags: ['Math', 'floor', 'static-method', 'rounding'],
+    usageExample: {
+      code: `// Round down to the nearest integer
+Math.floor(4.9)   // → 4
+Math.floor(-4.1)  // → -5`,
+      explanation: {
+        en: 'Use Math.floor() when you need to round a number down to the nearest whole integer.',
+        es: 'Usa Math.floor() cuando necesites redondear un número hacia abajo al entero más cercano.',
+      },
+    },
   },
   {
     slug: 'math-floor-3',
@@ -60,6 +78,15 @@ export const mathFloorExercises: Exercise[] = [
     ],
     hints: ['An integer is already at its floor', 'floor(n) = n for all integers n'],
     tags: ['Math', 'floor', 'static-method', 'rounding'],
+    usageExample: {
+      code: `// Round down to the nearest integer
+Math.floor(4.9)   // → 4
+Math.floor(-4.1)  // → -5`,
+      explanation: {
+        en: 'Use Math.floor() when you need to round a number down to the nearest whole integer.',
+        es: 'Usa Math.floor() cuando necesites redondear un número hacia abajo al entero más cercano.',
+      },
+    },
   },
   {
     slug: 'math-floor-4',
@@ -80,6 +107,15 @@ export const mathFloorExercises: Exercise[] = [
     ],
     hints: ['Floor always moves toward -∞', '-5 is "below" -4.9 on the number line, so it is the floor'],
     tags: ['Math', 'floor', 'static-method', 'rounding'],
+    usageExample: {
+      code: `// Round down to the nearest integer
+Math.floor(4.9)   // → 4
+Math.floor(-4.1)  // → -5`,
+      explanation: {
+        en: 'Use Math.floor() when you need to round a number down to the nearest whole integer.',
+        es: 'Usa Math.floor() cuando necesites redondear un número hacia abajo al entero más cercano.',
+      },
+    },
   },
   {
     slug: 'math-floor-5',
@@ -100,5 +136,14 @@ export const mathFloorExercises: Exercise[] = [
     ],
     hints: ['Any positive decimal less than 1 floors to 0', 'floor is commonly used to convert floats to integers'],
     tags: ['Math', 'floor', 'static-method', 'rounding'],
+    usageExample: {
+      code: `// Round down to the nearest integer
+Math.floor(4.9)   // → 4
+Math.floor(-4.1)  // → -5`,
+      explanation: {
+        en: 'Use Math.floor() when you need to round a number down to the nearest whole integer.',
+        es: 'Usa Math.floor() cuando necesites redondear un número hacia abajo al entero más cercano.',
+      },
+    },
   },
 ]

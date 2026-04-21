@@ -36,6 +36,16 @@ groupByType([{type:'a',v:1},{type:'b',v:2},{type:'a',v:3}])
       'Cast as `(Object as any).groupBy(...)` if TypeScript does not recognise it.',
     ],
     tags: ['Object', 'Object.groupBy', 'ES2024', 'intermediate'],
+    usageExample: {
+      code: `// Group array items by a computed key
+const items = [{ type: 'a', v: 1 }, { type: 'b', v: 2 }, { type: 'a', v: 3 }]
+Object.groupBy(items, item => item.type)
+// → { a: [{...}, {...}], b: [{...}] }`,
+      explanation: {
+        en: "Use Object.groupBy() to group an array's elements into an object keyed by a value returned from a callback.",
+        es: "Usa Object.groupBy() para agrupar los elementos de un array en un objeto cuyas claves son valores devueltos por una función.",
+      },
+    },
   },
   {
     slug: 'object-group-by-even-odd',
@@ -70,6 +80,16 @@ groupEvenOdd([1, 2, 3, 4]) // → { odd: [1, 3], even: [2, 4] }
       'Return `"even"` or `"odd"` from the key function based on `n % 2`.',
     ],
     tags: ['Object', 'Object.groupBy', 'ES2024', 'intermediate'],
+    usageExample: {
+      code: `// Group array items by a computed key
+const items = [{ type: 'a', v: 1 }, { type: 'b', v: 2 }, { type: 'a', v: 3 }]
+Object.groupBy(items, item => item.type)
+// → { a: [{...}, {...}], b: [{...}] }`,
+      explanation: {
+        en: "Use Object.groupBy() to group an array's elements into an object keyed by a value returned from a callback.",
+        es: "Usa Object.groupBy() para agrupar los elementos de un array en un objeto cuyas claves son valores devueltos por una función.",
+      },
+    },
   },
   {
     slug: 'object-group-by-string-length',
@@ -105,6 +125,16 @@ groupByLength(['a', 'bb', 'cc', 'ddd'])
       'Return `w.length` from the key function — numbers are coerced to string keys.',
     ],
     tags: ['Object', 'Object.groupBy', 'ES2024', 'intermediate'],
+    usageExample: {
+      code: `// Group array items by a computed key
+const items = [{ type: 'a', v: 1 }, { type: 'b', v: 2 }, { type: 'a', v: 3 }]
+Object.groupBy(items, item => item.type)
+// → { a: [{...}, {...}], b: [{...}] }`,
+      explanation: {
+        en: "Use Object.groupBy() to group an array's elements into an object keyed by a value returned from a callback.",
+        es: "Usa Object.groupBy() para agrupar los elementos de un array en un objeto cuyas claves son valores devueltos por una función.",
+      },
+    },
   },
   {
     slug: 'object-group-by-empty',
@@ -139,6 +169,16 @@ groupEmpty() // → {}
       'An empty iterable always results in no groups.',
     ],
     tags: ['Object', 'Object.groupBy', 'ES2024', 'beginner'],
+    usageExample: {
+      code: `// Group array items by a computed key
+const items = [{ type: 'a', v: 1 }, { type: 'b', v: 2 }, { type: 'a', v: 3 }]
+Object.groupBy(items, item => item.type)
+// → { a: [{...}, {...}], b: [{...}] }`,
+      explanation: {
+        en: "Use Object.groupBy() to group an array's elements into an object keyed by a value returned from a callback.",
+        es: "Usa Object.groupBy() para agrupar los elementos de un array en un objeto cuyas claves son valores devueltos por una función.",
+      },
+    },
   },
   {
     slug: 'object-group-by-first-letter',
@@ -174,5 +214,15 @@ groupByFirstLetter(['apple', 'ant', 'banana'])
       'Return `w[0]` (or `w.charAt(0)`) from the key function.',
     ],
     tags: ['Object', 'Object.groupBy', 'ES2024', 'intermediate'],
+    usageExample: {
+      code: `// Group array items by a computed key
+const items = [{ type: 'a', v: 1 }, { type: 'b', v: 2 }, { type: 'a', v: 3 }]
+Object.groupBy(items, item => item.type)
+// → { a: [{...}, {...}], b: [{...}] }`,
+      explanation: {
+        en: "Use Object.groupBy() to group an array's elements into an object keyed by a value returned from a callback.",
+        es: "Usa Object.groupBy() para agrupar los elementos de un array en un objeto cuyas claves son valores devueltos por una función.",
+      },
+    },
   },
 ]

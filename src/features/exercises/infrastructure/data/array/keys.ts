@@ -36,6 +36,16 @@ getKeys([])              // → []
       'You can also use the spread operator: `[...arr.keys()]`.',
     ],
     tags: ['Array', 'Array.prototype.keys', 'iterator', 'beginner'],
+    usageExample: {
+      code: `const arr = ['a', 'b', 'c']
+const keys = arr.keys()
+keys.next().value  // → 0
+keys.next().value  // → 1`,
+      explanation: {
+        en: 'Use keys() to get an iterator that yields the index of each element.',
+        es: 'Usa keys() para obtener un iterador que produce el índice de cada elemento.',
+      },
+    },
   },
   {
     slug: 'array-keys-length',
@@ -72,6 +82,14 @@ countKeys([])           // → 0
       'Convert with `Array.from()` then access `.length`, or just use `arr.length` directly.',
     ],
     tags: ['Array', 'Array.prototype.keys', 'length', 'beginner'],
+    usageExample: {
+      code: `const arr = ['x', 'y', 'z']
+[...arr.keys()].length  // → 3  (same as arr.length)`,
+      explanation: {
+        en: 'Spreading keys() into an array lets you count or work with the set of indices.',
+        es: 'Extender keys() a un array te permite contar o trabajar con el conjunto de índices.',
+      },
+    },
   },
   {
     slug: 'array-keys-with-holes',
@@ -109,6 +127,14 @@ sparseKeys(0) // → []
       'This pattern is a common way to generate a range of numbers.',
     ],
     tags: ['Array', 'Array.prototype.keys', 'sparse', 'intermediate'],
+    usageExample: {
+      code: `const sparse = [1, , , 4]
+[...sparse.keys()]  // → [0, 1, 2, 3]  (includes holes)`,
+      explanation: {
+        en: 'keys() yields indices for every slot including holes in sparse arrays.',
+        es: 'keys() produce índices para cada posición, incluidos los huecos en arrays dispersos.',
+      },
+    },
   },
   {
     slug: 'array-keys-iterate',
@@ -151,6 +177,16 @@ keysToArray([])              // → []
       'Push each `i` into the `result` array inside the loop.',
     ],
     tags: ['Array', 'Array.prototype.keys', 'for-of', 'iterator', 'intermediate'],
+    usageExample: {
+      code: `const arr = ['red', 'green', 'blue']
+for (const i of arr.keys()) {
+  console.log(i)  // 0, 1, 2
+}`,
+      explanation: {
+        en: 'Use keys() with for-of to iterate over only the indices of an array.',
+        es: 'Usa keys() con for-of para iterar solo sobre los índices de un array.',
+      },
+    },
   },
   {
     slug: 'array-keys-vs-entries',
@@ -194,5 +230,14 @@ indexMap([])              // → {}
       '`keys()` only yields indices — you still need `arr[i]` to get the value.',
     ],
     tags: ['Array', 'Array.prototype.keys', 'object', 'advanced'],
+    usageExample: {
+      code: `const arr = ['a', 'b']
+[...arr.keys()]     // → [0, 1]           (indices only)
+[...arr.entries()]  // → [[0,'a'],[1,'b']] (index+value pairs)`,
+      explanation: {
+        en: 'Use keys() for indices only; use entries() when you need both the index and the value.',
+        es: 'Usa keys() solo para índices; usa entries() cuando necesites tanto el índice como el valor.',
+      },
+    },
   },
 ]

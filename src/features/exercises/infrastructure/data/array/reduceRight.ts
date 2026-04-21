@@ -23,6 +23,14 @@ export const reduceRightExercises: Exercise[] = [
       'Provide `0` as the initial value to handle empty arrays safely.',
     ],
     tags: ['array', 'reduceRight', 'sum', 'right-to-left'],
+    usageExample: {
+      code: `const nums = [1, 2, 3, 4]
+nums.reduceRight((acc, n) => acc + n, 0)  // → 10`,
+      explanation: {
+        en: 'Use reduceRight() like reduce() but processing elements from right to left.',
+        es: 'Usa reduceRight() como reduce() pero procesando los elementos de derecha a izquierda.',
+      },
+    },
   },
   {
     slug: 'array-reduce-right-flatten',
@@ -46,6 +54,15 @@ export const reduceRightExercises: Exercise[] = [
       'Start with `[] as number[]` as the initial accumulator.',
     ],
     tags: ['array', 'reduceRight', 'flatten', 'concat', 'right-to-left'],
+    usageExample: {
+      code: `const nested = [[1, 2], [3, 4], [5]]
+nested.reduceRight((acc, arr) => acc.concat(arr), [])
+// → [5, 3, 4, 1, 2]`,
+      explanation: {
+        en: 'Use reduceRight() to flatten nested arrays from right to left.',
+        es: 'Usa reduceRight() para aplanar arrays anidados de derecha a izquierda.',
+      },
+    },
   },
   {
     slug: 'array-reduce-right-reverse-string',
@@ -70,6 +87,14 @@ export const reduceRightExercises: Exercise[] = [
       'Concatenate with a space: `acc + \' \' + word`.',
     ],
     tags: ['array', 'reduceRight', 'string', 'reverse', 'join'],
+    usageExample: {
+      code: `const chars = ['a', 'b', 'c']
+chars.reduceRight((acc, c) => acc + c, '')  // → 'cba'`,
+      explanation: {
+        en: 'Use reduceRight() to reverse-join characters or elements without reversing the original array.',
+        es: 'Usa reduceRight() para unir caracteres o elementos al revés sin revertir el array original.',
+      },
+    },
   },
   {
     slug: 'array-reduce-right-compose',
@@ -94,6 +119,17 @@ export const reduceRightExercises: Exercise[] = [
       'The rightmost function in the array is applied first to the input.',
     ],
     tags: ['array', 'reduceRight', 'compose', 'functional', 'higher-order'],
+    usageExample: {
+      code: `const double = x => x * 2
+const addOne = x => x + 1
+const fns = [double, addOne]
+fns.reduceRight((v, fn) => fn(v), 3)
+// addOne(double(3)) → 7`,
+      explanation: {
+        en: 'Use reduceRight() to compose functions right-to-left, applying each to the accumulated result.',
+        es: 'Usa reduceRight() para componer funciones de derecha a izquierda, aplicando cada una al resultado acumulado.',
+      },
+    },
   },
   {
     slug: 'array-reduce-right-nested',
@@ -118,5 +154,13 @@ export const reduceRightExercises: Exercise[] = [
       'Computed property syntax `{ [key]: acc }` creates an object with a dynamic key.',
     ],
     tags: ['array', 'reduceRight', 'nested', 'object', 'functional'],
+    usageExample: {
+      code: `const obj = {a: {b: {c: 42}}}
+['a', 'b', 'c'].reduce((acc, key) => acc[key], obj)  // → 42`,
+      explanation: {
+        en: 'Use reduce() (or reduceRight()) to safely drill into a nested object with a path array.',
+        es: 'Usa reduce() (o reduceRight()) para navegar de forma segura por un objeto anidado con un array de claves.',
+      },
+    },
   },
 ]

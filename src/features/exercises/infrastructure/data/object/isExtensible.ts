@@ -45,6 +45,17 @@ By default, all plain objects are extensible.
     ],
     hints: ['Object.isExtensible() returns true for all plain objects by default'],
     tags: ['Object', 'isExtensible', 'static-method', 'extensible'],
+    usageExample: {
+      code: `// Check if new properties can be added
+const obj = { a: 1 }
+Object.isExtensible(obj)             // → true
+Object.preventExtensions(obj)
+Object.isExtensible(obj)             // → false`,
+      explanation: {
+        en: 'Use Object.isExtensible() to check whether new properties can still be added to an object.',
+        es: 'Usa Object.isExtensible() para comprobar si todavía se pueden añadir nuevas propiedades a un objeto.',
+      },
+    },
   },
   {
     slug: 'object-isExtensible-2',
@@ -89,6 +100,17 @@ Once \`Object.preventExtensions(obj)\` is called, the object cannot have new pro
     ],
     hints: ['All of freeze, seal, and preventExtensions make an object non-extensible'],
     tags: ['Object', 'isExtensible', 'static-method', 'preventExtensions'],
+    usageExample: {
+      code: `// Check if new properties can be added
+const obj = { a: 1 }
+Object.isExtensible(obj)             // → true
+Object.preventExtensions(obj)
+Object.isExtensible(obj)             // → false`,
+      explanation: {
+        en: 'Use Object.isExtensible() to check whether new properties can still be added to an object.',
+        es: 'Usa Object.isExtensible() para comprobar si todavía se pueden añadir nuevas propiedades a un objeto.',
+      },
+    },
   },
   {
     slug: 'object-isExtensible-3',
@@ -132,6 +154,17 @@ Once \`Object.preventExtensions(obj)\` is called, the object cannot have new pro
     ],
     hints: ['freeze implies non-extensible'],
     tags: ['Object', 'isExtensible', 'freeze', 'static-method'],
+    usageExample: {
+      code: `// Check if new properties can be added
+const obj = { a: 1 }
+Object.isExtensible(obj)             // → true
+Object.preventExtensions(obj)
+Object.isExtensible(obj)             // → false`,
+      explanation: {
+        en: 'Use Object.isExtensible() to check whether new properties can still be added to an object.',
+        es: 'Usa Object.isExtensible() para comprobar si todavía se pueden añadir nuevas propiedades a un objeto.',
+      },
+    },
   },
   {
     slug: 'object-isExtensible-4',
@@ -176,6 +209,17 @@ Once \`Object.preventExtensions(obj)\` is called, the object cannot have new pro
     ],
     hints: ['seal makes an object non-extensible AND all properties non-configurable'],
     tags: ['Object', 'isExtensible', 'seal', 'static-method'],
+    usageExample: {
+      code: `// Check if new properties can be added
+const obj = { a: 1 }
+Object.isExtensible(obj)             // → true
+Object.preventExtensions(obj)
+Object.isExtensible(obj)             // → false`,
+      explanation: {
+        en: 'Use Object.isExtensible() to check whether new properties can still be added to an object.',
+        es: 'Usa Object.isExtensible() para comprobar si todavía se pueden añadir nuevas propiedades a un objeto.',
+      },
+    },
   },
   {
     slug: 'object-isExtensible-5',
@@ -222,5 +266,16 @@ Use \`Object.isExtensible()\` to guard against inadvertently modifying locked ob
     ],
     hints: ['Check isExtensible before adding properties to avoid silent failures'],
     tags: ['Object', 'isExtensible', 'static-method', 'guard'],
+    usageExample: {
+      code: `// Check if new properties can be added
+const obj = { a: 1 }
+Object.isExtensible(obj)             // → true
+Object.preventExtensions(obj)
+Object.isExtensible(obj)             // → false`,
+      explanation: {
+        en: 'Use Object.isExtensible() to check whether new properties can still be added to an object.',
+        es: 'Usa Object.isExtensible() para comprobar si todavía se pueden añadir nuevas propiedades a un objeto.',
+      },
+    },
   },
 ]

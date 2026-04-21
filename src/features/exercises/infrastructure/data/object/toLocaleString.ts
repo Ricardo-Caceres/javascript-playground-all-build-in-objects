@@ -45,6 +45,17 @@ It is designed to be overridden by subclasses (like Date, Number, Array) that ha
     ],
     hints: ['Plain objects inherit toLocaleString from Object.prototype, which calls toString()'],
     tags: ['Object', 'toLocaleString', 'instance-method'],
+    usageExample: {
+      code: `// Get locale-aware string representation
+const date = new Date(2024, 0, 1)
+date.toLocaleString()   // → locale-specific date string
+const num = 1234567
+num.toLocaleString()    // → '1,234,567'`,
+      explanation: {
+        en: 'Use toLocaleString() to get a locale-sensitive string representation of a value, most useful on Date and Number objects.',
+        es: 'Usa toLocaleString() para obtener una representación en cadena sensible a la localización, muy útil con objetos Date y Number.',
+      },
+    },
   },
   {
     slug: 'object-toLocaleString-2',
@@ -88,6 +99,17 @@ Numbers have their own \`toLocaleString()\` that formats the number according to
     ],
     hints: ['Number.prototype.toLocaleString formats numbers for the current locale'],
     tags: ['Object', 'toLocaleString', 'instance-method', 'number'],
+    usageExample: {
+      code: `// Get locale-aware string representation
+const date = new Date(2024, 0, 1)
+date.toLocaleString()   // → locale-specific date string
+const num = 1234567
+num.toLocaleString()    // → '1,234,567'`,
+      explanation: {
+        en: 'Use toLocaleString() to get a locale-sensitive string representation of a value, most useful on Date and Number objects.',
+        es: 'Usa toLocaleString() para obtener una representación en cadena sensible a la localización, muy útil con objetos Date y Number.',
+      },
+    },
   },
   {
     slug: 'object-toLocaleString-3',
@@ -134,6 +156,17 @@ You can override \`toLocaleString()\` on your own objects to return a custom loc
     ],
     hints: ['Override toLocaleString in objects needing locale-aware representation'],
     tags: ['Object', 'toLocaleString', 'instance-method', 'override'],
+    usageExample: {
+      code: `// Get locale-aware string representation
+const date = new Date(2024, 0, 1)
+date.toLocaleString()   // → locale-specific date string
+const num = 1234567
+num.toLocaleString()    // → '1,234,567'`,
+      explanation: {
+        en: 'Use toLocaleString() to get a locale-sensitive string representation of a value, most useful on Date and Number objects.',
+        es: 'Usa toLocaleString() para obtener una representación en cadena sensible a la localización, muy útil con objetos Date y Number.',
+      },
+    },
   },
   {
     slug: 'object-toLocaleString-4',
@@ -177,6 +210,17 @@ Arrays have their own \`toLocaleString()\` that calls \`toLocaleString()\` on ea
     ],
     hints: ['Array.prototype.toLocaleString calls toLocaleString on each element'],
     tags: ['Object', 'toLocaleString', 'instance-method', 'array'],
+    usageExample: {
+      code: `// Get locale-aware string representation
+const date = new Date(2024, 0, 1)
+date.toLocaleString()   // → locale-specific date string
+const num = 1234567
+num.toLocaleString()    // → '1,234,567'`,
+      explanation: {
+        en: 'Use toLocaleString() to get a locale-sensitive string representation of a value, most useful on Date and Number objects.',
+        es: 'Usa toLocaleString() para obtener una representación en cadena sensible a la localización, muy útil con objetos Date y Number.',
+      },
+    },
   },
   {
     slug: 'object-toLocaleString-5',
@@ -220,5 +264,16 @@ Arrays have their own \`toLocaleString()\` that calls \`toLocaleString()\` on ea
     ],
     hints: ['Check hasOwnProperty to determine where toLocaleString comes from'],
     tags: ['Object', 'toLocaleString', 'instance-method', 'prototype'],
+    usageExample: {
+      code: `// Get locale-aware string representation
+const date = new Date(2024, 0, 1)
+date.toLocaleString()   // → locale-specific date string
+const num = 1234567
+num.toLocaleString()    // → '1,234,567'`,
+      explanation: {
+        en: 'Use toLocaleString() to get a locale-sensitive string representation of a value, most useful on Date and Number objects.',
+        es: 'Usa toLocaleString() para obtener una representación en cadena sensible a la localización, muy útil con objetos Date y Number.',
+      },
+    },
   },
 ]

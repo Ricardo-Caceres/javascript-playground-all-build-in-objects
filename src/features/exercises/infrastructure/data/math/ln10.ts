@@ -23,6 +23,15 @@ export const mathLn10Exercises: Exercise[] = [
       'Its value is approximately 2.302585092994046.',
     ],
     tags: ['Math', 'LN10', 'static-property', 'beginner'],
+    usageExample: {
+      code: `// Natural logarithm of 10
+Math.LN10          // → 2.302585092...
+Math.log(10) === Math.LN10   // → true`,
+      explanation: {
+        en: 'Use Math.LN10 as a precomputed constant for natural log base-10 conversions to avoid recalculation.',
+        es: 'Usa Math.LN10 como constante precalculada para conversiones de logaritmo natural en base 10.',
+      },
+    },
   },
   {
     slug: 'math-ln10-2',
@@ -46,6 +55,15 @@ export const mathLn10Exercises: Exercise[] = [
       'Math.LN10 is a cached constant equal to Math.log(10).',
     ],
     tags: ['Math', 'LN10', 'log', 'static-property', 'beginner'],
+    usageExample: {
+      code: `// Natural logarithm of 10
+Math.LN10          // → 2.302585092...
+Math.log(10) === Math.LN10   // → true`,
+      explanation: {
+        en: 'Use Math.LN10 as a precomputed constant for natural log base-10 conversions to avoid recalculation.',
+        es: 'Usa Math.LN10 como constante precalculada para conversiones de logaritmo natural en base 10.',
+      },
+    },
   },
   {
     slug: 'math-ln10-3',
@@ -69,6 +87,15 @@ export const mathLn10Exercises: Exercise[] = [
       'Their product should be exactly 1.',
     ],
     tags: ['Math', 'LN10', 'LOG10E', 'static-property', 'intermediate'],
+    usageExample: {
+      code: `// Natural logarithm of 10
+Math.LN10          // → 2.302585092...
+Math.log(10) === Math.LN10   // → true`,
+      explanation: {
+        en: 'Use Math.LN10 as a precomputed constant for natural log base-10 conversions to avoid recalculation.',
+        es: 'Usa Math.LN10 como constante precalculada para conversiones de logaritmo natural en base 10.',
+      },
+    },
   },
   {
     slug: 'math-ln10-4',
@@ -92,6 +119,15 @@ export const mathLn10Exercises: Exercise[] = [
       'This works for any positive n.',
     ],
     tags: ['Math', 'LN10', 'log', 'static-property', 'intermediate'],
+    usageExample: {
+      code: `// Natural logarithm of 10
+Math.LN10          // → 2.302585092...
+Math.log(10) === Math.LN10   // → true`,
+      explanation: {
+        en: 'Use Math.LN10 as a precomputed constant for natural log base-10 conversions to avoid recalculation.',
+        es: 'Usa Math.LN10 como constante precalculada para conversiones de logaritmo natural en base 10.',
+      },
+    },
   },
   {
     slug: 'math-ln10-5',
@@ -115,5 +151,14 @@ export const mathLn10Exercises: Exercise[] = [
       'This is the closest double-precision float to ln(10).',
     ],
     tags: ['Math', 'LN10', 'static-property', 'advanced'],
+    usageExample: {
+      code: `// Natural logarithm of 10
+Math.LN10          // → 2.302585092...
+Math.log(10) === Math.LN10   // → true`,
+      explanation: {
+        en: 'Use Math.LN10 as a precomputed constant for natural log base-10 conversions to avoid recalculation.',
+        es: 'Usa Math.LN10 como constante precalculada para conversiones de logaritmo natural en base 10.',
+      },
+    },
   },
 ]

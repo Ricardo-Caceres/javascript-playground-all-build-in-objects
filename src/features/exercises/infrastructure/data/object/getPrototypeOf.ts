@@ -34,6 +34,16 @@ plainProtoIsObjectProto() // → true
       '`Object.getPrototypeOf({})` returns `Object.prototype` — the root of most prototype chains.',
     ],
     tags: ['Object', 'Object.getPrototypeOf', 'prototype', 'beginner'],
+    usageExample: {
+      code: `// Get the prototype of an object
+const arr = []
+Object.getPrototypeOf(arr) === Array.prototype   // → true
+Object.getPrototypeOf({}) === Object.prototype   // → true`,
+      explanation: {
+        en: 'Use Object.getPrototypeOf() to retrieve the prototype of an object, allowing you to inspect its inheritance chain.',
+        es: 'Usa Object.getPrototypeOf() para obtener el prototipo de un objeto e inspeccionar su cadena de herencia.',
+      },
+    },
   },
   {
     slug: 'object-get-prototype-of-array',
@@ -68,6 +78,16 @@ arrayProtoIsArrayProto() // → true
       'Arrays are instances of `Array`, whose prototype chain is `[] → Array.prototype → Object.prototype → null`.',
     ],
     tags: ['Object', 'Object.getPrototypeOf', 'array', 'beginner'],
+    usageExample: {
+      code: `// Get the prototype of an object
+const arr = []
+Object.getPrototypeOf(arr) === Array.prototype   // → true
+Object.getPrototypeOf({}) === Object.prototype   // → true`,
+      explanation: {
+        en: 'Use Object.getPrototypeOf() to retrieve the prototype of an object, allowing you to inspect its inheritance chain.',
+        es: 'Usa Object.getPrototypeOf() para obtener el prototipo de un objeto e inspeccionar su cadena de herencia.',
+      },
+    },
   },
   {
     slug: 'object-get-prototype-of-null-proto',
@@ -103,6 +123,16 @@ nullProtoIsNull() // → true
       '`Object.create(null)` creates an object completely outside the normal prototype chain.',
     ],
     tags: ['Object', 'Object.getPrototypeOf', 'null prototype', 'beginner'],
+    usageExample: {
+      code: `// Get the prototype of an object
+const arr = []
+Object.getPrototypeOf(arr) === Array.prototype   // → true
+Object.getPrototypeOf({}) === Object.prototype   // → true`,
+      explanation: {
+        en: 'Use Object.getPrototypeOf() to retrieve the prototype of an object, allowing you to inspect its inheritance chain.',
+        es: 'Usa Object.getPrototypeOf() para obtener el prototipo de un objeto e inspeccionar su cadena de herencia.',
+      },
+    },
   },
   {
     slug: 'object-get-prototype-of-class',
@@ -139,6 +169,16 @@ classInstanceProto() // → true
       '`new Foo()` sets the instance prototype to `Foo.prototype`.',
     ],
     tags: ['Object', 'Object.getPrototypeOf', 'class', 'intermediate'],
+    usageExample: {
+      code: `// Get the prototype of an object
+const arr = []
+Object.getPrototypeOf(arr) === Array.prototype   // → true
+Object.getPrototypeOf({}) === Object.prototype   // → true`,
+      explanation: {
+        en: 'Use Object.getPrototypeOf() to retrieve the prototype of an object, allowing you to inspect its inheritance chain.',
+        es: 'Usa Object.getPrototypeOf() para obtener el prototipo de un objeto e inspeccionar su cadena de herencia.',
+      },
+    },
   },
   {
     slug: 'object-get-prototype-of-function',
@@ -173,5 +213,15 @@ fnProtoIsFunctionProto() // → true
       'Functions are objects whose `[[Prototype]]` is `Function.prototype`.',
     ],
     tags: ['Object', 'Object.getPrototypeOf', 'function', 'intermediate'],
+    usageExample: {
+      code: `// Get the prototype of an object
+const arr = []
+Object.getPrototypeOf(arr) === Array.prototype   // → true
+Object.getPrototypeOf({}) === Object.prototype   // → true`,
+      explanation: {
+        en: 'Use Object.getPrototypeOf() to retrieve the prototype of an object, allowing you to inspect its inheritance chain.',
+        es: 'Usa Object.getPrototypeOf() para obtener el prototipo de un objeto e inspeccionar su cadena de herencia.',
+      },
+    },
   },
 ]

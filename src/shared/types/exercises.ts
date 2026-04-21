@@ -1,5 +1,21 @@
 // src/shared/types/exercises.ts
 
+export interface TopicMeta {
+  description: {
+    en: string
+    es: string
+  }
+}
+
+export interface UsageExample {
+  /** Plain JS/TS code snippet illustrating basic usage */
+  code: string
+  explanation: {
+    en: string
+    es: string
+  }
+}
+
 export type ExerciseCategory =
   | 'constructor'
   | 'static-property'
@@ -32,6 +48,7 @@ export interface Exercise {
   tests: TestCase[]
   hints?: string[]
   tags: string[]
+  usageExample?: UsageExample
 }
 
 export interface TestResult {

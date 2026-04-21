@@ -37,6 +37,16 @@ Object.getPrototypeOf(dog) === animal // → true
       'You can verify the link with `Object.getPrototypeOf(obj) === proto`.',
     ],
     tags: ['Object', 'Object.create', 'prototype', 'beginner'],
+    usageExample: {
+      code: `// Create an object with a specific prototype
+const proto = { greet() { return 'hi' } }
+const child = Object.create(proto)
+child.greet()   // → 'hi'`,
+      explanation: {
+        en: 'Use Object.create() to create a new object with a specific prototype, enabling prototype-based inheritance.',
+        es: 'Usa Object.create() para crear un objeto con un prototipo específico, habilitando la herencia basada en prototipos.',
+      },
+    },
   },
   {
     slug: 'object-create-inherited-method',
@@ -76,6 +86,16 @@ makeGreeter('Alice').greet() // → 'Hello, Alice'
       'Set the own property (e.g. `name`) directly on the created object.',
     ],
     tags: ['Object', 'Object.create', 'prototype', 'inheritance', 'intermediate'],
+    usageExample: {
+      code: `// Create an object with a specific prototype
+const proto = { greet() { return 'hi' } }
+const child = Object.create(proto)
+child.greet()   // → 'hi'`,
+      explanation: {
+        en: 'Use Object.create() to create a new object with a specific prototype, enabling prototype-based inheritance.',
+        es: 'Usa Object.create() para crear un objeto con un prototipo específico, habilitando la herencia basada en prototipos.',
+      },
+    },
   },
   {
     slug: 'object-create-null-proto',
@@ -111,6 +131,16 @@ Object.getPrototypeOf(createNullProto()) // → null
       'Use `Object.getPrototypeOf(obj) === null` to confirm.',
     ],
     tags: ['Object', 'Object.create', 'null prototype', 'intermediate'],
+    usageExample: {
+      code: `// Create an object with a specific prototype
+const proto = { greet() { return 'hi' } }
+const child = Object.create(proto)
+child.greet()   // → 'hi'`,
+      explanation: {
+        en: 'Use Object.create() to create a new object with a specific prototype, enabling prototype-based inheritance.',
+        es: 'Usa Object.create() para crear un objeto con un prototipo específico, habilitando la herencia basada en prototipos.',
+      },
+    },
   },
   {
     slug: 'object-create-inherited-property',
@@ -148,6 +178,16 @@ canAccessInherited({ role: 'admin' }, 'age')  // → false
       '`key in obj` returns `true` for both own and inherited properties.',
     ],
     tags: ['Object', 'Object.create', 'prototype', 'in operator', 'intermediate'],
+    usageExample: {
+      code: `// Create an object with a specific prototype
+const proto = { greet() { return 'hi' } }
+const child = Object.create(proto)
+child.greet()   // → 'hi'`,
+      explanation: {
+        en: 'Use Object.create() to create a new object with a specific prototype, enabling prototype-based inheritance.',
+        es: 'Usa Object.create() para crear un objeto con un prototipo específico, habilitando la herencia basada en prototipos.',
+      },
+    },
   },
   {
     slug: 'object-create-verify-prototype',
@@ -185,5 +225,15 @@ protoMatches(p, o) // → true
       'Use `===` for reference equality, not `==` or `toEqual`.',
     ],
     tags: ['Object', 'Object.create', 'Object.getPrototypeOf', 'prototype', 'intermediate'],
+    usageExample: {
+      code: `// Create an object with a specific prototype
+const proto = { greet() { return 'hi' } }
+const child = Object.create(proto)
+child.greet()   // → 'hi'`,
+      explanation: {
+        en: 'Use Object.create() to create a new object with a specific prototype, enabling prototype-based inheritance.',
+        es: 'Usa Object.create() para crear un objeto con un prototipo específico, habilitando la herencia basada en prototipos.',
+      },
+    },
   },
 ]

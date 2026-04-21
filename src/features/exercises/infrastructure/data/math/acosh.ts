@@ -20,6 +20,15 @@ export const mathAcoshExercises: Exercise[] = [
     ],
     hints: ['cosh(0) = 1, so acosh(1) = 0', 'The domain of acosh is [1, ∞)'],
     tags: ['Math', 'acosh', 'static-method', 'hyperbolic'],
+    usageExample: {
+      code: `// Inverse hyperbolic cosine (input must be ≥ 1)
+Math.acosh(1)   // → 0
+Math.acosh(2)   // → 1.3169...`,
+      explanation: {
+        en: 'Use Math.acosh() to compute the inverse hyperbolic cosine of a number ≥ 1.',
+        es: 'Usa Math.acosh() para calcular el coseno hiperbólico inverso de un número ≥ 1.',
+      },
+    },
   },
   {
     slug: 'math-acosh-2',
@@ -40,6 +49,15 @@ export const mathAcoshExercises: Exercise[] = [
     ],
     hints: ['acosh(x) = ln(x + √(x²−1))', 'Valid for all x ≥ 1'],
     tags: ['Math', 'acosh', 'static-method', 'hyperbolic'],
+    usageExample: {
+      code: `// Inverse hyperbolic cosine (input must be ≥ 1)
+Math.acosh(1)   // → 0
+Math.acosh(2)   // → 1.3169...`,
+      explanation: {
+        en: 'Use Math.acosh() to compute the inverse hyperbolic cosine of a number ≥ 1.',
+        es: 'Usa Math.acosh() para calcular el coseno hiperbólico inverso de un número ≥ 1.',
+      },
+    },
   },
   {
     slug: 'math-acosh-3',
@@ -60,6 +78,15 @@ export const mathAcoshExercises: Exercise[] = [
     ],
     hints: ['The domain of acosh is [1, ∞)', 'Values less than 1 produce NaN'],
     tags: ['Math', 'acosh', 'static-method', 'hyperbolic', 'NaN'],
+    usageExample: {
+      code: `// Inverse hyperbolic cosine (input must be ≥ 1)
+Math.acosh(1)   // → 0
+Math.acosh(2)   // → 1.3169...`,
+      explanation: {
+        en: 'Use Math.acosh() to compute the inverse hyperbolic cosine of a number ≥ 1.',
+        es: 'Usa Math.acosh() para calcular el coseno hiperbólico inverso de un número ≥ 1.',
+      },
+    },
   },
   {
     slug: 'math-acosh-4',
@@ -80,6 +107,15 @@ export const mathAcoshExercises: Exercise[] = [
     ],
     hints: ['acosh grows without bound as x → ∞', 'Math.acosh(1e10) ≈ 23.7'],
     tags: ['Math', 'acosh', 'static-method', 'hyperbolic', 'Infinity'],
+    usageExample: {
+      code: `// Inverse hyperbolic cosine (input must be ≥ 1)
+Math.acosh(1)   // → 0
+Math.acosh(2)   // → 1.3169...`,
+      explanation: {
+        en: 'Use Math.acosh() to compute the inverse hyperbolic cosine of a number ≥ 1.',
+        es: 'Usa Math.acosh() para calcular el coseno hiperbólico inverso de un número ≥ 1.',
+      },
+    },
   },
   {
     slug: 'math-acosh-5',
@@ -100,5 +136,14 @@ export const mathAcoshExercises: Exercise[] = [
     ],
     hints: ['NaN is still of type number in JavaScript', 'All Math methods return a number primitive'],
     tags: ['Math', 'acosh', 'static-method', 'hyperbolic'],
+    usageExample: {
+      code: `// Inverse hyperbolic cosine (input must be ≥ 1)
+Math.acosh(1)   // → 0
+Math.acosh(2)   // → 1.3169...`,
+      explanation: {
+        en: 'Use Math.acosh() to compute the inverse hyperbolic cosine of a number ≥ 1.',
+        es: 'Usa Math.acosh() para calcular el coseno hiperbólico inverso de un número ≥ 1.',
+      },
+    },
   },
 ]

@@ -36,6 +36,15 @@ allPositive([1, -1, 3])   // → false
       'An empty array always returns `true` with `every()` — this is called vacuous truth.',
     ],
     tags: ['Array', 'Array.prototype.every', 'predicate', 'beginner'],
+    usageExample: {
+      code: `const nums = [2, 4, 6, 8]
+nums.every(n => n > 0)  // → true
+nums.every(n => n > 5)  // → false`,
+      explanation: {
+        en: 'Use every() to check whether all elements in an array satisfy a condition.',
+        es: 'Usa every() para comprobar si todos los elementos de un array cumplen una condición.',
+      },
+    },
   },
   {
     slug: 'array-every-strings',
@@ -72,6 +81,15 @@ allNonEmpty(['hello', ''])     // → false
       'You can also write `s => !!s` or `Boolean` as the callback.',
     ],
     tags: ['Array', 'Array.prototype.every', 'string', 'validation', 'beginner'],
+    usageExample: {
+      code: `const words = ['hello', 'world']
+words.every(w => w.length > 3)   // → true
+words.every(w => w.startsWith('h'))  // → false`,
+      explanation: {
+        en: 'Use every() to validate that all strings in an array meet a specific criterion.',
+        es: 'Usa every() para validar que todas las cadenas de un array cumplan un criterio específico.',
+      },
+    },
   },
   {
     slug: 'array-every-empty',
@@ -109,6 +127,14 @@ isEveryLong([])                         // → true
       'Think of it as: "there are no elements that fail the condition".',
     ],
     tags: ['Array', 'Array.prototype.every', 'vacuous-truth', 'beginner'],
+    usageExample: {
+      code: `const empty = []
+empty.every(x => x > 0)  // → true  (vacuous truth)`,
+      explanation: {
+        en: 'every() returns true for empty arrays — there are no elements to violate the condition.',
+        es: 'every() devuelve true para arrays vacíos, ya que no hay elementos que violen la condición.',
+      },
+    },
   },
   {
     slug: 'array-every-objects',
@@ -148,6 +174,14 @@ allHaveName([{name:'Alice'},{age:30}])     // → false
       'Cast to `Record<string, unknown>` to access dynamic properties without TypeScript errors.',
     ],
     tags: ['Array', 'Array.prototype.every', 'objects', 'intermediate'],
+    usageExample: {
+      code: `const users = [{active: true}, {active: true}]
+users.every(u => u.active)  // → true`,
+      explanation: {
+        en: 'Use every() to confirm that a property holds true for all objects in an array.',
+        es: 'Usa every() para confirmar que una propiedad es verdadera en todos los objetos de un array.',
+      },
+    },
   },
   {
     slug: 'array-every-vs-some',
@@ -184,5 +218,14 @@ allEven([2, 3, 6])   // → false
       'To check if at least one is even, you would use `some()` instead.',
     ],
     tags: ['Array', 'Array.prototype.every', 'even', 'intermediate'],
+    usageExample: {
+      code: `const nums = [1, 2, 3, 4]
+nums.every(n => n > 0)  // → true  (all positive)
+nums.some(n => n > 3)   // → true  (at least one > 3)`,
+      explanation: {
+        en: 'Use every() when all elements must pass, and some() when at least one must pass.',
+        es: 'Usa every() cuando todos los elementos deben pasar y some() cuando al menos uno debe pasar.',
+      },
+    },
   },
 ]

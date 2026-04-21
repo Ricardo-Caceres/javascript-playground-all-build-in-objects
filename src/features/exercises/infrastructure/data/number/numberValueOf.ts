@@ -28,6 +28,16 @@ const primitive = obj.valueOf()`,
     ],
     hints: ['`valueOf()` unwraps the `Number` object to get the primitive value.'],
     tags: ['Number', 'valueOf', 'instance-method', 'intermediate'],
+    usageExample: {
+      code: `// Retrieve the primitive numeric value
+const n = new Number(42)
+n.valueOf()          // → 42
+typeof n.valueOf()   // → 'number'`,
+      explanation: {
+        en: 'Use valueOf() on a Number object to extract the underlying primitive number value, which JavaScript also calls automatically in numeric expressions.',
+        es: 'Usa valueOf() en un objeto Number para extraer el valor numérico primitivo subyacente, que JavaScript también llama automáticamente en expresiones numéricas.',
+      },
+    },
   },
   {
     slug: 'number-value-of-2',
@@ -54,6 +64,16 @@ const valType = typeof obj.valueOf()`,
     ],
     hints: ['`new Number()` wraps the value in an object; `valueOf()` retrieves the primitive.'],
     tags: ['Number', 'valueOf', 'typeof', 'intermediate'],
+    usageExample: {
+      code: `// Retrieve the primitive numeric value
+const n = new Number(42)
+n.valueOf()          // → 42
+typeof n.valueOf()   // → 'number'`,
+      explanation: {
+        en: 'Use valueOf() on a Number object to extract the underlying primitive number value, which JavaScript also calls automatically in numeric expressions.',
+        es: 'Usa valueOf() en un objeto Number para extraer el valor numérico primitivo subyacente, que JavaScript también llama automáticamente en expresiones numéricas.',
+      },
+    },
   },
   {
     slug: 'number-value-of-3',
@@ -76,6 +96,16 @@ Calling \`valueOf()\` on a primitive number returns the number itself (autoboxin
     ],
     hints: ['Autoboxing converts a primitive number to a `Number` object temporarily to call the method.'],
     tags: ['Number', 'valueOf', 'primitive', 'beginner'],
+    usageExample: {
+      code: `// Retrieve the primitive numeric value
+const n = new Number(42)
+n.valueOf()          // → 42
+typeof n.valueOf()   // → 'number'`,
+      explanation: {
+        en: 'Use valueOf() on a Number object to extract the underlying primitive number value, which JavaScript also calls automatically in numeric expressions.',
+        es: 'Usa valueOf() en un objeto Number para extraer el valor numérico primitivo subyacente, que JavaScript también llama automáticamente en expresiones numéricas.',
+      },
+    },
   },
   {
     slug: 'number-value-of-4',
@@ -100,6 +130,16 @@ const sum = (obj as unknown as number) + 5`,
     ],
     hints: ['JavaScript implicitly calls `valueOf()` when a `Number` object is used in numeric operations.'],
     tags: ['Number', 'valueOf', 'arithmetic', 'intermediate'],
+    usageExample: {
+      code: `// Retrieve the primitive numeric value
+const n = new Number(42)
+n.valueOf()          // → 42
+typeof n.valueOf()   // → 'number'`,
+      explanation: {
+        en: 'Use valueOf() on a Number object to extract the underlying primitive number value, which JavaScript also calls automatically in numeric expressions.',
+        es: 'Usa valueOf() en un objeto Number para extraer el valor numérico primitivo subyacente, que JavaScript también llama automáticamente en expresiones numéricas.',
+      },
+    },
   },
   {
     slug: 'number-value-of-5',
@@ -124,5 +164,15 @@ const primitive = 5`,
     ],
     hints: ['Loose equality (`==`) triggers `valueOf()` on objects; strict equality (`===`) does not.'],
     tags: ['Number', 'valueOf', 'comparison', 'intermediate'],
+    usageExample: {
+      code: `// Retrieve the primitive numeric value
+const n = new Number(42)
+n.valueOf()          // → 42
+typeof n.valueOf()   // → 'number'`,
+      explanation: {
+        en: 'Use valueOf() on a Number object to extract the underlying primitive number value, which JavaScript also calls automatically in numeric expressions.',
+        es: 'Usa valueOf() en un objeto Number para extraer el valor numérico primitivo subyacente, que JavaScript también llama automáticamente en expresiones numéricas.',
+      },
+    },
   },
 ]

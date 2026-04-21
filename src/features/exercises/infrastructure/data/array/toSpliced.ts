@@ -23,6 +23,15 @@ export const toSplicedExercises: Exercise[] = [
       'Pass 1 as deleteCount to remove exactly one element',
     ],
     tags: ['array', 'toSpliced', 'immutable', 'remove'],
+    usageExample: {
+      code: `const arr = [1, 2, 3, 4, 5]
+arr.toSpliced(1, 2)  // → [1, 4, 5]
+arr  // → [1, 2, 3, 4, 5]  (unchanged)`,
+      explanation: {
+        en: 'Use toSpliced() to remove elements and return a new array, leaving the original intact.',
+        es: 'Usa toSpliced() para eliminar elementos y devolver un nuevo array, dejando el original intacto.',
+      },
+    },
   },
   {
     slug: 'array-to-spliced-insert',
@@ -46,6 +55,15 @@ export const toSplicedExercises: Exercise[] = [
       'The new element appears at the given index in the returned array',
     ],
     tags: ['array', 'toSpliced', 'immutable', 'insert'],
+    usageExample: {
+      code: `const arr = [1, 2, 4, 5]
+arr.toSpliced(2, 0, 3)  // → [1, 2, 3, 4, 5]
+arr  // → [1, 2, 4, 5]  (unchanged)`,
+      explanation: {
+        en: 'Use toSpliced() to insert elements at a position without modifying the original array.',
+        es: 'Usa toSpliced() para insertar elementos en una posición sin modificar el array original.',
+      },
+    },
   },
   {
     slug: 'array-to-spliced-no-mutation',
@@ -69,6 +87,16 @@ export const toSplicedExercises: Exercise[] = [
       'The original array reference is always left intact',
     ],
     tags: ['array', 'toSpliced', 'immutable', 'mutation'],
+    usageExample: {
+      code: `const original = [1, 2, 3]
+const result = original.toSpliced(0, 1)
+original  // → [1, 2, 3]  (unchanged)
+result    // → [2, 3]`,
+      explanation: {
+        en: 'toSpliced() is the immutable version of splice() — it never changes the source array.',
+        es: 'toSpliced() es la versión inmutable de splice(); nunca modifica el array fuente.',
+      },
+    },
   },
   {
     slug: 'array-to-spliced-replace',
@@ -92,6 +120,15 @@ export const toSplicedExercises: Exercise[] = [
       'The length of the result equals the length of the original',
     ],
     tags: ['array', 'toSpliced', 'immutable', 'replace'],
+    usageExample: {
+      code: `const arr = ['a', 'b', 'c']
+arr.toSpliced(1, 1, 'X')  // → ['a', 'X', 'c']
+arr  // → ['a', 'b', 'c']  (unchanged)`,
+      explanation: {
+        en: 'Use toSpliced() to replace elements at a position, returning a new array.',
+        es: 'Usa toSpliced() para reemplazar elementos en una posición, devolviendo un nuevo array.',
+      },
+    },
   },
   {
     slug: 'array-to-spliced-vs-splice',
@@ -115,5 +152,14 @@ export const toSplicedExercises: Exercise[] = [
       'toSpliced(0, 0) removes nothing but still returns a new array copy',
     ],
     tags: ['array', 'toSpliced', 'reference', 'immutable'],
+    usageExample: {
+      code: `const arr = [1, 2, 3]
+arr.splice(0, 1)       // mutates arr → [2, 3]
+const r = [1,2,3].toSpliced(0, 1)  // safe → [2, 3]`,
+      explanation: {
+        en: 'Prefer toSpliced() over splice() in functional code to avoid unintended mutation.',
+        es: 'Prefiere toSpliced() sobre splice() en código funcional para evitar mutaciones no deseadas.',
+      },
+    },
   },
 ]

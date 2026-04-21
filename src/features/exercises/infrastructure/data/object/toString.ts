@@ -43,6 +43,16 @@ export const objectToStringExercises: Exercise[] = [
     ],
     hints: ['Object.prototype.toString() is the default string conversion for objects'],
     tags: ['Object', 'toString', 'instance-method'],
+    usageExample: {
+      code: `// Get string representation of an object
+const obj = { a: 1 }
+obj.toString()   // → '[object Object]'
+Object.prototype.toString.call([])   // → '[object Array]'`,
+      explanation: {
+        en: 'Use toString() to convert an object to a string; calling it via Object.prototype.toString.call() reveals the internal type tag.',
+        es: 'Usa toString() para convertir un objeto en cadena; llamarlo vía Object.prototype.toString.call() revela la etiqueta de tipo interno.',
+      },
+    },
   },
   {
     slug: 'object-toString-2',
@@ -86,6 +96,16 @@ export const objectToStringExercises: Exercise[] = [
     ],
     hints: ['Object.prototype.toString.call is the classic type-detection idiom'],
     tags: ['Object', 'toString', 'instance-method', 'type-detection'],
+    usageExample: {
+      code: `// Get string representation of an object
+const obj = { a: 1 }
+obj.toString()   // → '[object Object]'
+Object.prototype.toString.call([])   // → '[object Array]'`,
+      explanation: {
+        en: 'Use toString() to convert an object to a string; calling it via Object.prototype.toString.call() reveals the internal type tag.',
+        es: 'Usa toString() para convertir un objeto en cadena; llamarlo vía Object.prototype.toString.call() revela la etiqueta de tipo interno.',
+      },
+    },
   },
   {
     slug: 'object-toString-3',
@@ -129,6 +149,16 @@ Calling \`Object.prototype.toString.call([])\` returns \`"[object Array]"\`, whi
     ],
     hints: ['Object.prototype.toString.call is used for reliable type checking'],
     tags: ['Object', 'toString', 'instance-method', 'type-detection', 'array'],
+    usageExample: {
+      code: `// Get string representation of an object
+const obj = { a: 1 }
+obj.toString()   // → '[object Object]'
+Object.prototype.toString.call([])   // → '[object Array]'`,
+      explanation: {
+        en: 'Use toString() to convert an object to a string; calling it via Object.prototype.toString.call() reveals the internal type tag.',
+        es: 'Usa toString() para convertir un objeto en cadena; llamarlo vía Object.prototype.toString.call() revela la etiqueta de tipo interno.',
+      },
+    },
   },
   {
     slug: 'object-toString-4',
@@ -176,6 +206,16 @@ You can override \`toString()\` on your own objects to return a meaningful strin
     ],
     hints: ['Override toString to provide a meaningful string representation for your objects'],
     tags: ['Object', 'toString', 'instance-method', 'override'],
+    usageExample: {
+      code: `// Get string representation of an object
+const obj = { a: 1 }
+obj.toString()   // → '[object Object]'
+Object.prototype.toString.call([])   // → '[object Array]'`,
+      explanation: {
+        en: 'Use toString() to convert an object to a string; calling it via Object.prototype.toString.call() reveals the internal type tag.',
+        es: 'Usa toString() para convertir un objeto en cadena; llamarlo vía Object.prototype.toString.call() revela la etiqueta de tipo interno.',
+      },
+    },
   },
   {
     slug: 'object-toString-5',
@@ -219,5 +259,15 @@ Using \`Object.prototype.toString.call(42)\` returns \`"[object Number]"\`, rega
     ],
     hints: ['Object.prototype.toString.call works on primitives too, boxing them internally'],
     tags: ['Object', 'toString', 'instance-method', 'type-detection', 'number'],
+    usageExample: {
+      code: `// Get string representation of an object
+const obj = { a: 1 }
+obj.toString()   // → '[object Object]'
+Object.prototype.toString.call([])   // → '[object Array]'`,
+      explanation: {
+        en: 'Use toString() to convert an object to a string; calling it via Object.prototype.toString.call() reveals the internal type tag.',
+        es: 'Usa toString() para convertir un objeto en cadena; llamarlo vía Object.prototype.toString.call() revela la etiqueta de tipo interno.',
+      },
+    },
   },
 ]

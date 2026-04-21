@@ -20,6 +20,15 @@ export const mathAsinExercises: Exercise[] = [
     ],
     hints: ['sin(0) = 0, so asin(0) = 0', 'The range of asin is [-π/2, π/2]'],
     tags: ['Math', 'asin', 'static-method', 'trigonometry'],
+    usageExample: {
+      code: `// Inverse sine — result in radians
+Math.asin(0)   // → 0
+Math.asin(1)   // → 1.5707... (π/2)`,
+      explanation: {
+        en: 'Use Math.asin() to find the angle (in radians) whose sine equals a given value.',
+        es: 'Usa Math.asin() para encontrar el ángulo (en radianes) cuyo seno es un valor dado.',
+      },
+    },
   },
   {
     slug: 'math-asin-2',
@@ -40,6 +49,15 @@ export const mathAsinExercises: Exercise[] = [
     ],
     hints: ['sin(π/2) = 1, so asin(1) = π/2', 'Math.PI / 2 ≈ 1.5708'],
     tags: ['Math', 'asin', 'static-method', 'trigonometry'],
+    usageExample: {
+      code: `// Inverse sine — result in radians
+Math.asin(0)   // → 0
+Math.asin(1)   // → 1.5707... (π/2)`,
+      explanation: {
+        en: 'Use Math.asin() to find the angle (in radians) whose sine equals a given value.',
+        es: 'Usa Math.asin() para encontrar el ángulo (en radianes) cuyo seno es un valor dado.',
+      },
+    },
   },
   {
     slug: 'math-asin-3',
@@ -60,6 +78,15 @@ export const mathAsinExercises: Exercise[] = [
     ],
     hints: ['sin(-π/2) = -1, so asin(-1) = -π/2', 'asin is an odd function: asin(-x) = -asin(x)'],
     tags: ['Math', 'asin', 'static-method', 'trigonometry'],
+    usageExample: {
+      code: `// Inverse sine — result in radians
+Math.asin(0)   // → 0
+Math.asin(1)   // → 1.5707... (π/2)`,
+      explanation: {
+        en: 'Use Math.asin() to find the angle (in radians) whose sine equals a given value.',
+        es: 'Usa Math.asin() para encontrar el ángulo (en radianes) cuyo seno es un valor dado.',
+      },
+    },
   },
   {
     slug: 'math-asin-4',
@@ -80,6 +107,15 @@ export const mathAsinExercises: Exercise[] = [
     ],
     hints: ['sin(30°) = 0.5, so asin(0.5) = π/6 ≈ 0.5236', 'Multiply by 180/Math.PI to convert to degrees'],
     tags: ['Math', 'asin', 'static-method', 'trigonometry'],
+    usageExample: {
+      code: `// Inverse sine — result in radians
+Math.asin(0)   // → 0
+Math.asin(1)   // → 1.5707... (π/2)`,
+      explanation: {
+        en: 'Use Math.asin() to find the angle (in radians) whose sine equals a given value.',
+        es: 'Usa Math.asin() para encontrar el ángulo (en radianes) cuyo seno es un valor dado.',
+      },
+    },
   },
   {
     slug: 'math-asin-5',
@@ -100,5 +136,14 @@ export const mathAsinExercises: Exercise[] = [
     ],
     hints: ['The domain of asin is [-1, 1]', 'NaN is the only JavaScript value where x !== x'],
     tags: ['Math', 'asin', 'static-method', 'trigonometry', 'NaN'],
+    usageExample: {
+      code: `// Inverse sine — result in radians
+Math.asin(0)   // → 0
+Math.asin(1)   // → 1.5707... (π/2)`,
+      explanation: {
+        en: 'Use Math.asin() to find the angle (in radians) whose sine equals a given value.',
+        es: 'Usa Math.asin() para encontrar el ángulo (en radianes) cuyo seno es un valor dado.',
+      },
+    },
   },
 ]

@@ -23,6 +23,15 @@ export const valuesExercises: Exercise[] = [
       'The result contains the same values in the same order as the original',
     ],
     tags: ['array', 'values', 'iterator', 'Array.from'],
+    usageExample: {
+      code: `const arr = ['x', 'y', 'z']
+const iter = arr.values()
+iter.next().value  // → 'x'`,
+      explanation: {
+        en: 'Use values() to get an iterator that yields each element of the array in order.',
+        es: 'Usa values() para obtener un iterador que produce cada elemento del array en orden.',
+      },
+    },
   },
   {
     slug: 'array-values-iterate',
@@ -46,6 +55,16 @@ export const valuesExercises: Exercise[] = [
       'arr.values() yields values in index order, just like iterating arr directly',
     ],
     tags: ['array', 'values', 'iterator', 'for-of'],
+    usageExample: {
+      code: `const fruits = ['apple', 'banana', 'cherry']
+for (const v of fruits.values()) {
+  console.log(v)  // apple, banana, cherry
+}`,
+      explanation: {
+        en: 'Use values() with for-of to iterate over all element values of an array.',
+        es: 'Usa values() con for-of para iterar sobre todos los valores de los elementos de un array.',
+      },
+    },
   },
   {
     slug: 'array-values-vs-keys',
@@ -69,6 +88,15 @@ export const valuesExercises: Exercise[] = [
       'arr.values() yields the actual element values at each index',
     ],
     tags: ['array', 'values', 'keys', 'iterator', 'entries'],
+    usageExample: {
+      code: `const arr = ['a', 'b', 'c']
+[...arr.keys()]    // → [0, 1, 2]     (indices)
+[...arr.values()]  // → ['a','b','c'] (values)`,
+      explanation: {
+        en: 'Use values() to iterate element values and keys() to iterate indices.',
+        es: 'Usa values() para iterar valores de elementos y keys() para iterar índices.',
+      },
+    },
   },
   {
     slug: 'array-values-spread',
@@ -92,6 +120,14 @@ export const valuesExercises: Exercise[] = [
       'This is equivalent to Array.from(arr.values())',
     ],
     tags: ['array', 'values', 'iterator', 'spread'],
+    usageExample: {
+      code: `const arr = [10, 20, 30]
+const copy = [...arr.values()]  // → [10, 20, 30]`,
+      explanation: {
+        en: 'Spread values() into a new array to create a shallow copy using the iterator protocol.',
+        es: 'Extiende values() en un nuevo array para crear una copia superficial usando el protocolo iterador.',
+      },
+    },
   },
   {
     slug: 'array-values-same-as-iter',
@@ -115,5 +151,15 @@ export const valuesExercises: Exercise[] = [
       'Use .join() to compare the two iterator outputs as strings',
     ],
     tags: ['array', 'values', 'Symbol.iterator', 'iterator', 'advanced'],
+    usageExample: {
+      code: `const arr = [1, 2, 3]
+const a = [...arr.values()]
+const b = [...arr[Symbol.iterator]()]
+// a and b are identical`,
+      explanation: {
+        en: 'values() is equivalent to the default Symbol.iterator of an array.',
+        es: 'values() es equivalente al Symbol.iterator predeterminado de un array.',
+      },
+    },
   },
 ]

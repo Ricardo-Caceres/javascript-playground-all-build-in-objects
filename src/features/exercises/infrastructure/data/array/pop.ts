@@ -36,6 +36,15 @@ removeLast([42])      // → 42 (arr is now [])
       'The element returned is the one at index `arr.length - 1`.',
     ],
     tags: ['Array', 'Array.prototype.pop', 'mutation', 'beginner'],
+    usageExample: {
+      code: `const stack = [1, 2, 3]
+const top = stack.pop()  // → 3
+stack  // → [1, 2]`,
+      explanation: {
+        en: 'Use pop() to remove and return the last element of an array.',
+        es: 'Usa pop() para eliminar y devolver el último elemento de un array.',
+      },
+    },
   },
   {
     slug: 'array-pop-empty',
@@ -71,6 +80,14 @@ popEmpty() // → undefined
       'Cast with `([] as number[]).pop()` to satisfy the TypeScript return type.',
     ],
     tags: ['Array', 'Array.prototype.pop', 'undefined', 'empty', 'beginner'],
+    usageExample: {
+      code: `const arr = []
+arr.pop()  // → undefined  (empty array)`,
+      explanation: {
+        en: 'pop() returns undefined when called on an empty array — guard against this if needed.',
+        es: 'pop() devuelve undefined al llamarse en un array vacío; protégete contra esto si es necesario.',
+      },
+    },
   },
   {
     slug: 'array-pop-mutates',
@@ -108,6 +125,15 @@ popAndCheck([10])      // → []
       'Note that the returned array is the **same object** as the input.',
     ],
     tags: ['Array', 'Array.prototype.pop', 'mutation', 'intermediate'],
+    usageExample: {
+      code: `const arr = ['a', 'b', 'c']
+arr.pop()
+console.log(arr)  // → ['a', 'b']  (mutated!)`,
+      explanation: {
+        en: 'pop() mutates the original array — if you need immutability, use slice(0, -1) instead.',
+        es: 'pop() muta el array original; si necesitas inmutabilidad, usa slice(0, -1) en su lugar.',
+      },
+    },
   },
   {
     slug: 'array-pop-stack',
@@ -144,6 +170,17 @@ stackPop([99])      // → 99 (stack is now [])
       '`pop()` is the natural implementation of a stack pop — O(1) and mutation-based.',
     ],
     tags: ['Array', 'Array.prototype.pop', 'stack', 'LIFO', 'intermediate'],
+    usageExample: {
+      code: `const stack = []
+stack.push(1)
+stack.push(2)
+stack.pop()   // → 2  (LIFO)
+stack.pop()   // → 1`,
+      explanation: {
+        en: 'Use push() and pop() together to implement a last-in, first-out (LIFO) stack.',
+        es: 'Usa push() y pop() juntos para implementar una pila LIFO (último en entrar, primero en salir).',
+      },
+    },
   },
   {
     slug: 'array-pop-last-word',
@@ -180,5 +217,14 @@ removeLastWord(['only'])           // → 'only'
       'The return type is `string | undefined` because `pop()` on an empty array returns `undefined`.',
     ],
     tags: ['Array', 'Array.prototype.pop', 'string', 'intermediate'],
+    usageExample: {
+      code: `const words = ['foo', 'bar', 'baz']
+const last = words.pop()  // → 'baz'
+words  // → ['foo', 'bar']`,
+      explanation: {
+        en: 'Use pop() to consume the last string element from a queue or word list.',
+        es: 'Usa pop() para consumir el último elemento de cadena de una cola o lista de palabras.',
+      },
+    },
   },
 ]

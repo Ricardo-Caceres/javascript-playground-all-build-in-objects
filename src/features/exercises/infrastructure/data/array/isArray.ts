@@ -37,6 +37,15 @@ isItAnArray({})        // → false
       'It correctly returns `false` for `null`, `undefined`, objects, and strings.',
     ],
     tags: ['Array', 'Array.isArray', 'beginner'],
+    usageExample: {
+      code: `Array.isArray([1, 2, 3])   // → true
+Array.isArray('hello')     // → false
+Array.isArray({length: 3}) // → false`,
+      explanation: {
+        en: 'Use Array.isArray() to reliably check whether a value is an array.',
+        es: 'Usa Array.isArray() para comprobar de forma confiable si un valor es un array.',
+      },
+    },
   },
   {
     slug: 'array-is-array-vs-typeof',
@@ -74,6 +83,14 @@ isRealArray(null)         // → false (typeof null === 'object' — gotcha!)
       '`typeof []` also returns `"object"`, making `typeof` useless for this check.',
     ],
     tags: ['Array', 'Array.isArray', 'typeof', 'beginner'],
+    usageExample: {
+      code: `typeof []          // → 'object'  (misleading)
+Array.isArray([])  // → true      (accurate)`,
+      explanation: {
+        en: "Prefer Array.isArray() over typeof for array detection — typeof returns 'object' for arrays.",
+        es: "Prefiere Array.isArray() sobre typeof para detectar arrays; typeof devuelve 'object' para arrays.",
+      },
+    },
   },
   {
     slug: 'array-is-array-filter',
@@ -110,6 +127,14 @@ keepOnlyArrays([1, 2, 3])                    // → []
       'The return type is `unknown[][]` because the kept elements are themselves arrays.',
     ],
     tags: ['Array', 'Array.isArray', 'filter', 'intermediate'],
+    usageExample: {
+      code: `const mixed = [1, 'a', [2, 3], {b: 4}, [5]]
+mixed.filter(Array.isArray)  // → [[2, 3], [5]]`,
+      explanation: {
+        en: 'Pass Array.isArray as a filter callback to extract only the array elements from a mixed collection.',
+        es: 'Pasa Array.isArray como callback de filter para extraer solo los elementos array de una colección mixta.',
+      },
+    },
   },
   {
     slug: 'array-is-array-nested',
@@ -147,6 +172,14 @@ isArrayOfArrays([])               // → true  (vacuously true)
       '`.every()` short-circuits on the first failing element.',
     ],
     tags: ['Array', 'Array.isArray', 'every', 'nested', 'intermediate'],
+    usageExample: {
+      code: `const matrix = [[1, 2], [3, 4]]
+matrix.every(Array.isArray)  // → true  (all rows are arrays)`,
+      explanation: {
+        en: 'Use Array.isArray with every() to confirm all elements of an array are themselves arrays.',
+        es: 'Usa Array.isArray con every() para confirmar que todos los elementos de un array son también arrays.',
+      },
+    },
   },
   {
     slug: 'array-is-array-array-like',
@@ -195,5 +228,13 @@ getType('hello')      // → 'other'
       'For "array-like": the value must be an object (not null) with a numeric `length` property.',
     ],
     tags: ['Array', 'Array.isArray', 'array-like', 'advanced'],
+    usageExample: {
+      code: `Array.isArray(Array.from('abc'))  // → true  (converted to real array)
+Array.isArray({0:'a', length:1})  // → false (array-like, not array)`,
+      explanation: {
+        en: 'Use Array.isArray() to distinguish real arrays from array-like objects such as NodeList or arguments.',
+        es: 'Usa Array.isArray() para distinguir arrays reales de objetos tipo array como NodeList o arguments.',
+      },
+    },
   },
 ]

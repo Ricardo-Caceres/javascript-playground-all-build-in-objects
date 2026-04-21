@@ -43,6 +43,16 @@ export const hasOwnPropertyExercises: Exercise[] = [
     ],
     hints: ['hasOwnProperty does not traverse the prototype chain'],
     tags: ['Object', 'hasOwnProperty', 'instance-method', 'own'],
+    usageExample: {
+      code: `// Check for own (non-inherited) property
+const obj = { a: 1 }
+obj.hasOwnProperty('a')          // → true
+obj.hasOwnProperty('toString')   // → false`,
+      explanation: {
+        en: 'Use hasOwnProperty() to check whether a property exists directly on an object rather than on its prototype chain.',
+        es: 'Usa hasOwnProperty() para verificar si una propiedad existe directamente en el objeto y no en su cadena de prototipos.',
+      },
+    },
   },
   {
     slug: 'object-hasOwnProperty-2',
@@ -86,6 +96,16 @@ The key difference between \`hasOwnProperty()\` and the \`in\` operator is that 
     ],
     hints: ['hasOwnProperty checks only own props; in checks the full prototype chain'],
     tags: ['Object', 'hasOwnProperty', 'instance-method', 'prototype', 'in'],
+    usageExample: {
+      code: `// Check for own (non-inherited) property
+const obj = { a: 1 }
+obj.hasOwnProperty('a')          // → true
+obj.hasOwnProperty('toString')   // → false`,
+      explanation: {
+        en: 'Use hasOwnProperty() to check whether a property exists directly on an object rather than on its prototype chain.',
+        es: 'Usa hasOwnProperty() para verificar si una propiedad existe directamente en el objeto y no en su cadena de prototipos.',
+      },
+    },
   },
   {
     slug: 'object-hasOwnProperty-3',
@@ -129,6 +149,16 @@ Standard methods like \`toString\`, \`valueOf\`, and \`hasOwnProperty\` itself c
     ],
     hints: ['Object.prototype methods are inherited by all plain objects'],
     tags: ['Object', 'hasOwnProperty', 'instance-method', 'Object.prototype'],
+    usageExample: {
+      code: `// Check for own (non-inherited) property
+const obj = { a: 1 }
+obj.hasOwnProperty('a')          // → true
+obj.hasOwnProperty('toString')   // → false`,
+      explanation: {
+        en: 'Use hasOwnProperty() to check whether a property exists directly on an object rather than on its prototype chain.',
+        es: 'Usa hasOwnProperty() para verificar si una propiedad existe directamente en el objeto y no en su cadena de prototipos.',
+      },
+    },
   },
   {
     slug: 'object-hasOwnProperty-4',
@@ -173,6 +203,16 @@ Once a property is deleted with the \`delete\` operator, \`hasOwnProperty()\` re
     ],
     hints: ['delete removes the property from the object entirely'],
     tags: ['Object', 'hasOwnProperty', 'instance-method', 'delete'],
+    usageExample: {
+      code: `// Check for own (non-inherited) property
+const obj = { a: 1 }
+obj.hasOwnProperty('a')          // → true
+obj.hasOwnProperty('toString')   // → false`,
+      explanation: {
+        en: 'Use hasOwnProperty() to check whether a property exists directly on an object rather than on its prototype chain.',
+        es: 'Usa hasOwnProperty() para verificar si una propiedad existe directamente en el objeto y no en su cadena de prototipos.',
+      },
+    },
   },
   {
     slug: 'object-hasOwnProperty-5',
@@ -216,5 +256,15 @@ Objects with a \`null\` prototype (e.g., from \`Object.create(null)\`) don't hav
     ],
     hints: ['Use Object.hasOwn() (ES2022+) or Object.prototype.hasOwnProperty.call() for safety'],
     tags: ['Object', 'hasOwnProperty', 'instance-method', 'null-prototype', 'safe'],
+    usageExample: {
+      code: `// Check for own (non-inherited) property
+const obj = { a: 1 }
+obj.hasOwnProperty('a')          // → true
+obj.hasOwnProperty('toString')   // → false`,
+      explanation: {
+        en: 'Use hasOwnProperty() to check whether a property exists directly on an object rather than on its prototype chain.',
+        es: 'Usa hasOwnProperty() para verificar si una propiedad existe directamente en el objeto y no en su cadena de prototipos.',
+      },
+    },
   },
 ]

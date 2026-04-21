@@ -20,6 +20,15 @@ export const mathTruncExercises: Exercise[] = [
     ],
     hints: ['Math.trunc removes the fractional part — it truncates toward zero'],
     tags: ['Math', 'trunc', 'static-method'],
+    usageExample: {
+      code: `// Remove fractional part (truncates towards zero)
+Math.trunc(4.9)    // → 4
+Math.trunc(-4.9)   // → -4`,
+      explanation: {
+        en: 'Use Math.trunc() to drop the decimal part of a number, always truncating towards zero unlike Math.floor().',
+        es: 'Usa Math.trunc() para eliminar la parte decimal de un número, truncando siempre hacia cero a diferencia de Math.floor().',
+      },
+    },
   },
   {
     slug: 'math-trunc-2',
@@ -40,6 +49,15 @@ export const mathTruncExercises: Exercise[] = [
     ],
     hints: ['Math.trunc truncates toward zero: -4.9 → -4, not -5. Compare with Math.floor(-4.9) = -5'],
     tags: ['Math', 'trunc', 'static-method'],
+    usageExample: {
+      code: `// Remove fractional part (truncates towards zero)
+Math.trunc(4.9)    // → 4
+Math.trunc(-4.9)   // → -4`,
+      explanation: {
+        en: 'Use Math.trunc() to drop the decimal part of a number, always truncating towards zero unlike Math.floor().',
+        es: 'Usa Math.trunc() para eliminar la parte decimal de un número, truncando siempre hacia cero a diferencia de Math.floor().',
+      },
+    },
   },
   {
     slug: 'math-trunc-3',
@@ -60,6 +78,15 @@ export const mathTruncExercises: Exercise[] = [
     ],
     hints: ['The integer part of 0.1 is 0 — the fractional part .1 is discarded'],
     tags: ['Math', 'trunc', 'static-method'],
+    usageExample: {
+      code: `// Remove fractional part (truncates towards zero)
+Math.trunc(4.9)    // → 4
+Math.trunc(-4.9)   // → -4`,
+      explanation: {
+        en: 'Use Math.trunc() to drop the decimal part of a number, always truncating towards zero unlike Math.floor().',
+        es: 'Usa Math.trunc() para eliminar la parte decimal de un número, truncando siempre hacia cero a diferencia de Math.floor().',
+      },
+    },
   },
   {
     slug: 'math-trunc-4',
@@ -80,6 +107,15 @@ export const mathTruncExercises: Exercise[] = [
     ],
     hints: ['Truncating a negative fraction toward zero yields -0 in JavaScript'],
     tags: ['Math', 'trunc', 'static-method'],
+    usageExample: {
+      code: `// Remove fractional part (truncates towards zero)
+Math.trunc(4.9)    // → 4
+Math.trunc(-4.9)   // → -4`,
+      explanation: {
+        en: 'Use Math.trunc() to drop the decimal part of a number, always truncating towards zero unlike Math.floor().',
+        es: 'Usa Math.trunc() para eliminar la parte decimal de un número, truncando siempre hacia cero a diferencia de Math.floor().',
+      },
+    },
   },
   {
     slug: 'math-trunc-5',
@@ -100,5 +136,14 @@ export const mathTruncExercises: Exercise[] = [
     ],
     hints: ['NaN has no integer part; Math.trunc propagates NaN'],
     tags: ['Math', 'trunc', 'static-method'],
+    usageExample: {
+      code: `// Remove fractional part (truncates towards zero)
+Math.trunc(4.9)    // → 4
+Math.trunc(-4.9)   // → -4`,
+      explanation: {
+        en: 'Use Math.trunc() to drop the decimal part of a number, always truncating towards zero unlike Math.floor().',
+        es: 'Usa Math.trunc() para eliminar la parte decimal de un número, truncando siempre hacia cero a diferencia de Math.floor().',
+      },
+    },
   },
 ]

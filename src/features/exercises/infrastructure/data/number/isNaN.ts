@@ -26,6 +26,16 @@ export const numberIsNaNExercises: Exercise[] = [
     ],
     hints: ['`Number.isNaN` is the reliable way to check for `NaN` without coercion.'],
     tags: ['Number', 'isNaN', 'static-method', 'beginner'],
+    usageExample: {
+      code: `// Check for NaN without coercion
+Number.isNaN(NaN)    // → true
+Number.isNaN('NaN')  // → false (no coercion)
+Number.isNaN(42)     // → false`,
+      explanation: {
+        en: 'Use Number.isNaN() instead of the global isNaN() to check for NaN without coercing the argument first.',
+        es: 'Usa Number.isNaN() en lugar del global isNaN() para comprobar NaN sin coercionar el argumento previamente.',
+      },
+    },
   },
   {
     slug: 'number-is-nan-2',
@@ -48,6 +58,16 @@ Any real number returns \`false\`.`,
     ],
     hints: ['Only the special `NaN` value returns `true` from `Number.isNaN`.'],
     tags: ['Number', 'isNaN', 'static-method', 'beginner'],
+    usageExample: {
+      code: `// Check for NaN without coercion
+Number.isNaN(NaN)    // → true
+Number.isNaN('NaN')  // → false (no coercion)
+Number.isNaN(42)     // → false`,
+      explanation: {
+        en: 'Use Number.isNaN() instead of the global isNaN() to check for NaN without coercing the argument first.',
+        es: 'Usa Number.isNaN() en lugar del global isNaN() para comprobar NaN sin coercionar el argumento previamente.',
+      },
+    },
   },
   {
     slug: 'number-is-nan-3',
@@ -73,6 +93,16 @@ const global = isNaN('1')`,
     ],
     hints: ['`Number.isNaN` never coerces — it only returns `true` for the actual `NaN` value.'],
     tags: ['Number', 'isNaN', 'coercion', 'intermediate'],
+    usageExample: {
+      code: `// Check for NaN without coercion
+Number.isNaN(NaN)    // → true
+Number.isNaN('NaN')  // → false (no coercion)
+Number.isNaN(42)     // → false`,
+      explanation: {
+        en: 'Use Number.isNaN() instead of the global isNaN() to check for NaN without coercing the argument first.',
+        es: 'Usa Number.isNaN() en lugar del global isNaN() para comprobar NaN sin coercionar el argumento previamente.',
+      },
+    },
   },
   {
     slug: 'number-is-nan-4',
@@ -97,6 +127,16 @@ const global = isNaN(undefined)`,
     ],
     hints: ['`Number.isNaN` is strict — non-number types always return `false`.'],
     tags: ['Number', 'isNaN', 'undefined', 'intermediate'],
+    usageExample: {
+      code: `// Check for NaN without coercion
+Number.isNaN(NaN)    // → true
+Number.isNaN('NaN')  // → false (no coercion)
+Number.isNaN(42)     // → false`,
+      explanation: {
+        en: 'Use Number.isNaN() instead of the global isNaN() to check for NaN without coercing the argument first.',
+        es: 'Usa Number.isNaN() en lugar del global isNaN() para comprobar NaN sin coercionar el argumento previamente.',
+      },
+    },
   },
   {
     slug: 'number-is-nan-5',
@@ -122,5 +162,15 @@ const detected = Number.isNaN(NaN)`,
     ],
     hints: ['`NaN` is the only value in JavaScript not equal to itself.'],
     tags: ['Number', 'isNaN', 'equality', 'intermediate'],
+    usageExample: {
+      code: `// Check for NaN without coercion
+Number.isNaN(NaN)    // → true
+Number.isNaN('NaN')  // → false (no coercion)
+Number.isNaN(42)     // → false`,
+      explanation: {
+        en: 'Use Number.isNaN() instead of the global isNaN() to check for NaN without coercing the argument first.',
+        es: 'Usa Number.isNaN() en lugar del global isNaN() para comprobar NaN sin coercionar el argumento previamente.',
+      },
+    },
   },
 ]

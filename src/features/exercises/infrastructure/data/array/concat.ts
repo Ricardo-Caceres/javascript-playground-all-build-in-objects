@@ -36,6 +36,15 @@ joinArrays([], [1])        // → [1]
       'You can also pass multiple arguments: `a.concat(b, c)` to concat more than two arrays.',
     ],
     tags: ['Array', 'Array.prototype.concat', 'beginner'],
+    usageExample: {
+      code: `const a = [1, 2]
+const b = [3, 4]
+a.concat(b)  // → [1, 2, 3, 4]`,
+      explanation: {
+        en: 'Use concat() to merge two arrays into a new one without mutating either original.',
+        es: 'Usa concat() para fusionar dos arrays en uno nuevo sin mutar ninguno de los originales.',
+      },
+    },
   },
   {
     slug: 'array-concat-multiple',
@@ -72,6 +81,16 @@ joinAll([[1], [], [2]])        // → [1, 2]
       'Alternatively, `arrays.reduce((acc, arr) => acc.concat(arr), [])` works too.',
     ],
     tags: ['Array', 'Array.prototype.concat', 'spread', 'beginner'],
+    usageExample: {
+      code: `const a = [1]
+const b = [2, 3]
+const c = [4, 5]
+a.concat(b, c)  // → [1, 2, 3, 4, 5]`,
+      explanation: {
+        en: 'Pass multiple arrays to concat() to join them all in a single call.',
+        es: 'Pasa múltiples arrays a concat() para unirlos todos en una sola llamada.',
+      },
+    },
   },
   {
     slug: 'array-concat-value',
@@ -108,6 +127,15 @@ appendValue([], 'hello')  // → ['hello']
       'When `val` is an array, concat spreads it. Use `arr.concat([val])` to force it to be treated as a single item.',
     ],
     tags: ['Array', 'Array.prototype.concat', 'append', 'beginner'],
+    usageExample: {
+      code: `const arr = [1, 2, 3]
+arr.concat(4)     // → [1, 2, 3, 4]
+arr.concat(4, 5)  // → [1, 2, 3, 4, 5]`,
+      explanation: {
+        en: 'Use concat() to append individual values to an array, returning a new array.',
+        es: 'Usa concat() para agregar valores individuales a un array, devolviendo uno nuevo.',
+      },
+    },
   },
   {
     slug: 'array-concat-immutable',
@@ -145,6 +173,16 @@ safeConcat(original, [4, 5]) // → [1, 2, 3, 4, 5]
       'This is one reason `concat` is preferred over `push` in immutable patterns like Redux reducers.',
     ],
     tags: ['Array', 'Array.prototype.concat', 'immutability', 'intermediate'],
+    usageExample: {
+      code: `const original = [1, 2, 3]
+const extended = original.concat([4, 5])
+// original → [1, 2, 3]  (unchanged)
+// extended → [1, 2, 3, 4, 5]`,
+      explanation: {
+        en: 'concat() never mutates the original array — it always returns a new one.',
+        es: 'concat() nunca muta el array original; siempre devuelve uno nuevo.',
+      },
+    },
   },
   {
     slug: 'array-concat-nested',
@@ -181,5 +219,14 @@ mergeThree([], ['x'], ['y']) // → ['x', 'y']
       'All arguments to `concat` are merged in order from left to right.',
     ],
     tags: ['Array', 'Array.prototype.concat', 'merge', 'intermediate'],
+    usageExample: {
+      code: `const a = [1, [2, 3]]
+const b = [[4], 5]
+a.concat(b)  // → [1, [2, 3], [4], 5]`,
+      explanation: {
+        en: 'concat() appends array elements at one level — nested arrays are NOT flattened.',
+        es: 'concat() agrega elementos de array a un nivel; los arrays anidados NO se aplanan.',
+      },
+    },
   },
 ]

@@ -36,6 +36,15 @@ firstIndexOf([1, 2, 3], 9)    // → -1
       '`indexOf` returns the first occurrence; use `lastIndexOf` for the last one.',
     ],
     tags: ['Array', 'Array.prototype.indexOf', 'index', 'beginner'],
+    usageExample: {
+      code: `const arr = [10, 20, 30, 40]
+arr.indexOf(30)  // → 2
+arr.indexOf(20)  // → 1`,
+      explanation: {
+        en: 'Use indexOf() to find the position of the first occurrence of a value in an array.',
+        es: 'Usa indexOf() para encontrar la posición de la primera ocurrencia de un valor en un array.',
+      },
+    },
   },
   {
     slug: 'array-indexof-not-found',
@@ -72,6 +81,14 @@ indexOf5([1, 2, 3])  // → -1
       'Never use the returned index directly without checking for `-1` first.',
     ],
     tags: ['Array', 'Array.prototype.indexOf', 'not-found', 'beginner'],
+    usageExample: {
+      code: `const arr = [1, 2, 3]
+arr.indexOf(99)  // → -1  (not found)`,
+      explanation: {
+        en: 'indexOf() returns -1 when the value is not present — always check for this sentinel.',
+        es: 'indexOf() devuelve -1 cuando el valor no está presente; siempre verifica este centinela.',
+      },
+    },
   },
   {
     slug: 'array-indexof-string',
@@ -108,6 +125,15 @@ findWord(['foo', 'bar'], 'qux')        // → -1
       'For case-insensitive search, you would need `findIndex` with a `.toLowerCase()` comparison.',
     ],
     tags: ['Array', 'Array.prototype.indexOf', 'string', 'beginner'],
+    usageExample: {
+      code: `const words = ['cat', 'dog', 'bird']
+words.indexOf('dog')   // → 1
+words.indexOf('fish')  // → -1`,
+      explanation: {
+        en: 'Use indexOf() to find the index of a specific string in an array.',
+        es: 'Usa indexOf() para encontrar el índice de una cadena específica en un array.',
+      },
+    },
   },
   {
     slug: 'array-indexof-from',
@@ -144,6 +170,15 @@ indexOfFrom([1, 2, 1, 2], 1, 1) // → 2
       'To find all occurrences, loop calling `indexOf(val, lastIndex + 1)` until `-1` is returned.',
     ],
     tags: ['Array', 'Array.prototype.indexOf', 'fromIndex', 'intermediate'],
+    usageExample: {
+      code: `const arr = [1, 2, 3, 1, 2]
+arr.indexOf(1)     // → 0
+arr.indexOf(1, 1)  // → 3  (starts at index 1)`,
+      explanation: {
+        en: 'Pass a fromIndex to indexOf() to skip past the first occurrence and find later ones.',
+        es: 'Pasa un fromIndex a indexOf() para saltar la primera ocurrencia y encontrar las posteriores.',
+      },
+    },
   },
   {
     slug: 'array-indexof-first-duplicate',
@@ -183,5 +218,14 @@ firstDuplicate([1, 2, 3])        // → -1
       'Iterate and return on the first such value found.',
     ],
     tags: ['Array', 'Array.prototype.indexOf', 'duplicate', 'intermediate'],
+    usageExample: {
+      code: `const arr = [3, 1, 4, 1, 5]
+const first = arr.indexOf(1)   // → 1
+const second = arr.indexOf(1, first + 1)  // → 3`,
+      explanation: {
+        en: 'Chain indexOf() calls with a fromIndex to locate successive duplicate values.',
+        es: 'Encadena llamadas a indexOf() con un fromIndex para localizar valores duplicados sucesivos.',
+      },
+    },
   },
 ]

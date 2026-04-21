@@ -23,6 +23,15 @@ export const mathPiExercises: Exercise[] = [
       'Its value is approximately 3.141592653589793.',
     ],
     tags: ['Math', 'PI', 'static-property', 'beginner'],
+    usageExample: {
+      code: `// Pi — ratio of circumference to diameter
+Math.PI       // → 3.1415926535...
+2 * Math.PI   // → 6.2831... (full circle in radians)`,
+      explanation: {
+        en: 'Use Math.PI when calculating circle circumferences, areas, or converting between degrees and radians.',
+        es: 'Usa Math.PI al calcular circunferencias, áreas de círculos o convertir entre grados y radianes.',
+      },
+    },
   },
   {
     slug: 'math-pi-2',
@@ -46,6 +55,15 @@ export const mathPiExercises: Exercise[] = [
       '2 * Math.PI ≈ 6.283185307179586',
     ],
     tags: ['Math', 'PI', 'geometry', 'static-property', 'beginner'],
+    usageExample: {
+      code: `// Pi — ratio of circumference to diameter
+Math.PI       // → 3.1415926535...
+2 * Math.PI   // → 6.2831... (full circle in radians)`,
+      explanation: {
+        en: 'Use Math.PI when calculating circle circumferences, areas, or converting between degrees and radians.',
+        es: 'Usa Math.PI al calcular circunferencias, áreas de círculos o convertir entre grados y radianes.',
+      },
+    },
   },
   {
     slug: 'math-pi-3',
@@ -69,6 +87,15 @@ export const mathPiExercises: Exercise[] = [
       'Math.PI * r * r is equivalent to Math.PI * Math.pow(r, 2).',
     ],
     tags: ['Math', 'PI', 'geometry', 'static-property', 'beginner'],
+    usageExample: {
+      code: `// Pi — ratio of circumference to diameter
+Math.PI       // → 3.1415926535...
+2 * Math.PI   // → 6.2831... (full circle in radians)`,
+      explanation: {
+        en: 'Use Math.PI when calculating circle circumferences, areas, or converting between degrees and radians.',
+        es: 'Usa Math.PI al calcular circunferencias, áreas de círculos o convertir entre grados y radianes.',
+      },
+    },
   },
   {
     slug: 'math-pi-4',
@@ -92,6 +119,15 @@ export const mathPiExercises: Exercise[] = [
       '180 degrees = π radians, so 360 degrees = 2π radians.',
     ],
     tags: ['Math', 'PI', 'trigonometry', 'static-property', 'intermediate'],
+    usageExample: {
+      code: `// Pi — ratio of circumference to diameter
+Math.PI       // → 3.1415926535...
+2 * Math.PI   // → 6.2831... (full circle in radians)`,
+      explanation: {
+        en: 'Use Math.PI when calculating circle circumferences, areas, or converting between degrees and radians.',
+        es: 'Usa Math.PI al calcular circunferencias, áreas de círculos o convertir entre grados y radianes.',
+      },
+    },
   },
   {
     slug: 'math-pi-5',
@@ -115,5 +151,14 @@ export const mathPiExercises: Exercise[] = [
       'This is the closest double-precision float to π.',
     ],
     tags: ['Math', 'PI', 'static-property', 'advanced'],
+    usageExample: {
+      code: `// Pi — ratio of circumference to diameter
+Math.PI       // → 3.1415926535...
+2 * Math.PI   // → 6.2831... (full circle in radians)`,
+      explanation: {
+        en: 'Use Math.PI when calculating circle circumferences, areas, or converting between degrees and radians.',
+        es: 'Usa Math.PI al calcular circunferencias, áreas de círculos o convertir entre grados y radianes.',
+      },
+    },
   },
 ]

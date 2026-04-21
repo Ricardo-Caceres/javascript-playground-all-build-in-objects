@@ -1,5 +1,6 @@
 import { allExercises } from '../data'
-import type { Exercise } from '@/shared/types/exercises'
+import { topicMetaMap } from '../data/topicMeta'
+import type { Exercise, TopicMeta } from '@/shared/types/exercises'
 
 export function getExerciseBySlug(slug: string): Exercise | undefined {
   return allExercises.find((e) => e.slug === slug)
@@ -13,4 +14,8 @@ export function getAllExercisesByObject(objectName: string): Exercise[] {
 
 export function getAvailableObjects(): string[] {
   return [...new Set(allExercises.map((e) => e.builtIn))]
+}
+
+export function getTopicMeta(objectName: string): TopicMeta | undefined {
+  return topicMetaMap[objectName.toLowerCase()]
 }

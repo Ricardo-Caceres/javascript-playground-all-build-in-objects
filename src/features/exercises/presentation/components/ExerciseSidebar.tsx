@@ -2,9 +2,10 @@
 
 import { Link } from '@/i18n/navigation'
 import { useRef, useEffect } from 'react'
+import { useLocale } from 'next-intl'
 import { useSelector } from 'react-redux'
 import type { RootState } from '@/shared/lib/store'
-import { getAllExercisesByObject } from '@/features/exercises/infrastructure/repositories/exerciseRepository'
+import { getAllExercisesByObject, getTopicMeta } from '@/features/exercises/infrastructure/repositories/exerciseRepository'
 
 interface Props {
   objectName: string
@@ -14,6 +15,8 @@ interface Props {
 export default function ExerciseSidebar({ objectName, currentSlug }: Props) {
   const progressMap = useSelector((state: RootState) => state.progress.exercises)
   const exercises = getAllExercisesByObject(objectName)
+  const meta = getTopicMeta(objectName)
+  const locale = useLocale() as 'en' | 'es'
   const activeRef = useRef<HTMLAnchorElement>(null)
   const isMounted = useRef(false)
 
@@ -49,6 +52,17 @@ export default function ExerciseSidebar({ objectName, currentSlug }: Props) {
           />
         </div>
       </div>
+      {/* Topic description */}
+      {meta && (
+        <details className="border-b border-zinc-800 px-4 py-2 text-xs">
+          <summary className="cursor-pointer select-none font-semibold text-zinc-400 hover:text-zinc-200">
+            What is {objectName}?
+          </summary>
+          <p className="mt-2 leading-relaxed text-zinc-500">
+            {meta.description[locale] ?? meta.description.en}
+          </p>
+        </details>
+      )}
       {/* List */}
       <nav aria-label="Exercise list" className="flex-1 overflow-y-auto py-2">
         {exercises.map((ex) => {

@@ -30,6 +30,15 @@ export const toPrecisionExercises: Exercise[] = [
     ],
     hints: ['`toPrecision` counts significant digits, not just decimal places.'],
     tags: ['Number', 'toPrecision', 'instance-method', 'intermediate'],
+    usageExample: {
+      code: `// Format number to a specified precision
+(123.456).toPrecision(5)    // → '123.46'
+(0.000123).toPrecision(2)   // → '0.00012'`,
+      explanation: {
+        en: 'Use toPrecision() to format a number to a total number of significant digits, which is useful in scientific or measurement contexts.',
+        es: 'Usa toPrecision() para formatear un número con un total de dígitos significativos, útil en contextos científicos o de medición.',
+      },
+    },
   },
   {
     slug: 'number-to-precision-2',
@@ -52,6 +61,15 @@ export const toPrecisionExercises: Exercise[] = [
     ],
     hints: ['For small numbers, `toPrecision` counts from the first significant digit.'],
     tags: ['Number', 'toPrecision', 'small-number', 'intermediate'],
+    usageExample: {
+      code: `// Format number to a specified precision
+(123.456).toPrecision(5)    // → '123.46'
+(0.000123).toPrecision(2)   // → '0.00012'`,
+      explanation: {
+        en: 'Use toPrecision() to format a number to a total number of significant digits, which is useful in scientific or measurement contexts.',
+        es: 'Usa toPrecision() para formatear un número con un total de dígitos significativos, útil en contextos científicos o de medición.',
+      },
+    },
   },
   {
     slug: 'number-to-precision-3',
@@ -78,6 +96,15 @@ For large numbers with fewer significant digits than the number requires, expone
     ],
     hints: ['When the precision is less than the number of digits, exponential notation is used.'],
     tags: ['Number', 'toPrecision', 'exponential', 'intermediate'],
+    usageExample: {
+      code: `// Format number to a specified precision
+(123.456).toPrecision(5)    // → '123.46'
+(0.000123).toPrecision(2)   // → '0.00012'`,
+      explanation: {
+        en: 'Use toPrecision() to format a number to a total number of significant digits, which is useful in scientific or measurement contexts.',
+        es: 'Usa toPrecision() para formatear un número con un total de dígitos significativos, útil en contextos científicos o de medición.',
+      },
+    },
   },
   {
     slug: 'number-to-precision-4',
@@ -100,6 +127,15 @@ Calling \`toPrecision()\` with no argument returns the same as \`.toString()\`.`
     ],
     hints: ['Without an argument, `toPrecision()` uses the full precision of the number.'],
     tags: ['Number', 'toPrecision', 'toString', 'beginner'],
+    usageExample: {
+      code: `// Format number to a specified precision
+(123.456).toPrecision(5)    // → '123.46'
+(0.000123).toPrecision(2)   // → '0.00012'`,
+      explanation: {
+        en: 'Use toPrecision() to format a number to a total number of significant digits, which is useful in scientific or measurement contexts.',
+        es: 'Usa toPrecision() para formatear un número con un total de dígitos significativos, útil en contextos científicos o de medición.',
+      },
+    },
   },
   {
     slug: 'number-to-precision-5',
@@ -122,5 +158,14 @@ const t = typeof result`,
     ],
     hints: ['`toPrecision` returns a string — parse it with `parseFloat` if you need arithmetic.'],
     tags: ['Number', 'toPrecision', 'return-type', 'beginner'],
+    usageExample: {
+      code: `// Format number to a specified precision
+(123.456).toPrecision(5)    // → '123.46'
+(0.000123).toPrecision(2)   // → '0.00012'`,
+      explanation: {
+        en: 'Use toPrecision() to format a number to a total number of significant digits, which is useful in scientific or measurement contexts.',
+        es: 'Usa toPrecision() para formatear un número con un total de dígitos significativos, útil en contextos científicos o de medición.',
+      },
+    },
   },
 ]

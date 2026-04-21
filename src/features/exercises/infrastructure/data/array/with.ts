@@ -23,6 +23,15 @@ export const withExercises: Exercise[] = [
       'It returns a new array — the original is not modified.',
     ],
     tags: ['array', 'with', 'immutable', 'es2023'],
+    usageExample: {
+      code: `const arr = [1, 2, 3, 4]
+arr.with(1, 99)  // → [1, 99, 3, 4]
+arr              // → [1, 2, 3, 4]  (unchanged)`,
+      explanation: {
+        en: 'Use with(index, value) to return a new array with one element replaced, leaving the original intact.',
+        es: 'Usa with(índice, valor) para devolver un nuevo array con un elemento reemplazado, dejando el original intacto.',
+      },
+    },
   },
   {
     slug: 'array-with-negative',
@@ -46,6 +55,15 @@ export const withExercises: Exercise[] = [
       '`-1` is the last element, `-2` is second-to-last, etc.',
     ],
     tags: ['array', 'with', 'negative-index', 'es2023'],
+    usageExample: {
+      code: `const arr = ['a', 'b', 'c']
+arr.with(-1, 'z')  // → ['a', 'b', 'z']
+arr                // → ['a', 'b', 'c']  (unchanged)`,
+      explanation: {
+        en: 'Pass a negative index to with() to replace an element counting from the end.',
+        es: 'Pasa un índice negativo a with() para reemplazar un elemento contando desde el final.',
+      },
+    },
   },
   {
     slug: 'array-with-no-mutation',
@@ -69,6 +87,16 @@ export const withExercises: Exercise[] = [
       'The return value of `arr.with(0, 99)` is a new array, not `arr`.',
     ],
     tags: ['array', 'with', 'immutable', 'es2023'],
+    usageExample: {
+      code: `const original = [1, 2, 3]
+const updated = original.with(0, 99)
+original  // → [1, 2, 3]  (unchanged)
+updated   // → [99, 2, 3]`,
+      explanation: {
+        en: 'with() never mutates the source array — it always returns a new array with the change applied.',
+        es: 'with() nunca muta el array fuente; siempre devuelve un nuevo array con el cambio aplicado.',
+      },
+    },
   },
   {
     slug: 'array-with-returns-new',
@@ -92,6 +120,15 @@ export const withExercises: Exercise[] = [
       'Use `!==` to compare object references.',
     ],
     tags: ['array', 'with', 'reference', 'immutable', 'es2023'],
+    usageExample: {
+      code: `const arr = [10, 20, 30]
+const result = arr.with(1, 200)
+result !== arr  // → true  (different reference)`,
+      explanation: {
+        en: 'with() returns a brand new array — the result and the source are distinct objects.',
+        es: 'with() devuelve un array completamente nuevo; el resultado y la fuente son objetos distintos.',
+      },
+    },
   },
   {
     slug: 'array-with-chain',
@@ -116,5 +153,13 @@ export const withExercises: Exercise[] = [
       'Because `.with()` is non-mutating, each step in the reduce produces a fresh array.',
     ],
     tags: ['array', 'with', 'reduce', 'chaining', 'immutable', 'es2023'],
+    usageExample: {
+      code: `const arr = [1, 2, 3]
+arr.with(0, 10).with(2, 30)  // → [10, 2, 30]`,
+      explanation: {
+        en: 'Chain with() calls to replace multiple elements in immutable pipeline style.',
+        es: 'Encadena llamadas a with() para reemplazar múltiples elementos en estilo de pipeline inmutable.',
+      },
+    },
   },
 ]

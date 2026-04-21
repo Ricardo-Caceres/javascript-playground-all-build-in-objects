@@ -36,6 +36,16 @@ getDescriptor({ x: 1 }, 'x')
       'Returns `undefined` if the key does not exist as an own property.',
     ],
     tags: ['Object', 'Object.getOwnPropertyDescriptor', 'descriptor', 'beginner'],
+    usageExample: {
+      code: `// Inspect a single property's descriptor
+const obj = { x: 42 }
+Object.getOwnPropertyDescriptor(obj, 'x')
+// → { value: 42, writable: true, enumerable: true, configurable: true }`,
+      explanation: {
+        en: "Use Object.getOwnPropertyDescriptor() to retrieve the descriptor object that describes a property's attributes.",
+        es: "Usa Object.getOwnPropertyDescriptor() para obtener el descriptor que describe los atributos de una propiedad.",
+      },
+    },
   },
   {
     slug: 'object-get-own-prop-descriptor-missing',
@@ -72,6 +82,16 @@ hasDescriptor({ a: 1 }, 'b')    // → false
       'Check `!== undefined` or use optional chaining.',
     ],
     tags: ['Object', 'Object.getOwnPropertyDescriptor', 'beginner'],
+    usageExample: {
+      code: `// Inspect a single property's descriptor
+const obj = { x: 42 }
+Object.getOwnPropertyDescriptor(obj, 'x')
+// → { value: 42, writable: true, enumerable: true, configurable: true }`,
+      explanation: {
+        en: "Use Object.getOwnPropertyDescriptor() to retrieve the descriptor object that describes a property's attributes.",
+        es: "Usa Object.getOwnPropertyDescriptor() para obtener el descriptor que describe los atributos de una propiedad.",
+      },
+    },
   },
   {
     slug: 'object-get-own-prop-descriptor-getter',
@@ -111,6 +131,16 @@ isGetter(o, 'y') // → false
       'Use `typeof desc?.get === "function"` to check.',
     ],
     tags: ['Object', 'Object.getOwnPropertyDescriptor', 'getter', 'intermediate'],
+    usageExample: {
+      code: `// Inspect a single property's descriptor
+const obj = { x: 42 }
+Object.getOwnPropertyDescriptor(obj, 'x')
+// → { value: 42, writable: true, enumerable: true, configurable: true }`,
+      explanation: {
+        en: "Use Object.getOwnPropertyDescriptor() to retrieve the descriptor object that describes a property's attributes.",
+        es: "Usa Object.getOwnPropertyDescriptor() para obtener el descriptor que describe los atributos de una propiedad.",
+      },
+    },
   },
   {
     slug: 'object-get-own-prop-descriptor-inherited',
@@ -148,6 +178,16 @@ inheritedIsUndefined() // → true
       '`getOwnPropertyDescriptor` strictly checks own properties — the prototype chain is ignored.',
     ],
     tags: ['Object', 'Object.getOwnPropertyDescriptor', 'prototype', 'intermediate'],
+    usageExample: {
+      code: `// Inspect a single property's descriptor
+const obj = { x: 42 }
+Object.getOwnPropertyDescriptor(obj, 'x')
+// → { value: 42, writable: true, enumerable: true, configurable: true }`,
+      explanation: {
+        en: "Use Object.getOwnPropertyDescriptor() to retrieve the descriptor object that describes a property's attributes.",
+        es: "Usa Object.getOwnPropertyDescriptor() para obtener el descriptor que describe los atributos de una propiedad.",
+      },
+    },
   },
   {
     slug: 'object-get-own-prop-descriptor-flags',
@@ -183,5 +223,15 @@ isEnumerable({ a: 1 }, 'a')  // → true (normal property)
       'If the property does not exist, `undefined === true` is `false`.',
     ],
     tags: ['Object', 'Object.getOwnPropertyDescriptor', 'enumerable', 'beginner'],
+    usageExample: {
+      code: `// Inspect a single property's descriptor
+const obj = { x: 42 }
+Object.getOwnPropertyDescriptor(obj, 'x')
+// → { value: 42, writable: true, enumerable: true, configurable: true }`,
+      explanation: {
+        en: "Use Object.getOwnPropertyDescriptor() to retrieve the descriptor object that describes a property's attributes.",
+        es: "Usa Object.getOwnPropertyDescriptor() para obtener el descriptor que describe los atributos de una propiedad.",
+      },
+    },
   },
 ]

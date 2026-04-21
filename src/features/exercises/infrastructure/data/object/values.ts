@@ -43,6 +43,15 @@ export const objectValuesExercises: Exercise[] = [
     ],
     hints: ['Object.values is the counterpart to Object.keys'],
     tags: ['Object', 'values', 'static-method', 'enumerable'],
+    usageExample: {
+      code: `// Get array of own enumerable property values
+const obj = { a: 1, b: 2, c: 3 }
+Object.values(obj)   // → [1, 2, 3]`,
+      explanation: {
+        en: "Use Object.values() to get an array of an object's own enumerable property values for easy iteration.",
+        es: "Usa Object.values() para obtener un array con los valores de las propiedades enumerables propias de un objeto y iterarlos fácilmente.",
+      },
+    },
   },
   {
     slug: 'object-values-2',
@@ -86,6 +95,15 @@ export const objectValuesExercises: Exercise[] = [
     ],
     hints: ['Object.values preserves the same order as Object.keys'],
     tags: ['Object', 'values', 'static-method', 'order'],
+    usageExample: {
+      code: `// Get array of own enumerable property values
+const obj = { a: 1, b: 2, c: 3 }
+Object.values(obj)   // → [1, 2, 3]`,
+      explanation: {
+        en: "Use Object.values() to get an array of an object's own enumerable property values for easy iteration.",
+        es: "Usa Object.values() para obtener un array con los valores de las propiedades enumerables propias de un objeto y iterarlos fácilmente.",
+      },
+    },
   },
   {
     slug: 'object-values-3',
@@ -129,6 +147,15 @@ Like \`Object.keys()\`, \`Object.values()\` only returns values for own **enumer
     ],
     hints: ['Non-enumerable properties are invisible to Object.values'],
     tags: ['Object', 'values', 'static-method', 'enumerable'],
+    usageExample: {
+      code: `// Get array of own enumerable property values
+const obj = { a: 1, b: 2, c: 3 }
+Object.values(obj)   // → [1, 2, 3]`,
+      explanation: {
+        en: "Use Object.values() to get an array of an object's own enumerable property values for easy iteration.",
+        es: "Usa Object.values() para obtener un array con los valores de las propiedades enumerables propias de un objeto y iterarlos fácilmente.",
+      },
+    },
   },
   {
     slug: 'object-values-4',
@@ -172,6 +199,15 @@ Like \`Object.keys()\`, \`Object.values()\` only returns values for own **enumer
     ],
     hints: ['Own properties only — prototype chain is ignored'],
     tags: ['Object', 'values', 'static-method', 'prototype'],
+    usageExample: {
+      code: `// Get array of own enumerable property values
+const obj = { a: 1, b: 2, c: 3 }
+Object.values(obj)   // → [1, 2, 3]`,
+      explanation: {
+        en: "Use Object.values() to get an array of an object's own enumerable property values for easy iteration.",
+        es: "Usa Object.values() para obtener un array con los valores de las propiedades enumerables propias de un objeto y iterarlos fácilmente.",
+      },
+    },
   },
   {
     slug: 'object-values-5',
@@ -215,5 +251,14 @@ Like \`Object.keys()\`, \`Object.values()\` only returns values for own **enumer
     ],
     hints: ['Object.values([]).length is 0 means the object is empty'],
     tags: ['Object', 'values', 'static-method', 'empty'],
+    usageExample: {
+      code: `// Get array of own enumerable property values
+const obj = { a: 1, b: 2, c: 3 }
+Object.values(obj)   // → [1, 2, 3]`,
+      explanation: {
+        en: "Use Object.values() to get an array of an object's own enumerable property values for easy iteration.",
+        es: "Usa Object.values() para obtener un array con los valores de las propiedades enumerables propias de un objeto y iterarlos fácilmente.",
+      },
+    },
   },
 ]

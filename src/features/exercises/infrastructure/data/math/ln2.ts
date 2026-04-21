@@ -23,6 +23,15 @@ export const mathLn2Exercises: Exercise[] = [
       'Its value is approximately 0.6931471805599453.',
     ],
     tags: ['Math', 'LN2', 'static-property', 'beginner'],
+    usageExample: {
+      code: `// Natural logarithm of 2
+Math.LN2          // → 0.6931471805...
+Math.log(2) === Math.LN2   // → true`,
+      explanation: {
+        en: 'Use Math.LN2 as a precomputed constant when converting between natural and base-2 logarithms.',
+        es: 'Usa Math.LN2 como constante precalculada al convertir entre logaritmos naturales y en base 2.',
+      },
+    },
   },
   {
     slug: 'math-ln2-2',
@@ -46,6 +55,15 @@ export const mathLn2Exercises: Exercise[] = [
       'Math.LN2 is a cached constant equal to Math.log(2).',
     ],
     tags: ['Math', 'LN2', 'log', 'static-property', 'beginner'],
+    usageExample: {
+      code: `// Natural logarithm of 2
+Math.LN2          // → 0.6931471805...
+Math.log(2) === Math.LN2   // → true`,
+      explanation: {
+        en: 'Use Math.LN2 as a precomputed constant when converting between natural and base-2 logarithms.',
+        es: 'Usa Math.LN2 como constante precalculada al convertir entre logaritmos naturales y en base 2.',
+      },
+    },
   },
   {
     slug: 'math-ln2-3',
@@ -69,6 +87,15 @@ export const mathLn2Exercises: Exercise[] = [
       'Their product should be exactly 1.',
     ],
     tags: ['Math', 'LN2', 'LOG2E', 'static-property', 'intermediate'],
+    usageExample: {
+      code: `// Natural logarithm of 2
+Math.LN2          // → 0.6931471805...
+Math.log(2) === Math.LN2   // → true`,
+      explanation: {
+        en: 'Use Math.LN2 as a precomputed constant when converting between natural and base-2 logarithms.',
+        es: 'Usa Math.LN2 como constante precalculada al convertir entre logaritmos naturales y en base 2.',
+      },
+    },
   },
   {
     slug: 'math-ln2-4',
@@ -92,6 +119,15 @@ export const mathLn2Exercises: Exercise[] = [
       'This works for any positive n.',
     ],
     tags: ['Math', 'LN2', 'log', 'static-property', 'intermediate'],
+    usageExample: {
+      code: `// Natural logarithm of 2
+Math.LN2          // → 0.6931471805...
+Math.log(2) === Math.LN2   // → true`,
+      explanation: {
+        en: 'Use Math.LN2 as a precomputed constant when converting between natural and base-2 logarithms.',
+        es: 'Usa Math.LN2 como constante precalculada al convertir entre logaritmos naturales y en base 2.',
+      },
+    },
   },
   {
     slug: 'math-ln2-5',
@@ -115,5 +151,14 @@ export const mathLn2Exercises: Exercise[] = [
       'This is the closest double-precision float to ln(2).',
     ],
     tags: ['Math', 'LN2', 'static-property', 'advanced'],
+    usageExample: {
+      code: `// Natural logarithm of 2
+Math.LN2          // → 0.6931471805...
+Math.log(2) === Math.LN2   // → true`,
+      explanation: {
+        en: 'Use Math.LN2 as a precomputed constant when converting between natural and base-2 logarithms.',
+        es: 'Usa Math.LN2 como constante precalculada al convertir entre logaritmos naturales y en base 2.',
+      },
+    },
   },
 ]

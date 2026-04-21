@@ -39,6 +39,19 @@ o.x // → 42
       'Without `writable:true`, the property will be read-only.',
     ],
     tags: ['Object', 'Object.defineProperty', 'descriptor', 'beginner'],
+    usageExample: {
+      code: `// Define a property with a custom descriptor
+const obj = {}
+Object.defineProperty(obj, 'name', {
+  value: 'Alice',
+  writable: false,
+  enumerable: true,
+})`,
+      explanation: {
+        en: 'Use Object.defineProperty() to add or modify a property with precise control over its writability, enumerability, and configurability.',
+        es: 'Usa Object.defineProperty() para añadir o modificar una propiedad controlando su escritura, enumerabilidad y configurabilidad.',
+      },
+    },
   },
   {
     slug: 'object-define-property-non-writable',
@@ -77,6 +90,19 @@ o.x       // → 1
       'In sloppy mode, assigning to a non-writable property is silently ignored.',
     ],
     tags: ['Object', 'Object.defineProperty', 'writable', 'intermediate'],
+    usageExample: {
+      code: `// Define a property with a custom descriptor
+const obj = {}
+Object.defineProperty(obj, 'name', {
+  value: 'Alice',
+  writable: false,
+  enumerable: true,
+})`,
+      explanation: {
+        en: 'Use Object.defineProperty() to add or modify a property with precise control over its writability, enumerability, and configurability.',
+        es: 'Usa Object.defineProperty() para añadir o modificar una propiedad controlando su escritura, enumerabilidad y configurabilidad.',
+      },
+    },
   },
   {
     slug: 'object-define-property-non-enumerable',
@@ -115,6 +141,19 @@ Object.keys(o)    // → []  (not visible)
       '`Object.getOwnPropertyNames` still lists non-enumerable properties.',
     ],
     tags: ['Object', 'Object.defineProperty', 'enumerable', 'intermediate'],
+    usageExample: {
+      code: `// Define a property with a custom descriptor
+const obj = {}
+Object.defineProperty(obj, 'name', {
+  value: 'Alice',
+  writable: false,
+  enumerable: true,
+})`,
+      explanation: {
+        en: 'Use Object.defineProperty() to add or modify a property with precise control over its writability, enumerability, and configurability.',
+        es: 'Usa Object.defineProperty() para añadir o modificar una propiedad controlando su escritura, enumerabilidad y configurabilidad.',
+      },
+    },
   },
   {
     slug: 'object-define-property-getter',
@@ -152,6 +191,19 @@ o.double // → 10
       'The getter function receives `this` as the object the property is accessed on.',
     ],
     tags: ['Object', 'Object.defineProperty', 'getter', 'descriptor', 'advanced'],
+    usageExample: {
+      code: `// Define a property with a custom descriptor
+const obj = {}
+Object.defineProperty(obj, 'name', {
+  value: 'Alice',
+  writable: false,
+  enumerable: true,
+})`,
+      explanation: {
+        en: 'Use Object.defineProperty() to add or modify a property with precise control over its writability, enumerability, and configurability.',
+        es: 'Usa Object.defineProperty() para añadir o modificar una propiedad controlando su escritura, enumerabilidad y configurabilidad.',
+      },
+    },
   },
   {
     slug: 'object-define-property-configurable',
@@ -190,5 +242,18 @@ o.id          // → 1
       'In sloppy mode, attempting to delete or reassign silently fails.',
     ],
     tags: ['Object', 'Object.defineProperty', 'configurable', 'advanced'],
+    usageExample: {
+      code: `// Define a property with a custom descriptor
+const obj = {}
+Object.defineProperty(obj, 'name', {
+  value: 'Alice',
+  writable: false,
+  enumerable: true,
+})`,
+      explanation: {
+        en: 'Use Object.defineProperty() to add or modify a property with precise control over its writability, enumerability, and configurability.',
+        es: 'Usa Object.defineProperty() para añadir o modificar una propiedad controlando su escritura, enumerabilidad y configurabilidad.',
+      },
+    },
   },
 ]

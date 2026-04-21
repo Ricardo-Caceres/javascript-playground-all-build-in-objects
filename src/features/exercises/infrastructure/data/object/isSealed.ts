@@ -45,6 +45,17 @@ A plain object is **not** sealed by default.
     ],
     hints: ['Every frozen object is sealed, but not every sealed object is frozen'],
     tags: ['Object', 'isSealed', 'static-method', 'seal'],
+    usageExample: {
+      code: `// Check if an object is sealed
+const obj = { a: 1 }
+Object.isSealed(obj)    // → false
+Object.seal(obj)
+Object.isSealed(obj)    // → true`,
+      explanation: {
+        en: "Use Object.isSealed() to check whether an object's properties cannot be added or removed (though values may still change).",
+        es: "Usa Object.isSealed() para verificar si las propiedades de un objeto no pueden añadirse ni eliminarse (aunque los valores sí pueden cambiar).",
+      },
+    },
   },
   {
     slug: 'object-isSealed-2',
@@ -90,6 +101,17 @@ A plain object is **not** sealed by default.
     ],
     hints: ['Sealing prevents structural changes but not value changes for writable properties'],
     tags: ['Object', 'isSealed', 'seal', 'static-method'],
+    usageExample: {
+      code: `// Check if an object is sealed
+const obj = { a: 1 }
+Object.isSealed(obj)    // → false
+Object.seal(obj)
+Object.isSealed(obj)    // → true`,
+      explanation: {
+        en: "Use Object.isSealed() to check whether an object's properties cannot be added or removed (though values may still change).",
+        es: "Usa Object.isSealed() para verificar si las propiedades de un objeto no pueden añadirse ni eliminarse (aunque los valores sí pueden cambiar).",
+      },
+    },
   },
   {
     slug: 'object-isSealed-3',
@@ -134,6 +156,17 @@ Since \`Object.freeze()\` makes an object non-extensible and all properties non-
     ],
     hints: ['freeze is a superset of seal'],
     tags: ['Object', 'isSealed', 'freeze', 'static-method'],
+    usageExample: {
+      code: `// Check if an object is sealed
+const obj = { a: 1 }
+Object.isSealed(obj)    // → false
+Object.seal(obj)
+Object.isSealed(obj)    // → true`,
+      explanation: {
+        en: "Use Object.isSealed() to check whether an object's properties cannot be added or removed (though values may still change).",
+        es: "Usa Object.isSealed() para verificar si las propiedades de un objeto no pueden añadirse ni eliminarse (aunque los valores sí pueden cambiar).",
+      },
+    },
   },
   {
     slug: 'object-isSealed-4',
@@ -179,6 +212,17 @@ An empty object that has been made non-extensible (via \`Object.preventExtension
     ],
     hints: ['For empty objects, preventExtensions, seal, and freeze all have the same observable effect'],
     tags: ['Object', 'isSealed', 'preventExtensions', 'static-method'],
+    usageExample: {
+      code: `// Check if an object is sealed
+const obj = { a: 1 }
+Object.isSealed(obj)    // → false
+Object.seal(obj)
+Object.isSealed(obj)    // → true`,
+      explanation: {
+        en: "Use Object.isSealed() to check whether an object's properties cannot be added or removed (though values may still change).",
+        es: "Usa Object.isSealed() para verificar si las propiedades de un objeto no pueden añadirse ni eliminarse (aunque los valores sí pueden cambiar).",
+      },
+    },
   },
   {
     slug: 'object-isSealed-5',
@@ -225,5 +269,16 @@ Use \`Object.isSealed()\` to check object integrity before attempting structural
     ],
     hints: ['isSealed is useful for defensive programming'],
     tags: ['Object', 'isSealed', 'static-method', 'guard'],
+    usageExample: {
+      code: `// Check if an object is sealed
+const obj = { a: 1 }
+Object.isSealed(obj)    // → false
+Object.seal(obj)
+Object.isSealed(obj)    // → true`,
+      explanation: {
+        en: "Use Object.isSealed() to check whether an object's properties cannot be added or removed (though values may still change).",
+        es: "Usa Object.isSealed() para verificar si las propiedades de un objeto no pueden añadirse ni eliminarse (aunque los valores sí pueden cambiar).",
+      },
+    },
   },
 ]

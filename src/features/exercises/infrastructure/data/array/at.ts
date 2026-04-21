@@ -36,6 +36,15 @@ getElement(['a', 'b'], 0)   // → 'a'
       'The `.at()` method returns `undefined` for out-of-bounds indices, just like bracket notation.',
     ],
     tags: ['Array', 'Array.prototype.at', 'index', 'beginner'],
+    usageExample: {
+      code: `const colors = ['red', 'green', 'blue']
+colors.at(0)  // → 'red'
+colors.at(1)  // → 'green'`,
+      explanation: {
+        en: 'Use at() to access an element by a positive index, just like bracket notation.',
+        es: 'Usa at() para acceder a un elemento por un índice positivo, igual que la notación de corchetes.',
+      },
+    },
   },
   {
     slug: 'array-at-negative',
@@ -72,6 +81,15 @@ getLast(['x'])     // → 'x'
       'Negative indices count backwards from the end of the array.',
     ],
     tags: ['Array', 'Array.prototype.at', 'negative-index', 'beginner'],
+    usageExample: {
+      code: `const nums = [10, 20, 30, 40]
+nums.at(-1)  // → 40  (last)
+nums.at(-2)  // → 30  (second-to-last)`,
+      explanation: {
+        en: 'Use at(-1) to reliably access the last element without knowing the array length.',
+        es: 'Usa at(-1) para acceder al último elemento de forma confiable sin conocer la longitud del array.',
+      },
+    },
   },
   {
     slug: 'array-at-second-to-last',
@@ -108,6 +126,15 @@ getSecondToLast(['a', 'b'])   // → 'a'
       'If the array has fewer than 2 elements, `.at(-2)` returns `undefined`.',
     ],
     tags: ['Array', 'Array.prototype.at', 'negative-index', 'beginner'],
+    usageExample: {
+      code: `const items = ['a', 'b', 'c', 'd']
+items.at(-2)  // → 'c'
+items.at(-1)  // → 'd'`,
+      explanation: {
+        en: 'Use at() with negative indices to access elements from the end of an array.',
+        es: 'Usa at() con índices negativos para acceder a elementos desde el final de un array.',
+      },
+    },
   },
   {
     slug: 'array-at-undefined',
@@ -145,6 +172,15 @@ safeAt([1, 2, 3], 1)   // → 2
       'A negative index `-n` is out of bounds when `n > arr.length`.',
     ],
     tags: ['Array', 'Array.prototype.at', 'undefined', 'safe-access', 'intermediate'],
+    usageExample: {
+      code: `const arr = [1, 2, 3]
+arr.at(5)   // → undefined
+arr.at(-5)  // → undefined`,
+      explanation: {
+        en: 'at() returns undefined when the index is out of bounds, making it safe for optional access.',
+        es: 'at() devuelve undefined cuando el índice está fuera de límites, haciéndolo seguro para acceso opcional.',
+      },
+    },
   },
   {
     slug: 'array-at-vs-bracket',
@@ -181,5 +217,14 @@ getMiddle([10, 20, 30])    // → 20
       '`.at()` accepts any integer expression as an argument.',
     ],
     tags: ['Array', 'Array.prototype.at', 'index', 'intermediate'],
+    usageExample: {
+      code: `const arr = ['x', 'y', 'z']
+arr[arr.length - 1]  // → 'z'  (bracket)
+arr.at(-1)           // → 'z'  (at — cleaner)`,
+      explanation: {
+        en: 'Prefer at() over bracket notation when accessing the last element — it avoids manual length arithmetic.',
+        es: 'Prefiere at() sobre la notación de corchetes al acceder al último elemento, evitando aritmética manual con length.',
+      },
+    },
   },
 ]

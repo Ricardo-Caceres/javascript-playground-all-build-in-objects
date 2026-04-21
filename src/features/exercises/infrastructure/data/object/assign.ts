@@ -35,6 +35,15 @@ mergeObjects({ a: 1 }, { b: 2 }) // → { a: 1, b: 2 }
       'Later sources overwrite earlier ones for the same key.',
     ],
     tags: ['Object', 'Object.assign', 'merge', 'beginner'],
+    usageExample: {
+      code: `// Merge source into target
+const target = { a: 1 }
+Object.assign(target, { b: 2 })   // → { a: 1, b: 2 }`,
+      explanation: {
+        en: 'Use Object.assign() to copy properties from one or more source objects into a target object.',
+        es: 'Usa Object.assign() para copiar propiedades de uno o más objetos fuente en un objeto destino.',
+      },
+    },
   },
   {
     slug: 'object-assign-multiple-sources',
@@ -70,6 +79,15 @@ mergeAll({}, { a: 1 }, { b: 2 }, { c: 3 }) // → { a: 1, b: 2, c: 3 }
       'Order matters: the last source wins when keys collide.',
     ],
     tags: ['Object', 'Object.assign', 'merge', 'rest', 'beginner'],
+    usageExample: {
+      code: `// Merge source into target
+const target = { a: 1 }
+Object.assign(target, { b: 2 })   // → { a: 1, b: 2 }`,
+      explanation: {
+        en: 'Use Object.assign() to copy properties from one or more source objects into a target object.',
+        es: 'Usa Object.assign() para copiar propiedades de uno o más objetos fuente en un objeto destino.',
+      },
+    },
   },
   {
     slug: 'object-assign-shallow-clone',
@@ -108,6 +126,15 @@ copy          // → { a: 1, b: 2 }
       '"Shallow" means nested objects are still shared by reference.',
     ],
     tags: ['Object', 'Object.assign', 'clone', 'beginner'],
+    usageExample: {
+      code: `// Merge source into target
+const target = { a: 1 }
+Object.assign(target, { b: 2 })   // → { a: 1, b: 2 }`,
+      explanation: {
+        en: 'Use Object.assign() to copy properties from one or more source objects into a target object.',
+        es: 'Usa Object.assign() para copiar propiedades de uno o más objetos fuente en un objeto destino.',
+      },
+    },
   },
   {
     slug: 'object-assign-defaults',
@@ -150,6 +177,15 @@ applyDefaults({ color: 'red', size: 'M' }, { color: 'blue' })
       'Order matters: `Object.assign({}, defaults, overrides)` lets overrides win.',
     ],
     tags: ['Object', 'Object.assign', 'defaults', 'intermediate'],
+    usageExample: {
+      code: `// Merge source into target
+const target = { a: 1 }
+Object.assign(target, { b: 2 })   // → { a: 1, b: 2 }`,
+      explanation: {
+        en: 'Use Object.assign() to copy properties from one or more source objects into a target object.',
+        es: 'Usa Object.assign() para copiar propiedades de uno o más objetos fuente en un objeto destino.',
+      },
+    },
   },
   {
     slug: 'object-assign-returns-target',
@@ -192,5 +228,14 @@ checkReturnIsTarget({ a: 1 }, { b: 2 }) // → true
       'Compare with `===` to check reference identity.',
     ],
     tags: ['Object', 'Object.assign', 'reference', 'beginner'],
+    usageExample: {
+      code: `// Merge source into target
+const target = { a: 1 }
+Object.assign(target, { b: 2 })   // → { a: 1, b: 2 }`,
+      explanation: {
+        en: 'Use Object.assign() to copy properties from one or more source objects into a target object.',
+        es: 'Usa Object.assign() para copiar propiedades de uno o más objetos fuente en un objeto destino.',
+      },
+    },
   },
 ]

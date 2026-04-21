@@ -43,6 +43,17 @@ export const isPrototypeOfExercises: Exercise[] = [
     ],
     hints: ['isPrototypeOf traverses the entire prototype chain'],
     tags: ['Object', 'isPrototypeOf', 'instance-method', 'prototype'],
+    usageExample: {
+      code: `// Check prototype chain membership
+const proto = {}
+const child = Object.create(proto)
+proto.isPrototypeOf(child)   // → true
+Object.prototype.isPrototypeOf(child)  // → true`,
+      explanation: {
+        en: 'Use isPrototypeOf() to check whether an object exists anywhere in the prototype chain of another object.',
+        es: 'Usa isPrototypeOf() para comprobar si un objeto existe en la cadena de prototipos de otro objeto.',
+      },
+    },
   },
   {
     slug: 'object-isPrototypeOf-2',
@@ -86,6 +97,17 @@ export const isPrototypeOfExercises: Exercise[] = [
     ],
     hints: ['isPrototypeOf checks the entire chain, not just the immediate parent'],
     tags: ['Object', 'isPrototypeOf', 'instance-method', 'chain'],
+    usageExample: {
+      code: `// Check prototype chain membership
+const proto = {}
+const child = Object.create(proto)
+proto.isPrototypeOf(child)   // → true
+Object.prototype.isPrototypeOf(child)  // → true`,
+      explanation: {
+        en: 'Use isPrototypeOf() to check whether an object exists anywhere in the prototype chain of another object.',
+        es: 'Usa isPrototypeOf() para comprobar si un objeto existe en la cadena de prototipos de otro objeto.',
+      },
+    },
   },
   {
     slug: 'object-isPrototypeOf-3',
@@ -129,6 +151,17 @@ If the object you're testing is not in the prototype chain at all, \`isPrototype
     ],
     hints: ['isPrototypeOf returns false if no relationship exists'],
     tags: ['Object', 'isPrototypeOf', 'instance-method', 'unrelated'],
+    usageExample: {
+      code: `// Check prototype chain membership
+const proto = {}
+const child = Object.create(proto)
+proto.isPrototypeOf(child)   // → true
+Object.prototype.isPrototypeOf(child)  // → true`,
+      explanation: {
+        en: 'Use isPrototypeOf() to check whether an object exists anywhere in the prototype chain of another object.',
+        es: 'Usa isPrototypeOf() para comprobar si un objeto existe en la cadena de prototipos de otro objeto.',
+      },
+    },
   },
   {
     slug: 'object-isPrototypeOf-4',
@@ -172,6 +205,17 @@ Objects created with \`Object.create(null)\` have no prototype. \`Object.prototy
     ],
     hints: ['Null-prototype objects have no inherited methods or prototype chain'],
     tags: ['Object', 'isPrototypeOf', 'instance-method', 'null-prototype'],
+    usageExample: {
+      code: `// Check prototype chain membership
+const proto = {}
+const child = Object.create(proto)
+proto.isPrototypeOf(child)   // → true
+Object.prototype.isPrototypeOf(child)  // → true`,
+      explanation: {
+        en: 'Use isPrototypeOf() to check whether an object exists anywhere in the prototype chain of another object.',
+        es: 'Usa isPrototypeOf() para comprobar si un objeto existe en la cadena de prototipos de otro objeto.',
+      },
+    },
   },
   {
     slug: 'object-isPrototypeOf-5',
@@ -215,5 +259,16 @@ Objects created with \`Object.create(null)\` have no prototype. \`Object.prototy
     ],
     hints: ['isPrototypeOf is more general than instanceof — it can check any prototype, not just constructor.prototype'],
     tags: ['Object', 'isPrototypeOf', 'instanceof', 'instance-method', 'prototype'],
+    usageExample: {
+      code: `// Check prototype chain membership
+const proto = {}
+const child = Object.create(proto)
+proto.isPrototypeOf(child)   // → true
+Object.prototype.isPrototypeOf(child)  // → true`,
+      explanation: {
+        en: 'Use isPrototypeOf() to check whether an object exists anywhere in the prototype chain of another object.',
+        es: 'Usa isPrototypeOf() para comprobar si un objeto existe en la cadena de prototipos de otro objeto.',
+      },
+    },
   },
 ]

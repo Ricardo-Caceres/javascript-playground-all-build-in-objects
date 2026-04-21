@@ -35,6 +35,15 @@ createEmptyArray() // → []
       'The result is identical to `[]`.',
     ],
     tags: ['Array', 'constructor', 'beginner'],
+    usageExample: {
+      code: `const empty = new Array()
+empty.length  // → 0
+empty         // → []`,
+      explanation: {
+        en: 'Call new Array() with no arguments to create an empty array.',
+        es: 'Llama a new Array() sin argumentos para crear un array vacío.',
+      },
+    },
   },
   {
     slug: 'array-constructor-with-length',
@@ -71,6 +80,15 @@ createArrayOfLength(0)  // → [] (length === 0)
       'This differs from `new Array(1, 2, 3)` which creates `[1, 2, 3]`.',
     ],
     tags: ['Array', 'constructor', 'sparse', 'beginner'],
+    usageExample: {
+      code: `const sparse = new Array(3)
+sparse.length  // → 3
+sparse         // → [ <3 empty items> ]`,
+      explanation: {
+        en: 'Pass a single number to new Array(n) to create a sparse array with a preset length.',
+        es: 'Pasa un solo número a new Array(n) para crear un array disperso con una longitud predefinida.',
+      },
+    },
   },
   {
     slug: 'array-constructor-with-elements',
@@ -107,6 +125,14 @@ createArrayFromArgs(42)      // → [42]
       'With 2+ numeric args, the constructor stores them as elements, not as a length.',
     ],
     tags: ['Array', 'constructor', 'rest-parameters', 'beginner'],
+    usageExample: {
+      code: `const arr = new Array(1, 2, 3)
+arr  // → [1, 2, 3]`,
+      explanation: {
+        en: 'Pass multiple arguments to new Array() to create an array pre-filled with those values.',
+        es: 'Pasa múltiples argumentos a new Array() para crear un array prellenado con esos valores.',
+      },
+    },
   },
   {
     slug: 'array-constructor-fill-pattern',
@@ -143,6 +169,14 @@ createZeros(0) // → []
       'This pattern avoids a for-loop and is very common in algorithm problems.',
     ],
     tags: ['Array', 'constructor', 'fill', 'intermediate'],
+    usageExample: {
+      code: `const zeros = new Array(5).fill(0)
+zeros  // → [0, 0, 0, 0, 0]`,
+      explanation: {
+        en: 'Combine new Array(n) with fill() to create an array of n identical values.',
+        es: 'Combina new Array(n) con fill() para crear un array de n valores idénticos.',
+      },
+    },
   },
   {
     slug: 'array-constructor-spread',
@@ -179,5 +213,13 @@ createRange(1) // → [1]
       'You could also do `[...Array(n).keys()].map(i => i + 1)`.',
     ],
     tags: ['Array', 'constructor', 'Array.from', 'range', 'intermediate'],
+    usageExample: {
+      code: `const range = [...new Array(4).keys()]
+range  // → [0, 1, 2, 3]`,
+      explanation: {
+        en: 'Spread new Array(n).keys() to generate a compact 0-based index range array.',
+        es: 'Extiende new Array(n).keys() para generar un array compacto de índices de base 0.',
+      },
+    },
   },
 ]

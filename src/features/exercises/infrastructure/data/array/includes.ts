@@ -36,6 +36,15 @@ hasValue([1, 2, 3], 5) // → false
       'It uses SameValueZero comparison, similar to `===`, but also handles `NaN`.',
     ],
     tags: ['Array', 'Array.prototype.includes', 'search', 'beginner'],
+    usageExample: {
+      code: `const fruits = ['apple', 'banana', 'cherry']
+fruits.includes('banana')  // → true
+fruits.includes('grape')   // → false`,
+      explanation: {
+        en: 'Use includes() to check whether a specific value exists in an array.',
+        es: 'Usa includes() para comprobar si un valor específico existe en un array.',
+      },
+    },
   },
   {
     slug: 'array-includes-string',
@@ -72,6 +81,15 @@ hasWord(['hello', 'world'], 'foo')   // → false
       'This is simpler and more readable than `words.indexOf(word) !== -1`.',
     ],
     tags: ['Array', 'Array.prototype.includes', 'string', 'beginner'],
+    usageExample: {
+      code: `const colors = ['red', 'green', 'blue']
+colors.includes('green')  // → true
+colors.includes('yellow') // → false`,
+      explanation: {
+        en: 'Use includes() for a readable boolean check instead of indexOf() !== -1.',
+        es: 'Usa includes() para una comprobación booleana legible en lugar de indexOf() !== -1.',
+      },
+    },
   },
   {
     slug: 'array-includes-nan',
@@ -108,6 +126,15 @@ hasNaN([1, 2, 3])   // → false
       '`includes()` uses SameValueZero, which treats `NaN` as equal to `NaN`.',
     ],
     tags: ['Array', 'Array.prototype.includes', 'NaN', 'SameValueZero', 'intermediate'],
+    usageExample: {
+      code: `const arr = [1, NaN, 3]
+arr.includes(NaN)  // → true  (uses SameValueZero)
+arr.indexOf(NaN)  // → -1   (does not find NaN)`,
+      explanation: {
+        en: 'Use includes() to check for NaN — unlike indexOf(), it handles NaN correctly.',
+        es: 'Usa includes() para comprobar NaN; a diferencia de indexOf(), lo maneja correctamente.',
+      },
+    },
   },
   {
     slug: 'array-includes-from-index',
@@ -144,6 +171,14 @@ hasAfter([1, 2, 3, 2, 1], 2, 4) // → false (no 2 at index >= 4)
       'Elements before `from` are ignored even if they match.',
     ],
     tags: ['Array', 'Array.prototype.includes', 'fromIndex', 'intermediate'],
+    usageExample: {
+      code: `const arr = [1, 2, 3, 1, 2]
+arr.includes(1, 2)  // → true  (starts searching at index 2)`,
+      explanation: {
+        en: 'Pass a second argument to includes() to start the search from a specific index.',
+        es: 'Pasa un segundo argumento a includes() para comenzar la búsqueda desde un índice específico.',
+      },
+    },
   },
   {
     slug: 'array-includes-vs-indexof',
@@ -180,5 +215,16 @@ containsNull([1, 2, 3])    // → false
       '`includes()` is preferred over `indexOf(x) !== -1` when you only need a boolean.',
     ],
     tags: ['Array', 'Array.prototype.includes', 'null', 'intermediate'],
+    usageExample: {
+      code: `const arr = [1, 2, 3]
+// verbose:
+arr.indexOf(2) !== -1  // → true
+// cleaner:
+arr.includes(2)        // → true`,
+      explanation: {
+        en: 'Prefer includes() over indexOf() !== -1 when you only need a boolean result.',
+        es: 'Prefiere includes() sobre indexOf() !== -1 cuando solo necesitas un resultado booleano.',
+      },
+    },
   },
 ]

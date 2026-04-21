@@ -20,6 +20,15 @@ export const mathMinExercises: Exercise[] = [
     ],
     hints: ['Math.min returns the smallest of all provided arguments'],
     tags: ['Math', 'min', 'static-method'],
+    usageExample: {
+      code: `// Smallest of the given numbers
+Math.min(1, 5, 3)   // → 1
+Math.min(-1, -5)    // → -5`,
+      explanation: {
+        en: 'Use Math.min() to find the smallest value among a set of numbers, or to clamp a maximum bound.',
+        es: 'Usa Math.min() para encontrar el valor más pequeño entre un conjunto de números o para limitar un valor máximo.',
+      },
+    },
   },
   {
     slug: 'math-min-2',
@@ -40,6 +49,15 @@ export const mathMinExercises: Exercise[] = [
     ],
     hints: ['-5 is the smallest (furthest from zero) among -1, -5, -2'],
     tags: ['Math', 'min', 'static-method'],
+    usageExample: {
+      code: `// Smallest of the given numbers
+Math.min(1, 5, 3)   // → 1
+Math.min(-1, -5)    // → -5`,
+      explanation: {
+        en: 'Use Math.min() to find the smallest value among a set of numbers, or to clamp a maximum bound.',
+        es: 'Usa Math.min() para encontrar el valor más pequeño entre un conjunto de números o para limitar un valor máximo.',
+      },
+    },
   },
   {
     slug: 'math-min-3',
@@ -60,6 +78,15 @@ export const mathMinExercises: Exercise[] = [
     ],
     hints: ['The identity element for min is Infinity (every number is ≤ Infinity)'],
     tags: ['Math', 'min', 'static-method'],
+    usageExample: {
+      code: `// Smallest of the given numbers
+Math.min(1, 5, 3)   // → 1
+Math.min(-1, -5)    // → -5`,
+      explanation: {
+        en: 'Use Math.min() to find the smallest value among a set of numbers, or to clamp a maximum bound.',
+        es: 'Usa Math.min() para encontrar el valor más pequeño entre un conjunto de números o para limitar un valor máximo.',
+      },
+    },
   },
   {
     slug: 'math-min-4',
@@ -80,6 +107,15 @@ export const mathMinExercises: Exercise[] = [
     ],
     hints: ['-Infinity is smaller than any finite number'],
     tags: ['Math', 'min', 'static-method'],
+    usageExample: {
+      code: `// Smallest of the given numbers
+Math.min(1, 5, 3)   // → 1
+Math.min(-1, -5)    // → -5`,
+      explanation: {
+        en: 'Use Math.min() to find the smallest value among a set of numbers, or to clamp a maximum bound.',
+        es: 'Usa Math.min() para encontrar el valor más pequeño entre un conjunto de números o para limitar un valor máximo.',
+      },
+    },
   },
   {
     slug: 'math-min-5',
@@ -100,5 +136,14 @@ export const mathMinExercises: Exercise[] = [
     ],
     hints: ['Any comparison involving NaN produces NaN'],
     tags: ['Math', 'min', 'static-method'],
+    usageExample: {
+      code: `// Smallest of the given numbers
+Math.min(1, 5, 3)   // → 1
+Math.min(-1, -5)    // → -5`,
+      explanation: {
+        en: 'Use Math.min() to find the smallest value among a set of numbers, or to clamp a maximum bound.',
+        es: 'Usa Math.min() para encontrar el valor más pequeño entre un conjunto de números o para limitar un valor máximo.',
+      },
+    },
   },
 ]

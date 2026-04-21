@@ -23,6 +23,15 @@ export const mathSqrt2Exercises: Exercise[] = [
       'It is the length of the diagonal of a unit square.',
     ],
     tags: ['Math', 'SQRT2', 'static-property', 'beginner'],
+    usageExample: {
+      code: `// Square root of 2
+Math.SQRT2              // → 1.4142135623...
+Math.SQRT2 === Math.sqrt(2)   // → true`,
+      explanation: {
+        en: 'Use Math.SQRT2 as a precomputed constant equal to √2, useful in geometry and diagonal calculations.',
+        es: 'Usa Math.SQRT2 como constante precalculada igual a √2, útil en geometría y cálculos de diagonales.',
+      },
+    },
   },
   {
     slug: 'math-sqrt2-2',
@@ -46,6 +55,15 @@ export const mathSqrt2Exercises: Exercise[] = [
       'Using the constant avoids recomputing the square root each time.',
     ],
     tags: ['Math', 'SQRT2', 'sqrt', 'static-property', 'beginner'],
+    usageExample: {
+      code: `// Square root of 2
+Math.SQRT2              // → 1.4142135623...
+Math.SQRT2 === Math.sqrt(2)   // → true`,
+      explanation: {
+        en: 'Use Math.SQRT2 as a precomputed constant equal to √2, useful in geometry and diagonal calculations.',
+        es: 'Usa Math.SQRT2 como constante precalculada igual a √2, útil en geometría y cálculos de diagonales.',
+      },
+    },
   },
   {
     slug: 'math-sqrt2-3',
@@ -69,6 +87,15 @@ export const mathSqrt2Exercises: Exercise[] = [
       'Floating-point arithmetic may introduce a tiny error.',
     ],
     tags: ['Math', 'SQRT2', 'static-property', 'intermediate'],
+    usageExample: {
+      code: `// Square root of 2
+Math.SQRT2              // → 1.4142135623...
+Math.SQRT2 === Math.sqrt(2)   // → true`,
+      explanation: {
+        en: 'Use Math.SQRT2 as a precomputed constant equal to √2, useful in geometry and diagonal calculations.',
+        es: 'Usa Math.SQRT2 como constante precalculada igual a √2, útil en geometría y cálculos de diagonales.',
+      },
+    },
   },
   {
     slug: 'math-sqrt2-4',
@@ -92,6 +119,15 @@ export const mathSqrt2Exercises: Exercise[] = [
       'Math.sqrt(18) = 3√2 because √18 = √(9×2) = 3√2.',
     ],
     tags: ['Math', 'SQRT2', 'geometry', 'static-property', 'intermediate'],
+    usageExample: {
+      code: `// Square root of 2
+Math.SQRT2              // → 1.4142135623...
+Math.SQRT2 === Math.sqrt(2)   // → true`,
+      explanation: {
+        en: 'Use Math.SQRT2 as a precomputed constant equal to √2, useful in geometry and diagonal calculations.',
+        es: 'Usa Math.SQRT2 como constante precalculada igual a √2, útil en geometría y cálculos de diagonales.',
+      },
+    },
   },
   {
     slug: 'math-sqrt2-5',
@@ -115,5 +151,14 @@ export const mathSqrt2Exercises: Exercise[] = [
       'This is the closest double-precision float to √2.',
     ],
     tags: ['Math', 'SQRT2', 'static-property', 'advanced'],
+    usageExample: {
+      code: `// Square root of 2
+Math.SQRT2              // → 1.4142135623...
+Math.SQRT2 === Math.sqrt(2)   // → true`,
+      explanation: {
+        en: 'Use Math.SQRT2 as a precomputed constant equal to √2, useful in geometry and diagonal calculations.',
+        es: 'Usa Math.SQRT2 como constante precalculada igual a √2, útil en geometría y cálculos de diagonales.',
+      },
+    },
   },
 ]

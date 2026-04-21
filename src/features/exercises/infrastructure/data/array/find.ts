@@ -36,6 +36,14 @@ findFirst([1, 2, 3], 10)    // → undefined
       '`find()` stops at the first match — it does not scan the entire array unnecessarily.',
     ],
     tags: ['Array', 'Array.prototype.find', 'search', 'beginner'],
+    usageExample: {
+      code: `const nums = [3, 7, 12, 5]
+nums.find(n => n > 10)  // → 12  (first match)`,
+      explanation: {
+        en: 'Use find() to get the first element that satisfies a condition, or undefined if none does.',
+        es: 'Usa find() para obtener el primer elemento que satisfaga una condición, o undefined si ninguno lo hace.',
+      },
+    },
   },
   {
     slug: 'array-find-object',
@@ -72,6 +80,14 @@ findById([{id:1,name:'A'}], 99)                // → undefined
       '`find()` returns the actual object reference, not a copy.',
     ],
     tags: ['Array', 'Array.prototype.find', 'objects', 'id-lookup', 'intermediate'],
+    usageExample: {
+      code: `const users = [{id:1, name:'Alice'}, {id:2, name:'Bob'}]
+users.find(u => u.id === 2)  // → {id:2, name:'Bob'}`,
+      explanation: {
+        en: 'Use find() to locate the first object in an array that matches a property condition.',
+        es: 'Usa find() para localizar el primer objeto en un array que coincida con una condición de propiedad.',
+      },
+    },
   },
   {
     slug: 'array-find-undefined',
@@ -108,6 +124,14 @@ findEven([1, 3, 5])    // → undefined
       'To test the return value, use `=== undefined` or the optional chaining operator.',
     ],
     tags: ['Array', 'Array.prototype.find', 'undefined', 'beginner'],
+    usageExample: {
+      code: `const arr = [1, 2, 3]
+arr.find(n => n > 10)  // → undefined  (not found)`,
+      explanation: {
+        en: 'find() returns undefined when no element satisfies the predicate — check for this case.',
+        es: 'find() devuelve undefined cuando ningún elemento satisface el predicado; verifica este caso.',
+      },
+    },
   },
   {
     slug: 'array-find-string',
@@ -144,6 +168,14 @@ findLongest(['a', 'bb', 'ccc'])           // → undefined
       '`find()` returns the first match in order, not the longest match.',
     ],
     tags: ['Array', 'Array.prototype.find', 'string', 'length', 'intermediate'],
+    usageExample: {
+      code: `const words = ['cat', 'elephant', 'dog']
+words.find(w => w.length > 4)  // → 'elephant'`,
+      explanation: {
+        en: 'Use find() to retrieve the first string from an array that meets a length or content condition.',
+        es: 'Usa find() para recuperar la primera cadena de un array que cumpla una condición de longitud o contenido.',
+      },
+    },
   },
   {
     slug: 'array-find-complex',
@@ -180,5 +212,13 @@ findInRange([1, 2, 3], 10, 20)     // → undefined
       'Remember: `find` returns the first element that satisfies the condition in array order.',
     ],
     tags: ['Array', 'Array.prototype.find', 'range', 'intermediate'],
+    usageExample: {
+      code: `const pts = [{x:1,y:1}, {x:2,y:3}, {x:3,y:4}]
+pts.find(p => p.x + p.y > 4)  // → {x:2, y:3}`,
+      explanation: {
+        en: 'Use find() with a complex predicate to locate an object satisfying multiple conditions.',
+        es: 'Usa find() con un predicado complejo para localizar un objeto que satisfaga múltiples condiciones.',
+      },
+    },
   },
 ]

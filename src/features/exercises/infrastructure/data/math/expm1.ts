@@ -20,6 +20,15 @@ export const mathExpm1Exercises: Exercise[] = [
     ],
     hints: ['expm1(0) = e⁰ - 1 = 1 - 1 = 0', 'expm1 is more precise than exp(x) - 1 for small x'],
     tags: ['Math', 'expm1', 'static-method', 'exponential'],
+    usageExample: {
+      code: `// e^x minus 1, precise for very small x
+Math.expm1(0)     // → 0
+Math.expm1(0.001) // → 0.0010005...`,
+      explanation: {
+        en: 'Use Math.expm1(x) instead of Math.exp(x) - 1 for small x values to avoid floating-point precision loss.',
+        es: 'Usa Math.expm1(x) en lugar de Math.exp(x) - 1 para valores pequeños de x y evitar pérdida de precisión flotante.',
+      },
+    },
   },
   {
     slug: 'math-expm1-2',
@@ -40,6 +49,15 @@ export const mathExpm1Exercises: Exercise[] = [
     ],
     hints: ['expm1(1) = e¹ - 1 = e - 1 ≈ 1.7183', 'Math.E ≈ 2.71828'],
     tags: ['Math', 'expm1', 'static-method', 'exponential'],
+    usageExample: {
+      code: `// e^x minus 1, precise for very small x
+Math.expm1(0)     // → 0
+Math.expm1(0.001) // → 0.0010005...`,
+      explanation: {
+        en: 'Use Math.expm1(x) instead of Math.exp(x) - 1 for small x values to avoid floating-point precision loss.',
+        es: 'Usa Math.expm1(x) en lugar de Math.exp(x) - 1 para valores pequeños de x y evitar pérdida de precisión flotante.',
+      },
+    },
   },
   {
     slug: 'math-expm1-3',
@@ -60,6 +78,15 @@ export const mathExpm1Exercises: Exercise[] = [
     ],
     hints: ['expm1(-1) = e⁻¹ - 1 = 1/e - 1 ≈ -0.632', 'Negative inputs produce results in the range (-1, 0)'],
     tags: ['Math', 'expm1', 'static-method', 'exponential'],
+    usageExample: {
+      code: `// e^x minus 1, precise for very small x
+Math.expm1(0)     // → 0
+Math.expm1(0.001) // → 0.0010005...`,
+      explanation: {
+        en: 'Use Math.expm1(x) instead of Math.exp(x) - 1 for small x values to avoid floating-point precision loss.',
+        es: 'Usa Math.expm1(x) en lugar de Math.exp(x) - 1 para valores pequeños de x y evitar pérdida de precisión flotante.',
+      },
+    },
   },
   {
     slug: 'math-expm1-4',
@@ -80,6 +107,15 @@ export const mathExpm1Exercises: Exercise[] = [
     ],
     hints: ['expm1(∞) = e^∞ - 1 = ∞ - 1 = ∞', 'For large x, expm1(x) ≈ exp(x)'],
     tags: ['Math', 'expm1', 'static-method', 'exponential', 'Infinity'],
+    usageExample: {
+      code: `// e^x minus 1, precise for very small x
+Math.expm1(0)     // → 0
+Math.expm1(0.001) // → 0.0010005...`,
+      explanation: {
+        en: 'Use Math.expm1(x) instead of Math.exp(x) - 1 for small x values to avoid floating-point precision loss.',
+        es: 'Usa Math.expm1(x) en lugar de Math.exp(x) - 1 para valores pequeños de x y evitar pérdida de precisión flotante.',
+      },
+    },
   },
   {
     slug: 'math-expm1-5',
@@ -100,5 +136,14 @@ export const mathExpm1Exercises: Exercise[] = [
     ],
     hints: ['All Math methods return a number primitive', 'expm1 is especially useful for tiny values of x near 0'],
     tags: ['Math', 'expm1', 'static-method', 'exponential'],
+    usageExample: {
+      code: `// e^x minus 1, precise for very small x
+Math.expm1(0)     // → 0
+Math.expm1(0.001) // → 0.0010005...`,
+      explanation: {
+        en: 'Use Math.expm1(x) instead of Math.exp(x) - 1 for small x values to avoid floating-point precision loss.',
+        es: 'Usa Math.expm1(x) en lugar de Math.exp(x) - 1 para valores pequeños de x y evitar pérdida de precisión flotante.',
+      },
+    },
   },
 ]

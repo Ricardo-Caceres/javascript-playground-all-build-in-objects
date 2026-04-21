@@ -20,6 +20,15 @@ export const mathSinExercises: Exercise[] = [
     ],
     hints: ['sin(0) = 0 — the sine of 0 radians is exactly 0'],
     tags: ['Math', 'sin', 'static-method'],
+    usageExample: {
+      code: `// Sine of an angle in radians
+Math.sin(0)            // → 0
+Math.sin(Math.PI / 2)  // → 1`,
+      explanation: {
+        en: 'Use Math.sin() to compute the sine of an angle in radians for trigonometry and wave simulations.',
+        es: 'Usa Math.sin() para calcular el seno de un ángulo en radianes, útil en trigonometría y simulaciones de ondas.',
+      },
+    },
   },
   {
     slug: 'math-sin-2',
@@ -40,6 +49,15 @@ export const mathSinExercises: Exercise[] = [
     ],
     hints: ['sin(π/2) = 1 — the maximum value of the sine function'],
     tags: ['Math', 'sin', 'static-method'],
+    usageExample: {
+      code: `// Sine of an angle in radians
+Math.sin(0)            // → 0
+Math.sin(Math.PI / 2)  // → 1`,
+      explanation: {
+        en: 'Use Math.sin() to compute the sine of an angle in radians for trigonometry and wave simulations.',
+        es: 'Usa Math.sin() para calcular el seno de un ángulo en radianes, útil en trigonometría y simulaciones de ondas.',
+      },
+    },
   },
   {
     slug: 'math-sin-3',
@@ -60,6 +78,15 @@ export const mathSinExercises: Exercise[] = [
     ],
     hints: ['sin(π) = 0 mathematically, but floating-point gives a tiny near-zero value'],
     tags: ['Math', 'sin', 'static-method'],
+    usageExample: {
+      code: `// Sine of an angle in radians
+Math.sin(0)            // → 0
+Math.sin(Math.PI / 2)  // → 1`,
+      explanation: {
+        en: 'Use Math.sin() to compute the sine of an angle in radians for trigonometry and wave simulations.',
+        es: 'Usa Math.sin() para calcular el seno de un ángulo en radianes, útil en trigonometría y simulaciones de ondas.',
+      },
+    },
   },
   {
     slug: 'math-sin-4',
@@ -80,6 +107,15 @@ export const mathSinExercises: Exercise[] = [
     ],
     hints: ['sin(-π/2) = -1 — the minimum value of the sine function'],
     tags: ['Math', 'sin', 'static-method'],
+    usageExample: {
+      code: `// Sine of an angle in radians
+Math.sin(0)            // → 0
+Math.sin(Math.PI / 2)  // → 1`,
+      explanation: {
+        en: 'Use Math.sin() to compute the sine of an angle in radians for trigonometry and wave simulations.',
+        es: 'Usa Math.sin() para calcular el seno de un ángulo en radianes, útil en trigonometría y simulaciones de ondas.',
+      },
+    },
   },
   {
     slug: 'math-sin-5',
@@ -100,5 +136,14 @@ export const mathSinExercises: Exercise[] = [
     ],
     hints: ['Math.sin always returns a number primitive'],
     tags: ['Math', 'sin', 'static-method'],
+    usageExample: {
+      code: `// Sine of an angle in radians
+Math.sin(0)            // → 0
+Math.sin(Math.PI / 2)  // → 1`,
+      explanation: {
+        en: 'Use Math.sin() to compute the sine of an angle in radians for trigonometry and wave simulations.',
+        es: 'Usa Math.sin() para calcular el seno de un ángulo en radianes, útil en trigonometría y simulaciones de ondas.',
+      },
+    },
   },
 ]

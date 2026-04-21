@@ -36,6 +36,15 @@ reverseImmutable([10, 20])  // → [20, 10]
       'Available in modern JavaScript (ES2023). Check compatibility if targeting older environments.',
     ],
     tags: ['Array', 'Array.prototype.toReversed', 'immutable', 'ES2023', 'beginner'],
+    usageExample: {
+      code: `const arr = [1, 2, 3]
+arr.toReversed()  // → [3, 2, 1]
+arr               // → [1, 2, 3]  (unchanged)`,
+      explanation: {
+        en: 'Use toReversed() to get a reversed copy of an array without mutating the original.',
+        es: 'Usa toReversed() para obtener una copia invertida de un array sin mutar el original.',
+      },
+    },
   },
   {
     slug: 'array-to-reversed-no-mutation',
@@ -72,6 +81,16 @@ checkImmutable([1, 2, 3]) // → [1, 2, 3]  (original order preserved)
       'Contrast with `reverse()` which would reverse `arr` in place.',
     ],
     tags: ['Array', 'Array.prototype.toReversed', 'immutable', 'intermediate'],
+    usageExample: {
+      code: `const original = [1, 2, 3]
+const reversed = original.toReversed()
+original  // → [1, 2, 3]  (unchanged)
+reversed  // → [3, 2, 1]`,
+      explanation: {
+        en: 'Unlike reverse(), toReversed() leaves the original array untouched.',
+        es: 'A diferencia de reverse(), toReversed() deja el array original sin modificar.',
+      },
+    },
   },
   {
     slug: 'array-to-reversed-string',
@@ -108,6 +127,14 @@ reverseStringArray(['hello', 'world']) // → ['world', 'hello']
       'The returned array is always a new object, even for string arrays.',
     ],
     tags: ['Array', 'Array.prototype.toReversed', 'string', 'intermediate'],
+    usageExample: {
+      code: `const words = ['alpha', 'beta', 'gamma']
+words.toReversed()  // → ['gamma', 'beta', 'alpha']`,
+      explanation: {
+        en: 'Use toReversed() on string arrays to produce a reversed copy for display or comparison.',
+        es: 'Usa toReversed() en arrays de cadenas para producir una copia invertida para visualización o comparación.',
+      },
+    },
   },
   {
     slug: 'array-to-reversed-vs-reverse',
@@ -143,6 +170,15 @@ toReversedReturnsNew([1, 2, 3]) // → true
       'Compare with `reverse()`: `arr.reverse() === arr` would be `true` since it mutates in place.',
     ],
     tags: ['Array', 'Array.prototype.toReversed', 'reference', 'intermediate'],
+    usageExample: {
+      code: `const arr = [1, 2, 3]
+arr.reverse()        // mutates: arr is now [3, 2, 1]
+const r = [1,2,3].toReversed()  // safe: original preserved`,
+      explanation: {
+        en: 'Prefer toReversed() over reverse() in functional pipelines to avoid mutation side effects.',
+        es: 'Prefiere toReversed() sobre reverse() en pipelines funcionales para evitar efectos secundarios de mutación.',
+      },
+    },
   },
   {
     slug: 'array-to-reversed-empty',
@@ -178,5 +214,13 @@ toReversedEmpty() // → []
       'Even though the contents are the same, the result is a **new** array object.',
     ],
     tags: ['Array', 'Array.prototype.toReversed', 'empty', 'ES2023', 'beginner'],
+    usageExample: {
+      code: `const arr = []
+arr.toReversed()  // → []`,
+      explanation: {
+        en: 'toReversed() on an empty array returns a new empty array.',
+        es: 'toReversed() en un array vacío devuelve un nuevo array vacío.',
+      },
+    },
   },
 ]

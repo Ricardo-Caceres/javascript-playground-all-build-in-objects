@@ -20,6 +20,15 @@ export const mathLog10Exercises: Exercise[] = [
     ],
     hints: ['log10(1) = 0 because 10^0 = 1'],
     tags: ['Math', 'log10', 'static-method'],
+    usageExample: {
+      code: `// Logarithm base 10
+Math.log10(100)    // → 2
+Math.log10(1000)   // → 3`,
+      explanation: {
+        en: 'Use Math.log10() to compute the base-10 logarithm, useful for magnitude comparisons or decibel calculations.',
+        es: 'Usa Math.log10() para calcular el logaritmo en base 10, útil para comparaciones de magnitud o cálculos de decibelios.',
+      },
+    },
   },
   {
     slug: 'math-log10-2',
@@ -40,6 +49,15 @@ export const mathLog10Exercises: Exercise[] = [
     ],
     hints: ['log10(10) = 1 because 10^1 = 10'],
     tags: ['Math', 'log10', 'static-method'],
+    usageExample: {
+      code: `// Logarithm base 10
+Math.log10(100)    // → 2
+Math.log10(1000)   // → 3`,
+      explanation: {
+        en: 'Use Math.log10() to compute the base-10 logarithm, useful for magnitude comparisons or decibel calculations.',
+        es: 'Usa Math.log10() para calcular el logaritmo en base 10, útil para comparaciones de magnitud o cálculos de decibelios.',
+      },
+    },
   },
   {
     slug: 'math-log10-3',
@@ -60,6 +78,15 @@ export const mathLog10Exercises: Exercise[] = [
     ],
     hints: ['log10(100) = 2 because 10^2 = 100'],
     tags: ['Math', 'log10', 'static-method'],
+    usageExample: {
+      code: `// Logarithm base 10
+Math.log10(100)    // → 2
+Math.log10(1000)   // → 3`,
+      explanation: {
+        en: 'Use Math.log10() to compute the base-10 logarithm, useful for magnitude comparisons or decibel calculations.',
+        es: 'Usa Math.log10() para calcular el logaritmo en base 10, útil para comparaciones de magnitud o cálculos de decibelios.',
+      },
+    },
   },
   {
     slug: 'math-log10-4',
@@ -80,6 +107,15 @@ export const mathLog10Exercises: Exercise[] = [
     ],
     hints: ['log10 approaches -∞ as x approaches 0 from the right'],
     tags: ['Math', 'log10', 'static-method'],
+    usageExample: {
+      code: `// Logarithm base 10
+Math.log10(100)    // → 2
+Math.log10(1000)   // → 3`,
+      explanation: {
+        en: 'Use Math.log10() to compute the base-10 logarithm, useful for magnitude comparisons or decibel calculations.',
+        es: 'Usa Math.log10() para calcular el logaritmo en base 10, útil para comparaciones de magnitud o cálculos de decibelios.',
+      },
+    },
   },
   {
     slug: 'math-log10-5',
@@ -100,5 +136,14 @@ export const mathLog10Exercises: Exercise[] = [
     ],
     hints: ['Logarithm of a negative number is not defined in real numbers'],
     tags: ['Math', 'log10', 'static-method'],
+    usageExample: {
+      code: `// Logarithm base 10
+Math.log10(100)    // → 2
+Math.log10(1000)   // → 3`,
+      explanation: {
+        en: 'Use Math.log10() to compute the base-10 logarithm, useful for magnitude comparisons or decibel calculations.',
+        es: 'Usa Math.log10() para calcular el logaritmo en base 10, útil para comparaciones de magnitud o cálculos de decibelios.',
+      },
+    },
   },
 ]

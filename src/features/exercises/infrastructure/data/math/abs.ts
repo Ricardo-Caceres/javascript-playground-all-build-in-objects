@@ -20,6 +20,15 @@ export const mathAbsExercises: Exercise[] = [
     ],
     hints: ['Math.abs() strips the sign from a number', 'Works with integers and floats alike'],
     tags: ['Math', 'abs', 'static-method'],
+    usageExample: {
+      code: `// Get the absolute value of a number
+Math.abs(-7)   // → 7
+Math.abs(3.5)  // → 3.5`,
+      explanation: {
+        en: 'Use Math.abs() when you need the magnitude of a number regardless of its sign.',
+        es: 'Usa Math.abs() cuando necesites la magnitud de un número independientemente de su signo.',
+      },
+    },
   },
   {
     slug: 'math-abs-2',
@@ -40,6 +49,15 @@ export const mathAbsExercises: Exercise[] = [
     ],
     hints: ['Positive numbers are unaffected by Math.abs()', 'Zero is neither positive nor negative'],
     tags: ['Math', 'abs', 'static-method'],
+    usageExample: {
+      code: `// Get the absolute value of a number
+Math.abs(-7)   // → 7
+Math.abs(3.5)  // → 3.5`,
+      explanation: {
+        en: 'Use Math.abs() when you need the magnitude of a number regardless of its sign.',
+        es: 'Usa Math.abs() cuando necesites la magnitud de un número independientemente de su signo.',
+      },
+    },
   },
   {
     slug: 'math-abs-3',
@@ -60,6 +78,15 @@ export const mathAbsExercises: Exercise[] = [
     ],
     hints: ['In JavaScript, -0 exists but Math.abs(-0) === 0', 'Both 0 and -0 have absolute value 0'],
     tags: ['Math', 'abs', 'static-method'],
+    usageExample: {
+      code: `// Get the absolute value of a number
+Math.abs(-7)   // → 7
+Math.abs(3.5)  // → 3.5`,
+      explanation: {
+        en: 'Use Math.abs() when you need the magnitude of a number regardless of its sign.',
+        es: 'Usa Math.abs() cuando necesites la magnitud de un número independientemente de su signo.',
+      },
+    },
   },
   {
     slug: 'math-abs-4',
@@ -80,6 +107,15 @@ export const mathAbsExercises: Exercise[] = [
     ],
     hints: ['-0 is a valid IEEE 754 value in JavaScript', 'Object.is() distinguishes -0 from 0, but Math.abs(-0) removes the sign'],
     tags: ['Math', 'abs', 'static-method', 'negative-zero'],
+    usageExample: {
+      code: `// Get the absolute value of a number
+Math.abs(-7)   // → 7
+Math.abs(3.5)  // → 3.5`,
+      explanation: {
+        en: 'Use Math.abs() when you need the magnitude of a number regardless of its sign.',
+        es: 'Usa Math.abs() cuando necesites la magnitud de un número independientemente de su signo.',
+      },
+    },
   },
   {
     slug: 'math-abs-5',
@@ -100,5 +136,14 @@ export const mathAbsExercises: Exercise[] = [
     ],
     hints: ['NaN is the only value not equal to itself', 'Math.abs() of ±Infinity returns positive Infinity'],
     tags: ['Math', 'abs', 'static-method', 'NaN', 'Infinity'],
+    usageExample: {
+      code: `// Get the absolute value of a number
+Math.abs(-7)   // → 7
+Math.abs(3.5)  // → 3.5`,
+      explanation: {
+        en: 'Use Math.abs() when you need the magnitude of a number regardless of its sign.',
+        es: 'Usa Math.abs() cuando necesites la magnitud de un número independientemente de su signo.',
+      },
+    },
   },
 ]

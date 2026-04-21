@@ -25,6 +25,15 @@ const eps = Number.EPSILON`,
     ],
     hints: ['`Number.EPSILON` represents the gap between 1 and the next representable float.'],
     tags: ['Number', 'EPSILON', 'static-property', 'intermediate'],
+    usageExample: {
+      code: `// Use EPSILON to compare floats safely
+0.1 + 0.2 === 0.3   // → false (floating-point issue)
+Math.abs(0.1 + 0.2 - 0.3) < Number.EPSILON   // → true`,
+      explanation: {
+        en: 'Use Number.EPSILON as a tolerance threshold when comparing floating-point numbers that may differ by tiny rounding errors.',
+        es: 'Usa Number.EPSILON como umbral de tolerancia al comparar números de punto flotante que pueden diferir por pequeños errores de redondeo.',
+      },
+    },
   },
   {
     slug: 'number-epsilon-2',
@@ -52,6 +61,15 @@ const sum = 0.1 + 0.2`,
     ],
     hints: ['Floating point arithmetic is not exact; `Number.EPSILON` helps you define a tolerance.'],
     tags: ['Number', 'EPSILON', 'floating-point', 'intermediate'],
+    usageExample: {
+      code: `// Use EPSILON to compare floats safely
+0.1 + 0.2 === 0.3   // → false (floating-point issue)
+Math.abs(0.1 + 0.2 - 0.3) < Number.EPSILON   // → true`,
+      explanation: {
+        en: 'Use Number.EPSILON as a tolerance threshold when comparing floating-point numbers that may differ by tiny rounding errors.',
+        es: 'Usa Number.EPSILON como umbral de tolerancia al comparar números de punto flotante que pueden diferir por pequeños errores de redondeo.',
+      },
+    },
   },
   {
     slug: 'number-epsilon-3',
@@ -86,6 +104,15 @@ function almostEqual(a, b) {
     ],
     hints: ['Multiply `EPSILON` by the magnitude of the numbers being compared for a relative tolerance.'],
     tags: ['Number', 'EPSILON', 'equality', 'intermediate'],
+    usageExample: {
+      code: `// Use EPSILON to compare floats safely
+0.1 + 0.2 === 0.3   // → false (floating-point issue)
+Math.abs(0.1 + 0.2 - 0.3) < Number.EPSILON   // → true`,
+      explanation: {
+        en: 'Use Number.EPSILON as a tolerance threshold when comparing floating-point numbers that may differ by tiny rounding errors.',
+        es: 'Usa Number.EPSILON como umbral de tolerancia al comparar números de punto flotante que pueden diferir por pequeños errores de redondeo.',
+      },
+    },
   },
   {
     slug: 'number-epsilon-4',
@@ -109,6 +136,15 @@ const t = typeof Number.EPSILON`,
     ],
     hints: ['`Number.EPSILON` is a regular floating-point number constant.'],
     tags: ['Number', 'EPSILON', 'type', 'beginner'],
+    usageExample: {
+      code: `// Use EPSILON to compare floats safely
+0.1 + 0.2 === 0.3   // → false (floating-point issue)
+Math.abs(0.1 + 0.2 - 0.3) < Number.EPSILON   // → true`,
+      explanation: {
+        en: 'Use Number.EPSILON as a tolerance threshold when comparing floating-point numbers that may differ by tiny rounding errors.',
+        es: 'Usa Number.EPSILON como umbral de tolerancia al comparar números de punto flotante que pueden diferir por pequeños errores de redondeo.',
+      },
+    },
   },
   {
     slug: 'number-epsilon-5',
@@ -135,5 +171,14 @@ Use \`Number.EPSILON\` as a tolerance to determine if two numbers are close enou
     ],
     hints: ['`Math.abs(a - b) < Number.EPSILON` is a simple tolerance check.'],
     tags: ['Number', 'EPSILON', 'tolerance', 'intermediate'],
+    usageExample: {
+      code: `// Use EPSILON to compare floats safely
+0.1 + 0.2 === 0.3   // → false (floating-point issue)
+Math.abs(0.1 + 0.2 - 0.3) < Number.EPSILON   // → true`,
+      explanation: {
+        en: 'Use Number.EPSILON as a tolerance threshold when comparing floating-point numbers that may differ by tiny rounding errors.',
+        es: 'Usa Number.EPSILON como umbral de tolerancia al comparar números de punto flotante que pueden diferir por pequeños errores de redondeo.',
+      },
+    },
   },
 ]

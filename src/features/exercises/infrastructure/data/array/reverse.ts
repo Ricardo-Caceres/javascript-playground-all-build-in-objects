@@ -23,6 +23,14 @@ export const reverseExercises: Exercise[] = [
       'Alternatively, use the spread operator: `[...arr].reverse()`.',
     ],
     tags: ['array', 'reverse', 'immutable', 'copy'],
+    usageExample: {
+      code: `const arr = [1, 2, 3, 4, 5]
+arr.reverse()  // → [5, 4, 3, 2, 1]`,
+      explanation: {
+        en: 'Use reverse() to invert the order of elements in an array in place.',
+        es: 'Usa reverse() para invertir el orden de los elementos de un array en su lugar.',
+      },
+    },
   },
   {
     slug: 'array-reverse-string',
@@ -46,6 +54,14 @@ export const reverseExercises: Exercise[] = [
       'Chain: `.split(\'\').reverse().join(\'\')` in one expression.',
     ],
     tags: ['array', 'reverse', 'string', 'split', 'join'],
+    usageExample: {
+      code: `const chars = 'hello'.split('')
+chars.reverse().join('')  // → 'olleh'`,
+      explanation: {
+        en: 'Split a string into characters, reverse the array, then join to produce a reversed string.',
+        es: 'Divide una cadena en caracteres, invierte el array y únelos para producir una cadena invertida.',
+      },
+    },
   },
   {
     slug: 'array-reverse-mutates',
@@ -69,6 +85,15 @@ export const reverseExercises: Exercise[] = [
       '`reverse()` returns the same mutated array, not a copy.',
     ],
     tags: ['array', 'reverse', 'mutation', 'in-place', 'reference'],
+    usageExample: {
+      code: `const original = [1, 2, 3]
+original.reverse()
+console.log(original)  // → [3, 2, 1]  (mutated!)`,
+      explanation: {
+        en: 'reverse() mutates the original array — use toReversed() for an immutable alternative.',
+        es: 'reverse() muta el array original; usa toReversed() como alternativa inmutable.',
+      },
+    },
   },
   {
     slug: 'array-reverse-words',
@@ -92,6 +117,15 @@ export const reverseExercises: Exercise[] = [
       'Chain: `.split(\' \').reverse().join(\' \')`.',
     ],
     tags: ['array', 'reverse', 'string', 'words', 'split-join'],
+    usageExample: {
+      code: `const sentence = 'one two three'
+sentence.split(' ').reverse().join(' ')
+// → 'three two one'`,
+      explanation: {
+        en: 'Use split, reverse, and join to reverse the order of words in a sentence.',
+        es: 'Usa split, reverse y join para invertir el orden de las palabras en una oración.',
+      },
+    },
   },
   {
     slug: 'array-reverse-palindrome',
@@ -115,5 +149,14 @@ export const reverseExercises: Exercise[] = [
       'The mirror index of `i` in an array of length `n` is `n - 1 - i`.',
     ],
     tags: ['array', 'reverse', 'palindrome', 'every', 'symmetric'],
+    usageExample: {
+      code: `const arr = [1, 2, 3]
+arr.join('') === [...arr].reverse().join('')
+// → false (not a palindrome)`,
+      explanation: {
+        en: 'Compare an array with its reverse to check for palindromes without mutating the original.',
+        es: 'Compara un array con su reverso para verificar palíndromos sin mutar el original.',
+      },
+    },
   },
 ]

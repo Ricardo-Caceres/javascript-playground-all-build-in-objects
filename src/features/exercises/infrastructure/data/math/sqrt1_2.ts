@@ -23,6 +23,15 @@ export const mathSqrt1_2Exercises: Exercise[] = [
       'It is commonly used in trigonometry (sin/cos of 45°).',
     ],
     tags: ['Math', 'SQRT1_2', 'static-property', 'beginner'],
+    usageExample: {
+      code: `// Square root of 1/2 (= 1 / Math.SQRT2)
+Math.SQRT1_2   // → 0.7071067811...
+Math.SQRT1_2 === 1 / Math.SQRT2   // → true`,
+      explanation: {
+        en: 'Use Math.SQRT1_2 as a precomputed constant equal to 1/√2, useful in trigonometry and vector normalization.',
+        es: 'Usa Math.SQRT1_2 como constante precalculada igual a 1/√2, útil en trigonometría y normalización de vectores.',
+      },
+    },
   },
   {
     slug: 'math-sqrt1_2-2',
@@ -46,6 +55,15 @@ export const mathSqrt1_2Exercises: Exercise[] = [
       'They represent the same value stored as a constant.',
     ],
     tags: ['Math', 'SQRT1_2', 'SQRT2', 'static-property', 'intermediate'],
+    usageExample: {
+      code: `// Square root of 1/2 (= 1 / Math.SQRT2)
+Math.SQRT1_2   // → 0.7071067811...
+Math.SQRT1_2 === 1 / Math.SQRT2   // → true`,
+      explanation: {
+        en: 'Use Math.SQRT1_2 as a precomputed constant equal to 1/√2, useful in trigonometry and vector normalization.',
+        es: 'Usa Math.SQRT1_2 como constante precalculada igual a 1/√2, útil en trigonometría y normalización de vectores.',
+      },
+    },
   },
   {
     slug: 'math-sqrt1_2-3',
@@ -69,6 +87,15 @@ export const mathSqrt1_2Exercises: Exercise[] = [
       'They may differ by a tiny floating-point rounding error.',
     ],
     tags: ['Math', 'SQRT1_2', 'sqrt', 'static-property', 'intermediate'],
+    usageExample: {
+      code: `// Square root of 1/2 (= 1 / Math.SQRT2)
+Math.SQRT1_2   // → 0.7071067811...
+Math.SQRT1_2 === 1 / Math.SQRT2   // → true`,
+      explanation: {
+        en: 'Use Math.SQRT1_2 as a precomputed constant equal to 1/√2, useful in trigonometry and vector normalization.',
+        es: 'Usa Math.SQRT1_2 como constante precalculada igual a 1/√2, útil en trigonometría y normalización de vectores.',
+      },
+    },
   },
   {
     slug: 'math-sqrt1_2-4',
@@ -92,6 +119,15 @@ export const mathSqrt1_2Exercises: Exercise[] = [
       '√(1/2) * √2 = √(1/2 * 2) = √1 = 1',
     ],
     tags: ['Math', 'SQRT1_2', 'SQRT2', 'static-property', 'intermediate'],
+    usageExample: {
+      code: `// Square root of 1/2 (= 1 / Math.SQRT2)
+Math.SQRT1_2   // → 0.7071067811...
+Math.SQRT1_2 === 1 / Math.SQRT2   // → true`,
+      explanation: {
+        en: 'Use Math.SQRT1_2 as a precomputed constant equal to 1/√2, useful in trigonometry and vector normalization.',
+        es: 'Usa Math.SQRT1_2 como constante precalculada igual a 1/√2, útil en trigonometría y normalización de vectores.',
+      },
+    },
   },
   {
     slug: 'math-sqrt1_2-5',
@@ -115,5 +151,14 @@ export const mathSqrt1_2Exercises: Exercise[] = [
       'This is the closest double-precision float to 1/√2.',
     ],
     tags: ['Math', 'SQRT1_2', 'static-property', 'advanced'],
+    usageExample: {
+      code: `// Square root of 1/2 (= 1 / Math.SQRT2)
+Math.SQRT1_2   // → 0.7071067811...
+Math.SQRT1_2 === 1 / Math.SQRT2   // → true`,
+      explanation: {
+        en: 'Use Math.SQRT1_2 as a precomputed constant equal to 1/√2, useful in trigonometry and vector normalization.',
+        es: 'Usa Math.SQRT1_2 como constante precalculada igual a 1/√2, útil en trigonometría y normalización de vectores.',
+      },
+    },
   },
 ]

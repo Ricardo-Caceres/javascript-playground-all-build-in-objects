@@ -20,6 +20,15 @@ export const mathRoundExercises: Exercise[] = [
     ],
     hints: ['When the fractional part is exactly 0.5, Math.round rounds toward +Infinity'],
     tags: ['Math', 'round', 'static-method'],
+    usageExample: {
+      code: `// Round to nearest integer (ties go up)
+Math.round(4.5)   // → 5
+Math.round(4.4)   // → 4`,
+      explanation: {
+        en: 'Use Math.round() to round a number to the nearest integer, with ties (.5) rounding up.',
+        es: 'Usa Math.round() para redondear un número al entero más cercano, con los medios (.5) redondeando hacia arriba.',
+      },
+    },
   },
   {
     slug: 'math-round-2',
@@ -40,6 +49,15 @@ export const mathRoundExercises: Exercise[] = [
     ],
     hints: ['Values below x.5 round toward the lower integer'],
     tags: ['Math', 'round', 'static-method'],
+    usageExample: {
+      code: `// Round to nearest integer (ties go up)
+Math.round(4.5)   // → 5
+Math.round(4.4)   // → 4`,
+      explanation: {
+        en: 'Use Math.round() to round a number to the nearest integer, with ties (.5) rounding up.',
+        es: 'Usa Math.round() para redondear un número al entero más cercano, con los medios (.5) redondeando hacia arriba.',
+      },
+    },
   },
   {
     slug: 'math-round-3',
@@ -60,6 +78,15 @@ export const mathRoundExercises: Exercise[] = [
     ],
     hints: ['Math.round always rounds toward +Infinity at .5, so -4.5 → -4 (not -5)'],
     tags: ['Math', 'round', 'static-method'],
+    usageExample: {
+      code: `// Round to nearest integer (ties go up)
+Math.round(4.5)   // → 5
+Math.round(4.4)   // → 4`,
+      explanation: {
+        en: 'Use Math.round() to round a number to the nearest integer, with ties (.5) rounding up.',
+        es: 'Usa Math.round() para redondear un número al entero más cercano, con los medios (.5) redondeando hacia arriba.',
+      },
+    },
   },
   {
     slug: 'math-round-4',
@@ -80,6 +107,15 @@ export const mathRoundExercises: Exercise[] = [
     ],
     hints: ['0.1 is closer to 0 than to 1, so it rounds down to 0'],
     tags: ['Math', 'round', 'static-method'],
+    usageExample: {
+      code: `// Round to nearest integer (ties go up)
+Math.round(4.5)   // → 5
+Math.round(4.4)   // → 4`,
+      explanation: {
+        en: 'Use Math.round() to round a number to the nearest integer, with ties (.5) rounding up.',
+        es: 'Usa Math.round() para redondear un número al entero más cercano, con los medios (.5) redondeando hacia arriba.',
+      },
+    },
   },
   {
     slug: 'math-round-5',
@@ -100,5 +136,14 @@ export const mathRoundExercises: Exercise[] = [
     ],
     hints: ['-4.6 is closer to -5 than to -4, so it rounds to -5'],
     tags: ['Math', 'round', 'static-method'],
+    usageExample: {
+      code: `// Round to nearest integer (ties go up)
+Math.round(4.5)   // → 5
+Math.round(4.4)   // → 4`,
+      explanation: {
+        en: 'Use Math.round() to round a number to the nearest integer, with ties (.5) rounding up.',
+        es: 'Usa Math.round() para redondear un número al entero más cercano, con los medios (.5) redondeando hacia arriba.',
+      },
+    },
   },
 ]

@@ -36,6 +36,16 @@ getAllDescriptors({ a: 1 })
       'Each descriptor includes `value, writable, enumerable, configurable` for data properties.',
     ],
     tags: ['Object', 'Object.getOwnPropertyDescriptors', 'descriptor', 'beginner'],
+    usageExample: {
+      code: `// Inspect all property descriptors at once
+const obj = { a: 1, b: 2 }
+Object.getOwnPropertyDescriptors(obj)
+// → { a: { value: 1, writable: true, ... }, b: { value: 2, ... } }`,
+      explanation: {
+        en: 'Use Object.getOwnPropertyDescriptors() to get all property descriptors of an object, useful when doing a complete clone.',
+        es: 'Usa Object.getOwnPropertyDescriptors() para obtener todos los descriptores de un objeto, útil al hacer una copia completa.',
+      },
+    },
   },
   {
     slug: 'object-get-own-prop-descriptors-flags',
@@ -70,6 +80,16 @@ allEnumerable({ a: 1, b: 2 }) // → true
       'Use `Object.values(descriptors).every(d => d.enumerable === true)`.',
     ],
     tags: ['Object', 'Object.getOwnPropertyDescriptors', 'enumerable', 'intermediate'],
+    usageExample: {
+      code: `// Inspect all property descriptors at once
+const obj = { a: 1, b: 2 }
+Object.getOwnPropertyDescriptors(obj)
+// → { a: { value: 1, writable: true, ... }, b: { value: 2, ... } }`,
+      explanation: {
+        en: 'Use Object.getOwnPropertyDescriptors() to get all property descriptors of an object, useful when doing a complete clone.',
+        es: 'Usa Object.getOwnPropertyDescriptors() para obtener todos los descriptores de un objeto, útil al hacer una copia completa.',
+      },
+    },
   },
   {
     slug: 'object-get-own-prop-descriptors-clone',
@@ -105,6 +125,16 @@ preciseClone({ a: 1 }) // → { a: 1 }
       'This technique clones getters, non-writable, non-enumerable properties — unlike `Object.assign`.',
     ],
     tags: ['Object', 'Object.getOwnPropertyDescriptors', 'clone', 'intermediate'],
+    usageExample: {
+      code: `// Inspect all property descriptors at once
+const obj = { a: 1, b: 2 }
+Object.getOwnPropertyDescriptors(obj)
+// → { a: { value: 1, writable: true, ... }, b: { value: 2, ... } }`,
+      explanation: {
+        en: 'Use Object.getOwnPropertyDescriptors() to get all property descriptors of an object, useful when doing a complete clone.',
+        es: 'Usa Object.getOwnPropertyDescriptors() para obtener todos los descriptores de un objeto, útil al hacer una copia completa.',
+      },
+    },
   },
   {
     slug: 'object-get-own-prop-descriptors-non-enumerable',
@@ -140,6 +170,16 @@ countAllDescriptors(obj) // → 2
       '`Object.keys(Object.getOwnPropertyDescriptors(obj))` gives all own property names including non-enumerable.',
     ],
     tags: ['Object', 'Object.getOwnPropertyDescriptors', 'non-enumerable', 'intermediate'],
+    usageExample: {
+      code: `// Inspect all property descriptors at once
+const obj = { a: 1, b: 2 }
+Object.getOwnPropertyDescriptors(obj)
+// → { a: { value: 1, writable: true, ... }, b: { value: 2, ... } }`,
+      explanation: {
+        en: 'Use Object.getOwnPropertyDescriptors() to get all property descriptors of an object, useful when doing a complete clone.',
+        es: 'Usa Object.getOwnPropertyDescriptors() para obtener todos los descriptores de un objeto, útil al hacer una copia completa.',
+      },
+    },
   },
   {
     slug: 'object-get-own-prop-descriptors-symbols-excluded',
@@ -177,5 +217,15 @@ hasNoSymbol({ [s]: 1 }) // → true (Symbol not in descriptors)
       'To get Symbol-keyed property descriptors, use `Object.getOwnPropertySymbols` combined with `Object.getOwnPropertyDescriptor`.',
     ],
     tags: ['Object', 'Object.getOwnPropertyDescriptors', 'symbol', 'intermediate'],
+    usageExample: {
+      code: `// Inspect all property descriptors at once
+const obj = { a: 1, b: 2 }
+Object.getOwnPropertyDescriptors(obj)
+// → { a: { value: 1, writable: true, ... }, b: { value: 2, ... } }`,
+      explanation: {
+        en: 'Use Object.getOwnPropertyDescriptors() to get all property descriptors of an object, useful when doing a complete clone.',
+        es: 'Usa Object.getOwnPropertyDescriptors() para obtener todos los descriptores de un objeto, útil al hacer una copia completa.',
+      },
+    },
   },
 ]

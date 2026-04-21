@@ -30,6 +30,16 @@ export const numberToStringExercises: Exercise[] = [
     ],
     hints: ['Hexadecimal (base 16) uses digits 0-9 and letters a-f.'],
     tags: ['Number', 'toString', 'instance-method', 'intermediate'],
+    usageExample: {
+      code: `// Convert number to string in a given base
+(255).toString(16)   // → 'ff'
+(255).toString(2)    // → '11111111'
+(255).toString(10)   // → '255'`,
+      explanation: {
+        en: 'Use toString() with a radix argument to convert a number to its binary, octal, hexadecimal, or other base string representation.',
+        es: 'Usa toString() con un argumento de base para convertir un número a su representación en binario, octal, hexadecimal u otra base.',
+      },
+    },
   },
   {
     slug: 'number-to-string-2',
@@ -52,6 +62,16 @@ export const numberToStringExercises: Exercise[] = [
     ],
     hints: ['Binary (base 2) only uses digits 0 and 1.'],
     tags: ['Number', 'toString', 'binary', 'intermediate'],
+    usageExample: {
+      code: `// Convert number to string in a given base
+(255).toString(16)   // → 'ff'
+(255).toString(2)    // → '11111111'
+(255).toString(10)   // → '255'`,
+      explanation: {
+        en: 'Use toString() with a radix argument to convert a number to its binary, octal, hexadecimal, or other base string representation.',
+        es: 'Usa toString() con un argumento de base para convertir un número a su representación en binario, octal, hexadecimal u otra base.',
+      },
+    },
   },
   {
     slug: 'number-to-string-3',
@@ -74,6 +94,16 @@ export const numberToStringExercises: Exercise[] = [
     ],
     hints: ['Without a radix, `toString()` defaults to base 10.'],
     tags: ['Number', 'toString', 'base10', 'beginner'],
+    usageExample: {
+      code: `// Convert number to string in a given base
+(255).toString(16)   // → 'ff'
+(255).toString(2)    // → '11111111'
+(255).toString(10)   // → '255'`,
+      explanation: {
+        en: 'Use toString() with a radix argument to convert a number to its binary, octal, hexadecimal, or other base string representation.',
+        es: 'Usa toString() con un argumento de base para convertir un número a su representación en binario, octal, hexadecimal u otra base.',
+      },
+    },
   },
   {
     slug: 'number-to-string-4',
@@ -96,6 +126,16 @@ export const numberToStringExercises: Exercise[] = [
     ],
     hints: ['Octal (base 8) uses digits 0-7.'],
     tags: ['Number', 'toString', 'octal', 'intermediate'],
+    usageExample: {
+      code: `// Convert number to string in a given base
+(255).toString(16)   // → 'ff'
+(255).toString(2)    // → '11111111'
+(255).toString(10)   // → '255'`,
+      explanation: {
+        en: 'Use toString() with a radix argument to convert a number to its binary, octal, hexadecimal, or other base string representation.',
+        es: 'Usa toString() con un argumento de base para convertir un número a su representación en binario, octal, hexadecimal u otra base.',
+      },
+    },
   },
   {
     slug: 'number-to-string-5',
@@ -118,5 +158,15 @@ const t = typeof result`,
     ],
     hints: ['`toString()` always returns a string — use `Number()` to convert back.'],
     tags: ['Number', 'toString', 'return-type', 'beginner'],
+    usageExample: {
+      code: `// Convert number to string in a given base
+(255).toString(16)   // → 'ff'
+(255).toString(2)    // → '11111111'
+(255).toString(10)   // → '255'`,
+      explanation: {
+        en: 'Use toString() with a radix argument to convert a number to its binary, octal, hexadecimal, or other base string representation.',
+        es: 'Usa toString() con un argumento de base para convertir un número a su representación en binario, octal, hexadecimal u otra base.',
+      },
+    },
   },
 ]

@@ -20,6 +20,15 @@ export const mathCeilExercises: Exercise[] = [
     ],
     hints: ['ceil always rounds toward +∞', 'Even a tiny fraction above an integer rounds up'],
     tags: ['Math', 'ceil', 'static-method', 'rounding'],
+    usageExample: {
+      code: `// Round up to the nearest integer
+Math.ceil(4.2)   // → 5
+Math.ceil(-4.2)  // → -4`,
+      explanation: {
+        en: 'Use Math.ceil() when you need to round a number up to the next whole integer.',
+        es: 'Usa Math.ceil() cuando necesites redondear un número hacia arriba al siguiente entero.',
+      },
+    },
   },
   {
     slug: 'math-ceil-2',
@@ -40,6 +49,15 @@ export const mathCeilExercises: Exercise[] = [
     ],
     hints: ['ceil always rounds toward +∞, which for negatives means toward zero', 'Compare with Math.floor(-4.1) = -5'],
     tags: ['Math', 'ceil', 'static-method', 'rounding'],
+    usageExample: {
+      code: `// Round up to the nearest integer
+Math.ceil(4.2)   // → 5
+Math.ceil(-4.2)  // → -4`,
+      explanation: {
+        en: 'Use Math.ceil() when you need to round a number up to the next whole integer.',
+        es: 'Usa Math.ceil() cuando necesites redondear un número hacia arriba al siguiente entero.',
+      },
+    },
   },
   {
     slug: 'math-ceil-3',
@@ -60,6 +78,15 @@ export const mathCeilExercises: Exercise[] = [
     ],
     hints: ['ceil does not round to the nearest integer; it always rounds up', 'Both 4.1 and 4.9 ceil to 5'],
     tags: ['Math', 'ceil', 'static-method', 'rounding'],
+    usageExample: {
+      code: `// Round up to the nearest integer
+Math.ceil(4.2)   // → 5
+Math.ceil(-4.2)  // → -4`,
+      explanation: {
+        en: 'Use Math.ceil() when you need to round a number up to the next whole integer.',
+        es: 'Usa Math.ceil() cuando necesites redondear un número hacia arriba al siguiente entero.',
+      },
+    },
   },
   {
     slug: 'math-ceil-4',
@@ -80,6 +107,15 @@ export const mathCeilExercises: Exercise[] = [
     ],
     hints: ['An integer is already at its ceiling', 'ceil(n) = n for all integers n'],
     tags: ['Math', 'ceil', 'static-method', 'rounding'],
+    usageExample: {
+      code: `// Round up to the nearest integer
+Math.ceil(4.2)   // → 5
+Math.ceil(-4.2)  // → -4`,
+      explanation: {
+        en: 'Use Math.ceil() when you need to round a number up to the next whole integer.',
+        es: 'Usa Math.ceil() cuando necesites redondear un número hacia arriba al siguiente entero.',
+      },
+    },
   },
   {
     slug: 'math-ceil-5',
@@ -100,5 +136,14 @@ export const mathCeilExercises: Exercise[] = [
     ],
     hints: ['Ceiling always moves toward +∞', '-4 is "above" -4.9 on the number line, so it is the ceiling'],
     tags: ['Math', 'ceil', 'static-method', 'rounding'],
+    usageExample: {
+      code: `// Round up to the nearest integer
+Math.ceil(4.2)   // → 5
+Math.ceil(-4.2)  // → -4`,
+      explanation: {
+        en: 'Use Math.ceil() when you need to round a number up to the next whole integer.',
+        es: 'Usa Math.ceil() cuando necesites redondear un número hacia arriba al siguiente entero.',
+      },
+    },
   },
 ]

@@ -36,6 +36,14 @@ double([0, -1, 10])  // → [0, -2, 20]
       'The callback receives the element as the first argument: `x => x * 2`.',
     ],
     tags: ['Array', 'Array.prototype.map', 'transform', 'beginner'],
+    usageExample: {
+      code: `const nums = [1, 2, 3]
+nums.map(n => n * 2)  // → [2, 4, 6]`,
+      explanation: {
+        en: 'Use map() to transform every element of an array and collect the results in a new array.',
+        es: 'Usa map() para transformar cada elemento de un array y recopilar los resultados en uno nuevo.',
+      },
+    },
   },
   {
     slug: 'array-map-to-string',
@@ -72,6 +80,14 @@ toStrings([0, -5, 100]) // → ['0', '-5', '100']
       'Alternatively: `nums.map(n => String(n))` or `nums.map(n => \`${n}\`)`.',
     ],
     tags: ['Array', 'Array.prototype.map', 'String', 'type-conversion', 'beginner'],
+    usageExample: {
+      code: `const nums = [1, 2, 3]
+nums.map(String)  // → ['1', '2', '3']`,
+      explanation: {
+        en: 'Pass String directly as the map() callback to convert every number to its string equivalent.',
+        es: 'Pasa String directamente como callback de map() para convertir cada número a su equivalente en cadena.',
+      },
+    },
   },
   {
     slug: 'array-map-objects',
@@ -108,6 +124,14 @@ pluck([{ age: 30 }, { age: 25 }], 'age')            // → [30, 25]
       'The return type `T[K][]` is TypeScript\'s way of saying "array of the value type at key K".',
     ],
     tags: ['Array', 'Array.prototype.map', 'generics', 'pluck', 'intermediate'],
+    usageExample: {
+      code: `const users = [{name:'Ana'}, {name:'Ben'}]
+users.map(u => u.name)  // → ['Ana', 'Ben']`,
+      explanation: {
+        en: 'Use map() to extract a single property from each object in an array.',
+        es: 'Usa map() para extraer una sola propiedad de cada objeto en un array.',
+      },
+    },
   },
   {
     slug: 'array-map-with-index',
@@ -144,6 +168,15 @@ addIndex([])              // → []
       'Use a template literal: `` `${i}: ${s}` ``.',
     ],
     tags: ['Array', 'Array.prototype.map', 'index', 'template-literal', 'intermediate'],
+    usageExample: {
+      code: `const letters = ['a', 'b', 'c']
+letters.map((v, i) => i + ':' + v)
+// → ['0:a', '1:b', '2:c']`,
+      explanation: {
+        en: 'Use the index parameter of map() to include positional information in the transformed output.',
+        es: 'Usa el parámetro de índice de map() para incluir información posicional en la salida transformada.',
+      },
+    },
   },
   {
     slug: 'array-map-parse',
@@ -180,5 +213,13 @@ parseNumbers(['10', '-5', '0']) // → [10, -5, 0]
       'Equivalent to `strs.map(s => Number(s))` or `strs.map(s => +s)`.',
     ],
     tags: ['Array', 'Array.prototype.map', 'Number', 'parse', 'intermediate'],
+    usageExample: {
+      code: `const strs = ['1', '2', '3']
+strs.map(Number)  // → [1, 2, 3]`,
+      explanation: {
+        en: 'Pass Number as the map() callback to parse every string element to a number.',
+        es: 'Pasa Number como callback de map() para convertir cada elemento cadena a número.',
+      },
+    },
   },
 ]

@@ -36,6 +36,14 @@ getLength([])        // → 0
       'The length of an empty array is `0`.',
     ],
     tags: ['Array', 'Array.prototype.length', 'property', 'beginner'],
+    usageExample: {
+      code: `const arr = [10, 20, 30]
+arr.length  // → 3`,
+      explanation: {
+        en: 'Read the length property to get the number of elements in an array.',
+        es: 'Lee la propiedad length para obtener el número de elementos en un array.',
+      },
+    },
   },
   {
     slug: 'array-length-empty',
@@ -71,6 +79,14 @@ emptyLength() // → 0
       '`0` is falsy in JavaScript.',
     ],
     tags: ['Array', 'Array.prototype.length', 'empty', 'beginner'],
+    usageExample: {
+      code: `const arr = []
+arr.length  // → 0`,
+      explanation: {
+        en: 'Check length === 0 to determine whether an array is empty.',
+        es: 'Verifica length === 0 para determinar si un array está vacío.',
+      },
+    },
   },
   {
     slug: 'array-length-truncate',
@@ -108,6 +124,15 @@ truncate([1, 2, 3], 0)       // → []
       'Setting `arr.length = 0` is a common way to empty an array while keeping the same reference.',
     ],
     tags: ['Array', 'Array.prototype.length', 'truncate', 'mutation', 'intermediate'],
+    usageExample: {
+      code: `const arr = [1, 2, 3, 4, 5]
+arr.length = 3
+arr  // → [1, 2, 3]  (elements truncated)`,
+      explanation: {
+        en: 'Assign a smaller value to length to truncate an array in place.',
+        es: 'Asigna un valor menor a length para truncar un array en su lugar.',
+      },
+    },
   },
   {
     slug: 'array-length-extend',
@@ -146,6 +171,15 @@ extend([], 3)     // → 3
       'Return `arr.length` after the assignment to get the updated value.',
     ],
     tags: ['Array', 'Array.prototype.length', 'extend', 'sparse', 'intermediate'],
+    usageExample: {
+      code: `const arr = [1, 2, 3]
+arr.length = 5
+arr  // → [1, 2, 3, <2 empty items>]`,
+      explanation: {
+        en: 'Assigning a larger number to length creates a sparse array with empty slots at the end.',
+        es: 'Asignar un número mayor a length crea un array disperso con posiciones vacías al final.',
+      },
+    },
   },
   {
     slug: 'array-length-after-push',
@@ -183,5 +217,15 @@ lengthAfterPush([], 10)        // → 1
       '`push` itself returns the new length — you could also return that directly.',
     ],
     tags: ['Array', 'Array.prototype.length', 'push', 'intermediate'],
+    usageExample: {
+      code: `const arr = []
+arr.push('a')  // returns 1
+arr.push('b')  // returns 2
+arr.length     // → 2`,
+      explanation: {
+        en: 'length updates automatically — check it after mutations to know the current array size.',
+        es: 'length se actualiza automáticamente; verifícalo después de mutaciones para conocer el tamaño actual.',
+      },
+    },
   },
 ]

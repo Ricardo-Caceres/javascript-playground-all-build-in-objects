@@ -36,6 +36,14 @@ joinWithComma(['one'])         // → 'one'
       'An empty array joined returns an empty string `""`.',
     ],
     tags: ['Array', 'Array.prototype.join', 'string', 'beginner'],
+    usageExample: {
+      code: `const words = ['Hello', 'World']
+words.join(' ')  // → 'Hello World'`,
+      explanation: {
+        en: 'Use join() to concatenate all array elements into a single string with a separator.',
+        es: 'Usa join() para concatenar todos los elementos del array en una sola cadena con un separador.',
+      },
+    },
   },
   {
     slug: 'array-join-custom-sep',
@@ -72,6 +80,15 @@ joinWith(['a', 'b', 'c'], '')  // → 'abc'
       'The separator only appears *between* elements, not before the first or after the last.',
     ],
     tags: ['Array', 'Array.prototype.join', 'separator', 'beginner'],
+    usageExample: {
+      code: `const nums = [1, 2, 3]
+nums.join(' - ')  // → '1 - 2 - 3'
+nums.join('')     // → '123'`,
+      explanation: {
+        en: 'Pass any string as the separator to join() to control how elements are delimited.',
+        es: 'Pasa cualquier cadena como separador a join() para controlar cómo se delimitan los elementos.',
+      },
+    },
   },
   {
     slug: 'array-join-path',
@@ -108,6 +125,14 @@ buildPath(['src', 'index.ts'])     // → 'src/index.ts'
       'For absolute paths, prepend `/` to the result: `\'/\' + parts.join(\'/\')`.',
     ],
     tags: ['Array', 'Array.prototype.join', 'path', 'intermediate'],
+    usageExample: {
+      code: `const parts = ['usr', 'local', 'bin']
+parts.join('/')  // → 'usr/local/bin'`,
+      explanation: {
+        en: "Use join('/') to construct file paths from an array of path segments.",
+        es: "Usa join('/') para construir rutas de archivo a partir de un array de segmentos de ruta.",
+      },
+    },
   },
   {
     slug: 'array-join-default',
@@ -144,6 +169,15 @@ joinDefault([])        // → ''
       'Number elements are converted to strings via `.toString()` before joining.',
     ],
     tags: ['Array', 'Array.prototype.join', 'default', 'beginner'],
+    usageExample: {
+      code: `const arr = [1, 2, 3]
+arr.join()    // → '1,2,3'  (default separator is ',')
+arr.toString() // → '1,2,3'  (same result)`,
+      explanation: {
+        en: 'Calling join() without arguments uses a comma as the default separator.',
+        es: 'Llamar a join() sin argumentos usa una coma como separador predeterminado.',
+      },
+    },
   },
   {
     slug: 'array-join-html',
@@ -179,5 +213,13 @@ createList(['apples', 'bananas']) // → '<li>apples</li>\\n<li>bananas</li>'
       'Template literals make it easy to wrap values: `` `<li>${item}</li>` ``.',
     ],
     tags: ['Array', 'Array.prototype.join', 'HTML', 'template', 'intermediate'],
+    usageExample: {
+      code: `const items = ['<li>one</li>', '<li>two</li>', '<li>three</li>']
+items.join('\\n')  // → HTML list content joined with newlines`,
+      explanation: {
+        en: 'Use join() to assemble HTML snippets from an array of strings.',
+        es: 'Usa join() para ensamblar fragmentos HTML a partir de un array de cadenas.',
+      },
+    },
   },
 ]

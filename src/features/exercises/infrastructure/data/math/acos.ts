@@ -20,6 +20,15 @@ export const mathAcosExercises: Exercise[] = [
     ],
     hints: ['cos(0) = 1, so acos(1) = 0', 'The range of acos is [0, π]'],
     tags: ['Math', 'acos', 'static-method', 'trigonometry'],
+    usageExample: {
+      code: `// Inverse cosine — result in radians
+Math.acos(1)   // → 0
+Math.acos(0)   // → 1.5707... (π/2)`,
+      explanation: {
+        en: 'Use Math.acos() to find the angle (in radians) whose cosine equals a given value.',
+        es: 'Usa Math.acos() para encontrar el ángulo (en radianes) cuyo coseno es un valor dado.',
+      },
+    },
   },
   {
     slug: 'math-acos-2',
@@ -40,6 +49,15 @@ export const mathAcosExercises: Exercise[] = [
     ],
     hints: ['cos(π/2) = 0, so acos(0) = π/2', 'Math.PI / 2 ≈ 1.5708'],
     tags: ['Math', 'acos', 'static-method', 'trigonometry'],
+    usageExample: {
+      code: `// Inverse cosine — result in radians
+Math.acos(1)   // → 0
+Math.acos(0)   // → 1.5707... (π/2)`,
+      explanation: {
+        en: 'Use Math.acos() to find the angle (in radians) whose cosine equals a given value.',
+        es: 'Usa Math.acos() para encontrar el ángulo (en radianes) cuyo coseno es un valor dado.',
+      },
+    },
   },
   {
     slug: 'math-acos-3',
@@ -60,6 +78,15 @@ export const mathAcosExercises: Exercise[] = [
     ],
     hints: ['cos(π) = -1, so acos(-1) = π', 'This is a common way to get π in JavaScript'],
     tags: ['Math', 'acos', 'static-method', 'trigonometry'],
+    usageExample: {
+      code: `// Inverse cosine — result in radians
+Math.acos(1)   // → 0
+Math.acos(0)   // → 1.5707... (π/2)`,
+      explanation: {
+        en: 'Use Math.acos() to find the angle (in radians) whose cosine equals a given value.',
+        es: 'Usa Math.acos() para encontrar el ángulo (en radianes) cuyo coseno es un valor dado.',
+      },
+    },
   },
   {
     slug: 'math-acos-4',
@@ -80,6 +107,15 @@ export const mathAcosExercises: Exercise[] = [
     ],
     hints: ['cos(60°) = 0.5, so acos(0.5) = π/3 ≈ 1.0472', 'Convert to degrees by multiplying by 180/Math.PI'],
     tags: ['Math', 'acos', 'static-method', 'trigonometry'],
+    usageExample: {
+      code: `// Inverse cosine — result in radians
+Math.acos(1)   // → 0
+Math.acos(0)   // → 1.5707... (π/2)`,
+      explanation: {
+        en: 'Use Math.acos() to find the angle (in radians) whose cosine equals a given value.',
+        es: 'Usa Math.acos() para encontrar el ángulo (en radianes) cuyo coseno es un valor dado.',
+      },
+    },
   },
   {
     slug: 'math-acos-5',
@@ -100,5 +136,14 @@ export const mathAcosExercises: Exercise[] = [
     ],
     hints: ['The domain of acos is [-1, 1]', 'NaN is the only value where x !== x is true'],
     tags: ['Math', 'acos', 'static-method', 'trigonometry', 'NaN'],
+    usageExample: {
+      code: `// Inverse cosine — result in radians
+Math.acos(1)   // → 0
+Math.acos(0)   // → 1.5707... (π/2)`,
+      explanation: {
+        en: 'Use Math.acos() to find the angle (in radians) whose cosine equals a given value.',
+        es: 'Usa Math.acos() para encontrar el ángulo (en radianes) cuyo coseno es un valor dado.',
+      },
+    },
   },
 ]

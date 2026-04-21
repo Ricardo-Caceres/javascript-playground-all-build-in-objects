@@ -36,6 +36,15 @@ copyFirst([9, 8, 7])       // → [9, 8, 9]
       'The end argument is exclusive, so `copyWithin(2, 0, 1)` copies only arr[0].',
     ],
     tags: ['Array', 'Array.prototype.copyWithin', 'mutation', 'intermediate'],
+    usageExample: {
+      code: `const arr = [1, 2, 3, 4, 5]
+arr.copyWithin(1, 3)  // → [1, 4, 5, 4, 5]
+// copies from index 3 to position 1`,
+      explanation: {
+        en: 'Use copyWithin(target, start) to copy part of an array to another position within the same array.',
+        es: 'Usa copyWithin(target, start) para copiar parte de un array a otra posición dentro del mismo array.',
+      },
+    },
   },
   {
     slug: 'array-copywithin-to-start',
@@ -72,6 +81,15 @@ shiftLeft([10, 20, 30]) // → [20, 30, 30]
       'The last element stays because there is no element to copy into its position from the right.',
     ],
     tags: ['Array', 'Array.prototype.copyWithin', 'shift', 'intermediate'],
+    usageExample: {
+      code: `const arr = [1, 2, 3, 4, 5]
+arr.copyWithin(0, 3)  // → [4, 5, 3, 4, 5]
+// pastes elements at index 3+ to the start`,
+      explanation: {
+        en: 'Pass 0 as the target to copyWithin() to shift elements to the beginning of the array.',
+        es: 'Pasa 0 como destino a copyWithin() para mover elementos al inicio del array.',
+      },
+    },
   },
   {
     slug: 'array-copywithin-negative',
@@ -108,6 +126,15 @@ copyToEnd([9, 0, 0])    // → [9, 0, 9]
       '`copyWithin(-1, 0, 1)` copies just one element (arr[0]) to the last slot.',
     ],
     tags: ['Array', 'Array.prototype.copyWithin', 'negative-index', 'intermediate'],
+    usageExample: {
+      code: `const arr = [1, 2, 3, 4, 5]
+arr.copyWithin(-2, 0, 2)  // → [1, 2, 3, 1, 2]
+// uses negative target index`,
+      explanation: {
+        en: 'Use negative indices with copyWithin() to reference positions from the end of the array.',
+        es: 'Usa índices negativos con copyWithin() para referenciar posiciones desde el final del array.',
+      },
+    },
   },
   {
     slug: 'array-copywithin-range',
@@ -144,6 +171,15 @@ copyRange([1, 2, 3, 4, 5], 1, 3)    // → [1, 4, 5, 4, 5]
       'The `end` parameter is optional; if omitted it defaults to `arr.length`.',
     ],
     tags: ['Array', 'Array.prototype.copyWithin', 'range', 'advanced'],
+    usageExample: {
+      code: `const arr = [1, 2, 3, 4, 5]
+arr.copyWithin(1, 3, 5)  // → [1, 4, 5, 4, 5]
+// copies slice [3,5) to position 1`,
+      explanation: {
+        en: 'Provide start and end arguments to copyWithin() to copy only a specific slice.',
+        es: 'Proporciona argumentos start y end a copyWithin() para copiar solo un segmento específico.',
+      },
+    },
   },
   {
     slug: 'array-copywithin-returns-same',
@@ -180,5 +216,14 @@ isSameArray([1, 2, 3]) // → true
       'Unlike `map` or `filter`, `copyWithin` returns the original array, not a new one.',
     ],
     tags: ['Array', 'Array.prototype.copyWithin', 'mutation', 'reference', 'intermediate'],
+    usageExample: {
+      code: `const arr = [1, 2, 3]
+const result = arr.copyWithin(0, 1)
+console.log(result === arr)  // → true  (same reference)`,
+      explanation: {
+        en: 'copyWithin() mutates the array in place and returns the same array reference.',
+        es: 'copyWithin() muta el array en su lugar y devuelve la misma referencia al array.',
+      },
+    },
   },
 ]

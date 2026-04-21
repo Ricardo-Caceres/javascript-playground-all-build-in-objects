@@ -23,6 +23,14 @@ export const reduceExercises: Exercise[] = [
       'Always provide `0` as the initial value to handle empty arrays safely.',
     ],
     tags: ['array', 'reduce', 'sum', 'accumulator'],
+    usageExample: {
+      code: `const nums = [1, 2, 3, 4]
+nums.reduce((acc, n) => acc + n, 0)  // → 10`,
+      explanation: {
+        en: 'Use reduce() with an initial accumulator of 0 to compute the sum of all elements.',
+        es: 'Usa reduce() con un acumulador inicial de 0 para calcular la suma de todos los elementos.',
+      },
+    },
   },
   {
     slug: 'array-reduce-product',
@@ -46,6 +54,14 @@ export const reduceExercises: Exercise[] = [
       'The reducer is `(acc, n) => acc * n`.',
     ],
     tags: ['array', 'reduce', 'product', 'multiplication'],
+    usageExample: {
+      code: `const nums = [1, 2, 3, 4]
+nums.reduce((acc, n) => acc * n, 1)  // → 24`,
+      explanation: {
+        en: 'Use reduce() with an initial accumulator of 1 to compute the product of all elements.',
+        es: 'Usa reduce() con un acumulador inicial de 1 para calcular el producto de todos los elementos.',
+      },
+    },
   },
   {
     slug: 'array-reduce-flatten',
@@ -70,6 +86,15 @@ export const reduceExercises: Exercise[] = [
       'TypeScript needs `[] as number[]` or `<number[]>[]` for the initial value.',
     ],
     tags: ['array', 'reduce', 'flatten', 'concat'],
+    usageExample: {
+      code: `const nested = [[1, 2], [3, 4], [5]]
+nested.reduce((acc, arr) => acc.concat(arr), [])
+// → [1, 2, 3, 4, 5]`,
+      explanation: {
+        en: 'Use reduce() to flatten one level of nested arrays by concatenating each sub-array.',
+        es: 'Usa reduce() para aplanar un nivel de arrays anidados concatenando cada sub-array.',
+      },
+    },
   },
   {
     slug: 'array-reduce-count-occurrences',
@@ -94,6 +119,15 @@ export const reduceExercises: Exercise[] = [
       'Remember to `return acc` at the end of the reducer.',
     ],
     tags: ['array', 'reduce', 'object', 'count', 'frequency'],
+    usageExample: {
+      code: `const fruits = ['apple', 'banana', 'apple', 'cherry']
+fruits.reduce((acc, f) => { acc[f] = (acc[f]||0)+1; return acc }, {})
+// → {apple:2, banana:1, cherry:1}`,
+      explanation: {
+        en: 'Use reduce() with an object accumulator to count how many times each value appears.',
+        es: 'Usa reduce() con un acumulador de objeto para contar cuántas veces aparece cada valor.',
+      },
+    },
   },
   {
     slug: 'array-reduce-max',
@@ -118,5 +152,14 @@ export const reduceExercises: Exercise[] = [
       'Do not use `Math.max` — solve it purely with `reduce`.',
     ],
     tags: ['array', 'reduce', 'max', 'comparison'],
+    usageExample: {
+      code: `const nums = [3, 1, 4, 1, 5, 9]
+nums.reduce((max, n) => n > max ? n : max, -Infinity)
+// → 9`,
+      explanation: {
+        en: 'Use reduce() to find the maximum value by updating the accumulator when a larger value is found.',
+        es: 'Usa reduce() para encontrar el valor máximo actualizando el acumulador cuando se encuentra un valor mayor.',
+      },
+    },
   },
 ]

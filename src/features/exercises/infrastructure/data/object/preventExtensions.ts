@@ -43,6 +43,17 @@ export const preventExtensionsExercises: Exercise[] = [
     ],
     hints: ['preventExtensions only blocks adding new properties, not modifying or deleting existing ones'],
     tags: ['Object', 'preventExtensions', 'static-method', 'extensible'],
+    usageExample: {
+      code: `// Prevent new properties from being added
+const obj = { a: 1 }
+Object.preventExtensions(obj)
+obj.b = 2    // silently ignored
+Object.keys(obj)   // → ['a']`,
+      explanation: {
+        en: 'Use Object.preventExtensions() to lock an object so no new properties can be added, while still allowing modifications to existing ones.',
+        es: 'Usa Object.preventExtensions() para bloquear un objeto y que no se puedan añadir nuevas propiedades, aunque las existentes sí puedan modificarse.',
+      },
+    },
   },
   {
     slug: 'object-preventExtensions-2',
@@ -87,6 +98,17 @@ After calling \`Object.preventExtensions()\`, you can verify the result with \`O
     ],
     hints: ['preventExtensions is the weakest of the three object locking methods'],
     tags: ['Object', 'preventExtensions', 'isExtensible', 'static-method'],
+    usageExample: {
+      code: `// Prevent new properties from being added
+const obj = { a: 1 }
+Object.preventExtensions(obj)
+obj.b = 2    // silently ignored
+Object.keys(obj)   // → ['a']`,
+      explanation: {
+        en: 'Use Object.preventExtensions() to lock an object so no new properties can be added, while still allowing modifications to existing ones.',
+        es: 'Usa Object.preventExtensions() para bloquear un objeto y que no se puedan añadir nuevas propiedades, aunque las existentes sí puedan modificarse.',
+      },
+    },
   },
   {
     slug: 'object-preventExtensions-3',
@@ -133,6 +155,17 @@ After calling \`Object.preventExtensions()\`, you can verify the result with \`O
     ],
     hints: ['Use isExtensible to confirm the object is non-extensible'],
     tags: ['Object', 'preventExtensions', 'static-method'],
+    usageExample: {
+      code: `// Prevent new properties from being added
+const obj = { a: 1 }
+Object.preventExtensions(obj)
+obj.b = 2    // silently ignored
+Object.keys(obj)   // → ['a']`,
+      explanation: {
+        en: 'Use Object.preventExtensions() to lock an object so no new properties can be added, while still allowing modifications to existing ones.',
+        es: 'Usa Object.preventExtensions() para bloquear un objeto y que no se puedan añadir nuevas propiedades, aunque las existentes sí puedan modificarse.',
+      },
+    },
   },
   {
     slug: 'object-preventExtensions-4',
@@ -182,6 +215,17 @@ After calling \`Object.preventExtensions()\`, you can verify the result with \`O
     ],
     hints: ['preventExtensions is applied only to the direct object, not its prototype chain'],
     tags: ['Object', 'preventExtensions', 'prototype', 'static-method'],
+    usageExample: {
+      code: `// Prevent new properties from being added
+const obj = { a: 1 }
+Object.preventExtensions(obj)
+obj.b = 2    // silently ignored
+Object.keys(obj)   // → ['a']`,
+      explanation: {
+        en: 'Use Object.preventExtensions() to lock an object so no new properties can be added, while still allowing modifications to existing ones.',
+        es: 'Usa Object.preventExtensions() para bloquear un objeto y que no se puedan añadir nuevas propiedades, aunque las existentes sí puedan modificarse.',
+      },
+    },
   },
   {
     slug: 'object-preventExtensions-5',
@@ -228,5 +272,16 @@ In strict mode, attempting to add a property to a non-extensible object throws a
     ],
     hints: ['Use try/catch to test strict mode behavior'],
     tags: ['Object', 'preventExtensions', 'static-method', 'strict-mode'],
+    usageExample: {
+      code: `// Prevent new properties from being added
+const obj = { a: 1 }
+Object.preventExtensions(obj)
+obj.b = 2    // silently ignored
+Object.keys(obj)   // → ['a']`,
+      explanation: {
+        en: 'Use Object.preventExtensions() to lock an object so no new properties can be added, while still allowing modifications to existing ones.',
+        es: 'Usa Object.preventExtensions() para bloquear un objeto y que no se puedan añadir nuevas propiedades, aunque las existentes sí puedan modificarse.',
+      },
+    },
   },
 ]

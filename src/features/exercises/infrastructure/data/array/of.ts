@@ -36,6 +36,14 @@ createArrayOf(7)       // → [7]
       'Spread the rest parameter into `Array.of()` to forward all arguments.',
     ],
     tags: ['Array', 'Array.of', 'beginner'],
+    usageExample: {
+      code: `Array.of(1, 2, 3)  // → [1, 2, 3]
+Array.of(7)        // → [7]  (not a sparse array!)`,
+      explanation: {
+        en: 'Use Array.of() to create an array from arguments — unlike new Array(), a single number is an element.',
+        es: 'Usa Array.of() para crear un array a partir de argumentos; a diferencia de new Array(), un solo número es un elemento.',
+      },
+    },
   },
   {
     slug: 'array-of-vs-constructor',
@@ -72,6 +80,17 @@ safeArrayOf(0)   // → [0]
       '`new Array(n)` treats a single numeric argument as the desired length, not a value.',
     ],
     tags: ['Array', 'Array.of', 'constructor', 'beginner'],
+    usageExample: {
+      code: `// Ambiguous new Array:
+new Array(3)         // → [empty x 3]  (sparse)
+new Array(1, 2, 3)   // → [1, 2, 3]
+// Always predictable Array.of:
+Array.of(3)          // → [3]`,
+      explanation: {
+        en: 'Prefer Array.of() over new Array() for clarity — its behavior is consistent regardless of argument count.',
+        es: 'Prefiere Array.of() sobre new Array() por claridad; su comportamiento es consistente sin importar el número de argumentos.',
+      },
+    },
   },
   {
     slug: 'array-of-single-value',
@@ -109,6 +128,14 @@ wrapInArray(null)    // → [null]
       'The generic `<T>` ensures the return type is inferred correctly by TypeScript.',
     ],
     tags: ['Array', 'Array.of', 'generic', 'beginner'],
+    usageExample: {
+      code: `Array.of(42)    // → [42]   (element)
+new Array(42)   // → (42 empty slots)  (length!)`,
+      explanation: {
+        en: 'Array.of(n) with a single number creates a one-element array; new Array(n) creates n empty slots.',
+        es: 'Array.of(n) con un solo número crea un array de un elemento; new Array(n) crea n posiciones vacías.',
+      },
+    },
   },
   {
     slug: 'array-of-mixed-types',
@@ -154,6 +181,14 @@ createMixed(1, 'two', true, null) // → [1, 'two', true, null]
       'TypeScript infers the union type automatically from the function signature.',
     ],
     tags: ['Array', 'Array.of', 'mixed-types', 'intermediate'],
+    usageExample: {
+      code: `Array.of(1, 'two', true, null)
+// → [1, 'two', true, null]`,
+      explanation: {
+        en: 'Array.of() accepts values of any type and places them all in a new array.',
+        es: 'Array.of() acepta valores de cualquier tipo y los coloca todos en un nuevo array.',
+      },
+    },
   },
   {
     slug: 'array-of-verify-output',
@@ -191,5 +226,14 @@ verifyOf() // → true
       '`Array.of` always returns a plain Array, so `.toEqual` works directly on it.',
     ],
     tags: ['Array', 'Array.of', 'deep-equality', 'intermediate'],
+    usageExample: {
+      code: `const arr = Array.of(10, 20, 30)
+Array.isArray(arr)  // → true
+arr.length          // → 3`,
+      explanation: {
+        en: 'Array.of() always produces a real Array instance, verifiable with Array.isArray().',
+        es: 'Array.of() siempre produce una instancia real de Array, verificable con Array.isArray().',
+      },
+    },
   },
 ]

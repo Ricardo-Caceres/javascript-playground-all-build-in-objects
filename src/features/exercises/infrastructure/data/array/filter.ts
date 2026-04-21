@@ -36,6 +36,14 @@ filterEven([1, 3, 5])          // → []
       '`filter()` never modifies the original array — it always returns a new one.',
     ],
     tags: ['Array', 'Array.prototype.filter', 'even', 'beginner'],
+    usageExample: {
+      code: `const nums = [1, 2, 3, 4, 5, 6]
+nums.filter(n => n % 2 === 0)  // → [2, 4, 6]`,
+      explanation: {
+        en: 'Use filter() with a condition to create a new array containing only matching elements.',
+        es: 'Usa filter() con una condición para crear un nuevo array que contenga solo los elementos que coincidan.',
+      },
+    },
   },
   {
     slug: 'array-filter-long-strings',
@@ -72,6 +80,14 @@ filterLong(['a', 'bb', 'ccc'], 2)             // → ['bb', 'ccc']
       '`filter` preserves the order of elements.',
     ],
     tags: ['Array', 'Array.prototype.filter', 'string', 'length', 'beginner'],
+    usageExample: {
+      code: `const words = ['hi', 'hello', 'hey', 'howdy']
+words.filter(w => w.length > 3)  // → ['hello', 'howdy']`,
+      explanation: {
+        en: 'Use filter() to keep only strings that meet a length or pattern requirement.',
+        es: 'Usa filter() para conservar solo las cadenas que cumplan un requisito de longitud o patrón.',
+      },
+    },
   },
   {
     slug: 'array-filter-objects',
@@ -108,6 +124,14 @@ filterActive([{name:'A', active:true}, {name:'B', active:false}])
       '`filter` preserves the original object references — it does not deep-copy them.',
     ],
     tags: ['Array', 'Array.prototype.filter', 'objects', 'intermediate'],
+    usageExample: {
+      code: `const items = [{done: true}, {done: false}, {done: true}]
+items.filter(i => i.done)  // → [{done:true}, {done:true}]`,
+      explanation: {
+        en: 'Use filter() to extract objects from an array based on a boolean property.',
+        es: 'Usa filter() para extraer objetos de un array basándose en una propiedad booleana.',
+      },
+    },
   },
   {
     slug: 'array-filter-unique',
@@ -145,6 +169,15 @@ filterUnique([1, 2, 3])          // → [1, 2, 3]
       'This checks that the first and last occurrence are the same index.',
     ],
     tags: ['Array', 'Array.prototype.filter', 'unique', 'intermediate'],
+    usageExample: {
+      code: `const nums = [1, 2, 2, 3, 3, 4]
+nums.filter((v, i, a) => a.indexOf(v) === i)
+// → [1, 2, 3, 4]  (first occurrences only)`,
+      explanation: {
+        en: 'Use filter() with indexOf() to deduplicate an array by keeping only the first occurrence of each value.',
+        es: 'Usa filter() con indexOf() para deduplicar un array conservando solo la primera ocurrencia de cada valor.',
+      },
+    },
   },
   {
     slug: 'array-filter-falsy',
@@ -181,5 +214,13 @@ compact([null, undefined, NaN])        // → []
       'Falsy values in JS: `false`, `0`, `""`, `null`, `undefined`, `NaN`.',
     ],
     tags: ['Array', 'Array.prototype.filter', 'falsy', 'compact', 'intermediate'],
+    usageExample: {
+      code: `const mixed = [0, 1, '', 'hello', null, true]
+mixed.filter(Boolean)  // → [1, 'hello', true]`,
+      explanation: {
+        en: 'Pass Boolean as the callback to filter() to remove all falsy values in one step.',
+        es: 'Pasa Boolean como callback a filter() para eliminar todos los valores falsy en un solo paso.',
+      },
+    },
   },
 ]

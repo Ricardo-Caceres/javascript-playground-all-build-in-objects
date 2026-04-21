@@ -37,6 +37,15 @@ removeAt([10, 20, 30], 0) // → [20, 30]
       '`splice` mutates the array in place — no need to reassign.',
     ],
     tags: ['Array', 'Array.prototype.splice', 'mutation', 'beginner'],
+    usageExample: {
+      code: `const arr = [1, 2, 3, 4, 5]
+arr.splice(1, 2)  // → [2, 3]  (removed)
+arr  // → [1, 4, 5]`,
+      explanation: {
+        en: 'Use splice(start, deleteCount) to remove elements from an array in place.',
+        es: 'Usa splice(inicio, cantidad) para eliminar elementos de un array en su lugar.',
+      },
+    },
   },
   {
     slug: 'array-splice-insert',
@@ -74,6 +83,15 @@ insertAt([10, 20], 0, 5)   // → [5, 10, 20]
       'Elements at `index` and beyond are shifted one position to the right.',
     ],
     tags: ['Array', 'Array.prototype.splice', 'insert', 'intermediate'],
+    usageExample: {
+      code: `const arr = [1, 2, 4, 5]
+arr.splice(2, 0, 3)  // insert 3 at index 2
+arr  // → [1, 2, 3, 4, 5]`,
+      explanation: {
+        en: 'Pass 0 as deleteCount and provide values to splice() to insert elements without removing any.',
+        es: 'Pasa 0 como deleteCount y proporciona valores a splice() para insertar elementos sin eliminar ninguno.',
+      },
+    },
   },
   {
     slug: 'array-splice-replace',
@@ -111,6 +129,15 @@ replaceAt([10, 20, 30], 0, 5) // → [5, 20, 30]
       'The array length does not change because you remove and insert exactly one element.',
     ],
     tags: ['Array', 'Array.prototype.splice', 'replace', 'intermediate'],
+    usageExample: {
+      code: `const arr = ['a', 'b', 'c']
+arr.splice(1, 1, 'X')  // → ['b']  (removed)
+arr  // → ['a', 'X', 'c']`,
+      explanation: {
+        en: 'Use splice() to replace one or more elements at a position with new values.',
+        es: 'Usa splice() para reemplazar uno o más elementos en una posición con nuevos valores.',
+      },
+    },
   },
   {
     slug: 'array-splice-returns-removed',
@@ -147,6 +174,15 @@ getRemovedElements([10, 20, 30], 0, 1)     // → [10]
       'The original array is modified — elements are actually taken out.',
     ],
     tags: ['Array', 'Array.prototype.splice', 'return-value', 'intermediate'],
+    usageExample: {
+      code: `const arr = [10, 20, 30, 40]
+const removed = arr.splice(1, 2)  // → [20, 30]
+arr  // → [10, 40]`,
+      explanation: {
+        en: 'splice() returns an array of the removed elements — capture it when you need those values.',
+        es: 'splice() devuelve un array de los elementos eliminados; captúralo cuando necesites esos valores.',
+      },
+    },
   },
   {
     slug: 'array-splice-multiple',
@@ -184,5 +220,14 @@ replaceRange([1, 2, 3, 4, 5], 1, 2, 10, 20, 30)
       'Rest parameters (`...items`) capture any number of trailing arguments as an array.',
     ],
     tags: ['Array', 'Array.prototype.splice', 'rest-params', 'advanced'],
+    usageExample: {
+      code: `const arr = [1, 2, 3, 4, 5]
+arr.splice(1, 2, 10, 20, 30)  // replaces 2 with 3 values
+arr  // → [1, 10, 20, 30, 4, 5]`,
+      explanation: {
+        en: 'Use splice() to remove and insert any number of elements in a single operation.',
+        es: 'Usa splice() para eliminar e insertar cualquier cantidad de elementos en una sola operación.',
+      },
+    },
   },
 ]

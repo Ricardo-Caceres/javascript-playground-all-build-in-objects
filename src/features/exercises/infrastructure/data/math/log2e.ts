@@ -23,6 +23,15 @@ export const mathLog2EExercises: Exercise[] = [
       'Its value is approximately 1.4426950408889634.',
     ],
     tags: ['Math', 'LOG2E', 'static-property', 'beginner'],
+    usageExample: {
+      code: `// Base-2 logarithm of e
+Math.LOG2E   // → 1.4426950408...
+// Equivalent to: 1 / Math.LN2`,
+      explanation: {
+        en: 'Use Math.LOG2E as a precomputed constant for converting natural log values to base-2 logarithms.',
+        es: 'Usa Math.LOG2E como constante precalculada para convertir valores de logaritmo natural a base 2.',
+      },
+    },
   },
   {
     slug: 'math-log2e-2',
@@ -46,6 +55,15 @@ export const mathLog2EExercises: Exercise[] = [
       'Both sides represent log₂(e).',
     ],
     tags: ['Math', 'LOG2E', 'LN2', 'static-property', 'intermediate'],
+    usageExample: {
+      code: `// Base-2 logarithm of e
+Math.LOG2E   // → 1.4426950408...
+// Equivalent to: 1 / Math.LN2`,
+      explanation: {
+        en: 'Use Math.LOG2E as a precomputed constant for converting natural log values to base-2 logarithms.',
+        es: 'Usa Math.LOG2E como constante precalculada para convertir valores de logaritmo natural a base 2.',
+      },
+    },
   },
   {
     slug: 'math-log2e-3',
@@ -69,6 +87,15 @@ export const mathLog2EExercises: Exercise[] = [
       'This is equivalent to Math.log(n) / Math.LN2.',
     ],
     tags: ['Math', 'LOG2E', 'log', 'static-property', 'intermediate'],
+    usageExample: {
+      code: `// Base-2 logarithm of e
+Math.LOG2E   // → 1.4426950408...
+// Equivalent to: 1 / Math.LN2`,
+      explanation: {
+        en: 'Use Math.LOG2E as a precomputed constant for converting natural log values to base-2 logarithms.',
+        es: 'Usa Math.LOG2E como constante precalculada para convertir valores de logaritmo natural a base 2.',
+      },
+    },
   },
   {
     slug: 'math-log2e-4',
@@ -92,6 +119,15 @@ export const mathLog2EExercises: Exercise[] = [
       'Math.LOG2E is a cached constant for this value.',
     ],
     tags: ['Math', 'LOG2E', 'log2', 'E', 'static-property', 'intermediate'],
+    usageExample: {
+      code: `// Base-2 logarithm of e
+Math.LOG2E   // → 1.4426950408...
+// Equivalent to: 1 / Math.LN2`,
+      explanation: {
+        en: 'Use Math.LOG2E as a precomputed constant for converting natural log values to base-2 logarithms.',
+        es: 'Usa Math.LOG2E como constante precalculada para convertir valores de logaritmo natural a base 2.',
+      },
+    },
   },
   {
     slug: 'math-log2e-5',
@@ -115,5 +151,14 @@ export const mathLog2EExercises: Exercise[] = [
       'LN2 * LOG2E should equal 1 (they are reciprocals).',
     ],
     tags: ['Math', 'LOG2E', 'static-property', 'advanced'],
+    usageExample: {
+      code: `// Base-2 logarithm of e
+Math.LOG2E   // → 1.4426950408...
+// Equivalent to: 1 / Math.LN2`,
+      explanation: {
+        en: 'Use Math.LOG2E as a precomputed constant for converting natural log values to base-2 logarithms.',
+        es: 'Usa Math.LOG2E como constante precalculada para convertir valores de logaritmo natural a base 2.',
+      },
+    },
   },
 ]

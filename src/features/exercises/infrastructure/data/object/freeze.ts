@@ -37,6 +37,16 @@ o.a        // → 1
       'In sloppy mode, attempts to modify a frozen object silently do nothing.',
     ],
     tags: ['Object', 'Object.freeze', 'immutable', 'beginner'],
+    usageExample: {
+      code: `// Make an object immutable
+const obj = Object.freeze({ x: 1 })
+obj.x = 99   // silently ignored
+obj.x        // → 1`,
+      explanation: {
+        en: 'Use Object.freeze() to make an object immutable, preventing any additions, deletions, or value changes.',
+        es: 'Usa Object.freeze() para hacer un objeto inmutable, evitando adiciones, eliminaciones o cambios de valor.',
+      },
+    },
   },
   {
     slug: 'object-freeze-is-frozen',
@@ -73,6 +83,16 @@ checkFrozen({ a: 1 }) // → true
       'Note that `Object.isFrozen({})` on a pre-frozen empty object may already be `true` in some engines.',
     ],
     tags: ['Object', 'Object.freeze', 'Object.isFrozen', 'beginner'],
+    usageExample: {
+      code: `// Make an object immutable
+const obj = Object.freeze({ x: 1 })
+obj.x = 99   // silently ignored
+obj.x        // → 1`,
+      explanation: {
+        en: 'Use Object.freeze() to make an object immutable, preventing any additions, deletions, or value changes.',
+        es: 'Usa Object.freeze() para hacer un objeto inmutable, evitando adiciones, eliminaciones o cambios de valor.',
+      },
+    },
   },
   {
     slug: 'object-freeze-same-reference',
@@ -107,6 +127,16 @@ frozenRef({ a: 1 }) // → true
       '`Object.freeze` mutates and returns the same reference, unlike `Object.assign` which can take a fresh target.',
     ],
     tags: ['Object', 'Object.freeze', 'reference', 'beginner'],
+    usageExample: {
+      code: `// Make an object immutable
+const obj = Object.freeze({ x: 1 })
+obj.x = 99   // silently ignored
+obj.x        // → 1`,
+      explanation: {
+        en: 'Use Object.freeze() to make an object immutable, preventing any additions, deletions, or value changes.',
+        es: 'Usa Object.freeze() para hacer un objeto inmutable, evitando adiciones, eliminaciones o cambios de valor.',
+      },
+    },
   },
   {
     slug: 'object-freeze-shallow',
@@ -147,6 +177,16 @@ o.nested.a       // → 99
       'To deeply freeze an object you need to recursively freeze each nested object.',
     ],
     tags: ['Object', 'Object.freeze', 'shallow', 'intermediate'],
+    usageExample: {
+      code: `// Make an object immutable
+const obj = Object.freeze({ x: 1 })
+obj.x = 99   // silently ignored
+obj.x        // → 1`,
+      explanation: {
+        en: 'Use Object.freeze() to make an object immutable, preventing any additions, deletions, or value changes.',
+        es: 'Usa Object.freeze() para hacer un objeto inmutable, evitando adiciones, eliminaciones o cambios de valor.',
+      },
+    },
   },
   {
     slug: 'object-freeze-add-property-fails',
@@ -184,5 +224,15 @@ tryAddToFrozen() // → 1 (only 'a', 'b' was not added)
       'Check the key count with `Object.keys(o).length`.',
     ],
     tags: ['Object', 'Object.freeze', 'immutable', 'beginner'],
+    usageExample: {
+      code: `// Make an object immutable
+const obj = Object.freeze({ x: 1 })
+obj.x = 99   // silently ignored
+obj.x        // → 1`,
+      explanation: {
+        en: 'Use Object.freeze() to make an object immutable, preventing any additions, deletions, or value changes.',
+        es: 'Usa Object.freeze() para hacer un objeto inmutable, evitando adiciones, eliminaciones o cambios de valor.',
+      },
+    },
   },
 ]

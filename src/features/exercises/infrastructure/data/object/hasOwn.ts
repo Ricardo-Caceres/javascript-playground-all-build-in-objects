@@ -35,6 +35,16 @@ checkOwn({ a: 1 }, 'b') // → false
       '`Object.hasOwn(obj, key)` is equivalent to `Object.prototype.hasOwnProperty.call(obj, key)` but cleaner.',
     ],
     tags: ['Object', 'Object.hasOwn', 'ES2022', 'beginner'],
+    usageExample: {
+      code: `// Check if a property is directly on the object
+const obj = { name: 'Alice' }
+Object.hasOwn(obj, 'name')      // → true
+Object.hasOwn(obj, 'toString')  // → false`,
+      explanation: {
+        en: 'Use Object.hasOwn() to reliably check if a property is an own property, without being fooled by inherited properties.',
+        es: 'Usa Object.hasOwn() para verificar de forma fiable si una propiedad es propia, sin confundirla con propiedades heredadas.',
+      },
+    },
   },
   {
     slug: 'object-has-own-missing',
@@ -70,6 +80,16 @@ isMissing({ a: 1 }, 'a') // → false
       'Negate `Object.hasOwn` to check for absence.',
     ],
     tags: ['Object', 'Object.hasOwn', 'ES2022', 'beginner'],
+    usageExample: {
+      code: `// Check if a property is directly on the object
+const obj = { name: 'Alice' }
+Object.hasOwn(obj, 'name')      // → true
+Object.hasOwn(obj, 'toString')  // → false`,
+      explanation: {
+        en: 'Use Object.hasOwn() to reliably check if a property is an own property, without being fooled by inherited properties.',
+        es: 'Usa Object.hasOwn() para verificar de forma fiable si una propiedad es propia, sin confundirla con propiedades heredadas.',
+      },
+    },
   },
   {
     slug: 'object-has-own-inherited-false',
@@ -107,6 +127,16 @@ ownVsInherited(proto, obj, 'x')
       '`in` traverses the prototype chain; `Object.hasOwn` does not.',
     ],
     tags: ['Object', 'Object.hasOwn', 'in operator', 'prototype', 'intermediate'],
+    usageExample: {
+      code: `// Check if a property is directly on the object
+const obj = { name: 'Alice' }
+Object.hasOwn(obj, 'name')      // → true
+Object.hasOwn(obj, 'toString')  // → false`,
+      explanation: {
+        en: 'Use Object.hasOwn() to reliably check if a property is an own property, without being fooled by inherited properties.',
+        es: 'Usa Object.hasOwn() para verificar de forma fiable si una propiedad es propia, sin confundirla con propiedades heredadas.',
+      },
+    },
   },
   {
     slug: 'object-has-own-vs-has-own-property',
@@ -141,6 +171,16 @@ safeCheck({ a: 1 }, 'a') // → true
       '`Object.hasOwn` works even on objects with no prototype (`Object.create(null)`) or with a shadowed `hasOwnProperty`.',
     ],
     tags: ['Object', 'Object.hasOwn', 'hasOwnProperty', 'ES2022', 'intermediate'],
+    usageExample: {
+      code: `// Check if a property is directly on the object
+const obj = { name: 'Alice' }
+Object.hasOwn(obj, 'name')      // → true
+Object.hasOwn(obj, 'toString')  // → false`,
+      explanation: {
+        en: 'Use Object.hasOwn() to reliably check if a property is an own property, without being fooled by inherited properties.',
+        es: 'Usa Object.hasOwn() para verificar de forma fiable si una propiedad es propia, sin confundirla con propiedades heredadas.',
+      },
+    },
   },
   {
     slug: 'object-has-own-null-prototype',
@@ -177,5 +217,15 @@ checkNullProto('id', 42) // → true
       '`Object.hasOwn` is a static method and never relies on the object\'s own `hasOwnProperty`.',
     ],
     tags: ['Object', 'Object.hasOwn', 'null prototype', 'ES2022', 'intermediate'],
+    usageExample: {
+      code: `// Check if a property is directly on the object
+const obj = { name: 'Alice' }
+Object.hasOwn(obj, 'name')      // → true
+Object.hasOwn(obj, 'toString')  // → false`,
+      explanation: {
+        en: 'Use Object.hasOwn() to reliably check if a property is an own property, without being fooled by inherited properties.',
+        es: 'Usa Object.hasOwn() para verificar de forma fiable si una propiedad es propia, sin confundirla con propiedades heredadas.',
+      },
+    },
   },
 ]

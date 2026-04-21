@@ -1,7 +1,7 @@
 'use client'
 
 import { useState } from 'react'
-import { useTranslations } from 'next-intl'
+import { useTranslations, useLocale } from 'next-intl'
 import { Link } from '@/i18n/navigation'
 import { ExerciseRunner } from './ExerciseRunner'
 import ExerciseSidebar from './ExerciseSidebar'
@@ -17,10 +17,13 @@ interface ExerciseDetailViewProps {
 function DescriptionPanel({
   exercise,
   hintsLabel,
+  locale,
 }: {
   exercise: Exercise
   hintsLabel: string
+  locale: 'en' | 'es'
 }) {
+  const example = exercise.usageExample
   return (
     <>
       <div className="mb-4 flex flex-wrap gap-2">
@@ -45,6 +48,21 @@ function DescriptionPanel({
         </span>
       </div>
       <h1 className="mb-4 text-xl font-bold leading-snug">{exercise.title}</h1>
+      {example && (
+        <details className="mb-4 rounded-lg border border-zinc-800 bg-zinc-900/50" open>
+          <summary className="cursor-pointer select-none px-4 py-2 text-sm font-semibold text-zinc-400 hover:text-zinc-200">
+            📖 Usage Example
+          </summary>
+          <div className="border-t border-zinc-800 px-4 pb-4 pt-3">
+            <pre className="overflow-x-auto rounded bg-zinc-950 p-3 text-xs leading-relaxed text-zinc-300">
+              <code>{example.code}</code>
+            </pre>
+            <p className="mt-2 text-xs leading-relaxed text-zinc-500">
+              {example.explanation[locale] ?? example.explanation.en}
+            </p>
+          </div>
+        </details>
+      )}
       <div className="prose-sm">
         <DescriptionMarkdown content={exercise.description} />
       </div>
@@ -71,6 +89,7 @@ export function ExerciseDetailView({ exercise }: ExerciseDetailViewProps) {
   const [activeTab, setActiveTab] = useState<'description' | 'code'>('description')
   const { currentIndex, total } = useExerciseNavigation(objectName, exercise.slug)
   const t = useTranslations('exercise')
+  const locale = useLocale() as 'en' | 'es'
 
   return (
     <div className="flex h-[calc(100vh-3rem)] flex-col overflow-hidden bg-zinc-950 text-zinc-100 md:flex-row">
@@ -155,7 +174,7 @@ export function ExerciseDetailView({ exercise }: ExerciseDetailViewProps) {
               activeTab === 'description' ? 'block w-full' : 'hidden'
             }`}
           >
-            <DescriptionPanel exercise={exercise} hintsLabel={t('hints')} />
+            <DescriptionPanel exercise={exercise} hintsLabel={t('hints')} locale={locale} />
           </div>
 
           {/* Editor panel — rendered ONCE, shown based on tab on mobile, always on desktop */}

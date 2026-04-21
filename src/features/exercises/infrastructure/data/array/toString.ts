@@ -23,6 +23,14 @@ export const toStringExercises: Exercise[] = [
       'The default separator is a comma',
     ],
     tags: ['array', 'toString', 'string', 'conversion'],
+    usageExample: {
+      code: `const arr = [1, 2, 3]
+arr.toString()  // → '1,2,3'`,
+      explanation: {
+        en: 'Use toString() to convert an array to a comma-separated string of its elements.',
+        es: 'Usa toString() para convertir un array en una cadena de sus elementos separados por comas.',
+      },
+    },
   },
   {
     slug: 'array-to-string-strings',
@@ -46,6 +54,14 @@ export const toStringExercises: Exercise[] = [
       'The result is always a plain string, not an array',
     ],
     tags: ['array', 'toString', 'strings', 'conversion'],
+    usageExample: {
+      code: `const words = ['hello', 'world']
+words.toString()  // → 'hello,world'`,
+      explanation: {
+        en: 'Use toString() for a quick comma-joined string when a simple representation is enough.',
+        es: 'Usa toString() para una cadena rápida separada por comas cuando una representación simple es suficiente.',
+      },
+    },
   },
   {
     slug: 'array-to-string-same-as-join',
@@ -69,6 +85,15 @@ export const toStringExercises: Exercise[] = [
       'Both toString() and join(\',\') use a comma separator by default',
     ],
     tags: ['array', 'toString', 'join', 'equivalence'],
+    usageExample: {
+      code: `const arr = [1, 2, 3]
+arr.toString()  // → '1,2,3'
+arr.join(',')   // → '1,2,3'  (equivalent)`,
+      explanation: {
+        en: "toString() is equivalent to join(',') — use join() when you need a different separator.",
+        es: "toString() es equivalente a join(','); usa join() cuando necesites un separador diferente.",
+      },
+    },
   },
   {
     slug: 'array-to-string-nested',
@@ -92,6 +117,14 @@ export const toStringExercises: Exercise[] = [
       'No extra flattening step is needed — just call arr.toString()',
     ],
     tags: ['array', 'toString', 'nested', 'recursive'],
+    usageExample: {
+      code: `const arr = [1, [2, 3], [4, [5]]]
+arr.toString()  // → '1,2,3,4,5'  (recursive flattening)`,
+      explanation: {
+        en: 'toString() recursively converts nested arrays, effectively flattening them into the string.',
+        es: 'toString() convierte recursivamente los arrays anidados, aplanándolos efectivamente en la cadena.',
+      },
+    },
   },
   {
     slug: 'array-to-string-empty',
@@ -115,5 +148,13 @@ export const toStringExercises: Exercise[] = [
       'Use a type assertion ([] as number[]) to satisfy TypeScript',
     ],
     tags: ['array', 'toString', 'empty', 'edge-case'],
+    usageExample: {
+      code: `const arr = []
+arr.toString()  // → ''  (empty string)`,
+      explanation: {
+        en: 'toString() on an empty array returns an empty string.',
+        es: 'toString() en un array vacío devuelve una cadena vacía.',
+      },
+    },
   },
 ]

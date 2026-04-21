@@ -23,6 +23,15 @@ export const mathLog10EExercises: Exercise[] = [
       'Its value is approximately 0.4342944819032518.',
     ],
     tags: ['Math', 'LOG10E', 'static-property', 'beginner'],
+    usageExample: {
+      code: `// Base-10 logarithm of e
+Math.LOG10E   // → 0.4342944819...
+// Equivalent to: 1 / Math.LN10`,
+      explanation: {
+        en: 'Use Math.LOG10E as a precomputed constant for converting natural log values to base-10 logarithms.',
+        es: 'Usa Math.LOG10E como constante precalculada para convertir valores de logaritmo natural a base 10.',
+      },
+    },
   },
   {
     slug: 'math-log10e-2',
@@ -46,6 +55,15 @@ export const mathLog10EExercises: Exercise[] = [
       'Both sides represent log₁₀(e).',
     ],
     tags: ['Math', 'LOG10E', 'LN10', 'static-property', 'intermediate'],
+    usageExample: {
+      code: `// Base-10 logarithm of e
+Math.LOG10E   // → 0.4342944819...
+// Equivalent to: 1 / Math.LN10`,
+      explanation: {
+        en: 'Use Math.LOG10E as a precomputed constant for converting natural log values to base-10 logarithms.',
+        es: 'Usa Math.LOG10E como constante precalculada para convertir valores de logaritmo natural a base 10.',
+      },
+    },
   },
   {
     slug: 'math-log10e-3',
@@ -69,6 +87,15 @@ export const mathLog10EExercises: Exercise[] = [
       'Math.LOG10E is a cached constant for this value.',
     ],
     tags: ['Math', 'LOG10E', 'log10', 'E', 'static-property', 'intermediate'],
+    usageExample: {
+      code: `// Base-10 logarithm of e
+Math.LOG10E   // → 0.4342944819...
+// Equivalent to: 1 / Math.LN10`,
+      explanation: {
+        en: 'Use Math.LOG10E as a precomputed constant for converting natural log values to base-10 logarithms.',
+        es: 'Usa Math.LOG10E como constante precalculada para convertir valores de logaritmo natural a base 10.',
+      },
+    },
   },
   {
     slug: 'math-log10e-4',
@@ -92,6 +119,15 @@ export const mathLog10EExercises: Exercise[] = [
       'ln(10) * log₁₀(e) = 1 by the change of base identity.',
     ],
     tags: ['Math', 'LOG10E', 'LN10', 'static-property', 'intermediate'],
+    usageExample: {
+      code: `// Base-10 logarithm of e
+Math.LOG10E   // → 0.4342944819...
+// Equivalent to: 1 / Math.LN10`,
+      explanation: {
+        en: 'Use Math.LOG10E as a precomputed constant for converting natural log values to base-10 logarithms.',
+        es: 'Usa Math.LOG10E como constante precalculada para convertir valores de logaritmo natural a base 10.',
+      },
+    },
   },
   {
     slug: 'math-log10e-5',
@@ -115,5 +151,14 @@ export const mathLog10EExercises: Exercise[] = [
       'This is the closest double-precision float to log₁₀(e).',
     ],
     tags: ['Math', 'LOG10E', 'static-property', 'advanced'],
+    usageExample: {
+      code: `// Base-10 logarithm of e
+Math.LOG10E   // → 0.4342944819...
+// Equivalent to: 1 / Math.LN10`,
+      explanation: {
+        en: 'Use Math.LOG10E as a precomputed constant for converting natural log values to base-10 logarithms.',
+        es: 'Usa Math.LOG10E como constante precalculada para convertir valores de logaritmo natural a base 10.',
+      },
+    },
   },
 ]

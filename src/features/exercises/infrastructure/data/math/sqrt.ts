@@ -20,6 +20,15 @@ export const mathSqrtExercises: Exercise[] = [
     ],
     hints: ['sqrt(9) = 3 because 3^2 = 9'],
     tags: ['Math', 'sqrt', 'static-method'],
+    usageExample: {
+      code: `// Square root of a non-negative number
+Math.sqrt(16)   // → 4
+Math.sqrt(2)    // → 1.4142...`,
+      explanation: {
+        en: 'Use Math.sqrt() to compute the square root of a non-negative number.',
+        es: 'Usa Math.sqrt() para calcular la raíz cuadrada de un número no negativo.',
+      },
+    },
   },
   {
     slug: 'math-sqrt-2',
@@ -40,6 +49,15 @@ export const mathSqrtExercises: Exercise[] = [
     ],
     hints: ['sqrt(2) is an irrational number ≈ 1.41421356; same as Math.SQRT2'],
     tags: ['Math', 'sqrt', 'static-method'],
+    usageExample: {
+      code: `// Square root of a non-negative number
+Math.sqrt(16)   // → 4
+Math.sqrt(2)    // → 1.4142...`,
+      explanation: {
+        en: 'Use Math.sqrt() to compute the square root of a non-negative number.',
+        es: 'Usa Math.sqrt() para calcular la raíz cuadrada de un número no negativo.',
+      },
+    },
   },
   {
     slug: 'math-sqrt-3',
@@ -60,6 +78,15 @@ export const mathSqrtExercises: Exercise[] = [
     ],
     hints: ['sqrt(0) = 0 because 0^2 = 0'],
     tags: ['Math', 'sqrt', 'static-method'],
+    usageExample: {
+      code: `// Square root of a non-negative number
+Math.sqrt(16)   // → 4
+Math.sqrt(2)    // → 1.4142...`,
+      explanation: {
+        en: 'Use Math.sqrt() to compute the square root of a non-negative number.',
+        es: 'Usa Math.sqrt() para calcular la raíz cuadrada de un número no negativo.',
+      },
+    },
   },
   {
     slug: 'math-sqrt-4',
@@ -80,6 +107,15 @@ export const mathSqrtExercises: Exercise[] = [
     ],
     hints: ['Square roots of negative numbers are imaginary — JavaScript returns NaN'],
     tags: ['Math', 'sqrt', 'static-method'],
+    usageExample: {
+      code: `// Square root of a non-negative number
+Math.sqrt(16)   // → 4
+Math.sqrt(2)    // → 1.4142...`,
+      explanation: {
+        en: 'Use Math.sqrt() to compute the square root of a non-negative number.',
+        es: 'Usa Math.sqrt() para calcular la raíz cuadrada de un número no negativo.',
+      },
+    },
   },
   {
     slug: 'math-sqrt-5',
@@ -100,5 +136,14 @@ export const mathSqrtExercises: Exercise[] = [
     ],
     hints: ['sqrt(∞) = ∞ since no finite number squared equals infinity'],
     tags: ['Math', 'sqrt', 'static-method'],
+    usageExample: {
+      code: `// Square root of a non-negative number
+Math.sqrt(16)   // → 4
+Math.sqrt(2)    // → 1.4142...`,
+      explanation: {
+        en: 'Use Math.sqrt() to compute the square root of a non-negative number.',
+        es: 'Usa Math.sqrt() para calcular la raíz cuadrada de un número no negativo.',
+      },
+    },
   },
 ]

@@ -20,6 +20,15 @@ export const mathLog2Exercises: Exercise[] = [
     ],
     hints: ['log2(1) = 0 because 2^0 = 1'],
     tags: ['Math', 'log2', 'static-method'],
+    usageExample: {
+      code: `// Logarithm base 2
+Math.log2(8)    // → 3
+Math.log2(256)  // → 8`,
+      explanation: {
+        en: 'Use Math.log2() to compute the base-2 logarithm, useful for bit-length calculations and binary algorithms.',
+        es: 'Usa Math.log2() para calcular el logaritmo en base 2, útil en cálculos de longitud de bits y algoritmos binarios.',
+      },
+    },
   },
   {
     slug: 'math-log2-2',
@@ -40,6 +49,15 @@ export const mathLog2Exercises: Exercise[] = [
     ],
     hints: ['log2(2) = 1 because 2^1 = 2'],
     tags: ['Math', 'log2', 'static-method'],
+    usageExample: {
+      code: `// Logarithm base 2
+Math.log2(8)    // → 3
+Math.log2(256)  // → 8`,
+      explanation: {
+        en: 'Use Math.log2() to compute the base-2 logarithm, useful for bit-length calculations and binary algorithms.',
+        es: 'Usa Math.log2() para calcular el logaritmo en base 2, útil en cálculos de longitud de bits y algoritmos binarios.',
+      },
+    },
   },
   {
     slug: 'math-log2-3',
@@ -60,6 +78,15 @@ export const mathLog2Exercises: Exercise[] = [
     ],
     hints: ['log2(4) = 2 because 2^2 = 4'],
     tags: ['Math', 'log2', 'static-method'],
+    usageExample: {
+      code: `// Logarithm base 2
+Math.log2(8)    // → 3
+Math.log2(256)  // → 8`,
+      explanation: {
+        en: 'Use Math.log2() to compute the base-2 logarithm, useful for bit-length calculations and binary algorithms.',
+        es: 'Usa Math.log2() para calcular el logaritmo en base 2, útil en cálculos de longitud de bits y algoritmos binarios.',
+      },
+    },
   },
   {
     slug: 'math-log2-4',
@@ -80,6 +107,15 @@ export const mathLog2Exercises: Exercise[] = [
     ],
     hints: ['log2(1024) = 10 because 2^10 = 1024'],
     tags: ['Math', 'log2', 'static-method'],
+    usageExample: {
+      code: `// Logarithm base 2
+Math.log2(8)    // → 3
+Math.log2(256)  // → 8`,
+      explanation: {
+        en: 'Use Math.log2() to compute the base-2 logarithm, useful for bit-length calculations and binary algorithms.',
+        es: 'Usa Math.log2() para calcular el logaritmo en base 2, útil en cálculos de longitud de bits y algoritmos binarios.',
+      },
+    },
   },
   {
     slug: 'math-log2-5',
@@ -100,5 +136,14 @@ export const mathLog2Exercises: Exercise[] = [
     ],
     hints: ['log2 approaches -∞ as x approaches 0 from the right'],
     tags: ['Math', 'log2', 'static-method'],
+    usageExample: {
+      code: `// Logarithm base 2
+Math.log2(8)    // → 3
+Math.log2(256)  // → 8`,
+      explanation: {
+        en: 'Use Math.log2() to compute the base-2 logarithm, useful for bit-length calculations and binary algorithms.',
+        es: 'Usa Math.log2() para calcular el logaritmo en base 2, útil en cálculos de longitud de bits y algoritmos binarios.',
+      },
+    },
   },
 ]

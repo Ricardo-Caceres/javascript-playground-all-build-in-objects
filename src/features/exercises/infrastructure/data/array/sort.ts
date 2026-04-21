@@ -37,6 +37,14 @@ sortAlpha(['banana', 'apple', 'cherry']) // → ['apple', 'banana', 'cherry']
       'Default sort is lexicographic — useful for strings but wrong for numbers (e.g. `[10, 9]` would sort as `[10, 9]` not `[9, 10]`).',
     ],
     tags: ['Array', 'Array.prototype.sort', 'string', 'beginner'],
+    usageExample: {
+      code: `const words = ['banana', 'apple', 'cherry']
+words.sort()  // → ['apple', 'banana', 'cherry']`,
+      explanation: {
+        en: 'Call sort() without arguments to sort strings in ascending Unicode (alphabetical) order.',
+        es: 'Llama a sort() sin argumentos para ordenar cadenas en orden Unicode ascendente (alfabético).',
+      },
+    },
   },
   {
     slug: 'array-sort-numbers',
@@ -73,6 +81,14 @@ sortAsc([10, 9, 2])      // → [2, 9, 10]
       'Always copy first with `.slice()` unless you intentionally want to mutate the original.',
     ],
     tags: ['Array', 'Array.prototype.sort', 'numeric', 'comparator', 'beginner'],
+    usageExample: {
+      code: `const nums = [10, 1, 5, 3]
+nums.sort((a, b) => a - b)  // → [1, 3, 5, 10]`,
+      explanation: {
+        en: 'Always pass a numeric comparator (a - b) to sort() when sorting numbers.',
+        es: 'Siempre pasa un comparador numérico (a - b) a sort() al ordenar números.',
+      },
+    },
   },
   {
     slug: 'array-sort-desc',
@@ -109,6 +125,14 @@ sortDesc([10, 9, 2])      // → [10, 9, 2]
       'You can also sort ascending then call `.reverse()`, but `(a, b) => b - a` is cleaner.',
     ],
     tags: ['Array', 'Array.prototype.sort', 'numeric', 'descending', 'intermediate'],
+    usageExample: {
+      code: `const nums = [3, 1, 4, 1, 5]
+nums.sort((a, b) => b - a)  // → [5, 4, 3, 1, 1]`,
+      explanation: {
+        en: 'Swap the arguments in the comparator (b - a) to sort numbers in descending order.',
+        es: 'Intercambia los argumentos en el comparador (b - a) para ordenar números en orden descendente.',
+      },
+    },
   },
   {
     slug: 'array-sort-objects',
@@ -145,6 +169,15 @@ sortByAge([{name:'Bob',age:30},{name:'Alice',age:25}])
       'Use `.slice()` first to avoid mutating the input array.',
     ],
     tags: ['Array', 'Array.prototype.sort', 'objects', 'intermediate'],
+    usageExample: {
+      code: `const users = [{name:'Bob'},{name:'Alice'},{name:'Carol'}]
+users.sort((a, b) => a.name.localeCompare(b.name))
+// → [{name:'Alice'}, {name:'Bob'}, {name:'Carol'}]`,
+      explanation: {
+        en: 'Use sort() with a comparator that accesses a property to sort an array of objects.',
+        es: 'Usa sort() con un comparador que accede a una propiedad para ordenar un array de objetos.',
+      },
+    },
   },
   {
     slug: 'array-sort-stable',
@@ -189,5 +222,14 @@ sortByLastName([
       'Only fall through to the secondary comparator when `lastCmp === 0`.',
     ],
     tags: ['Array', 'Array.prototype.sort', 'localeCompare', 'stable', 'advanced'],
+    usageExample: {
+      code: `const items = [{rank:1,name:'A'},{rank:2,name:'B'},{rank:1,name:'C'}]
+items.sort((a, b) => a.rank - b.rank)
+// A and C remain in original order (stable sort)`,
+      explanation: {
+        en: 'Modern JS engines guarantee a stable sort — elements with equal keys preserve their original order.',
+        es: 'Los motores JS modernos garantizan un ordenamiento estable; los elementos con claves iguales conservan su orden original.',
+      },
+    },
   },
 ]

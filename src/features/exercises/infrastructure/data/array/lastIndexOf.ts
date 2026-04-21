@@ -36,6 +36,14 @@ lastPos([1, 2, 3], 3)       // → 2
       'When there are duplicates, it returns the index of the rightmost match.',
     ],
     tags: ['Array', 'Array.prototype.lastIndexOf', 'search', 'beginner'],
+    usageExample: {
+      code: `const arr = [1, 2, 3, 2, 1]
+arr.lastIndexOf(2)  // → 3  (last occurrence)`,
+      explanation: {
+        en: 'Use lastIndexOf() to find the index of the last occurrence of a value.',
+        es: 'Usa lastIndexOf() para encontrar el índice de la última ocurrencia de un valor.',
+      },
+    },
   },
   {
     slug: 'array-last-indexof-not-found',
@@ -72,6 +80,14 @@ notFound([], 0)         // → -1
       'You can use `result !== -1` to check whether the value was found.',
     ],
     tags: ['Array', 'Array.prototype.lastIndexOf', 'not-found', 'beginner'],
+    usageExample: {
+      code: `const arr = [1, 2, 3]
+arr.lastIndexOf(9)  // → -1  (not found)`,
+      explanation: {
+        en: 'lastIndexOf() returns -1 when the value is not present anywhere in the array.',
+        es: 'lastIndexOf() devuelve -1 cuando el valor no está presente en ningún lugar del array.',
+      },
+    },
   },
   {
     slug: 'array-last-indexof-from',
@@ -109,6 +125,14 @@ lastPosFrom([1, 2, 3, 2, 1], 2, 3) // → 3
       'If `from` is 0 and the value is not at index 0, the result is `-1`.',
     ],
     tags: ['Array', 'Array.prototype.lastIndexOf', 'fromIndex', 'intermediate'],
+    usageExample: {
+      code: `const arr = [1, 2, 3, 2, 1]
+arr.lastIndexOf(2, 2)  // → 1  (search backwards from index 2)`,
+      explanation: {
+        en: 'Pass a fromIndex to lastIndexOf() to limit how far back the backward search goes.',
+        es: 'Pasa un fromIndex a lastIndexOf() para limitar hasta dónde retrocede la búsqueda.',
+      },
+    },
   },
   {
     slug: 'array-last-indexof-vs-indexof',
@@ -146,6 +170,15 @@ hasMultiple([1, 2, 3], 2)    // → false
       'If the value is not present, both return `-1`, so they are equal → returns `false`.',
     ],
     tags: ['Array', 'Array.prototype.lastIndexOf', 'indexOf', 'duplicates', 'intermediate'],
+    usageExample: {
+      code: `const arr = [4, 2, 4, 2, 4]
+arr.indexOf(4)      // → 0  (first)
+arr.lastIndexOf(4)  // → 4  (last)`,
+      explanation: {
+        en: 'Use lastIndexOf() instead of indexOf() when you need the position of the last occurrence.',
+        es: 'Usa lastIndexOf() en lugar de indexOf() cuando necesites la posición de la última ocurrencia.',
+      },
+    },
   },
   {
     slug: 'array-last-indexof-find-all',
@@ -192,5 +225,16 @@ allIndices([1, 2, 3], 9)       // → []
       'Stop the loop when `lastIndexOf` returns `-1`.',
     ],
     tags: ['Array', 'Array.prototype.lastIndexOf', 'all-indices', 'advanced'],
+    usageExample: {
+      code: `const arr = [1, 2, 1, 2, 1]
+const indices = []
+let i = arr.lastIndexOf(1)
+while (i !== -1) { indices.push(i); i = arr.lastIndexOf(1, i - 1) }
+// indices → [4, 2, 0]`,
+      explanation: {
+        en: 'Use lastIndexOf() in a loop to collect all positions of a value, from last to first.',
+        es: 'Usa lastIndexOf() en un bucle para recopilar todas las posiciones de un valor, del último al primero.',
+      },
+    },
   },
 ]

@@ -38,6 +38,14 @@ createIndexArray(0) // → []
       'The mapping function receives `(value, index)` — use the index to produce the sequence.',
     ],
     tags: ['Array', 'Array.from', 'array-like', 'beginner'],
+    usageExample: {
+      code: `Array.from({length: 3}, (_, i) => i)
+// → [0, 1, 2]`,
+      explanation: {
+        en: 'Use Array.from() with an array-like object and a map function to generate index arrays.',
+        es: 'Usa Array.from() con un objeto tipo array y una función de mapeo para generar arrays de índices.',
+      },
+    },
   },
   {
     slug: 'array-from-set',
@@ -74,6 +82,14 @@ removeDuplicates([])                  // → []
       '`Array.from(set)` converts the Set back into a plain array.',
     ],
     tags: ['Array', 'Array.from', 'Set', 'deduplication', 'intermediate'],
+    usageExample: {
+      code: `const set = new Set([1, 2, 2, 3, 3])
+Array.from(set)  // → [1, 2, 3]`,
+      explanation: {
+        en: 'Use Array.from() to convert a Set into an array, removing duplicates in the process.',
+        es: 'Usa Array.from() para convertir un Set en un array, eliminando duplicados en el proceso.',
+      },
+    },
   },
   {
     slug: 'array-from-map-function',
@@ -110,6 +126,14 @@ createEvenNumbers(1) // → [2]
       'The first argument `{ length: count }` controls how many elements are generated.',
     ],
     tags: ['Array', 'Array.from', 'map', 'intermediate'],
+    usageExample: {
+      code: `Array.from([1, 2, 3], n => n * n)
+// → [1, 4, 9]`,
+      explanation: {
+        en: 'Pass a mapping function as the second argument to Array.from() to transform each element.',
+        es: 'Pasa una función de mapeo como segundo argumento a Array.from() para transformar cada elemento.',
+      },
+    },
   },
   {
     slug: 'array-from-string-unicode',
@@ -146,6 +170,14 @@ countCodePoints('hi 👋')   // → 4  (not 5 — emoji is one code point)
       'Compare `Array.from("👋").length` (1) vs `"👋".split("").length` (2) to see the difference.',
     ],
     tags: ['Array', 'Array.from', 'Unicode', 'string', 'intermediate'],
+    usageExample: {
+      code: `Array.from('hello')
+// → ['h', 'e', 'l', 'l', 'o']`,
+      explanation: {
+        en: 'Use Array.from() on a string to split it into an array of individual characters.',
+        es: 'Usa Array.from() en una cadena para dividirla en un array de caracteres individuales.',
+      },
+    },
   },
   {
     slug: 'array-from-arguments',
@@ -184,5 +216,15 @@ sumAll(10, 20)      // → 30
       'Chain `.reduce((acc, n) => acc + n, 0)` on the result to sum all values.',
     ],
     tags: ['Array', 'Array.from', 'arguments', 'reduce', 'advanced'],
+    usageExample: {
+      code: `function sum() {
+  return Array.from(arguments).reduce((a, b) => a + b, 0)
+}
+sum(1, 2, 3)  // → 6`,
+      explanation: {
+        en: 'Use Array.from(arguments) to convert the arguments object into a real array.',
+        es: 'Usa Array.from(arguments) para convertir el objeto arguments en un array real.',
+      },
+    },
   },
 ]

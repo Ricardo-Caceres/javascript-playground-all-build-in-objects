@@ -27,6 +27,16 @@ const selfEqual = Number.NaN === Number.NaN`,
     ],
     hints: ['`NaN` is the only JavaScript value not equal to itself — use `Number.isNaN()` to check for it.'],
     tags: ['Number', 'NaN', 'static-property', 'beginner'],
+    usageExample: {
+      code: `// Represents Not-a-Number
+Number.NaN        // → NaN
+Number.isNaN(Number.NaN)  // → true
+Number.NaN === Number.NaN // → false (NaN is never equal to itself)`,
+      explanation: {
+        en: 'Use Number.NaN as a named constant for Not-a-Number; always check for it with Number.isNaN() since NaN !== NaN.',
+        es: 'Usa Number.NaN como constante con nombre para Not-a-Number; compruébalo siempre con Number.isNaN() ya que NaN !== NaN.',
+      },
+    },
   },
   {
     slug: 'number-nan-2',
@@ -49,6 +59,16 @@ Use \`Number.isNaN()\` (strict) or \`isNaN()\` (with coercion) to detect \`NaN\`
     ],
     hints: ['`Number.isNaN()` only returns `true` for actual `NaN` values.'],
     tags: ['Number', 'NaN', 'isNaN', 'beginner'],
+    usageExample: {
+      code: `// Represents Not-a-Number
+Number.NaN        // → NaN
+Number.isNaN(Number.NaN)  // → true
+Number.NaN === Number.NaN // → false (NaN is never equal to itself)`,
+      explanation: {
+        en: 'Use Number.NaN as a named constant for Not-a-Number; always check for it with Number.isNaN() since NaN !== NaN.',
+        es: 'Usa Number.NaN como constante con nombre para Not-a-Number; compruébalo siempre con Number.isNaN() ya que NaN !== NaN.',
+      },
+    },
   },
   {
     slug: 'number-nan-3',
@@ -71,6 +91,16 @@ Despite its name, \`NaN\`'s type is \`'number'\`.`,
     ],
     hints: ['`NaN` stands for "Not a Number" yet its typeof is `"number"` — a famous JS quirk.'],
     tags: ['Number', 'NaN', 'typeof', 'beginner'],
+    usageExample: {
+      code: `// Represents Not-a-Number
+Number.NaN        // → NaN
+Number.isNaN(Number.NaN)  // → true
+Number.NaN === Number.NaN // → false (NaN is never equal to itself)`,
+      explanation: {
+        en: 'Use Number.NaN as a named constant for Not-a-Number; always check for it with Number.isNaN() since NaN !== NaN.',
+        es: 'Usa Number.NaN como constante con nombre para Not-a-Number; compruébalo siempre con Number.isNaN() ya que NaN !== NaN.',
+      },
+    },
   },
   {
     slug: 'number-nan-4',
@@ -101,6 +131,16 @@ const strict = Number.isNaN('hello')`,
     ],
     hints: ['Prefer `Number.isNaN()` in modern code to avoid unexpected coercion.'],
     tags: ['Number', 'NaN', 'isNaN', 'coercion', 'intermediate'],
+    usageExample: {
+      code: `// Represents Not-a-Number
+Number.NaN        // → NaN
+Number.isNaN(Number.NaN)  // → true
+Number.NaN === Number.NaN // → false (NaN is never equal to itself)`,
+      explanation: {
+        en: 'Use Number.NaN as a named constant for Not-a-Number; always check for it with Number.isNaN() since NaN !== NaN.',
+        es: 'Usa Number.NaN como constante con nombre para Not-a-Number; compruébalo siempre con Number.isNaN() ya que NaN !== NaN.',
+      },
+    },
   },
   {
     slug: 'number-nan-5',
@@ -126,5 +166,15 @@ const b = Number('abc')`,
     ],
     hints: ['`NaN` propagates — any arithmetic involving `NaN` produces `NaN`.'],
     tags: ['Number', 'NaN', 'operations', 'beginner'],
+    usageExample: {
+      code: `// Represents Not-a-Number
+Number.NaN        // → NaN
+Number.isNaN(Number.NaN)  // → true
+Number.NaN === Number.NaN // → false (NaN is never equal to itself)`,
+      explanation: {
+        en: 'Use Number.NaN as a named constant for Not-a-Number; always check for it with Number.isNaN() since NaN !== NaN.',
+        es: 'Usa Number.NaN como constante con nombre para Not-a-Number; compruébalo siempre con Number.isNaN() ya que NaN !== NaN.',
+      },
+    },
   },
 ]

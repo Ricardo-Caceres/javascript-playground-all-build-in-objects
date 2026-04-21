@@ -35,6 +35,15 @@ pairsToObject([['a', 1], ['b', 2]]) // → { a: 1, b: 2 }
       'Duplicate keys are allowed — the last one wins.',
     ],
     tags: ['Object', 'Object.fromEntries', 'beginner'],
+    usageExample: {
+      code: `// Build an object from [key, value] pairs
+const entries = [['a', 1], ['b', 2]]
+Object.fromEntries(entries)   // → { a: 1, b: 2 }`,
+      explanation: {
+        en: 'Use Object.fromEntries() to convert an iterable of [key, value] pairs into a plain object.',
+        es: 'Usa Object.fromEntries() para convertir un iterable de pares [clave, valor] en un objeto plano.',
+      },
+    },
   },
   {
     slug: 'object-from-entries-map',
@@ -69,6 +78,15 @@ mapToObject(new Map([['a', 1], ['b', 2]])) // → { a: 1, b: 2 }
       '`Map` is iterable and yields `[key, value]` pairs — exactly what `Object.fromEntries` expects.',
     ],
     tags: ['Object', 'Object.fromEntries', 'Map', 'beginner'],
+    usageExample: {
+      code: `// Build an object from [key, value] pairs
+const entries = [['a', 1], ['b', 2]]
+Object.fromEntries(entries)   // → { a: 1, b: 2 }`,
+      explanation: {
+        en: 'Use Object.fromEntries() to convert an iterable of [key, value] pairs into a plain object.',
+        es: 'Usa Object.fromEntries() para convertir un iterable de pares [clave, valor] en un objeto plano.',
+      },
+    },
   },
   {
     slug: 'object-from-entries-reverse-entries',
@@ -103,6 +121,15 @@ roundTrip({ a: 1, b: 2 }) // → { a: 1, b: 2 }
       '`Object.fromEntries(Object.entries(obj))` is a common shallow-clone pattern.',
     ],
     tags: ['Object', 'Object.fromEntries', 'Object.entries', 'beginner'],
+    usageExample: {
+      code: `// Build an object from [key, value] pairs
+const entries = [['a', 1], ['b', 2]]
+Object.fromEntries(entries)   // → { a: 1, b: 2 }`,
+      explanation: {
+        en: 'Use Object.fromEntries() to convert an iterable of [key, value] pairs into a plain object.',
+        es: 'Usa Object.fromEntries() para convertir un iterable de pares [clave, valor] en un objeto plano.',
+      },
+    },
   },
   {
     slug: 'object-from-entries-transform',
@@ -137,6 +164,15 @@ doubleValues({ a: 1, b: 3 }) // → { a: 2, b: 6 }
       'Chain: `Object.fromEntries(Object.entries(obj).map(([k, v]) => [k, v * 2]))`.',
     ],
     tags: ['Object', 'Object.fromEntries', 'transform', 'intermediate'],
+    usageExample: {
+      code: `// Build an object from [key, value] pairs
+const entries = [['a', 1], ['b', 2]]
+Object.fromEntries(entries)   // → { a: 1, b: 2 }`,
+      explanation: {
+        en: 'Use Object.fromEntries() to convert an iterable of [key, value] pairs into a plain object.',
+        es: 'Usa Object.fromEntries() para convertir un iterable de pares [clave, valor] en un objeto plano.',
+      },
+    },
   },
   {
     slug: 'object-from-entries-empty',
@@ -171,5 +207,14 @@ emptyFromEntries() // → {}
       '`Object.fromEntries([])` is valid and returns `{}`.',
     ],
     tags: ['Object', 'Object.fromEntries', 'beginner'],
+    usageExample: {
+      code: `// Build an object from [key, value] pairs
+const entries = [['a', 1], ['b', 2]]
+Object.fromEntries(entries)   // → { a: 1, b: 2 }`,
+      explanation: {
+        en: 'Use Object.fromEntries() to convert an iterable of [key, value] pairs into a plain object.',
+        es: 'Usa Object.fromEntries() para convertir un iterable de pares [clave, valor] en un objeto plano.',
+      },
+    },
   },
 ]

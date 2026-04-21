@@ -35,6 +35,15 @@ getEntries({ a: 1, b: 2 }) // → [['a', 1], ['b', 2]]
       'The order of entries matches the insertion order for string keys.',
     ],
     tags: ['Object', 'Object.entries', 'beginner'],
+    usageExample: {
+      code: `// Get [key, value] pairs of an object
+const obj = { a: 1, b: 2 }
+Object.entries(obj)   // → [['a', 1], ['b', 2]]`,
+      explanation: {
+        en: "Use Object.entries() to get an array of [key, value] pairs for iterating over an object's own enumerable properties.",
+        es: 'Usa Object.entries() para obtener pares [clave, valor] e iterar sobre las propiedades enumerables propias de un objeto.',
+      },
+    },
   },
   {
     slug: 'object-entries-own-enumerable',
@@ -70,6 +79,15 @@ countEntries({ a: 1, b: 2 }) // → 2
       'Use `.length` on the result to count.',
     ],
     tags: ['Object', 'Object.entries', 'enumerable', 'beginner'],
+    usageExample: {
+      code: `// Get [key, value] pairs of an object
+const obj = { a: 1, b: 2 }
+Object.entries(obj)   // → [['a', 1], ['b', 2]]`,
+      explanation: {
+        en: "Use Object.entries() to get an array of [key, value] pairs for iterating over an object's own enumerable properties.",
+        es: 'Usa Object.entries() para obtener pares [clave, valor] e iterar sobre las propiedades enumerables propias de un objeto.',
+      },
+    },
   },
   {
     slug: 'object-entries-string-values',
@@ -104,6 +122,15 @@ upperValues({ a: 'hello', b: 'world' }) // → { a: 'HELLO', b: 'WORLD' }
       'Use `Object.entries(obj).map(([k, v]) => [k, v.toUpperCase()])` then wrap with `Object.fromEntries`.',
     ],
     tags: ['Object', 'Object.entries', 'transform', 'intermediate'],
+    usageExample: {
+      code: `// Get [key, value] pairs of an object
+const obj = { a: 1, b: 2 }
+Object.entries(obj)   // → [['a', 1], ['b', 2]]`,
+      explanation: {
+        en: "Use Object.entries() to get an array of [key, value] pairs for iterating over an object's own enumerable properties.",
+        es: 'Usa Object.entries() para obtener pares [clave, valor] e iterar sobre las propiedades enumerables propias de un objeto.',
+      },
+    },
   },
   {
     slug: 'object-entries-order-matches-keys',
@@ -138,6 +165,15 @@ entryKeys({ b: 2, a: 1 }) // → ['b', 'a']
       'Destructure each entry as `([k])` to grab just the key.',
     ],
     tags: ['Object', 'Object.entries', 'order', 'beginner'],
+    usageExample: {
+      code: `// Get [key, value] pairs of an object
+const obj = { a: 1, b: 2 }
+Object.entries(obj)   // → [['a', 1], ['b', 2]]`,
+      explanation: {
+        en: "Use Object.entries() to get an array of [key, value] pairs for iterating over an object's own enumerable properties.",
+        es: 'Usa Object.entries() para obtener pares [clave, valor] e iterar sobre las propiedades enumerables propias de un objeto.',
+      },
+    },
   },
   {
     slug: 'object-entries-to-map',
@@ -172,5 +208,14 @@ toMap({ a: 1, b: 2 }) // → Map { 'a' => 1, 'b' => 2 }
       '`new Map(iterable)` accepts an iterable of `[key, value]` pairs — exactly what `Object.entries` returns.',
     ],
     tags: ['Object', 'Object.entries', 'Map', 'intermediate'],
+    usageExample: {
+      code: `// Get [key, value] pairs of an object
+const obj = { a: 1, b: 2 }
+Object.entries(obj)   // → [['a', 1], ['b', 2]]`,
+      explanation: {
+        en: "Use Object.entries() to get an array of [key, value] pairs for iterating over an object's own enumerable properties.",
+        es: 'Usa Object.entries() para obtener pares [clave, valor] e iterar sobre las propiedades enumerables propias de un objeto.',
+      },
+    },
   },
 ]
