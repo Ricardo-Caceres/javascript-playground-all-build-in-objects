@@ -161,7 +161,7 @@ export default function HomeView() {
           <h2 className="mb-4 text-xs font-semibold uppercase tracking-widest text-zinc-700">
             Redux Architecture Examples
           </h2>
-          <div className="grid gap-3 sm:grid-cols-2">
+          <div className="grid gap-3 sm:grid-cols-2 lg:grid-cols-3">
             <Link
               href="/exercises/redux-legacy"
               className="rounded-xl border border-zinc-800 bg-zinc-900 p-5 transition-colors hover:border-zinc-700"
@@ -180,6 +180,16 @@ export default function HomeView() {
               <h3 className="mt-2 font-semibold text-zinc-300">Redux Toolkit</h3>
               <p className="mt-1 text-xs text-zinc-600">
                 configureStore, slice, selectors memoizados y thunk.
+              </p>
+            </Link>
+            <Link
+              href="/redux-comparison"
+              className="rounded-xl border border-emerald-800/60 bg-emerald-950/30 p-5 transition-colors hover:border-emerald-700"
+            >
+              <p className="text-xs uppercase tracking-widest text-emerald-600">Comparación</p>
+              <h3 className="mt-2 font-semibold text-emerald-300">Redux Comparison</h3>
+              <p className="mt-1 text-xs text-emerald-600/80">
+                Side-by-side visualización con state, timeline y DevTools sync mode.
               </p>
             </Link>
           </div>
