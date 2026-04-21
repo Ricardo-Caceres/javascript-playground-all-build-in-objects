@@ -355,4 +355,16 @@ export const topicMetaMap: Record<string, TopicMeta> = {
       es: 'WeakSet es una colección de objetos mantenidos débilmente — sus miembros no impiden la recolección de basura. A diferencia de Set no es iterable y no tiene size. Es útil para etiquetar objetos (ej. "¿se ha procesado este elemento?") sin impedir su limpieza.',
     },
   },
+  'redux-legacy': {
+    description: {
+      en: 'Redux is a predictable state container for JavaScript apps. These exercises cover the foundational patterns: reducers, action creators, middleware, and store from scratch — no abstractions, pure functions only.',
+      es: 'Redux es un contenedor de estado predecible para aplicaciones JavaScript. Estos ejercicios cubren los patrones fundamentales: reducers, action creators, middleware y store desde cero — sin abstracciones, solo funciones puras.',
+    },
+  },
+  'redux-toolkit': {
+    description: {
+      en: 'Redux Toolkit is the official, opinionated toolset for Redux development. These exercises cover createSlice, configureStore, createAsyncThunk, createEntityAdapter, and more — using the modern RTK API.',
+      es: 'Redux Toolkit es el conjunto de herramientas oficial y con opiniones para el desarrollo con Redux. Estos ejercicios cubren createSlice, configureStore, createAsyncThunk, createEntityAdapter y más — usando la API moderna de RTK.',
+    },
+  },
 }

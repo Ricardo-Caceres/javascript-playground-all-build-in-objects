@@ -1,3 +1,4 @@
+import * as ReduxToolkit from '@reduxjs/toolkit'
 import * as Babel from "@babel/standalone"
 import { createTestFramework } from "./testFramework"
 import type { TestCase, RunResult } from "@/shared/types/exercises"
@@ -43,9 +44,10 @@ function executeCode(code: string, tests: TestCase[]): RunResult {
       "describe",
       "it",
       "expect",
+      "ReduxToolkit",
       `var result = eval(${JSON.stringify(transpiled)});\n${testBlock}`,
     )
-    runner(describe, it, expect)
+    runner(describe, it, expect, ReduxToolkit)
 
     return { results: getResults() }
   } catch (err) {

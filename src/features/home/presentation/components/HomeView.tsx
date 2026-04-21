@@ -30,7 +30,9 @@ for (const ex of allExercises) {
   EXERCISE_SLUGS[ex.builtIn].push(ex.slug)
 }
 
-const OBJECTS = getAvailableObjects()
+const OBJECTS = getAvailableObjects().filter(
+  (o) => o !== 'redux-legacy' && o !== 'redux-toolkit'
+)
 
 export default function HomeView() {
   const [search, setSearch] = useState('')
@@ -161,7 +163,7 @@ export default function HomeView() {
           </h2>
           <div className="grid gap-3 sm:grid-cols-2">
             <Link
-              href="/redux-legacy"
+              href="/exercises/redux-legacy"
               className="rounded-xl border border-zinc-800 bg-zinc-900 p-5 transition-colors hover:border-zinc-700"
             >
               <p className="text-xs uppercase tracking-widest text-zinc-600">Página 01</p>
@@ -171,7 +173,7 @@ export default function HomeView() {
               </p>
             </Link>
             <Link
-              href="/redux-toolkit"
+              href="/exercises/redux-toolkit"
               className="rounded-xl border border-zinc-800 bg-zinc-900 p-5 transition-colors hover:border-zinc-700"
             >
               <p className="text-xs uppercase tracking-widest text-zinc-600">Página 02</p>
