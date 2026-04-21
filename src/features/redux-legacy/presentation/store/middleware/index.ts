@@ -4,14 +4,14 @@ import { timelineActions } from '../reducers/timelineReducer'
 let actionCounter = 0
 const actionTimestamps = new Map<string, number>()
 
-export const timelineMiddleware: Middleware = (store) => (next) => (action) => {
+export const timelineMiddleware: Middleware = (store) => (next) => (action: any) => {
   // Skip Redux internal actions
-  if (action.type.startsWith('@@')) {
+  if (typeof action.type === 'string' && action.type.startsWith('@@')) {
     return next(action)
   }
 
   // Skip timeline actions to avoid infinite loops
-  if (action.type.startsWith('TIMELINE/')) {
+  if (typeof action.type === 'string' && action.type.startsWith('TIMELINE/')) {
     return next(action)
   }
 

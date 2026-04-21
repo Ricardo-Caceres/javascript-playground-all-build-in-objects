@@ -48,8 +48,8 @@ function StateTreeNode({
   }
 
   const isArray = Array.isArray(value)
-  const entries = isArray ? value.entries() : Object.entries(value)
-  const items = Array.from(entries)
+  const entries = isArray ? Array.from(value.entries()) : Object.entries(value)
+  const items = entries
 
   if (items.length === 0) {
     return (

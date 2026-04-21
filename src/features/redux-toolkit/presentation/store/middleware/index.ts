@@ -3,9 +3,9 @@ import { addAction, updateAction } from '../slices/timelineSlice'
 
 let actionCounter = 0
 
-export const timelineMiddleware: Middleware = (store) => (next) => (action) => {
+export const timelineMiddleware: Middleware = (store) => (next) => (action: any) => {
   // Skip Redux internal and timeline actions
-  if (action.type.startsWith('@@') || action.type.startsWith('timeline/')) {
+  if (typeof action.type === 'string' && (action.type.startsWith('@@') || action.type.startsWith('timeline/'))) {
     return next(action)
   }
 
