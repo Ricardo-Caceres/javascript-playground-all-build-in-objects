@@ -1,9 +1,11 @@
 'use client'
 
 import { useState } from 'react'
-import { useSelector, useDispatch } from 'react-redux'
+import { useSelector } from 'react-redux'
 import type { LegacyRootState } from '@/features/redux-legacy/presentation/store/reducers'
 import type { ToolkitRootState } from '@/features/redux-toolkit/infrastructure/store'
+import { legacyReduxStore } from '@/features/redux-legacy/infrastructure/store'
+import { reduxToolkitStore } from '@/features/redux-toolkit/infrastructure/store'
 import { useLegacyActionTimeline } from '@/features/redux-legacy/presentation/hooks'
 import { useToolkitActionTimeline } from '@/features/redux-toolkit/presentation/hooks'
 import {
@@ -26,12 +28,13 @@ export function ReduxComparison() {
   const [activePanel, setActivePanel] = useState<'demo' | 'state' | 'timeline' | 'devtools'>('demo')
   const { enabled: syncMode, setEnabled: setSyncMode } = useSyncMode()
 
-  const legacyDispatch = useDispatch()
+  // Access dispatch directly from stores to avoid context mixing with nested Providers
+  const legacyDispatch = legacyReduxStore.dispatch
   const legacyState = useSelector((state: LegacyRootState) => state)
   const legacyCounter = useSelector((state: LegacyRootState) => state.counter?.value ?? 0)
   const legacyActions = useLegacyActionTimeline()
 
-  const toolkitDispatch = useDispatch()
+  const toolkitDispatch = reduxToolkitStore.dispatch
   const toolkitState = useSelector((state: ToolkitRootState) => state)
   const toolkitCounter = useSelector((state: ToolkitRootState) => state.counter?.value ?? 0)
   const toolkitActions = useToolkitActionTimeline()
