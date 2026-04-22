@@ -10,7 +10,11 @@ export function LanguageSwitcher() {
   const pathname = usePathname()
 
   function switchLocale(newLocale: string) {
-    router.replace(pathname, { locale: newLocale })
+    if (locale !== newLocale) {
+      router.push(pathname, { locale: newLocale })
+      // Force page reload to ensure all translations are updated
+      window.location.reload()
+    }
   }
 
   return (
