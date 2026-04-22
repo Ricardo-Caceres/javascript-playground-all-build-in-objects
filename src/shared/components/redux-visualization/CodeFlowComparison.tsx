@@ -1,6 +1,7 @@
 'use client'
 
 import React, { useState } from 'react'
+import { useTranslations } from 'next-intl'
 import styles from './CodeFlowComparison.module.css'
 
 type FlowStep = 'setup' | 'actions' | 'reducers' | 'dispatch' | 'state-update' | 'complete'
@@ -321,14 +322,39 @@ const flowSteps: Array<{ id: FlowStep; label: string; description: string }> = [
 ]
 
 export function CodeFlowComparison() {
+  const t = useTranslations('redux.codeFlow')
   const [currentStep, setCurrentStep] = useState<FlowStep>('setup')
+
+  const getStepLabel = (id: string) => {
+    const labelMap: Record<string, string> = {
+      'setup': t('steps.setup.label'),
+      'actions': t('steps.actions.label'),
+      'reducers': t('steps.reducers.label'),
+      'dispatch': t('steps.dispatch.label'),
+      'state-update': t('steps.stateUpdate.label'),
+      'complete': t('steps.complete.label')
+    }
+    return labelMap[id] || id
+  }
+
+  const getStepDescription = (id: string) => {
+    const descMap: Record<string, string> = {
+      'setup': t('steps.setup.description'),
+      'actions': t('steps.actions.description'),
+      'reducers': t('steps.reducers.description'),
+      'dispatch': t('steps.dispatch.description'),
+      'state-update': t('steps.stateUpdate.description'),
+      'complete': t('steps.complete.description')
+    }
+    return descMap[id] || ''
+  }
 
   return (
     <div className={styles.container}>
       <div className={styles.header}>
-        <h2 className={styles.title}>🔄 Redux Implementation Flow</h2>
+        <h2 className={styles.title}>{t('title')}</h2>
         <p className={styles.subtitle}>
-          Complete code comparison with full data flow visualization
+          {t('subtitle')}
         </p>
       </div>
 
@@ -342,8 +368,8 @@ export function CodeFlowComparison() {
             }`}
             onClick={() => setCurrentStep(step.id)}
           >
-            <span className={styles.stepLabel}>{step.label}</span>
-            <span className={styles.stepDesc}>{step.description}</span>
+            <span className={styles.stepLabel}>{getStepLabel(step.id)}</span>
+            <span className={styles.stepDesc}>{getStepDescription(step.id)}</span>
             {index < flowSteps.length - 1 && (
               <svg
                 className={styles.arrow}
@@ -371,9 +397,9 @@ export function CodeFlowComparison() {
         <div className={styles.codeColumn}>
           <div className={styles.columnHeader}>
             <div className={styles.badge} style={{ background: '#dc2626' }}>
-              Redux Legacy
+              {t('legacy.label')}
             </div>
-            <p className={styles.columnInfo}>Classic, manual approach</p>
+            <p className={styles.columnInfo}>{t('legacy.description')}</p>
           </div>
           <pre className={styles.code}>
             <code>{codeExamples[currentStep].legacy}</code>
@@ -434,7 +460,7 @@ export function CodeFlowComparison() {
                 />
               ))}
             </svg>
-            <div className={styles.flowLabel}>Data Flow</div>
+            <div className={styles.flowLabel}>{t('dataFlow')}</div>
           </div>
         </div>
 
@@ -442,9 +468,9 @@ export function CodeFlowComparison() {
         <div className={styles.codeColumn}>
           <div className={styles.columnHeader}>
             <div className={styles.badge} style={{ background: '#2563eb' }}>
-              Redux Toolkit
+              {t('toolkit.label')}
             </div>
-            <p className={styles.columnInfo}>Modern, batteries-included</p>
+            <p className={styles.columnInfo}>{t('toolkit.description')}</p>
           </div>
           <pre className={styles.code}>
             <code>{codeExamples[currentStep].toolkit}</code>
