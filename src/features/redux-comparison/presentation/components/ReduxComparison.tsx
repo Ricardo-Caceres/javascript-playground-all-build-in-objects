@@ -1,7 +1,7 @@
 'use client'
 
 import { useState } from 'react'
-import { useSelector } from 'react-redux'
+import { useSelector, shallowEqual } from 'react-redux'
 import type { LegacyRootState } from '@/features/redux-legacy/presentation/store/reducers'
 import type { ToolkitRootState } from '@/features/redux-toolkit/infrastructure/store'
 import { legacyReduxStore } from '@/features/redux-legacy/infrastructure/store'
@@ -30,12 +30,12 @@ export function ReduxComparison() {
 
   // Access dispatch directly from stores to avoid context mixing with nested Providers
   const legacyDispatch = legacyReduxStore.dispatch
-  const legacyState = useSelector((state: LegacyRootState) => state)
+  const legacyState = useSelector((state: LegacyRootState) => state, shallowEqual)
   const legacyCounter = useSelector((state: LegacyRootState) => state.counter?.value ?? 0)
   const legacyActions = useLegacyActionTimeline()
 
   const toolkitDispatch = reduxToolkitStore.dispatch
-  const toolkitState = useSelector((state: ToolkitRootState) => state)
+  const toolkitState = useSelector((state: ToolkitRootState) => state, shallowEqual)
   const toolkitCounter = useSelector((state: ToolkitRootState) => state.counter?.value ?? 0)
   const toolkitActions = useToolkitActionTimeline()
 
