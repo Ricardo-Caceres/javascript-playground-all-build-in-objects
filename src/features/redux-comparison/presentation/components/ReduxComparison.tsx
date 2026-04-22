@@ -1,13 +1,14 @@
 'use client'
 
 import { useState } from 'react'
-import { useSelector, shallowEqual } from 'react-redux'
+import { shallowEqual } from 'react-redux'
 import type { LegacyRootState } from '@/features/redux-legacy/presentation/store/reducers'
 import type { ToolkitRootState } from '@/features/redux-toolkit/infrastructure/store'
 import { legacyReduxStore } from '@/features/redux-legacy/infrastructure/store'
 import { reduxToolkitStore } from '@/features/redux-toolkit/infrastructure/store'
 import { useLegacyActionTimeline } from '@/features/redux-legacy/presentation/hooks'
 import { useToolkitActionTimeline } from '@/features/redux-toolkit/presentation/hooks'
+import { useStoreSelector, useStoreState } from '../hooks'
 import {
   decrementCounter,
   incrementCounter,
@@ -28,15 +29,21 @@ export function ReduxComparison() {
   const [activePanel, setActivePanel] = useState<'demo' | 'state' | 'timeline' | 'devtools'>('demo')
   const { enabled: syncMode, setEnabled: setSyncMode } = useSyncMode()
 
-  // Access dispatch directly from stores to avoid context mixing with nested Providers
+  // Subscribe directly to stores, not via context
   const legacyDispatch = legacyReduxStore.dispatch
-  const legacyState = useSelector((state: LegacyRootState) => state, shallowEqual)
-  const legacyCounter = useSelector((state: LegacyRootState) => state.counter?.value ?? 0)
+  const legacyState = useStoreState(legacyReduxStore as any)
+  const legacyCounter = useStoreSelector(
+    legacyReduxStore as any,
+    (state: LegacyRootState) => state.counter?.value ?? 0
+  )
   const legacyActions = useLegacyActionTimeline()
 
   const toolkitDispatch = reduxToolkitStore.dispatch
-  const toolkitState = useSelector((state: ToolkitRootState) => state, shallowEqual)
-  const toolkitCounter = useSelector((state: ToolkitRootState) => state.counter?.value ?? 0)
+  const toolkitState = useStoreState(reduxToolkitStore as any)
+  const toolkitCounter = useStoreSelector(
+    reduxToolkitStore as any,
+    (state: ToolkitRootState) => state.counter?.value ?? 0
+  )
   const toolkitActions = useToolkitActionTimeline()
 
   const handleSyncToggle = () => {
