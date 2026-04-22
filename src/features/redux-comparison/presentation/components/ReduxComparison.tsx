@@ -27,7 +27,7 @@ export function ReduxComparison() {
   const { enabled: syncMode, setEnabled: setSyncMode } = useSyncMode()
 
   // Subscribe directly to stores, not via context
-  const legacyDispatch = legacyReduxStore.dispatch
+  const legacyDispatch = (action: any) => legacyReduxStore.dispatch(action)
   const legacyState = useStoreState(legacyReduxStore as any)
   const legacyCounterSelector = useCallback(
     (state: LegacyRootState) => state.counter?.value ?? 0,
@@ -36,7 +36,7 @@ export function ReduxComparison() {
   const legacyCounter = useStoreSelector(legacyReduxStore as any, legacyCounterSelector)
   const legacyActions = useLegacyActionTimelineFromStore()
 
-  const toolkitDispatch = reduxToolkitStore.dispatch
+  const toolkitDispatch = (action: any) => reduxToolkitStore.dispatch(action)
   const toolkitState = useStoreState(reduxToolkitStore as any)
   const toolkitCounterSelector = useCallback(
     (state: ToolkitRootState) => state.counter?.value ?? 0,

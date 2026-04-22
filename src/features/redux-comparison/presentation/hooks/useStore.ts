@@ -1,5 +1,7 @@
 'use client'
 
+'use client'
+
 import { useEffect, useState, useCallback } from 'react'
 import type { Store } from 'redux'
 
@@ -9,7 +11,8 @@ export function useStoreState<T>(store: Store<T>): T {
   useEffect(() => {
     // Update state when store changes
     const unsubscribe = store.subscribe(() => {
-      setState(store.getState())
+      const newState = store.getState()
+      setState(newState)
     })
     return unsubscribe
   }, [store])
@@ -24,7 +27,8 @@ export function useStoreSelector<T, R>(store: Store<T>, selector: (state: T) => 
     let previousValue = selector(store.getState())
     
     const unsubscribe = store.subscribe(() => {
-      const nextValue = selector(store.getState())
+      const currentState = store.getState()
+      const nextValue = selector(currentState)
       if (previousValue !== nextValue) {
         previousValue = nextValue
         setSelected(nextValue)
