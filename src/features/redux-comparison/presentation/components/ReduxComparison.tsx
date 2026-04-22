@@ -1,14 +1,11 @@
 'use client'
 
 import { useState, useCallback } from 'react'
-import { shallowEqual } from 'react-redux'
 import type { LegacyRootState } from '@/features/redux-legacy/presentation/store/reducers'
 import type { ToolkitRootState } from '@/features/redux-toolkit/infrastructure/store'
 import { legacyReduxStore } from '@/features/redux-legacy/infrastructure/store'
 import { reduxToolkitStore } from '@/features/redux-toolkit/infrastructure/store'
-import { useLegacyActionTimeline } from '@/features/redux-legacy/presentation/hooks'
-import { useToolkitActionTimeline } from '@/features/redux-toolkit/presentation/hooks'
-import { useStoreSelector, useStoreState } from '../hooks'
+import { useStoreSelector, useStoreState, useLegacyActionTimelineFromStore, useToolkitActionTimelineFromStore } from '../hooks'
 import {
   decrementCounter,
   incrementCounter,
@@ -37,7 +34,7 @@ export function ReduxComparison() {
     []
   )
   const legacyCounter = useStoreSelector(legacyReduxStore as any, legacyCounterSelector)
-  const legacyActions = useLegacyActionTimeline()
+  const legacyActions = useLegacyActionTimelineFromStore()
 
   const toolkitDispatch = reduxToolkitStore.dispatch
   const toolkitState = useStoreState(reduxToolkitStore as any)
@@ -46,7 +43,7 @@ export function ReduxComparison() {
     []
   )
   const toolkitCounter = useStoreSelector(reduxToolkitStore as any, toolkitCounterSelector)
-  const toolkitActions = useToolkitActionTimeline()
+  const toolkitActions = useToolkitActionTimelineFromStore()
 
   const handleSyncToggle = () => {
     setSyncMode(!syncMode)
