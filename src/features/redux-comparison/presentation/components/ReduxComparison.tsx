@@ -16,16 +16,21 @@ import {
   StatePanel,
   TimelinePanel,
   DevToolsPanel,
+  ArchitecturePanel,
+  ActionAnalysisPanel,
 } from '@/shared/components/redux-visualization'
 import { useSyncMode } from '../../context/SyncModeContext'
 import { DebugStore } from './DebugStore'
 
 type ViewMode = 'side-by-side' | 'legacy' | 'toolkit'
+type PanelType = 'demo' | 'state' | 'timeline' | 'devtools' | 'architecture' | 'action'
 
 export function ReduxComparison() {
   const [viewMode, setViewMode] = useState<ViewMode>('side-by-side')
-  const [activePanel, setActivePanel] = useState<'demo' | 'state' | 'timeline' | 'devtools'>('demo')
+  const [activePanel, setActivePanel] = useState<PanelType>('demo')
   const { enabled: syncMode, setEnabled: setSyncMode } = useSyncMode()
+  const [lastLegacyAction, setLastLegacyAction] = useState<any>(null)
+  const [lastToolkitAction, setLastToolkitAction] = useState<any>(null)
 
   // Subscribe directly to stores, not via context
   const legacyDispatch = (action: any) => legacyReduxStore.dispatch(action)
@@ -51,16 +56,68 @@ export function ReduxComparison() {
   }
 
   const handleLegacyIncrement = () => {
-    legacyDispatch(incrementCounter())
+    const action = incrementCounter()
+    setLastLegacyAction(action)
+    legacyDispatch(action)
     if (syncMode) {
-      toolkitDispatch(toolkitCounterActions.increment())
+      const toolkitAction = toolkitCounterActions.increment()
+      setLastToolkitAction(toolkitAction)
+      toolkitDispatch(toolkitAction)
+    }
+  }
+
+  const handleLegacyDecrement = () => {
+    const action = decrementCounter()
+    setLastLegacyAction(action)
+    legacyDispatch(action)
+    if (syncMode) {
+      const toolkitAction = toolkitCounterActions.decrement()
+      setLastToolkitAction(toolkitAction)
+      toolkitDispatch(toolkitAction)
+    }
+  }
+
+  const handleLegacyReset = () => {
+    const action = resetCounter()
+    setLastLegacyAction(action)
+    legacyDispatch(action)
+    if (syncMode) {
+      const toolkitAction = toolkitCounterActions.reset()
+      setLastToolkitAction(toolkitAction)
+      toolkitDispatch(toolkitAction)
     }
   }
 
   const handleToolkitIncrement = () => {
-    toolkitDispatch(toolkitCounterActions.increment())
+    const toolkitAction = toolkitCounterActions.increment()
+    setLastToolkitAction(toolkitAction)
+    toolkitDispatch(toolkitAction)
     if (syncMode) {
-      legacyDispatch(incrementCounter())
+      const legacyAction = incrementCounter()
+      setLastLegacyAction(legacyAction)
+      legacyDispatch(legacyAction)
+    }
+  }
+
+  const handleToolkitDecrement = () => {
+    const toolkitAction = toolkitCounterActions.decrement()
+    setLastToolkitAction(toolkitAction)
+    toolkitDispatch(toolkitAction)
+    if (syncMode) {
+      const legacyAction = decrementCounter()
+      setLastLegacyAction(legacyAction)
+      legacyDispatch(legacyAction)
+    }
+  }
+
+  const handleToolkitReset = () => {
+    const toolkitAction = toolkitCounterActions.reset()
+    setLastToolkitAction(toolkitAction)
+    toolkitDispatch(toolkitAction)
+    if (syncMode) {
+      const legacyAction = resetCounter()
+      setLastLegacyAction(legacyAction)
+      legacyDispatch(legacyAction)
     }
   }
 
@@ -120,6 +177,17 @@ export function ReduxComparison() {
             title={`${title} DevTools`}
           />
         )}
+        {activePanel === 'architecture' && (
+          <ArchitecturePanel
+            storeName={title.includes('Legacy') ? 'legacy' : 'toolkit'}
+          />
+        )}
+        {activePanel === 'action' && (
+          <ActionAnalysisPanel
+            lastAction={title.includes('Legacy') ? lastLegacyAction : lastToolkitAction}
+            storeName={title.includes('Legacy') ? 'legacy' : 'toolkit'}
+          />
+        )}
       </div>
     )
   }
@@ -171,8 +239,8 @@ export function ReduxComparison() {
           </div>
 
           {/* Panel Selection */}
-          <div className="flex gap-2 border-t border-zinc-200 pt-3">
-            {(['demo', 'state', 'timeline', 'devtools'] as const).map((panel) => (
+          <div className="flex gap-2 border-t border-zinc-200 pt-3 flex-wrap">
+            {(['demo', 'state', 'timeline', 'devtools', 'architecture', 'action'] as const).map((panel) => (
               <button
                 key={panel}
                 onClick={() => setActivePanel(panel)}
@@ -183,7 +251,12 @@ export function ReduxComparison() {
                 }`}
                 type="button"
               >
-                {panel.charAt(0).toUpperCase() + panel.slice(1)}
+                {panel === 'demo' && 'Demo'}
+                {panel === 'state' && 'State'}
+                {panel === 'timeline' && 'Timeline'}
+                {panel === 'devtools' && 'DevTools'}
+                {panel === 'architecture' && 'Architecture'}
+                {panel === 'action' && 'Last Action'}
               </button>
             ))}
           </div>
@@ -199,18 +272,8 @@ export function ReduxComparison() {
             legacyState,
             legacyActions,
             handleLegacyIncrement,
-            () => {
-              legacyDispatch(decrementCounter())
-              if (syncMode) {
-                toolkitDispatch(toolkitCounterActions.decrement())
-              }
-            },
-            () => {
-              legacyDispatch(resetCounter())
-              if (syncMode) {
-                toolkitDispatch(toolkitCounterActions.reset())
-              }
-            }
+            handleLegacyDecrement,
+            handleLegacyReset,
           )}
           {renderStorePanel(
             'Redux Toolkit',
@@ -218,18 +281,8 @@ export function ReduxComparison() {
             toolkitState,
             toolkitActions,
             handleToolkitIncrement,
-            () => {
-              toolkitDispatch(toolkitCounterActions.decrement())
-              if (syncMode) {
-                legacyDispatch(decrementCounter())
-              }
-            },
-            () => {
-              toolkitDispatch(toolkitCounterActions.reset())
-              if (syncMode) {
-                legacyDispatch(resetCounter())
-              }
-            }
+            handleToolkitDecrement,
+            handleToolkitReset,
           )}
         </div>
       )}
@@ -241,8 +294,8 @@ export function ReduxComparison() {
           legacyState,
           legacyActions,
           handleLegacyIncrement,
-          () => legacyDispatch(decrementCounter()),
-          () => legacyDispatch(resetCounter())
+          handleLegacyDecrement,
+          handleLegacyReset,
         )}
 
       {viewMode === 'toolkit' &&
@@ -252,8 +305,8 @@ export function ReduxComparison() {
           toolkitState,
           toolkitActions,
           handleToolkitIncrement,
-          () => toolkitDispatch(toolkitCounterActions.decrement()),
-          () => toolkitDispatch(toolkitCounterActions.reset())
+          handleToolkitDecrement,
+          handleToolkitReset,
         )}
     </div>
   )
