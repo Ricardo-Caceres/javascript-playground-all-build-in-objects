@@ -1,4 +1,6 @@
-import { useEffect, useState } from 'react'
+'use client'
+
+import { useEffect, useState, useCallback } from 'react'
 import type { Store } from 'redux'
 
 export function useStoreState<T>(store: Store<T>): T {

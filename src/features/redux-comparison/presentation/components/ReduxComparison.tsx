@@ -1,6 +1,6 @@
 'use client'
 
-import { useState } from 'react'
+import { useState, useCallback } from 'react'
 import { shallowEqual } from 'react-redux'
 import type { LegacyRootState } from '@/features/redux-legacy/presentation/store/reducers'
 import type { ToolkitRootState } from '@/features/redux-toolkit/infrastructure/store'
@@ -32,18 +32,20 @@ export function ReduxComparison() {
   // Subscribe directly to stores, not via context
   const legacyDispatch = legacyReduxStore.dispatch
   const legacyState = useStoreState(legacyReduxStore as any)
-  const legacyCounter = useStoreSelector(
-    legacyReduxStore as any,
-    (state: LegacyRootState) => state.counter?.value ?? 0
+  const legacyCounterSelector = useCallback(
+    (state: LegacyRootState) => state.counter?.value ?? 0,
+    []
   )
+  const legacyCounter = useStoreSelector(legacyReduxStore as any, legacyCounterSelector)
   const legacyActions = useLegacyActionTimeline()
 
   const toolkitDispatch = reduxToolkitStore.dispatch
   const toolkitState = useStoreState(reduxToolkitStore as any)
-  const toolkitCounter = useStoreSelector(
-    reduxToolkitStore as any,
-    (state: ToolkitRootState) => state.counter?.value ?? 0
+  const toolkitCounterSelector = useCallback(
+    (state: ToolkitRootState) => state.counter?.value ?? 0,
+    []
   )
+  const toolkitCounter = useStoreSelector(reduxToolkitStore as any, toolkitCounterSelector)
   const toolkitActions = useToolkitActionTimeline()
 
   const handleSyncToggle = () => {
