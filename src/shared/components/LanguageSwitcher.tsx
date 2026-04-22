@@ -11,9 +11,10 @@ export function LanguageSwitcher() {
 
   function switchLocale(newLocale: string) {
     if (locale !== newLocale) {
-      router.push(pathname, { locale: newLocale })
-      // Force page reload to ensure all translations are updated
-      window.location.reload()
+      // Navigate to the same path but with the new locale
+      const newPath = pathname.startsWith('/') ? pathname : `/${pathname}`
+      const newUrl = `/${newLocale}${newPath}`
+      window.location.href = newUrl
     }
   }
 

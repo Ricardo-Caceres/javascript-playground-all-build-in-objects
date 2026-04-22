@@ -322,10 +322,17 @@ const flowSteps: Array<{ id: FlowStep; label: string; description: string }> = [
 ]
 
 export function CodeFlowComparison() {
-  const t = useTranslations('redux.codeFlow')
+  let t: any = null
+  try {
+    t = useTranslations('redux.codeFlow')
+  } catch (e) {
+    console.error('Translation error:', e)
+  }
+
   const [currentStep, setCurrentStep] = useState<FlowStep>('setup')
 
   const getStepLabel = (id: string) => {
+    if (!t) return id
     const labelMap: Record<string, string> = {
       'setup': t('steps.setup.label'),
       'actions': t('steps.actions.label'),
@@ -338,6 +345,7 @@ export function CodeFlowComparison() {
   }
 
   const getStepDescription = (id: string) => {
+    if (!t) return ''
     const descMap: Record<string, string> = {
       'setup': t('steps.setup.description'),
       'actions': t('steps.actions.description'),
@@ -349,12 +357,15 @@ export function CodeFlowComparison() {
     return descMap[id] || ''
   }
 
+  const titleText = t ? t('title') : '🔄 Redux Implementation Flow'
+  const subtitleText = t ? t('subtitle') : 'Complete code comparison with full data flow visualization'
+
   return (
     <div className={styles.container}>
       <div className={styles.header}>
-        <h2 className={styles.title}>{t('title')}</h2>
+        <h2 className={styles.title}>{titleText}</h2>
         <p className={styles.subtitle}>
-          {t('subtitle')}
+          {subtitleText}
         </p>
       </div>
 
@@ -397,9 +408,9 @@ export function CodeFlowComparison() {
         <div className={styles.codeColumn}>
           <div className={styles.columnHeader}>
             <div className={styles.badge} style={{ background: '#dc2626' }}>
-              {t('legacy.label')}
+              {t ? t('legacy.label') : 'Redux Legacy'}
             </div>
-            <p className={styles.columnInfo}>{t('legacy.description')}</p>
+            <p className={styles.columnInfo}>{t ? t('legacy.description') : 'Classic, manual approach'}</p>
           </div>
           <pre className={styles.code}>
             <code>{codeExamples[currentStep].legacy}</code>
@@ -460,7 +471,7 @@ export function CodeFlowComparison() {
                 />
               ))}
             </svg>
-            <div className={styles.flowLabel}>{t('dataFlow')}</div>
+            <div className={styles.flowLabel}>{t ? t('dataFlow') : 'Data Flow'}</div>
           </div>
         </div>
 
@@ -468,9 +479,9 @@ export function CodeFlowComparison() {
         <div className={styles.codeColumn}>
           <div className={styles.columnHeader}>
             <div className={styles.badge} style={{ background: '#2563eb' }}>
-              {t('toolkit.label')}
+              {t ? t('toolkit.label') : 'Redux Toolkit'}
             </div>
-            <p className={styles.columnInfo}>{t('toolkit.description')}</p>
+            <p className={styles.columnInfo}>{t ? t('toolkit.description') : 'Modern, simplified approach'}</p>
           </div>
           <pre className={styles.code}>
             <code>{codeExamples[currentStep].toolkit}</code>
