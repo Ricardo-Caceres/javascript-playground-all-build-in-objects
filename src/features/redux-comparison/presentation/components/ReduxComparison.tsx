@@ -18,6 +18,7 @@ import {
   DevToolsPanel,
 } from '@/shared/components/redux-visualization'
 import { useSyncMode } from '../../context/SyncModeContext'
+import { DebugStore } from './DebugStore'
 
 type ViewMode = 'side-by-side' | 'legacy' | 'toolkit'
 
@@ -125,6 +126,7 @@ export function ReduxComparison() {
 
   return (
     <div className="space-y-6">
+      <DebugStore />
       {/* Header */}
       <div className="rounded-lg border border-zinc-200 bg-white p-6">
         <div className="mb-4">
