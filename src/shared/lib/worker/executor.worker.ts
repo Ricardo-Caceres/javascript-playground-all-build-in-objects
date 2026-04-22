@@ -36,16 +36,15 @@ function executeCode(code: string, tests: TestCase[]): RunResult {
       .map((t) => `it(${JSON.stringify(t.description)}, () => { ${t.assertion} })`)
       .join("\n")
 
-    // Capture the last expression of user code as `result` using eval().
-    // In non-strict mode, var/function declarations inside eval() are hoisted
-    // into the outer new Function scope, so function exercises still work.
+    // Include user code directly in the same scope as tests
+    // so class definitions are accessible to test assertions
     // eslint-disable-next-line no-new-func
     const runner = new Function(
       "describe",
       "it",
       "expect",
       "ReduxToolkit",
-      `eval(${JSON.stringify(transpiled)});\nvar result = undefined;\n${testBlock}`,
+      `${transpiled}\nvar result = undefined;\n${testBlock}`,
     )
     runner(describe, it, expect, ReduxToolkit)
 
