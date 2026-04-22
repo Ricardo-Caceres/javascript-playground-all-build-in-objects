@@ -19,12 +19,13 @@ import {
   ArchitecturePanel,
   ActionAnalysisPanel,
   ComparisonDifferences,
+  CodeFlowComparison,
 } from '@/shared/components/redux-visualization'
 import { useSyncMode } from '../../context/SyncModeContext'
 import { DebugStore } from './DebugStore'
 
 type ViewMode = 'side-by-side' | 'legacy' | 'toolkit'
-type PanelType = 'demo' | 'state' | 'timeline' | 'devtools' | 'architecture' | 'action'
+type PanelType = 'demo' | 'state' | 'timeline' | 'devtools' | 'architecture' | 'action' | 'code-flow'
 
 export function ReduxComparison() {
   const [viewMode, setViewMode] = useState<ViewMode>('side-by-side')
@@ -189,6 +190,9 @@ export function ReduxComparison() {
             storeName={title.includes('Legacy') ? 'legacy' : 'toolkit'}
           />
         )}
+        {activePanel === 'code-flow' && (
+          <CodeFlowComparison />
+        )}
       </div>
     )
   }
@@ -241,7 +245,7 @@ export function ReduxComparison() {
 
           {/* Panel Selection */}
           <div className="flex gap-2 border-t border-zinc-200 pt-3 flex-wrap">
-            {(['demo', 'state', 'timeline', 'devtools', 'architecture', 'action'] as const).map((panel) => (
+            {(['demo', 'state', 'timeline', 'devtools', 'architecture', 'action', 'code-flow'] as const).map((panel) => (
               <button
                 key={panel}
                 onClick={() => setActivePanel(panel)}
@@ -258,6 +262,7 @@ export function ReduxComparison() {
                 {panel === 'devtools' && 'DevTools'}
                 {panel === 'architecture' && 'Architecture'}
                 {panel === 'action' && 'Last Action'}
+                {panel === 'code-flow' && '💻 Code Flow'}
               </button>
             ))}
           </div>
