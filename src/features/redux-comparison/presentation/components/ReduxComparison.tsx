@@ -190,9 +190,6 @@ export function ReduxComparison() {
             storeName={title.includes('Legacy') ? 'legacy' : 'toolkit'}
           />
         )}
-        {activePanel === 'code-flow' && (
-          <CodeFlowComparison />
-        )}
       </div>
     )
   }
@@ -292,7 +289,8 @@ export function ReduxComparison() {
               handleToolkitReset,
             )}
           </div>
-          <ComparisonDifferences />
+          {activePanel === 'code-flow' && <CodeFlowComparison />}
+          {activePanel !== 'code-flow' && <ComparisonDifferences />}
         </div>
       )}
 

@@ -383,7 +383,7 @@ export function CodeFlowComparison() {
         {/* Flow Indicator */}
         <div className={styles.flowIndicator}>
           <div className={styles.flowContent}>
-            <svg viewBox="0 0 60 200" className={styles.flowSvg}>
+            <svg viewBox="0 0 60 120" className={styles.flowSvg}>
               {/* Left to Right Arrows */}
               <defs>
                 <marker
@@ -411,9 +411,9 @@ export function CodeFlowComparison() {
               {/* Animated arrow */}
               <line
                 x1="2"
-                y1="100"
+                y1="60"
                 x2="58"
-                y2="100"
+                y2="60"
                 stroke="#fbbf24"
                 strokeWidth="2"
                 markerEnd="url(#arrowhead-active)"
