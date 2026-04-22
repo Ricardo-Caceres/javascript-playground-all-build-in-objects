@@ -6,18 +6,26 @@ import { Provider } from 'react-redux'
 import { legacyReduxStore } from '@/features/redux-legacy/infrastructure/store'
 import { reduxToolkitStore } from '@/features/redux-toolkit/infrastructure/store'
 
+function CombinedReduxProvider({ children }: { children: React.ReactNode }) {
+  return (
+    <Provider store={legacyReduxStore}>
+      <Provider store={reduxToolkitStore}>
+        {children}
+      </Provider>
+    </Provider>
+  )
+}
+
 export default function ReduxComparisonPage() {
   return (
-    <SyncModeProvider>
-      <main className="min-h-screen bg-white p-6">
-        <div className="mx-auto max-w-6xl">
-          <Provider store={legacyReduxStore}>
-            <Provider store={reduxToolkitStore}>
-              <ReduxComparison />
-            </Provider>
-          </Provider>
-        </div>
-      </main>
-    </SyncModeProvider>
+    <CombinedReduxProvider>
+      <SyncModeProvider>
+        <main className="min-h-screen bg-white p-6">
+          <div className="mx-auto max-w-6xl">
+            <ReduxComparison />
+          </div>
+        </main>
+      </SyncModeProvider>
+    </CombinedReduxProvider>
   )
 }
