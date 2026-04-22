@@ -45,7 +45,7 @@ function executeCode(code: string, tests: TestCase[]): RunResult {
       "it",
       "expect",
       "ReduxToolkit",
-      `var result = eval(${JSON.stringify(transpiled)});\n${testBlock}`,
+      `eval(${JSON.stringify(transpiled)});\nvar result = undefined;\n${testBlock}`,
     )
     runner(describe, it, expect, ReduxToolkit)
 

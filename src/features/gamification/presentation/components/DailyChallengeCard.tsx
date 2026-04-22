@@ -1,6 +1,8 @@
 'use client'
+
 import { Link } from '@/i18n/navigation'
 import { useSelector } from 'react-redux'
+import { useState, useEffect } from 'react'
 import {
   selectDailyChallenge,
   selectIsDailyCompleted,
@@ -15,6 +17,16 @@ const DIFFICULTY_COLOR: Record<string, string> = {
 export function DailyChallengeCard() {
   const daily     = useSelector(selectDailyChallenge)
   const completed = useSelector(selectIsDailyCompleted)
+  const [mounted, setMounted] = useState(false)
+
+  useEffect(() => {
+    setMounted(true)
+  }, [])
+
+  // Only render after hydration to prevent mismatch
+  if (!mounted) {
+    return null
+  }
 
   if (!daily) return null
 

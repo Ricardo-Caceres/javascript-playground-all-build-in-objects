@@ -1,13 +1,10 @@
-import { legacy_createStore, applyMiddleware } from 'redux'
-import { combineReducers } from 'redux'
-import { legacyRootReducer } from '@/features/redux-legacy/presentation/store/reducers'
+import { legacy_createStore, applyMiddleware, combineReducers } from 'redux'
+import { counterReducer } from '@/features/redux-legacy/presentation/store/reducers/counterReducer'
 import { timelineReducer } from '@/features/redux-legacy/presentation/store/reducers/timelineReducer'
 import { timelineMiddleware } from '@/features/redux-legacy/presentation/store/middleware'
 
 const rootReducer = combineReducers({
-  ...Object.fromEntries(
-    Object.entries(legacyRootReducer as any).map(([key, value]) => [key, value])
-  ),
+  counter: counterReducer,
   timeline: timelineReducer,
 })
 

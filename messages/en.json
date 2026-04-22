@@ -70,5 +70,46 @@
       "newExam": "New Exam",
       "perfect": "Perfect score! 🎉"
     }
+  },
+  "redux": {
+    "codeFlow": {
+      "title": "🔄 Redux Implementation Flow",
+      "subtitle": "Complete code comparison with full data flow visualization",
+      "steps": {
+        "setup": {
+          "label": "🏗️ Setup",
+          "description": "Store initialization"
+        },
+        "actions": {
+          "label": "📤 Actions",
+          "description": "Action creators"
+        },
+        "reducers": {
+          "label": "⚙️ Reducers",
+          "description": "State transformation"
+        },
+        "dispatch": {
+          "label": "🚀 Dispatch",
+          "description": "Action dispatching"
+        },
+        "stateUpdate": {
+          "label": "📊 State Update",
+          "description": "Component connection"
+        },
+        "complete": {
+          "label": "✅ Complete Flow",
+          "description": "Full cycle"
+        }
+      },
+      "legacy": {
+        "label": "Redux Legacy",
+        "description": "Classic, manual approach"
+      },
+      "toolkit": {
+        "label": "Redux Toolkit",
+        "description": "Modern, batteries-included"
+      },
+      "dataFlow": "DATA\nFLOW"
+    }
   }
 }

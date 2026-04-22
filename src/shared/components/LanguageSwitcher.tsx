@@ -10,7 +10,12 @@ export function LanguageSwitcher() {
   const pathname = usePathname()
 
   function switchLocale(newLocale: string) {
-    router.replace(pathname, { locale: newLocale })
+    if (locale !== newLocale) {
+      // Navigate to the same path but with the new locale
+      const newPath = pathname.startsWith('/') ? pathname : `/${pathname}`
+      const newUrl = `/${newLocale}${newPath}`
+      window.location.href = newUrl
+    }
   }
 
   return (

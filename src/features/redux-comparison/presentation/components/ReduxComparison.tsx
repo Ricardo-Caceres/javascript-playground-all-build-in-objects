@@ -1,11 +1,11 @@
 'use client'
 
-import { useState } from 'react'
-import { useSelector, useDispatch } from 'react-redux'
+import { useState, useCallback } from 'react'
 import type { LegacyRootState } from '@/features/redux-legacy/presentation/store/reducers'
 import type { ToolkitRootState } from '@/features/redux-toolkit/infrastructure/store'
-import { useLegacyActionTimeline } from '@/features/redux-legacy/presentation/hooks'
-import { useToolkitActionTimeline } from '@/features/redux-toolkit/presentation/hooks'
+import { legacyReduxStore } from '@/features/redux-legacy/infrastructure/store'
+import { reduxToolkitStore } from '@/features/redux-toolkit/infrastructure/store'
+import { useStoreSelector, useStoreState, useLegacyActionTimelineFromStore, useToolkitActionTimelineFromStore } from '../hooks'
 import {
   decrementCounter,
   incrementCounter,
@@ -16,41 +16,110 @@ import {
   StatePanel,
   TimelinePanel,
   DevToolsPanel,
+  ArchitecturePanel,
+  ActionAnalysisPanel,
+  ComparisonDifferences,
+  CodeFlowComparison,
 } from '@/shared/components/redux-visualization'
 import { useSyncMode } from '../../context/SyncModeContext'
+import { DebugStore } from './DebugStore'
 
 type ViewMode = 'side-by-side' | 'legacy' | 'toolkit'
+type PanelType = 'demo' | 'state' | 'timeline' | 'devtools' | 'architecture' | 'action' | 'code-flow'
 
 export function ReduxComparison() {
   const [viewMode, setViewMode] = useState<ViewMode>('side-by-side')
-  const [activePanel, setActivePanel] = useState<'demo' | 'state' | 'timeline' | 'devtools'>('demo')
+  const [activePanel, setActivePanel] = useState<PanelType>('demo')
   const { enabled: syncMode, setEnabled: setSyncMode } = useSyncMode()
+  const [lastLegacyAction, setLastLegacyAction] = useState<any>(null)
+  const [lastToolkitAction, setLastToolkitAction] = useState<any>(null)
 
-  const legacyDispatch = useDispatch()
-  const legacyState = useSelector((state: LegacyRootState) => state)
-  const legacyCounter = useSelector((state: LegacyRootState) => state.counter?.value ?? 0)
-  const legacyActions = useLegacyActionTimeline()
+  // Subscribe directly to stores, not via context
+  const legacyDispatch = (action: any) => legacyReduxStore.dispatch(action)
+  const legacyState = useStoreState(legacyReduxStore as any)
+  const legacyCounterSelector = useCallback(
+    (state: LegacyRootState) => state.counter?.value ?? 0,
+    []
+  )
+  const legacyCounter = useStoreSelector(legacyReduxStore as any, legacyCounterSelector)
+  const legacyActions = useLegacyActionTimelineFromStore()
 
-  const toolkitDispatch = useDispatch()
-  const toolkitState = useSelector((state: ToolkitRootState) => state)
-  const toolkitCounter = useSelector((state: ToolkitRootState) => state.counter?.value ?? 0)
-  const toolkitActions = useToolkitActionTimeline()
+  const toolkitDispatch = (action: any) => reduxToolkitStore.dispatch(action)
+  const toolkitState = useStoreState(reduxToolkitStore as any)
+  const toolkitCounterSelector = useCallback(
+    (state: ToolkitRootState) => state.counter?.value ?? 0,
+    []
+  )
+  const toolkitCounter = useStoreSelector(reduxToolkitStore as any, toolkitCounterSelector)
+  const toolkitActions = useToolkitActionTimelineFromStore()
 
   const handleSyncToggle = () => {
     setSyncMode(!syncMode)
   }
 
   const handleLegacyIncrement = () => {
-    legacyDispatch(incrementCounter())
+    const action = incrementCounter()
+    setLastLegacyAction(action)
+    legacyDispatch(action)
     if (syncMode) {
-      toolkitDispatch(toolkitCounterActions.increment())
+      const toolkitAction = toolkitCounterActions.increment()
+      setLastToolkitAction(toolkitAction)
+      toolkitDispatch(toolkitAction)
+    }
+  }
+
+  const handleLegacyDecrement = () => {
+    const action = decrementCounter()
+    setLastLegacyAction(action)
+    legacyDispatch(action)
+    if (syncMode) {
+      const toolkitAction = toolkitCounterActions.decrement()
+      setLastToolkitAction(toolkitAction)
+      toolkitDispatch(toolkitAction)
+    }
+  }
+
+  const handleLegacyReset = () => {
+    const action = resetCounter()
+    setLastLegacyAction(action)
+    legacyDispatch(action)
+    if (syncMode) {
+      const toolkitAction = toolkitCounterActions.reset()
+      setLastToolkitAction(toolkitAction)
+      toolkitDispatch(toolkitAction)
     }
   }
 
   const handleToolkitIncrement = () => {
-    toolkitDispatch(toolkitCounterActions.increment())
+    const toolkitAction = toolkitCounterActions.increment()
+    setLastToolkitAction(toolkitAction)
+    toolkitDispatch(toolkitAction)
     if (syncMode) {
-      legacyDispatch(incrementCounter())
+      const legacyAction = incrementCounter()
+      setLastLegacyAction(legacyAction)
+      legacyDispatch(legacyAction)
+    }
+  }
+
+  const handleToolkitDecrement = () => {
+    const toolkitAction = toolkitCounterActions.decrement()
+    setLastToolkitAction(toolkitAction)
+    toolkitDispatch(toolkitAction)
+    if (syncMode) {
+      const legacyAction = decrementCounter()
+      setLastLegacyAction(legacyAction)
+      legacyDispatch(legacyAction)
+    }
+  }
+
+  const handleToolkitReset = () => {
+    const toolkitAction = toolkitCounterActions.reset()
+    setLastToolkitAction(toolkitAction)
+    toolkitDispatch(toolkitAction)
+    if (syncMode) {
+      const legacyAction = resetCounter()
+      setLastLegacyAction(legacyAction)
+      legacyDispatch(legacyAction)
     }
   }
 
@@ -110,12 +179,24 @@ export function ReduxComparison() {
             title={`${title} DevTools`}
           />
         )}
+        {activePanel === 'architecture' && (
+          <ArchitecturePanel
+            storeName={title.includes('Legacy') ? 'legacy' : 'toolkit'}
+          />
+        )}
+        {activePanel === 'action' && (
+          <ActionAnalysisPanel
+            lastAction={title.includes('Legacy') ? lastLegacyAction : lastToolkitAction}
+            storeName={title.includes('Legacy') ? 'legacy' : 'toolkit'}
+          />
+        )}
       </div>
     )
   }
 
   return (
     <div className="space-y-6">
+      <DebugStore />
       {/* Header */}
       <div className="rounded-lg border border-zinc-200 bg-white p-6">
         <div className="mb-4">
@@ -160,8 +241,8 @@ export function ReduxComparison() {
           </div>
 
           {/* Panel Selection */}
-          <div className="flex gap-2 border-t border-zinc-200 pt-3">
-            {(['demo', 'state', 'timeline', 'devtools'] as const).map((panel) => (
+          <div className="flex gap-2 border-t border-zinc-200 pt-3 flex-wrap">
+            {(['demo', 'state', 'timeline', 'devtools', 'architecture', 'action', 'code-flow'] as const).map((panel) => (
               <button
                 key={panel}
                 onClick={() => setActivePanel(panel)}
@@ -172,7 +253,13 @@ export function ReduxComparison() {
                 }`}
                 type="button"
               >
-                {panel.charAt(0).toUpperCase() + panel.slice(1)}
+                {panel === 'demo' && 'Demo'}
+                {panel === 'state' && 'State'}
+                {panel === 'timeline' && 'Timeline'}
+                {panel === 'devtools' && 'DevTools'}
+                {panel === 'architecture' && 'Architecture'}
+                {panel === 'action' && 'Last Action'}
+                {panel === 'code-flow' && '💻 Code Flow'}
               </button>
             ))}
           </div>
@@ -181,45 +268,29 @@ export function ReduxComparison() {
 
       {/* Stores Display */}
       {viewMode === 'side-by-side' && (
-        <div className="grid gap-6 lg:grid-cols-2">
-          {renderStorePanel(
-            'Redux Legacy',
-            legacyCounter,
-            legacyState,
-            legacyActions,
-            handleLegacyIncrement,
-            () => {
-              legacyDispatch(decrementCounter())
-              if (syncMode) {
-                toolkitDispatch(toolkitCounterActions.decrement())
-              }
-            },
-            () => {
-              legacyDispatch(resetCounter())
-              if (syncMode) {
-                toolkitDispatch(toolkitCounterActions.reset())
-              }
-            }
-          )}
-          {renderStorePanel(
-            'Redux Toolkit',
-            toolkitCounter,
-            toolkitState,
-            toolkitActions,
-            handleToolkitIncrement,
-            () => {
-              toolkitDispatch(toolkitCounterActions.decrement())
-              if (syncMode) {
-                legacyDispatch(decrementCounter())
-              }
-            },
-            () => {
-              toolkitDispatch(toolkitCounterActions.reset())
-              if (syncMode) {
-                legacyDispatch(resetCounter())
-              }
-            }
-          )}
+        <div className="space-y-6">
+          <div className="grid gap-6 lg:grid-cols-2">
+            {renderStorePanel(
+              'Redux Legacy',
+              legacyCounter,
+              legacyState,
+              legacyActions,
+              handleLegacyIncrement,
+              handleLegacyDecrement,
+              handleLegacyReset,
+            )}
+            {renderStorePanel(
+              'Redux Toolkit',
+              toolkitCounter,
+              toolkitState,
+              toolkitActions,
+              handleToolkitIncrement,
+              handleToolkitDecrement,
+              handleToolkitReset,
+            )}
+          </div>
+          {activePanel === 'code-flow' && <CodeFlowComparison />}
+          {activePanel !== 'code-flow' && <ComparisonDifferences />}
         </div>
       )}
 
@@ -230,8 +301,8 @@ export function ReduxComparison() {
           legacyState,
           legacyActions,
           handleLegacyIncrement,
-          () => legacyDispatch(decrementCounter()),
-          () => legacyDispatch(resetCounter())
+          handleLegacyDecrement,
+          handleLegacyReset,
         )}
 
       {viewMode === 'toolkit' &&
@@ -241,8 +312,8 @@ export function ReduxComparison() {
           toolkitState,
           toolkitActions,
           handleToolkitIncrement,
-          () => toolkitDispatch(toolkitCounterActions.decrement()),
-          () => toolkitDispatch(toolkitCounterActions.reset())
+          handleToolkitDecrement,
+          handleToolkitReset,
         )}
     </div>
   )

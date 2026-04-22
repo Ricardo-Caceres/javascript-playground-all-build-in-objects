@@ -32,9 +32,9 @@ export function SyncModeProvider({ children }: { children: ReactNode }) {
     sessionStorage.setItem(SYNC_MODE_STORAGE_KEY, String(value))
   }
 
-  // Don't render children until hydrated (prevent mismatch)
+  // Don't render provider until hydrated to prevent context access before mounting
   if (!mounted) {
-    return <>{children}</>
+    return null
   }
 
   return (
