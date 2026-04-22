@@ -18,6 +18,7 @@ import {
   DevToolsPanel,
   ArchitecturePanel,
   ActionAnalysisPanel,
+  ComparisonDifferences,
 } from '@/shared/components/redux-visualization'
 import { useSyncMode } from '../../context/SyncModeContext'
 import { DebugStore } from './DebugStore'
@@ -265,25 +266,28 @@ export function ReduxComparison() {
 
       {/* Stores Display */}
       {viewMode === 'side-by-side' && (
-        <div className="grid gap-6 lg:grid-cols-2">
-          {renderStorePanel(
-            'Redux Legacy',
-            legacyCounter,
-            legacyState,
-            legacyActions,
-            handleLegacyIncrement,
-            handleLegacyDecrement,
-            handleLegacyReset,
-          )}
-          {renderStorePanel(
-            'Redux Toolkit',
-            toolkitCounter,
-            toolkitState,
-            toolkitActions,
-            handleToolkitIncrement,
-            handleToolkitDecrement,
-            handleToolkitReset,
-          )}
+        <div className="space-y-6">
+          <div className="grid gap-6 lg:grid-cols-2">
+            {renderStorePanel(
+              'Redux Legacy',
+              legacyCounter,
+              legacyState,
+              legacyActions,
+              handleLegacyIncrement,
+              handleLegacyDecrement,
+              handleLegacyReset,
+            )}
+            {renderStorePanel(
+              'Redux Toolkit',
+              toolkitCounter,
+              toolkitState,
+              toolkitActions,
+              handleToolkitIncrement,
+              handleToolkitDecrement,
+              handleToolkitReset,
+            )}
+          </div>
+          <ComparisonDifferences />
         </div>
       )}
 
