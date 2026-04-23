@@ -1,28 +1,15 @@
 'use client'
 
-import { Link, useRouter } from '@/i18n/navigation'
+import { Link } from '@/i18n/navigation'
 import { useRef, useEffect } from 'react'
 import { useLocale } from 'next-intl'
 import { useSearchParams, usePathname } from 'next/navigation'
 import { useSelector } from 'react-redux'
 import type { RootState } from '@/shared/lib/store'
+import type { Difficulty } from '@/shared/types/exercises'
 import { getAllExercisesByObject, getTopicMeta } from '@/features/exercises/infrastructure/repositories/exerciseRepository'
 
-type Difficulty = 'beginner' | 'intermediate' | 'advanced'
-
 const VALID_DIFFS: Difficulty[] = ['beginner', 'intermediate', 'advanced']
-
-const DIFF_LABELS: Record<Difficulty, string> = {
-  beginner: 'Beginner',
-  intermediate: 'Intermediate',
-  advanced: 'Advanced',
-}
-
-const DIFF_COLORS: Record<Difficulty, string> = {
-  beginner: 'border-l-4 border-l-emerald-500',
-  intermediate: 'border-l-4 border-l-yellow-500',
-  advanced: 'border-l-4 border-l-red-500',
-}
 
 interface Props {
   objectName: string
@@ -36,7 +23,6 @@ export default function ExerciseSidebar({ objectName, currentSlug }: Props) {
   const locale = useLocale() as 'en' | 'es'
   const activeRef = useRef<HTMLAnchorElement>(null)
   const isMounted = useRef(false)
-  const router = useRouter()
 
   useEffect(() => {
     if (!isMounted.current) {
@@ -52,20 +38,9 @@ export default function ExerciseSidebar({ objectName, currentSlug }: Props) {
 
   // Extract difficulty filter from URL params
   const rawDiff = searchParams.get('difficulty')
-  const selectedDifficulty: Difficulty | null = (VALID_DIFFS as string[]).includes(rawDiff ?? '')
+  const selectedDifficulty: Difficulty | null = (rawDiff && VALID_DIFFS.includes(rawDiff as Difficulty))
     ? (rawDiff as Difficulty)
     : null
-
-  function setFilter(value: Difficulty | null) {
-    const params = new URLSearchParams(searchParams.toString())
-    if (!value) {
-      params.delete('difficulty')
-    } else {
-      params.set('difficulty', value)
-    }
-    const qs = params.toString()
-    router.replace(qs ? `?${qs}` : pathname, { scroll: false })
-  }
 
   // Calculate difficulty counts
   const difficultyCounts = {
@@ -74,11 +49,6 @@ export default function ExerciseSidebar({ objectName, currentSlug }: Props) {
     intermediate: exercises.filter(e => e.difficulty === 'intermediate').length,
     advanced: exercises.filter(e => e.difficulty === 'advanced').length,
   }
-
-  // Filter exercises based on selected difficulty
-  const filteredExercises = exercises.filter(ex =>
-    selectedDifficulty === null || ex.difficulty === selectedDifficulty
-  )
 
   const completed = exercises.filter((e) => progressMap[e.slug]?.status === 'completed').length
   const total = exercises.length
