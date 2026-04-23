@@ -3,9 +3,26 @@
 import { Link } from '@/i18n/navigation'
 import { useRef, useEffect } from 'react'
 import { useLocale } from 'next-intl'
+import { useSearchParams } from 'next/navigation'
 import { useSelector } from 'react-redux'
 import type { RootState } from '@/shared/lib/store'
 import { getAllExercisesByObject, getTopicMeta } from '@/features/exercises/infrastructure/repositories/exerciseRepository'
+
+type Difficulty = 'beginner' | 'intermediate' | 'advanced'
+
+const VALID_DIFFS: Difficulty[] = ['beginner', 'intermediate', 'advanced']
+
+const DIFF_LABELS: Record<Difficulty, string> = {
+  beginner: 'Beginner',
+  intermediate: 'Intermediate',
+  advanced: 'Advanced',
+}
+
+const DIFF_COLORS: Record<Difficulty, string> = {
+  beginner: 'border-l-4 border-l-emerald-500',
+  intermediate: 'border-l-4 border-l-yellow-500',
+  advanced: 'border-l-4 border-l-red-500',
+}
 
 interface Props {
   objectName: string
