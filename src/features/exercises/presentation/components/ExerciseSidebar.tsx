@@ -18,12 +18,6 @@ const DIFF_LABELS: Record<Difficulty, string> = {
   advanced: 'Advanced',
 }
 
-const DIFF_COLORS: Record<Difficulty, string> = {
-  beginner: 'border-l-4 border-l-emerald-500',
-  intermediate: 'border-l-4 border-l-yellow-500',
-  advanced: 'border-l-4 border-l-red-500',
-}
-
 interface Props {
   objectName: string
   currentSlug: string
@@ -63,6 +57,17 @@ export default function ExerciseSidebar({ objectName, currentSlug }: Props) {
     advanced: exercises.filter(e => e.difficulty === 'advanced').length,
   }
 
+  const DIFF_COLORS: Record<Difficulty, string> = {
+    beginner: 'border-l-4 border-l-emerald-500',
+    intermediate: 'border-l-4 border-l-yellow-500',
+    advanced: 'border-l-4 border-l-red-500',
+  }
+
+  // Filter exercises based on selected difficulty
+  const filteredExercises = exercises.filter(ex =>
+    selectedDifficulty === null || ex.difficulty === selectedDifficulty
+  )
+
   function setFilter(value: Difficulty | null) {
     const params = new URLSearchParams(searchParams.toString())
     if (!value) {
@@ -71,7 +76,7 @@ export default function ExerciseSidebar({ objectName, currentSlug }: Props) {
       params.set('difficulty', value)
     }
     const qs = params.toString()
-    router.replace(qs ? `?${qs}` : pathname, { scroll: false })
+    router.replace(qs ? `${pathname}?${qs}` : pathname, { scroll: false })
   }
 
   const completed = exercises.filter((e) => progressMap[e.slug]?.status === 'completed').length
@@ -133,7 +138,7 @@ export default function ExerciseSidebar({ objectName, currentSlug }: Props) {
       )}
       {/* List */}
       <nav aria-label="Exercise list" className="flex-1 overflow-y-auto py-2">
-        {exercises.map((ex) => {
+        {filteredExercises.map((ex) => {
           const status = progressMap[ex.slug]?.status ?? 'not-started'
           const isActive = ex.slug === currentSlug
           return (
@@ -142,7 +147,7 @@ export default function ExerciseSidebar({ objectName, currentSlug }: Props) {
               href={`/exercises/${objectName.toLowerCase()}/${ex.slug}`}
               ref={isActive ? activeRef : null}
               aria-current={isActive ? 'page' : undefined}
-              className={`flex items-center gap-2 px-4 py-2 text-sm transition-colors ${
+              className={`flex items-center gap-2 px-3 py-2 text-sm transition-colors ${DIFF_COLORS[ex.difficulty]} ${
                 isActive
                   ? 'bg-zinc-800 text-zinc-100'
                   : 'text-zinc-500 hover:bg-zinc-900 hover:text-zinc-300'
@@ -162,6 +167,11 @@ export default function ExerciseSidebar({ objectName, currentSlug }: Props) {
           )
         })}
       </nav>
+      {filteredExercises.length === 0 && (
+        <div className="px-4 py-3 text-xs text-zinc-500">
+          No exercises at this difficulty level
+        </div>
+      )}
     </aside>
   )
 }
