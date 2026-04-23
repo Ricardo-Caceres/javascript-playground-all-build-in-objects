@@ -144,9 +144,10 @@ export default function HomeView() {
                       <div
                         className="h-1 rounded-full bg-emerald-600 transition-all"
                         style={{ width: `${pct}%` }}
+                        suppressHydrationWarning
                       />
                     </div>
-                    <p className="mt-1.5 text-xs text-zinc-600">
+                    <p className="mt-1.5 text-xs text-zinc-600" suppressHydrationWarning>
                       {completed}/{total}
                     </p>
                   </Link>

@@ -404,15 +404,15 @@ ms.getMin() // 1
   private minStack: number[] = []
   
   push(x: number): void {
-    // Add element and track minimum
+    // TODO: Add element and track minimum in O(1)
   }
   
   pop(): number | undefined {
-    // Remove and return top element
+    // TODO: Remove and return top element
   }
   
   getMin(): number | undefined {
-    // Return current minimum
+    // TODO: Return current minimum in O(1)
   }
 }`,
     solution: `class MinStack {
