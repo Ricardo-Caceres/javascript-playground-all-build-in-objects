@@ -2,6 +2,7 @@
 
 import { Link } from '@/i18n/navigation'
 import { useRef, useEffect } from 'react'
+import { useRouter } from 'next/navigation'
 import { useLocale } from 'next-intl'
 import { useSearchParams, usePathname } from 'next/navigation'
 import { useSelector } from 'react-redux'
@@ -10,6 +11,18 @@ import type { Difficulty } from '@/shared/types/exercises'
 import { getAllExercisesByObject, getTopicMeta } from '@/features/exercises/infrastructure/repositories/exerciseRepository'
 
 const VALID_DIFFS: Difficulty[] = ['beginner', 'intermediate', 'advanced']
+
+const DIFF_LABELS: Record<Difficulty, string> = {
+  beginner: 'Beginner',
+  intermediate: 'Intermediate',
+  advanced: 'Advanced',
+}
+
+const DIFF_COLORS: Record<Difficulty, string> = {
+  beginner: 'border-l-4 border-l-emerald-500',
+  intermediate: 'border-l-4 border-l-yellow-500',
+  advanced: 'border-l-4 border-l-red-500',
+}
 
 interface Props {
   objectName: string
@@ -23,6 +36,7 @@ export default function ExerciseSidebar({ objectName, currentSlug }: Props) {
   const locale = useLocale() as 'en' | 'es'
   const activeRef = useRef<HTMLAnchorElement>(null)
   const isMounted = useRef(false)
+  const router = useRouter()
 
   useEffect(() => {
     if (!isMounted.current) {
@@ -44,10 +58,20 @@ export default function ExerciseSidebar({ objectName, currentSlug }: Props) {
 
   // Calculate difficulty counts
   const difficultyCounts = {
-    all: exercises.length,
     beginner: exercises.filter(e => e.difficulty === 'beginner').length,
     intermediate: exercises.filter(e => e.difficulty === 'intermediate').length,
     advanced: exercises.filter(e => e.difficulty === 'advanced').length,
+  }
+
+  function setFilter(value: Difficulty | null) {
+    const params = new URLSearchParams(searchParams.toString())
+    if (!value) {
+      params.delete('difficulty')
+    } else {
+      params.set('difficulty', value)
+    }
+    const qs = params.toString()
+    router.replace(qs ? `?${qs}` : pathname, { scroll: false })
   }
 
   const completed = exercises.filter((e) => progressMap[e.slug]?.status === 'completed').length
@@ -71,6 +95,29 @@ export default function ExerciseSidebar({ objectName, currentSlug }: Props) {
             className="h-1 rounded-full bg-emerald-600 transition-all"
             style={{ width: total > 0 ? `${Math.round((completed / total) * 100)}%` : '0%' }}
           />
+        </div>
+
+        {/* Difficulty Filter Buttons */}
+        <div className="px-4 py-2 space-y-1">
+          <div className="flex flex-wrap gap-1">
+            {(['all', ...VALID_DIFFS] as const).map((d) => (
+              <button
+                key={d}
+                type="button"
+                onClick={() => setFilter(d === 'all' ? null : d)}
+                aria-pressed={selectedDifficulty === (d === 'all' ? null : d)}
+                className={`shrink-0 rounded-full px-2.5 py-0.5 text-xs font-medium transition-colors ${
+                  selectedDifficulty === (d === 'all' ? null : d)
+                    ? 'bg-emerald-700 text-white'
+                    : 'border border-zinc-700 text-zinc-400 hover:border-zinc-500 hover:text-zinc-200'
+                }`}
+              >
+                {d === 'all'
+                  ? 'All'
+                  : `${DIFF_LABELS[d]} (${difficultyCounts[d]})`}
+              </button>
+            ))}
+          </div>
         </div>
       </div>
       {/* Topic description */}
