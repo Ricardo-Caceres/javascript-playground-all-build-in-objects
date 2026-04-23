@@ -108,10 +108,11 @@ createArrayFromArgs(42)      // → [42]
     builtIn: 'Array',
     method: 'Array',
     initialCode: `function createArrayFromArgs(...args: number[]): number[] {
-  // Use new Array(...args) to create an array from the arguments
+  // Create an array from the arguments
+  // Hint: Use spread operator or the array literal syntax
 }`,
     solution: `function createArrayFromArgs(...args: number[]): number[] {
-  return new Array(...args)
+  return [...args]
 }`,
     tests: [
       { description: 'creates [1,2,3] from three arguments', assertion: 'expect(createArrayFromArgs(1, 2, 3)).toEqual([1, 2, 3])' },
