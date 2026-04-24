@@ -1,7 +1,7 @@
 'use client'
 
 import { Link } from '@/i18n/navigation'
-import { useRef, useEffect } from 'react'
+import { useRef, useEffect, useState } from 'react'
 import { useRouter } from 'next/navigation'
 import { useLocale } from 'next-intl'
 import { useSearchParams, usePathname } from 'next/navigation'
@@ -43,12 +43,17 @@ export default function ExerciseSidebar({ objectName, currentSlug }: Props) {
 
   const searchParams = useSearchParams()
   const pathname = usePathname()
+  const [selectedDifficulty, setSelectedDifficulty] = useState<Difficulty | null>(null)
 
-  // Extract difficulty filter from URL params
-  const rawDiff = searchParams.get('difficulty')
-  const selectedDifficulty: Difficulty | null = (rawDiff && VALID_DIFFS.includes(rawDiff as Difficulty))
-    ? (rawDiff as Difficulty)
-    : null
+  // Sync selectedDifficulty with URL params
+  useEffect(() => {
+    const rawDiff = searchParams.get('difficulty')
+    if (rawDiff && VALID_DIFFS.includes(rawDiff as Difficulty)) {
+      setSelectedDifficulty(rawDiff as Difficulty)
+    } else {
+      setSelectedDifficulty(null)
+    }
+  }, [searchParams])
 
   // Calculate difficulty counts
   const difficultyCounts = {
