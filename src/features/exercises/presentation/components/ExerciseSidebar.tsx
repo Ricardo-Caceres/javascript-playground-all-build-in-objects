@@ -1,10 +1,9 @@
 'use client'
 
-import { Link } from '@/i18n/navigation'
-import { useRef, useEffect, useState } from 'react'
-import { useRouter } from 'next/navigation'
+import { Link, useRouter, usePathname } from '@/i18n/navigation'
+import { useRef, useEffect } from 'react'
 import { useLocale } from 'next-intl'
-import { useSearchParams, usePathname } from 'next/navigation'
+import { useSearchParams } from 'next/navigation'
 import { useSelector } from 'react-redux'
 import type { RootState } from '@/shared/lib/store'
 import type { Difficulty } from '@/shared/types/exercises'
@@ -43,17 +42,10 @@ export default function ExerciseSidebar({ objectName, currentSlug }: Props) {
 
   const searchParams = useSearchParams()
   const pathname = usePathname()
-  const [selectedDifficulty, setSelectedDifficulty] = useState<Difficulty | null>(null)
-
-  // Sync selectedDifficulty with URL params
-  useEffect(() => {
-    const rawDiff = searchParams.get('difficulty')
-    if (rawDiff && VALID_DIFFS.includes(rawDiff as Difficulty)) {
-      setSelectedDifficulty(rawDiff as Difficulty)
-    } else {
-      setSelectedDifficulty(null)
-    }
-  }, [searchParams])
+  
+  // Read difficulty filter directly from URL params
+  const rawDiff = searchParams.get('difficulty')
+  const selectedDifficulty = (VALID_DIFFS.includes(rawDiff as Difficulty) ? rawDiff : null) as Difficulty | null
 
   // Calculate difficulty counts
   const difficultyCounts = {
@@ -81,7 +73,7 @@ export default function ExerciseSidebar({ objectName, currentSlug }: Props) {
       params.set('difficulty', value)
     }
     const qs = params.toString()
-    router.replace(qs ? `${pathname}?${qs}` : pathname, { scroll: false })
+    router.replace(qs ? `?${qs}` : pathname, { scroll: false })
   }
 
   const completed = exercises.filter((e) => progressMap[e.slug]?.status === 'completed').length
