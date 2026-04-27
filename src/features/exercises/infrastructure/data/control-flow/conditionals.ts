@@ -2,7 +2,7 @@ import type { Exercise } from '@/shared/types/exercises'
 
 export const controlFlowConditionalsExercises: Exercise[] = [
   {
-    slug: 'control-flow-if-else',
+    slug: 'controlflow-if-else',
     title: 'Control Flow — if / else if / else',
     description: `## if-else chains\n\nUse \`if\`, \`else if\`, and \`else\` to branch based on conditions.\n\n**Challenge:** Write \`grade(score)\` that returns:\n- \`'A'\` for score ≥ 90\n- \`'B'\` for score ≥ 80\n- \`'C'\` for score ≥ 70\n- \`'D'\` for score ≥ 60\n- \`'F'\` otherwise`,
     category: 'static-method',
@@ -29,7 +29,7 @@ export const controlFlowConditionalsExercises: Exercise[] = [
     tags: ['control-flow', 'if-else'],
   },
   {
-    slug: 'control-flow-switch',
+    slug: 'controlflow-switch',
     title: 'Control Flow — switch statement',
     description: `## switch matches exact values\n\nUse \`switch\` when you have many exact-value comparisons. Don't forget \`break\` between cases, or use \`return\` inside each case.\n\n**Challenge:** Write \`dayName(n)\` that returns the day of the week for n=0..6 (0=Sunday) or \`'Invalid'\` for other values.`,
     category: 'static-method',
@@ -63,7 +63,7 @@ export const controlFlowConditionalsExercises: Exercise[] = [
     tags: ['control-flow', 'switch'],
   },
   {
-    slug: 'control-flow-for-loop',
+    slug: 'controlflow-for-loop',
     title: 'Control Flow — for loop',
     description: `## for loop: counter-based iteration\n\nThe classic \`for\` loop gives you precise control: \`for (init; condition; update) { }\`.\n\n**Challenge:** Write \`sumTo(n)\` that returns the sum 1+2+...+n using a for loop.`,
     category: 'static-method',
@@ -91,7 +91,7 @@ export const controlFlowConditionalsExercises: Exercise[] = [
     tags: ['control-flow', 'for-loop'],
   },
   {
-    slug: 'control-flow-while-loop',
+    slug: 'controlflow-while-loop',
     title: 'Control Flow — while loop',
     description: `## while loop: condition-based iteration\n\nA \`while\` loop keeps running as long as the condition is true. Use when you don't know the iteration count in advance.\n\n**Challenge:** Write \`countdown(n)\` that returns an array \`[n, n-1, ..., 1]\` using a while loop.`,
     category: 'static-method',
@@ -119,7 +119,7 @@ export const controlFlowConditionalsExercises: Exercise[] = [
     tags: ['control-flow', 'while-loop'],
   },
   {
-    slug: 'control-flow-early-return',
+    slug: 'controlflow-early-return',
     title: 'Control Flow — early return pattern',
     description: `## Early return for guard clauses\n\nReturning early from a function when a condition is met avoids deep nesting and makes code easier to read.\n\n**Challenge:** Write \`findFirst(arr, target)\` that:\n- Loops through \`arr\`\n- Returns the **index** of the first element equal to \`target\`\n- Returns \`-1\` if not found`,
     category: 'static-method',

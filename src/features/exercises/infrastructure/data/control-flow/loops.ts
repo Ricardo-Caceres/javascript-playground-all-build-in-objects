@@ -2,7 +2,7 @@ import type { Exercise } from '@/shared/types/exercises'
 
 export const controlFlowLoopsExercises: Exercise[] = [
   {
-    slug: 'control-flow-for-of',
+    slug: 'controlflow-for-of',
     title: 'Control Flow — for...of: iterate over values',
     description: `## for...of iterates values of any iterable\n\nWorks with arrays, strings, Map, Set, and any iterable. Gives you the **value** directly, not the index.\n\n**Challenge:** Write \`sumArray(arr)\` that uses \`for...of\` to sum all numbers in \`arr\`.`,
     category: 'static-method',
@@ -29,7 +29,7 @@ export const controlFlowLoopsExercises: Exercise[] = [
     tags: ['control-flow', 'for-of'],
   },
   {
-    slug: 'control-flow-for-in',
+    slug: 'controlflow-for-in',
     title: 'Control Flow — for...in: iterate over object keys',
     description: `## for...in iterates enumerable property keys\n\n\`for...in\` iterates over all **enumerable string keys** of an object (own + inherited). Usually combined with \`hasOwnProperty\` for safety.\n\n**Challenge:** Write \`collectOwnKeys(obj)\` that returns a **sorted array** of the object's own enumerable keys using \`for...in\` + \`hasOwnProperty\`.`,
     category: 'static-method',
@@ -60,7 +60,7 @@ export const controlFlowLoopsExercises: Exercise[] = [
     tags: ['control-flow', 'for-in', 'object'],
   },
   {
-    slug: 'control-flow-break-continue',
+    slug: 'controlflow-break-continue',
     title: 'Control Flow — break and continue',
     description: `## break exits the loop, continue skips the iteration\n\n- \`break\` exits the nearest enclosing loop immediately\n- \`continue\` skips to the next iteration\n\n**Challenge:** Write \`filterAndStop(arr, skipVal, stopVal)\` that:\n- Skips elements equal to \`skipVal\` (continue)\n- Stops collecting when it hits \`stopVal\` (break)\n- Returns all collected elements`,
     category: 'static-method',
@@ -93,7 +93,7 @@ export const controlFlowLoopsExercises: Exercise[] = [
     tags: ['control-flow', 'break', 'continue'],
   },
   {
-    slug: 'control-flow-do-while',
+    slug: 'controlflow-do-while',
     title: 'Control Flow — do...while: runs at least once',
     description: `## do...while always executes the body at least once\n\nThe condition is checked **after** the first execution, so the body always runs at least once — even if the condition starts false.\n\n**Challenge:** Write \`collectAtLeastOnce(shouldContinue)\` that:\n1. Pushes \`'ran'\` to a \`results\` array inside a \`do...while\`\n2. The while condition is \`shouldContinue\`\n3. Returns \`results.length\`\n\nShould return \`1\` even when \`shouldContinue\` is \`false\`.`,
     category: 'static-method',
@@ -120,7 +120,7 @@ export const controlFlowLoopsExercises: Exercise[] = [
     tags: ['control-flow', 'do-while'],
   },
   {
-    slug: 'control-flow-short-circuit-control',
+    slug: 'controlflow-short-circuit',
     title: 'Control Flow — short-circuit as control flow',
     description: `## && and || as control flow\n\n\`condition && action()\` is a common pattern: only call \`action()\` if \`condition\` is truthy. Widely used in React JSX but also useful in plain JS.\n\n**Challenge:** Write \`execute(condition, action)\` that:\n- If \`condition\` is truthy, calls \`action()\` and returns its result\n- If \`condition\` is falsy, does NOT call action and returns \`null\` (using \`condition && action() || null\` or an equivalent pattern)`,
     category: 'static-method',

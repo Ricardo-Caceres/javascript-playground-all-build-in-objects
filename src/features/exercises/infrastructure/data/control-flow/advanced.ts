@@ -2,7 +2,7 @@ import type { Exercise } from '@/shared/types/exercises'
 
 export const controlFlowAdvancedExercises: Exercise[] = [
   {
-    slug: 'control-flow-switch-fallthrough',
+    slug: 'controlflow-switch-fallthrough',
     title: 'Control Flow — switch: intentional fallthrough',
     description: `## Fallthrough: multiple cases sharing one handler\n\nWhen you omit \`break\`, execution "falls through" to the next case. This is sometimes intentional — like grouping weekdays and weekend days.\n\n**Challenge:** Write \`getDayType(day)\` that returns:\n- \`'Weekday'\` for Monday through Friday\n- \`'Weekend'\` for Saturday and Sunday\n- \`'Unknown'\` for anything else\n\nUse fallthrough (empty cases) to group them.`,
     category: 'static-method',
@@ -41,7 +41,7 @@ export const controlFlowAdvancedExercises: Exercise[] = [
     tags: ['control-flow', 'switch', 'fallthrough'],
   },
   {
-    slug: 'control-flow-nested-loops',
+    slug: 'controlflow-nested-loops',
     title: 'Control Flow — nested loops: searching a matrix',
     description: `## Nested loops iterate over 2D structures\n\nA loop inside a loop visits every combination of indices. Break from the inner loop to stop early.\n\n**Challenge:** Write \`findInMatrix(matrix, target)\` that searches a 2D array and returns \`[row, col]\` of the first match, or \`null\` if not found.`,
     category: 'static-method',
@@ -67,7 +67,7 @@ export const controlFlowAdvancedExercises: Exercise[] = [
     tags: ['control-flow', 'nested-loops', 'matrix'],
   },
   {
-    slug: 'control-flow-generator',
+    slug: 'controlflow-generators',
     title: 'Control Flow — generator functions and yield',
     description: `## Generators produce values on demand\n\nA \`function*\` is a generator. It pauses at each \`yield\` and resumes when \`.next()\` is called. Use \`[...generator()]\` to collect all yielded values.\n\n**Challenge:** Write a generator \`range(start, end)\` that yields every integer from \`start\` to \`end\` (inclusive). Then write \`rangeToArray(start, end)\` that collects the generator's values into an array.`,
     category: 'static-method',
