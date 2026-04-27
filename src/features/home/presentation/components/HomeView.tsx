@@ -82,6 +82,23 @@ export default function HomeView() {
           <DailyChallengeCard />
         </div>
 
+        {/* Learning Path entry point */}
+        <Link
+          href="/learning-path"
+          className="flex items-center gap-4 bg-zinc-900 border border-zinc-800 hover:border-emerald-600 rounded-xl p-5 transition-colors group"
+        >
+          <span className="text-3xl">🗺️</span>
+          <div>
+            <div className="font-bold text-zinc-100 group-hover:text-emerald-400 transition-colors">
+              JavaScript Learning Path
+            </div>
+            <div className="text-sm text-zinc-400">
+              Structured roadmap from fundamentals to advanced
+            </div>
+          </div>
+          <span className="ml-auto text-zinc-600 group-hover:text-emerald-400 transition-colors">→</span>
+        </Link>
+
         {/* Search + filter */}
         <section className="space-y-3">
           <input
