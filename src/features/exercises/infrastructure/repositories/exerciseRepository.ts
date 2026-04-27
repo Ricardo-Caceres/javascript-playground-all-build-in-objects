@@ -27,7 +27,7 @@ export function getRoadmapExercises(
 ): Record<Difficulty, Exercise[]> {
   const all = getAllExercisesByObject(objectName)
   const pick = (d: Difficulty) =>
-    all.filter((e) => e.difficulty === d).slice(0, maxPerLevel)
+    all.filter((e) => e.difficulty === d).slice(0, Math.max(0, maxPerLevel))
   return {
     beginner: pick('beginner'),
     intermediate: pick('intermediate'),

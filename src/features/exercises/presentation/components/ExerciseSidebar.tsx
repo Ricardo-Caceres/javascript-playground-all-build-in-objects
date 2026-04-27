@@ -1,12 +1,12 @@
 'use client'
 
 import { Link, useRouter, usePathname } from '@/i18n/navigation'
-import { useRef, useEffect } from 'react'
+import { useRef, useEffect, useMemo } from 'react'
 import { useLocale } from 'next-intl'
 import { useSearchParams } from 'next/navigation'
 import { useSelector } from 'react-redux'
 import type { RootState } from '@/shared/lib/store'
-import type { Difficulty } from '@/shared/types/exercises'
+import type { Difficulty, Exercise } from '@/shared/types/exercises'
 import { getAllExercisesByObject, getTopicMeta, getRoadmapExercises } from '@/features/exercises/infrastructure/repositories/exerciseRepository'
 
 const VALID_DIFFS: Difficulty[] = ['beginner', 'intermediate', 'advanced']
@@ -17,6 +17,63 @@ const DIFF_LABELS: Record<Difficulty, string> = {
   advanced: 'Advanced',
 }
 
+const DIFF_COLORS: Record<Difficulty, string> = {
+  beginner: 'border-l-4 border-l-emerald-500',
+  intermediate: 'border-l-4 border-l-yellow-500',
+  advanced: 'border-l-4 border-l-red-500',
+}
+
+const DIFF_ORDER: Record<Difficulty, number> = { beginner: 0, intermediate: 1, advanced: 2 }
+
+const DIFF_HEADER_COLOR: Record<Difficulty, string> = {
+  beginner: 'text-emerald-500',
+  intermediate: 'text-yellow-500',
+  advanced: 'text-red-500',
+}
+
+type ProgressStatus = 'completed' | 'attempted' | 'not-started'
+
+interface ExerciseLinkProps {
+  ex: Exercise
+  isActive: boolean
+  status: ProgressStatus
+  href: string
+  activeRef: React.RefObject<HTMLAnchorElement | null>
+}
+
+function ExerciseLink({ ex, isActive, status, href, activeRef }: ExerciseLinkProps) {
+  return (
+    <Link
+      href={href}
+      ref={isActive ? activeRef : null}
+      aria-current={isActive ? 'page' : undefined}
+      className={`flex items-center gap-2 px-3 py-2 text-sm transition-colors ${DIFF_COLORS[ex.difficulty]} ${
+        isActive
+          ? 'bg-zinc-800 text-zinc-100'
+          : 'text-zinc-500 hover:bg-zinc-900 hover:text-zinc-300'
+      }`}
+    >
+      <span className="w-4 shrink-0 text-center text-xs" aria-hidden="true">
+        {status === 'completed' ? (
+          <span className="text-emerald-500">✓</span>
+        ) : status === 'attempted' ? (
+          <span className="text-yellow-500">▶</span>
+        ) : (
+          <span className="text-zinc-700">○</span>
+        )}
+      </span>
+      <span className="sr-only">
+        {status === 'completed'
+          ? '(completed)'
+          : status === 'attempted'
+            ? '(attempted)'
+            : ''}
+      </span>
+      <span className="truncate">{ex.title}</span>
+    </Link>
+  )
+}
+
 interface Props {
   objectName: string
   currentSlug: string
@@ -24,12 +81,26 @@ interface Props {
 
 export default function ExerciseSidebar({ objectName, currentSlug }: Props) {
   const progressMap = useSelector((state: RootState) => state.progress.exercises)
-  const exercises = getAllExercisesByObject(objectName)
-  const meta = getTopicMeta(objectName)
   const locale = useLocale() as 'en' | 'es'
   const activeRef = useRef<HTMLAnchorElement>(null)
   const isMounted = useRef(false)
   const router = useRouter()
+
+  const exercises = useMemo(
+    () => getAllExercisesByObject(objectName),
+    [objectName],
+  )
+
+  const meta = useMemo(() => getTopicMeta(objectName), [objectName])
+
+  const difficultyCounts = useMemo(
+    () => ({
+      beginner: exercises.filter((e) => e.difficulty === 'beginner').length,
+      intermediate: exercises.filter((e) => e.difficulty === 'intermediate').length,
+      advanced: exercises.filter((e) => e.difficulty === 'advanced').length,
+    }),
+    [exercises],
+  )
 
   useEffect(() => {
     if (!isMounted.current) {
@@ -49,28 +120,32 @@ export default function ExerciseSidebar({ objectName, currentSlug }: Props) {
 
   const isRoadmap = searchParams.get('mode') === 'roadmap'
 
-  // Calculate difficulty counts
-  const difficultyCounts = {
-    beginner: exercises.filter(e => e.difficulty === 'beginner').length,
-    intermediate: exercises.filter(e => e.difficulty === 'intermediate').length,
-    advanced: exercises.filter(e => e.difficulty === 'advanced').length,
-  }
+  const roadmapGroups = useMemo(
+    () =>
+      isRoadmap
+        ? getRoadmapExercises(objectName)
+        : ({ beginner: [], intermediate: [], advanced: [] } as Record<Difficulty, Exercise[]>),
+    [isRoadmap, objectName],
+  )
 
-  const DIFF_COLORS: Record<Difficulty, string> = {
-    beginner: 'border-l-4 border-l-emerald-500',
-    intermediate: 'border-l-4 border-l-yellow-500',
-    advanced: 'border-l-4 border-l-red-500',
-  }
+  const flatExercises = useMemo(
+    () =>
+      exercises
+        .filter((ex) => selectedDifficulty === null || ex.difficulty === selectedDifficulty)
+        .sort((a, b) => DIFF_ORDER[a.difficulty] - DIFF_ORDER[b.difficulty]),
+    [exercises, selectedDifficulty],
+  )
 
-  const DIFF_ORDER: Record<Difficulty, number> = { beginner: 0, intermediate: 1, advanced: 2 }
-
-  // Roadmap mode: group exercises by difficulty, capped at 15 per level
-  const roadmapGroups = isRoadmap ? getRoadmapExercises(objectName) : null
-
-  // Standard mode: all exercises sorted beginner → intermediate → advanced
-  const flatExercises = exercises
-    .filter(ex => selectedDifficulty === null || ex.difficulty === selectedDifficulty)
-    .sort((a, b) => DIFF_ORDER[a.difficulty] - DIFF_ORDER[b.difficulty])
+  const displayCounts = useMemo(() => {
+    if (isRoadmap) {
+      return {
+        beginner: roadmapGroups.beginner.length,
+        intermediate: roadmapGroups.intermediate.length,
+        advanced: roadmapGroups.advanced.length,
+      }
+    }
+    return difficultyCounts
+  }, [isRoadmap, roadmapGroups, difficultyCounts])
 
   // Build href that preserves the active difficulty filter
   function buildExerciseHref(slug: string): string {
@@ -157,7 +232,7 @@ export default function ExerciseSidebar({ objectName, currentSlug }: Props) {
               >
                 {d === 'all'
                   ? 'All'
-                  : `${DIFF_LABELS[d]} (${difficultyCounts[d]})`}
+                  : `${DIFF_LABELS[d]} (${displayCounts[d]})`}
               </button>
             ))}
           </div>
@@ -181,52 +256,32 @@ export default function ExerciseSidebar({ objectName, currentSlug }: Props) {
           VALID_DIFFS
             .filter(d => selectedDifficulty === null || d === selectedDifficulty)
             .map(d => {
-              const group = roadmapGroups![d]
+              const group = roadmapGroups[d]
               if (group.length === 0) return null
-
-              const headerColor: Record<Difficulty, string> = {
-                beginner: 'text-emerald-500',
-                intermediate: 'text-yellow-500',
-                advanced: 'text-red-500',
-              }
 
               return (
                 <div key={d}>
                   {/* Section header */}
                   <div className="flex items-center gap-2 px-3 py-1.5 mt-1">
-                    <span className={`text-xs font-semibold uppercase tracking-wider ${headerColor[d]}`}>
+                    <h3 className={`text-xs font-semibold uppercase tracking-wider ${DIFF_HEADER_COLOR[d]}`}>
                       {DIFF_LABELS[d]}
-                    </span>
-                    <span className="text-xs text-zinc-600">({group.length})</span>
+                    </h3>
+                    <span className="text-xs text-zinc-600">({roadmapGroups[d].length})</span>
                     <div className="flex-1 border-t border-zinc-800" />
                   </div>
 
                   {group.map((ex) => {
-                    const status = progressMap[ex.slug]?.status ?? 'not-started'
+                    const status = (progressMap[ex.slug]?.status ?? 'not-started') as ProgressStatus
                     const isActive = ex.slug === currentSlug
                     return (
-                      <Link
+                      <ExerciseLink
                         key={ex.slug}
+                        ex={ex}
+                        isActive={isActive}
+                        status={status}
                         href={buildExerciseHref(ex.slug)}
-                        ref={isActive ? activeRef : null}
-                        aria-current={isActive ? 'page' : undefined}
-                        className={`flex items-center gap-2 px-3 py-2 text-sm transition-colors ${DIFF_COLORS[ex.difficulty]} ${
-                          isActive
-                            ? 'bg-zinc-800 text-zinc-100'
-                            : 'text-zinc-500 hover:bg-zinc-900 hover:text-zinc-300'
-                        }`}
-                      >
-                        <span className="w-4 shrink-0 text-center text-xs">
-                          {status === 'completed' ? (
-                            <span className="text-emerald-500">✓</span>
-                          ) : status === 'attempted' ? (
-                            <span className="text-yellow-500">▶</span>
-                          ) : (
-                            <span className="text-zinc-700">○</span>
-                          )}
-                        </span>
-                        <span className="truncate">{ex.title}</span>
-                      </Link>
+                        activeRef={activeRef}
+                      />
                     )
                   })}
                 </div>
@@ -235,38 +290,24 @@ export default function ExerciseSidebar({ objectName, currentSlug }: Props) {
         ) : (
           // Standard mode: flat list sorted by difficulty
           flatExercises.map((ex) => {
-            const status = progressMap[ex.slug]?.status ?? 'not-started'
+            const status = (progressMap[ex.slug]?.status ?? 'not-started') as ProgressStatus
             const isActive = ex.slug === currentSlug
             return (
-              <Link
+              <ExerciseLink
                 key={ex.slug}
+                ex={ex}
+                isActive={isActive}
+                status={status}
                 href={buildExerciseHref(ex.slug)}
-                ref={isActive ? activeRef : null}
-                aria-current={isActive ? 'page' : undefined}
-                className={`flex items-center gap-2 px-3 py-2 text-sm transition-colors ${DIFF_COLORS[ex.difficulty]} ${
-                  isActive
-                    ? 'bg-zinc-800 text-zinc-100'
-                    : 'text-zinc-500 hover:bg-zinc-900 hover:text-zinc-300'
-                }`}
-              >
-                <span className="w-4 shrink-0 text-center text-xs">
-                  {status === 'completed' ? (
-                    <span className="text-emerald-500">✓</span>
-                  ) : status === 'attempted' ? (
-                    <span className="text-yellow-500">▶</span>
-                  ) : (
-                    <span className="text-zinc-700">○</span>
-                  )}
-                </span>
-                <span className="truncate">{ex.title}</span>
-              </Link>
+                activeRef={activeRef}
+              />
             )
           })
         )}
         {(isRoadmap
           ? VALID_DIFFS
               .filter(d => selectedDifficulty === null || d === selectedDifficulty)
-              .every(d => roadmapGroups![d].length === 0)
+              .every(d => roadmapGroups[d].length === 0)
           : flatExercises.length === 0
         ) && (
           <div className="px-4 py-3 text-xs text-zinc-500">
