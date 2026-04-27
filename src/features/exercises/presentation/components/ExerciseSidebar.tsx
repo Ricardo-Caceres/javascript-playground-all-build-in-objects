@@ -263,17 +263,17 @@ export default function ExerciseSidebar({ objectName, currentSlug }: Props) {
             )
           })
         )}
+        {(isRoadmap
+          ? VALID_DIFFS
+              .filter(d => selectedDifficulty === null || d === selectedDifficulty)
+              .every(d => roadmapGroups![d].length === 0)
+          : flatExercises.length === 0
+        ) && (
+          <div className="px-4 py-3 text-xs text-zinc-500">
+            No exercises at this difficulty level
+          </div>
+        )}
       </nav>
-      {(isRoadmap
-        ? VALID_DIFFS
-            .filter(d => selectedDifficulty === null || d === selectedDifficulty)
-            .every(d => roadmapGroups![d].length === 0)
-        : flatExercises.length === 0
-      ) && (
-        <div className="px-4 py-3 text-xs text-zinc-500">
-          No exercises at this difficulty level
-        </div>
-      )}
     </aside>
   )
 }
