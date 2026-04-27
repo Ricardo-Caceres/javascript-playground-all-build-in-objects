@@ -60,10 +60,18 @@ export default function ExerciseSidebar({ objectName, currentSlug }: Props) {
     advanced: 'border-l-4 border-l-red-500',
   }
 
-  // Filter exercises based on selected difficulty
-  const filteredExercises = exercises.filter(ex =>
-    selectedDifficulty === null || ex.difficulty === selectedDifficulty
-  )
+  const DIFF_ORDER: Record<Difficulty, number> = { beginner: 0, intermediate: 1, advanced: 2 }
+
+  // Filter and sort exercises by difficulty (roadmap order: beginner → intermediate → advanced)
+  const filteredExercises = exercises
+    .filter(ex => selectedDifficulty === null || ex.difficulty === selectedDifficulty)
+    .sort((a, b) => DIFF_ORDER[a.difficulty] - DIFF_ORDER[b.difficulty])
+
+  // Build href that preserves the active difficulty filter
+  function buildExerciseHref(slug: string): string {
+    const base = `/exercises/${objectName.toLowerCase()}/${slug}`
+    return selectedDifficulty ? `${base}?difficulty=${selectedDifficulty}` : base
+  }
 
   function setFilter(value: Difficulty | null) {
     const params = new URLSearchParams(searchParams.toString())
@@ -141,7 +149,7 @@ export default function ExerciseSidebar({ objectName, currentSlug }: Props) {
           return (
             <Link
               key={ex.slug}
-              href={`/exercises/${objectName.toLowerCase()}/${ex.slug}`}
+              href={buildExerciseHref(ex.slug)}
               ref={isActive ? activeRef : null}
               aria-current={isActive ? 'page' : undefined}
               className={`flex items-center gap-2 px-3 py-2 text-sm transition-colors ${DIFF_COLORS[ex.difficulty]} ${
