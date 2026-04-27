@@ -19,3 +19,17 @@ export function getAvailableObjects(): string[] {
 export function getTopicMeta(objectName: string): TopicMeta | undefined {
   return topicMetaMap[objectName.toLowerCase()]
 }
+
+export function getRoadmapExercises(
+  objectName: string,
+  maxPerLevel = 15,
+): Record<'beginner' | 'intermediate' | 'advanced', Exercise[]> {
+  const all = getAllExercisesByObject(objectName)
+  const pick = (d: 'beginner' | 'intermediate' | 'advanced') =>
+    all.filter((e) => e.difficulty === d).slice(0, maxPerLevel)
+  return {
+    beginner: pick('beginner'),
+    intermediate: pick('intermediate'),
+    advanced: pick('advanced'),
+  }
+}
