@@ -94,35 +94,52 @@ export const controlFlowLoopsExercises: Exercise[] = [
   },
   {
     slug: 'controlflow-do-while',
-    title: 'Control Flow — do...while: runs at least once',
-    description: `## do...while always executes the body at least once\n\nThe condition is checked **after** the first execution, so the body always runs at least once — even if the condition starts false.\n\n**Challenge:** Write \`collectAtLeastOnce(shouldContinue)\` that:\n1. Pushes \`'ran'\` to a \`results\` array inside a \`do...while\`\n2. The while condition is \`shouldContinue\`\n3. Returns \`results.length\`\n\nShould return \`1\` even when \`shouldContinue\` is \`false\`.`,
-    category: 'static-method',
-    difficulty: 'intermediate',
-    builtIn: 'ControlFlow',
-    initialCode: `function collectAtLeastOnce(shouldContinue) {
-  const results = []
-  // do...while (shouldContinue)
-  return results.length
+    title: 'do...while Loop',
+    description: 'A `do...while` loop executes its body at least once before checking the condition. Use it when you need guaranteed first execution. Example: prompting a user until they enter valid input.',
+    difficulty: 'intermediate' as const,
+    builtIn: 'ControlFlow' as const,
+    category: 'static-method' as const,
+    initialCode: `function collectUntilLimit(limit: number): number[] {
+  const results: number[] = [];
+  let count = 0;
+  // Use a do...while loop to collect count values until count >= limit
+  // Push count to results before incrementing
+  return results;
 }`,
-    solution: `function collectAtLeastOnce(shouldContinue) {
-  const results = []
+    solution: `function collectUntilLimit(limit: number): number[] {
+  const results: number[] = [];
+  let count = 0;
   do {
-    results.push('ran')
-    shouldContinue = false
-  } while (shouldContinue)
-  return results.length
+    results.push(count);
+    count++;
+  } while (count < limit);
+  return results;
 }`,
-    tests: [
-      { description: 'runs at least once even with false', assertion: "expect(collectAtLeastOnce(false)).toBe(1)" },
-      { description: 'runs at least once with true too', assertion: "expect(collectAtLeastOnce(true)).toBe(1)" },
+    hints: [
+      'do { ... } while (condition) — body runs first, then condition is checked',
+      'Push count to results, then increment count',
+      'The loop continues while count < limit',
     ],
-    hints: ['The condition is checked AFTER the first run — it always runs at least once'],
+    tests: [
+      {
+        description: 'Always executes at least once (limit=0 still runs body once)',
+        assertion: `expect(collectUntilLimit(0)).toHaveLength(1)`,
+      },
+      {
+        description: 'Collects correct values up to limit',
+        assertion: `expect(collectUntilLimit(3)).toEqual([0, 1, 2])`,
+      },
+      {
+        description: 'Limit of 1 runs exactly once',
+        assertion: `expect(collectUntilLimit(1)).toEqual([0])`,
+      },
+    ],
     tags: ['control-flow', 'do-while'],
   },
   {
     slug: 'controlflow-short-circuit',
     title: 'Control Flow — short-circuit as control flow',
-    description: `## && and || as control flow\n\n\`condition && action()\` is a common pattern: only call \`action()\` if \`condition\` is truthy. Widely used in React JSX but also useful in plain JS.\n\n**Challenge:** Write \`execute(condition, action)\` that:\n- If \`condition\` is truthy, calls \`action()\` and returns its result\n- If \`condition\` is falsy, does NOT call action and returns \`null\` (using \`condition && action() || null\` or an equivalent pattern)`,
+    description: 'Short-circuit evaluation controls flow using `&&` and `||`. With `&&`, the right side only evaluates if the left is truthy. With `||`, the right side only evaluates if the left is falsy. This enables concise conditional execution: `isValid && process(data)` calls `process` only when valid. Note: avoid chaining `condition && fn() || fallback` — if `fn()` returns a falsy value, `fallback` is incorrectly returned. Use a ternary for that pattern instead.',
     category: 'static-method',
     difficulty: 'intermediate',
     builtIn: 'ControlFlow',

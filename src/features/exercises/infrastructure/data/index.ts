@@ -430,6 +430,9 @@ import { prototypeChainExercises } from './prototypes/prototype-chain'
 import { prototypeObjectCreateExercises } from './prototypes/object-create'
 import { prototypeClassBasicsExercises } from './prototypes/class-basics'
 import { prototypeInheritanceExercises } from './prototypes/inheritance'
+// StrictMode exercises
+import { strictModeBasicsExercises } from './strict-mode/basics'
+import { strictModeEdgeCasesExercises } from './strict-mode/edge-cases'
 // AsyncPatterns exercises
 import { asyncPromiseBasicsExercises } from './asyncpatterns/promise-basics'
 import { asyncCombinatorsExercises } from './asyncpatterns/combinators'
