@@ -367,4 +367,40 @@ export const topicMetaMap: Record<string, TopicMeta> = {
       es: 'Redux Toolkit es el conjunto de herramientas oficial y con opiniones para el desarrollo con Redux. Estos ejercicios cubren createSlice, configureStore, createAsyncThunk, createEntityAdapter y más — usando la API moderna de RTK.',
     },
   },
+  variables: {
+    description: {
+      en: 'var, let, and const declarations, hoisting behavior, and block vs function scope. Understanding how JavaScript lifts declarations and how let/const differ from var is fundamental to writing predictable code.',
+      es: 'Declaraciones var, let y const, comportamiento del hoisting y alcance de bloque frente a función. Entender cómo JavaScript eleva las declaraciones y en qué difieren let/const de var es fundamental para escribir código predecible.',
+    },
+  },
+  operators: {
+    description: {
+      en: 'Arithmetic, comparison, logical, and modern operators including nullish coalescing (??) and optional chaining (?.). These are the building blocks for expressions and conditions throughout any JavaScript program.',
+      es: 'Operadores aritméticos, de comparación, lógicos y modernos como la fusión nula (??) y el encadenamiento opcional (?.). Son los bloques fundamentales para expresiones y condiciones en cualquier programa JavaScript.',
+    },
+  },
+  controlflow: {
+    description: {
+      en: 'if/else, switch, ternary expressions, for/while loops, break/continue, and iteration patterns with for...of and for...in. Control flow determines the order in which statements execute in a program.',
+      es: 'if/else, switch, expresiones ternarias, bucles for/while, break/continue y patrones de iteración con for...of y for...in. El flujo de control determina el orden en que se ejecutan las instrucciones de un programa.',
+    },
+  },
+  typecoercion: {
+    description: {
+      en: 'Implicit and explicit type conversion in JavaScript — how values are coerced during comparisons, arithmetic, and logical operations. Understanding coercion helps avoid subtle bugs caused by loose equality and unexpected conversions.',
+      es: 'Conversión de tipos implícita y explícita en JavaScript — cómo se convierten los valores en comparaciones, operaciones aritméticas y lógicas. Entender la coerción ayuda a evitar errores sutiles causados por la igualdad débil y conversiones inesperadas.',
+    },
+  },
+  strictmode: {
+    description: {
+      en: "'use strict' enables a restricted variant of JavaScript that catches silent errors, prevents unsafe features, and makes code more optimizable. It is automatically active in ES modules and class bodies.",
+      es: "'use strict' activa una variante restringida de JavaScript que detecta errores silenciosos, impide características inseguras y facilita la optimización del código. Está activo de forma automática en módulos ES y cuerpos de clase.",
+    },
+  },
+  modules: {
+    description: {
+      en: 'ES module syntax — named and default exports, static imports, re-exports, and dynamic import(). Modules give JavaScript a standard system for splitting code across files with clear dependency boundaries.',
+      es: 'Sintaxis de módulos ES — exportaciones con nombre y por defecto, importaciones estáticas, re-exportaciones e import() dinámico. Los módulos ofrecen a JavaScript un sistema estándar para dividir el código en archivos con límites de dependencia claros.',
+    },
+  },
 }

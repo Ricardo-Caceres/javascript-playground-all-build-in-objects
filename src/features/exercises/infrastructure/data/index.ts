@@ -1,4 +1,19 @@
 import type { Exercise } from '@/shared/types/exercises'
+import { variablesLetConstExercises } from './variables/let-const'
+import { variablesHoistingExercises } from './variables/hoisting'
+import { operatorsBasicsExercises } from './operators/basics'
+import { operatorsModernExercises } from './operators/modern'
+import { operatorsAdvancedExercises } from './operators/advanced'
+import { controlFlowConditionalsExercises } from './control-flow/conditionals'
+import { controlFlowLoopsExercises } from './control-flow/loops'
+import { controlFlowAdvancedExercises } from './control-flow/advanced'
+import { typeCoercionEqualityExercises } from './type-coercion/equality'
+import { typeCoercionConversionExercises } from './type-coercion/conversion'
+import { strictModeBasicsExercises } from './strict-mode/basics'
+import { strictModeEdgeCasesExercises } from './strict-mode/edge-cases'
+import { modulesExportsExercises } from './modules/exports'
+import { modulesPatternExercises } from './modules/patterns'
+import { modulesDynamicExercises } from './modules/dynamic'
 import { reduxLegacyExercises } from './redux-legacy'
 import { reduxToolkitExercises } from './redux-toolkit'
 import {
@@ -1001,4 +1016,25 @@ export const allExercises: Exercise[] = [
   // Redux exercises
   ...reduxLegacyExercises,
   ...reduxToolkitExercises,
+  // Variables exercises
+  ...variablesLetConstExercises,
+  ...variablesHoistingExercises,
+  // Operators exercises
+  ...operatorsBasicsExercises,
+  ...operatorsModernExercises,
+  ...operatorsAdvancedExercises,
+  // Control Flow exercises
+  ...controlFlowConditionalsExercises,
+  ...controlFlowLoopsExercises,
+  ...controlFlowAdvancedExercises,
+  // Type Coercion exercises
+  ...typeCoercionEqualityExercises,
+  ...typeCoercionConversionExercises,
+  // Strict Mode exercises
+  ...strictModeBasicsExercises,
+  ...strictModeEdgeCasesExercises,
+  // Modules exercises
+  ...modulesExportsExercises,
+  ...modulesPatternExercises,
+  ...modulesDynamicExercises,
 ]
