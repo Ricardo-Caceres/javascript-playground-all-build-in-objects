@@ -76,6 +76,12 @@ export function Navbar() {
             >
               {t('stats')}
             </Link>
+            <Link
+              href="/learning-path"
+              className="rounded border border-zinc-700 px-3 py-1 text-xs text-zinc-400 transition-colors hover:border-zinc-500 hover:text-zinc-200"
+            >
+              {t('learningPath')}
+            </Link>
           </div>
 
           {/* Mobile — search icon + hamburger */}
@@ -114,6 +120,13 @@ export function Navbar() {
                   className="block px-4 py-2 text-sm text-zinc-400 transition-colors hover:bg-zinc-800 hover:text-zinc-200"
                 >
                   {t('stats')}
+                </Link>
+                <Link
+                  href="/learning-path"
+                  onClick={() => setMenuOpen(false)}
+                  className="block px-4 py-2 text-sm text-zinc-400 transition-colors hover:bg-zinc-800 hover:text-zinc-200"
+                >
+                  {t('learningPath')}
                 </Link>
                 <div className="border-t border-zinc-800 px-4 py-2" onClick={() => setMenuOpen(false)}>
                   <LanguageSwitcher />
