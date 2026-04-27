@@ -3,7 +3,8 @@
     "brand": "JS Built-ins",
     "search": "Search",
     "exam": "Exam →",
-    "stats": "Stats →"
+    "stats": "Stats →",
+    "learningPath": "Learning Path"
   },
   "exercise": {
     "prev": "← Prev",
@@ -110,6 +111,23 @@
         "description": "Modern, batteries-included"
       },
       "dataFlow": "DATA\nFLOW"
+    }
+  },
+  "learningPath": {
+    "title": "JavaScript Learning Path",
+    "subtitle": "Based on roadmap.sh/javascript",
+    "overallProgress": "Overall Progress",
+    "exercises": "exercises",
+    "complete": "complete",
+    "sections": {
+      "fundamentals": "Language Fundamentals",
+      "functions": "Functions & Scope",
+      "dataStructures": "Core Data Structures",
+      "numbersUtils": "Numbers & Utilities",
+      "async": "Async Programming",
+      "oop": "OOP & Prototypes",
+      "modulesArch": "Modules & Architecture",
+      "advanced": "Advanced JavaScript"
     }
   }
 }
