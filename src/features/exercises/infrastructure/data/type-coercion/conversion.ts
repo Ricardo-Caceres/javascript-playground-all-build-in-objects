@@ -184,7 +184,7 @@ Examples:
       'Arrays coerce to strings via toString(), which produces a comma-separated list of elements.',
       'Empty arrays [] have no elements, so toString() returns an empty string.',
       'Objects coerce to "[object Object]" by default.',
-      'The + operator causes both operands to be converted to strings when at least one is already a string.',
+      "When objects are used with +, they are first converted to primitives via toString(). If any operand converts to a string, + becomes concatenation — this is why [] + [] gives '' (both convert to empty string via toString()).",
     ],
     tags: ['type-coercion', 'object', 'array', 'primitive'],
   },

@@ -86,14 +86,7 @@ The \`===\` operator does NOT coerce types. Values must have the same type and v
   {
     slug: 'typecoercion-abstract-comparison',
     title: 'Abstract Relational Comparison',
-    description: `## Relational Operators < and >
-
-Relational operators (<, >, <=, >=) coerce operands to numbers for comparison.
-
-- \`'10' > '9'\` is \`false\` (string comparison: '1' is compared to '9', '1' < '9')
-- \`'10' > 9\` is \`true\` (mixed types: '10' coerced to 10, 10 > 9)
-
-**Challenge:** Return an object showing the difference between string and numeric comparison.`,
+    description: `Relational operators (<, >, <=, >=) behave differently depending on operand types. When at least one operand is a number, both are coerced to numbers. When both operands are strings, comparison is lexicographic (character by character) — no number coercion occurs. This is why '10' > '9' is false (lexicographic: '1' < '9') but '10' > 9 is true (numeric: 10 > 9).`,
     category: 'static-method',
     difficulty: 'beginner',
     builtIn: 'TypeCoercion',
