@@ -18,8 +18,8 @@ export const learningPath: LearningPathSection[] = [
     order: 1,
     exerciseSlugs: {
       beginner: [
-        'variables-let-const-reassign',
-        'variables-const-mutation',
+        'variables-let-reassign',
+        'variables-const-object',
         'variables-block-scope',
         'variables-var-function-scope',
         'variables-destructuring',
@@ -42,7 +42,7 @@ export const learningPath: LearningPathSection[] = [
     exerciseSlugs: {
       beginner: [
         'operators-arithmetic',
-        'operators-equality',
+        'operators-comparison',
         'operators-logical',
         'operators-ternary',
         'operators-compound-assignment',
@@ -51,7 +51,7 @@ export const learningPath: LearningPathSection[] = [
         'operators-nullish-coalescing',
         'operators-optional-chaining',
         'operators-spread',
-        'operators-rest',
+        'operators-rest-params',
         'operators-logical-assignment',
       ],
       advanced: [

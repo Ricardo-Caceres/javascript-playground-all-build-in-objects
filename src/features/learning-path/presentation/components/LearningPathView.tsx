@@ -1,9 +1,11 @@
 'use client'
+import { useTranslations } from 'next-intl'
 import { useLearningPathProgress } from '../hooks/useLearningPathProgress'
 import { TopicProgressCard } from './TopicProgressCard'
 import { learningPath } from '@/features/learning-path/infrastructure/data/learningPathConfig'
 
 export function LearningPathView() {
+  const t = useTranslations('learningPath')
   const progressMap = useLearningPathProgress()
 
   // Compute overall stats
@@ -16,14 +18,14 @@ export function LearningPathView() {
     <div className="min-h-screen bg-zinc-950 text-zinc-100 px-4 py-10 max-w-5xl mx-auto">
       {/* Header */}
       <div className="mb-10">
-        <h1 className="text-3xl font-bold mb-2">🗺️ JavaScript Learning Path</h1>
-        <p className="text-zinc-400 mb-6">Based on roadmap.sh/javascript — from fundamentals to advanced topics</p>
+        <h1 className="text-3xl font-bold mb-2">🗺️ {t('title')}</h1>
+        <p className="text-zinc-400 mb-6">{t('subtitle')}</p>
 
         {/* Overall progress bar */}
         <div className="bg-zinc-900 border border-zinc-800 rounded-xl p-5">
           <div className="flex justify-between text-sm mb-2">
-            <span className="text-zinc-300 font-medium">Overall Progress</span>
-            <span className="text-emerald-400 font-bold">{totalCompleted}/{totalExercises} exercises</span>
+            <span className="text-zinc-300 font-medium">{t('overallProgress')}</span>
+            <span className="text-emerald-400 font-bold">{totalCompleted}/{totalExercises} {t('exercises')}</span>
           </div>
           <div className="w-full bg-zinc-800 rounded-full h-3">
             <div
@@ -31,7 +33,7 @@ export function LearningPathView() {
               style={{ width: `${overallPct}%` }}
             />
           </div>
-          <div className="mt-1 text-right text-sm text-zinc-500">{overallPct}% complete</div>
+          <div className="mt-1 text-right text-sm text-zinc-500">{overallPct}% {t('complete')}</div>
         </div>
       </div>
 

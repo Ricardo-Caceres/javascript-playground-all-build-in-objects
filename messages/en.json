@@ -118,16 +118,6 @@
     "subtitle": "Based on roadmap.sh/javascript",
     "overallProgress": "Overall Progress",
     "exercises": "exercises",
-    "complete": "complete",
-    "sections": {
-      "fundamentals": "Language Fundamentals",
-      "functions": "Functions & Scope",
-      "dataStructures": "Core Data Structures",
-      "numbersUtils": "Numbers & Utilities",
-      "async": "Async Programming",
-      "oop": "OOP & Prototypes",
-      "modulesArch": "Modules & Architecture",
-      "advanced": "Advanced JavaScript"
-    }
+    "complete": "complete"
   }
 }

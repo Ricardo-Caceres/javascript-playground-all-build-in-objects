@@ -118,16 +118,6 @@
     "subtitle": "Basado en roadmap.sh/javascript",
     "overallProgress": "Progreso General",
     "exercises": "ejercicios",
-    "complete": "completado",
-    "sections": {
-      "fundamentals": "Fundamentos del Lenguaje",
-      "functions": "Funciones y Ámbito",
-      "dataStructures": "Estructuras de Datos Principales",
-      "numbersUtils": "Números y Utilidades",
-      "async": "Programación Asíncrona",
-      "oop": "POO y Prototipos",
-      "modulesArch": "Módulos y Arquitectura",
-      "advanced": "JavaScript Avanzado"
-    }
+    "complete": "completado"
   }
 }
