@@ -978,6 +978,9 @@ export const allExercises: Exercise[] = [
   ...prototypeObjectCreateExercises,
   ...prototypeClassBasicsExercises,
   ...prototypeInheritanceExercises,
+  // StrictMode exercises
+  ...strictModeBasicsExercises,
+  ...strictModeEdgeCasesExercises,
   // AsyncPatterns exercises
   ...asyncPromiseBasicsExercises,
   ...asyncCombinatorsExercises,
