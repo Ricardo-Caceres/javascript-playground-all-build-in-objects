@@ -3,6 +3,7 @@
 import { useRef, useEffect, useCallback, useState, useMemo } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 import { useTranslations } from 'next-intl'
+import { useSearchParams } from 'next/navigation'
 import dynamic from 'next/dynamic'
 import { Link } from '@/i18n/navigation'
 import type { AppDispatch, RootState } from '@/shared/lib/store'
@@ -25,6 +26,7 @@ interface Props {
 export function ExerciseRunner({ exercise, objectName }: Props) {
   const t = useTranslations('exercise')
   const dispatch = useDispatch<AppDispatch>()
+  const searchParams = useSearchParams()
   const savedProgress = useSelector(
     (state: RootState) => state.progress.exercises[exercise.slug],
   )
@@ -44,6 +46,17 @@ export function ExerciseRunner({ exercise, objectName }: Props) {
     objectName,
     exercise.slug,
   )
+
+  // Build href that preserves roadmap mode and difficulty filter
+  function buildExerciseHref(slug: string): string {
+    const base = `/exercises/${objectName.toLowerCase()}/${slug}`
+    const params = new URLSearchParams()
+    if (searchParams.get('mode') === 'roadmap') params.set('mode', 'roadmap')
+    const difficulty = searchParams.get('difficulty')
+    if (difficulty) params.set('difficulty', difficulty)
+    const qs = params.toString()
+    return qs ? `${base}?${qs}` : base
+  }
 
   const BASE_MINS: Record<string, number> = { beginner: 10, intermediate: 15, advanced: 20 }
   const totalSeconds = useMemo(() => {
@@ -210,7 +223,7 @@ export function ExerciseRunner({ exercise, objectName }: Props) {
         <div className="flex items-center gap-2">
           {prevSlug ? (
             <Link
-              href={`/exercises/${objectName.toLowerCase()}/${prevSlug}`}
+              href={buildExerciseHref(prevSlug)}
               className="rounded border border-zinc-700 px-2 py-1 text-xs text-zinc-400 transition-colors hover:border-zinc-500 hover:text-zinc-200"
             >
               {t('prev')}
@@ -222,7 +235,7 @@ export function ExerciseRunner({ exercise, objectName }: Props) {
           )}
           {nextSlug ? (
             <Link
-              href={`/exercises/${objectName.toLowerCase()}/${nextSlug}`}
+              href={buildExerciseHref(nextSlug)}
               className="rounded border border-zinc-700 px-2 py-1 text-xs text-zinc-400 transition-colors hover:border-zinc-500 hover:text-zinc-200"
             >
               {t('next')}
