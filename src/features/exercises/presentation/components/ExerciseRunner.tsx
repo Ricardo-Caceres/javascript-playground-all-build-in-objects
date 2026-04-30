@@ -7,9 +7,10 @@ import { useSearchParams } from 'next/navigation'
 import dynamic from 'next/dynamic'
 import { Link } from '@/i18n/navigation'
 import type { AppDispatch, RootState } from '@/shared/lib/store'
-import type { Exercise, TestResult } from '@/shared/types/exercises'
+import type { Exercise, TestResult, Difficulty } from '@/shared/types/exercises'
 import { WorkerEngine } from '@/shared/lib/worker/workerEngine'
 import { updateProgress } from '@/features/progress/presentation/store/progressSlice'
+import { getAllExercisesByObject, getRoadmapExercises } from '@/features/exercises/infrastructure/repositories/exerciseRepository'
 import { TestPanel } from './TestPanel'
 import { useExerciseNavigation } from '../hooks/useExerciseNavigation'
 import { TimedModeToggle } from './TimedModeToggle'
@@ -42,18 +43,50 @@ export function ExerciseRunner({ exercise, objectName }: Props) {
   const runRef = useRef<() => void>(() => {})
   const isRunningRef = useRef(false)
 
+  // Read filter state from URL
+  const isRoadmap = searchParams.get('mode') === 'roadmap'
+  const selectedDifficulty = (searchParams.get('difficulty') ?? null) as Difficulty | null
+
+  // Calculate filtered exercises for navigation
+  const filteredExercises = useMemo(() => {
+    const all = getAllExercisesByObject(objectName)
+    
+    if (isRoadmap) {
+      // In roadmap mode, flatten roadmap groups and maintain order by difficulty
+      const roadmapGroups = getRoadmapExercises(objectName)
+      const result: Exercise[] = []
+      const difficulties: Difficulty[] = ['beginner', 'intermediate', 'advanced']
+      
+      for (const d of difficulties) {
+        const filtered = selectedDifficulty === null || d === selectedDifficulty
+        if (filtered) {
+          result.push(...roadmapGroups[d])
+        }
+      }
+      return result
+    } else {
+      // In standard mode, filter by selected difficulty and sort
+      return all
+        .filter((ex) => selectedDifficulty === null || ex.difficulty === selectedDifficulty)
+        .sort((a, b) => {
+          const diffOrder: Record<Difficulty, number> = { beginner: 0, intermediate: 1, advanced: 2 }
+          return diffOrder[a.difficulty] - diffOrder[b.difficulty]
+        })
+    }
+  }, [objectName, isRoadmap, selectedDifficulty])
+
   const { prevSlug, nextSlug, currentIndex, total } = useExerciseNavigation(
     objectName,
     exercise.slug,
+    { filteredExercises }
   )
 
   // Build href that preserves roadmap mode and difficulty filter
   function buildExerciseHref(slug: string): string {
     const base = `/exercises/${objectName.toLowerCase()}/${slug}`
     const params = new URLSearchParams()
-    if (searchParams.get('mode') === 'roadmap') params.set('mode', 'roadmap')
-    const difficulty = searchParams.get('difficulty')
-    if (difficulty) params.set('difficulty', difficulty)
+    if (isRoadmap) params.set('mode', 'roadmap')
+    if (selectedDifficulty) params.set('difficulty', selectedDifficulty)
     const qs = params.toString()
     return qs ? `${base}?${qs}` : base
   }

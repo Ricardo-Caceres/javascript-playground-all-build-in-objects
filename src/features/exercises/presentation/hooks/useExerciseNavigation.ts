@@ -1,5 +1,6 @@
 import { useMemo } from 'react'
 import { getAllExercisesByObject } from '@/features/exercises/infrastructure/repositories/exerciseRepository'
+import type { Exercise } from '@/shared/types/exercises'
 
 interface ExerciseNavigation {
   prevSlug: string | null
@@ -8,12 +9,17 @@ interface ExerciseNavigation {
   total: number
 }
 
+interface UseExerciseNavigationOptions {
+  filteredExercises?: Exercise[]
+}
+
 export function useExerciseNavigation(
   objectName: string,
   currentSlug: string,
+  options?: UseExerciseNavigationOptions,
 ): ExerciseNavigation {
   return useMemo(() => {
-    const exercises = getAllExercisesByObject(objectName)
+    const exercises = options?.filteredExercises ?? getAllExercisesByObject(objectName)
     const idx = exercises.findIndex((e) => e.slug === currentSlug)
     if (idx === -1) {
       return { prevSlug: null, nextSlug: null, currentIndex: 0, total: exercises.length }
@@ -24,5 +30,5 @@ export function useExerciseNavigation(
       currentIndex: idx + 1,
       total: exercises.length,
     }
-  }, [objectName, currentSlug])
+  }, [objectName, currentSlug, options?.filteredExercises])
 }
