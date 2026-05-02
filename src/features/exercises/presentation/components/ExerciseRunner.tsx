@@ -52,16 +52,14 @@ export function ExerciseRunner({ exercise, objectName }: Props) {
     const all = getAllExercisesByObject(objectName)
     
     if (isRoadmap) {
-      // In roadmap mode, flatten roadmap groups and maintain order by difficulty
+      // In roadmap mode, include ALL difficulty levels of roadmap
+      // (ignore selectedDifficulty filter for navigation)
       const roadmapGroups = getRoadmapExercises(objectName)
       const result: Exercise[] = []
       const difficulties: Difficulty[] = ['beginner', 'intermediate', 'advanced']
       
       for (const d of difficulties) {
-        const filtered = selectedDifficulty === null || d === selectedDifficulty
-        if (filtered) {
-          result.push(...roadmapGroups[d])
-        }
+        result.push(...roadmapGroups[d])
       }
       return result
     } else {
@@ -73,7 +71,7 @@ export function ExerciseRunner({ exercise, objectName }: Props) {
           return diffOrder[a.difficulty] - diffOrder[b.difficulty]
         })
     }
-  }, [objectName, isRoadmap, selectedDifficulty])
+  }, [objectName, isRoadmap])
 
   const { prevSlug, nextSlug, currentIndex, total } = useExerciseNavigation(
     objectName,
