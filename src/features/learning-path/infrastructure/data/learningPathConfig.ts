@@ -153,4 +153,188 @@ export const learningPath: LearningPathSection[] = [
       ],
     },
   },
+  {
+    topicKey: 'function',
+    title: 'Functions',
+    description: 'Function declarations, arrow functions, closures, and higher-order functions — mastering code organization.',
+    order: 7,
+    exerciseSlugs: {
+      beginner: [
+        'function-declaration',
+        'function-expression',
+        'function-arrow',
+        'function-parameters',
+        'function-return',
+      ],
+      intermediate: [
+        'function-closure',
+        'function-higher-order',
+        'function-default-params',
+        'function-rest-params',
+        'function-callback',
+      ],
+      advanced: [
+        'function-iife',
+        'function-recursion',
+        'function-memoization',
+      ],
+    },
+  },
+  {
+    topicKey: 'object',
+    title: 'Objects & Prototypes',
+    description: 'Object creation, property access, prototype chain — understanding JavaScript\'s object model.',
+    order: 8,
+    exerciseSlugs: {
+      beginner: [
+        'object-literal',
+        'object-property-access',
+        'object-property-assignment',
+        'object-keys',
+        'object-values',
+      ],
+      intermediate: [
+        'object-entries',
+        'object-assign',
+        'object-freeze',
+        'object-prototype',
+        'object-constructor',
+      ],
+      advanced: [
+        'object-create',
+        'object-property-descriptors',
+        'object-seal',
+      ],
+    },
+  },
+  {
+    topicKey: 'array',
+    title: 'Arrays',
+    description: 'Array methods, iteration, transformation — working with collections of data.',
+    order: 9,
+    exerciseSlugs: {
+      beginner: [
+        'array-creation',
+        'array-access',
+        'array-length',
+        'array-map',
+        'array-filter',
+      ],
+      intermediate: [
+        'array-reduce',
+        'array-find',
+        'array-some-every',
+        'array-slice',
+        'array-concat',
+      ],
+      advanced: [
+        'array-flat',
+        'array-splice',
+        'array-sort-custom',
+      ],
+    },
+  },
+  {
+    topicKey: 'string',
+    title: 'Strings',
+    description: 'String methods, template literals, pattern matching — text manipulation in JavaScript.',
+    order: 10,
+    exerciseSlugs: {
+      beginner: [
+        'string-literals',
+        'string-length',
+        'string-indexing',
+        'string-methods-basic',
+        'string-case',
+      ],
+      intermediate: [
+        'string-split-join',
+        'string-substring',
+        'string-includes',
+        'string-template-literals',
+        'string-replace',
+      ],
+      advanced: [
+        'string-regexp',
+        'string-normalization',
+        'string-unicode',
+      ],
+    },
+  },
+  {
+    topicKey: 'promise',
+    title: 'Promises & Async',
+    description: 'Promises, async/await, error handling — managing asynchronous operations.',
+    order: 11,
+    exerciseSlugs: {
+      beginner: [
+        'promise-creation',
+        'promise-then',
+        'promise-catch',
+        'promise-resolve-reject',
+        'async-await-basics',
+      ],
+      intermediate: [
+        'promise-chaining',
+        'promise-all',
+        'promise-race',
+        'async-await-error-handling',
+        'async-await-loops',
+      ],
+      advanced: [
+        'promise-allSettled',
+        'promise-any',
+        'promise-microtask-queue',
+      ],
+    },
+  },
+  {
+    topicKey: 'error',
+    title: 'Error Handling',
+    description: 'Try/catch, error types, custom errors — robust error management.',
+    order: 12,
+    exerciseSlugs: {
+      beginner: [
+        'error-try-catch',
+        'error-finally',
+        'error-throwing',
+        'error-types',
+        'error-message',
+      ],
+      intermediate: [
+        'error-custom-errors',
+        'error-stack-trace',
+        'error-propagation',
+        'error-async-handling',
+      ],
+      advanced: [
+        'error-retry-logic',
+        'error-recovery-patterns',
+      ],
+    },
+  },
+  {
+    topicKey: 'closures',
+    title: 'Closures',
+    description: 'Lexical scoping, closures, variable capture — advanced scope concepts.',
+    order: 13,
+    exerciseSlugs: {
+      beginner: [
+        'closures-basic',
+        'closures-counter',
+        'closures-factory',
+        'closures-multiple-vars',
+      ],
+      intermediate: [
+        'closures-data-privacy',
+        'closures-module-pattern',
+        'closures-loop-binding',
+        'closures-memory-implications',
+      ],
+      advanced: [
+        'closures-complex-scenarios',
+        'closures-performance',
+      ],
+    },
+  },
 ];
