@@ -118,6 +118,144 @@
     "subtitle": "Basado en roadmap.sh/javascript",
     "overallProgress": "Progreso General",
     "exercises": "ejercicios",
-    "complete": "completado"
+    "complete": "completado",
+    "topics": {
+      "variables": {
+        "title": "Variables y Alcance",
+        "description": "Domina let, const, var, hoisting y scope de bloque — los fundamentos de JavaScript."
+      },
+      "boolean": {
+        "title": "Tipo de Dato - Boolean",
+        "description": "Trabaja con valores booleanos y veracidad — fundamental para la lógica condicional."
+      },
+      "number": {
+        "title": "Tipo de Dato - Números",
+        "description": "Operaciones numéricas, valores especiales (NaN, Infinity), precisión — maneja números correctamente."
+      },
+      "bigint": {
+        "title": "Tipo de Dato - BigInt",
+        "description": "Enteros de precisión arbitraria — trabaja con números más allá del límite seguro de JavaScript."
+      },
+      "operators": {
+        "title": "Operadores",
+        "description": "Aritmética, comparación, lógica, coalescencia nula y operadores modernos ES2021+."
+      },
+      "typecoercion": {
+        "title": "Coerción de Tipos",
+        "description": "Entiende la conversión de tipos implícita y explícita — una de las características más malentendidas de JavaScript."
+      },
+      "controlflow": {
+        "title": "Flujo de Control",
+        "description": "if/else, switch, bucles, break/continue, generadores — cómo JavaScript toma decisiones."
+      },
+      "function": {
+        "title": "Funciones",
+        "description": "Declaraciones de función, funciones flecha, closures, funciones de orden superior — domina la organización del código."
+      },
+      "closures": {
+        "title": "Closures",
+        "description": "Alcance léxico, closures, captura de variables — conceptos avanzados de scope."
+      },
+      "object": {
+        "title": "Objetos y Prototipos",
+        "description": "Creación de objetos, acceso a propiedades, cadena de prototipos — entiende el modelo de objetos de JavaScript."
+      },
+      "prototypes": {
+        "title": "Prototipos e Herencia",
+        "description": "Cadena de prototipos, patrones de herencia, Object.create — análisis profundo de la herencia de objetos."
+      },
+      "array": {
+        "title": "Arrays",
+        "description": "Métodos de array, iteración, transformación — trabaja con colecciones de datos."
+      },
+      "string": {
+        "title": "Strings",
+        "description": "Métodos de string, template literals, coincidencia de patrones — manipulación de texto en JavaScript."
+      },
+      "destructuring": {
+        "title": "Desestructuración",
+        "description": "Desestructuración de arrays y objetos — extrae valores eficientemente de estructuras de datos complejas."
+      },
+      "strictmode": {
+        "title": "Modo Estricto",
+        "description": "Opta por un JavaScript más seguro con 'use strict' — previene errores silenciosos y patrones incorrectos."
+      },
+      "promise": {
+        "title": "Promises y Async",
+        "description": "Promises, async/await, manejo de errores — gestiona operaciones asincrónicas."
+      },
+      "asyncpatterns": {
+        "title": "Patrones Async Avanzados",
+        "description": "Iteradores async, generadores y patrones — domina flujos asincróicos complejos."
+      },
+      "error": {
+        "title": "Manejo de Errores",
+        "description": "Try/catch, tipos de errores, errores personalizados — gestión robusta de errores."
+      },
+      "modules": {
+        "title": "Módulos",
+        "description": "Sistema de módulos ES: exports nombrados/por defecto, import dinámico, patrones de módulos."
+      },
+      "symbol": {
+        "title": "Símbolos",
+        "description": "Crea símbolos únicos e inmutables — patrones avanzados de identidad y privacidad."
+      },
+      "generator": {
+        "title": "Generadores e Iteradores",
+        "description": "Funciones generadoras, iteradores y el protocolo iterable — patrones de iteración avanzados."
+      },
+      "regex": {
+        "title": "Expresiones Regulares",
+        "description": "Coincidencia de patrones con regex — búsqueda y validación de texto potente."
+      },
+      "json": {
+        "title": "JSON",
+        "description": "Serialización y parsing de JSON — trabaja con datos estructurados."
+      },
+      "map": {
+        "title": "Map y Set",
+        "description": "Colecciones Map y Set — mejores alternativas a objetos y arrays para casos específicos."
+      },
+      "weakmap": {
+        "title": "WeakMap y WeakSet",
+        "description": "Referencias débiles para recolección de basura — estructuras de datos eficientes en memoria."
+      },
+      "proxy": {
+        "title": "Proxies y Reflect",
+        "description": "Metaprogramación con proxies — intercepta y personaliza operaciones en objetos."
+      },
+      "reflect": {
+        "title": "API Reflect",
+        "description": "Metaprogramación con Reflect — forma más limpia de manipular objetos."
+      },
+      "math": {
+        "title": "Objeto Math",
+        "description": "Funciones matemáticas y constantes — realiza cálculos y operaciones aleatorias."
+      },
+      "date": {
+        "title": "Fecha y Hora",
+        "description": "Trabaja con fechas y zonas horarias — gestión de datos temporales."
+      },
+      "url": {
+        "title": "URL y URLSearchParams",
+        "description": "Trabaja con URLs y parámetros de consulta — análisis y manipulación de URLs."
+      },
+      "designpatterns": {
+        "title": "Patrones de Diseño",
+        "description": "Patrones comunes de JavaScript — soluciones probadas para problemas recurrentes."
+      },
+      "functionalprogramming": {
+        "title": "Programación Funcional",
+        "description": "Paradigmas funcionales en JavaScript — funciones puras, inmutabilidad, composición."
+      },
+      "algorithms": {
+        "title": "Algoritmos",
+        "description": "Algoritmos fundamentales — ordenamiento, búsqueda y recorrido de grafos."
+      },
+      "typedarrays": {
+        "title": "TypedArrays y Buffers",
+        "description": "Manejo de datos binarios de bajo nivel — trabaja con ArrayBuffer y typed arrays."
+      }
+    }
   }
 }

@@ -3,10 +3,14 @@ import { useTranslations } from 'next-intl'
 import { useLearningPathProgress } from '../hooks/useLearningPathProgress'
 import { TopicProgressCard } from './TopicProgressCard'
 import { learningPath } from '@/features/learning-path/infrastructure/data/learningPathConfig'
+import { getLocalizedLearningPath } from '@/features/learning-path/infrastructure/data/learningPathTranslations'
+import { useLocale } from 'next-intl'
 
 export function LearningPathView() {
   const t = useTranslations('learningPath')
+  const locale = useLocale()
   const progressMap = useLearningPathProgress()
+  const localizedLearningPath = getLocalizedLearningPath(learningPath, locale)
 
   // Compute overall stats
   const allValues = Array.from(progressMap.values())
@@ -39,7 +43,7 @@ export function LearningPathView() {
 
       {/* Topic cards sorted by order */}
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
-        {[...learningPath].sort((a, b) => a.order - b.order).map((section) => {
+        {[...localizedLearningPath].sort((a, b) => a.order - b.order).map((section) => {
           const progress = progressMap.get(section.topicKey) ?? { total: 0, completed: 0, pct: 0 }
           return (
             <TopicProgressCard key={section.topicKey} section={section} progress={progress} />

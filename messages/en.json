@@ -118,6 +118,144 @@
     "subtitle": "Based on roadmap.sh/javascript",
     "overallProgress": "Overall Progress",
     "exercises": "exercises",
-    "complete": "complete"
+    "complete": "complete",
+    "topics": {
+      "variables": {
+        "title": "Variables & Scope",
+        "description": "Master let, const, var, hoisting, and block scope — the foundation of JavaScript."
+      },
+      "boolean": {
+        "title": "Data Types - Boolean",
+        "description": "Working with boolean values and truthiness — fundamental to conditional logic."
+      },
+      "number": {
+        "title": "Data Types - Numbers",
+        "description": "Numeric operations, special values (NaN, Infinity), and precision — handling numbers correctly."
+      },
+      "bigint": {
+        "title": "Data Types - BigInt",
+        "description": "Arbitrary-precision integers — working with numbers beyond JavaScript's safe integer limit."
+      },
+      "operators": {
+        "title": "Operators",
+        "description": "Arithmetic, comparison, logical, nullish coalescing, and modern ES2021+ operators."
+      },
+      "typecoercion": {
+        "title": "Type Coercion",
+        "description": "Understand implicit and explicit type conversion — one of JavaScript's most misunderstood features."
+      },
+      "controlflow": {
+        "title": "Control Flow",
+        "description": "if/else, switch, loops, break/continue, generators — how JavaScript makes decisions."
+      },
+      "function": {
+        "title": "Functions",
+        "description": "Function declarations, arrow functions, closures, and higher-order functions — mastering code organization."
+      },
+      "closures": {
+        "title": "Closures",
+        "description": "Lexical scoping, closures, variable capture — advanced scope concepts."
+      },
+      "object": {
+        "title": "Objects & Prototypes",
+        "description": "Object creation, property access, prototype chain — understanding JavaScript's object model."
+      },
+      "prototypes": {
+        "title": "Prototypes & Inheritance",
+        "description": "Prototype chain, inheritance patterns, Object.create — deep dive into object inheritance."
+      },
+      "array": {
+        "title": "Arrays",
+        "description": "Array methods, iteration, transformation — working with collections of data."
+      },
+      "string": {
+        "title": "Strings",
+        "description": "String methods, template literals, pattern matching — text manipulation in JavaScript."
+      },
+      "destructuring": {
+        "title": "Destructuring",
+        "description": "Array and object destructuring — extracting values efficiently from complex data structures."
+      },
+      "strictmode": {
+        "title": "Strict Mode",
+        "description": "Opt into safer JavaScript with 'use strict' — prevents silent errors and bad patterns."
+      },
+      "promise": {
+        "title": "Promises & Async",
+        "description": "Promises, async/await, error handling — managing asynchronous operations."
+      },
+      "asyncpatterns": {
+        "title": "Advanced Async Patterns",
+        "description": "Async iterators, generators, and patterns — mastering complex asynchronous flows."
+      },
+      "error": {
+        "title": "Error Handling",
+        "description": "Try/catch, error types, custom errors — robust error management."
+      },
+      "modules": {
+        "title": "Modules",
+        "description": "ES module system: named/default exports, dynamic import, and module patterns."
+      },
+      "symbol": {
+        "title": "Symbols",
+        "description": "Creating unique and immutable symbols — advanced identity and privacy patterns."
+      },
+      "generator": {
+        "title": "Generators & Iterators",
+        "description": "Generator functions, iterators, and the iterable protocol — advanced iteration patterns."
+      },
+      "regex": {
+        "title": "Regular Expressions",
+        "description": "Pattern matching with regex — powerful text search and validation."
+      },
+      "json": {
+        "title": "JSON",
+        "description": "JSON serialization and parsing — working with structured data."
+      },
+      "map": {
+        "title": "Map & Set",
+        "description": "Map and Set collections — better alternatives to objects and arrays for specific use cases."
+      },
+      "weakmap": {
+        "title": "WeakMap & WeakSet",
+        "description": "Weak references for garbage collection — memory-efficient data structures."
+      },
+      "proxy": {
+        "title": "Proxies & Reflect",
+        "description": "Metaprogramming with proxies — intercept and customize operations on objects."
+      },
+      "reflect": {
+        "title": "Reflect API",
+        "description": "Metaprogramming with Reflect — cleaner way to manipulate objects."
+      },
+      "math": {
+        "title": "Math Object",
+        "description": "Mathematical functions and constants — performing calculations and random operations."
+      },
+      "date": {
+        "title": "Date & Time",
+        "description": "Working with dates and timezones — managing temporal data."
+      },
+      "url": {
+        "title": "URL & URLSearchParams",
+        "description": "Working with URLs and query parameters — parsing and manipulating URLs."
+      },
+      "designpatterns": {
+        "title": "Design Patterns",
+        "description": "Common JavaScript design patterns — proven solutions to recurring problems."
+      },
+      "functionalprogramming": {
+        "title": "Functional Programming",
+        "description": "Functional paradigms in JavaScript — pure functions, immutability, composition."
+      },
+      "algorithms": {
+        "title": "Algorithms",
+        "description": "Core algorithms — sorting, searching, and graph traversal."
+      },
+      "typedarrays": {
+        "title": "TypedArrays & Buffers",
+        "description": "Low-level binary data handling — working with ArrayBuffer and typed arrays."
+      }
+    }
   }
 }
