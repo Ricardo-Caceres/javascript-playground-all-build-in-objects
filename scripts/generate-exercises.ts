@@ -1,13 +1,13 @@
 import fs from "fs";
 import path from "path";
-import { generateExerciseWithLLM } from "./lib/llm-client";
-import { validateExercise } from "./lib/validator";
+import { generateExerciseWithLLM } from "./lib/llm-client.ts";
+import { validateExercise } from "./lib/validator.ts";
 import {
   writeExerciseFile,
   ensureDirectoryStructure,
   generateExerciseTypeScript,
-} from "./lib/file-writer";
-import { learningPath } from "../src/features/learning-path/infrastructure/data/learningPathConfig";
+} from "./lib/file-writer.ts";
+import { learningPath } from "../src/features/learning-path/infrastructure/data/learningPathConfig.ts";
 
 interface GenerationState {
   totalAttempted: number;
