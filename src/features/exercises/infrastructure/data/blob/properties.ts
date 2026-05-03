@@ -13,7 +13,7 @@ export const blobPropertiesExercises: Exercise[] = [
     tests: [
       { description: "size of '0123456789' is 10", assertion:"expect(result).toBe(10)" },
       { description: 'size is a number', assertion:"expect(typeof result).toBe('number')" },
-      { description: 'size is non-negative', assertion:"expect(result).toBeGreaterThanOrEqual(0)" },
+      { description: 'size is non-negative', assertion:"expect(result >= 0).toBe(true)" },
       { description: "size of 'abcdefghij' is 10", assertion:"expect(new Blob(['abcdefghij']).size).toBe(10)" },
       { description: 'size of 1-char is 1', assertion:"expect(new Blob(['x']).size).toBe(1)" },
     ],
@@ -120,7 +120,7 @@ b.size  // → 6 (concatenated)`,
     solution: `new Blob([]).size`,
     tests: [
       { description: 'empty blob size is 0', assertion:"expect(result).toBe(0)" },
-      { description: 'size is not negative', assertion:"expect(result).toBeGreaterThanOrEqual(0)" },
+      { description: 'size is not negative', assertion:"expect(result >= 0).toBe(true)" },
       { description: 'instanceof Blob', assertion:"expect(new Blob([]) instanceof Blob).toBe(true)" },
       { description: 'empty string part is also 0', assertion:"expect(new Blob(['']).size).toBe(0)" },
       { description: 'size is a number', assertion:"expect(typeof result).toBe('number')" },

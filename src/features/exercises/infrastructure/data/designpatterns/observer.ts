@@ -219,7 +219,7 @@ Example:
 \`\`\`javascript
 const emitter = new EventEmitter()
 emitter.emit('nonexistent') // Should not throw
-expect(() => emitter.emit('test')).not.toThrow()
+expect((() => { try { emitter.emit('test'); return true; } catch(e) { return false; } })()).toBe(true)
 \`\`\``,
     category: 'instance-method',
     difficulty: 'intermediate',

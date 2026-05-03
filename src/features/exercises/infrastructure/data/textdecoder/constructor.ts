@@ -13,7 +13,7 @@ export const textDecoderConstructorExercises: Exercise[] = [
     tests: [
       { description: "default encoding is 'utf-8'", assertion:"expect(result).toBe('utf-8')" },
       { description: 'encoding is a string', assertion:"expect(typeof result).toBe('string')" },
-      { description: 'encoding is not empty', assertion:"expect(result.length).toBeGreaterThan(0)" },
+      { description: 'encoding is not empty', assertion:"expect(result.length > 0).toBe(true)" },
       { description: 'two decoders share the same default encoding', assertion:"expect(result).toBe(result)" },
       { description: "encoding is not 'utf-16'", assertion:"expect(result !== 'utf-16').toBe(true)" },
     ],
