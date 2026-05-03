@@ -50462,5 +50462,3713 @@
         "description": "retorna función primero"
       }
     ]
+  },
+  "algorithms-array-iteration": {
+    "title": "Algorithms Array — Iteration",
+    "description": "Complete this Algorithms Array exercise.",
+    "hints": [
+      "Read the test descriptions for hints."
+    ],
+    "tests": [
+      {
+        "description": "Exercise passes"
+      }
+    ]
+  },
+  "algorithms-binary-search": {
+    "title": "Algorithms Binary — Search",
+    "description": "Complete this Algorithms Binary exercise.",
+    "hints": [
+      "Read the test descriptions for hints."
+    ],
+    "tests": [
+      {
+        "description": "Exercise passes"
+      }
+    ]
+  },
+  "algorithms-bubble-sort": {
+    "title": "Algorithms Bubble — Sort",
+    "description": "Complete this Algorithms Bubble exercise.",
+    "hints": [
+      "Read the test descriptions for hints."
+    ],
+    "tests": [
+      {
+        "description": "Exercise passes"
+      }
+    ]
+  },
+  "algorithms-complexity-analysis": {
+    "title": "Algorithms Complexity — Analysis",
+    "description": "Complete this Algorithms Complexity exercise.",
+    "hints": [
+      "Read the test descriptions for hints."
+    ],
+    "tests": [
+      {
+        "description": "Exercise passes"
+      }
+    ]
+  },
+  "algorithms-dynamic-programming": {
+    "title": "Algorithms Dynamic — Programming",
+    "description": "Complete this Algorithms Dynamic exercise.",
+    "hints": [
+      "Read the test descriptions for hints."
+    ],
+    "tests": [
+      {
+        "description": "Exercise passes"
+      }
+    ]
+  },
+  "algorithms-graph-traversal": {
+    "title": "Algorithms Graph — Traversal",
+    "description": "Complete this Algorithms Graph exercise.",
+    "hints": [
+      "Read the test descriptions for hints."
+    ],
+    "tests": [
+      {
+        "description": "Exercise passes"
+      }
+    ]
+  },
+  "algorithms-linear-search": {
+    "title": "Algorithms Linear — Search",
+    "description": "Complete this Algorithms Linear exercise.",
+    "hints": [
+      "Read the test descriptions for hints."
+    ],
+    "tests": [
+      {
+        "description": "Exercise passes"
+      }
+    ]
+  },
+  "algorithms-quick-sort": {
+    "title": "Algorithms Quick — Sort",
+    "description": "Complete this Algorithms Quick exercise.",
+    "hints": [
+      "Read the test descriptions for hints."
+    ],
+    "tests": [
+      {
+        "description": "Exercise passes"
+      }
+    ]
+  },
+  "algorithms-recursion": {
+    "title": "Algorithms — Recursion",
+    "description": "Complete this Algorithms exercise.",
+    "hints": [
+      "Read the test descriptions for hints."
+    ],
+    "tests": [
+      {
+        "description": "Exercise passes"
+      }
+    ]
+  },
+  "array-access": {
+    "title": "Array — Access",
+    "description": "Complete this Array exercise.",
+    "hints": [
+      "Read the test descriptions for hints."
+    ],
+    "tests": [
+      {
+        "description": "Exercise passes"
+      }
+    ]
+  },
+  "array-concat": {
+    "title": "Array — Concat",
+    "description": "Complete this Array exercise.",
+    "hints": [
+      "Read the test descriptions for hints."
+    ],
+    "tests": [
+      {
+        "description": "Exercise passes"
+      }
+    ]
+  },
+  "array-creation": {
+    "title": "Array — Creation",
+    "description": "Complete this Array exercise.",
+    "hints": [
+      "Read the test descriptions for hints."
+    ],
+    "tests": [
+      {
+        "description": "Exercise passes"
+      }
+    ]
+  },
+  "array-filter": {
+    "title": "Array — Filter",
+    "description": "Complete this Array exercise.",
+    "hints": [
+      "Read the test descriptions for hints."
+    ],
+    "tests": [
+      {
+        "description": "Exercise passes"
+      }
+    ]
+  },
+  "array-find": {
+    "title": "Array — Find",
+    "description": "Complete this Array exercise.",
+    "hints": [
+      "Read the test descriptions for hints."
+    ],
+    "tests": [
+      {
+        "description": "Exercise passes"
+      }
+    ]
+  },
+  "array-flat": {
+    "title": "Array — Flat",
+    "description": "Complete this Array exercise.",
+    "hints": [
+      "Read the test descriptions for hints."
+    ],
+    "tests": [
+      {
+        "description": "Exercise passes"
+      }
+    ]
+  },
+  "array-length": {
+    "title": "Array — Length",
+    "description": "Complete this Array exercise.",
+    "hints": [
+      "Read the test descriptions for hints."
+    ],
+    "tests": [
+      {
+        "description": "Exercise passes"
+      }
+    ]
+  },
+  "array-map": {
+    "title": "Array — Map",
+    "description": "Complete this Array exercise.",
+    "hints": [
+      "Read the test descriptions for hints."
+    ],
+    "tests": [
+      {
+        "description": "Exercise passes"
+      }
+    ]
+  },
+  "array-reduce": {
+    "title": "Array — Reduce",
+    "description": "Complete this Array exercise.",
+    "hints": [
+      "Read the test descriptions for hints."
+    ],
+    "tests": [
+      {
+        "description": "Exercise passes"
+      }
+    ]
+  },
+  "array-slice": {
+    "title": "Array — Slice",
+    "description": "Complete this Array exercise.",
+    "hints": [
+      "Read the test descriptions for hints."
+    ],
+    "tests": [
+      {
+        "description": "Exercise passes"
+      }
+    ]
+  },
+  "array-some-every": {
+    "title": "Array Some — Every",
+    "description": "Complete this Array Some exercise.",
+    "hints": [
+      "Read the test descriptions for hints."
+    ],
+    "tests": [
+      {
+        "description": "Exercise passes"
+      }
+    ]
+  },
+  "array-sort-custom": {
+    "title": "Array Sort — Custom",
+    "description": "Complete this Array Sort exercise.",
+    "hints": [
+      "Read the test descriptions for hints."
+    ],
+    "tests": [
+      {
+        "description": "Exercise passes"
+      }
+    ]
+  },
+  "array-splice": {
+    "title": "Array — Splice",
+    "description": "Complete this Array exercise.",
+    "hints": [
+      "Read the test descriptions for hints."
+    ],
+    "tests": [
+      {
+        "description": "Exercise passes"
+      }
+    ]
+  },
+  "async-await-basics": {
+    "title": "Async Await — Basics",
+    "description": "Complete this Async Await exercise.",
+    "hints": [
+      "Read the test descriptions for hints."
+    ],
+    "tests": [
+      {
+        "description": "Exercise passes"
+      }
+    ]
+  },
+  "async-await-error-handling": {
+    "title": "Async Await Error — Handling",
+    "description": "Complete this Async Await Error exercise.",
+    "hints": [
+      "Read the test descriptions for hints."
+    ],
+    "tests": [
+      {
+        "description": "Exercise passes"
+      }
+    ]
+  },
+  "async-await-loops": {
+    "title": "Async Await — Loops",
+    "description": "Complete this Async Await exercise.",
+    "hints": [
+      "Read the test descriptions for hints."
+    ],
+    "tests": [
+      {
+        "description": "Exercise passes"
+      }
+    ]
+  },
+  "asyncpatterns-async-generator": {
+    "title": "Asyncpatterns Async — Generator",
+    "description": "Complete this Asyncpatterns Async exercise.",
+    "hints": [
+      "Read the test descriptions for hints."
+    ],
+    "tests": [
+      {
+        "description": "Exercise passes"
+      }
+    ]
+  },
+  "asyncpatterns-backpressure": {
+    "title": "Asyncpatterns — Backpressure",
+    "description": "Complete this Asyncpatterns exercise.",
+    "hints": [
+      "Read the test descriptions for hints."
+    ],
+    "tests": [
+      {
+        "description": "Exercise passes"
+      }
+    ]
+  },
+  "asyncpatterns-complex-flows": {
+    "title": "Asyncpatterns Complex — Flows",
+    "description": "Complete this Asyncpatterns Complex exercise.",
+    "hints": [
+      "Read the test descriptions for hints."
+    ],
+    "tests": [
+      {
+        "description": "Exercise passes"
+      }
+    ]
+  },
+  "asyncpatterns-for-await-of": {
+    "title": "Asyncpatterns For Await — Of",
+    "description": "Complete this Asyncpatterns For Await exercise.",
+    "hints": [
+      "Read the test descriptions for hints."
+    ],
+    "tests": [
+      {
+        "description": "Exercise passes"
+      }
+    ]
+  },
+  "asyncpatterns-generator-basics": {
+    "title": "Asyncpatterns Generator — Basics",
+    "description": "Complete this Asyncpatterns Generator exercise.",
+    "hints": [
+      "Read the test descriptions for hints."
+    ],
+    "tests": [
+      {
+        "description": "Exercise passes"
+      }
+    ]
+  },
+  "asyncpatterns-generator-yield": {
+    "title": "Asyncpatterns Generator — Yield",
+    "description": "Complete this Asyncpatterns Generator exercise.",
+    "hints": [
+      "Read the test descriptions for hints."
+    ],
+    "tests": [
+      {
+        "description": "Exercise passes"
+      }
+    ]
+  },
+  "asyncpatterns-iterable-protocol": {
+    "title": "Asyncpatterns Iterable — Protocol",
+    "description": "Complete this Asyncpatterns Iterable exercise.",
+    "hints": [
+      "Read the test descriptions for hints."
+    ],
+    "tests": [
+      {
+        "description": "Exercise passes"
+      }
+    ]
+  },
+  "bigint-basic-operations": {
+    "title": "Bigint Basic — Operations",
+    "description": "Complete this Bigint Basic exercise.",
+    "hints": [
+      "Read the test descriptions for hints."
+    ],
+    "tests": [
+      {
+        "description": "Exercise passes"
+      }
+    ]
+  },
+  "bigint-comparison": {
+    "title": "Bigint — Comparison",
+    "description": "Complete this Bigint exercise.",
+    "hints": [
+      "Read the test descriptions for hints."
+    ],
+    "tests": [
+      {
+        "description": "Exercise passes"
+      }
+    ]
+  },
+  "bigint-conversions": {
+    "title": "Bigint — Conversions",
+    "description": "Complete this Bigint exercise.",
+    "hints": [
+      "Read the test descriptions for hints."
+    ],
+    "tests": [
+      {
+        "description": "Exercise passes"
+      }
+    ]
+  },
+  "bigint-creation": {
+    "title": "Bigint — Creation",
+    "description": "Complete this Bigint exercise.",
+    "hints": [
+      "Read the test descriptions for hints."
+    ],
+    "tests": [
+      {
+        "description": "Exercise passes"
+      }
+    ]
+  },
+  "bigint-type-checking": {
+    "title": "Bigint Type — Checking",
+    "description": "Complete this Bigint Type exercise.",
+    "hints": [
+      "Read the test descriptions for hints."
+    ],
+    "tests": [
+      {
+        "description": "Exercise passes"
+      }
+    ]
+  },
+  "boolean-basic": {
+    "title": "Boolean — Basic",
+    "description": "Complete this Boolean exercise.",
+    "hints": [
+      "Read the test descriptions for hints."
+    ],
+    "tests": [
+      {
+        "description": "Exercise passes"
+      }
+    ]
+  },
+  "boolean-comparison": {
+    "title": "Boolean — Comparison",
+    "description": "Complete this Boolean exercise.",
+    "hints": [
+      "Read the test descriptions for hints."
+    ],
+    "tests": [
+      {
+        "description": "Exercise passes"
+      }
+    ]
+  },
+  "boolean-conversion": {
+    "title": "Boolean — Conversion",
+    "description": "Complete this Boolean exercise.",
+    "hints": [
+      "Read the test descriptions for hints."
+    ],
+    "tests": [
+      {
+        "description": "Exercise passes"
+      }
+    ]
+  },
+  "boolean-creation": {
+    "title": "Boolean — Creation",
+    "description": "Complete this Boolean exercise.",
+    "hints": [
+      "Read the test descriptions for hints."
+    ],
+    "tests": [
+      {
+        "description": "Exercise passes"
+      }
+    ]
+  },
+  "boolean-logical": {
+    "title": "Boolean — Logical",
+    "description": "Complete this Boolean exercise.",
+    "hints": [
+      "Read the test descriptions for hints."
+    ],
+    "tests": [
+      {
+        "description": "Exercise passes"
+      }
+    ]
+  },
+  "boolean-truthy-falsy": {
+    "title": "Boolean Truthy — Falsy",
+    "description": "Complete this Boolean Truthy exercise.",
+    "hints": [
+      "Read the test descriptions for hints."
+    ],
+    "tests": [
+      {
+        "description": "Exercise passes"
+      }
+    ]
+  },
+  "closures-basic": {
+    "title": "Closures — Basic",
+    "description": "Complete this Closures exercise.",
+    "hints": [
+      "Read the test descriptions for hints."
+    ],
+    "tests": [
+      {
+        "description": "Exercise passes"
+      }
+    ]
+  },
+  "closures-complex-scenarios": {
+    "title": "Closures Complex — Scenarios",
+    "description": "Complete this Closures Complex exercise.",
+    "hints": [
+      "Read the test descriptions for hints."
+    ],
+    "tests": [
+      {
+        "description": "Exercise passes"
+      }
+    ]
+  },
+  "closures-counter": {
+    "title": "Closures — Counter",
+    "description": "Complete this Closures exercise.",
+    "hints": [
+      "Read the test descriptions for hints."
+    ],
+    "tests": [
+      {
+        "description": "Exercise passes"
+      }
+    ]
+  },
+  "closures-data-privacy": {
+    "title": "Closures Data — Privacy",
+    "description": "Complete this Closures Data exercise.",
+    "hints": [
+      "Read the test descriptions for hints."
+    ],
+    "tests": [
+      {
+        "description": "Exercise passes"
+      }
+    ]
+  },
+  "closures-factory": {
+    "title": "Closures — Factory",
+    "description": "Complete this Closures exercise.",
+    "hints": [
+      "Read the test descriptions for hints."
+    ],
+    "tests": [
+      {
+        "description": "Exercise passes"
+      }
+    ]
+  },
+  "closures-loop-binding": {
+    "title": "Closures Loop — Binding",
+    "description": "Complete this Closures Loop exercise.",
+    "hints": [
+      "Read the test descriptions for hints."
+    ],
+    "tests": [
+      {
+        "description": "Exercise passes"
+      }
+    ]
+  },
+  "closures-memory-implications": {
+    "title": "Closures Memory — Implications",
+    "description": "Complete this Closures Memory exercise.",
+    "hints": [
+      "Read the test descriptions for hints."
+    ],
+    "tests": [
+      {
+        "description": "Exercise passes"
+      }
+    ]
+  },
+  "closures-module-pattern": {
+    "title": "Closures Module — Pattern",
+    "description": "Complete this Closures Module exercise.",
+    "hints": [
+      "Read the test descriptions for hints."
+    ],
+    "tests": [
+      {
+        "description": "Exercise passes"
+      }
+    ]
+  },
+  "closures-multiple-vars": {
+    "title": "Closures Multiple — Vars",
+    "description": "Complete this Closures Multiple exercise.",
+    "hints": [
+      "Read the test descriptions for hints."
+    ],
+    "tests": [
+      {
+        "description": "Exercise passes"
+      }
+    ]
+  },
+  "closures-performance": {
+    "title": "Closures — Performance",
+    "description": "Complete this Closures exercise.",
+    "hints": [
+      "Read the test descriptions for hints."
+    ],
+    "tests": [
+      {
+        "description": "Exercise passes"
+      }
+    ]
+  },
+  "controlflow-break-continue": {
+    "title": "Controlflow Break — Continue",
+    "description": "Complete this Controlflow Break exercise.",
+    "hints": [
+      "Read the test descriptions for hints."
+    ],
+    "tests": [
+      {
+        "description": "Exercise passes"
+      }
+    ]
+  },
+  "controlflow-do-while": {
+    "title": "Controlflow Do — While",
+    "description": "Complete this Controlflow Do exercise.",
+    "hints": [
+      "Read the test descriptions for hints."
+    ],
+    "tests": [
+      {
+        "description": "Exercise passes"
+      }
+    ]
+  },
+  "controlflow-early-return": {
+    "title": "Controlflow Early — Return",
+    "description": "Complete this Controlflow Early exercise.",
+    "hints": [
+      "Read the test descriptions for hints."
+    ],
+    "tests": [
+      {
+        "description": "Exercise passes"
+      }
+    ]
+  },
+  "controlflow-for-in": {
+    "title": "Controlflow For — In",
+    "description": "Complete this Controlflow For exercise.",
+    "hints": [
+      "Read the test descriptions for hints."
+    ],
+    "tests": [
+      {
+        "description": "Exercise passes"
+      }
+    ]
+  },
+  "controlflow-for-loop": {
+    "title": "Controlflow For — Loop",
+    "description": "Complete this Controlflow For exercise.",
+    "hints": [
+      "Read the test descriptions for hints."
+    ],
+    "tests": [
+      {
+        "description": "Exercise passes"
+      }
+    ]
+  },
+  "controlflow-for-of": {
+    "title": "Controlflow For — Of",
+    "description": "Complete this Controlflow For exercise.",
+    "hints": [
+      "Read the test descriptions for hints."
+    ],
+    "tests": [
+      {
+        "description": "Exercise passes"
+      }
+    ]
+  },
+  "controlflow-generators": {
+    "title": "Controlflow — Generators",
+    "description": "Complete this Controlflow exercise.",
+    "hints": [
+      "Read the test descriptions for hints."
+    ],
+    "tests": [
+      {
+        "description": "Exercise passes"
+      }
+    ]
+  },
+  "controlflow-if-else": {
+    "title": "Controlflow If — Else",
+    "description": "Complete this Controlflow If exercise.",
+    "hints": [
+      "Read the test descriptions for hints."
+    ],
+    "tests": [
+      {
+        "description": "Exercise passes"
+      }
+    ]
+  },
+  "controlflow-nested-loops": {
+    "title": "Controlflow Nested — Loops",
+    "description": "Complete this Controlflow Nested exercise.",
+    "hints": [
+      "Read the test descriptions for hints."
+    ],
+    "tests": [
+      {
+        "description": "Exercise passes"
+      }
+    ]
+  },
+  "controlflow-short-circuit": {
+    "title": "Controlflow Short — Circuit",
+    "description": "Complete this Controlflow Short exercise.",
+    "hints": [
+      "Read the test descriptions for hints."
+    ],
+    "tests": [
+      {
+        "description": "Exercise passes"
+      }
+    ]
+  },
+  "controlflow-switch": {
+    "title": "Controlflow — Switch",
+    "description": "Complete this Controlflow exercise.",
+    "hints": [
+      "Read the test descriptions for hints."
+    ],
+    "tests": [
+      {
+        "description": "Exercise passes"
+      }
+    ]
+  },
+  "controlflow-switch-fallthrough": {
+    "title": "Controlflow Switch — Fallthrough",
+    "description": "Complete this Controlflow Switch exercise.",
+    "hints": [
+      "Read the test descriptions for hints."
+    ],
+    "tests": [
+      {
+        "description": "Exercise passes"
+      }
+    ]
+  },
+  "controlflow-while-loop": {
+    "title": "Controlflow While — Loop",
+    "description": "Complete this Controlflow While exercise.",
+    "hints": [
+      "Read the test descriptions for hints."
+    ],
+    "tests": [
+      {
+        "description": "Exercise passes"
+      }
+    ]
+  },
+  "date-arithmetic": {
+    "title": "Date — Arithmetic",
+    "description": "Complete this Date exercise.",
+    "hints": [
+      "Read the test descriptions for hints."
+    ],
+    "tests": [
+      {
+        "description": "Exercise passes"
+      }
+    ]
+  },
+  "date-creation": {
+    "title": "Date — Creation",
+    "description": "Complete this Date exercise.",
+    "hints": [
+      "Read the test descriptions for hints."
+    ],
+    "tests": [
+      {
+        "description": "Exercise passes"
+      }
+    ]
+  },
+  "date-edge-cases": {
+    "title": "Date Edge — Cases",
+    "description": "Complete this Date Edge exercise.",
+    "hints": [
+      "Read the test descriptions for hints."
+    ],
+    "tests": [
+      {
+        "description": "Exercise passes"
+      }
+    ]
+  },
+  "date-epoch-calculations": {
+    "title": "Date Epoch — Calculations",
+    "description": "Complete this Date Epoch exercise.",
+    "hints": [
+      "Read the test descriptions for hints."
+    ],
+    "tests": [
+      {
+        "description": "Exercise passes"
+      }
+    ]
+  },
+  "date-formatting": {
+    "title": "Date — Formatting",
+    "description": "Complete this Date exercise.",
+    "hints": [
+      "Read the test descriptions for hints."
+    ],
+    "tests": [
+      {
+        "description": "Exercise passes"
+      }
+    ]
+  },
+  "date-getters": {
+    "title": "Date — Getters",
+    "description": "Complete this Date exercise.",
+    "hints": [
+      "Read the test descriptions for hints."
+    ],
+    "tests": [
+      {
+        "description": "Exercise passes"
+      }
+    ]
+  },
+  "date-parsing": {
+    "title": "Date — Parsing",
+    "description": "Complete this Date exercise.",
+    "hints": [
+      "Read the test descriptions for hints."
+    ],
+    "tests": [
+      {
+        "description": "Exercise passes"
+      }
+    ]
+  },
+  "date-timezones": {
+    "title": "Date — Timezones",
+    "description": "Complete this Date exercise.",
+    "hints": [
+      "Read the test descriptions for hints."
+    ],
+    "tests": [
+      {
+        "description": "Exercise passes"
+      }
+    ]
+  },
+  "designpatterns-adapter": {
+    "title": "Designpatterns — Adapter",
+    "description": "Complete this Designpatterns exercise.",
+    "hints": [
+      "Read the test descriptions for hints."
+    ],
+    "tests": [
+      {
+        "description": "Exercise passes"
+      }
+    ]
+  },
+  "designpatterns-chain-of-responsibility": {
+    "title": "Designpatterns Chain Of — Responsibility",
+    "description": "Complete this Designpatterns Chain Of exercise.",
+    "hints": [
+      "Read the test descriptions for hints."
+    ],
+    "tests": [
+      {
+        "description": "Exercise passes"
+      }
+    ]
+  },
+  "designpatterns-composite": {
+    "title": "Designpatterns — Composite",
+    "description": "Complete this Designpatterns exercise.",
+    "hints": [
+      "Read the test descriptions for hints."
+    ],
+    "tests": [
+      {
+        "description": "Exercise passes"
+      }
+    ]
+  },
+  "designpatterns-decorator": {
+    "title": "Designpatterns — Decorator",
+    "description": "Complete this Designpatterns exercise.",
+    "hints": [
+      "Read the test descriptions for hints."
+    ],
+    "tests": [
+      {
+        "description": "Exercise passes"
+      }
+    ]
+  },
+  "designpatterns-factory": {
+    "title": "Designpatterns — Factory",
+    "description": "Complete this Designpatterns exercise.",
+    "hints": [
+      "Read the test descriptions for hints."
+    ],
+    "tests": [
+      {
+        "description": "Exercise passes"
+      }
+    ]
+  },
+  "designpatterns-observer": {
+    "title": "Designpatterns — Observer",
+    "description": "Complete this Designpatterns exercise.",
+    "hints": [
+      "Read the test descriptions for hints."
+    ],
+    "tests": [
+      {
+        "description": "Exercise passes"
+      }
+    ]
+  },
+  "designpatterns-singleton": {
+    "title": "Designpatterns — Singleton",
+    "description": "Complete this Designpatterns exercise.",
+    "hints": [
+      "Read the test descriptions for hints."
+    ],
+    "tests": [
+      {
+        "description": "Exercise passes"
+      }
+    ]
+  },
+  "designpatterns-strategy": {
+    "title": "Designpatterns — Strategy",
+    "description": "Complete this Designpatterns exercise.",
+    "hints": [
+      "Read the test descriptions for hints."
+    ],
+    "tests": [
+      {
+        "description": "Exercise passes"
+      }
+    ]
+  },
+  "destructuring-array-basic": {
+    "title": "Destructuring Array — Basic",
+    "description": "Complete this Destructuring Array exercise.",
+    "hints": [
+      "Read the test descriptions for hints."
+    ],
+    "tests": [
+      {
+        "description": "Exercise passes"
+      }
+    ]
+  },
+  "destructuring-complex-patterns": {
+    "title": "Destructuring Complex — Patterns",
+    "description": "Complete this Destructuring Complex exercise.",
+    "hints": [
+      "Read the test descriptions for hints."
+    ],
+    "tests": [
+      {
+        "description": "Exercise passes"
+      }
+    ]
+  },
+  "destructuring-function-params": {
+    "title": "Destructuring Function — Params",
+    "description": "Complete this Destructuring Function exercise.",
+    "hints": [
+      "Read the test descriptions for hints."
+    ],
+    "tests": [
+      {
+        "description": "Exercise passes"
+      }
+    ]
+  },
+  "destructuring-nested": {
+    "title": "Destructuring — Nested",
+    "description": "Complete this Destructuring exercise.",
+    "hints": [
+      "Read the test descriptions for hints."
+    ],
+    "tests": [
+      {
+        "description": "Exercise passes"
+      }
+    ]
+  },
+  "destructuring-object-basic": {
+    "title": "Destructuring Object — Basic",
+    "description": "Complete this Destructuring Object exercise.",
+    "hints": [
+      "Read the test descriptions for hints."
+    ],
+    "tests": [
+      {
+        "description": "Exercise passes"
+      }
+    ]
+  },
+  "destructuring-renaming": {
+    "title": "Destructuring — Renaming",
+    "description": "Complete this Destructuring exercise.",
+    "hints": [
+      "Read the test descriptions for hints."
+    ],
+    "tests": [
+      {
+        "description": "Exercise passes"
+      }
+    ]
+  },
+  "destructuring-rest-element": {
+    "title": "Destructuring Rest — Element",
+    "description": "Complete this Destructuring Rest exercise.",
+    "hints": [
+      "Read the test descriptions for hints."
+    ],
+    "tests": [
+      {
+        "description": "Exercise passes"
+      }
+    ]
+  },
+  "destructuring-with-defaults": {
+    "title": "Destructuring With — Defaults",
+    "description": "Complete this Destructuring With exercise.",
+    "hints": [
+      "Read the test descriptions for hints."
+    ],
+    "tests": [
+      {
+        "description": "Exercise passes"
+      }
+    ]
+  },
+  "error-async-handling": {
+    "title": "Error Async — Handling",
+    "description": "Complete this Error Async exercise.",
+    "hints": [
+      "Read the test descriptions for hints."
+    ],
+    "tests": [
+      {
+        "description": "Exercise passes"
+      }
+    ]
+  },
+  "error-custom-errors": {
+    "title": "Error Custom — Errors",
+    "description": "Complete this Error Custom exercise.",
+    "hints": [
+      "Read the test descriptions for hints."
+    ],
+    "tests": [
+      {
+        "description": "Exercise passes"
+      }
+    ]
+  },
+  "error-finally": {
+    "title": "Error — Finally",
+    "description": "Complete this Error exercise.",
+    "hints": [
+      "Read the test descriptions for hints."
+    ],
+    "tests": [
+      {
+        "description": "Exercise passes"
+      }
+    ]
+  },
+  "error-message": {
+    "title": "Error — Message",
+    "description": "Complete this Error exercise.",
+    "hints": [
+      "Read the test descriptions for hints."
+    ],
+    "tests": [
+      {
+        "description": "Exercise passes"
+      }
+    ]
+  },
+  "error-propagation": {
+    "title": "Error — Propagation",
+    "description": "Complete this Error exercise.",
+    "hints": [
+      "Read the test descriptions for hints."
+    ],
+    "tests": [
+      {
+        "description": "Exercise passes"
+      }
+    ]
+  },
+  "error-recovery-patterns": {
+    "title": "Error Recovery — Patterns",
+    "description": "Complete this Error Recovery exercise.",
+    "hints": [
+      "Read the test descriptions for hints."
+    ],
+    "tests": [
+      {
+        "description": "Exercise passes"
+      }
+    ]
+  },
+  "error-retry-logic": {
+    "title": "Error Retry — Logic",
+    "description": "Complete this Error Retry exercise.",
+    "hints": [
+      "Read the test descriptions for hints."
+    ],
+    "tests": [
+      {
+        "description": "Exercise passes"
+      }
+    ]
+  },
+  "error-stack-trace": {
+    "title": "Error Stack — Trace",
+    "description": "Complete this Error Stack exercise.",
+    "hints": [
+      "Read the test descriptions for hints."
+    ],
+    "tests": [
+      {
+        "description": "Exercise passes"
+      }
+    ]
+  },
+  "error-throwing": {
+    "title": "Error — Throwing",
+    "description": "Complete this Error exercise.",
+    "hints": [
+      "Read the test descriptions for hints."
+    ],
+    "tests": [
+      {
+        "description": "Exercise passes"
+      }
+    ]
+  },
+  "error-try-catch": {
+    "title": "Error Try — Catch",
+    "description": "Complete this Error Try exercise.",
+    "hints": [
+      "Read the test descriptions for hints."
+    ],
+    "tests": [
+      {
+        "description": "Exercise passes"
+      }
+    ]
+  },
+  "error-types": {
+    "title": "Error — Types",
+    "description": "Complete this Error exercise.",
+    "hints": [
+      "Read the test descriptions for hints."
+    ],
+    "tests": [
+      {
+        "description": "Exercise passes"
+      }
+    ]
+  },
+  "function-arrow": {
+    "title": "Function — Arrow",
+    "description": "Complete this Function exercise.",
+    "hints": [
+      "Read the test descriptions for hints."
+    ],
+    "tests": [
+      {
+        "description": "Exercise passes"
+      }
+    ]
+  },
+  "function-callback": {
+    "title": "Function — Callback",
+    "description": "Complete this Function exercise.",
+    "hints": [
+      "Read the test descriptions for hints."
+    ],
+    "tests": [
+      {
+        "description": "Exercise passes"
+      }
+    ]
+  },
+  "function-closure": {
+    "title": "Function — Closure",
+    "description": "Complete this Function exercise.",
+    "hints": [
+      "Read the test descriptions for hints."
+    ],
+    "tests": [
+      {
+        "description": "Exercise passes"
+      }
+    ]
+  },
+  "function-declaration": {
+    "title": "Function — Declaration",
+    "description": "Complete this Function exercise.",
+    "hints": [
+      "Read the test descriptions for hints."
+    ],
+    "tests": [
+      {
+        "description": "Exercise passes"
+      }
+    ]
+  },
+  "function-default-params": {
+    "title": "Function Default — Params",
+    "description": "Complete this Function Default exercise.",
+    "hints": [
+      "Read the test descriptions for hints."
+    ],
+    "tests": [
+      {
+        "description": "Exercise passes"
+      }
+    ]
+  },
+  "function-expression": {
+    "title": "Function — Expression",
+    "description": "Complete this Function exercise.",
+    "hints": [
+      "Read the test descriptions for hints."
+    ],
+    "tests": [
+      {
+        "description": "Exercise passes"
+      }
+    ]
+  },
+  "function-higher-order": {
+    "title": "Function Higher — Order",
+    "description": "Complete this Function Higher exercise.",
+    "hints": [
+      "Read the test descriptions for hints."
+    ],
+    "tests": [
+      {
+        "description": "Exercise passes"
+      }
+    ]
+  },
+  "function-iife": {
+    "title": "Function — Iife",
+    "description": "Complete this Function exercise.",
+    "hints": [
+      "Read the test descriptions for hints."
+    ],
+    "tests": [
+      {
+        "description": "Exercise passes"
+      }
+    ]
+  },
+  "function-memoization": {
+    "title": "Function — Memoization",
+    "description": "Complete this Function exercise.",
+    "hints": [
+      "Read the test descriptions for hints."
+    ],
+    "tests": [
+      {
+        "description": "Exercise passes"
+      }
+    ]
+  },
+  "function-parameters": {
+    "title": "Function — Parameters",
+    "description": "Complete this Function exercise.",
+    "hints": [
+      "Read the test descriptions for hints."
+    ],
+    "tests": [
+      {
+        "description": "Exercise passes"
+      }
+    ]
+  },
+  "function-recursion": {
+    "title": "Function — Recursion",
+    "description": "Complete this Function exercise.",
+    "hints": [
+      "Read the test descriptions for hints."
+    ],
+    "tests": [
+      {
+        "description": "Exercise passes"
+      }
+    ]
+  },
+  "function-rest-params": {
+    "title": "Function Rest — Params",
+    "description": "Complete this Function Rest exercise.",
+    "hints": [
+      "Read the test descriptions for hints."
+    ],
+    "tests": [
+      {
+        "description": "Exercise passes"
+      }
+    ]
+  },
+  "function-return": {
+    "title": "Function — Return",
+    "description": "Complete this Function exercise.",
+    "hints": [
+      "Read the test descriptions for hints."
+    ],
+    "tests": [
+      {
+        "description": "Exercise passes"
+      }
+    ]
+  },
+  "functionalprogramming-composition": {
+    "title": "Functionalprogramming — Composition",
+    "description": "Complete this Functionalprogramming exercise.",
+    "hints": [
+      "Read the test descriptions for hints."
+    ],
+    "tests": [
+      {
+        "description": "Exercise passes"
+      }
+    ]
+  },
+  "functionalprogramming-currying": {
+    "title": "Functionalprogramming — Currying",
+    "description": "Complete this Functionalprogramming exercise.",
+    "hints": [
+      "Read the test descriptions for hints."
+    ],
+    "tests": [
+      {
+        "description": "Exercise passes"
+      }
+    ]
+  },
+  "functionalprogramming-first-class": {
+    "title": "Functionalprogramming First — Class",
+    "description": "Complete this Functionalprogramming First exercise.",
+    "hints": [
+      "Read the test descriptions for hints."
+    ],
+    "tests": [
+      {
+        "description": "Exercise passes"
+      }
+    ]
+  },
+  "functionalprogramming-immutability": {
+    "title": "Functionalprogramming — Immutability",
+    "description": "Complete this Functionalprogramming exercise.",
+    "hints": [
+      "Read the test descriptions for hints."
+    ],
+    "tests": [
+      {
+        "description": "Exercise passes"
+      }
+    ]
+  },
+  "functionalprogramming-monads": {
+    "title": "Functionalprogramming — Monads",
+    "description": "Complete this Functionalprogramming exercise.",
+    "hints": [
+      "Read the test descriptions for hints."
+    ],
+    "tests": [
+      {
+        "description": "Exercise passes"
+      }
+    ]
+  },
+  "functionalprogramming-partial-application": {
+    "title": "Functionalprogramming Partial — Application",
+    "description": "Complete this Functionalprogramming Partial exercise.",
+    "hints": [
+      "Read the test descriptions for hints."
+    ],
+    "tests": [
+      {
+        "description": "Exercise passes"
+      }
+    ]
+  },
+  "functionalprogramming-pure-functions": {
+    "title": "Functionalprogramming Pure — Functions",
+    "description": "Complete this Functionalprogramming Pure exercise.",
+    "hints": [
+      "Read the test descriptions for hints."
+    ],
+    "tests": [
+      {
+        "description": "Exercise passes"
+      }
+    ]
+  },
+  "functionalprogramming-transducers": {
+    "title": "Functionalprogramming — Transducers",
+    "description": "Complete this Functionalprogramming exercise.",
+    "hints": [
+      "Read the test descriptions for hints."
+    ],
+    "tests": [
+      {
+        "description": "Exercise passes"
+      }
+    ]
+  },
+  "generator-coroutines": {
+    "title": "Generator — Coroutines",
+    "description": "Complete this Generator exercise.",
+    "hints": [
+      "Read the test descriptions for hints."
+    ],
+    "tests": [
+      {
+        "description": "Exercise passes"
+      }
+    ]
+  },
+  "generator-delegation": {
+    "title": "Generator — Delegation",
+    "description": "Complete this Generator exercise.",
+    "hints": [
+      "Read the test descriptions for hints."
+    ],
+    "tests": [
+      {
+        "description": "Exercise passes"
+      }
+    ]
+  },
+  "generator-function-basics": {
+    "title": "Generator Function — Basics",
+    "description": "Complete this Generator Function exercise.",
+    "hints": [
+      "Read the test descriptions for hints."
+    ],
+    "tests": [
+      {
+        "description": "Exercise passes"
+      }
+    ]
+  },
+  "generator-next": {
+    "title": "Generator — Next",
+    "description": "Complete this Generator exercise.",
+    "hints": [
+      "Read the test descriptions for hints."
+    ],
+    "tests": [
+      {
+        "description": "Exercise passes"
+      }
+    ]
+  },
+  "generator-return": {
+    "title": "Generator — Return",
+    "description": "Complete this Generator exercise.",
+    "hints": [
+      "Read the test descriptions for hints."
+    ],
+    "tests": [
+      {
+        "description": "Exercise passes"
+      }
+    ]
+  },
+  "generator-state-machines": {
+    "title": "Generator State — Machines",
+    "description": "Complete this Generator State exercise.",
+    "hints": [
+      "Read the test descriptions for hints."
+    ],
+    "tests": [
+      {
+        "description": "Exercise passes"
+      }
+    ]
+  },
+  "generator-throw": {
+    "title": "Generator — Throw",
+    "description": "Complete this Generator exercise.",
+    "hints": [
+      "Read the test descriptions for hints."
+    ],
+    "tests": [
+      {
+        "description": "Exercise passes"
+      }
+    ]
+  },
+  "generator-yield": {
+    "title": "Generator — Yield",
+    "description": "Complete this Generator exercise.",
+    "hints": [
+      "Read the test descriptions for hints."
+    ],
+    "tests": [
+      {
+        "description": "Exercise passes"
+      }
+    ]
+  },
+  "json-circular-references": {
+    "title": "Json Circular — References",
+    "description": "Complete this Json Circular exercise.",
+    "hints": [
+      "Read the test descriptions for hints."
+    ],
+    "tests": [
+      {
+        "description": "Exercise passes"
+      }
+    ]
+  },
+  "json-formatting": {
+    "title": "Json — Formatting",
+    "description": "Complete this Json exercise.",
+    "hints": [
+      "Read the test descriptions for hints."
+    ],
+    "tests": [
+      {
+        "description": "Exercise passes"
+      }
+    ]
+  },
+  "json-parse": {
+    "title": "Json — Parse",
+    "description": "Complete this Json exercise.",
+    "hints": [
+      "Read the test descriptions for hints."
+    ],
+    "tests": [
+      {
+        "description": "Exercise passes"
+      }
+    ]
+  },
+  "json-performance": {
+    "title": "Json — Performance",
+    "description": "Complete this Json exercise.",
+    "hints": [
+      "Read the test descriptions for hints."
+    ],
+    "tests": [
+      {
+        "description": "Exercise passes"
+      }
+    ]
+  },
+  "json-replacer-reviver": {
+    "title": "Json Replacer — Reviver",
+    "description": "Complete this Json Replacer exercise.",
+    "hints": [
+      "Read the test descriptions for hints."
+    ],
+    "tests": [
+      {
+        "description": "Exercise passes"
+      }
+    ]
+  },
+  "json-stream-parsing": {
+    "title": "Json Stream — Parsing",
+    "description": "Complete this Json Stream exercise.",
+    "hints": [
+      "Read the test descriptions for hints."
+    ],
+    "tests": [
+      {
+        "description": "Exercise passes"
+      }
+    ]
+  },
+  "json-stringify": {
+    "title": "Json — Stringify",
+    "description": "Complete this Json exercise.",
+    "hints": [
+      "Read the test descriptions for hints."
+    ],
+    "tests": [
+      {
+        "description": "Exercise passes"
+      }
+    ]
+  },
+  "map-creation": {
+    "title": "Map — Creation",
+    "description": "Complete this Map exercise.",
+    "hints": [
+      "Read the test descriptions for hints."
+    ],
+    "tests": [
+      {
+        "description": "Exercise passes"
+      }
+    ]
+  },
+  "map-has-delete": {
+    "title": "Map Has — Delete",
+    "description": "Complete this Map Has exercise.",
+    "hints": [
+      "Read the test descriptions for hints."
+    ],
+    "tests": [
+      {
+        "description": "Exercise passes"
+      }
+    ]
+  },
+  "map-iteration": {
+    "title": "Map — Iteration",
+    "description": "Complete this Map exercise.",
+    "hints": [
+      "Read the test descriptions for hints."
+    ],
+    "tests": [
+      {
+        "description": "Exercise passes"
+      }
+    ]
+  },
+  "map-performance-vs-object": {
+    "title": "Map Performance Vs — Object",
+    "description": "Complete this Map Performance Vs exercise.",
+    "hints": [
+      "Read the test descriptions for hints."
+    ],
+    "tests": [
+      {
+        "description": "Exercise passes"
+      }
+    ]
+  },
+  "map-set-get": {
+    "title": "Map Set — Get",
+    "description": "Complete this Map Set exercise.",
+    "hints": [
+      "Read the test descriptions for hints."
+    ],
+    "tests": [
+      {
+        "description": "Exercise passes"
+      }
+    ]
+  },
+  "map-weakmap-differences": {
+    "title": "Map Weakmap — Differences",
+    "description": "Complete this Map Weakmap exercise.",
+    "hints": [
+      "Read the test descriptions for hints."
+    ],
+    "tests": [
+      {
+        "description": "Exercise passes"
+      }
+    ]
+  },
+  "math-basic-operations": {
+    "title": "Math Basic — Operations",
+    "description": "Complete this Math Basic exercise.",
+    "hints": [
+      "Read the test descriptions for hints."
+    ],
+    "tests": [
+      {
+        "description": "Exercise passes"
+      }
+    ]
+  },
+  "math-edge-cases": {
+    "title": "Math Edge — Cases",
+    "description": "Complete this Math Edge exercise.",
+    "hints": [
+      "Read the test descriptions for hints."
+    ],
+    "tests": [
+      {
+        "description": "Exercise passes"
+      }
+    ]
+  },
+  "math-logarithms": {
+    "title": "Math — Logarithms",
+    "description": "Complete this Math exercise.",
+    "hints": [
+      "Read the test descriptions for hints."
+    ],
+    "tests": [
+      {
+        "description": "Exercise passes"
+      }
+    ]
+  },
+  "math-performance": {
+    "title": "Math — Performance",
+    "description": "Complete this Math exercise.",
+    "hints": [
+      "Read the test descriptions for hints."
+    ],
+    "tests": [
+      {
+        "description": "Exercise passes"
+      }
+    ]
+  },
+  "math-random": {
+    "title": "Math — Random",
+    "description": "Complete this Math exercise.",
+    "hints": [
+      "Read the test descriptions for hints."
+    ],
+    "tests": [
+      {
+        "description": "Exercise passes"
+      }
+    ]
+  },
+  "math-rounding": {
+    "title": "Math — Rounding",
+    "description": "Complete this Math exercise.",
+    "hints": [
+      "Read the test descriptions for hints."
+    ],
+    "tests": [
+      {
+        "description": "Exercise passes"
+      }
+    ]
+  },
+  "math-trigonometry": {
+    "title": "Math — Trigonometry",
+    "description": "Complete this Math exercise.",
+    "hints": [
+      "Read the test descriptions for hints."
+    ],
+    "tests": [
+      {
+        "description": "Exercise passes"
+      }
+    ]
+  },
+  "modules-circular-dependency": {
+    "title": "Modules Circular — Dependency",
+    "description": "Complete this Modules Circular exercise.",
+    "hints": [
+      "Read the test descriptions for hints."
+    ],
+    "tests": [
+      {
+        "description": "Exercise passes"
+      }
+    ]
+  },
+  "modules-default-export": {
+    "title": "Modules Default — Export",
+    "description": "Complete this Modules Default exercise.",
+    "hints": [
+      "Read the test descriptions for hints."
+    ],
+    "tests": [
+      {
+        "description": "Exercise passes"
+      }
+    ]
+  },
+  "modules-lazy-loading": {
+    "title": "Modules Lazy — Loading",
+    "description": "Complete this Modules Lazy exercise.",
+    "hints": [
+      "Read the test descriptions for hints."
+    ],
+    "tests": [
+      {
+        "description": "Exercise passes"
+      }
+    ]
+  },
+  "modules-module-pattern": {
+    "title": "Modules Module — Pattern",
+    "description": "Complete this Modules Module exercise.",
+    "hints": [
+      "Read the test descriptions for hints."
+    ],
+    "tests": [
+      {
+        "description": "Exercise passes"
+      }
+    ]
+  },
+  "modules-named-exports": {
+    "title": "Modules Named — Exports",
+    "description": "Complete this Modules Named exercise.",
+    "hints": [
+      "Read the test descriptions for hints."
+    ],
+    "tests": [
+      {
+        "description": "Exercise passes"
+      }
+    ]
+  },
+  "modules-named-vs-default": {
+    "title": "Modules Named Vs — Default",
+    "description": "Complete this Modules Named Vs exercise.",
+    "hints": [
+      "Read the test descriptions for hints."
+    ],
+    "tests": [
+      {
+        "description": "Exercise passes"
+      }
+    ]
+  },
+  "modules-re-export": {
+    "title": "Modules Re — Export",
+    "description": "Complete this Modules Re exercise.",
+    "hints": [
+      "Read the test descriptions for hints."
+    ],
+    "tests": [
+      {
+        "description": "Exercise passes"
+      }
+    ]
+  },
+  "modules-singleton-pattern": {
+    "title": "Modules Singleton — Pattern",
+    "description": "Complete this Modules Singleton exercise.",
+    "hints": [
+      "Read the test descriptions for hints."
+    ],
+    "tests": [
+      {
+        "description": "Exercise passes"
+      }
+    ]
+  },
+  "modules-tree-shaking": {
+    "title": "Modules Tree — Shaking",
+    "description": "Complete this Modules Tree exercise.",
+    "hints": [
+      "Read the test descriptions for hints."
+    ],
+    "tests": [
+      {
+        "description": "Exercise passes"
+      }
+    ]
+  },
+  "number-arithmetic": {
+    "title": "Number — Arithmetic",
+    "description": "Complete this Number exercise.",
+    "hints": [
+      "Read the test descriptions for hints."
+    ],
+    "tests": [
+      {
+        "description": "Exercise passes"
+      }
+    ]
+  },
+  "number-bitwise": {
+    "title": "Number — Bitwise",
+    "description": "Complete this Number exercise.",
+    "hints": [
+      "Read the test descriptions for hints."
+    ],
+    "tests": [
+      {
+        "description": "Exercise passes"
+      }
+    ]
+  },
+  "number-checks": {
+    "title": "Number — Checks",
+    "description": "Complete this Number exercise.",
+    "hints": [
+      "Read the test descriptions for hints."
+    ],
+    "tests": [
+      {
+        "description": "Exercise passes"
+      }
+    ]
+  },
+  "number-conversion": {
+    "title": "Number — Conversion",
+    "description": "Complete this Number exercise.",
+    "hints": [
+      "Read the test descriptions for hints."
+    ],
+    "tests": [
+      {
+        "description": "Exercise passes"
+      }
+    ]
+  },
+  "number-creation": {
+    "title": "Number — Creation",
+    "description": "Complete this Number exercise.",
+    "hints": [
+      "Read the test descriptions for hints."
+    ],
+    "tests": [
+      {
+        "description": "Exercise passes"
+      }
+    ]
+  },
+  "number-methods-basic": {
+    "title": "Number Methods — Basic",
+    "description": "Complete this Number Methods exercise.",
+    "hints": [
+      "Read the test descriptions for hints."
+    ],
+    "tests": [
+      {
+        "description": "Exercise passes"
+      }
+    ]
+  },
+  "number-parsing": {
+    "title": "Number — Parsing",
+    "description": "Complete this Number exercise.",
+    "hints": [
+      "Read the test descriptions for hints."
+    ],
+    "tests": [
+      {
+        "description": "Exercise passes"
+      }
+    ]
+  },
+  "number-precision": {
+    "title": "Number — Precision",
+    "description": "Complete this Number exercise.",
+    "hints": [
+      "Read the test descriptions for hints."
+    ],
+    "tests": [
+      {
+        "description": "Exercise passes"
+      }
+    ]
+  },
+  "number-rounding-advanced": {
+    "title": "Number Rounding — Advanced",
+    "description": "Complete this Number Rounding exercise.",
+    "hints": [
+      "Read the test descriptions for hints."
+    ],
+    "tests": [
+      {
+        "description": "Exercise passes"
+      }
+    ]
+  },
+  "number-special-values": {
+    "title": "Number Special — Values",
+    "description": "Complete this Number Special exercise.",
+    "hints": [
+      "Read the test descriptions for hints."
+    ],
+    "tests": [
+      {
+        "description": "Exercise passes"
+      }
+    ]
+  },
+  "object-assign": {
+    "title": "Object — Assign",
+    "description": "Complete this Object exercise.",
+    "hints": [
+      "Read the test descriptions for hints."
+    ],
+    "tests": [
+      {
+        "description": "Exercise passes"
+      }
+    ]
+  },
+  "object-constructor": {
+    "title": "Object — Constructor",
+    "description": "Complete this Object exercise.",
+    "hints": [
+      "Read the test descriptions for hints."
+    ],
+    "tests": [
+      {
+        "description": "Exercise passes"
+      }
+    ]
+  },
+  "object-create": {
+    "title": "Object — Create",
+    "description": "Complete this Object exercise.",
+    "hints": [
+      "Read the test descriptions for hints."
+    ],
+    "tests": [
+      {
+        "description": "Exercise passes"
+      }
+    ]
+  },
+  "object-entries": {
+    "title": "Object — Entries",
+    "description": "Complete this Object exercise.",
+    "hints": [
+      "Read the test descriptions for hints."
+    ],
+    "tests": [
+      {
+        "description": "Exercise passes"
+      }
+    ]
+  },
+  "object-freeze": {
+    "title": "Object — Freeze",
+    "description": "Complete this Object exercise.",
+    "hints": [
+      "Read the test descriptions for hints."
+    ],
+    "tests": [
+      {
+        "description": "Exercise passes"
+      }
+    ]
+  },
+  "object-keys": {
+    "title": "Object — Keys",
+    "description": "Complete this Object exercise.",
+    "hints": [
+      "Read the test descriptions for hints."
+    ],
+    "tests": [
+      {
+        "description": "Exercise passes"
+      }
+    ]
+  },
+  "object-literal": {
+    "title": "Object — Literal",
+    "description": "Complete this Object exercise.",
+    "hints": [
+      "Read the test descriptions for hints."
+    ],
+    "tests": [
+      {
+        "description": "Exercise passes"
+      }
+    ]
+  },
+  "object-property-access": {
+    "title": "Object Property — Access",
+    "description": "Complete this Object Property exercise.",
+    "hints": [
+      "Read the test descriptions for hints."
+    ],
+    "tests": [
+      {
+        "description": "Exercise passes"
+      }
+    ]
+  },
+  "object-property-assignment": {
+    "title": "Object Property — Assignment",
+    "description": "Complete this Object Property exercise.",
+    "hints": [
+      "Read the test descriptions for hints."
+    ],
+    "tests": [
+      {
+        "description": "Exercise passes"
+      }
+    ]
+  },
+  "object-property-descriptors": {
+    "title": "Object Property — Descriptors",
+    "description": "Complete this Object Property exercise.",
+    "hints": [
+      "Read the test descriptions for hints."
+    ],
+    "tests": [
+      {
+        "description": "Exercise passes"
+      }
+    ]
+  },
+  "object-prototype": {
+    "title": "Object — Prototype",
+    "description": "Complete this Object exercise.",
+    "hints": [
+      "Read the test descriptions for hints."
+    ],
+    "tests": [
+      {
+        "description": "Exercise passes"
+      }
+    ]
+  },
+  "object-seal": {
+    "title": "Object — Seal",
+    "description": "Complete this Object exercise.",
+    "hints": [
+      "Read the test descriptions for hints."
+    ],
+    "tests": [
+      {
+        "description": "Exercise passes"
+      }
+    ]
+  },
+  "object-values": {
+    "title": "Object — Values",
+    "description": "Complete this Object exercise.",
+    "hints": [
+      "Read the test descriptions for hints."
+    ],
+    "tests": [
+      {
+        "description": "Exercise passes"
+      }
+    ]
+  },
+  "operators-arithmetic": {
+    "title": "Operators — Arithmetic",
+    "description": "Complete this Operators exercise.",
+    "hints": [
+      "Read the test descriptions for hints."
+    ],
+    "tests": [
+      {
+        "description": "Exercise passes"
+      }
+    ]
+  },
+  "operators-bitwise": {
+    "title": "Operators — Bitwise",
+    "description": "Complete this Operators exercise.",
+    "hints": [
+      "Read the test descriptions for hints."
+    ],
+    "tests": [
+      {
+        "description": "Exercise passes"
+      }
+    ]
+  },
+  "operators-comparison": {
+    "title": "Operators — Comparison",
+    "description": "Complete this Operators exercise.",
+    "hints": [
+      "Read the test descriptions for hints."
+    ],
+    "tests": [
+      {
+        "description": "Exercise passes"
+      }
+    ]
+  },
+  "operators-compound-assignment": {
+    "title": "Operators Compound — Assignment",
+    "description": "Complete this Operators Compound exercise.",
+    "hints": [
+      "Read the test descriptions for hints."
+    ],
+    "tests": [
+      {
+        "description": "Exercise passes"
+      }
+    ]
+  },
+  "operators-in-instanceof": {
+    "title": "Operators In — Instanceof",
+    "description": "Complete this Operators In exercise.",
+    "hints": [
+      "Read the test descriptions for hints."
+    ],
+    "tests": [
+      {
+        "description": "Exercise passes"
+      }
+    ]
+  },
+  "operators-logical": {
+    "title": "Operators — Logical",
+    "description": "Complete this Operators exercise.",
+    "hints": [
+      "Read the test descriptions for hints."
+    ],
+    "tests": [
+      {
+        "description": "Exercise passes"
+      }
+    ]
+  },
+  "operators-logical-assignment": {
+    "title": "Operators Logical — Assignment",
+    "description": "Complete this Operators Logical exercise.",
+    "hints": [
+      "Read the test descriptions for hints."
+    ],
+    "tests": [
+      {
+        "description": "Exercise passes"
+      }
+    ]
+  },
+  "operators-nullish-coalescing": {
+    "title": "Operators Nullish — Coalescing",
+    "description": "Complete this Operators Nullish exercise.",
+    "hints": [
+      "Read the test descriptions for hints."
+    ],
+    "tests": [
+      {
+        "description": "Exercise passes"
+      }
+    ]
+  },
+  "operators-optional-chaining": {
+    "title": "Operators Optional — Chaining",
+    "description": "Complete this Operators Optional exercise.",
+    "hints": [
+      "Read the test descriptions for hints."
+    ],
+    "tests": [
+      {
+        "description": "Exercise passes"
+      }
+    ]
+  },
+  "operators-rest-params": {
+    "title": "Operators Rest — Params",
+    "description": "Complete this Operators Rest exercise.",
+    "hints": [
+      "Read the test descriptions for hints."
+    ],
+    "tests": [
+      {
+        "description": "Exercise passes"
+      }
+    ]
+  },
+  "operators-spread": {
+    "title": "Operators — Spread",
+    "description": "Complete this Operators exercise.",
+    "hints": [
+      "Read the test descriptions for hints."
+    ],
+    "tests": [
+      {
+        "description": "Exercise passes"
+      }
+    ]
+  },
+  "operators-ternary": {
+    "title": "Operators — Ternary",
+    "description": "Complete this Operators exercise.",
+    "hints": [
+      "Read the test descriptions for hints."
+    ],
+    "tests": [
+      {
+        "description": "Exercise passes"
+      }
+    ]
+  },
+  "operators-typeof": {
+    "title": "Operators — Typeof",
+    "description": "Complete this Operators exercise.",
+    "hints": [
+      "Read the test descriptions for hints."
+    ],
+    "tests": [
+      {
+        "description": "Exercise passes"
+      }
+    ]
+  },
+  "promise-all": {
+    "title": "Promise — All",
+    "description": "Complete this Promise exercise.",
+    "hints": [
+      "Read the test descriptions for hints."
+    ],
+    "tests": [
+      {
+        "description": "Exercise passes"
+      }
+    ]
+  },
+  "promise-any": {
+    "title": "Promise — Any",
+    "description": "Complete this Promise exercise.",
+    "hints": [
+      "Read the test descriptions for hints."
+    ],
+    "tests": [
+      {
+        "description": "Exercise passes"
+      }
+    ]
+  },
+  "promise-catch": {
+    "title": "Promise — Catch",
+    "description": "Complete this Promise exercise.",
+    "hints": [
+      "Read the test descriptions for hints."
+    ],
+    "tests": [
+      {
+        "description": "Exercise passes"
+      }
+    ]
+  },
+  "promise-chaining": {
+    "title": "Promise — Chaining",
+    "description": "Complete this Promise exercise.",
+    "hints": [
+      "Read the test descriptions for hints."
+    ],
+    "tests": [
+      {
+        "description": "Exercise passes"
+      }
+    ]
+  },
+  "promise-creation": {
+    "title": "Promise — Creation",
+    "description": "Complete this Promise exercise.",
+    "hints": [
+      "Read the test descriptions for hints."
+    ],
+    "tests": [
+      {
+        "description": "Exercise passes"
+      }
+    ]
+  },
+  "promise-microtask-queue": {
+    "title": "Promise Microtask — Queue",
+    "description": "Complete this Promise Microtask exercise.",
+    "hints": [
+      "Read the test descriptions for hints."
+    ],
+    "tests": [
+      {
+        "description": "Exercise passes"
+      }
+    ]
+  },
+  "promise-race": {
+    "title": "Promise — Race",
+    "description": "Complete this Promise exercise.",
+    "hints": [
+      "Read the test descriptions for hints."
+    ],
+    "tests": [
+      {
+        "description": "Exercise passes"
+      }
+    ]
+  },
+  "promise-resolve-reject": {
+    "title": "Promise Resolve — Reject",
+    "description": "Complete this Promise Resolve exercise.",
+    "hints": [
+      "Read the test descriptions for hints."
+    ],
+    "tests": [
+      {
+        "description": "Exercise passes"
+      }
+    ]
+  },
+  "promise-then": {
+    "title": "Promise — Then",
+    "description": "Complete this Promise exercise.",
+    "hints": [
+      "Read the test descriptions for hints."
+    ],
+    "tests": [
+      {
+        "description": "Exercise passes"
+      }
+    ]
+  },
+  "prototypes-basic": {
+    "title": "Prototypes — Basic",
+    "description": "Complete this Prototypes exercise.",
+    "hints": [
+      "Read the test descriptions for hints."
+    ],
+    "tests": [
+      {
+        "description": "Exercise passes"
+      }
+    ]
+  },
+  "prototypes-chain": {
+    "title": "Prototypes — Chain",
+    "description": "Complete this Prototypes exercise.",
+    "hints": [
+      "Read the test descriptions for hints."
+    ],
+    "tests": [
+      {
+        "description": "Exercise passes"
+      }
+    ]
+  },
+  "prototypes-constructor-functions": {
+    "title": "Prototypes Constructor — Functions",
+    "description": "Complete this Prototypes Constructor exercise.",
+    "hints": [
+      "Read the test descriptions for hints."
+    ],
+    "tests": [
+      {
+        "description": "Exercise passes"
+      }
+    ]
+  },
+  "prototypes-deep-chain": {
+    "title": "Prototypes Deep — Chain",
+    "description": "Complete this Prototypes Deep exercise.",
+    "hints": [
+      "Read the test descriptions for hints."
+    ],
+    "tests": [
+      {
+        "description": "Exercise passes"
+      }
+    ]
+  },
+  "prototypes-es6-classes": {
+    "title": "Prototypes Es6 — Classes",
+    "description": "Complete this Prototypes Es6 exercise.",
+    "hints": [
+      "Read the test descriptions for hints."
+    ],
+    "tests": [
+      {
+        "description": "Exercise passes"
+      }
+    ]
+  },
+  "prototypes-instanceof": {
+    "title": "Prototypes — Instanceof",
+    "description": "Complete this Prototypes exercise.",
+    "hints": [
+      "Read the test descriptions for hints."
+    ],
+    "tests": [
+      {
+        "description": "Exercise passes"
+      }
+    ]
+  },
+  "prototypes-method-lookup": {
+    "title": "Prototypes Method — Lookup",
+    "description": "Complete this Prototypes Method exercise.",
+    "hints": [
+      "Read the test descriptions for hints."
+    ],
+    "tests": [
+      {
+        "description": "Exercise passes"
+      }
+    ]
+  },
+  "prototypes-mixins": {
+    "title": "Prototypes — Mixins",
+    "description": "Complete this Prototypes exercise.",
+    "hints": [
+      "Read the test descriptions for hints."
+    ],
+    "tests": [
+      {
+        "description": "Exercise passes"
+      }
+    ]
+  },
+  "prototypes-object-create": {
+    "title": "Prototypes Object — Create",
+    "description": "Complete this Prototypes Object exercise.",
+    "hints": [
+      "Read the test descriptions for hints."
+    ],
+    "tests": [
+      {
+        "description": "Exercise passes"
+      }
+    ]
+  },
+  "proxy-basic-handler": {
+    "title": "Proxy Basic — Handler",
+    "description": "Complete this Proxy Basic exercise.",
+    "hints": [
+      "Read the test descriptions for hints."
+    ],
+    "tests": [
+      {
+        "description": "Exercise passes"
+      }
+    ]
+  },
+  "proxy-get-set-traps": {
+    "title": "Proxy Get Set — Traps",
+    "description": "Complete this Proxy Get Set exercise.",
+    "hints": [
+      "Read the test descriptions for hints."
+    ],
+    "tests": [
+      {
+        "description": "Exercise passes"
+      }
+    ]
+  },
+  "proxy-has-delete-traps": {
+    "title": "Proxy Has Delete — Traps",
+    "description": "Complete this Proxy Has Delete exercise.",
+    "hints": [
+      "Read the test descriptions for hints."
+    ],
+    "tests": [
+      {
+        "description": "Exercise passes"
+      }
+    ]
+  },
+  "proxy-logging": {
+    "title": "Proxy — Logging",
+    "description": "Complete this Proxy exercise.",
+    "hints": [
+      "Read the test descriptions for hints."
+    ],
+    "tests": [
+      {
+        "description": "Exercise passes"
+      }
+    ]
+  },
+  "proxy-performance-implications": {
+    "title": "Proxy Performance — Implications",
+    "description": "Complete this Proxy Performance exercise.",
+    "hints": [
+      "Read the test descriptions for hints."
+    ],
+    "tests": [
+      {
+        "description": "Exercise passes"
+      }
+    ]
+  },
+  "proxy-revocable": {
+    "title": "Proxy — Revocable",
+    "description": "Complete this Proxy exercise.",
+    "hints": [
+      "Read the test descriptions for hints."
+    ],
+    "tests": [
+      {
+        "description": "Exercise passes"
+      }
+    ]
+  },
+  "proxy-validation": {
+    "title": "Proxy — Validation",
+    "description": "Complete this Proxy exercise.",
+    "hints": [
+      "Read the test descriptions for hints."
+    ],
+    "tests": [
+      {
+        "description": "Exercise passes"
+      }
+    ]
+  },
+  "reflect-advanced-patterns": {
+    "title": "Reflect Advanced — Patterns",
+    "description": "Complete this Reflect Advanced exercise.",
+    "hints": [
+      "Read the test descriptions for hints."
+    ],
+    "tests": [
+      {
+        "description": "Exercise passes"
+      }
+    ]
+  },
+  "reflect-api-integration": {
+    "title": "Reflect Api — Integration",
+    "description": "Complete this Reflect Api exercise.",
+    "hints": [
+      "Read the test descriptions for hints."
+    ],
+    "tests": [
+      {
+        "description": "Exercise passes"
+      }
+    ]
+  },
+  "reflect-apply-construct": {
+    "title": "Reflect Apply — Construct",
+    "description": "Complete this Reflect Apply exercise.",
+    "hints": [
+      "Read the test descriptions for hints."
+    ],
+    "tests": [
+      {
+        "description": "Exercise passes"
+      }
+    ]
+  },
+  "reflect-delete": {
+    "title": "Reflect — Delete",
+    "description": "Complete this Reflect exercise.",
+    "hints": [
+      "Read the test descriptions for hints."
+    ],
+    "tests": [
+      {
+        "description": "Exercise passes"
+      }
+    ]
+  },
+  "reflect-get-set": {
+    "title": "Reflect Get — Set",
+    "description": "Complete this Reflect Get exercise.",
+    "hints": [
+      "Read the test descriptions for hints."
+    ],
+    "tests": [
+      {
+        "description": "Exercise passes"
+      }
+    ]
+  },
+  "reflect-has": {
+    "title": "Reflect — Has",
+    "description": "Complete this Reflect exercise.",
+    "hints": [
+      "Read the test descriptions for hints."
+    ],
+    "tests": [
+      {
+        "description": "Exercise passes"
+      }
+    ]
+  },
+  "reflect-keys-enumerate": {
+    "title": "Reflect Keys — Enumerate",
+    "description": "Complete this Reflect Keys exercise.",
+    "hints": [
+      "Read the test descriptions for hints."
+    ],
+    "tests": [
+      {
+        "description": "Exercise passes"
+      }
+    ]
+  },
+  "reflect-with-proxy": {
+    "title": "Reflect With — Proxy",
+    "description": "Complete this Reflect With exercise.",
+    "hints": [
+      "Read the test descriptions for hints."
+    ],
+    "tests": [
+      {
+        "description": "Exercise passes"
+      }
+    ]
+  },
+  "regex-basic-patterns": {
+    "title": "Regex Basic — Patterns",
+    "description": "Complete this Regex Basic exercise.",
+    "hints": [
+      "Read the test descriptions for hints."
+    ],
+    "tests": [
+      {
+        "description": "Exercise passes"
+      }
+    ]
+  },
+  "regex-character-classes": {
+    "title": "Regex Character — Classes",
+    "description": "Complete this Regex Character exercise.",
+    "hints": [
+      "Read the test descriptions for hints."
+    ],
+    "tests": [
+      {
+        "description": "Exercise passes"
+      }
+    ]
+  },
+  "regex-flags": {
+    "title": "Regex — Flags",
+    "description": "Complete this Regex exercise.",
+    "hints": [
+      "Read the test descriptions for hints."
+    ],
+    "tests": [
+      {
+        "description": "Exercise passes"
+      }
+    ]
+  },
+  "regex-groups-capturing": {
+    "title": "Regex Groups — Capturing",
+    "description": "Complete this Regex Groups exercise.",
+    "hints": [
+      "Read the test descriptions for hints."
+    ],
+    "tests": [
+      {
+        "description": "Exercise passes"
+      }
+    ]
+  },
+  "regex-lookahead-lookbehind": {
+    "title": "Regex Lookahead — Lookbehind",
+    "description": "Complete this Regex Lookahead exercise.",
+    "hints": [
+      "Read the test descriptions for hints."
+    ],
+    "tests": [
+      {
+        "description": "Exercise passes"
+      }
+    ]
+  },
+  "regex-methods": {
+    "title": "Regex — Methods",
+    "description": "Complete this Regex exercise.",
+    "hints": [
+      "Read the test descriptions for hints."
+    ],
+    "tests": [
+      {
+        "description": "Exercise passes"
+      }
+    ]
+  },
+  "regex-performance": {
+    "title": "Regex — Performance",
+    "description": "Complete this Regex exercise.",
+    "hints": [
+      "Read the test descriptions for hints."
+    ],
+    "tests": [
+      {
+        "description": "Exercise passes"
+      }
+    ]
+  },
+  "regex-quantifiers": {
+    "title": "Regex — Quantifiers",
+    "description": "Complete this Regex exercise.",
+    "hints": [
+      "Read the test descriptions for hints."
+    ],
+    "tests": [
+      {
+        "description": "Exercise passes"
+      }
+    ]
+  },
+  "regex-unicode": {
+    "title": "Regex — Unicode",
+    "description": "Complete this Regex exercise.",
+    "hints": [
+      "Read the test descriptions for hints."
+    ],
+    "tests": [
+      {
+        "description": "Exercise passes"
+      }
+    ]
+  },
+  "set-add-has": {
+    "title": "Set Add — Has",
+    "description": "Complete this Set Add exercise.",
+    "hints": [
+      "Read the test descriptions for hints."
+    ],
+    "tests": [
+      {
+        "description": "Exercise passes"
+      }
+    ]
+  },
+  "set-creation": {
+    "title": "Set — Creation",
+    "description": "Complete this Set exercise.",
+    "hints": [
+      "Read the test descriptions for hints."
+    ],
+    "tests": [
+      {
+        "description": "Exercise passes"
+      }
+    ]
+  },
+  "set-operations": {
+    "title": "Set — Operations",
+    "description": "Complete this Set exercise.",
+    "hints": [
+      "Read the test descriptions for hints."
+    ],
+    "tests": [
+      {
+        "description": "Exercise passes"
+      }
+    ]
+  },
+  "set-set-operations": {
+    "title": "Set Set — Operations",
+    "description": "Complete this Set Set exercise.",
+    "hints": [
+      "Read the test descriptions for hints."
+    ],
+    "tests": [
+      {
+        "description": "Exercise passes"
+      }
+    ]
+  },
+  "strictmode-delete-variable": {
+    "title": "Strictmode Delete — Variable",
+    "description": "Complete this Strictmode Delete exercise.",
+    "hints": [
+      "Read the test descriptions for hints."
+    ],
+    "tests": [
+      {
+        "description": "Exercise passes"
+      }
+    ]
+  },
+  "strictmode-duplicate-params": {
+    "title": "Strictmode Duplicate — Params",
+    "description": "Complete this Strictmode Duplicate exercise.",
+    "hints": [
+      "Read the test descriptions for hints."
+    ],
+    "tests": [
+      {
+        "description": "Exercise passes"
+      }
+    ]
+  },
+  "strictmode-octal-literals": {
+    "title": "Strictmode Octal — Literals",
+    "description": "Complete this Strictmode Octal exercise.",
+    "hints": [
+      "Read the test descriptions for hints."
+    ],
+    "tests": [
+      {
+        "description": "Exercise passes"
+      }
+    ]
+  },
+  "strictmode-this-binding": {
+    "title": "Strictmode This — Binding",
+    "description": "Complete this Strictmode This exercise.",
+    "hints": [
+      "Read the test descriptions for hints."
+    ],
+    "tests": [
+      {
+        "description": "Exercise passes"
+      }
+    ]
+  },
+  "strictmode-undeclared-variable": {
+    "title": "Strictmode Undeclared — Variable",
+    "description": "Complete this Strictmode Undeclared exercise.",
+    "hints": [
+      "Read the test descriptions for hints."
+    ],
+    "tests": [
+      {
+        "description": "Exercise passes"
+      }
+    ]
+  },
+  "strictmode-with-statement": {
+    "title": "Strictmode With — Statement",
+    "description": "Complete this Strictmode With exercise.",
+    "hints": [
+      "Read the test descriptions for hints."
+    ],
+    "tests": [
+      {
+        "description": "Exercise passes"
+      }
+    ]
+  },
+  "string-case": {
+    "title": "String — Case",
+    "description": "Complete this String exercise.",
+    "hints": [
+      "Read the test descriptions for hints."
+    ],
+    "tests": [
+      {
+        "description": "Exercise passes"
+      }
+    ]
+  },
+  "string-includes": {
+    "title": "String — Includes",
+    "description": "Complete this String exercise.",
+    "hints": [
+      "Read the test descriptions for hints."
+    ],
+    "tests": [
+      {
+        "description": "Exercise passes"
+      }
+    ]
+  },
+  "string-indexing": {
+    "title": "String — Indexing",
+    "description": "Complete this String exercise.",
+    "hints": [
+      "Read the test descriptions for hints."
+    ],
+    "tests": [
+      {
+        "description": "Exercise passes"
+      }
+    ]
+  },
+  "string-length": {
+    "title": "String — Length",
+    "description": "Complete this String exercise.",
+    "hints": [
+      "Read the test descriptions for hints."
+    ],
+    "tests": [
+      {
+        "description": "Exercise passes"
+      }
+    ]
+  },
+  "string-literals": {
+    "title": "String — Literals",
+    "description": "Complete this String exercise.",
+    "hints": [
+      "Read the test descriptions for hints."
+    ],
+    "tests": [
+      {
+        "description": "Exercise passes"
+      }
+    ]
+  },
+  "string-methods-basic": {
+    "title": "String Methods — Basic",
+    "description": "Complete this String Methods exercise.",
+    "hints": [
+      "Read the test descriptions for hints."
+    ],
+    "tests": [
+      {
+        "description": "Exercise passes"
+      }
+    ]
+  },
+  "string-normalization": {
+    "title": "String — Normalization",
+    "description": "Complete this String exercise.",
+    "hints": [
+      "Read the test descriptions for hints."
+    ],
+    "tests": [
+      {
+        "description": "Exercise passes"
+      }
+    ]
+  },
+  "string-regexp": {
+    "title": "String — Regexp",
+    "description": "Complete this String exercise.",
+    "hints": [
+      "Read the test descriptions for hints."
+    ],
+    "tests": [
+      {
+        "description": "Exercise passes"
+      }
+    ]
+  },
+  "string-replace": {
+    "title": "String — Replace",
+    "description": "Complete this String exercise.",
+    "hints": [
+      "Read the test descriptions for hints."
+    ],
+    "tests": [
+      {
+        "description": "Exercise passes"
+      }
+    ]
+  },
+  "string-split-join": {
+    "title": "String Split — Join",
+    "description": "Complete this String Split exercise.",
+    "hints": [
+      "Read the test descriptions for hints."
+    ],
+    "tests": [
+      {
+        "description": "Exercise passes"
+      }
+    ]
+  },
+  "string-substring": {
+    "title": "String — Substring",
+    "description": "Complete this String exercise.",
+    "hints": [
+      "Read the test descriptions for hints."
+    ],
+    "tests": [
+      {
+        "description": "Exercise passes"
+      }
+    ]
+  },
+  "string-template-literals": {
+    "title": "String Template — Literals",
+    "description": "Complete this String Template exercise.",
+    "hints": [
+      "Read the test descriptions for hints."
+    ],
+    "tests": [
+      {
+        "description": "Exercise passes"
+      }
+    ]
+  },
+  "string-unicode": {
+    "title": "String — Unicode",
+    "description": "Complete this String exercise.",
+    "hints": [
+      "Read the test descriptions for hints."
+    ],
+    "tests": [
+      {
+        "description": "Exercise passes"
+      }
+    ]
+  },
+  "symbol-creation": {
+    "title": "Symbol — Creation",
+    "description": "Complete this Symbol exercise.",
+    "hints": [
+      "Read the test descriptions for hints."
+    ],
+    "tests": [
+      {
+        "description": "Exercise passes"
+      }
+    ]
+  },
+  "symbol-for": {
+    "title": "Symbol — For",
+    "description": "Complete this Symbol exercise.",
+    "hints": [
+      "Read the test descriptions for hints."
+    ],
+    "tests": [
+      {
+        "description": "Exercise passes"
+      }
+    ]
+  },
+  "symbol-iterator-protocol": {
+    "title": "Symbol Iterator — Protocol",
+    "description": "Complete this Symbol Iterator exercise.",
+    "hints": [
+      "Read the test descriptions for hints."
+    ],
+    "tests": [
+      {
+        "description": "Exercise passes"
+      }
+    ]
+  },
+  "symbol-private-fields": {
+    "title": "Symbol Private — Fields",
+    "description": "Complete this Symbol Private exercise.",
+    "hints": [
+      "Read the test descriptions for hints."
+    ],
+    "tests": [
+      {
+        "description": "Exercise passes"
+      }
+    ]
+  },
+  "symbol-registry": {
+    "title": "Symbol — Registry",
+    "description": "Complete this Symbol exercise.",
+    "hints": [
+      "Read the test descriptions for hints."
+    ],
+    "tests": [
+      {
+        "description": "Exercise passes"
+      }
+    ]
+  },
+  "symbol-uniqueness": {
+    "title": "Symbol — Uniqueness",
+    "description": "Complete this Symbol exercise.",
+    "hints": [
+      "Read the test descriptions for hints."
+    ],
+    "tests": [
+      {
+        "description": "Exercise passes"
+      }
+    ]
+  },
+  "symbol-well-known-symbols": {
+    "title": "Symbol Well Known — Symbols",
+    "description": "Complete this Symbol Well Known exercise.",
+    "hints": [
+      "Read the test descriptions for hints."
+    ],
+    "tests": [
+      {
+        "description": "Exercise passes"
+      }
+    ]
+  },
+  "typecoercion-abstract-comparison": {
+    "title": "Typecoercion Abstract — Comparison",
+    "description": "Complete this Typecoercion Abstract exercise.",
+    "hints": [
+      "Read the test descriptions for hints."
+    ],
+    "tests": [
+      {
+        "description": "Exercise passes"
+      }
+    ]
+  },
+  "typecoercion-addition-coercion": {
+    "title": "Typecoercion Addition — Coercion",
+    "description": "Complete this Typecoercion Addition exercise.",
+    "hints": [
+      "Read the test descriptions for hints."
+    ],
+    "tests": [
+      {
+        "description": "Exercise passes"
+      }
+    ]
+  },
+  "typecoercion-boolean-coercion": {
+    "title": "Typecoercion Boolean — Coercion",
+    "description": "Complete this Typecoercion Boolean exercise.",
+    "hints": [
+      "Read the test descriptions for hints."
+    ],
+    "tests": [
+      {
+        "description": "Exercise passes"
+      }
+    ]
+  },
+  "typecoercion-loose-equality": {
+    "title": "Typecoercion Loose — Equality",
+    "description": "Complete this Typecoercion Loose exercise.",
+    "hints": [
+      "Read the test descriptions for hints."
+    ],
+    "tests": [
+      {
+        "description": "Exercise passes"
+      }
+    ]
+  },
+  "typecoercion-nan-behavior": {
+    "title": "Typecoercion Nan — Behavior",
+    "description": "Complete this Typecoercion Nan exercise.",
+    "hints": [
+      "Read the test descriptions for hints."
+    ],
+    "tests": [
+      {
+        "description": "Exercise passes"
+      }
+    ]
+  },
+  "typecoercion-nullish-checks": {
+    "title": "Typecoercion Nullish — Checks",
+    "description": "Complete this Typecoercion Nullish exercise.",
+    "hints": [
+      "Read the test descriptions for hints."
+    ],
+    "tests": [
+      {
+        "description": "Exercise passes"
+      }
+    ]
+  },
+  "typecoercion-number-conversion": {
+    "title": "Typecoercion Number — Conversion",
+    "description": "Complete this Typecoercion Number exercise.",
+    "hints": [
+      "Read the test descriptions for hints."
+    ],
+    "tests": [
+      {
+        "description": "Exercise passes"
+      }
+    ]
+  },
+  "typecoercion-object-coercion": {
+    "title": "Typecoercion Object — Coercion",
+    "description": "Complete this Typecoercion Object exercise.",
+    "hints": [
+      "Read the test descriptions for hints."
+    ],
+    "tests": [
+      {
+        "description": "Exercise passes"
+      }
+    ]
+  },
+  "typecoercion-strict-equality": {
+    "title": "Typecoercion Strict — Equality",
+    "description": "Complete this Typecoercion Strict exercise.",
+    "hints": [
+      "Read the test descriptions for hints."
+    ],
+    "tests": [
+      {
+        "description": "Exercise passes"
+      }
+    ]
+  },
+  "typecoercion-string-conversion": {
+    "title": "Typecoercion String — Conversion",
+    "description": "Complete this Typecoercion String exercise.",
+    "hints": [
+      "Read the test descriptions for hints."
+    ],
+    "tests": [
+      {
+        "description": "Exercise passes"
+      }
+    ]
+  },
+  "typedarrays-buffer-slicing": {
+    "title": "Typedarrays Buffer — Slicing",
+    "description": "Complete this Typedarrays Buffer exercise.",
+    "hints": [
+      "Read the test descriptions for hints."
+    ],
+    "tests": [
+      {
+        "description": "Exercise passes"
+      }
+    ]
+  },
+  "typedarrays-creation": {
+    "title": "Typedarrays — Creation",
+    "description": "Complete this Typedarrays exercise.",
+    "hints": [
+      "Read the test descriptions for hints."
+    ],
+    "tests": [
+      {
+        "description": "Exercise passes"
+      }
+    ]
+  },
+  "typedarrays-dataview": {
+    "title": "Typedarrays — Dataview",
+    "description": "Complete this Typedarrays exercise.",
+    "hints": [
+      "Read the test descriptions for hints."
+    ],
+    "tests": [
+      {
+        "description": "Exercise passes"
+      }
+    ]
+  },
+  "typedarrays-int8array": {
+    "title": "Typedarrays — Int8array",
+    "description": "Complete this Typedarrays exercise.",
+    "hints": [
+      "Read the test descriptions for hints."
+    ],
+    "tests": [
+      {
+        "description": "Exercise passes"
+      }
+    ]
+  },
+  "typedarrays-performance": {
+    "title": "Typedarrays — Performance",
+    "description": "Complete this Typedarrays exercise.",
+    "hints": [
+      "Read the test descriptions for hints."
+    ],
+    "tests": [
+      {
+        "description": "Exercise passes"
+      }
+    ]
+  },
+  "typedarrays-shared-buffers": {
+    "title": "Typedarrays Shared — Buffers",
+    "description": "Complete this Typedarrays Shared exercise.",
+    "hints": [
+      "Read the test descriptions for hints."
+    ],
+    "tests": [
+      {
+        "description": "Exercise passes"
+      }
+    ]
+  },
+  "typedarrays-uint8array": {
+    "title": "Typedarrays — Uint8array",
+    "description": "Complete this Typedarrays exercise.",
+    "hints": [
+      "Read the test descriptions for hints."
+    ],
+    "tests": [
+      {
+        "description": "Exercise passes"
+      }
+    ]
+  },
+  "url-encoding-decoding": {
+    "title": "Url Encoding — Decoding",
+    "description": "Complete this Url Encoding exercise.",
+    "hints": [
+      "Read the test descriptions for hints."
+    ],
+    "tests": [
+      {
+        "description": "Exercise passes"
+      }
+    ]
+  },
+  "url-parsing": {
+    "title": "Url — Parsing",
+    "description": "Complete this Url exercise.",
+    "hints": [
+      "Read the test descriptions for hints."
+    ],
+    "tests": [
+      {
+        "description": "Exercise passes"
+      }
+    ]
+  },
+  "url-properties": {
+    "title": "Url — Properties",
+    "description": "Complete this Url exercise.",
+    "hints": [
+      "Read the test descriptions for hints."
+    ],
+    "tests": [
+      {
+        "description": "Exercise passes"
+      }
+    ]
+  },
+  "url-relative-parsing": {
+    "title": "Url Relative — Parsing",
+    "description": "Complete this Url Relative exercise.",
+    "hints": [
+      "Read the test descriptions for hints."
+    ],
+    "tests": [
+      {
+        "description": "Exercise passes"
+      }
+    ]
+  },
+  "urlsearchparams-creation": {
+    "title": "Urlsearchparams — Creation",
+    "description": "Complete this Urlsearchparams exercise.",
+    "hints": [
+      "Read the test descriptions for hints."
+    ],
+    "tests": [
+      {
+        "description": "Exercise passes"
+      }
+    ]
+  },
+  "urlsearchparams-iteration": {
+    "title": "Urlsearchparams — Iteration",
+    "description": "Complete this Urlsearchparams exercise.",
+    "hints": [
+      "Read the test descriptions for hints."
+    ],
+    "tests": [
+      {
+        "description": "Exercise passes"
+      }
+    ]
+  },
+  "urlsearchparams-manipulation": {
+    "title": "Urlsearchparams — Manipulation",
+    "description": "Complete this Urlsearchparams exercise.",
+    "hints": [
+      "Read the test descriptions for hints."
+    ],
+    "tests": [
+      {
+        "description": "Exercise passes"
+      }
+    ]
+  },
+  "variables-block-scope": {
+    "title": "Variables Block — Scope",
+    "description": "Complete this Variables Block exercise.",
+    "hints": [
+      "Read the test descriptions for hints."
+    ],
+    "tests": [
+      {
+        "description": "Exercise passes"
+      }
+    ]
+  },
+  "variables-const-object": {
+    "title": "Variables Const — Object",
+    "description": "Complete this Variables Const exercise.",
+    "hints": [
+      "Read the test descriptions for hints."
+    ],
+    "tests": [
+      {
+        "description": "Exercise passes"
+      }
+    ]
+  },
+  "variables-destructuring": {
+    "title": "Variables — Destructuring",
+    "description": "Complete this Variables exercise.",
+    "hints": [
+      "Read the test descriptions for hints."
+    ],
+    "tests": [
+      {
+        "description": "Exercise passes"
+      }
+    ]
+  },
+  "variables-function-hoisting": {
+    "title": "Variables Function — Hoisting",
+    "description": "Complete this Variables Function exercise.",
+    "hints": [
+      "Read the test descriptions for hints."
+    ],
+    "tests": [
+      {
+        "description": "Exercise passes"
+      }
+    ]
+  },
+  "variables-let-loop-closure": {
+    "title": "Variables Let Loop — Closure",
+    "description": "Complete this Variables Let Loop exercise.",
+    "hints": [
+      "Read the test descriptions for hints."
+    ],
+    "tests": [
+      {
+        "description": "Exercise passes"
+      }
+    ]
+  },
+  "variables-let-reassign": {
+    "title": "Variables Let — Reassign",
+    "description": "Complete this Variables Let exercise.",
+    "hints": [
+      "Read the test descriptions for hints."
+    ],
+    "tests": [
+      {
+        "description": "Exercise passes"
+      }
+    ]
+  },
+  "variables-let-tdz": {
+    "title": "Variables Let — Tdz",
+    "description": "Complete this Variables Let exercise.",
+    "hints": [
+      "Read the test descriptions for hints."
+    ],
+    "tests": [
+      {
+        "description": "Exercise passes"
+      }
+    ]
+  },
+  "variables-var-function-scope": {
+    "title": "Variables Var Function — Scope",
+    "description": "Complete this Variables Var Function exercise.",
+    "hints": [
+      "Read the test descriptions for hints."
+    ],
+    "tests": [
+      {
+        "description": "Exercise passes"
+      }
+    ]
+  },
+  "variables-var-hoisting": {
+    "title": "Variables Var — Hoisting",
+    "description": "Complete this Variables Var exercise.",
+    "hints": [
+      "Read the test descriptions for hints."
+    ],
+    "tests": [
+      {
+        "description": "Exercise passes"
+      }
+    ]
+  },
+  "variables-var-loop-closure": {
+    "title": "Variables Var Loop — Closure",
+    "description": "Complete this Variables Var Loop exercise.",
+    "hints": [
+      "Read the test descriptions for hints."
+    ],
+    "tests": [
+      {
+        "description": "Exercise passes"
+      }
+    ]
+  },
+  "weakmap-creation": {
+    "title": "Weakmap — Creation",
+    "description": "Complete this Weakmap exercise.",
+    "hints": [
+      "Read the test descriptions for hints."
+    ],
+    "tests": [
+      {
+        "description": "Exercise passes"
+      }
+    ]
+  },
+  "weakmap-edge-cases": {
+    "title": "Weakmap Edge — Cases",
+    "description": "Complete this Weakmap Edge exercise.",
+    "hints": [
+      "Read the test descriptions for hints."
+    ],
+    "tests": [
+      {
+        "description": "Exercise passes"
+      }
+    ]
+  },
+  "weakmap-gc-behavior": {
+    "title": "Weakmap Gc — Behavior",
+    "description": "Complete this Weakmap Gc exercise.",
+    "hints": [
+      "Read the test descriptions for hints."
+    ],
+    "tests": [
+      {
+        "description": "Exercise passes"
+      }
+    ]
+  },
+  "weakmap-private-data": {
+    "title": "Weakmap Private — Data",
+    "description": "Complete this Weakmap Private exercise.",
+    "hints": [
+      "Read the test descriptions for hints."
+    ],
+    "tests": [
+      {
+        "description": "Exercise passes"
+      }
+    ]
+  },
+  "weakmap-set-get": {
+    "title": "Weakmap Set — Get",
+    "description": "Complete this Weakmap Set exercise.",
+    "hints": [
+      "Read the test descriptions for hints."
+    ],
+    "tests": [
+      {
+        "description": "Exercise passes"
+      }
+    ]
+  },
+  "weakmap-use-cases": {
+    "title": "Weakmap Use — Cases",
+    "description": "Complete this Weakmap Use exercise.",
+    "hints": [
+      "Read the test descriptions for hints."
+    ],
+    "tests": [
+      {
+        "description": "Exercise passes"
+      }
+    ]
+  },
+  "weakset-creation": {
+    "title": "Weakset — Creation",
+    "description": "Complete this Weakset exercise.",
+    "hints": [
+      "Read the test descriptions for hints."
+    ],
+    "tests": [
+      {
+        "description": "Exercise passes"
+      }
+    ]
+  },
+  "weakset-membership": {
+    "title": "Weakset — Membership",
+    "description": "Complete this Weakset exercise.",
+    "hints": [
+      "Read the test descriptions for hints."
+    ],
+    "tests": [
+      {
+        "description": "Exercise passes"
+      }
+    ]
   }
 }
