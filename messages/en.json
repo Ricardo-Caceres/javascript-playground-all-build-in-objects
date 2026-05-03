@@ -9,6 +9,7 @@
   "exercise": {
     "prev": "← Prev",
     "next": "Next →",
+    "nextTopic": "Next topic: {topic} →",
     "reset": "Reset",
     "run": "Run ⌘/Ctrl↵",
     "running": "Running…",

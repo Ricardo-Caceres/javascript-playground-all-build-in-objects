@@ -9,6 +9,7 @@
   "exercise": {
     "prev": "← Anterior",
     "next": "Siguiente →",
+    "nextTopic": "Siguiente tema: {topic} →",
     "reset": "Reiniciar",
     "run": "Ejecutar ⌘/Ctrl↵",
     "running": "Ejecutando…",

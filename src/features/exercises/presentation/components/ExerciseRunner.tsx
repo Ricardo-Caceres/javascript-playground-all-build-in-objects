@@ -73,7 +73,7 @@ export function ExerciseRunner({ exercise, objectName }: Props) {
     }
   }, [objectName, isRoadmap])
 
-  const { prevSlug, nextSlug, currentIndex, total } = useExerciseNavigation(
+  const { prevSlug, nextSlug, currentIndex, total, nextTopic } = useExerciseNavigation(
     objectName,
     exercise.slug,
     { filteredExercises }
@@ -87,6 +87,14 @@ export function ExerciseRunner({ exercise, objectName }: Props) {
     if (selectedDifficulty) params.set('difficulty', selectedDifficulty)
     const qs = params.toString()
     return qs ? `${base}?${qs}` : base
+  }
+
+  // Build href for next topic (no filters, navigate to topic start)
+  function buildNextTopicHref(): string {
+    if (!nextTopic?.firstExerciseSlug) return ''
+    const base = `/exercises/${nextTopic.topicKey.toLowerCase()}/${nextTopic.firstExerciseSlug}`
+    // Don't preserve roadmap mode for next topic navigation
+    return base
   }
 
   const BASE_MINS: Record<string, number> = { beginner: 10, intermediate: 15, advanced: 20 }
@@ -250,7 +258,7 @@ export function ExerciseRunner({ exercise, objectName }: Props) {
 
       {/* Action bar */}
       <div className="flex items-center justify-between border-t border-zinc-800 bg-zinc-900 px-4 py-2">
-        {/* Prev / Next */}
+        {/* Prev / Next or Next Topic */}
         <div className="flex items-center gap-2">
           {prevSlug ? (
             <Link
@@ -270,6 +278,13 @@ export function ExerciseRunner({ exercise, objectName }: Props) {
               className="rounded border border-zinc-700 px-2 py-1 text-xs text-zinc-400 transition-colors hover:border-zinc-500 hover:text-zinc-200"
             >
               {t('next')}
+            </Link>
+          ) : nextTopic ? (
+            <Link
+              href={buildNextTopicHref()}
+              className="rounded border border-emerald-600 bg-emerald-600/20 px-2 py-1 text-xs text-emerald-300 transition-colors hover:border-emerald-500 hover:bg-emerald-600/30 hover:text-emerald-200"
+            >
+              ✓ {t('nextTopic', { topic: nextTopic.title })}
             </Link>
           ) : (
             <span className="cursor-not-allowed rounded border border-zinc-800 px-2 py-1 text-xs text-zinc-700">
